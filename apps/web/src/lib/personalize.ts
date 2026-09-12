@@ -56,14 +56,21 @@ export type ReverseMatch = {
  * 사용자가 고른 것을 사람이 읽을 수 있는 문장으로 바꿉니다.
  * 판단이 들어가지 않아 지금도 정확합니다 — 고른 것을 그대로 되읽어 줄 뿐입니다.
  */
+function visibleGroups(catalog: ExperienceCatalog, role?: string) {
+  return catalog.groups.filter(
+    (group) => !group.appliesTo || !role || group.appliesTo.includes(role),
+  );
+}
+
 export function describeExperience(
   input: ExperienceInput,
   catalog: ExperienceCatalog,
+  role?: string,
 ): AlreadyDone[] {
   const out: AlreadyDone[] = [];
   const chosen = new Set(input.itemIds);
 
-  for (const group of catalog.groups) {
+  for (const group of visibleGroups(catalog, role)) {
     for (const item of group.items) {
       if (chosen.has(item.id)) out.push({ label: item.label, origin: group.title });
     }
@@ -82,10 +89,11 @@ export function describeExperience(
 export function describeUnchosen(
   input: ExperienceInput,
   catalog: ExperienceCatalog,
+  role?: string,
 ): AlreadyDone[] {
   const chosen = new Set(input.itemIds);
   const out: AlreadyDone[] = [];
-  for (const group of catalog.groups) {
+  for (const group of visibleGroups(catalog, role)) {
     for (const item of group.items) {
       if (!chosen.has(item.id)) out.push({ label: item.label, origin: group.title });
     }

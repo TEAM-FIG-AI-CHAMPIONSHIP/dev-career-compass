@@ -45,8 +45,8 @@ export function PersonalizedPanel({
     );
   }
 
-  const done = describeExperience(input, catalog);
-  const gaps = describeUnchosen(input, catalog);
+  const done = describeExperience(input, catalog, role);
+  const gaps = describeUnchosen(input, catalog, role);
 
   return (
     <div className="flex flex-col gap-11">

@@ -1,61 +1,294 @@
 {
-  "version": 1,
+  "version": 2,
   "groups": [
     {
       "id": "project-kind",
-      "title": "무엇을 만들어 봤나요",
-      "caption": "프로젝트 종류",
+      "title": "프로젝트 종류",
+      "caption": "해당하는 것을 모두 고를 수 있습니다",
       "items": [
-        { "id": "crud", "label": "게시판·쇼핑몰 같은 CRUD 서비스" },
         {
-          "id": "external-api",
-          "label": "외부 API를 붙인 서비스",
-          "description": "결제, 지도, 소셜 로그인 등"
+          "id": "crud",
+          "label": "CRUD 웹서비스",
+          "description": "생성·조회·수정·삭제가 있는 웹 서비스를 만들어 봤다"
         },
         {
-          "id": "deployed",
-          "label": "배포까지 해서 남이 써 봤다",
-          "description": "도메인이나 URL로 접근 가능한 상태"
+          "id": "realtime",
+          "label": "실시간 통신 서비스",
+          "description": "채팅, 알림, 협업처럼 실시간으로 주고받는 서비스를 만들어 봤다"
         },
-        { "id": "team", "label": "팀 프로젝트로 만들었다" }
+        {
+          "id": "big-data",
+          "label": "대용량 데이터 처리",
+          "description": "대량 데이터를 모으거나 가공·분석하는 작업을 해 봤다"
+        },
+        {
+          "id": "mobile-app",
+          "label": "모바일 앱",
+          "description": "iOS·Android 또는 크로스플랫폼 앱을 만들어 봤다"
+        },
+        {
+          "id": "infra-devops",
+          "label": "인프라/DevOps",
+          "description": "배포, 인프라, 운영 자동화를 직접 구성해 봤다"
+        },
+        {
+          "id": "oss",
+          "label": "오픈소스 기여",
+          "description": "공개 저장소에 이슈·PR 등으로 기여해 봤다"
+        }
       ]
     },
     {
       "id": "backend",
-      "title": "서버·백엔드 쪽으로 해본 것",
+      "title": "직무별 경험",
       "caption": "고른 직무 기준으로 항목이 바뀝니다",
       "appliesTo": ["backend"],
       "items": [
-        { "id": "schema-design", "label": "직접 테이블을 설계하고 쿼리를 짰다" },
         {
-          "id": "cache",
-          "label": "캐시를 넣어 응답을 줄여 봤다",
-          "description": "Redis, 로컬 캐시 등"
+          "id": "rest-api",
+          "label": "REST API 설계",
+          "description": "엔드포인트와 요청·응답 계약을 직접 설계했다"
         },
-        { "id": "async", "label": "메시지 큐나 비동기 처리를 써 봤다" },
-        { "id": "tests", "label": "테스트 코드를 붙여 봤다" },
-        { "id": "observability", "label": "로그나 지표를 남겨 문제를 찾아본 적 있다" }
+        {
+          "id": "db-design",
+          "label": "데이터베이스 설계",
+          "description": "테이블·인덱스·쿼리를 직접 설계했다"
+        },
+        {
+          "id": "concurrency",
+          "label": "동시성 제어",
+          "description": "경합·락·중복 처리 같은 동시성 문제를 다뤄 봤다"
+        },
+        {
+          "id": "messaging-queue",
+          "label": "메시징 큐",
+          "description": "큐를 넣어 비동기로 일을 나눠 봤다"
+        },
+        {
+          "id": "search",
+          "label": "검색 시스템",
+          "description": "검색 인덱스나 검색 API를 붙여 봤다"
+        },
+        {
+          "id": "data-pipeline",
+          "label": "데이터 파이프라인",
+          "description": "데이터를 주기적으로 모으고 가공하는 흐름을 만들어 봤다"
+        },
+        {
+          "id": "ml-modeling",
+          "label": "ML/AI 모델링",
+          "description": "모델을 학습하거나 서비스에 붙여 봤다"
+        },
+        {
+          "id": "cloud-infra",
+          "label": "클라우드 인프라",
+          "description": "AWS·GCP 등에서 인프라를 구성해 봤다"
+        },
+        {
+          "id": "monitoring",
+          "label": "모니터링/관측",
+          "description": "로그·지표·트레이싱으로 문제를 찾아 봤다"
+        },
+        {
+          "id": "microservices",
+          "label": "마이크로서비스",
+          "description": "서비스를 나눠 통신하는 구조를 만들어 봤다"
+        }
+      ]
+    },
+    {
+      "id": "frontend",
+      "title": "직무별 경험",
+      "caption": "고른 직무 기준으로 항목이 바뀝니다",
+      "appliesTo": ["frontend"],
+      "items": [
+        {
+          "id": "component-ui",
+          "label": "컴포넌트 설계",
+          "description": "재사용 가능한 UI 컴포넌트를 직접 설계했다"
+        },
+        {
+          "id": "state-management",
+          "label": "상태 관리",
+          "description": "전역·서버 상태를 나누어 관리해 봤다"
+        },
+        {
+          "id": "routing-ssr",
+          "label": "라우팅/SSR",
+          "description": "클라이언트 라우팅이나 서버 렌더링을 구성해 봤다"
+        },
+        {
+          "id": "performance-fe",
+          "label": "렌더링 성능",
+          "description": "번들·렌더 비용을 재고 줄여 봤다"
+        },
+        {
+          "id": "accessibility",
+          "label": "접근성",
+          "description": "키보드·스크린리더를 고려해 만들어 봤다"
+        },
+        {
+          "id": "design-system",
+          "label": "디자인 시스템",
+          "description": "공통 토큰·컴포넌트 체계를 만들어 봤다"
+        },
+        {
+          "id": "form-validation",
+          "label": "폼/검증",
+          "description": "복잡한 입력과 검증 흐름을 만들어 봤다"
+        },
+        {
+          "id": "auth-client",
+          "label": "인증·인가 UI",
+          "description": "로그인·권한에 따라 화면을 나눠 봤다"
+        },
+        {
+          "id": "testing-fe",
+          "label": "프론트엔드 테스트",
+          "description": "컴포넌트·E2E 테스트를 붙여 봤다"
+        },
+        {
+          "id": "realtime-ui",
+          "label": "실시간 UI",
+          "description": "소켓·구독으로 화면을 갱신해 봤다"
+        }
+      ]
+    },
+    {
+      "id": "data-ai",
+      "title": "직무별 경험",
+      "caption": "고른 직무 기준으로 항목이 바뀝니다",
+      "appliesTo": ["data-ai"],
+      "items": [
+        {
+          "id": "sql-analytics",
+          "label": "SQL 분석",
+          "description": "서비스 데이터를 SQL로 집계·분석해 봤다"
+        },
+        {
+          "id": "etl",
+          "label": "ETL/수집",
+          "description": "여러 소스에서 데이터를 모아 적재해 봤다"
+        },
+        {
+          "id": "warehouse",
+          "label": "웨어하우스 모델링",
+          "description": "분석용 테이블을 설계해 봤다"
+        },
+        {
+          "id": "data-pipeline-ai",
+          "label": "데이터 파이프라인",
+          "description": "주기적 가공 흐름을 운영해 봤다"
+        },
+        {
+          "id": "visualization",
+          "label": "시각화/대시보드",
+          "description": "지표를 차트나 대시보드로 보여 줬다"
+        },
+        {
+          "id": "experiment",
+          "label": "실험/AB 테스트",
+          "description": "실험을 설계하고 결과를 해석해 봤다"
+        },
+        {
+          "id": "ml-training",
+          "label": "ML 학습",
+          "description": "모델을 학습하고 성능을 평가해 봤다"
+        },
+        {
+          "id": "model-serving",
+          "label": "모델 서빙",
+          "description": "학습한 모델을 API나 배치로 붙여 봤다"
+        },
+        {
+          "id": "search-ranking",
+          "label": "검색·추천",
+          "description": "검색 품질이나 추천 로직을 다뤄 봤다"
+        },
+        {
+          "id": "data-quality",
+          "label": "데이터 품질",
+          "description": "결측·이상치를 잡고 검증을 넣어 봤다"
+        }
+      ]
+    },
+    {
+      "id": "mobile",
+      "title": "직무별 경험",
+      "caption": "고른 직무 기준으로 항목이 바뀝니다",
+      "appliesTo": ["mobile"],
+      "items": [
+        {
+          "id": "native-ios",
+          "label": "iOS 네이티브",
+          "description": "Swift/UIKit 또는 SwiftUI로 앱을 만들어 봤다"
+        },
+        {
+          "id": "native-android",
+          "label": "Android 네이티브",
+          "description": "Kotlin/Java로 앱을 만들어 봤다"
+        },
+        {
+          "id": "cross-platform",
+          "label": "크로스플랫폼",
+          "description": "React Native나 Flutter로 앱을 만들어 봤다"
+        },
+        {
+          "id": "offline",
+          "label": "오프라인 동작",
+          "description": "로컬 저장과 동기화를 다뤄 봤다"
+        },
+        {
+          "id": "push-noti",
+          "label": "푸시 알림",
+          "description": "푸시 수신과 딥링크를 붙여 봤다"
+        },
+        {
+          "id": "store-release",
+          "label": "스토어 배포",
+          "description": "앱스토어·플레이스토어에 올려 봤다"
+        },
+        {
+          "id": "device-api",
+          "label": "디바이스 API",
+          "description": "카메라·위치 등 기기 기능을 연동해 봤다"
+        },
+        {
+          "id": "mobile-perf",
+          "label": "앱 성능",
+          "description": "시작 시간·메모리·렌더를 개선해 봤다"
+        },
+        {
+          "id": "mobile-auth",
+          "label": "모바일 인증",
+          "description": "토큰·생체인증 등 로그인 흐름을 만들어 봤다"
+        },
+        {
+          "id": "mobile-ci",
+          "label": "모바일 CI/CD",
+          "description": "빌드·배포 파이프라인을 구성해 봤다"
+        }
       ]
     }
   ],
   "levels": [
     {
-      "id": "ran",
-      "step": "STEP 1",
-      "title": "돌아가는 것까지",
-      "description": "로컬에서 기능이 동작합니다"
+      "id": "solo",
+      "step": "",
+      "title": "혼자 만들어 봄",
+      "description": "개인 프로젝트로 기능을 끝까지 만들어 봤다"
     },
     {
-      "id": "deployed",
-      "step": "STEP 2",
-      "title": "배포까지",
-      "description": "남이 접속해 써볼 수 있습니다"
+      "id": "team",
+      "step": "",
+      "title": "팀 프로젝트 경험",
+      "description": "역할을 나눠 함께 만들고 리뷰·통합을 해 봤다"
     },
     {
-      "id": "fixed",
-      "step": "STEP 3",
-      "title": "문제를 만나 고치는 것까지",
-      "description": "터진 것을 찾아 고치고 기록을 남겼습니다"
+      "id": "production",
+      "step": "",
+      "title": "운영 환경 경험",
+      "description": "실제 사용자가 있는 환경에서 배포·운영해 봤다"
     }
   ]
 }

@@ -102,7 +102,7 @@ export type Analysis = {
   evidence: Evidence[];
 };
 
-/** data/experience.json — S3 이 읽어 체크 항목을 그립니다. */
+/** data/experience.json — 경험 입력(F-05)이 읽어 체크 항목을 그립니다. */
 export type ExperienceCatalog = {
   /**
    * 항목을 추가·삭제·변경하면 올립니다. 브라우저에 저장된 입력의

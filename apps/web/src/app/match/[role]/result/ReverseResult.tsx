@@ -51,7 +51,7 @@ export function ReverseResult({
     );
   }
 
-  const done = describeExperience(input, catalog);
+  const done = describeExperience(input, catalog, role);
 
   return (
     <div className="flex flex-col gap-11">
