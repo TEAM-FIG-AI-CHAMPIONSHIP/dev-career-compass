@@ -37,6 +37,8 @@ Python 3.11 이상이 필요합니다. 각 팀원은 저장소를 clone한 뒤 �
 
 `python -m pytest`는 루트의 `pytest.ini`가 `pipeline/src`를 모듈 경로에 넣습니다. `pipeline/` 안에서 실행하면 이 설정을 쓰지 않습니다.
 
+GitHub Actions의 Pipeline 워크플로도 같은 명령을 저장소 루트에서 실행합니다. 실험 크롤러와 외부 사이트 수집은 CI에서 돌리지 않습니다.
+
 가상환경과 Python 패키지 빌드 산출물은 Git에 포함되지 않습니다.
 
 ## 실험 작업 방식
