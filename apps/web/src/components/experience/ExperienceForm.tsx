@@ -15,7 +15,8 @@ type Draft = { itemIds: string[]; levelId: string };
 /**
  * S5 경험 입력. 회사를 고른 흐름과 역매칭 흐름이 같은 폼을 씁니다.
  *
- * 최소 선택 개수를 강제하지 않습니다. 해당하는 것만 고르면 됩니다.
+ * 프로젝트 종류·직무별 경험·진행 수준은 각각 하나 이상 고릅니다.
+ * 각 칸에서 몇 개를 더 고를지는 강제하지 않습니다.
  * 입력값은 이 브라우저에만 남기고 서버로 보내지 않습니다.
  */
 export function ExperienceForm({
@@ -46,6 +47,19 @@ export function ExperienceForm({
   };
   const { itemIds, levelId } = current;
 
+  const projectKindIds = new Set(
+    groups.find((group) => group.id === "project-kind")?.items.map((item) => item.id) ?? [],
+  );
+  const roleExperienceIds = new Set(
+    groups
+      .filter((group) => group.id !== "project-kind")
+      .flatMap((group) => group.items.map((item) => item.id)),
+  );
+  const hasProjectKind = itemIds.some((id) => projectKindIds.has(id));
+  const hasRoleExperience = itemIds.some((id) => roleExperienceIds.has(id));
+  const hasLevel = catalog.levels.some((level) => level.id === levelId);
+  const canSubmit = hasProjectKind && hasRoleExperience && hasLevel;
+
   const persist = (next: Draft) => {
     const input: ExperienceInput = {
       catalogVersion: catalog.version,
@@ -66,6 +80,7 @@ export function ExperienceForm({
     });
 
   const submit = () => {
+    if (!canSubmit) return;
     const finished = finishMatchFlow(role);
     saveExperience({
       catalogVersion: catalog.version,
@@ -136,10 +151,16 @@ export function ExperienceForm({
         <Button
           variant="primary"
           onClick={submit}
+          disabled={!canSubmit}
           className="min-h-12 px-6 py-4 text-[0.9375rem]"
         >
           맞는 회사 찾기
         </Button>
+        {!canSubmit && (
+          <span className="text-[0.8125rem] leading-[1.7] text-ink-soft">
+            프로젝트 종류, 직무별 경험, 진행 수준을 각각 하나 이상 골라 주세요
+          </span>
+        )}
       </div>
     </div>
   );
