@@ -86,12 +86,9 @@ export function ExperienceForm({
       {groups.map((group) => (
         <section key={group.id} className="flex flex-col gap-3.5">
           <div className="flex flex-wrap items-baseline gap-2.5 border-b border-ink pb-2.5">
-            <h2 className="text-h3 font-semibold sm:text-[1.125rem]">{group.title}</h2>
-            {group.caption && (
-              <span className="text-[0.8125rem] leading-[1.7] text-ink-soft">
-                {group.caption}
-              </span>
-            )}
+            <h2 className="text-h3 font-semibold sm:text-[1.125rem]">
+              {group.id === "project-kind" ? "프로젝트 종류" : "직무별 경험"}
+            </h2>
           </div>
           <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
             {group.items.map((item) => (
