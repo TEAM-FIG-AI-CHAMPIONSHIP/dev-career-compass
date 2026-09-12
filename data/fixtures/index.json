@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-09-12T00:00:00Z",
+  "companies": [
+    {
+      "slug": "oliveyoung",
+      "name": "올리브영",
+      "mark": "올",
+      "summary": "재고 정합성·품절 반영, 주문·결제·배송 처리",
+      "evidenceCount": 9,
+      "status": "published",
+      "jobs": [{ "slug": "backend", "name": "서버·백엔드", "evidenceCount": 9 }]
+    },
+    {
+      "slug": "daangn",
+      "name": "당근",
+      "status": "collecting"
+    },
+    {
+      "slug": "toss",
+      "name": "토스",
+      "status": "collecting"
+    }
+  ]
+}

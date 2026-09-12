@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #FBFBF9; color: #16181D;
+      font-family: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      -webkit-font-smoothing: antialiased; }
+    a { color: #33528C; text-decoration: none; }
+    a:hover { color: #243C69; text-decoration: underline; }
+    .bj-row { transition: border-color 0.12s ease, background 0.12s ease; }
+    .bj-row:hover { background: #FFFFFF; border-color: #8A909C; }
+    .bj-job { transition: background 0.12s ease, color 0.12s ease, border-color 0.12s ease; }
+    .bj-job:hover { background: #16181D; border-color: #16181D; color: #FFFFFF; }
+  </style>
+</helmet>
+
+<div style="width: 1280px; min-height: 1100px; background: #FBFBF9; display: flex; flex-direction: column;">
+
+  <!-- 헤더 -->
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 20px 80px; border-bottom: 1px solid #E4E4DF;">
+    <div style="display: flex; align-items: baseline; gap: 12px;">
+      <span style="font-size: 17px; font-weight: 700; letter-spacing: -0.01em;">BeforeJoin</span>
+      <span style="font-size: 12.5px; color: #646B78; line-height: 1.6;">지원 6~12개월 전에 보는 화면</span>
+    </div>
+    <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #8A909C;">최근 12개월 수집분 · 2026.04 기준</span>
+  </div>
+
+  <!-- 히어로 -->
+  <div style="display: flex; flex-direction: column; gap: 16px; padding: 64px 80px 40px; max-width: 900px;">
+    <h1 style="margin: 0; font-size: 38px; font-weight: 600; line-height: 1.35; letter-spacing: -0.015em; text-wrap: pretty;">이 회사 개발 조직이 반복해서 다루는 일을 보고,<br>지금 만들 것을 정하세요.</h1>
+    <p style="margin: 0; font-size: 16px; line-height: 1.8; color: #3A3F49; max-width: 660px;">기술 블로그와 뉴스, 채용 공고에서 그 조직이 실제로 붙잡고 있는 문제를 뽑아냅니다. 모든 제안에는 열어볼 수 있는 원문 근거가 붙습니다.</p>
+  </div>
+
+  <!-- 회사 목록 -->
+  <div style="display: flex; flex-direction: column; gap: 16px; padding: 0 80px;">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 10px; border-bottom: 1px solid #16181D;">
+      <h2 style="margin: 0; font-size: 17px; font-weight: 600;">관심 있는 회사를 고르세요</h2>
+      <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #646B78;">9곳</span>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <sc-for list="{{companies}}" as="c" hint-placeholder-count="4">
+        <div class="bj-row" style="display: flex; flex-direction: column; background: {{c.bg}}; border: 1px solid {{c.border}}; border-radius: 4px;">
+
+          <div onClick="{{c.toggle}}" style="display: flex; align-items: center; gap: 18px; padding: 18px 22px; min-height: 44px; cursor: pointer;">
+            <div style="width: 32px; height: 32px; flex-shrink: 0; background: #F1F1EC; border: 1px solid #E4E4DF; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 13.5px; font-weight: 600; color: #646B78;">{{c.mark}}</div>
+            <div style="width: 128px; flex-shrink: 0; font-size: 16.5px; font-weight: 600; line-height: 1.5;">{{c.name}}</div>
+            <div style="flex-grow: 1; font-size: 14px; line-height: 1.7; color: #646B78;">{{c.summary}}</div>
+            <div style="flex-shrink: 0; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.02em; color: #8A909C;">{{c.meta}}</div>
+            <sc-if value="{{c.isOpen}}" hint-placeholder-val="{{ true }}">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#16181D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M5 12l5-5 5 5"></path></svg>
+            </sc-if>
+            <sc-if value="{{c.isClosed}}" hint-placeholder-val="{{ false }}">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#8A909C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M5 8l5 5 5-5"></path></svg>
+            </sc-if>
+          </div>
+
+          <sc-if value="{{c.isOpen}}" hint-placeholder-val="{{ true }}">
+            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 18px 22px 20px; border-top: 1px solid #E4E4DF; background: #FFFFFF;">
+              <span style="font-size: 13.5px; color: #646B78; line-height: 1.7; margin-right: 4px;">어떤 직무로 볼까요?</span>
+              <sc-for list="{{c.jobs}}" as="job" hint-placeholder-count="3">
+                <button class="bj-job" style="font: inherit; font-size: 14px; line-height: 1; padding: 12px 16px; min-height: 44px; color: #16181D; background: #FFFFFF; border: 1px solid #D3D3CC; border-radius: 6px; cursor: pointer;">{{job}}</button>
+              </sc-for>
+            </div>
+          </sc-if>
+
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- 역매칭 진입 -->
+  <div style="padding: 40px 80px 64px;">
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 26px 28px; background: #FFFFFF; border: 1px solid #D3D3CC; border-radius: 4px;">
+      <div style="display: flex; flex-direction: column; gap: 6px;">
+        <div style="font-size: 16.5px; font-weight: 600; line-height: 1.55;">회사부터 정하기 어렵다면, 내가 만든 것부터 보여주세요</div>
+        <p style="margin: 0; font-size: 14px; line-height: 1.75; color: #646B78; max-width: 620px;">직무 하나만 고르고 지금까지 해본 것을 체크하면, 어느 조직이 지금의 경험과 가까운지 되짚어 드립니다.</p>
+      </div>
+      <button style="font: inherit; flex-shrink: 0; font-size: 14px; font-weight: 500; line-height: 1; padding: 13px 20px; min-height: 44px; color: #FFFFFF; background: #33528C; border: 1px solid #33528C; border-radius: 6px; cursor: pointer;">내 경험부터 보기</button>
+    </div>
+  </div>
+
+  <div style="margin-top: auto; padding: 20px 80px; border-top: 1px solid #E4E4DF;">
+    <span style="font-size: 12.5px; line-height: 1.7; color: #8A909C;">수집한 글의 본문은 저장하거나 다시 싣지 않습니다. 제목과 발행일, 원문 링크만 보여드립니다.</span>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1280,"height":1100}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var openId = (this.state && this.state.openId !== undefined) ? this.state.openId : 'oliveyoung';
+    var self = this;
+    var raw = [
+      { id: 'oliveyoung', mark: '올', name: '올리브영', summary: '재고·주문 동시성 · 매장 재고 실시간 연동 · 결제 정합성', meta: '직무 3 · 근거 41건',
+        jobs: ['서버·백엔드', '웹 프론트엔드', '데이터·AI'] },
+      { id: 'daangn', mark: '당', name: '당근', summary: '이벤트 처리 · 지역 기반 검색 · 중고 거래 어뷰징 탐지', meta: '직무 4 · 근거 58건',
+        jobs: ['서버·백엔드', '웹 프론트엔드', '모바일', '데이터·AI'] },
+      { id: 'toss', mark: '토', name: '토스', summary: '송금 정합성 · 장애 격리 · 사내 디자인 시스템', meta: '직무 4 · 근거 63건',
+        jobs: ['서버·백엔드', '웹 프론트엔드', '모바일', '데이터·AI'] },
+      { id: 'musinsa', mark: '무', name: '무신사', summary: '상품 색인 · 트래픽 급증 대응 · 이미지 파이프라인', meta: '직무 3 · 근거 34건',
+        jobs: ['서버·백엔드', '웹 프론트엔드', '데이터·AI'] },
+      { id: 'yanolja', mark: '야', name: '야놀자', summary: '예약 재고 · 다국어 검색 · 파트너 연동', meta: '직무 3 · 근거 29건',
+        jobs: ['서버·백엔드', '웹 프론트엔드', '데이터·AI'] }
+    ];
+    var companies = raw.map(function (c) {
+      var isOpen = openId === c.id;
+      return {
+        id: c.id, mark: c.mark, name: c.name, summary: c.summary, meta: c.meta, jobs: c.jobs,
+        isOpen: isOpen,
+        isClosed: !isOpen,
+        bg: isOpen ? '#FFFFFF' : '#FBFBF9',
+        border: isOpen ? '#16181D' : '#E4E4DF',
+        toggle: function () { self.setState({ openId: isOpen ? null : c.id }); }
+      };
+    });
+    return { companies: companies };
+  }
+}
+</script>
+</body>
+</html>

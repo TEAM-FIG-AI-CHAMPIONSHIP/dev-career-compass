@@ -1,0 +1,219 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #FBFBF9; color: #16181D;
+      font-family: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      -webkit-font-smoothing: antialiased; }
+    a { color: #33528C; text-decoration: none; }
+    a:hover { color: #243C69; text-decoration: underline; }
+  </style>
+</helmet>
+
+<div style="width: 1280px; min-height: 1450px; background: #FBFBF9; display: flex; flex-direction: column;">
+
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 20px 80px; border-bottom: 1px solid #E4E4DF;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="font-size: 17px; font-weight: 700; letter-spacing: -0.01em;">BeforeJoin</span>
+      <span style="color: #D3D3CC;">/</span>
+      <span style="font-size: 14px; color: #646B78; line-height: 1.6;">내 경험부터 보기</span>
+      <span style="color: #D3D3CC;">·</span>
+      <span style="font-size: 14px; color: #16181D; line-height: 1.6;">서버·백엔드</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <button style="font: inherit; font-size: 13.5px; line-height: 1; padding: 10px 14px; color: #646B78; background: transparent; border: 1px solid transparent; border-radius: 6px; cursor: pointer;">입력 고치기</button>
+      <button style="font: inherit; font-size: 13.5px; line-height: 1; padding: 10px 14px; color: #646B78; background: transparent; border: 1px solid transparent; border-radius: 6px; cursor: pointer;">입력 지우기</button>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 44px; padding: 56px 80px 72px;">
+
+    <div style="display: flex; flex-direction: column; gap: 12px; max-width: 780px;">
+      <h1 style="margin: 0; font-size: 32px; font-weight: 600; line-height: 1.4; letter-spacing: -0.014em; text-wrap: pretty;">지금 경험으로 이야기가 통하는 조직부터</h1>
+      <p style="margin: 0; font-size: 15px; line-height: 1.8; color: #3A3F49;">회사를 줄 세우지 않습니다. 세 갈래로 나눠 보여드리고, 어디를 고를지는 당신이 정합니다.</p>
+    </div>
+
+    <!-- 이미 한 것 -->
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <div style="display: flex; align-items: baseline; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid #D3D3CC;">
+        <h2 style="margin: 0; font-size: 18px; font-weight: 600;">이미 한 것</h2>
+        <span style="font-size: 13.5px; color: #646B78; line-height: 1.7;">이걸 기준으로 아래를 나눴습니다</span>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+        <span style="display: inline-flex; align-items: center; gap: 8px; padding: 9px 15px; background: #FFFFFF; border: 1px solid #D3D3CC; border-radius: 999px; font-size: 13.5px; line-height: 1.5;"><svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="#3F6E4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"></path></svg>CRUD 서비스</span>
+        <span style="display: inline-flex; align-items: center; gap: 8px; padding: 9px 15px; background: #FFFFFF; border: 1px solid #D3D3CC; border-radius: 999px; font-size: 13.5px; line-height: 1.5;"><svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="#3F6E4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"></path></svg>외부 API 연동</span>
+        <span style="display: inline-flex; align-items: center; gap: 8px; padding: 9px 15px; background: #FFFFFF; border: 1px solid #D3D3CC; border-radius: 999px; font-size: 13.5px; line-height: 1.5;"><svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="#3F6E4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"></path></svg>테이블 설계·쿼리</span>
+        <span style="display: inline-flex; align-items: center; gap: 8px; padding: 9px 15px; background: #FFFFFF; border: 1px solid #D3D3CC; border-radius: 999px; font-size: 13.5px; line-height: 1.5;"><svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="#3F6E4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"></path></svg>테스트 코드</span>
+        <span style="display: inline-flex; align-items: center; gap: 8px; padding: 9px 15px; background: #FFFFFF; border: 1px solid #D3D3CC; border-radius: 999px; font-size: 13.5px; line-height: 1.5;"><svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="#3F6E4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"></path></svg>배포 경험</span>
+        <span style="display: inline-flex; align-items: center; gap: 8px; padding: 9px 15px; background: #FFFFFF; border: 1px solid #D3D3CC; border-radius: 999px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12.5px; color: #646B78; line-height: 1.5;">jiwon-k/order-api</span>
+      </div>
+    </div>
+
+    <!-- 잘 맞아요 -->
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <span style="display: inline-flex; align-items: center; gap: 8px; padding: 9px 15px; background: #EDF4EE; border: 1px solid #4E7A52; border-radius: 999px; font-size: 14px; font-weight: 500; color: #3F6E4A; line-height: 1.5;">
+          <svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="#3F6E4A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"></path></svg>
+          잘 맞아요
+        </span>
+        <span style="font-size: 14px; line-height: 1.7; color: #646B78;">지금 가진 것으로 바로 한 겹 더 팔 수 있는 조직입니다</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;">
+        <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px; background: #FFFFFF; border: 1px solid #4E7A52; border-radius: 4px; cursor: pointer;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 28px; height: 28px; flex-shrink: 0; background: #F1F1EC; border: 1px solid #E4E4DF; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: #646B78;">올</div>
+            <span style="font-size: 16.5px; font-weight: 600; line-height: 1.5;">올리브영</span>
+          </div>
+          <p style="margin: 0; font-size: 14px; line-height: 1.75; color: #3A3F49;">주문 API를 이미 만들어 봤다면, 이 조직이 계속 쓰는 재고 동시성 이야기에 바로 이어 붙일 수 있습니다.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+            <span style="padding: 5px 10px; background: #F1F1EC; border-radius: 999px; font-size: 12px; color: #3A3F49; line-height: 1.5;">재고·주문 동시성</span>
+            <span style="padding: 5px 10px; background: #F1F1EC; border-radius: 999px; font-size: 12px; color: #3A3F49; line-height: 1.5;">결제 정합성</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 7px; padding-top: 12px; border-top: 1px solid #E4E4DF;">
+            <span style="font-size: 13.5px; color: #33528C; line-height: 1.6;">이 회사 결과 보기</span>
+            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="#33528C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h11"></path><path d="M11 6l4 4-4 4"></path></svg>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px; background: #FFFFFF; border: 1px solid #4E7A52; border-radius: 4px; cursor: pointer;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 28px; height: 28px; flex-shrink: 0; background: #F1F1EC; border: 1px solid #E4E4DF; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: #646B78;">무</div>
+            <span style="font-size: 16.5px; font-weight: 600; line-height: 1.5;">무신사</span>
+          </div>
+          <p style="margin: 0; font-size: 14px; line-height: 1.75; color: #3A3F49;">상품 목록과 검색을 다루는 글이 많습니다. 이미 만든 목록 API를 색인 쪽으로 밀어 보기 좋습니다.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+            <span style="padding: 5px 10px; background: #F1F1EC; border-radius: 999px; font-size: 12px; color: #3A3F49; line-height: 1.5;">상품 색인</span>
+            <span style="padding: 5px 10px; background: #F1F1EC; border-radius: 999px; font-size: 12px; color: #3A3F49; line-height: 1.5;">트래픽 급증 대응</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 7px; padding-top: 12px; border-top: 1px solid #E4E4DF;">
+            <span style="font-size: 13.5px; color: #33528C; line-height: 1.6;">이 회사 결과 보기</span>
+            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="#33528C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h11"></path><path d="M11 6l4 4-4 4"></path></svg>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px; background: #FFFFFF; border: 1px solid #4E7A52; border-radius: 4px; cursor: pointer;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 28px; height: 28px; flex-shrink: 0; background: #F1F1EC; border: 1px solid #E4E4DF; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: #646B78;">야</div>
+            <span style="font-size: 16.5px; font-weight: 600; line-height: 1.5;">야놀자</span>
+          </div>
+          <p style="margin: 0; font-size: 14px; line-height: 1.75; color: #3A3F49;">예약 재고도 결국 같은 문제입니다. 주문을 예약으로 바꿔 놓으면 대부분 그대로 옮겨집니다.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+            <span style="padding: 5px 10px; background: #F1F1EC; border-radius: 999px; font-size: 12px; color: #3A3F49; line-height: 1.5;">예약 재고</span>
+            <span style="padding: 5px 10px; background: #F1F1EC; border-radius: 999px; font-size: 12px; color: #3A3F49; line-height: 1.5;">파트너 연동</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 7px; padding-top: 12px; border-top: 1px solid #E4E4DF;">
+            <span style="font-size: 13.5px; color: #33528C; line-height: 1.6;">이 회사 결과 보기</span>
+            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="#33528C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h11"></path><path d="M11 6l4 4-4 4"></path></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 한 걸음 필요해요 -->
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <span style="display: inline-flex; align-items: center; gap: 8px; padding: 9px 15px; background: #F7F2E8; border: 1px solid #8A6A2E; border-radius: 999px; font-size: 14px; font-weight: 500; color: #8A6A2E; line-height: 1.5;">
+          <svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="#8A6A2E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h11"></path><path d="M11 6l4 4-4 4"></path></svg>
+          한 걸음 필요해요
+        </span>
+        <span style="font-size: 14px; line-height: 1.7; color: #646B78;">하나만 더 해두면 이야기가 이어집니다</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;">
+        <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px; background: #FFFFFF; border: 1px solid #E4E4DF; border-radius: 4px; cursor: pointer;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 28px; height: 28px; flex-shrink: 0; background: #F1F1EC; border: 1px solid #E4E4DF; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: #646B78;">당</div>
+            <span style="font-size: 16.5px; font-weight: 600; line-height: 1.5;">당근</span>
+          </div>
+          <p style="margin: 0; font-size: 14px; line-height: 1.75; color: #3A3F49;">이벤트 기반 처리 글이 많습니다. 메시지 큐를 한 번 써 보고 오면 읽히는 것이 달라집니다.</p>
+          <div style="display: flex; align-items: flex-start; gap: 9px; padding: 12px 14px; background: #F7F2E8; border-radius: 4px;">
+            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="#8A6A2E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><path d="M3 10h11"></path><path d="M11 6l4 4-4 4"></path></svg>
+            <span style="font-size: 13px; line-height: 1.7; color: #8A6A2E;">비동기 처리를 한 번 붙여 보세요</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 7px; padding-top: 12px; border-top: 1px solid #E4E4DF;">
+            <span style="font-size: 13.5px; color: #33528C; line-height: 1.6;">이 회사 결과 보기</span>
+            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="#33528C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h11"></path><path d="M11 6l4 4-4 4"></path></svg>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px; background: #FFFFFF; border: 1px solid #E4E4DF; border-radius: 4px; cursor: pointer;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 28px; height: 28px; flex-shrink: 0; background: #F1F1EC; border: 1px solid #E4E4DF; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: #646B78;">쿠</div>
+            <span style="font-size: 16.5px; font-weight: 600; line-height: 1.5;">쿠팡</span>
+          </div>
+          <p style="margin: 0; font-size: 14px; line-height: 1.75; color: #3A3F49;">규모가 커졌을 때의 이야기가 대부분입니다. 부하를 직접 만들어 본 경험이 있으면 따라가기 쉽습니다.</p>
+          <div style="display: flex; align-items: flex-start; gap: 9px; padding: 12px 14px; background: #F7F2E8; border-radius: 4px;">
+            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="#8A6A2E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><path d="M3 10h11"></path><path d="M11 6l4 4-4 4"></path></svg>
+            <span style="font-size: 13px; line-height: 1.7; color: #8A6A2E;">부하 테스트를 돌려 기록을 남겨 보세요</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 7px; padding-top: 12px; border-top: 1px solid #E4E4DF;">
+            <span style="font-size: 13.5px; color: #33528C; line-height: 1.6;">이 회사 결과 보기</span>
+            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="#33528C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h11"></path><path d="M11 6l4 4-4 4"></path></svg>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px; background: #FFFFFF; border: 1px solid #E4E4DF; border-radius: 4px; cursor: pointer;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 28px; height: 28px; flex-shrink: 0; background: #F1F1EC; border: 1px solid #E4E4DF; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: #646B78;">배</div>
+            <span style="font-size: 16.5px; font-weight: 600; line-height: 1.5;">배달의민족</span>
+          </div>
+          <p style="margin: 0; font-size: 14px; line-height: 1.75; color: #3A3F49;">주문과 배차가 동시에 얽히는 이야기가 많습니다. 상태 전이를 설계해 본 적이 있으면 좋습니다.</p>
+          <div style="display: flex; align-items: flex-start; gap: 9px; padding: 12px 14px; background: #F7F2E8; border-radius: 4px;">
+            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="#8A6A2E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><path d="M3 10h11"></path><path d="M11 6l4 4-4 4"></path></svg>
+            <span style="font-size: 13px; line-height: 1.7; color: #8A6A2E;">주문 상태 전이를 명시적으로 설계해 보세요</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 7px; padding-top: 12px; border-top: 1px solid #E4E4DF;">
+            <span style="font-size: 13.5px; color: #33528C; line-height: 1.6;">이 회사 결과 보기</span>
+            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="#33528C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h11"></path><path d="M11 6l4 4-4 4"></path></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 지금은 거리가 있어요 -->
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <span style="display: inline-flex; align-items: center; gap: 8px; padding: 9px 15px; background: #F1F1EC; border: 1px solid #A8ACB4; border-radius: 999px; font-size: 14px; font-weight: 500; color: #6B6F78; line-height: 1.5;">
+          <svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="#6B6F78" stroke-width="1.6" stroke-linecap="round"><circle cx="10" cy="10" r="6.4" stroke-dasharray="3 3.4"></circle></svg>
+          지금은 거리가 있어요
+        </span>
+        <span style="font-size: 14px; line-height: 1.7; color: #646B78;">못 간다는 뜻이 아니라, 지금 준비하기엔 순서가 뒤라는 뜻입니다</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;">
+        <div style="display: flex; flex-direction: column; gap: 10px; padding: 20px; background: #FBFBF9; border: 1px solid #E4E4DF; border-radius: 4px; cursor: pointer;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 26px; height: 26px; flex-shrink: 0; background: #F1F1EC; border: 1px solid #E4E4DF; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12.5px; font-weight: 600; color: #8A909C;">토</div>
+            <span style="font-size: 15.5px; font-weight: 600; line-height: 1.5; color: #3A3F49;">토스</span>
+          </div>
+          <p style="margin: 0; font-size: 13.5px; line-height: 1.75; color: #646B78;">금융 정합성과 장애 격리 이야기가 대부분입니다. 지금 경험과 겹치는 지점이 아직 얇습니다.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px; padding: 20px; background: #FBFBF9; border: 1px solid #E4E4DF; border-radius: 4px; cursor: pointer;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 26px; height: 26px; flex-shrink: 0; background: #F1F1EC; border: 1px solid #E4E4DF; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12.5px; font-weight: 600; color: #8A909C;">네</div>
+            <span style="font-size: 15.5px; font-weight: 600; line-height: 1.5; color: #3A3F49;">네이버</span>
+          </div>
+          <p style="margin: 0; font-size: 13.5px; line-height: 1.75; color: #646B78;">검색 인프라와 대규모 색인 쪽 글이 많습니다. 다음다음 단계로 두는 편이 낫습니다.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px; padding: 20px; background: #FBFBF9; border: 1px solid #E4E4DF; border-radius: 4px; cursor: pointer;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 26px; height: 26px; flex-shrink: 0; background: #F1F1EC; border: 1px solid #E4E4DF; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 12.5px; font-weight: 600; color: #8A909C;">카</div>
+            <span style="font-size: 15.5px; font-weight: 600; line-height: 1.5; color: #3A3F49;">카카오</span>
+          </div>
+          <p style="margin: 0; font-size: 13.5px; line-height: 1.75; color: #646B78;">메시징 인프라 운영 이야기가 중심입니다. 먼저 위쪽 조직에서 한 겹 파고 오는 것을 권합니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 10px; padding: 16px 20px; background: #F1F1EC; border-radius: 4px;">
+      <svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="#646B78" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><circle cx="10" cy="10" r="7.2"></circle><path d="M10 9.4v4"></path><path d="M10 6.6v.2"></path></svg>
+      <span style="font-size: 13.5px; line-height: 1.75; color: #3A3F49;">회사를 고르면 그 조직의 결과 페이지로 넘어갑니다. 지금 입력한 경험은 그대로 따라가서, 개인화된 상태로 열립니다.</span>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
