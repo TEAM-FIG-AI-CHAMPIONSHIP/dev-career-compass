@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getExperienceCatalog, listJobs } from "@/lib/data";
 import { ExperienceForm } from "@/components/experience/ExperienceForm";
-import { PageHeader } from "@/components/ui/PageHeader";
+import { ArrowLeftIcon, PersonIcon } from "@/components/ui/icons";
+import { routes } from "@/lib/routes";
 
 type Props = { params: Promise<{ role: string }> };
 
@@ -17,25 +19,42 @@ export default async function MatchExperiencePage({ params }: Props) {
 
   return (
     <>
-      <PageHeader
-        crumbs={[
-          <span key="flow" className="text-[0.875rem] leading-[1.6] text-ink-soft">
-            경험 정보 입력
-          </span>,
-          <span key="role" className="text-[0.875rem] leading-[1.6] text-ink">
-            {job.name}
-          </span>,
-        ]}
-      />
+      <header className="flex flex-wrap items-center justify-between gap-3 border-b border-line px-4 py-4 sm:px-8 lg:px-20">
+        <Link
+          href={routes.home}
+          className="inline-flex items-center gap-1.5 text-[0.875rem] text-ink-soft no-underline hover:text-ink hover:no-underline"
+        >
+          <ArrowLeftIcon size={14} strokeWidth={1.7} />
+          처음으로
+        </Link>
+        <ol aria-label="진행 단계" className="flex items-center gap-2 text-[0.8125rem]">
+          <li className="text-ink-soft">1. 직무</li>
+          <li aria-hidden="true" className="text-line-strong">
+            →
+          </li>
+          <li className="text-ink-soft">2. GitHub</li>
+          <li aria-hidden="true" className="text-line-strong">
+            →
+          </li>
+          <li aria-current="step" className="font-semibold text-accent">
+            3. 경험
+          </li>
+        </ol>
+      </header>
 
       <main className="flex grow flex-col gap-11 px-4 py-12 sm:px-8 lg:px-20 lg:py-14">
         <div className="flex max-w-3xl flex-col gap-3">
+          <div className="flex size-11 items-center justify-center rounded-card bg-accent-tint text-accent">
+            <PersonIcon size={22} strokeWidth={1.5} />
+          </div>
           <h1 className="text-[1.75rem] leading-[1.4] font-semibold tracking-[-0.012em] text-pretty sm:text-[1.875rem]">
-            지금까지 해본 것을 골라주세요
+            경험 입력
           </h1>
           <p className="text-body text-ink-soft">
-            몇 개를 골라야 한다는 기준은 없습니다. 해당하는 것만 고르면 됩니다. 고른
-            내용은 이 브라우저에만 남고, 서버에는 저장하지 않습니다.
+            {job.name} 직무에서 맞는 회사를 찾기 위해 만들어 본 것을 선택해주세요
+          </p>
+          <p className="text-body-sm text-ink-muted">
+            입력값은 브라우저에 저장되며 서버에 전송되지 않습니다.
           </p>
         </div>
 
