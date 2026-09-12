@@ -1,0 +1,34 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Editors
+.idea/
+.vscode/
+
+# JavaScript and Next.js
+**/node_modules/
+**/.next/
+**/out/
+**/.vercel/
+**/coverage/
+
+# Environment variables
+**/.env*
+!**/.env.example
+
+# Python
+**/__pycache__/
+**/*.py[cod]
+**/.venv/
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+
+# Pipeline working data and collected source bodies
+data/raw/
+data/work/
+data/intermediate/
+
+# Logs
+**/*.log
