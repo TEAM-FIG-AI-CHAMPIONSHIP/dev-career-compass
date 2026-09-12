@@ -24,7 +24,8 @@ dev-career-compass/
 │       ├── app/
 │       │   ├── globals.css            디자인 토큰 (@theme)
 │       │   ├── layout.tsx             폰트, metadata
-│       │   ├── page.tsx               /                     S1 랜딩
+│       │   ├── page.tsx               /                     탐색 경로 선택
+│       │   ├── companies/page.tsx     /companies            S1 회사 선택
 │       │   ├── experience/page.tsx    /experience           S3 경험 입력
 │       │   ├── match/page.tsx         /match                S5 직무 목록
 │       │   │                          /match?job=backend    S6 역매칭 결과
@@ -98,7 +99,7 @@ dev-career-compass/
 
 회사 라우트가 루트에 있어 슬러그가 최상위 경로를 그대로 차지합니다. `match`라는 슬러그를 가진 회사가 생기면 그 회사 페이지는 영영 열리지 않습니다.
 
-지금 웹이 쓰는 최상위 경로는 `experience` · `match` · `ui` · `api` 넷입니다. 회사 슬러그를 정할 때 이 넷과 겹치지 않게 해야 하고, 앞으로 최상위 경로를 늘릴 때도 같은 확인이 필요합니다.
+지금 웹이 쓰는 최상위 경로는 `companies` · `experience` · `match` · `ui` · `api` 다섯입니다. 회사 슬러그를 정할 때 이 다섯과 겹치지 않게 해야 하고, 앞으로 최상위 경로를 늘릴 때도 같은 확인이 필요합니다.
 
 슬러그 형식은 소문자와 숫자, 구분은 하이픈입니다 (`^[a-z0-9]+(-[a-z0-9]+)*$`).
 

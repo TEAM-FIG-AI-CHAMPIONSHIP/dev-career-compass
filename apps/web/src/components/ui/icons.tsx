@@ -42,6 +42,24 @@ export const ArrowRightIcon = (p: IconProps) => (
   </Icon>
 );
 
+/** 랜딩 — 관심 회사를 먼저 고르는 흐름 */
+export const BuildingIcon = (p: IconProps) => (
+  <Icon {...p}>
+    <path d="M4.5 17V5.2c0-.7.5-1.2 1.2-1.2h6.1c.7 0 1.2.5 1.2 1.2V17" />
+    <path d="M13 8h1.8c.7 0 1.2.5 1.2 1.2V17" />
+    <path d="M3 17h14" />
+    <path d="M7.2 7h3.1M7.2 10h3.1M7.2 13h3.1" />
+  </Icon>
+);
+
+/** 랜딩 — 내 경험에서 출발하는 흐름 */
+export const PersonIcon = (p: IconProps) => (
+  <Icon {...p}>
+    <circle cx="10" cy="6.2" r="2.8" />
+    <path d="M4.8 17v-2.2c0-2.7 2.1-4.7 5.2-4.7s5.2 2 5.2 4.7V17" />
+  </Icon>
+);
+
 export const PlusIcon = (p: IconProps) => (
   <Icon {...p}>
     <path d="M10 4v12M4 10h12" />
