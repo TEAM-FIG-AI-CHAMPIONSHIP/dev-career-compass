@@ -20,8 +20,8 @@ const plexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "BeforeJoin",
-    template: "%s · BeforeJoin",
+    default: "Refactor.me",
+    template: "%s · Refactor.me",
   },
   description:
     "기업 기술 블로그와 뉴스, 채용 공고를 분석해 지금 만들 프로젝트를 근거와 함께 제안합니다.",

@@ -33,6 +33,6 @@ cd pipeline/experiments/job_postings_crawler
 
 `common/http_utils.py` 기본값입니다.
 
-- User-Agent: `BeforeJoinCrawler/1.0 (Wanted AI Hackathon project)` (ASCII만)
+- User-Agent: `Refactor.meCrawler/1.0 (Wanted AI Hackathon project)` (ASCII만)
 - 요청 사이 대기: 1초
 - robots가 막는 경로(`/apply`, `/o/*/apply`, `/api` on ninehire.site 등)는 요청하지 않습니다

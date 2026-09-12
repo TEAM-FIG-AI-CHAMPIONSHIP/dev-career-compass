@@ -5,7 +5,7 @@ import time
 import requests
 
 # HTTP 헤더는 latin-1만 허용하므로 한글("해커톤 프로젝트")을 그대로 보낼 수 없다.
-USER_AGENT = "BeforeJoinCrawler/1.0 (Wanted AI Hackathon project)"
+USER_AGENT = "Refactor.meCrawler/1.0 (Wanted AI Hackathon project)"
 
 HEADERS = {
     "User-Agent": USER_AGENT,

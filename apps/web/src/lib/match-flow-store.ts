@@ -9,7 +9,8 @@ export type MatchFlow = {
   repositories: string[];
 };
 
-const KEY = "beforejoin.match-flow.v1";
+const KEY = "refactor.me.match-flow.v1";
+const LEGACY_KEY = "beforejoin.match-flow.v1";
 const listeners = new Set<() => void>();
 
 let lastRaw: string | null = null;
@@ -22,7 +23,7 @@ function safeReturnTo(value: string | undefined, role: string): string {
 
 function readRaw(): string | null {
   try {
-    return window.sessionStorage.getItem(KEY);
+    return window.sessionStorage.getItem(KEY) ?? window.sessionStorage.getItem(LEGACY_KEY);
   } catch {
     return null;
   }
@@ -74,6 +75,7 @@ function emit(): void {
 function write(flow: MatchFlow): void {
   try {
     window.sessionStorage.setItem(KEY, JSON.stringify(flow));
+    window.sessionStorage.removeItem(LEGACY_KEY);
   } catch {
     // 저장소가 막혀도 기본 역매칭 경로로 흐름을 이어갈 수 있습니다.
   }
@@ -121,6 +123,7 @@ export function finishMatchFlow(role: string): {
 
   try {
     window.sessionStorage.removeItem(KEY);
+    window.sessionStorage.removeItem(LEGACY_KEY);
   } catch {
     // 다음 화면으로 가는 데 저장소 삭제 성공 여부는 영향을 주지 않습니다.
   }
