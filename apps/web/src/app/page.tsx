@@ -1,69 +1,77 @@
-import Image from "next/image";
+import Link from "next/link";
+import { getCompanyIndex, dataSource } from "@/lib/data";
+import { CompanyList } from "@/components/company/CompanyList";
+import { PageHeader, DataSourceNote } from "@/components/ui/PageHeader";
 
+/** S1 랜딩 — 회사를 고르면 그 자리에서 직무가 펼쳐집니다. */
 export default function Home() {
+  const index = getCompanyIndex();
+  const source = dataSource();
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <>
+      <PageHeader
+        right={
+          <span className="font-mono text-meta text-ink-muted">
+            최근 12개월 수집분
+          </span>
+        }
+      />
+
+      <main className="flex grow flex-col">
+        <div className="flex max-w-4xl flex-col gap-4 px-4 pt-12 pb-10 sm:px-8 lg:px-20 lg:pt-16">
+          <h1 className="text-[1.75rem] leading-[1.35] font-semibold tracking-[-0.015em] text-pretty sm:text-[2.375rem]">
+            이 회사 개발 조직이 반복해서 다루는 일을 보고,
+            <br className="hidden sm:inline" /> 지금 만들 것을 정하세요.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="max-w-2xl text-body text-ink-soft sm:text-base sm:leading-[1.8]">
+            기술 블로그와 채용 공고에서 그 조직이 실제로 붙잡고 있는 문제를
+            뽑아냅니다. 모든 제안에는 열어볼 수 있는 원문 근거가 붙습니다.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+
+        <section className="flex flex-col gap-4 px-4 sm:px-8 lg:px-20">
+          <div className="flex items-baseline justify-between border-b border-ink pb-2.5">
+            <h2 className="text-h3 font-semibold sm:text-[1.0625rem]">
+              관심 있는 회사를 고르세요
+            </h2>
+            <span className="font-mono text-[0.71875rem] text-ink-soft">
+              {index.companies.length}곳
+            </span>
+          </div>
+          <CompanyList companies={index.companies} />
+        </section>
+
+        <section className="px-4 py-10 sm:px-8 lg:px-20 lg:py-16">
+          <div className="flex flex-col items-start justify-between gap-5 rounded-card border border-line-strong bg-surface p-[26px] sm:flex-row sm:items-center">
+            <div className="flex flex-col gap-1.5">
+              <p className="text-[1.03125rem] leading-[1.55] font-semibold">
+                회사부터 정하기 어렵다면, 내가 만든 것부터 보여주세요
+              </p>
+              <p className="max-w-2xl text-[0.875rem] leading-[1.75] text-ink-soft">
+                직무 하나만 고르고 지금까지 해본 것을 체크하면, 어느 조직이 지금의
+                경험과 가까운지 되짚어 드립니다.
+              </p>
+            </div>
+            <Link
+              href="/match"
+              className="inline-flex min-h-11 shrink-0 items-center rounded-btn border border-accent bg-accent px-5 py-3 text-[0.875rem] leading-none font-medium text-white no-underline transition-colors hover:border-accent-ink hover:bg-accent-ink hover:no-underline"
+            >
+              내 경험부터 보기
+            </Link>
+          </div>
+        </section>
       </main>
-    </div>
+
+      <footer className="mt-auto">
+        <DataSourceNote source={source} />
+        <div className="border-t border-line px-4 py-4 sm:px-8 lg:px-20">
+          <p className="text-caption text-ink-muted">
+            수집한 글의 본문은 저장하거나 다시 싣지 않습니다. 제목과 발행일, 원문
+            링크만 보여드립니다.
+          </p>
+        </div>
+      </footer>
+    </>
   );
 }

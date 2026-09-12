@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "groups": [
+    {
+      "id": "project-kind",
+      "title": "무엇을 만들어 봤나요",
+      "caption": "프로젝트 종류",
+      "items": [
+        { "id": "crud", "label": "게시판·쇼핑몰 같은 CRUD 서비스" },
+        {
+          "id": "external-api",
+          "label": "외부 API를 붙인 서비스",
+          "description": "결제, 지도, 소셜 로그인 등"
+        },
+        {
+          "id": "deployed",
+          "label": "배포까지 해서 남이 써 봤다",
+          "description": "도메인이나 URL로 접근 가능한 상태"
+        },
+        { "id": "team", "label": "팀 프로젝트로 만들었다" }
+      ]
+    },
+    {
+      "id": "backend",
+      "title": "서버·백엔드 쪽으로 해본 것",
+      "caption": "고른 직무 기준으로 항목이 바뀝니다",
+      "appliesTo": ["backend"],
+      "items": [
+        { "id": "schema-design", "label": "직접 테이블을 설계하고 쿼리를 짰다" },
+        {
+          "id": "cache",
+          "label": "캐시를 넣어 응답을 줄여 봤다",
+          "description": "Redis, 로컬 캐시 등"
+        },
+        { "id": "async", "label": "메시지 큐나 비동기 처리를 써 봤다" },
+        { "id": "tests", "label": "테스트 코드를 붙여 봤다" },
+        { "id": "observability", "label": "로그나 지표를 남겨 문제를 찾아본 적 있다" }
+      ]
+    }
+  ],
+  "levels": [
+    {
+      "id": "ran",
+      "step": "STEP 1",
+      "title": "돌아가는 것까지",
+      "description": "로컬에서 기능이 동작합니다"
+    },
+    {
+      "id": "deployed",
+      "step": "STEP 2",
+      "title": "배포까지",
+      "description": "남이 접속해 써볼 수 있습니다"
+    },
+    {
+      "id": "fixed",
+      "step": "STEP 3",
+      "title": "문제를 만나 고치는 것까지",
+      "description": "터진 것을 찾아 고치고 기록을 남겼습니다"
+    }
+  ]
+}
