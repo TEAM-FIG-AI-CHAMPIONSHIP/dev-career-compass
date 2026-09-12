@@ -24,6 +24,11 @@
 **/.pytest_cache/
 **/.mypy_cache/
 **/.ruff_cache/
+**/*.egg-info/
+**/.coverage
+**/htmlcov/
+**/dist/
+**/build/
 
 # Pipeline working data and collected source bodies
 data/raw/
