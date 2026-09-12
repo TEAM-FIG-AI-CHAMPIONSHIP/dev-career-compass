@@ -1,26 +1,217 @@
 @import "tailwindcss";
 
+/* ---------------------------------------------------------------------------
+   BeforeJoin 디자인 토큰
+   design/Tokens.dc.html 아트보드가 원본입니다. 값을 바꾸려면 거기서 먼저 바꾸세요.
+
+   라이트가 기본이고 다크는 같은 이름으로 값만 바꿉니다. 그래서 컴포넌트에는
+   dark: 접두사가 거의 없습니다 — bg-surface 하나면 양쪽이 다 맞습니다.
+--------------------------------------------------------------------------- */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* 중립 */
+  --paper: #fbfbf9;
+  --surface: #ffffff;
+  --sunken: #f1f1ec;
+  --line: #e4e4df;
+  --line-strong: #d3d3cc;
+  --ink-muted: #8a909c;
+  --ink-soft: #646b78;
+  --ink: #16181d;
+
+  /* 악센트 — 단 한 색 */
+  --accent: #33528c;
+  --accent-ink: #243c69;
+  --accent-tint: #edf1f8;
+
+  /* 출처 구분 — 뉴스는 MVP 제외. 소스를 붙이면 --src-news 를 되살립니다. */
+  --src-blog: #3e5c8a;
+  --src-job: #4e7a52;
+
+  /* 경고 — 입력 오류, 실패 안내. 출처 색과 이름을 분리해 둡니다. */
+  --warn: #8a5a3e;
+  --warn-tint: #f7f0ea;
+
+  /* 역매칭 3단계 */
+  --stage-fit: #3f6e4a;
+  --stage-fit-edge: #4e7a52;
+  --stage-fit-tint: #edf4ee;
+  --stage-step: #8a6a2e;
+  --stage-step-edge: #8a6a2e;
+  --stage-step-tint: #f7f2e8;
+  --stage-far: #6b6f78;
+  --stage-far-edge: #a8acb4;
+  --stage-far-tint: #f1f1ec;
+
+  --raised: 0 1px 2px rgb(22 24 29 / 0.05);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* 시스템 설정이 다크일 때. [data-theme="light"]로 명시 고정하면 적용되지 않습니다. */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  :root:not([data-theme="light"]) {
+    --paper: #14161a;
+    --surface: #1b1e24;
+    --sunken: #22262d;
+    --line: #2c313a;
+    --line-strong: #3a4049;
+    --ink-muted: #6e7682;
+    --ink-soft: #98a0ac;
+    --ink: #eceff3;
+
+    --accent: #7ea0da;
+    --accent-ink: #a8c1e8;
+    --accent-tint: #1e2839;
+
+    --src-blog: #8fa9d2;
+    --src-job: #93bd97;
+
+    --warn: #d2a68f;
+    --warn-tint: #2a211b;
+
+    --stage-fit: #93bd97;
+    --stage-fit-edge: #4e7a52;
+    --stage-fit-tint: #1b2620;
+    --stage-step: #d4b478;
+    --stage-step-edge: #8a6a2e;
+    --stage-step-tint: #26221a;
+    --stage-far: #98a0ac;
+    --stage-far-edge: #3a4049;
+    --stage-far-tint: #22262d;
+
+    --raised: 0 1px 2px rgb(0 0 0 / 0.4);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* 사용자가 직접 다크로 고정했을 때 */
+:root[data-theme="dark"] {
+  --paper: #14161a;
+  --surface: #1b1e24;
+  --sunken: #22262d;
+  --line: #2c313a;
+  --line-strong: #3a4049;
+  --ink-muted: #6e7682;
+  --ink-soft: #98a0ac;
+  --ink: #eceff3;
+
+  --accent: #7ea0da;
+  --accent-ink: #a8c1e8;
+  --accent-tint: #1e2839;
+
+  --src-blog: #8fa9d2;
+  --src-job: #93bd97;
+
+  --warn: #d2a68f;
+  --warn-tint: #2a211b;
+
+  --stage-fit: #93bd97;
+  --stage-fit-edge: #4e7a52;
+  --stage-fit-tint: #1b2620;
+  --stage-step: #d4b478;
+  --stage-step-edge: #8a6a2e;
+  --stage-step-tint: #26221a;
+  --stage-far: #98a0ac;
+  --stage-far-edge: #3a4049;
+  --stage-far-tint: #22262d;
+
+  --raised: 0 1px 2px rgb(0 0 0 / 0.4);
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-sunken: var(--sunken);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink: var(--ink);
+
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-tint: var(--accent-tint);
+
+  --color-src-blog: var(--src-blog);
+  --color-src-job: var(--src-job);
+
+  --color-warn: var(--warn);
+  --color-warn-tint: var(--warn-tint);
+
+  --color-stage-fit: var(--stage-fit);
+  --color-stage-fit-edge: var(--stage-fit-edge);
+  --color-stage-fit-tint: var(--stage-fit-tint);
+  --color-stage-step: var(--stage-step);
+  --color-stage-step-edge: var(--stage-step-edge);
+  --color-stage-step-tint: var(--stage-step-tint);
+  --color-stage-far: var(--stage-far);
+  --color-stage-far-edge: var(--stage-far-edge);
+  --color-stage-far-tint: var(--stage-far-tint);
+
+  /* 폰트 — layout.tsx의 next/font 변수를 받습니다 */
+  --font-sans: var(--font-plex-kr), "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, SFMono-Regular, monospace;
+
+  /* 타이포 스케일 — 행간은 한글 기준으로 잡았습니다 */
+  --text-display: 1.875rem;        /* 30 */
+  --text-display--line-height: 1.35;
+  --text-display--letter-spacing: -0.01em;
+  --text-h1: 1.5rem;               /* 24 */
+  --text-h1--line-height: 1.45;
+  --text-h1--letter-spacing: -0.008em;
+  --text-h2: 1.1875rem;            /* 19 */
+  --text-h2--line-height: 1.5;
+  --text-h3: 1rem;                 /* 16 */
+  --text-h3--line-height: 1.6;
+  --text-body: 0.9375rem;          /* 15 */
+  --text-body--line-height: 1.75;
+  --text-body-sm: 0.84375rem;      /* 13.5 */
+  --text-body-sm--line-height: 1.7;
+  --text-caption: 0.78125rem;      /* 12.5 */
+  --text-caption--line-height: 1.6;
+  --text-meta: 0.75rem;            /* 12, 모노 전용 */
+  --text-meta--line-height: 1.5;
+  --text-meta--letter-spacing: 0.02em;
+
+  /* 라운드 — 문서처럼 보여야 해서 작게 씁니다 */
+  --radius-card: 4px;
+  --radius-btn: 6px;
+  --radius-pill: 999px;
+
+  --shadow-raised: var(--raised);
+}
+
+@layer base {
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  a:hover {
+    color: var(--accent-ink);
+    text-decoration: underline;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+@utility skeleton {
+  animation: bj-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes bj-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 0.28;
+  }
 }

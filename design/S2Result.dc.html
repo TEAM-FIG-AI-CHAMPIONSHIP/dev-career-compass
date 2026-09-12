@@ -1,0 +1,257 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #FBFBF9; color: #16181D;
+      font-family: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      -webkit-font-smoothing: antialiased; }
+    a { color: #33528C; text-decoration: none; }
+    a:hover { color: #243C69; text-decoration: underline; }
+  </style>
+</helmet>
+
+<div style="width: 1280px; min-height: 1560px; background: #FBFBF9; display: flex; flex-direction: column;">
+
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 20px 80px; border-bottom: 1px solid #E4E4DF;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="font-size: 17px; font-weight: 700; letter-spacing: -0.01em;">BeforeJoin</span>
+      <span style="color: #D3D3CC;">/</span>
+      <span style="font-size: 14px; color: #646B78; line-height: 1.6;">올리브영</span>
+      <span style="color: #D3D3CC;">·</span>
+      <span style="font-size: 14px; color: #16181D; line-height: 1.6;">서버·백엔드</span>
+    </div>
+    <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #8A909C;">근거 41건 · 2025.05 – 2026.04</span>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 48px; padding: 56px 80px 72px;">
+
+    <!-- 신규 제안 : 최상단 고정 -->
+    <div style="display: flex; flex-direction: column; gap: 18px;">
+      <div style="display: flex; align-items: baseline; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid #16181D;">
+        <h2 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.008em;">지금부터 만들면 좋을 것</h2>
+        <span style="font-size: 13.5px; color: #646B78; line-height: 1.7;">아직 만든 게 없다면 여기서 시작하세요</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; align-items: start;">
+
+        <div style="display: flex; flex-direction: column; gap: 12px; padding: 24px; background: #FFFFFF; border: 1px solid #D3D3CC; border-radius: 4px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="#33528C" stroke-width="1.6" stroke-linecap="round"><path d="M10 4v12M4 10h12"></path></svg>
+            <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.06em; color: #33528C;">NEW</span>
+          </div>
+          <h3 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.55; letter-spacing: -0.005em; text-wrap: pretty;">재고 차감 경합을 직접 만들어 깨뜨려 보기</h3>
+          <p style="margin: 0; font-size: 14.5px; line-height: 1.75; color: #3A3F49;">같은 상품 재고를 동시에 줄이는 요청을 몰아넣어 무엇이 깨지는지 재현하고, 낙관적 락과 비관적 락을 각각 적용해 어느 조건에서 어느 쪽이 유리했는지 기록으로 남깁니다.</p>
+          <div style="display: flex; flex-direction: column; gap: 6px; padding-top: 12px; border-top: 1px solid #E4E4DF;">
+            <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #646B78;">근거</span>
+            <a href="#" style="font-size: 13px; line-height: 1.65;">주문 피크 트래픽에서 재고가 음수가 된 이유</a>
+            <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #8A909C;">2026.04 · 블로그</span>
+          </div>
+          <span style="display: inline-flex; align-self: flex-start; align-items: center; gap: 6px; padding: 5px 11px; background: #EDF4EE; border: 1px solid #4E7A52; border-radius: 999px; font-size: 12.5px; color: #3F6E4A; line-height: 1.5;">
+            <svg width="13" height="13" viewBox="0 0 20 20" fill="none" stroke="#4E7A52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"></path></svg>
+            신입 공고에서도 요구됨
+          </span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px; padding: 24px; background: #FFFFFF; border: 1px solid #D3D3CC; border-radius: 4px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="#33528C" stroke-width="1.6" stroke-linecap="round"><path d="M10 4v12M4 10h12"></path></svg>
+            <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.06em; color: #33528C;">NEW</span>
+          </div>
+          <h3 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.55; letter-spacing: -0.005em; text-wrap: pretty;">매장 재고를 30초마다 맞추는 동기화 배치</h3>
+          <p style="margin: 0; font-size: 14.5px; line-height: 1.75; color: #3A3F49;">여러 매장 재고가 서로 다른 시점에 들어온다고 가정하고, 늦게 도착한 옛날 값이 최신 값을 덮어쓰지 않게 만드는 것이 핵심입니다.</p>
+          <div style="display: flex; flex-direction: column; gap: 6px; padding-top: 12px; border-top: 1px solid #E4E4DF;">
+            <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #646B78;">근거</span>
+            <a href="#" style="font-size: 13px; line-height: 1.65;">전국 매장 재고를 30초 안에 맞추기</a>
+            <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #8A909C;">2026.03 · 뉴스</span>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px; padding: 24px; background: #FFFFFF; border: 1px solid #D3D3CC; border-radius: 4px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="#33528C" stroke-width="1.6" stroke-linecap="round"><path d="M10 4v12M4 10h12"></path></svg>
+            <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.06em; color: #33528C;">NEW</span>
+          </div>
+          <h3 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.55; letter-spacing: -0.005em; text-wrap: pretty;">쿠폰과 적립금이 겹칠 때의 정산 규칙 세우기</h3>
+          <p style="margin: 0; font-size: 14.5px; line-height: 1.75; color: #3A3F49;">할인 수단이 두 개 이상 붙었을 때 최종 금액이 한 원도 어긋나지 않게 계산 순서를 고정하고, 그 규칙을 테스트로 못 박아 둡니다.</p>
+          <div style="display: flex; flex-direction: column; gap: 6px; padding-top: 12px; border-top: 1px solid #E4E4DF;">
+            <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #646B78;">근거</span>
+            <a href="#" style="font-size: 13px; line-height: 1.65;">할인 정책이 늘어날수록 정산이 틀어지던 문제</a>
+            <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #8A909C;">2025.11 · 블로그</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 심화 제안 -->
+    <div style="display: flex; flex-direction: column; gap: 18px;">
+      <div style="display: flex; align-items: baseline; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid #16181D;">
+        <h2 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.008em;">이미 만든 게 있다면</h2>
+        <span style="font-size: 13.5px; color: #646B78; line-height: 1.7;">버리지 말고 한 겹 더 파세요</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+
+        <div style="display: flex; align-items: flex-start; gap: 24px; padding: 22px 24px; background: #FFFFFF; border: 1px solid #E4E4DF; border-radius: 4px;">
+          <div style="width: 360px; flex-shrink: 0; display: flex; flex-direction: column; gap: 8px;">
+            <span style="font-size: 14px; line-height: 1.7; color: #646B78;">쇼핑몰 주문 API를 만들었다면</span>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="#33528C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M3 10h11"></path><path d="M11 6l4 4-4 4"></path></svg>
+              <span style="font-size: 15.5px; font-weight: 600; line-height: 1.6;">주문 실패를 되돌리는 보상 트랜잭션까지</span>
+            </div>
+          </div>
+          <p style="margin: 0; flex-grow: 1; font-size: 14.5px; line-height: 1.75; color: #3A3F49;">결제는 됐는데 재고 차감이 실패한 상황을 만들어 두고, 어디까지 자동으로 되돌리고 무엇을 사람이 처리할지를 코드와 문서로 나눠 정리합니다.</p>
+          <div style="width: 230px; flex-shrink: 0; display: flex; flex-direction: column; gap: 4px;">
+            <a href="#" style="font-size: 13px; line-height: 1.65;">결제와 재고를 분리한 뒤 생긴 정합성 문제</a>
+            <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #8A909C;">2026.01 · 블로그</span>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: flex-start; gap: 24px; padding: 22px 24px; background: #FFFFFF; border: 1px solid #E4E4DF; border-radius: 4px;">
+          <div style="width: 360px; flex-shrink: 0; display: flex; flex-direction: column; gap: 8px;">
+            <span style="font-size: 14px; line-height: 1.7; color: #646B78;">상품 목록 API에 페이지네이션을 붙였다면</span>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="#33528C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M3 10h11"></path><path d="M11 6l4 4-4 4"></path></svg>
+              <span style="font-size: 15.5px; font-weight: 600; line-height: 1.6;">재고가 실시간으로 바뀌어도 흔들리지 않는 목록으로</span>
+            </div>
+          </div>
+          <p style="margin: 0; flex-grow: 1; font-size: 14.5px; line-height: 1.75; color: #3A3F49;">스크롤하는 동안 품절이 생기면 목록이 밀리거나 같은 상품이 두 번 보입니다. 커서 기준으로 바꿔 그 현상이 사라지는지 직접 비교해 보세요.</p>
+          <div style="width: 230px; flex-shrink: 0; display: flex; flex-direction: column; gap: 4px;">
+            <a href="#" style="font-size: 13px; line-height: 1.65;">오프셋 페이지네이션을 걷어낸 기록</a>
+            <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #8A909C;">2025.09 · 블로그</span>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: flex-start; gap: 24px; padding: 22px 24px; background: #FFFFFF; border: 1px solid #E4E4DF; border-radius: 4px;">
+          <div style="width: 360px; flex-shrink: 0; display: flex; flex-direction: column; gap: 8px;">
+            <span style="font-size: 14px; line-height: 1.7; color: #646B78;">회원가입·로그인을 붙여 봤다면</span>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="#33528C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M3 10h11"></path><path d="M11 6l4 4-4 4"></path></svg>
+              <span style="font-size: 15.5px; font-weight: 600; line-height: 1.6;">같은 사람이 여러 기기에서 동시에 주문하는 상황까지</span>
+            </div>
+          </div>
+          <p style="margin: 0; flex-grow: 1; font-size: 14.5px; line-height: 1.75; color: #3A3F49;">한 계정이 두 기기에서 같은 쿠폰을 쓰면 어떻게 되는지 재현하고, 세션이 아니라 주문 쪽에서 막아야 하는 이유를 정리합니다.</p>
+          <div style="width: 230px; flex-shrink: 0; display: flex; flex-direction: column; gap: 4px;">
+            <a href="#" style="font-size: 13px; line-height: 1.65;">쿠폰 중복 사용을 막는 데 걸린 시간</a>
+            <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #8A909C;">2025.07 · 블로그</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 조직 영역 -->
+    <div style="display: flex; flex-direction: column; gap: 18px;">
+      <div style="display: flex; align-items: baseline; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid #D3D3CC;">
+        <h2 style="margin: 0; font-size: 19px; font-weight: 600;">이 조직이 반복해서 다루는 것</h2>
+        <span style="font-size: 13.5px; color: #646B78; line-height: 1.7;">회사 소개가 아니라, 실제로 쓴 글과 공고에서 세어 본 것입니다</span>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+        <div style="display: flex; align-items: center; gap: 10px; padding: 9px 16px; background: #FFFFFF; border: 1px solid #D3D3CC; border-radius: 999px;">
+          <span style="font-size: 14px; font-weight: 500; line-height: 1.5;">재고·주문 동시성</span>
+          <span style="width: 1px; height: 13px; background: #E4E4DF;"></span>
+          <span style="display: flex; align-items: center; gap: 5px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #3E5C8A;"><span style="width: 6px; height: 6px; border-radius: 999px; background: #3E5C8A;"></span>블로그 5</span>
+          <span style="display: flex; align-items: center; gap: 5px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #4E7A52;"><span style="width: 6px; height: 6px; border-radius: 999px; background: #4E7A52;"></span>공고 2</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; padding: 9px 16px; background: #FFFFFF; border: 1px solid #D3D3CC; border-radius: 999px;">
+          <span style="font-size: 14px; font-weight: 500; line-height: 1.5;">매장 재고 실시간 연동</span>
+          <span style="width: 1px; height: 13px; background: #E4E4DF;"></span>
+          <span style="display: flex; align-items: center; gap: 5px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #3E5C8A;"><span style="width: 6px; height: 6px; border-radius: 999px; background: #3E5C8A;"></span>블로그 3</span>
+          <span style="display: flex; align-items: center; gap: 5px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #8A5A3E;"><span style="width: 6px; height: 6px; border-radius: 999px; background: #8A5A3E;"></span>뉴스 2</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; padding: 9px 16px; background: #FFFFFF; border: 1px solid #D3D3CC; border-radius: 999px;">
+          <span style="font-size: 14px; font-weight: 500; line-height: 1.5;">결제·정산 정합성</span>
+          <span style="width: 1px; height: 13px; background: #E4E4DF;"></span>
+          <span style="display: flex; align-items: center; gap: 5px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #3E5C8A;"><span style="width: 6px; height: 6px; border-radius: 999px; background: #3E5C8A;"></span>블로그 4</span>
+          <span style="display: flex; align-items: center; gap: 5px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #4E7A52;"><span style="width: 6px; height: 6px; border-radius: 999px; background: #4E7A52;"></span>공고 1</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; padding: 9px 16px; background: #FFFFFF; border: 1px solid #D3D3CC; border-radius: 999px;">
+          <span style="font-size: 14px; font-weight: 500; line-height: 1.5;">상품 검색 색인</span>
+          <span style="width: 1px; height: 13px; background: #E4E4DF;"></span>
+          <span style="display: flex; align-items: center; gap: 5px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #3E5C8A;"><span style="width: 6px; height: 6px; border-radius: 999px; background: #3E5C8A;"></span>블로그 3</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 개인화 CTA -->
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 26px 28px; background: #EDF1F8; border: 1px solid #33528C; border-radius: 4px;">
+      <div style="display: flex; flex-direction: column; gap: 6px;">
+        <div style="font-size: 16.5px; font-weight: 600; line-height: 1.55;">내 경험을 넣으면 더 정확해져요</div>
+        <p style="margin: 0; font-size: 14px; line-height: 1.75; color: #3A3F49; max-width: 660px;">해본 것을 몇 개 체크하면 위 제안 중에서 지금 당신에게 맞는 한 걸음만 남깁니다. 선택한 값은 이 브라우저에만 남고 서버로 보내지 않습니다.</p>
+      </div>
+      <button style="font: inherit; flex-shrink: 0; font-size: 14px; font-weight: 500; line-height: 1; padding: 13px 20px; min-height: 44px; color: #FFFFFF; background: #33528C; border: 1px solid #33528C; border-radius: 6px; cursor: pointer;">내 경험 넣기</button>
+    </div>
+
+    <!-- 근거 타임라인 -->
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <div style="display: flex; align-items: baseline; gap: 12px;">
+        <h2 style="margin: 0; font-size: 19px; font-weight: 600;">근거</h2>
+        <span style="font-size: 13.5px; color: #646B78; line-height: 1.7;">위 제안이 어느 글에서 나왔는지 직접 확인하세요</span>
+      </div>
+
+      <div style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #E4E4DF; border-radius: 4px;">
+        <div onClick="{{toggle}}" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 22px; min-height: 44px; cursor: pointer; border-bottom: 1px solid {{headBorder}};">
+          <div style="display: flex; align-items: baseline; gap: 12px;">
+            <span style="font-size: 15px; font-weight: 500; line-height: 1.6;">근거 41건</span>
+            <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #646B78;">2025.05 – 2026.04</span>
+            <span style="font-size: 13px; color: #8A909C; line-height: 1.7;">{{hint}}</span>
+          </div>
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#646B78" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="{{chevron}}"></path></svg>
+        </div>
+
+        <sc-if value="{{open}}" hint-placeholder-val="{{ true }}">
+          <div style="display: flex; flex-direction: column;">
+            <sc-for list="{{items}}" as="it" hint-placeholder-count="6">
+              <div style="display: flex; gap: 18px; padding: 15px 22px; border-bottom: 1px solid #F1F1EC;">
+                <span style="width: 64px; flex-shrink: 0; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; line-height: 1.9; color: #646B78;">{{it.date}}</span>
+                <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 3px;">
+                  <a href="#" style="font-size: 14.5px; line-height: 1.7;">{{it.title}}</a>
+                </div>
+                <span style="flex-shrink: 0; display: flex; align-items: center; gap: 6px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; line-height: 1.9; color: {{it.color}};"><span style="width: 6px; height: 6px; border-radius: 999px; background: {{it.color}};"></span>{{it.source}}</span>
+                <svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="#8A909C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 4px;"><path d="M8.5 5H5v10h10v-3.5"></path><path d="M12 4h4v4"></path><path d="M16 4l-6 6"></path></svg>
+              </div>
+            </sc-for>
+            <div style="padding: 15px 22px;">
+              <span style="font-size: 13px; line-height: 1.7; color: #8A909C;">본문은 싣지 않습니다. 제목과 발행일, 원문 링크까지만 보여드립니다.</span>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1280,"height":1560}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var self = this;
+    var open = !!(this.state && this.state.open);
+    var items = [
+      { date: '2026.04', title: '주문 피크 트래픽에서 재고가 음수가 된 이유', source: '기술 블로그', color: '#3E5C8A' },
+      { date: '2026.03', title: '전국 매장 재고를 30초 안에 맞추기', source: '뉴스', color: '#8A5A3E' },
+      { date: '2026.02', title: '백엔드 엔지니어 (주문·재고 도메인)', source: '채용 공고', color: '#4E7A52' },
+      { date: '2026.01', title: '결제와 재고를 분리한 뒤 생긴 정합성 문제', source: '기술 블로그', color: '#3E5C8A' },
+      { date: '2025.11', title: '할인 정책이 늘어날수록 정산이 틀어지던 문제', source: '기술 블로그', color: '#3E5C8A' },
+      { date: '2025.09', title: '오프셋 페이지네이션을 걷어낸 기록', source: '기술 블로그', color: '#3E5C8A' },
+      { date: '2025.07', title: '쿠폰 중복 사용을 막는 데 걸린 시간', source: '기술 블로그', color: '#3E5C8A' }
+    ];
+    return {
+      open: open,
+      items: items,
+      toggle: function () { self.setState({ open: !open }); },
+      chevron: open ? 'M5 12l5-5 5 5' : 'M5 8l5 5 5-5',
+      hint: open ? '' : '펼쳐서 원문 보기',
+      headBorder: open ? '#E4E4DF' : 'transparent'
+    };
+  }
+}
+</script>
+</body>
+</html>

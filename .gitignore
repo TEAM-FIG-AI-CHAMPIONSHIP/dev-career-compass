@@ -37,3 +37,8 @@ data/intermediate/
 
 # Logs
 **/*.log
+
+# 디자인 캔버스 생성물 (편집기 코드가 통째로 들어간 2.5MB 파일)
+# 원본은 design/*.dc.html 과 design/canvas.json 입니다.
+design/*.html
+!design/*.dc.html

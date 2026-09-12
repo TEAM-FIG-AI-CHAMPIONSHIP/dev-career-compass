@@ -1,0 +1,61 @@
+{
+  "pages": [
+    { "id": "screens", "name": "화면 흐름 S1–S6" },
+    { "id": "system", "name": "디자인 시스템" }
+  ],
+  "artboards": [
+    { "file": "Tokens.dc.html", "page": "system", "title": "토큰", "x": 0, "y": 0, "w": 1120, "h": 1900 },
+    { "file": "Components.dc.html", "page": "system", "title": "컴포넌트", "x": 1240, "y": 0, "w": 1120, "h": 2660 },
+
+    { "file": "Main.dc.html", "page": "screens", "title": "S1 랜딩", "x": 0, "y": 0, "w": 1280, "h": 1240, "is_interactive": true },
+    { "file": "S2Result.dc.html", "page": "screens", "title": "S2 결과 · 개인화 전", "x": 1400, "y": 0, "w": 1280, "h": 2180, "is_interactive": true },
+    { "file": "S3Experience.dc.html", "page": "screens", "title": "S3 경험 입력", "x": 2800, "y": 0, "w": 1280, "h": 1760, "is_interactive": true },
+
+    { "file": "S4Personalized.dc.html", "page": "screens", "title": "S4 개인화 결과", "x": 0, "y": 2340, "w": 1280, "h": 1460 },
+    { "file": "S5Reverse.dc.html", "page": "screens", "title": "S5 역매칭 · 직무 선택", "x": 1400, "y": 2340, "w": 1280, "h": 1100 },
+    { "file": "S6ReverseResult.dc.html", "page": "screens", "title": "S6 역매칭 결과", "x": 2800, "y": 2340, "w": 1280, "h": 1640 }
+  ],
+  "annotations": [
+    {
+      "id": "note-system-no-gauge",
+      "page": "system",
+      "x": 1240,
+      "y": -200,
+      "w": 460,
+      "text": "프로그레스 바 · 게이지 · 매치율 링 · 별점은 일부러 만들지 않았습니다.\n점수·퍼센트·순위를 쓰지 않기로 한 조건 때문입니다. 팔레트에 있으면 결국 누군가 씁니다."
+    },
+    {
+      "id": "note-system-tokens",
+      "page": "system",
+      "x": 0,
+      "y": -200,
+      "w": 460,
+      "text": "여기 값이 그대로 apps/web/src/app/globals.css 의 Tailwind v4 @theme 블록으로 들어갑니다.\n다크 스케일은 같은 이름으로 쌍을 맞춰 뒀습니다."
+    },
+    {
+      "id": "note-screens-flow",
+      "page": "screens",
+      "x": 0,
+      "y": -230,
+      "w": 440,
+      "text": "기본 흐름 : S1 → S2 → S3 → S4\n역매칭 흐름 : S1 → S5 → S3 → S6 → S2\n\nS3 경험 입력 화면은 두 흐름이 그대로 같이 씁니다. 한 번 입력하면 다른 조합에서도 다시 묻지 않습니다."
+    },
+    {
+      "id": "note-screens-order",
+      "page": "screens",
+      "x": 1400,
+      "y": -230,
+      "w": 440,
+      "text": "S2의 세로 순서가 제품의 주장입니다.\n제안이 맨 위, 조직 영역은 그 아래, 근거 타임라인은 접힌 채로 맨 끝.\n\n이 순서는 바뀌면 안 되는 조건입니다."
+    },
+    {
+      "id": "note-screens-s6",
+      "page": "screens",
+      "x": 2800,
+      "y": 2110,
+      "w": 440,
+      "text": "3단계는 항상 셋 다 보여줍니다. \"지금은 거리가 있어요\"를 비우지 않습니다.\n세 번째 단계를 빨강이 아니라 회색으로 둔 것은, 실패가 아니라 순서의 문제이기 때문입니다."
+    }
+  ],
+  "launch": { "view": "canvas", "page": "screens" }
+}

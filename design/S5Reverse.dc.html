@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #FBFBF9; color: #16181D;
+      font-family: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      -webkit-font-smoothing: antialiased; }
+    a { color: #33528C; text-decoration: none; }
+    a:hover { color: #243C69; text-decoration: underline; }
+  </style>
+</helmet>
+
+<div style="width: 1280px; min-height: 1000px; background: #FBFBF9; display: flex; flex-direction: column;">
+
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 20px 80px; border-bottom: 1px solid #E4E4DF;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="font-size: 17px; font-weight: 700; letter-spacing: -0.01em;">BeforeJoin</span>
+      <span style="color: #D3D3CC;">/</span>
+      <span style="font-size: 14px; color: #16181D; line-height: 1.6;">내 경험부터 보기</span>
+    </div>
+    <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #8A909C;">1 / 2 단계</span>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 40px; padding: 64px 80px 72px;">
+
+    <div style="display: flex; flex-direction: column; gap: 12px; max-width: 780px;">
+      <h1 style="margin: 0; font-size: 32px; font-weight: 600; line-height: 1.4; letter-spacing: -0.014em; text-wrap: pretty;">어떤 직무를 찾고 있나요</h1>
+      <p style="margin: 0; font-size: 15px; line-height: 1.8; color: #3A3F49;">직무를 고르고 해본 것을 체크하면, 지금 경험과 가까운 조직부터 되짚어 드립니다. 회사를 먼저 정하지 않아도 됩니다.</p>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <div style="display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 10px; border-bottom: 1px solid #16181D;">
+        <h2 style="margin: 0; font-size: 17px; font-weight: 600;">직무</h2>
+        <span style="font-size: 13px; color: #646B78; line-height: 1.7;">근거가 충분히 쌓인 회사가 3곳 이상인 직무만 보여드립니다</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+
+        <div style="display: flex; align-items: center; gap: 20px; padding: 20px 24px; min-height: 44px; background: #FFFFFF; border: 1px solid #16181D; border-radius: 4px; cursor: pointer;">
+          <span style="width: 200px; flex-shrink: 0; font-size: 17px; font-weight: 600; line-height: 1.5;">서버·백엔드</span>
+          <span style="flex-grow: 1; font-size: 14px; line-height: 1.7; color: #646B78;">동시성, 정합성, 트래픽 대응을 반복해서 다루는 조직이 많습니다</span>
+          <span style="flex-shrink: 0; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #16181D;">12곳</span>
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#16181D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M4 10h11"></path><path d="M11 6l4 4-4 4"></path></svg>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 20px; padding: 20px 24px; min-height: 44px; background: #FBFBF9; border: 1px solid #E4E4DF; border-radius: 4px; cursor: pointer;">
+          <span style="width: 200px; flex-shrink: 0; font-size: 17px; font-weight: 600; line-height: 1.5;">웹 프론트엔드</span>
+          <span style="flex-grow: 1; font-size: 14px; line-height: 1.7; color: #646B78;">렌더링 성능, 디자인 시스템, 접근성 쪽 글이 두텁습니다</span>
+          <span style="flex-shrink: 0; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #646B78;">9곳</span>
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#8A909C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M4 10h11"></path><path d="M11 6l4 4-4 4"></path></svg>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 20px; padding: 20px 24px; min-height: 44px; background: #FBFBF9; border: 1px solid #E4E4DF; border-radius: 4px; cursor: pointer;">
+          <span style="width: 200px; flex-shrink: 0; font-size: 17px; font-weight: 600; line-height: 1.5;">데이터·AI</span>
+          <span style="flex-grow: 1; font-size: 14px; line-height: 1.7; color: #646B78;">추천, 검색 품질, 파이프라인 운영이 주로 반복됩니다</span>
+          <span style="flex-shrink: 0; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #646B78;">7곳</span>
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#8A909C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M4 10h11"></path><path d="M11 6l4 4-4 4"></path></svg>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 20px; padding: 20px 24px; min-height: 44px; background: #FBFBF9; border: 1px solid #E4E4DF; border-radius: 4px; cursor: pointer;">
+          <span style="width: 200px; flex-shrink: 0; font-size: 17px; font-weight: 600; line-height: 1.5;">모바일</span>
+          <span style="flex-grow: 1; font-size: 14px; line-height: 1.7; color: #646B78;">앱 성능, 오프라인 동작, 배포 주기가 반복 주제입니다</span>
+          <span style="flex-shrink: 0; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #646B78;">4곳</span>
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#8A909C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M4 10h11"></path><path d="M11 6l4 4-4 4"></path></svg>
+        </div>
+
+      </div>
+      <span style="font-size: 13px; line-height: 1.7; color: #8A909C;">회사 수가 많은 순서로 놓았습니다. 순위나 추천이 아니라 우리가 가진 근거의 양입니다.</span>
+    </div>
+
+    <!-- 2단계 미리보기 -->
+    <div style="display: flex; gap: 24px; padding: 28px; background: #FFFFFF; border: 1px solid #D3D3CC; border-radius: 4px;">
+      <div style="width: 44px; height: 44px; flex-shrink: 0; background: #F1F1EC; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 15px; font-weight: 500; color: #646B78;">2</div>
+      <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 14px;">
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 16.5px; font-weight: 600; line-height: 1.55;">그다음 해본 것을 체크합니다</span>
+          <p style="margin: 0; font-size: 14px; line-height: 1.75; color: #646B78; max-width: 660px;">회사를 골랐을 때와 똑같은 입력 화면을 씁니다. 이미 입력한 적이 있다면 그대로 불러오니 다시 고르지 않아도 됩니다.</p>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <span style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 13px; background: #FBFBF9; border: 1px solid #E4E4DF; border-radius: 999px; font-size: 13px; color: #646B78; line-height: 1.5;">
+            <span style="width: 14px; height: 14px; border: 1px solid #8A909C; border-radius: 2.5px;"></span>
+            프로젝트 종류
+          </span>
+          <span style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 13px; background: #FBFBF9; border: 1px solid #E4E4DF; border-radius: 999px; font-size: 13px; color: #646B78; line-height: 1.5;">
+            <span style="width: 14px; height: 14px; border: 1px solid #8A909C; border-radius: 2.5px;"></span>
+            직무별 경험
+          </span>
+          <span style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 13px; background: #FBFBF9; border: 1px solid #E4E4DF; border-radius: 999px; font-size: 13px; color: #646B78; line-height: 1.5;">
+            <span style="width: 14px; height: 14px; border: 1px solid #8A909C; border-radius: 2.5px;"></span>
+            진행 수준
+          </span>
+          <span style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 13px; background: #FBFBF9; border: 1px dashed #D3D3CC; border-radius: 999px; font-size: 13px; color: #8A909C; line-height: 1.5;">GitHub 저장소 · 선택</span>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 9px; align-self: center; flex-shrink: 0; padding-left: 24px; border-left: 1px solid #E4E4DF;">
+        <svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="#3F6E4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2.8l6 2.4v4.2c0 3.9-2.5 6.3-6 7.4-3.5-1.1-6-3.5-6-7.4V5.2l6-2.4z"></path></svg>
+        <span style="font-size: 13px; line-height: 1.7; color: #3A3F49;">서버에<br>저장하지 않습니다</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

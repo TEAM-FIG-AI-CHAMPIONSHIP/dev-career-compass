@@ -1,0 +1,217 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #FBFBF9; color: #16181D;
+      font-family: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      -webkit-font-smoothing: antialiased; }
+    a { color: #33528C; text-decoration: none; }
+    a:hover { color: #243C69; text-decoration: underline; }
+    .bj-opt { transition: border-color 0.12s ease; }
+    .bj-opt:hover { border-color: #8A909C; }
+  </style>
+</helmet>
+
+<div style="width: 1280px; min-height: 1400px; background: #FBFBF9; display: flex; flex-direction: column;">
+
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 20px 80px; border-bottom: 1px solid #E4E4DF;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="font-size: 17px; font-weight: 700; letter-spacing: -0.01em;">BeforeJoin</span>
+      <span style="color: #D3D3CC;">/</span>
+      <span style="font-size: 14px; color: #646B78; line-height: 1.6;">올리브영 · 서버·백엔드</span>
+      <span style="color: #D3D3CC;">/</span>
+      <span style="font-size: 14px; color: #16181D; line-height: 1.6;">내 경험</span>
+    </div>
+    <button style="font: inherit; font-size: 13.5px; line-height: 1; padding: 10px 14px; color: #646B78; background: transparent; border: 1px solid transparent; border-radius: 6px; cursor: pointer;">입력 지우기</button>
+  </div>
+
+  <div style="display: flex; gap: 48px; padding: 56px 80px 72px; align-items: flex-start;">
+
+    <!-- 본문 -->
+    <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 44px; max-width: 760px;">
+
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <h1 style="margin: 0; font-size: 30px; font-weight: 600; line-height: 1.4; letter-spacing: -0.012em; text-wrap: pretty;">지금까지 해본 것을 골라주세요</h1>
+        <p style="margin: 0; font-size: 15px; line-height: 1.8; color: #3A3F49;">몇 개를 골라야 한다는 기준은 없습니다. 해당하는 것만 고르면 됩니다. 고른 내용은 이 브라우저에만 남고, 서버에는 저장하지 않습니다.</p>
+      </div>
+
+      <sc-for list="{{groups}}" as="g" hint-placeholder-count="2">
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; align-items: baseline; gap: 10px; padding-bottom: 10px; border-bottom: 1px solid #16181D;">
+            <h2 style="margin: 0; font-size: 18px; font-weight: 600;">{{g.title}}</h2>
+            <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #8A5A3E;">필수</span>
+            <span style="font-size: 13px; color: #646B78; line-height: 1.7;">{{g.caption}}</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <sc-for list="{{g.items}}" as="it" hint-placeholder-count="5">
+              <div class="bj-opt" onClick="{{it.toggle}}" style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; min-height: 44px; background: #FFFFFF; border: 1px solid {{it.border}}; border-radius: 4px; cursor: pointer;">
+                <span style="width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px; border: 1px solid {{it.boxBorder}}; border-radius: 3px; background: {{it.boxBg}}; display: flex; align-items: center; justify-content: center;">
+                  <sc-if value="{{it.checked}}" hint-placeholder-val="{{ true }}">
+                    <svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"></path></svg>
+                  </sc-if>
+                </span>
+                <span style="display: flex; flex-direction: column; gap: 3px;">
+                  <span style="font-size: 14.5px; line-height: 1.7; font-weight: {{it.weight}};">{{it.label}}</span>
+                  <sc-if value="{{it.hasDesc}}" hint-placeholder-val="{{ true }}">
+                    <span style="font-size: 12.5px; line-height: 1.6; color: #646B78;">{{it.desc}}</span>
+                  </sc-if>
+                </span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+
+      <!-- 진행 수준 -->
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <div style="display: flex; align-items: baseline; gap: 10px; padding-bottom: 10px; border-bottom: 1px solid #16181D;">
+          <h2 style="margin: 0; font-size: 18px; font-weight: 600;">가장 많이 판 프로젝트는 어디까지 갔나요</h2>
+          <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #8A5A3E;">필수</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px;">
+          <sc-for list="{{levels}}" as="lv" hint-placeholder-count="3">
+            <div class="bj-opt" onClick="{{lv.pick}}" style="display: flex; flex-direction: column; gap: 7px; padding: 18px; background: {{lv.bg}}; border: 1px solid {{lv.border}}; border-radius: 4px; cursor: pointer;">
+              <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: {{lv.stepColor}};">{{lv.step}}</span>
+              <span style="font-size: 15px; font-weight: 600; line-height: 1.6; color: {{lv.titleColor}};">{{lv.title}}</span>
+              <span style="font-size: 13px; line-height: 1.7; color: {{lv.descColor}};">{{lv.desc}}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <!-- 저장소 -->
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <div style="display: flex; align-items: baseline; gap: 10px; padding-bottom: 10px; border-bottom: 1px solid #D3D3CC;">
+          <h2 style="margin: 0; font-size: 18px; font-weight: 600;">GitHub 저장소</h2>
+          <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #8A909C;">선택 · 최대 3개</span>
+          <span style="font-size: 13px; color: #646B78; line-height: 1.7;">README만 읽어 경험의 깊이를 가늠합니다</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <div style="display: flex; align-items: center; gap: 10px; padding: 12px 14px; min-height: 44px; background: #FFFFFF; border: 1px solid #D3D3CC; border-radius: 4px;">
+            <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #646B78;">github.com/</span>
+            <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13.5px; color: #16181D;">jiwon-k/order-api</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; padding: 12px 14px; min-height: 44px; background: #FFFFFF; border: 1px solid #D3D3CC; border-radius: 4px;">
+            <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #8A909C;">github.com/</span>
+            <span style="font-size: 14px; color: #8A909C; line-height: 1.6;">사용자명/저장소</span>
+          </div>
+          <button style="font: inherit; align-self: flex-start; display: flex; align-items: center; gap: 7px; font-size: 13.5px; line-height: 1; padding: 11px 14px; min-height: 44px; color: #33528C; background: transparent; border: 1px dashed #D3D3CC; border-radius: 6px; cursor: pointer;">
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="#33528C" stroke-width="1.7" stroke-linecap="round"><path d="M10 4v12M4 10h12"></path></svg>
+            저장소 추가
+          </button>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 14px; padding-top: 8px;">
+        <button style="font: inherit; font-size: 15px; font-weight: 500; line-height: 1; padding: 15px 26px; min-height: 48px; color: #FFFFFF; background: #33528C; border: 1px solid #33528C; border-radius: 6px; cursor: pointer;">내 경험에 맞춘 결과 보기</button>
+        <span style="font-size: 13px; line-height: 1.7; color: #646B78;">보통 10초 안에 끝납니다</span>
+      </div>
+
+    </div>
+
+    <!-- 사이드 -->
+    <div style="width: 320px; flex-shrink: 0; display: flex; flex-direction: column; gap: 14px; position: sticky; top: 40px;">
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px; background: #FFFFFF; border: 1px solid #D3D3CC; border-radius: 4px;">
+        <div style="display: flex; align-items: center; gap: 9px;">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#3F6E4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2.8l6 2.4v4.2c0 3.9-2.5 6.3-6 7.4-3.5-1.1-6-3.5-6-7.4V5.2l6-2.4z"></path></svg>
+          <span style="font-size: 14.5px; font-weight: 600; line-height: 1.6;">서버에 저장하지 않습니다</span>
+        </div>
+        <ul style="margin: 0; padding-left: 17px; display: flex; flex-direction: column; gap: 8px;">
+          <li style="font-size: 13.5px; line-height: 1.75; color: #3A3F49;">선택한 항목은 이 브라우저에만 남습니다. 다른 회사를 볼 때 다시 쓰이고, 언제든 지울 수 있습니다.</li>
+          <li style="font-size: 13.5px; line-height: 1.75; color: #3A3F49;">README는 공개 저장소만 읽고, 원문을 저장하지 않습니다.</li>
+          <li style="font-size: 13.5px; line-height: 1.75; color: #3A3F49;">저장소를 채점하거나 첨삭하지 않습니다.</li>
+          <li style="font-size: 13.5px; line-height: 1.75; color: #3A3F49;">공유 링크에는 이 입력이 들어가지 않습니다.</li>
+        </ul>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 18px 22px; background: #F1F1EC; border-radius: 4px;">
+        <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #646B78;">고른 항목</span>
+        <span style="font-size: 20px; font-weight: 600; line-height: 1.4;">{{pickedLabel}}</span>
+        <span style="font-size: 13px; line-height: 1.7; color: #646B78;">적게 골라도 결과는 나옵니다. 최소 개수를 강제하지 않습니다.</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1280,"height":1400}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var self = this;
+    var defaults = { crud: true, api: true, deploy: false, team: true, db: true, cache: false, queue: false, test: true, monitor: false };
+    var checked = (this.state && this.state.checked) ? this.state.checked : defaults;
+    var level = (this.state && this.state.level) ? this.state.level : 'deployed';
+
+    function build(title, caption, items) {
+      return {
+        title: title, caption: caption,
+        items: items.map(function (it) {
+          var on = !!checked[it.id];
+          return {
+            id: it.id, label: it.label, desc: it.desc || '', hasDesc: !!it.desc,
+            checked: on,
+            weight: on ? '500' : '400',
+            border: on ? '#16181D' : '#E4E4DF',
+            boxBorder: on ? '#16181D' : '#8A909C',
+            boxBg: on ? '#16181D' : '#FFFFFF',
+            toggle: function () {
+              var next = {};
+              for (var k in checked) { next[k] = checked[k]; }
+              next[it.id] = !on;
+              self.setState({ checked: next, level: level });
+            }
+          };
+        })
+      };
+    }
+
+    var groups = [
+      build('무엇을 만들어 봤나요', '프로젝트 종류', [
+        { id: 'crud', label: '게시판·쇼핑몰 같은 CRUD 서비스' },
+        { id: 'api', label: '외부 API를 붙인 서비스', desc: '결제, 지도, 소셜 로그인 등' },
+        { id: 'deploy', label: '배포까지 해서 남이 써 봤다', desc: '도메인이나 URL로 접근 가능한 상태' },
+        { id: 'team', label: '팀 프로젝트로 만들었다' }
+      ]),
+      build('서버·백엔드 쪽으로 해본 것', '고른 직무 기준으로 항목이 바뀝니다', [
+        { id: 'db', label: '직접 테이블을 설계하고 쿼리를 짰다' },
+        { id: 'cache', label: '캐시를 넣어 응답을 줄여 봤다', desc: 'Redis, 로컬 캐시 등' },
+        { id: 'queue', label: '메시지 큐나 비동기 처리를 써 봤다' },
+        { id: 'test', label: '테스트 코드를 붙여 봤다' },
+        { id: 'monitor', label: '로그나 지표를 남겨 문제를 찾아본 적 있다' }
+      ])
+    ];
+
+    var levelDefs = [
+      { id: 'ran', step: 'STEP 1', title: '돌아가는 것까지', desc: '로컬에서 기능이 동작합니다' },
+      { id: 'deployed', step: 'STEP 2', title: '배포까지', desc: '남이 접속해 써볼 수 있습니다' },
+      { id: 'fixed', step: 'STEP 3', title: '문제를 만나 고치는 것까지', desc: '터진 것을 찾아 고치고 기록을 남겼습니다' }
+    ];
+    var levels = levelDefs.map(function (lv) {
+      var on = level === lv.id;
+      return {
+        id: lv.id, step: lv.step, title: lv.title, desc: lv.desc,
+        bg: on ? '#16181D' : '#FFFFFF',
+        border: on ? '#16181D' : '#E4E4DF',
+        stepColor: on ? '#98A0AC' : '#8A909C',
+        titleColor: on ? '#FFFFFF' : '#16181D',
+        descColor: on ? '#C3C9D2' : '#646B78',
+        pick: function () { self.setState({ checked: checked, level: lv.id }); }
+      };
+    });
+
+    var count = 0;
+    for (var k in checked) { if (checked[k]) { count = count + 1; } }
+
+    return { groups: groups, levels: levels, pickedLabel: count + '개' };
+  }
+}
+</script>
+</body>
+</html>

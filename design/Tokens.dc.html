@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #FBFBF9; color: #16181D;
+      font-family: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      -webkit-font-smoothing: antialiased; }
+    a { color: #33528C; text-decoration: none; }
+    a:hover { color: #243C69; text-decoration: underline; }
+  </style>
+</helmet>
+
+<div style="width: 1120px; padding: 56px 56px 72px; background: #FBFBF9;">
+
+  <div style="display: flex; flex-direction: column; gap: 8px; padding-bottom: 28px; border-bottom: 1px solid #16181D;">
+    <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; color: #646B78;">DESIGN TOKENS</div>
+    <h1 style="margin: 0; font-size: 30px; font-weight: 600; line-height: 1.35; letter-spacing: -0.01em; text-wrap: pretty;">BeforeJoin 디자인 토큰</h1>
+    <p style="margin: 0; font-size: 15px; line-height: 1.75; color: #3A3F49; max-width: 620px;">근거와 출처가 신뢰감 있게 읽히는 것이 이 시스템의 목적입니다. 장식보다 정보 밀도와 한글 가독성을 우선합니다. Tailwind v4 <code style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; background: #F1F1EC; padding: 1px 5px; border-radius: 3px;">@theme</code> 블록으로 그대로 옮길 수 있게 이름을 붙였습니다.</p>
+  </div>
+
+  <!-- 컬러 -->
+  <div style="display: flex; flex-direction: column; gap: 24px; padding-top: 40px;">
+    <div style="display: flex; align-items: baseline; gap: 12px;">
+      <h2 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.005em;">컬러</h2>
+      <span style="font-size: 13px; color: #646B78; line-height: 1.6;">채도를 낮춰 종이처럼 읽히게 하고, 악센트는 한 색만 씁니다.</span>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.06em; color: #646B78;">NEUTRAL / LIGHT</div>
+      <div style="display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 10px;">
+        <div style="display: flex; flex-direction: column; gap: 7px;"><div style="height: 68px; background: #FBFBF9; border: 1px solid #D3D3CC; border-radius: 4px;"></div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #16181D;">paper</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #8A909C;">#FBFBF9</div></div>
+        <div style="display: flex; flex-direction: column; gap: 7px;"><div style="height: 68px; background: #FFFFFF; border: 1px solid #D3D3CC; border-radius: 4px;"></div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #16181D;">surface</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #8A909C;">#FFFFFF</div></div>
+        <div style="display: flex; flex-direction: column; gap: 7px;"><div style="height: 68px; background: #F1F1EC; border: 1px solid #E4E4DF; border-radius: 4px;"></div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #16181D;">sunken</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #8A909C;">#F1F1EC</div></div>
+        <div style="display: flex; flex-direction: column; gap: 7px;"><div style="height: 68px; background: #E4E4DF; border-radius: 4px;"></div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #16181D;">line</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #8A909C;">#E4E4DF</div></div>
+        <div style="display: flex; flex-direction: column; gap: 7px;"><div style="height: 68px; background: #D3D3CC; border-radius: 4px;"></div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #16181D;">line-strong</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #8A909C;">#D3D3CC</div></div>
+        <div style="display: flex; flex-direction: column; gap: 7px;"><div style="height: 68px; background: #8A909C; border-radius: 4px;"></div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #16181D;">ink-muted</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #8A909C;">#8A909C</div></div>
+        <div style="display: flex; flex-direction: column; gap: 7px;"><div style="height: 68px; background: #646B78; border-radius: 4px;"></div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #16181D;">ink-soft</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #8A909C;">#646B78</div></div>
+        <div style="display: flex; flex-direction: column; gap: 7px;"><div style="height: 68px; background: #16181D; border-radius: 4px;"></div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #16181D;">ink</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #8A909C;">#16181D</div></div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.06em; color: #646B78;">NEUTRAL / DARK</div>
+      <div style="display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 10px;">
+        <div style="display: flex; flex-direction: column; gap: 7px;"><div style="height: 68px; background: #14161A; border-radius: 4px;"></div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #16181D;">paper</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #8A909C;">#14161A</div></div>
+        <div style="display: flex; flex-direction: column; gap: 7px;"><div style="height: 68px; background: #1B1E24; border-radius: 4px;"></div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #16181D;">surface</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #8A909C;">#1B1E24</div></div>
+        <div style="display: flex; flex-direction: column; gap: 7px;"><div style="height: 68px; background: #22262D; border-radius: 4px;"></div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #16181D;">sunken</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #8A909C;">#22262D</div></div>
+        <div style="display: flex; flex-direction: column; gap: 7px;"><div style="height: 68px; background: #2C313A; border-radius: 4px;"></div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #16181D;">line</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #8A909C;">#2C313A</div></div>
+        <div style="display: flex; flex-direction: column; gap: 7px;"><div style="height: 68px; background: #3A4049; border-radius: 4px;"></div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #16181D;">line-strong</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #8A909C;">#3A4049</div></div>
+        <div style="display: flex; flex-direction: column; gap: 7px;"><div style="height: 68px; background: #6E7682; border-radius: 4px;"></div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #16181D;">ink-muted</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #8A909C;">#6E7682</div></div>
+        <div style="display: flex; flex-direction: column; gap: 7px;"><div style="height: 68px; background: #98A0AC; border-radius: 4px;"></div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #16181D;">ink-soft</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #8A909C;">#98A0AC</div></div>
+        <div style="display: flex; flex-direction: column; gap: 7px;"><div style="height: 68px; background: #ECEFF3; border: 1px solid #D3D3CC; border-radius: 4px;"></div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #16181D;">ink</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #8A909C;">#ECEFF3</div></div>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; padding-top: 12px;">
+
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.06em; color: #646B78;">ACCENT — 단 한 색</div>
+        <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px;">
+          <div style="display: flex; flex-direction: column; gap: 7px;"><div style="height: 60px; background: #33528C; border-radius: 4px;"></div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5;">accent</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #8A909C;">#33528C</div></div>
+          <div style="display: flex; flex-direction: column; gap: 7px;"><div style="height: 60px; background: #243C69; border-radius: 4px;"></div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5;">accent-ink</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #8A909C;">#243C69</div></div>
+          <div style="display: flex; flex-direction: column; gap: 7px;"><div style="height: 60px; background: #EDF1F8; border: 1px solid #D3D3CC; border-radius: 4px;"></div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5;">accent-tint</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #8A909C;">#EDF1F8</div></div>
+        </div>
+        <p style="margin: 4px 0 0; font-size: 13px; line-height: 1.7; color: #646B78;">기본 버튼, 링크, 선택 상태에만 씁니다. 악센트가 많아지면 어디를 눌러야 하는지 흐려집니다.</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.06em; color: #646B78;">SOURCE — 출처 구분</div>
+        <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px;">
+          <div style="display: flex; flex-direction: column; gap: 7px;"><div style="height: 60px; background: #3E5C8A; border-radius: 4px;"></div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5;">src-blog</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #8A909C;">#3E5C8A</div></div>
+          <div style="display: flex; flex-direction: column; gap: 7px;"><div style="height: 60px; background: #8A5A3E; border-radius: 4px;"></div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5;">src-news</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #8A909C;">#8A5A3E</div></div>
+          <div style="display: flex; flex-direction: column; gap: 7px;"><div style="height: 60px; background: #4E7A52; border-radius: 4px;"></div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5;">src-job</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #8A909C;">#4E7A52</div></div>
+        </div>
+        <p style="margin: 4px 0 0; font-size: 13px; line-height: 1.7; color: #646B78;">블로그 · 뉴스 · 공고. 밝기를 같게 맞춰 한 색이 튀지 않게 했고, 언제나 글자 라벨과 함께 씁니다 — 색만으로 구분하지 않습니다.</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.06em; color: #646B78;">STAGE — 역매칭 3단계</div>
+        <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px;">
+          <div style="display: flex; flex-direction: column; gap: 7px;"><div style="height: 60px; background: #3F6E4A; border-radius: 4px;"></div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5;">stage-fit</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #8A909C;">#3F6E4A</div></div>
+          <div style="display: flex; flex-direction: column; gap: 7px;"><div style="height: 60px; background: #8A6A2E; border-radius: 4px;"></div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5;">stage-step</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #8A909C;">#8A6A2E</div></div>
+          <div style="display: flex; flex-direction: column; gap: 7px;"><div style="height: 60px; background: #6B6F78; border-radius: 4px;"></div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5;">stage-far</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #8A909C;">#6B6F78</div></div>
+        </div>
+        <p style="margin: 4px 0 0; font-size: 13px; line-height: 1.7; color: #646B78;">세 번째 단계를 빨강이 아니라 회색으로 둡니다. 실패가 아니라 아직 먼 것이고, 붉은 경고는 사용자를 불필요하게 위축시킵니다.</p>
+      </div>
+
+    </div>
+
+    <div style="display: flex; gap: 12px; align-items: flex-start; padding: 16px 18px; background: #FFFFFF; border: 1px solid #D3D3CC; border-radius: 4px;">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#8A5A3E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 1px;"><circle cx="10" cy="10" r="7.2"></circle><path d="M10 6.4v4.2"></path><path d="M10 13.4v.2"></path></svg>
+      <p style="margin: 0; font-size: 14px; line-height: 1.75; color: #3A3F49;">이 시스템에는 <strong style="font-weight: 600;">프로그레스 바 · 게이지 · 매치율 링 · 별점</strong> 토큰이 없습니다. 제품 조건상 점수·퍼센트·순위 숫자를 쓰지 않기로 했고, 그런 컴포넌트가 팔레트에 있으면 결국 누군가 씁니다. 애초에 만들지 않는 것이 가장 확실한 방법입니다.</p>
+    </div>
+  </div>
+
+  <!-- 타이포 -->
+  <div style="display: flex; flex-direction: column; gap: 20px; padding-top: 48px;">
+    <div style="display: flex; align-items: baseline; gap: 12px;">
+      <h2 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.005em;">타이포그래피</h2>
+      <span style="font-size: 13px; color: #646B78; line-height: 1.6;">IBM Plex Sans KR · 본문 행간 1.75는 한글 기준으로 잡았습니다.</span>
+    </div>
+
+    <div style="display: flex; flex-direction: column; border-top: 1px solid #D3D3CC;">
+      <div style="display: flex; gap: 24px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid #E4E4DF;">
+        <div style="width: 190px; flex-shrink: 0; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; line-height: 1.6; color: #646B78;">display · 30/1.35 · 600</div>
+        <div style="font-size: 30px; font-weight: 600; line-height: 1.35; letter-spacing: -0.01em;">지금 뭘 만들지 알려줍니다</div>
+      </div>
+      <div style="display: flex; gap: 24px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid #E4E4DF;">
+        <div style="width: 190px; flex-shrink: 0; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; line-height: 1.6; color: #646B78;">h1 · 24/1.45 · 600</div>
+        <div style="font-size: 24px; font-weight: 600; line-height: 1.45; letter-spacing: -0.008em;">올리브영 · 서버·백엔드</div>
+      </div>
+      <div style="display: flex; gap: 24px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid #E4E4DF;">
+        <div style="width: 190px; flex-shrink: 0; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; line-height: 1.6; color: #646B78;">h2 · 19/1.5 · 600</div>
+        <div style="font-size: 19px; font-weight: 600; line-height: 1.5;">지금부터 만들면 좋을 것</div>
+      </div>
+      <div style="display: flex; gap: 24px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid #E4E4DF;">
+        <div style="width: 190px; flex-shrink: 0; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; line-height: 1.6; color: #646B78;">h3 · 16/1.6 · 600</div>
+        <div style="font-size: 16px; font-weight: 600; line-height: 1.6;">재고 차감 경합을 직접 만들어 깨뜨려 보기</div>
+      </div>
+      <div style="display: flex; gap: 24px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid #E4E4DF;">
+        <div style="width: 190px; flex-shrink: 0; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; line-height: 1.6; color: #646B78;">body · 15/1.75 · 400</div>
+        <div style="font-size: 15px; line-height: 1.75; max-width: 620px; color: #16181D;">같은 상품 재고를 동시에 줄이는 요청이 몰릴 때 무엇이 깨지는지 재현하고, 낙관적 락과 비관적 락을 각각 적용해 어떤 조건에서 어느 쪽이 유리한지 기록으로 남깁니다.</div>
+      </div>
+      <div style="display: flex; gap: 24px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid #E4E4DF;">
+        <div style="width: 190px; flex-shrink: 0; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; line-height: 1.6; color: #646B78;">body-sm · 13.5/1.7 · 400</div>
+        <div style="font-size: 13.5px; line-height: 1.7; max-width: 620px; color: #3A3F49;">선택한 값은 이 브라우저에만 남고 서버로 보내지 않습니다.</div>
+      </div>
+      <div style="display: flex; gap: 24px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid #E4E4DF;">
+        <div style="width: 190px; flex-shrink: 0; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; line-height: 1.6; color: #646B78;">caption · 12.5/1.6 · 400</div>
+        <div style="font-size: 12.5px; line-height: 1.6; color: #646B78;">최근 12개월 수집분 기준</div>
+      </div>
+      <div style="display: flex; gap: 24px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid #E4E4DF;">
+        <div style="width: 190px; flex-shrink: 0; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; line-height: 1.6; color: #646B78;">meta · mono 12/1.5 · 500</div>
+        <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; font-weight: 500; line-height: 1.5; letter-spacing: 0.02em; color: #3A3F49;">2026.04 · 기술 블로그 · 5건</div>
+      </div>
+    </div>
+    <p style="margin: 0; font-size: 13px; line-height: 1.7; color: #646B78; max-width: 720px;">연월·건수·출처 같은 메타데이터만 모노스페이스로 둡니다. 숫자가 세로로 정렬되어 훑기 쉽고, 본문과 근거가 시각적으로 구분됩니다.</p>
+  </div>
+
+  <!-- 간격 / 라운드 / 보더 -->
+  <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; padding-top: 48px;">
+
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      <h2 style="margin: 0; font-size: 19px; font-weight: 600;">간격</h2>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="display: flex; align-items: center; gap: 14px;"><span style="width: 44px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #646B78;">4</span><div style="width: 4px; height: 14px; background: #33528C;"></div></div>
+        <div style="display: flex; align-items: center; gap: 14px;"><span style="width: 44px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #646B78;">8</span><div style="width: 8px; height: 14px; background: #33528C;"></div></div>
+        <div style="display: flex; align-items: center; gap: 14px;"><span style="width: 44px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #646B78;">12</span><div style="width: 12px; height: 14px; background: #33528C;"></div></div>
+        <div style="display: flex; align-items: center; gap: 14px;"><span style="width: 44px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #646B78;">16</span><div style="width: 16px; height: 14px; background: #33528C;"></div></div>
+        <div style="display: flex; align-items: center; gap: 14px;"><span style="width: 44px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #646B78;">24</span><div style="width: 24px; height: 14px; background: #33528C;"></div></div>
+        <div style="display: flex; align-items: center; gap: 14px;"><span style="width: 44px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #646B78;">32</span><div style="width: 32px; height: 14px; background: #33528C;"></div></div>
+        <div style="display: flex; align-items: center; gap: 14px;"><span style="width: 44px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #646B78;">48</span><div style="width: 48px; height: 14px; background: #33528C;"></div></div>
+        <div style="display: flex; align-items: center; gap: 14px;"><span style="width: 44px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #646B78;">64</span><div style="width: 64px; height: 14px; background: #33528C;"></div></div>
+        <div style="display: flex; align-items: center; gap: 14px;"><span style="width: 44px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #646B78;">96</span><div style="width: 96px; height: 14px; background: #33528C;"></div></div>
+      </div>
+      <p style="margin: 0; font-size: 13px; line-height: 1.7; color: #646B78;">섹션 사이 48, 카드 안쪽 24, 줄 사이 12를 기본으로 씁니다.</p>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      <h2 style="margin: 0; font-size: 19px; font-weight: 600;">라운드</h2>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; align-items: center; gap: 14px;"><div style="width: 52px; height: 40px; background: #FFFFFF; border: 1px solid #D3D3CC; border-radius: 0;"></div><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #646B78;">0 · 표·구분선</span></div>
+        <div style="display: flex; align-items: center; gap: 14px;"><div style="width: 52px; height: 40px; background: #FFFFFF; border: 1px solid #D3D3CC; border-radius: 4px;"></div><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #646B78;">4 · 카드·입력</span></div>
+        <div style="display: flex; align-items: center; gap: 14px;"><div style="width: 52px; height: 40px; background: #FFFFFF; border: 1px solid #D3D3CC; border-radius: 6px;"></div><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #646B78;">6 · 버튼</span></div>
+        <div style="display: flex; align-items: center; gap: 14px;"><div style="width: 52px; height: 40px; background: #FFFFFF; border: 1px solid #D3D3CC; border-radius: 999px;"></div><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #646B78;">999 · 칩</span></div>
+      </div>
+      <p style="margin: 0; font-size: 13px; line-height: 1.7; color: #646B78;">문서처럼 보여야 해서 라운드를 작게 씁니다. 완전한 원형은 칩에만.</p>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      <h2 style="margin: 0; font-size: 19px; font-weight: 600;">보더 · 그림자</h2>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; flex-direction: column; gap: 6px;"><div style="height: 40px; background: #FFFFFF; border: 1px solid #E4E4DF; border-radius: 4px;"></div><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #646B78;">1px #E4E4DF · 기본</span></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;"><div style="height: 40px; background: #FFFFFF; border: 1px solid #16181D; border-radius: 4px;"></div><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #646B78;">1px #16181D · 선택</span></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;"><div style="height: 40px; background: #FFFFFF; border: 1px solid #D3D3CC; border-radius: 4px; box-shadow: 0 1px 2px rgba(22, 24, 29, 0.05);"></div><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11.5px; color: #646B78;">shadow-1 · 떠 있는 것만</span></div>
+      </div>
+      <p style="margin: 0; font-size: 13px; line-height: 1.7; color: #646B78;">깊이는 헤어라인으로 만들고 그림자는 드롭다운·토스트에만 씁니다.</p>
+    </div>
+
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>
