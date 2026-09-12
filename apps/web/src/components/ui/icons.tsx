@@ -42,6 +42,13 @@ export const ArrowRightIcon = (p: IconProps) => (
   </Icon>
 );
 
+export const SearchIcon = (p: IconProps) => (
+  <Icon {...p}>
+    <circle cx="8.7" cy="8.7" r="4.8" />
+    <path d="M12.3 12.3L16 16" />
+  </Icon>
+);
+
 /** 랜딩 — 관심 회사를 먼저 고르는 흐름 */
 export const BuildingIcon = (p: IconProps) => (
   <Icon {...p}>
