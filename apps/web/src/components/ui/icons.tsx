@@ -131,3 +131,20 @@ export const DistantIcon = (p: IconProps) => (
     <circle cx="10" cy="10" r="6.4" strokeDasharray="3 3.4" />
   </Icon>
 );
+
+/** GitHub 저장소 입력 배지에 쓰는 아이콘. 로고를 그대로 쓰지 않고 기존 선 굵기·그리드에 맞춘 단순화 버전. */
+export const GithubIcon = (p: IconProps) => (
+  <Icon {...p}>
+    <path d="M6.6 5.4L4.3 3.5M13.4 5.4l2.3-1.9" />
+    <circle cx="10" cy="10.6" r="5.3" />
+    <path d="M7.7 13.3c.6.5 1.4.8 2.3.8s1.7-.3 2.3-.8" />
+  </Icon>
+);
+
+/** ArrowRightIcon의 좌우 반전. 뒤로 가기 링크에 쓴다. */
+export const ArrowLeftIcon = (p: IconProps) => (
+  <Icon {...p}>
+    <path d="M17 10H6" />
+    <path d="M9 6l-4 4 4 4" />
+  </Icon>
+);
