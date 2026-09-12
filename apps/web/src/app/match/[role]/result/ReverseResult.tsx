@@ -4,6 +4,7 @@ import Link from "next/link";
 import type { ExperienceCatalog } from "@/types/data";
 import { describeExperience, type Stage } from "@/lib/personalize";
 import { useExperience, clearExperience } from "@/lib/experience-store";
+import { routes } from "@/lib/routes";
 import { StageBadge, STAGE_ORDER } from "@/components/ui/StageBadge";
 import { Button } from "@/components/ui/Button";
 import { Chip } from "@/components/ui/Chip";
@@ -14,28 +15,19 @@ const STAGE_NOTE: Record<Stage, string> = {
   far: "못 간다는 뜻이 아니라, 지금 준비하기엔 순서가 뒤라는 뜻입니다",
 };
 
-/**
- * S6 역매칭 결과.
- *
- * 3단계를 항상 모두 노출합니다. "지금은 거리가 있어요" 를 비우지 않습니다.
- * 회사를 줄 세우지 않으며 점수·퍼센트·순위를 표시하지 않습니다.
- *
- * 분류 규칙은 아직 없습니다. 지어내지 않고 비어 있다는 것을 그대로 보여줍니다.
- */
 export function ReverseResult({
   catalog,
-  jobSlug,
-  jobName,
+  role,
+  roleName,
   companyCount,
 }: {
   catalog: ExperienceCatalog;
-  jobSlug: string;
-  jobName: string;
+  role: string;
+  roleName: string;
   companyCount: number;
 }) {
   const input = useExperience(catalog.version);
-
-  const experienceHref = `/experience?job=${jobSlug}&from=${encodeURIComponent(`/match?job=${jobSlug}`)}`;
+  const experienceHref = routes.matchRepository(role);
 
   if (!input) {
     return (
@@ -45,8 +37,8 @@ export function ReverseResult({
             해본 것을 먼저 알려주세요
           </p>
           <p className="max-w-2xl text-[0.875rem] leading-[1.75] text-ink-soft">
-            {jobName} 을 여는 회사 {companyCount}곳과 대조하려면 지금까지 만든 것이
-            필요합니다. 고른 값은 이 브라우저에만 남습니다.
+            {roleName} 직무를 여는 회사 {companyCount}곳과 대조하려면 지금까지 만든
+            것이 필요합니다. 고른 값은 이 브라우저에만 남습니다.
           </p>
         </div>
         <Link
@@ -88,9 +80,9 @@ export function ReverseResult({
           </div>
         </div>
         <div className="flex flex-wrap gap-2">
-          {done.map((d) => (
-            <Chip key={`${d.origin}-${d.label}`} className="font-normal">
-              {d.label}
+          {done.map((item) => (
+            <Chip key={`${item.origin}-${item.label}`} className="font-normal">
+              {item.label}
             </Chip>
           ))}
         </div>
@@ -105,9 +97,7 @@ export function ReverseResult({
             </span>
           </div>
           <div className="rounded-card border border-dashed border-line-strong bg-surface p-6">
-            <p className="text-body-sm text-ink-muted">
-              아직 분류하지 않습니다.
-            </p>
+            <p className="text-body-sm text-ink-muted">아직 분류하지 않습니다.</p>
           </div>
         </section>
       ))}

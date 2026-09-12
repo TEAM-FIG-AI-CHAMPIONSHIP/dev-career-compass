@@ -11,4 +11,9 @@
 - architecture/: 주요 아키텍처 결정 기록
 - data-policy.md: 저작권, 개인정보, 게시 데이터 정책
 
+현재 웹 경로와 폴더 구조는
+[`architecture/file-structure.md`](./architecture/file-structure.md), 결정 배경은
+[`architecture/adr-001-route-structure.md`](./architecture/adr-001-route-structure.md)를
+기준으로 합니다.
+
 회의 중 임시 메모보다 구현과 검수에 계속 사용될 결정을 우선해 기록합니다.

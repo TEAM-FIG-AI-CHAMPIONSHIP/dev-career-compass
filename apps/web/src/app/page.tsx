@@ -5,6 +5,7 @@ import {
   BuildingIcon,
   PersonIcon,
 } from "@/components/ui/icons";
+import { routes } from "@/lib/routes";
 
 /** 진입 화면 — 회사와 경험, 두 탐색 경로의 책임만 가집니다. */
 export default function Home() {
@@ -31,7 +32,7 @@ export default function Home() {
             className="mt-12 grid grid-cols-1 gap-4 sm:mt-14 lg:mt-16 lg:grid-cols-2 lg:gap-5"
           >
             <Link
-              href="/companies"
+              href={routes.companies}
               className="group flex min-h-[18rem] flex-col rounded-card border border-line-strong bg-surface p-[26px] text-ink no-underline shadow-raised transition-colors hover:border-accent hover:no-underline sm:p-9"
             >
               <span className="flex size-14 items-center justify-center rounded-card bg-accent-tint text-accent">
@@ -54,7 +55,7 @@ export default function Home() {
             </Link>
 
             <Link
-              href="/match"
+              href={routes.match}
               className="group flex min-h-[18rem] flex-col rounded-card border border-line-strong bg-surface p-[26px] text-ink no-underline shadow-raised transition-colors hover:border-stage-fit-edge hover:no-underline sm:p-9"
             >
               <span className="flex size-14 items-center justify-center rounded-card bg-stage-fit-tint text-stage-fit">

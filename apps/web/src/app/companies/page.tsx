@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getCompanyIndex, dataSource } from "@/lib/data";
 import { CompanyList } from "@/components/company/CompanyList";
 import { DataSourceNote, PageHeader } from "@/components/ui/PageHeader";
+import { routes } from "@/lib/routes";
 
 export const metadata: Metadata = { title: "회사 선택" };
 
@@ -59,7 +60,7 @@ export default function CompaniesPage() {
               </p>
             </div>
             <Link
-              href="/match"
+              href={routes.match}
               className="inline-flex min-h-11 shrink-0 items-center rounded-btn border border-accent bg-accent px-5 py-3 text-[0.875rem] leading-none font-medium text-white no-underline transition-colors hover:border-accent-ink hover:bg-accent-ink hover:no-underline"
             >
               내 경험부터 보기

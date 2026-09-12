@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { routes } from "@/lib/routes";
 
 /** 모든 화면이 쓰는 상단 바. 왼쪽은 현재 위치, 오른쪽은 그 화면의 동작입니다. */
 export function PageHeader({
@@ -13,7 +14,7 @@ export function PageHeader({
     <header className="flex flex-wrap items-center justify-between gap-3 border-b border-line px-4 py-4 sm:px-8 lg:px-20">
       <div className="flex flex-wrap items-center gap-3">
         <Link
-          href="/"
+          href={routes.home}
           className="text-[1.0625rem] font-bold tracking-[-0.01em] text-ink no-underline hover:no-underline"
         >
           BeforeJoin
