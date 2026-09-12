@@ -31,12 +31,21 @@ const RECOGNIZED_MANIFESTS = [
 ];
 
 type GithubRepoResponse = { private?: boolean };
-type GithubContentEntry = { name: string; type: string; download_url: string | null };
+type GithubContentEntry = {
+  name: string;
+  type: string;
+  download_url: string | null;
+  size: number;
+};
 type Reason = "invalid_url" | "not_found" | "private" | "rate_limited" | "unknown";
 
-function githubHeaders(): HeadersInit {
+const MAX_MANIFEST_SIZE_BYTES = 512000;
+
+function githubHeaders(url: string): HeadersInit {
   const headers: Record<string, string> = { Accept: "application/vnd.github+json" };
-  if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
+  if (process.env.GITHUB_TOKEN && new URL(url).hostname === "api.github.com") {
+    headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
+  }
   return headers;
 }
 
@@ -44,7 +53,11 @@ async function fetchGithub(url: string): Promise<Response> {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
   try {
-    return await fetch(url, { headers: githubHeaders(), signal: controller.signal });
+    return await fetch(url, {
+      headers: githubHeaders(url),
+      signal: controller.signal,
+      cache: "no-store",
+    });
   } finally {
     clearTimeout(timeout);
   }
@@ -95,7 +108,10 @@ export async function POST(request: Request): Promise<Response> {
     const rootFiles: GithubContentEntry[] = Array.isArray(contentsJson) ? contentsJson : [];
 
     const manifestEntries = rootFiles.filter(
-      (entry) => entry.type === "file" && RECOGNIZED_MANIFESTS.includes(entry.name),
+      (entry) =>
+        entry.type === "file" &&
+        RECOGNIZED_MANIFESTS.includes(entry.name) &&
+        entry.size <= MAX_MANIFEST_SIZE_BYTES,
     );
 
     const manifestTexts = await Promise.all(

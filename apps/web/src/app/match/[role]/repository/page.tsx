@@ -27,12 +27,14 @@ export default async function MatchRepositoryPage({ params }: Props) {
           <ArrowLeftIcon size={14} strokeWidth={1.7} />
           처음으로
         </Link>
-        <ol className="flex items-center gap-2 text-[0.8125rem]">
+        <ol aria-label="진행 단계" className="flex items-center gap-2 text-[0.8125rem]">
           <li className="text-ink-soft">1. 직무</li>
           <li aria-hidden="true" className="text-line-strong">
             →
           </li>
-          <li className="font-semibold text-accent">2. GitHub</li>
+          <li aria-current="step" className="font-semibold text-accent">
+            2. GitHub
+          </li>
           <li aria-hidden="true" className="text-line-strong">
             →
           </li>

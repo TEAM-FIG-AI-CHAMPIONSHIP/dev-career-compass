@@ -87,5 +87,6 @@ export function parseGithubUrl(input: string): { owner: string; repo: string } |
   const match = GITHUB_URL_RE.exec(input.trim());
   if (!match) return null;
   const [, owner, repo] = match;
+  if (owner === "." || owner === ".." || repo === "." || repo === "..") return null;
   return { owner, repo };
 }

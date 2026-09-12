@@ -13,6 +13,21 @@ import { routes } from "@/lib/routes";
 
 const MAX_REPOSITORIES = 3;
 
+/** `owner/repo` 형태(프로토콜·github.com 없이)만 매칭하는 레거시 저장소 형식 감지용. */
+const BARE_REPO_RE = /^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/;
+
+/**
+ * `experience?.repos`에는 이 브랜치 이전에 저장된 옛 `owner/repo` 형식이 남아
+ * 있을 수 있다. `parseGithubUrl`은 전체 URL만 인정하므로, URL로 보이지 않으면서
+ * 옛 형식과 일치하면 `https://github.com/`을 붙여 정상 URL로 되돌린다.
+ */
+function normalizeLegacyRepo(entry: string): string {
+  const trimmed = entry.trim();
+  if (parseGithubUrl(trimmed) !== null) return entry;
+  if (BARE_REPO_RE.test(trimmed)) return `https://github.com/${trimmed}`;
+  return entry;
+}
+
 type FieldStatus =
   | { kind: "loading" }
   | { kind: "done"; keywords: string[] }
@@ -53,21 +68,16 @@ export function RepositoryForm({
   const flow = useMatchFlow(role);
   const experience = useExperience(catalogVersion);
   const [draft, setDraft] = useState<string[] | null>(null);
-  const [statuses, setStatuses] = useState<Record<string, FieldStatus>>(() => {
-    const initial: Record<string, FieldStatus> = {};
-    for (const [url, keywords] of Object.entries(flow?.repositoryKeywords ?? {})) {
-      initial[url] = { kind: "done", keywords };
-    }
-    return initial;
-  });
+  const [statuses, setStatuses] = useState<Record<string, FieldStatus>>({});
   const [analyzing, setAnalyzing] = useState(false);
+  const [analyzed, setAnalyzed] = useState(false);
 
   const repositories =
     draft ??
     (flow?.repositories.length
       ? flow.repositories
       : experience?.repos?.length
-        ? experience.repos
+        ? experience.repos.map(normalizeLegacyRepo)
         : [""]);
 
   const invalid = repositories.some(
@@ -78,6 +88,7 @@ export function RepositoryForm({
     setDraft(
       repositories.map((current, currentIndex) => (currentIndex === index ? next : current)),
     );
+    setAnalyzed(false);
   };
 
   const goWithoutAnalysis = () => {
@@ -85,7 +96,7 @@ export function RepositoryForm({
     router.push(routes.matchExperience(role));
   };
 
-  const analyzeAndContinue = async () => {
+  const runAnalysis = async () => {
     const candidates = repositories
       .map((repository) => repository.trim())
       .filter((repository) => parseGithubUrl(repository) !== null);
@@ -108,10 +119,10 @@ export function RepositoryForm({
       if (status.kind === "done") keywordsByUrl[url] = status.keywords;
     }
     setStatuses(nextStatuses);
-    setAnalyzing(false);
 
     saveMatchRepositories(role, candidates, keywordsByUrl);
-    router.push(routes.matchExperience(role));
+    setAnalyzed(true);
+    setAnalyzing(false);
   };
 
   return (
@@ -119,7 +130,11 @@ export function RepositoryForm({
       <div className="flex flex-col gap-3">
         {repositories.map((repository, index) => {
           const trimmed = repository.trim();
-          const status = trimmed ? statuses[trimmed] : undefined;
+          const fallbackKeywords = trimmed ? flow?.repositoryKeywords[trimmed] : undefined;
+          const status: FieldStatus | undefined = trimmed
+            ? (statuses[trimmed] ??
+              (fallbackKeywords ? { kind: "done", keywords: fallbackKeywords } : undefined))
+            : undefined;
           const formatError =
             trimmed !== "" && !parseGithubUrl(trimmed)
               ? "GitHub 저장소 링크 형태로 적어주세요."
@@ -171,19 +186,20 @@ export function RepositoryForm({
         <Button
           variant="secondary"
           onClick={() => router.push(routes.match)}
+          disabled={analyzing}
           className="min-h-12 px-6 py-4 text-[0.9375rem]"
         >
           ← 직무로
         </Button>
         <Button
           variant="primary"
-          onClick={analyzeAndContinue}
+          onClick={analyzed && !analyzing ? () => router.push(routes.matchExperience(role)) : runAnalysis}
           disabled={invalid || analyzing}
           className="min-h-12 px-6 py-4 text-[0.9375rem]"
         >
-          {analyzing ? "분석하는 중…" : "분석하고 경험 선택으로"}
+          {analyzing ? "분석하는 중…" : analyzed ? "다음: 경험 입력으로" : "분석하고 경험 선택으로"}
         </Button>
-        <Button variant="ghost" onClick={goWithoutAnalysis}>
+        <Button variant="ghost" onClick={goWithoutAnalysis} disabled={analyzing}>
           GitHub 없이 진행
         </Button>
       </div>
