@@ -4,6 +4,7 @@
 
 추가할 문서의 예시는 다음과 같습니다.
 
+- collaboration.md: 이슈, 브랜치, PR, 리뷰 협업 규칙
 - requirements.md: 기능 요구사항과 변경 불가 조건
 - screens.md: S1부터 S6까지 화면 정의
 - user-flow.md: 사용자 이동 경로와 상태 유지 규칙
