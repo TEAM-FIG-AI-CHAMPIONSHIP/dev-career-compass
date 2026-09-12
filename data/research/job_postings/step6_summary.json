@@ -1,0 +1,649 @@
+{
+  "rules": {
+    "kakao": "group == 카카오 (KAKAO HQ) only; SUBSIDIARY excluded from kakao count",
+    "bleed": "drop OCCUPATION_BLEED_VERDICT == 무관 in without-bleed version",
+    "gate": 3,
+    "low_volume": {
+      "active_lt": 10,
+      "classified_lte": 2
+    }
+  },
+  "totals": {
+    "with": {
+      "서버·백엔드": {
+        "n": 14,
+        "names": [
+          "네이버",
+          "당근",
+          "라인",
+          "무신사(+29CM)",
+          "뱅크샐러드",
+          "올리브영",
+          "왓챠",
+          "카카오",
+          "카카오모빌리티",
+          "카카오페이",
+          "컬리",
+          "토스",
+          "티빙",
+          "하이퍼커넥트"
+        ]
+      },
+      "웹 프론트엔드": {
+        "n": 9,
+        "names": [
+          "네이버",
+          "당근",
+          "라인",
+          "리멤버",
+          "올리브영",
+          "요기요",
+          "카카오페이",
+          "컬리",
+          "토스"
+        ]
+      },
+      "모바일": {
+        "n": 4,
+        "names": [
+          "당근",
+          "라인",
+          "올리브영",
+          "토스"
+        ]
+      },
+      "데이터·AI": {
+        "n": 18,
+        "names": [
+          "네이버",
+          "당근",
+          "라인",
+          "리멤버",
+          "무신사(+29CM)",
+          "쏘카",
+          "여기어때",
+          "올리브영",
+          "요기요",
+          "채널톡",
+          "카카오",
+          "카카오모빌리티",
+          "카카오뱅크",
+          "카카오페이",
+          "캐치테이블",
+          "컬리",
+          "토스",
+          "하이퍼커넥트"
+        ]
+      }
+    },
+    "without": {
+      "서버·백엔드": {
+        "n": 14,
+        "names": [
+          "네이버",
+          "당근",
+          "라인",
+          "무신사(+29CM)",
+          "뱅크샐러드",
+          "올리브영",
+          "왓챠",
+          "카카오",
+          "카카오모빌리티",
+          "카카오페이",
+          "컬리",
+          "토스",
+          "티빙",
+          "하이퍼커넥트"
+        ]
+      },
+      "웹 프론트엔드": {
+        "n": 9,
+        "names": [
+          "네이버",
+          "당근",
+          "라인",
+          "리멤버",
+          "올리브영",
+          "요기요",
+          "카카오페이",
+          "컬리",
+          "토스"
+        ]
+      },
+      "모바일": {
+        "n": 4,
+        "names": [
+          "당근",
+          "라인",
+          "올리브영",
+          "토스"
+        ]
+      },
+      "데이터·AI": {
+        "n": 18,
+        "names": [
+          "네이버",
+          "당근",
+          "라인",
+          "리멤버",
+          "무신사(+29CM)",
+          "쏘카",
+          "여기어때",
+          "올리브영",
+          "요기요",
+          "채널톡",
+          "카카오",
+          "카카오모빌리티",
+          "카카오뱅크",
+          "카카오페이",
+          "캐치테이블",
+          "컬리",
+          "토스",
+          "하이퍼커넥트"
+        ]
+      }
+    }
+  },
+  "companies": [
+    {
+      "company_id": "banksalad",
+      "company_name": "뱅크샐러드",
+      "source": "custom",
+      "raw_active": 9,
+      "active": 9,
+      "kakao_excluded": 0,
+      "classified_with": 1,
+      "classified_without": 1,
+      "cats_with": {
+        "서버·백엔드": 1
+      },
+      "cats_without": {
+        "서버·백엔드": 1
+      },
+      "bleed_dropped": []
+    },
+    {
+      "company_id": "catchtable",
+      "company_name": "캐치테이블",
+      "source": "greeting",
+      "raw_active": 41,
+      "active": 41,
+      "kakao_excluded": 0,
+      "classified_with": 4,
+      "classified_without": 4,
+      "cats_with": {
+        "데이터·AI": 4
+      },
+      "cats_without": {
+        "데이터·AI": 4
+      },
+      "bleed_dropped": []
+    },
+    {
+      "company_id": "channeltalk",
+      "company_name": "채널톡",
+      "source": "custom",
+      "raw_active": 43,
+      "active": 43,
+      "kakao_excluded": 0,
+      "classified_with": 6,
+      "classified_without": 6,
+      "cats_with": {
+        "데이터·AI": 6
+      },
+      "cats_without": {
+        "데이터·AI": 6
+      },
+      "bleed_dropped": []
+    },
+    {
+      "company_id": "daangn",
+      "company_name": "당근",
+      "source": "custom",
+      "raw_active": 48,
+      "active": 48,
+      "kakao_excluded": 0,
+      "classified_with": 25,
+      "classified_without": 25,
+      "cats_with": {
+        "서버·백엔드": 12,
+        "웹 프론트엔드": 5,
+        "모바일": 3,
+        "데이터·AI": 5
+      },
+      "cats_without": {
+        "서버·백엔드": 12,
+        "웹 프론트엔드": 5,
+        "모바일": 3,
+        "데이터·AI": 5
+      },
+      "bleed_dropped": []
+    },
+    {
+      "company_id": "devsisters",
+      "company_name": "데브시스터즈",
+      "source": "greeting",
+      "raw_active": 0,
+      "active": 0,
+      "kakao_excluded": 0,
+      "classified_with": 0,
+      "classified_without": 0,
+      "cats_with": {},
+      "cats_without": {},
+      "bleed_dropped": []
+    },
+    {
+      "company_id": "hyperconnect",
+      "company_name": "하이퍼커넥트",
+      "source": "custom",
+      "raw_active": 12,
+      "active": 12,
+      "kakao_excluded": 0,
+      "classified_with": 8,
+      "classified_without": 8,
+      "cats_with": {
+        "서버·백엔드": 1,
+        "데이터·AI": 7
+      },
+      "cats_without": {
+        "서버·백엔드": 1,
+        "데이터·AI": 7
+      },
+      "bleed_dropped": []
+    },
+    {
+      "company_id": "kakao",
+      "company_name": "카카오",
+      "source": "custom",
+      "raw_active": 64,
+      "active": 23,
+      "kakao_excluded": 41,
+      "classified_with": 7,
+      "classified_without": 7,
+      "cats_with": {
+        "서버·백엔드": 1,
+        "데이터·AI": 6
+      },
+      "cats_without": {
+        "서버·백엔드": 1,
+        "데이터·AI": 6
+      },
+      "bleed_dropped": []
+    },
+    {
+      "company_id": "kakaobank",
+      "company_name": "카카오뱅크",
+      "source": "custom",
+      "raw_active": 33,
+      "active": 33,
+      "kakao_excluded": 0,
+      "classified_with": 4,
+      "classified_without": 4,
+      "cats_with": {
+        "데이터·AI": 4
+      },
+      "cats_without": {
+        "데이터·AI": 4
+      },
+      "bleed_dropped": []
+    },
+    {
+      "company_id": "kakaomobility",
+      "company_name": "카카오모빌리티",
+      "source": "greeting",
+      "raw_active": 22,
+      "active": 22,
+      "kakao_excluded": 0,
+      "classified_with": 7,
+      "classified_without": 7,
+      "cats_with": {
+        "서버·백엔드": 4,
+        "데이터·AI": 3
+      },
+      "cats_without": {
+        "서버·백엔드": 4,
+        "데이터·AI": 3
+      },
+      "bleed_dropped": []
+    },
+    {
+      "company_id": "kakaopay",
+      "company_name": "카카오페이",
+      "source": "greeting",
+      "raw_active": 31,
+      "active": 31,
+      "kakao_excluded": 0,
+      "classified_with": 9,
+      "classified_without": 9,
+      "cats_with": {
+        "서버·백엔드": 5,
+        "웹 프론트엔드": 1,
+        "데이터·AI": 3
+      },
+      "cats_without": {
+        "서버·백엔드": 5,
+        "웹 프론트엔드": 1,
+        "데이터·AI": 3
+      },
+      "bleed_dropped": []
+    },
+    {
+      "company_id": "kurly",
+      "company_name": "컬리",
+      "source": "greeting",
+      "raw_active": 69,
+      "active": 69,
+      "kakao_excluded": 0,
+      "classified_with": 13,
+      "classified_without": 12,
+      "cats_with": {
+        "서버·백엔드": 6,
+        "웹 프론트엔드": 5,
+        "데이터·AI": 2
+      },
+      "cats_without": {
+        "서버·백엔드": 5,
+        "웹 프론트엔드": 5,
+        "데이터·AI": 2
+      },
+      "bleed_dropped": [
+        {
+          "opening_id": 230179,
+          "title": "IT 자산/라이선스 담당자",
+          "occupation": "인프라",
+          "category": "서버·백엔드"
+        }
+      ]
+    },
+    {
+      "company_id": "line",
+      "company_name": "라인",
+      "source": "custom",
+      "raw_active": 72,
+      "active": 72,
+      "kakao_excluded": 0,
+      "classified_with": 22,
+      "classified_without": 22,
+      "cats_with": {
+        "서버·백엔드": 9,
+        "웹 프론트엔드": 6,
+        "모바일": 1,
+        "데이터·AI": 6
+      },
+      "cats_without": {
+        "서버·백엔드": 9,
+        "웹 프론트엔드": 6,
+        "모바일": 1,
+        "데이터·AI": 6
+      },
+      "bleed_dropped": []
+    },
+    {
+      "company_id": "musinsa",
+      "company_name": "무신사(+29CM)",
+      "source": "greeting",
+      "raw_active": 123,
+      "active": 123,
+      "kakao_excluded": 0,
+      "classified_with": 16,
+      "classified_without": 16,
+      "cats_with": {
+        "서버·백엔드": 12,
+        "데이터·AI": 4
+      },
+      "cats_without": {
+        "서버·백엔드": 12,
+        "데이터·AI": 4
+      },
+      "bleed_dropped": []
+    },
+    {
+      "company_id": "myrealtrip",
+      "company_name": "마이리얼트립",
+      "source": "greeting",
+      "raw_active": 21,
+      "active": 21,
+      "kakao_excluded": 0,
+      "classified_with": 0,
+      "classified_without": 0,
+      "cats_with": {},
+      "cats_without": {},
+      "bleed_dropped": []
+    },
+    {
+      "company_id": "naver",
+      "company_name": "네이버",
+      "source": "custom",
+      "raw_active": 42,
+      "active": 42,
+      "kakao_excluded": 0,
+      "classified_with": 28,
+      "classified_without": 28,
+      "cats_with": {
+        "서버·백엔드": 2,
+        "웹 프론트엔드": 23,
+        "데이터·AI": 3
+      },
+      "cats_without": {
+        "서버·백엔드": 2,
+        "웹 프론트엔드": 23,
+        "데이터·AI": 3
+      },
+      "bleed_dropped": []
+    },
+    {
+      "company_id": "oliveyoung",
+      "company_name": "올리브영",
+      "source": "greeting",
+      "raw_active": 212,
+      "active": 212,
+      "kakao_excluded": 0,
+      "classified_with": 37,
+      "classified_without": 37,
+      "cats_with": {
+        "서버·백엔드": 9,
+        "웹 프론트엔드": 5,
+        "모바일": 1,
+        "데이터·AI": 22
+      },
+      "cats_without": {
+        "서버·백엔드": 9,
+        "웹 프론트엔드": 5,
+        "모바일": 1,
+        "데이터·AI": 22
+      },
+      "bleed_dropped": []
+    },
+    {
+      "company_id": "remember",
+      "company_name": "리멤버",
+      "source": "ninehire",
+      "raw_active": 19,
+      "active": 19,
+      "kakao_excluded": 0,
+      "classified_with": 4,
+      "classified_without": 4,
+      "cats_with": {
+        "웹 프론트엔드": 1,
+        "데이터·AI": 3
+      },
+      "cats_without": {
+        "웹 프론트엔드": 1,
+        "데이터·AI": 3
+      },
+      "bleed_dropped": []
+    },
+    {
+      "company_id": "socar",
+      "company_name": "쏘카",
+      "source": "custom",
+      "raw_active": 29,
+      "active": 29,
+      "kakao_excluded": 0,
+      "classified_with": 9,
+      "classified_without": 1,
+      "cats_with": {
+        "데이터·AI": 9
+      },
+      "cats_without": {
+        "데이터·AI": 1
+      },
+      "bleed_dropped": [
+        {
+          "opening_id": "482",
+          "title": "[쏘카일레클] Embedded Firmware Engineer",
+          "occupation": "개발/데이터",
+          "category": "데이터·AI"
+        },
+        {
+          "opening_id": "475",
+          "title": "[에이펙스모빌리티] Embedded Platform SW Engineer (센서킷 플랫폼)",
+          "occupation": "개발/데이터",
+          "category": "데이터·AI"
+        },
+        {
+          "opening_id": "474",
+          "title": "[에이펙스모빌리티] Mechanical Design Engineer (센서킷 기구)",
+          "occupation": "개발/데이터",
+          "category": "데이터·AI"
+        },
+        {
+          "opening_id": "473",
+          "title": "[에이펙스모빌리티] Vehicle Integration Engineer (차량 전장·개조)",
+          "occupation": "개발/데이터",
+          "category": "데이터·AI"
+        },
+        {
+          "opening_id": "462",
+          "title": "프로덕트 매니저 (PM)",
+          "occupation": "개발/데이터",
+          "category": "데이터·AI"
+        },
+        {
+          "opening_id": "458",
+          "title": "[에이펙스 모빌리티] Applied Research Scientist",
+          "occupation": "개발/데이터",
+          "category": "데이터·AI"
+        },
+        {
+          "opening_id": "444",
+          "title": "[에이펙스 모빌리티] Product Engineer",
+          "occupation": "개발/데이터",
+          "category": "데이터·AI"
+        },
+        {
+          "opening_id": "443",
+          "title": "Product Engineer",
+          "occupation": "개발/데이터",
+          "category": "데이터·AI"
+        }
+      ]
+    },
+    {
+      "company_id": "ssg",
+      "company_name": "SSG.COM",
+      "source": "greeting",
+      "raw_active": 0,
+      "active": 0,
+      "kakao_excluded": 0,
+      "classified_with": 0,
+      "classified_without": 0,
+      "cats_with": {},
+      "cats_without": {},
+      "bleed_dropped": []
+    },
+    {
+      "company_id": "toss",
+      "company_name": "토스",
+      "source": "custom",
+      "raw_active": 473,
+      "active": 473,
+      "kakao_excluded": 0,
+      "classified_with": 138,
+      "classified_without": 138,
+      "cats_with": {
+        "서버·백엔드": 38,
+        "웹 프론트엔드": 12,
+        "모바일": 7,
+        "데이터·AI": 81
+      },
+      "cats_without": {
+        "서버·백엔드": 38,
+        "웹 프론트엔드": 12,
+        "모바일": 7,
+        "데이터·AI": 81
+      },
+      "bleed_dropped": []
+    },
+    {
+      "company_id": "tving",
+      "company_name": "티빙",
+      "source": "custom",
+      "raw_active": 3,
+      "active": 3,
+      "kakao_excluded": 0,
+      "classified_with": 1,
+      "classified_without": 1,
+      "cats_with": {
+        "서버·백엔드": 1
+      },
+      "cats_without": {
+        "서버·백엔드": 1
+      },
+      "bleed_dropped": []
+    },
+    {
+      "company_id": "watcha",
+      "company_name": "왓챠",
+      "source": "greeting",
+      "raw_active": 1,
+      "active": 1,
+      "kakao_excluded": 0,
+      "classified_with": 1,
+      "classified_without": 1,
+      "cats_with": {
+        "서버·백엔드": 1
+      },
+      "cats_without": {
+        "서버·백엔드": 1
+      },
+      "bleed_dropped": []
+    },
+    {
+      "company_id": "yeogieotdae",
+      "company_name": "여기어때",
+      "source": "greeting",
+      "raw_active": 26,
+      "active": 26,
+      "kakao_excluded": 0,
+      "classified_with": 1,
+      "classified_without": 1,
+      "cats_with": {
+        "데이터·AI": 1
+      },
+      "cats_without": {
+        "데이터·AI": 1
+      },
+      "bleed_dropped": []
+    },
+    {
+      "company_id": "yogiyo",
+      "company_name": "요기요",
+      "source": "ninehire",
+      "raw_active": 12,
+      "active": 12,
+      "kakao_excluded": 0,
+      "classified_with": 3,
+      "classified_without": 3,
+      "cats_with": {
+        "웹 프론트엔드": 1,
+        "데이터·AI": 2
+      },
+      "cats_without": {
+        "웹 프론트엔드": 1,
+        "데이터·AI": 2
+      },
+      "bleed_dropped": []
+    }
+  ]
+}

@@ -7,6 +7,8 @@
 팀원끼리 같은 파일을 수정하지 않도록 주제별 디렉터리를 사용합니다.
 
     experiments/
+    ├── job_postings_crawler/
+    │   └── README.md
     ├── company_coverage/
     │   └── main.py
     ├── role_coverage/
