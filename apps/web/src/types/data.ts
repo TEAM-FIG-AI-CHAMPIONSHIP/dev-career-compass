@@ -16,12 +16,14 @@ export type Company = {
   /** URL 과 파일 이름에 그대로 쓰입니다. 소문자·숫자·하이픈. */
   slug: string;
   name: string;
-  /** 회사 카드 앞의 이니셜. 로고 대신 씁니다. */
+  /** public 아래에 둔 회사 로고 경로. 예: /company-logos/example.svg */
+  logoSrc?: string;
+  /** 로고가 아직 없을 때 보여주는 한 글자 fallback. */
   mark?: string;
   /** 이 조직이 반복해서 다루는 영역을 한 줄로. */
   summary?: string;
   evidenceCount?: number;
-  /** collecting 이면 S1 에 준비 중 카드로만 보이고 결과 페이지를 만들지 않습니다. */
+  /** collecting 이면 S1 목업에는 보이지만 결과 페이지 링크를 만들지 않습니다. */
   status: "published" | "collecting";
   jobs?: Job[];
 };

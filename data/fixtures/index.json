@@ -5,7 +5,6 @@
       "slug": "oliveyoung",
       "name": "올리브영",
       "mark": "올",
-      "summary": "재고 정합성·품절 반영, 주문·결제·배송 처리",
       "evidenceCount": 9,
       "status": "published",
       "jobs": [{ "slug": "backend", "name": "서버·백엔드", "evidenceCount": 9 }]
@@ -13,12 +12,165 @@
     {
       "slug": "daangn",
       "name": "당근",
-      "status": "collecting"
+      "mark": "당",
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드" },
+        { "slug": "frontend", "name": "웹 프론트엔드" },
+        { "slug": "mobile", "name": "모바일" },
+        { "slug": "data-ai", "name": "데이터·AI" }
+      ]
     },
     {
       "slug": "toss",
       "name": "토스",
-      "status": "collecting"
+      "mark": "토",
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드" },
+        { "slug": "frontend", "name": "웹 프론트엔드" },
+        { "slug": "mobile", "name": "모바일" }
+      ]
+    },
+    {
+      "slug": "coupang",
+      "name": "쿠팡",
+      "mark": "쿠",
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드" },
+        { "slug": "mobile", "name": "모바일" },
+        { "slug": "data-ai", "name": "데이터·AI" }
+      ]
+    },
+    {
+      "slug": "kakao",
+      "name": "카카오",
+      "mark": "카",
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드" },
+        { "slug": "frontend", "name": "웹 프론트엔드" },
+        { "slug": "mobile", "name": "모바일" },
+        { "slug": "data-ai", "name": "데이터·AI" }
+      ]
+    },
+    {
+      "slug": "naver",
+      "name": "네이버",
+      "mark": "네",
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드" },
+        { "slug": "frontend", "name": "웹 프론트엔드" },
+        { "slug": "data-ai", "name": "데이터·AI" }
+      ]
+    },
+    {
+      "slug": "line-plus",
+      "name": "라인플러스",
+      "mark": "라",
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드" },
+        { "slug": "frontend", "name": "웹 프론트엔드" },
+        { "slug": "mobile", "name": "모바일" }
+      ]
+    },
+    {
+      "slug": "baemin",
+      "name": "배달의민족",
+      "mark": "배",
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드" },
+        { "slug": "frontend", "name": "웹 프론트엔드" },
+        { "slug": "data-ai", "name": "데이터·AI" }
+      ]
+    },
+    {
+      "slug": "toss-bank",
+      "name": "토스뱅크",
+      "mark": "뱅",
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드" },
+        { "slug": "mobile", "name": "모바일" }
+      ]
+    },
+    {
+      "slug": "musinsa",
+      "name": "무신사",
+      "mark": "무",
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드" },
+        { "slug": "frontend", "name": "웹 프론트엔드" },
+        { "slug": "data-ai", "name": "데이터·AI" }
+      ]
+    },
+    {
+      "slug": "kurly",
+      "name": "컬리",
+      "mark": "컬",
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드" },
+        { "slug": "frontend", "name": "웹 프론트엔드" }
+      ]
+    },
+    {
+      "slug": "ohouse",
+      "name": "오늘의집",
+      "mark": "집",
+      "status": "collecting",
+      "jobs": [
+        { "slug": "frontend", "name": "웹 프론트엔드" },
+        { "slug": "mobile", "name": "모바일" },
+        { "slug": "data-ai", "name": "데이터·AI" }
+      ]
+    },
+    {
+      "slug": "dunamu",
+      "name": "두나무",
+      "mark": "두",
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드" },
+        { "slug": "data-ai", "name": "데이터·AI" }
+      ]
+    },
+    {
+      "slug": "socar",
+      "name": "쏘카",
+      "mark": "쏘",
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드" },
+        { "slug": "mobile", "name": "모바일" }
+      ]
+    },
+    {
+      "slug": "yanolja",
+      "name": "야놀자",
+      "mark": "야",
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드" },
+        { "slug": "frontend", "name": "웹 프론트엔드" },
+        { "slug": "data-ai", "name": "데이터·AI" }
+      ]
+    },
+    {
+      "slug": "ridi",
+      "name": "리디",
+      "mark": "리",
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드" },
+        { "slug": "frontend", "name": "웹 프론트엔드" },
+        { "slug": "mobile", "name": "모바일" }
+      ]
     }
   ]
 }
