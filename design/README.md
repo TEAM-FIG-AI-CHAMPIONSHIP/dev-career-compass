@@ -15,7 +15,7 @@
 
 ## 커밋하지 않는 것
 
-`design/beforejoin-design-system.html` 은 위 파일들을 묶어 만든 게시용
+`design/refactor-me-design-system.html` 은 위 파일들을 묶어 만든 게시용
 생성물이며 편집기 코드가 통째로 들어 있어 2.5MB 입니다. `.gitignore` 에
 있습니다.
 

@@ -13,13 +13,14 @@ import type { ExperienceInput } from "@/types/data";
  * 늘 null 이고, 하이드레이션이 끝나면 저장된 값으로 한 번에 맞춰집니다.
  */
 
-const KEY = "beforejoin.experience.v1";
+const KEY = "refactor.me.experience.v1";
+const LEGACY_KEY = "beforejoin.experience.v1";
 
 const listeners = new Set<() => void>();
 
 function readRaw(): string | null {
   try {
-    return window.localStorage.getItem(KEY);
+    return window.localStorage.getItem(KEY) ?? window.localStorage.getItem(LEGACY_KEY);
   } catch {
     // 프라이빗 모드나 저장소 차단. 저장이 안 될 뿐 화면은 그대로 돌아야 합니다.
     return null;
@@ -75,6 +76,7 @@ export function useExperience(catalogVersion: number): ExperienceInput | null {
 export function saveExperience(input: ExperienceInput): void {
   try {
     window.localStorage.setItem(KEY, JSON.stringify(input));
+    window.localStorage.removeItem(LEGACY_KEY);
   } catch {
     /* 저장 실패는 조용히 넘깁니다. 이번 화면은 화면 상태로 계속 동작합니다. */
   }
@@ -84,6 +86,7 @@ export function saveExperience(input: ExperienceInput): void {
 export function clearExperience(): void {
   try {
     window.localStorage.removeItem(KEY);
+    window.localStorage.removeItem(LEGACY_KEY);
   } catch {
     /* 위와 같음 */
   }

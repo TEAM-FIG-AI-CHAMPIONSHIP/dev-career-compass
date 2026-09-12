@@ -17,7 +17,7 @@ export function PageHeader({
           href={routes.home}
           className="text-[1.0625rem] font-bold tracking-[-0.01em] text-ink no-underline hover:no-underline"
         >
-          BeforeJoin
+          Refactor.me
         </Link>
         {crumbs.map((crumb, i) => (
           <span key={i} className="flex items-center gap-3">
