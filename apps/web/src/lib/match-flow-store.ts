@@ -7,6 +7,8 @@ export type MatchFlow = {
   role: string;
   returnTo: string;
   repositories: string[];
+  /** 저장소 URL → 추출된 키워드. 분석에 실패한 저장소는 키가 없다. */
+  repositoryKeywords: Record<string, string[]>;
 };
 
 const KEY = "refactor.me.match-flow.v1";
@@ -19,6 +21,17 @@ let lastParsed: MatchFlow | null = null;
 function safeReturnTo(value: string | undefined, role: string): string {
   if (value?.startsWith("/") && !value.startsWith("//")) return value;
   return routes.matchResult(role);
+}
+
+function safeKeywords(value: unknown): Record<string, string[]> {
+  if (typeof value !== "object" || value === null) return {};
+  const out: Record<string, string[]> = {};
+  for (const [url, keywords] of Object.entries(value as Record<string, unknown>)) {
+    if (Array.isArray(keywords) && keywords.every((k) => typeof k === "string")) {
+      out[url] = keywords;
+    }
+  }
+  return out;
 }
 
 function readRaw(): string | null {
@@ -34,7 +47,9 @@ function getSnapshot(): MatchFlow | null {
   if (raw !== lastRaw) {
     lastRaw = raw;
     try {
-      const value = raw ? (JSON.parse(raw) as Partial<MatchFlow>) : null;
+      const value = raw
+        ? (JSON.parse(raw) as Partial<MatchFlow> & { repositoryKeywords?: unknown })
+        : null;
       lastParsed =
         value &&
         typeof value.role === "string" &&
@@ -46,6 +61,7 @@ function getSnapshot(): MatchFlow | null {
               repositories: value.repositories.filter(
                 (repository): repository is string => typeof repository === "string",
               ),
+              repositoryKeywords: safeKeywords(value.repositoryKeywords),
             }
           : null;
     } catch {
@@ -94,16 +110,22 @@ export function beginMatchFlow(role: string, returnTo?: string): void {
     role,
     returnTo: safeReturnTo(returnTo, role),
     repositories: current?.role === role ? current.repositories : [],
+    repositoryKeywords: current?.role === role ? current.repositoryKeywords : {},
   });
 }
 
-export function saveMatchRepositories(role: string, repositories: string[]): void {
+export function saveMatchRepositories(
+  role: string,
+  repositories: string[],
+  repositoryKeywords: Record<string, string[]>,
+): void {
   const current = getSnapshot();
   write({
     role,
     returnTo:
       current?.role === role ? current.returnTo : routes.matchResult(role),
     repositories,
+    repositoryKeywords,
   });
 }
 
@@ -112,6 +134,7 @@ export function finishMatchFlow(role: string): {
   active: boolean;
   returnTo: string;
   repositories: string[];
+  repositoryKeywords: Record<string, string[]>;
 } {
   const current = getSnapshot();
   const active = current?.role === role;
@@ -119,6 +142,7 @@ export function finishMatchFlow(role: string): {
     active,
     returnTo: active ? current.returnTo : routes.matchResult(role),
     repositories: active ? current.repositories : [],
+    repositoryKeywords: active ? current.repositoryKeywords : {},
   };
 
   try {
