@@ -29,11 +29,13 @@ Python 3.11 이상이 필요합니다. 각 팀원은 저장소를 clone한 뒤 �
     python -m pip install --upgrade pip
     python -m pip install -e "./pipeline[dev]"
 
-설치 후 다음 명령으로 환경을 확인합니다.
+설치 후 저장소 루트에서 다음 명령으로 환경을 확인합니다.
 
     python --version
     python -m pytest
     ruff check pipeline
+
+`python -m pytest`는 루트의 `pytest.ini`가 `pipeline/src`를 모듈 경로에 넣습니다. `pipeline/` 안에서 실행하면 이 설정을 쓰지 않습니다.
 
 가상환경과 Python 패키지 빌드 산출물은 Git에 포함되지 않습니다.
 
