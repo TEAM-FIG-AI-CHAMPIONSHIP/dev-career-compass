@@ -4,10 +4,9 @@ import { CheckIcon } from "./icons";
 import { cn } from "@/lib/cn";
 
 /**
- * S3 경험 입력의 체크 항목.
- * 최소 선택 개수를 강제하지 않습니다 — 해당하는 것만 고르면 됩니다.
+ * 경험 입력의 다중 선택 카드. 최소 선택 개수를 강제하지 않습니다.
  */
-export function CheckOption({
+export function CheckboxCard({
   label,
   description,
   checked,
@@ -21,7 +20,7 @@ export function CheckOption({
   return (
     <label
       className={cn(
-        "flex min-h-11 cursor-pointer items-start gap-3 rounded-card border p-4",
+        "flex h-full min-h-11 cursor-pointer items-start gap-3 rounded-card border p-4",
         "bg-surface transition-colors",
         checked ? "border-ink" : "border-line hover:border-ink-muted",
       )}
@@ -60,41 +59,54 @@ export function CheckOption({
   );
 }
 
-/** 진행 수준 3단계 — 하나만 고릅니다. */
-export function LevelOption({
+/** 디자인 시스템 갤러리와 기존 import를 위한 별칭. */
+export const CheckOption = CheckboxCard;
+
+/**
+ * 진행 수준 단일 선택 카드. 한 그룹에서 하나만 고릅니다.
+ */
+export function RadioCard({
+  name,
   step,
   title,
   description,
   selected,
   onSelect,
 }: {
-  step: string;
+  name: string;
+  step?: string;
   title: string;
   description: string;
   selected: boolean;
   onSelect: () => void;
 }) {
   return (
-    <button
-      type="button"
-      aria-pressed={selected}
-      onClick={onSelect}
+    <label
       className={cn(
-        "flex cursor-pointer flex-col gap-1.5 rounded-card border p-[18px] text-left",
+        "flex h-full cursor-pointer flex-col gap-1.5 rounded-card border p-[18px] text-left",
         "transition-colors",
         selected
           ? "border-ink bg-ink"
           : "border-line bg-surface hover:border-ink-muted",
       )}
     >
-      <span
-        className={cn(
-          "font-mono text-[0.6875rem] tracking-[0.06em]",
-          selected ? "text-ink-soft" : "text-ink-muted",
-        )}
-      >
-        {step}
-      </span>
+      <input
+        type="radio"
+        name={name}
+        checked={selected}
+        onChange={onSelect}
+        className="sr-only"
+      />
+      {step ? (
+        <span
+          className={cn(
+            "font-mono text-[0.6875rem] tracking-[0.06em]",
+            selected ? "text-ink-soft" : "text-ink-muted",
+          )}
+        >
+          {step}
+        </span>
+      ) : null}
       <span
         className={cn(
           "text-[0.9375rem] leading-[1.6] font-semibold",
@@ -111,6 +123,32 @@ export function LevelOption({
       >
         {description}
       </span>
-    </button>
+    </label>
+  );
+}
+
+/** 디자인 시스템 갤러리와 기존 import를 위한 별칭. */
+export function LevelOption({
+  step,
+  title,
+  description,
+  selected,
+  onSelect,
+}: {
+  step: string;
+  title: string;
+  description: string;
+  selected: boolean;
+  onSelect: () => void;
+}) {
+  return (
+    <RadioCard
+      name="experience-level-gallery"
+      step={step}
+      title={title}
+      description={description}
+      selected={selected}
+      onSelect={onSelect}
+    />
   );
 }
