@@ -4,15 +4,12 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import type { ExperienceCatalog, ExperienceInput } from "@/types/data";
 import { CheckOption, LevelOption } from "@/components/ui/CheckOption";
-import { RepoField } from "@/components/ui/RepoField";
 import { Button } from "@/components/ui/Button";
-import { PlusIcon, ShieldIcon } from "@/components/ui/icons";
+import { ShieldIcon } from "@/components/ui/icons";
 import { useExperience, saveExperience, clearExperience } from "@/lib/experience-store";
+import { finishMatchFlow } from "@/lib/match-flow-store";
 
-type Draft = { itemIds: string[]; levelId: string; repos: string[] };
-
-const MAX_REPOS = 3;
-const REPO_SHAPE = /^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/;
+type Draft = { itemIds: string[]; levelId: string };
 
 /**
  * S3 경험 입력. 회사를 고른 흐름과 역매칭 흐름이 같은 폼을 씁니다.
@@ -22,13 +19,11 @@ const REPO_SHAPE = /^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/;
  */
 export function ExperienceForm({
   catalog,
-  jobSlug,
-  returnTo,
+  role,
 }: {
   catalog: ExperienceCatalog;
-  /** 직무별 항목을 걸러내는 데 씁니다. 없으면 공통 그룹만 보입니다. */
-  jobSlug?: string;
-  returnTo: string;
+  /** 직무별 항목을 걸러내고 입력 흐름을 이어가는 데 씁니다. */
+  role: string;
 }) {
   const router = useRouter();
 
@@ -40,13 +35,12 @@ export function ExperienceForm({
   const current: Draft = draft ?? {
     itemIds: stored?.itemIds ?? [],
     levelId: stored?.levelId ?? catalog.levels[0]?.id ?? "",
-    repos: stored?.repos?.length ? [...stored.repos] : [""],
   };
-  const { itemIds, levelId, repos } = current;
+  const { itemIds, levelId } = current;
   const edit = (patch: Partial<Draft>) => setDraft({ ...current, ...patch });
 
   const groups = catalog.groups.filter(
-    (g) => !g.appliesTo || (jobSlug != null && g.appliesTo.includes(jobSlug)),
+    (g) => !g.appliesTo || g.appliesTo.includes(role),
   );
 
   const toggle = (id: string) =>
@@ -56,23 +50,22 @@ export function ExperienceForm({
         : [...itemIds, id],
     });
 
-  const invalidRepos = repos.filter((r) => r.trim() !== "" && !REPO_SHAPE.test(r.trim()));
-
   const submit = () => {
+    const flow = finishMatchFlow(role);
     const input: ExperienceInput = {
       catalogVersion: catalog.version,
       itemIds,
       levelId,
-      repos: repos.map((r) => r.trim()).filter((r) => r !== "" && REPO_SHAPE.test(r)),
+      repos: flow.active ? flow.repositories : (stored?.repos ?? []),
     };
     saveExperience(input);
     setDraft(null);
-    router.push(returnTo);
+    router.push(flow.returnTo);
   };
 
   const reset = () => {
     clearExperience();
-    setDraft({ itemIds: [], levelId: catalog.levels[0]?.id ?? "", repos: [""] });
+    setDraft({ itemIds: [], levelId: catalog.levels[0]?.id ?? "" });
   };
 
   return (
@@ -122,46 +115,10 @@ export function ExperienceForm({
           </div>
         </section>
 
-        <section className="flex flex-col gap-3.5">
-          <div className="flex flex-wrap items-baseline gap-2.5 border-b border-line-strong pb-2.5">
-            <h2 className="text-h3 font-semibold sm:text-[1.125rem]">GitHub 저장소</h2>
-            <span className="font-mono text-[0.6875rem] tracking-[0.06em] text-ink-muted">
-              선택 · 최대 {MAX_REPOS}개
-            </span>
-          </div>
-          <div className="flex flex-col gap-2">
-            {repos.map((repo, i) => (
-              <RepoField
-                key={i}
-                value={repo}
-                onChange={(next) =>
-                  edit({ repos: repos.map((r, j) => (i === j ? next : r)) })
-                }
-                error={
-                  repo.trim() !== "" && !REPO_SHAPE.test(repo.trim())
-                    ? "사용자명/저장소 형태로 적어주세요."
-                    : undefined
-                }
-              />
-            ))}
-            {repos.length < MAX_REPOS && (
-              <button
-                type="button"
-                onClick={() => edit({ repos: [...repos, ""] })}
-                className="inline-flex min-h-11 w-fit cursor-pointer items-center gap-2 rounded-btn border border-dashed border-line-strong px-3.5 py-3 text-[0.84375rem] leading-none text-accent"
-              >
-                <PlusIcon size={14} strokeWidth={1.7} />
-                저장소 추가
-              </button>
-            )}
-          </div>
-        </section>
-
         <div className="flex flex-wrap items-center gap-3.5">
           <Button
             variant="primary"
             onClick={submit}
-            disabled={invalidRepos.length > 0}
             className="min-h-12 px-6 py-4 text-[0.9375rem]"
           >
             내 경험에 맞춘 결과 보기

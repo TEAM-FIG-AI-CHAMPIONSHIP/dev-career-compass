@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { Company } from "@/types/data";
 import { ChevronDownIcon, ChevronUpIcon } from "@/components/ui/icons";
 import { cn } from "@/lib/cn";
+import { routes } from "@/lib/routes";
 
 /**
  * S1 회사 목록. 회사를 누르면 페이지 이동 없이 그 자리에서 직무가 펼쳐집니다.
@@ -81,7 +82,7 @@ export function CompanyList({ companies }: { companies: Company[] }) {
                 {(company.jobs ?? []).map((job) => (
                   <Link
                     key={job.slug}
-                    href={`/${company.slug}/${job.slug}`}
+                    href={routes.companyResult(company.slug, job.slug)}
                     className="inline-flex min-h-11 items-center rounded-btn border border-line-strong bg-surface px-4 py-3 text-[0.875rem] leading-none text-ink no-underline transition-colors hover:border-ink hover:bg-ink hover:text-paper hover:no-underline"
                   >
                     {job.name}

@@ -1,121 +1,145 @@
 # 웹 파일 구조와 라우팅
 
-`apps/web` 의 구조와 라우팅을 정리합니다. 프론트를 여러 명이 나눠 맡기 전에
-화면과 경로를 맞추기 위한 문서입니다.
+`apps/web`의 화면 구조와 공개 URL 규칙을 정리합니다. 사용자가 랜딩에서 고르는
+두 탐색 경로를 Next.js App Router의 폴더와 일치시키는 것이 목적입니다.
 
-파이프라인과 데이터 수집 쪽은 이 문서의 범위가 아닙니다. 아래 트리에 함께
-그려 둔 것은 웹이 무엇을 읽는지 보여주기 위한 것이며, 그쪽 구조와 산출물은
-담당자가 정합니다.
+회사의 이름과 슬러그, 제공할 직무는 코드에 직접 적지 않고 `data/`에서 읽습니다.
+사용자가 고른 저장소와 경험은 URL이나 서버 저장소에 넣지 않습니다.
 
-회사 목록은 **기술 블로그·채용 공고 검증 결과로 확정될 예정**이므로, 웹은
-회사 이름이나 슬러그를 코드에 적지 않고 항상 데이터에서 읽습니다.
-뉴스는 MVP 범위에서 제외했습니다.
+## 공개 라우트
 
-## 트리
+| URL | 역할 | URL에 남는 상태 |
+|---|---|---|
+| `/` | 두 탐색 방법을 고르는 랜딩 | 없음 |
+| `/companies` | 관심 회사와 직무 선택 | 없음 |
+| `/companies/[company]/[role]` | 회사 기본 결과 + 개인화 결과 | 회사, 직무 |
+| `/match` | 경험 기반 탐색의 직무 선택 | 없음 |
+| `/match/[role]/repository` | GitHub 저장소 선택 | 직무 |
+| `/match/[role]/experience` | 경험 입력 | 직무 |
+| `/match/[role]/result` | 경험 기반 회사 역매칭 결과 | 직무 |
 
+`/ui`는 디자인 시스템 확인용 내부 페이지이며 사용자의 탐색 흐름에는 포함하지
+않습니다.
+
+핵심 화면을 구분하는 회사와 직무는 경로 세그먼트로 표현합니다. 저장소, 체크한
+경험, 단계 번호처럼 개인적이거나 일시적인 값은 쿼리 파라미터로 만들지 않습니다.
+
+## 사용자 흐름
+
+### A. 내 경험으로 회사 찾기
+
+```text
+/
+└─ /match
+   └─ /match/[role]/repository
+      └─ /match/[role]/experience
+         └─ /match/[role]/result
 ```
-dev-career-compass/
-├── .github/workflows/
-│   ├── collect.yml            매일 1회 공고 수집 (F-08)
-│   └── verify.yml             lint + build + 근거 링크 검증
-│
-├── apps/web/
-│   └── src/
-│       ├── app/
-│       │   ├── globals.css            디자인 토큰 (@theme)
-│       │   ├── layout.tsx             폰트, metadata
-│       │   ├── page.tsx               /                     S1 랜딩
-│       │   ├── experience/page.tsx    /experience           S3 경험 입력
-│       │   ├── match/page.tsx         /match                S5 직무 목록
-│       │   │                          /match?job=backend    S6 역매칭 결과
-│       │   ├── [company]/[job]/
-│       │   │   └── page.tsx           /oliveyoung/backend   S2 결과 + S4 개인화
-│       │   └── api/
-│       │       ├── personalize/route.ts   S4 생성 (LLM, 무저장)
-│       │       └── match/route.ts         S6 생성 (LLM, 무저장)
-│       ├── components/
-│       │   ├── ui/                    디자인 캔버스의 컴포넌트 시트와 1:1
-│       │   │   ├── Button.tsx  Chip.tsx  StageBadge.tsx
-│       │   │   ├── CheckOption.tsx  RepoField.tsx
-│       │   │   └── state/{Empty,Loading,Error}.tsx
-│       │   ├── company/{CompanyRow,JobButtons}.tsx
-│       │   ├── result/{SuggestionCard,DomainChips,EvidenceTimeline}.tsx
-│       │   └── experience/ExperienceForm.tsx
-│       ├── lib/
-│       │   ├── published.ts           data/ 읽기 (서버 전용)
-│       │   ├── experience-store.ts    localStorage 읽기·쓰기·지우기
-│       │   ├── github.ts              public README 조회 (서버 전용)
-│       │   └── llm.ts                 Claude API 클라이언트
-│       └── types/data.ts              data/ 를 읽기 위한 웹 내부 타입
-│
-├── pipeline/
-│   ├── pyproject.toml
-│   ├── src/career_compass_pipeline/
-│   │   ├── collect/{blog,news,jobs}.py
-│   │   ├── normalize.py
-│   │   ├── extract.py      LLM — 영역 추출 (블로그만)
-│   │   ├── aggregate.py    코드만 — 빈도 집계, LLM 금지
-│   │   ├── recommend.py    LLM — 제안 생성, 근거 ID 필수
-│   │   ├── validate.py     링크 200 · 근거 ID 존재 · 스키마
-│   │   ├── publish.py
-│   │   └── cli.py
-│   └── tests/
-│
-├── data/
-│   ├── index.json                     회사×직무 목록 (S1·S5가 읽음)
-│   ├── research/                      연구 요약 (공유 가능한 통계·요약만)
-│   ├── published/{회사}/{직무}.json     검증 통과분만
-│   ├── fixtures/                      화면용 임시 데이터 (검증 결과 아님)
-│   └── raw|work|intermediate/         gitignore됨
-│
-├── docs/
-└── design/                            .dc.html 8개 + canvas.json
+
+1. 직무를 고르면 그 직무가 이후 모든 단계의 경로에 유지됩니다.
+2. 저장소는 선택 사항이며 최대 3개까지 입력합니다.
+3. 경험을 저장하면 역매칭 결과로 이동합니다.
+4. 결과 URL에는 저장소와 경험값이 포함되지 않습니다.
+
+### B. 관심 회사부터 보기
+
+```text
+/
+└─ /companies
+   └─ /companies/[company]/[role]
+      └─ 개인화 입력 시 /match/[role]/repository
+         └─ /match/[role]/experience
+            └─ /companies/[company]/[role] 로 복귀
 ```
+
+회사 결과에서 개인화를 시작하면 공통 저장소·경험 입력 화면을 재사용합니다. 이때
+돌아갈 회사 결과 URL은 `sessionStorage`에 잠시 보관합니다. 입력이 끝나면 해당 값을
+지우고 원래 회사 결과로 돌아갑니다. 따라서 기본 결과와 개인화 결과의 canonical
+URL은 모두 `/companies/[company]/[role]`입니다.
+
+## Next.js 폴더 구조
+
+```text
+apps/web/src/
+├── app/
+│   ├── globals.css
+│   ├── layout.tsx
+│   ├── page.tsx                            /
+│   ├── companies/
+│   │   ├── page.tsx                        /companies
+│   │   └── [company]/[role]/
+│   │       ├── page.tsx                    회사 기본·개인화 결과
+│   │       └── PersonalizedPanel.tsx        브라우저 경험에 따른 개인화 영역
+│   ├── match/
+│   │   ├── page.tsx                        /match
+│   │   └── [role]/
+│   │       ├── layout.tsx                  유효 직무 정적 경로 생성
+│   │       ├── repository/page.tsx         저장소 선택
+│   │       ├── experience/page.tsx         경험 입력
+│   │       └── result/
+│   │           ├── page.tsx                역매칭 결과
+│   │           └── ReverseResult.tsx        브라우저 경험 기반 결과 영역
+│   └── ui/                                 디자인 시스템 확인용
+├── components/
+│   ├── company/CompanyList.tsx
+│   ├── experience/
+│   │   ├── RepositoryForm.tsx
+│   │   └── ExperienceForm.tsx
+│   ├── result/
+│   └── ui/
+├── lib/
+│   ├── data.ts                             게시·fixture 데이터 읽기
+│   ├── routes.ts                           공개 URL 생성 함수
+│   ├── experience-store.ts                 완성된 경험 localStorage 상태
+│   ├── match-flow-store.ts                 입력 중 복귀·저장소 sessionStorage 상태
+│   └── personalize.ts
+└── types/data.ts
+```
+
+## URL과 브라우저 상태의 경계
+
+| 값 | 저장 위치 | 수명 | 이유 |
+|---|---|---|---|
+| 회사 슬러그 | URL path | 공유 링크 수명 | 결과 화면을 식별함 |
+| 직무 슬러그 | URL path | 공유 링크 수명 | 모든 분석 결과의 필수 맥락임 |
+| 경험 항목·프로젝트 단계 | `localStorage` | 사용자가 지울 때까지 | 다른 회사에서도 재사용하지만 공유하면 안 됨 |
+| 선택한 GitHub 저장소 | 최종 입력은 `localStorage` | 사용자가 지울 때까지 | 개인 입력이며 URL에 노출하지 않음 |
+| 입력 중 저장소·복귀 URL | `sessionStorage` | 입력 완료 또는 탭 종료까지 | 두 진입로가 같은 입력 화면을 안전하게 재사용함 |
+
+브라우저 저장소를 사용할 수 없는 환경에서도 흐름은 동작합니다. 복귀 상태를 읽지
+못하면 `/match/[role]/result`를 기본 목적지로 사용합니다.
 
 ## 결정과 이유
 
 | 결정 | 이유 |
 |---|---|
-| **데이터 계약을 먼저 만들지 않음** | 파이프라인 산출물의 모양이 정해지지 않았습니다. 웹은 `types/data.ts` 에 손으로 쓴 내부 타입으로 fixture 를 읽고, 산출물이 나오면 거기에 맞춥니다. 계약을 웹이 먼저 못박으면 파이프라인 쪽을 제약하게 됩니다 |
-| **S2와 S4가 같은 라우트** | "공유 URL에 개인화 미포함" 조건(F-06). 별도 URL을 만들면 그게 공유됩니다. 한 라우트에서 localStorage 유무로 S2/S4를 가르고, 공유받은 사람은 S2를 봅니다 |
-| **회사 라우트가 루트** | 공유 링크가 제품 기능이라 URL이 사용자 눈에 띕니다. `/oliveyoung/backend` |
-| **S6은 쿼리 파라미터** | `/match?job=backend`. 루트에 회사 라우트를 둔 이상 두 칸짜리 경로는 전부 회사 것이라 `/match/backend`를 쓸 수 없습니다. S6은 localStorage 경험값으로 그려지므로 URL이 결과를 대표하지 못하고, 공유해도 의미가 없어 경로를 파지 않는 편이 정직합니다 |
-| **`data/published`를 빌드타임에 읽음** | "결과 페이지 즉시 응답" KPI. `generateStaticParams`로 전 조합을 정적 생성합니다. DB 없음 |
-| **개인화만 Route Handler** | 10초 KPI + "README·입력값 서버 저장 금지"(F-05). 요청 안에서 처리하고 끝냅니다. 저장 계층을 아예 만들지 않는 것이 조건을 지키는 가장 확실한 방법입니다 |
-| **공고는 optional 필드** | 채용 API 승인이 안 나도 동작해야 합니다(F-08). `analysis.json`의 공고 필드를 required로 걸지 않습니다 |
+| 핵심 흐름에서 쿼리 파라미터를 쓰지 않음 | 단계와 화면 맥락이 URL 경로만으로 읽히고, 새로고침·공유 시 의미가 흐려지지 않습니다 |
+| 회사 결과를 `/companies/[company]/[role]`에 둠 | 회사와 직무가 모두 URL에 드러나며 `match`, `ui`, `api` 같은 최상위 경로와 회사 슬러그가 충돌하지 않습니다 |
+| 회사 기본·개인화 결과가 같은 URL을 사용함 | 개인화는 브라우저 경험값에 따른 표현 차이입니다. 공유 링크에는 개인 경험이 포함되지 않아야 합니다 |
+| 저장소와 경험 입력 화면을 두 진입로가 공유함 | 같은 입력 규칙과 저장 정책을 한 컴포넌트에서 유지하며 중복 화면을 만들지 않습니다 |
+| 게시 데이터를 빌드 시점에 읽음 | `generateStaticParams`로 유효한 회사×직무와 직무 단계를 미리 만들 수 있고 결과가 즉시 열립니다 |
+| `routes.ts`에서 경로를 생성함 | 링크 문자열이 여러 컴포넌트에서 어긋나는 것을 막습니다 |
 
-## 회사 목록이 바뀌어도 되게 하는 규칙
+상세한 선택 배경과 영향은
+[`adr-001-route-structure.md`](./adr-001-route-structure.md)에 기록합니다.
 
-회사 목록은 확정되지 않았습니다. 아래를 지키면 회사를 넣고 빼는 일이 데이터 변경만으로 끝납니다.
+## 데이터가 바뀌어도 지켜야 할 규칙
 
-1. **웹 코드에 회사 이름이나 슬러그를 적지 않습니다.** 전부 `data/index.json`과 `data/published/`에서 읽습니다.
-2. `generateStaticParams`는 `data/published/` 디렉터리를 훑어 조합을 만듭니다. 파일을 지우면 그 페이지가 사라집니다.
-3. `[company]/[job]/page.tsx`에 `dynamicParams = false`를 둡니다. 게시되지 않은 조합은 404가 되고, 루트 라우트가 아무 경로나 삼키지 않습니다.
-4. 아직 근거가 모이지 않은 회사는 `status: "collecting"`으로 두면 S1에 준비 중 카드로만 보이고 결과 페이지를 만들지 않습니다.
-5. **슬러그는 한 번 게시하면 바꾸지 않습니다.** 바꾸면 이미 공유된 링크가 죽습니다.
+1. 웹 코드에 회사 이름이나 회사 슬러그를 직접 적지 않습니다.
+2. 회사 결과의 `generateStaticParams`는 게시된 회사×직무 조합을
+   `{ company, role }`로 변환합니다.
+3. `/match/[role]`의 `generateStaticParams`는 게시된 분석이 있는 직무를 사용합니다.
+4. 동적 경로는 `dynamicParams = false`로 제한해 존재하지 않는 조합을 404로 처리합니다.
+5. 회사와 직무 슬러그는 한 번 게시하면 바꾸지 않습니다. 변경이 불가피하면 이전
+   주소에서 새 주소로 명시적인 영구 리다이렉트를 추가합니다.
 
-## 슬러그 금지 목록
+슬러그 형식은 소문자와 숫자, 구분은 하이픈입니다
+(`^[a-z0-9]+(-[a-z0-9]+)*$`).
 
-회사 라우트가 루트에 있어 슬러그가 최상위 경로를 그대로 차지합니다. `match`라는 슬러그를 가진 회사가 생기면 그 회사 페이지는 영영 열리지 않습니다.
+## 아직 정하지 않은 것
 
-지금 웹이 쓰는 최상위 경로는 `experience` · `match` · `ui` · `api` 넷입니다. 회사 슬러그를 정할 때 이 넷과 겹치지 않게 해야 하고, 앞으로 최상위 경로를 늘릴 때도 같은 확인이 필요합니다.
-
-슬러그 형식은 소문자와 숫자, 구분은 하이픈입니다 (`^[a-z0-9]+(-[a-z0-9]+)*$`).
-
-## 구현 순서
-
-1. `globals.css` @theme + `components/ui/` — 디자인 캔버스의 토큰·컴포넌트 시트 그대로
-2. `data/fixtures/`에 한 조합을 채움
-3. S1 → S2 를 fixture로 붙임 (파이프라인 없이 화면 완성)
-4. S3 → S5, 그리고 S4·S6 의 자리 잡기
-6. 파이프라인. **웹이 fixture로 완주한 뒤에 시작합니다** — 수집이 늦어져도 화면은 이미 서 있습니다
-
-## 아직 정하지 못한 것
-
-- **회사 목록과 슬러그** — 기술 블로그·채용 공고 검증 담당자가 확정합니다.
-  웹은 그때까지 `data/fixtures` 로 화면을 완주시킵니다.
-- **파이프라인 산출물의 모양** — 정해지면 `apps/web/src/types/data.ts` 와
-  `lib/data.ts` 를 거기에 맞춥니다.
-- **S4 의 다음 단계, S6 의 3단계 분류 규칙** — `lib/personalize.ts` 가 그 자리이며
-  비어 있습니다.
-- **경험 체크박스 항목** — `data/experience.json` 은 임시값 9개입니다.
+- 회사 목록과 실제 제공 직무
+- 파이프라인 최종 산출물 스키마
+- 회사 개인화의 다음 단계 선택 규칙
+- 경험 역매칭의 3단계 분류 규칙
+- GitHub README를 가져와 분석하는 서버 로직

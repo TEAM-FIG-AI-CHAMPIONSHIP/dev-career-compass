@@ -1,77 +1,84 @@
 import Link from "next/link";
-import { getCompanyIndex, dataSource } from "@/lib/data";
-import { CompanyList } from "@/components/company/CompanyList";
-import { PageHeader, DataSourceNote } from "@/components/ui/PageHeader";
+import { PageHeader } from "@/components/ui/PageHeader";
+import {
+  ArrowRightIcon,
+  BuildingIcon,
+  PersonIcon,
+} from "@/components/ui/icons";
+import { routes } from "@/lib/routes";
 
-/** S1 랜딩 — 회사를 고르면 그 자리에서 직무가 펼쳐집니다. */
+/** 진입 화면 — 회사와 경험, 두 탐색 경로의 책임만 가집니다. */
 export default function Home() {
-  const index = getCompanyIndex();
-  const source = dataSource();
-
   return (
     <>
-      <PageHeader
-        right={
-          <span className="font-mono text-meta text-ink-muted">
-            최근 12개월 수집분
-          </span>
-        }
-      />
+      <PageHeader />
 
-      <main className="flex grow flex-col">
-        <div className="flex max-w-4xl flex-col gap-4 px-4 pt-12 pb-10 sm:px-8 lg:px-20 lg:pt-16">
-          <h1 className="text-[1.75rem] leading-[1.35] font-semibold tracking-[-0.015em] text-pretty sm:text-[2.375rem]">
-            이 회사 개발 조직이 반복해서 다루는 일을 보고,
-            <br className="hidden sm:inline" /> 지금 만들 것을 정하세요.
-          </h1>
-          <p className="max-w-2xl text-body text-ink-soft sm:text-base sm:leading-[1.8]">
-            기술 블로그와 채용 공고에서 그 조직이 실제로 붙잡고 있는 문제를
-            뽑아냅니다. 모든 제안에는 열어볼 수 있는 원문 근거가 붙습니다.
-          </p>
-        </div>
-
-        <section className="flex flex-col gap-4 px-4 sm:px-8 lg:px-20">
-          <div className="flex items-baseline justify-between border-b border-ink pb-2.5">
-            <h2 className="text-h3 font-semibold sm:text-[1.0625rem]">
-              관심 있는 회사를 고르세요
-            </h2>
-            <span className="font-mono text-[0.71875rem] text-ink-soft">
-              {index.companies.length}곳
-            </span>
+      <main className="flex grow flex-col px-4 pt-14 pb-12 sm:px-8 sm:pt-16 sm:pb-14 lg:px-12 lg:pt-20 lg:pb-16">
+        <div className="mx-auto flex w-full max-w-6xl flex-col">
+          <div className="mx-auto flex max-w-6xl flex-col items-center gap-5 text-center">
+            <h1 className="text-[2.25rem] leading-[1.3] font-semibold tracking-[-0.022em] text-balance sm:text-[3rem]">
+              기업이 풀고 있는 문제와 내 경험을 연결해,
+              <br className="hidden sm:inline" />
+              <span className="text-accent"> 다음 한 걸음</span>을 정하세요
+            </h1>
+            <p className="max-w-none text-[1rem] leading-[1.85] text-ink-soft sm:text-[1.03125rem] lg:whitespace-nowrap">
+              기술 블로그와 채용 공고를 분석해 개발 조직이 반복해서 다루는 문제를
+              찾고, 지금의 경험에 맞는 회사와 프로젝트 방향을 제안합니다.
+            </p>
           </div>
-          <CompanyList companies={index.companies} />
-        </section>
 
-        <section className="px-4 py-10 sm:px-8 lg:px-20 lg:py-16">
-          <div className="flex flex-col items-start justify-between gap-5 rounded-card border border-line-strong bg-surface p-[26px] sm:flex-row sm:items-center">
-            <div className="flex flex-col gap-1.5">
-              <p className="text-[1.03125rem] leading-[1.55] font-semibold">
-                회사부터 정하기 어렵다면, 내가 만든 것부터 보여주세요
-              </p>
-              <p className="max-w-2xl text-[0.875rem] leading-[1.75] text-ink-soft">
-                직무 하나만 고르고 지금까지 해본 것을 체크하면, 어느 조직이 지금의
-                경험과 가까운지 되짚어 드립니다.
-              </p>
-            </div>
+          <section
+            aria-label="탐색 방법 선택"
+            className="mt-12 grid grid-cols-1 gap-4 sm:mt-14 lg:mt-16 lg:grid-cols-2 lg:gap-5"
+          >
             <Link
-              href="/match"
-              className="inline-flex min-h-11 shrink-0 items-center rounded-btn border border-accent bg-accent px-5 py-3 text-[0.875rem] leading-none font-medium text-white no-underline transition-colors hover:border-accent-ink hover:bg-accent-ink hover:no-underline"
+              href={routes.companies}
+              className="group flex min-h-[18rem] flex-col rounded-card border border-line-strong bg-surface p-[26px] text-ink no-underline shadow-raised transition-colors hover:border-accent hover:no-underline sm:p-9"
             >
-              내 경험부터 보기
+              <span className="flex size-14 items-center justify-center rounded-card bg-accent-tint text-accent">
+                <BuildingIcon size={29} strokeWidth={1.55} />
+              </span>
+              <h2 className="mt-7 text-[1.5rem] leading-[1.5] font-semibold">
+                관심 회사 선택
+              </h2>
+              <p className="mt-3 max-w-md text-[1.0625rem] leading-[1.8] text-ink-soft">
+                관심 있는 회사를 먼저 고르고,
+                <br /> 그 조직이 실제로 하는 일과 다음 한 걸음을 확인합니다.
+              </p>
+              <span className="mt-auto inline-flex min-h-11 items-center gap-2 pt-6 text-base font-medium text-accent">
+                회사부터 선택하기
+                <ArrowRightIcon
+                  size={18}
+                  className="transition-transform group-hover:translate-x-0.5"
+                />
+              </span>
             </Link>
-          </div>
-        </section>
-      </main>
 
-      <footer className="mt-auto">
-        <DataSourceNote source={source} />
-        <div className="border-t border-line px-4 py-4 sm:px-8 lg:px-20">
-          <p className="text-caption text-ink-muted">
-            수집한 글의 본문은 저장하거나 다시 싣지 않습니다. 제목과 발행일, 원문
-            링크만 보여드립니다.
-          </p>
+            <Link
+              href={routes.match}
+              className="group flex min-h-[18rem] flex-col rounded-card border border-line-strong bg-surface p-[26px] text-ink no-underline shadow-raised transition-colors hover:border-stage-fit-edge hover:no-underline sm:p-9"
+            >
+              <span className="flex size-14 items-center justify-center rounded-card bg-stage-fit-tint text-stage-fit">
+                <PersonIcon size={29} strokeWidth={1.55} />
+              </span>
+              <h2 className="mt-7 text-[1.5rem] leading-[1.5] font-semibold">
+                내 경험으로 맞는 회사 찾기
+              </h2>
+              <p className="mt-3 max-w-md text-[1.0625rem] leading-[1.8] text-ink-soft">
+                회사부터 정하기 어렵다면, 내가 만든 것부터 보여주세요.
+                <br /> 경험과 맞는 회사를 찾아드립니다.
+              </p>
+              <span className="mt-auto inline-flex min-h-11 items-center gap-2 pt-6 text-base font-medium text-stage-fit">
+                경험부터 시작하기
+                <ArrowRightIcon
+                  size={18}
+                  className="transition-transform group-hover:translate-x-0.5"
+                />
+              </span>
+            </Link>
+          </section>
         </div>
-      </footer>
+      </main>
     </>
   );
 }

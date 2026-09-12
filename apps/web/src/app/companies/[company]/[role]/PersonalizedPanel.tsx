@@ -4,26 +4,24 @@ import Link from "next/link";
 import type { ExperienceCatalog } from "@/types/data";
 import { describeExperience, describeUnchosen } from "@/lib/personalize";
 import { useExperience, clearExperience } from "@/lib/experience-store";
+import { beginMatchFlow } from "@/lib/match-flow-store";
+import { routes } from "@/lib/routes";
 import { CheckIcon } from "@/components/ui/icons";
 import { Button } from "@/components/ui/Button";
 
-/**
- * S4 개인화 결과. S2 와 같은 URL 위에 얹힙니다 — 공유 링크에 개인화가 들어가면
- * 안 되기 때문입니다. 공유받은 사람의 브라우저에는 입력이 없으니 S2 만 보입니다.
- *
- * "이미 한 것" 은 사용자가 고른 것을 되읽어 주는 것이라 판단이 없고, 지금도
- * 정확합니다. "다음 단계" 와 "아직 빈 곳" 은 판단이 필요해 아직 비어 있습니다.
- */
 export function PersonalizedPanel({
   catalog,
-  experienceHref,
+  role,
+  returnTo,
 }: {
   catalog: ExperienceCatalog;
-  experienceHref: string;
+  role: string;
+  returnTo: string;
 }) {
   const input = useExperience(catalog.version);
+  const experienceHref = routes.matchRepository(role);
+  const prepareExperienceFlow = () => beginMatchFlow(role, returnTo);
 
-  // 입력이 없으면 개인화 유도 배너만 보입니다.
   if (!input) {
     return (
       <div className="flex flex-col items-start justify-between gap-5 rounded-card border border-accent bg-accent-tint p-[26px] sm:flex-row sm:items-center">
@@ -38,6 +36,7 @@ export function PersonalizedPanel({
         </div>
         <Link
           href={experienceHref}
+          onClick={prepareExperienceFlow}
           className="inline-flex min-h-11 shrink-0 items-center rounded-btn border border-accent bg-accent px-5 py-3 text-[0.875rem] leading-none font-medium text-white no-underline transition-colors hover:border-accent-ink hover:bg-accent-ink hover:no-underline"
         >
           내 경험 넣기
@@ -62,6 +61,7 @@ export function PersonalizedPanel({
           <div className="flex items-center gap-2">
             <Link
               href={experienceHref}
+              onClick={prepareExperienceFlow}
               className="text-[0.84375rem] text-ink-soft no-underline hover:text-ink"
             >
               입력 고치기
@@ -76,9 +76,9 @@ export function PersonalizedPanel({
           </div>
         </div>
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {done.map((d) => (
+          {done.map((item) => (
             <div
-              key={`${d.origin}-${d.label}`}
+              key={`${item.origin}-${item.label}`}
               className="flex items-start gap-2.5 rounded-card border border-line bg-surface p-4"
             >
               <CheckIcon
@@ -88,10 +88,10 @@ export function PersonalizedPanel({
               />
               <div className="flex flex-col gap-0.5">
                 <span className="text-[0.90625rem] leading-[1.65] font-medium">
-                  {d.label}
+                  {item.label}
                 </span>
                 <span className="font-mono text-[0.71875rem] text-ink-muted">
-                  {d.origin}
+                  {item.origin}
                 </span>
               </div>
             </div>
@@ -117,16 +117,16 @@ export function PersonalizedPanel({
           </span>
         </div>
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {gaps.map((g) => (
+          {gaps.map((gap) => (
             <div
-              key={`${g.origin}-${g.label}`}
+              key={`${gap.origin}-${gap.label}`}
               className="flex flex-col gap-1.5 rounded-card border border-dashed border-line-strong bg-surface p-5"
             >
               <span className="text-[0.9375rem] leading-[1.6] font-semibold text-ink-soft">
-                {g.label}
+                {gap.label}
               </span>
               <span className="font-mono text-[0.71875rem] text-ink-muted">
-                {g.origin}
+                {gap.origin}
               </span>
             </div>
           ))}
@@ -140,10 +140,6 @@ export function PersonalizedPanel({
   );
 }
 
-/**
- * 판단 로직이 들어갈 자리. 규칙이 정해지기 전까지 임시 결과를 지어내지 않고
- * 비어 있다는 사실을 그대로 보여줍니다.
- */
 function NotWiredYet() {
   return (
     <div className="flex flex-col gap-3 rounded-card border border-dashed border-line-strong bg-surface p-6">
