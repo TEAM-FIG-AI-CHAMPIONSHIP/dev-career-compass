@@ -1,0 +1,120 @@
+{
+  "note": "1차 게이트를 통과한 34곳이 아니다. 수기 확인 여력이 없어 unknown 중 우선순위 높은 16곳을 노출 후보로만 둔다. 직무당 기술글 8개를 충족했다고 보지 않는다. Area 확정이 아니다.",
+  "gate_pass_count": 34,
+  "candidate_count": 16,
+  "exposure_pool_count": 50,
+  "companies": [
+    {
+      "rank": 1,
+      "name": "미리디",
+      "blog_url": "https://medium.com/miridih/subpage/3d936b50f942",
+      "verdict": "unknown",
+      "reason": "기술글 20, 프론트 7. 게이트에 1개 부족. 창 미닫힘"
+    },
+    {
+      "rank": 2,
+      "name": "무신사 / 29CM",
+      "blog_url": "https://techblog.musinsa.com/",
+      "verdict": "unknown",
+      "reason": "기술글 23, 데이터·AI 5. 이전 8은 RSS/sitemap 중복"
+    },
+    {
+      "rank": 3,
+      "name": "인포그랩",
+      "blog_url": "https://insight.infograb.net/blog/",
+      "verdict": "unknown",
+      "reason": "기술글 16, 백엔드 6. 글은 있고 창이 안 닫힘"
+    },
+    {
+      "rank": 4,
+      "name": "하이퍼엑셀",
+      "blog_url": "https://hyper-accel.github.io/",
+      "verdict": "unknown",
+      "reason": "기술글 23, 백엔드 6. 글은 많고 창이 안 닫힘"
+    },
+    {
+      "rank": 5,
+      "name": "LG유플러스 볼트업",
+      "blog_url": "https://tech.voltup.kr/posts",
+      "verdict": "unknown",
+      "reason": "기술글 9. 직무가 흩어져 있음"
+    },
+    {
+      "rank": 6,
+      "name": "바비톡",
+      "blog_url": "https://medium.com/babitalk-blog",
+      "verdict": "unknown",
+      "reason": "기술글 8. Medium RSS 10건만 보임"
+    },
+    {
+      "rank": 7,
+      "name": "펫프렌즈",
+      "blog_url": "https://techblog.pet-friends.co.kr/",
+      "verdict": "unknown",
+      "reason": "기술글 8. 직무당 8 미만, 창 미닫힘"
+    },
+    {
+      "rank": 8,
+      "name": "자비스앤빌런즈 / 삼쩜삼",
+      "blog_url": "https://blog.3o3.co.kr/tag/tech/",
+      "verdict": "unknown",
+      "reason": "기술글 15. 직무 키워드가 거의 안 붙음"
+    },
+    {
+      "rank": 9,
+      "name": "AB180",
+      "blog_url": "https://engineering.ab180.co/",
+      "verdict": "unknown",
+      "reason": "수집 0. 엔지니어링 블로그는 열림"
+    },
+    {
+      "rank": 10,
+      "name": "VCNC / 타다",
+      "blog_url": "https://blog-tech.tadatada.com/",
+      "verdict": "unknown",
+      "reason": "수집 0. 타다 Tech 블로그는 열림"
+    },
+    {
+      "rank": 11,
+      "name": "네이버클라우드 / CLOVA",
+      "blog_url": "https://clova.ai/tech-blog",
+      "verdict": "unknown",
+      "reason": "수집 0. CLOVA tech-blog는 열림"
+    },
+    {
+      "rank": 12,
+      "name": "플렉스",
+      "blog_url": "https://flex.team/blog/category/tech",
+      "verdict": "unknown",
+      "reason": "수집 0. 기술 블로그는 열림"
+    },
+    {
+      "rank": 13,
+      "name": "브레이브모바일 / 숨고",
+      "blog_url": "https://soomgo.team/blog/category/tech",
+      "verdict": "unknown",
+      "reason": "수집 0. 팀 블로그 Tech는 열림"
+    },
+    {
+      "rank": 14,
+      "name": "래블업",
+      "blog_url": "https://www.backend.ai/ko/blog/category/engineering",
+      "verdict": "unknown",
+      "reason": "수집 0. Backend.AI 엔지니어링 글은 열림"
+    },
+    {
+      "rank": 15,
+      "name": "네이버랩스",
+      "blog_url": "https://www.naverlabs.com/blogList",
+      "verdict": "unknown",
+      "reason": "수집 0. 연구 블로그는 열림"
+    },
+    {
+      "rank": 16,
+      "name": "카카오스타일",
+      "blog_url": "https://devblog.kakaostyle.com/ko/",
+      "verdict": "unknown",
+      "reason": "수집 3. 기술 블로그는 열림"
+    }
+  ]
+}
