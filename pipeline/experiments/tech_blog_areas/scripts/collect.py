@@ -16,6 +16,8 @@ from bs4 import BeautifulSoup
 from dateutil import parser as date_parser
 from dateutil.relativedelta import relativedelta
 
+from archive_collector import collect_archive
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
@@ -982,6 +984,33 @@ def merge_candidates(
     return merged
 
 
+def add_archive_candidates(
+    merged,
+    archive_candidates
+):
+    for url, article in (
+        archive_candidates.items()
+    ):
+        if url in merged:
+            continue
+
+        merged[url] = {
+            "url": url,
+            "title": (
+                article.get(
+                    "link_text",
+                    ""
+                )
+            ),
+            "published_at": None,
+            "discovered_by": [
+                "archive"
+            ]
+        }
+
+    return merged
+
+
 def collect_company(
     session,
     source,
@@ -1030,6 +1059,37 @@ def collect_company(
         rss_articles,
         sitemap_candidates
     )
+
+    archive_report = None
+
+    # sitemap이 아예 없거나 비어 있을 때만 archive
+    # 계층을 시도한다. sitemap이 후보를 하나라도
+    # 냈다면 lastmod 기준으로 12개월 전체를 이미
+    # 커버할 수 있다고 보고 archive는 건너뛴다.
+    if not sitemap_candidates:
+        (
+            archive_candidates,
+            archive_report
+        ) = collect_archive(
+            session=session,
+            source=source,
+            cutoff=cutoff,
+            already_found_urls=set(
+                candidates.keys()
+            ),
+            normalize_url=normalize_url,
+            parse_date=parse_date
+        )
+
+        print(
+            "Archive 신규 후보:",
+            len(archive_candidates)
+        )
+
+        candidates = add_archive_candidates(
+            candidates,
+            archive_candidates
+        )
 
     print(
         "중복 제거 후 후보:",
@@ -1182,11 +1242,41 @@ def collect_company(
         reverse=True
     )
 
+    strategies_used = set()
+
+    for article in articles:
+        strategies_used.update(
+            article["discovered_by"]
+        )
+
+    if not articles:
+        coverage_strategy = "insufficient"
+
+    elif strategies_used == {"archive"}:
+        coverage_strategy = "archive"
+
+    elif strategies_used == {"rss"}:
+        coverage_strategy = "rss"
+
+    elif strategies_used == {"sitemap"}:
+        coverage_strategy = "sitemap"
+
+    else:
+        coverage_strategy = "+".join(
+            sorted(
+                strategies_used
+            )
+        )
+
     report = {
         "company": company,
         "cutoff": cutoff.isoformat(),
+        "coverage_strategy": (
+            coverage_strategy
+        ),
         "rss": rss_report,
         "sitemap": sitemap_report,
+        "archive": archive_report,
         "merged_candidate_count": (
             len(candidates)
         ),
