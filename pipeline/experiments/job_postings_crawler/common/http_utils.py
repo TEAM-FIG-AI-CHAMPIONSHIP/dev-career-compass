@@ -21,18 +21,25 @@ def fetch(url, delay=DEFAULT_DELAY, retries=2, params=None, headers=None):
     return _request("GET", url, delay=delay, retries=retries, params=params, headers=headers).text
 
 
-def fetch_json(url, delay=DEFAULT_DELAY, retries=2, params=None, headers=None, method="GET", json_body=None):
+def fetch_json(url, delay=DEFAULT_DELAY, retries=2, params=None, headers=None, method="GET", json_body=None, data=None):
     """JSON API 호출 후 파싱된 결과 반환."""
     merged = {"Accept": "application/json"}
     if headers:
         merged.update(headers)
     res = _request(
-        method, url, delay=delay, retries=retries, params=params, headers=merged, json_body=json_body
+        method,
+        url,
+        delay=delay,
+        retries=retries,
+        params=params,
+        headers=merged,
+        json_body=json_body,
+        data=data,
     )
     return res.json()
 
 
-def _request(method, url, delay, retries, params=None, headers=None, json_body=None):
+def _request(method, url, delay, retries, params=None, headers=None, json_body=None, data=None):
     merged = dict(HEADERS)
     if headers:
         merged.update(headers)
@@ -42,7 +49,13 @@ def _request(method, url, delay, retries, params=None, headers=None, json_body=N
         time.sleep(delay if attempt == 0 else delay * (attempt + 1))
         try:
             res = requests.request(
-                method, url, headers=merged, params=params, json=json_body, timeout=DEFAULT_TIMEOUT
+                method,
+                url,
+                headers=merged,
+                params=params,
+                json=json_body,
+                data=data,
+                timeout=DEFAULT_TIMEOUT,
             )
             res.raise_for_status()
             # Content-Type에 charset이 없으면 requests가 ISO-8859-1로 넘겨 한글이 깨진다.
