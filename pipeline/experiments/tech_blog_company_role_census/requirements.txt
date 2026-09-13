@@ -1,0 +1,4 @@
+requests
+feedparser
+trafilatura
+python-dateutil

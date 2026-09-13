@@ -1,0 +1,468 @@
+{
+  "issue": 30,
+  "note": "verdict=pass 만. 직무당 기술글 8개. Area 게이트는 아직 아니다.",
+  "company_count": 25,
+  "companies": [
+    {
+      "name": "CJ올리브영",
+      "blog_url": "https://oliveyoung.tech/",
+      "passing_roles": [
+        "서버·백엔드",
+        "모바일",
+        "데이터·AI"
+      ],
+      "role_counts": {
+        "서버·백엔드": 23,
+        "웹 프론트엔드": 5,
+        "모바일": 10,
+        "데이터·AI": 8
+      },
+      "tech_count": 44,
+      "job_count": 3,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
+      "name": "GS리테일",
+      "blog_url": "https://gsretail.tistory.com/",
+      "passing_roles": [
+        "서버·백엔드",
+        "데이터·AI"
+      ],
+      "role_counts": {
+        "서버·백엔드": 8,
+        "웹 프론트엔드": 4,
+        "모바일": 4,
+        "데이터·AI": 10
+      },
+      "tech_count": 10,
+      "job_count": 2,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
+      "name": "kt cloud",
+      "blog_url": "https://tech.ktcloud.com/",
+      "passing_roles": [
+        "서버·백엔드",
+        "데이터·AI"
+      ],
+      "role_counts": {
+        "서버·백엔드": 15,
+        "웹 프론트엔드": 4,
+        "모바일": 0,
+        "데이터·AI": 14
+      },
+      "tech_count": 15,
+      "job_count": 2,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
+      "name": "SK플래닛",
+      "blog_url": "https://techtopic.skplanet.com/",
+      "passing_roles": [
+        "서버·백엔드",
+        "웹 프론트엔드",
+        "데이터·AI"
+      ],
+      "role_counts": {
+        "서버·백엔드": 8,
+        "웹 프론트엔드": 8,
+        "모바일": 5,
+        "데이터·AI": 18
+      },
+      "tech_count": 20,
+      "job_count": 3,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
+      "name": "가비아",
+      "blog_url": "https://library.gabia.com/tech/",
+      "passing_roles": [
+        "데이터·AI"
+      ],
+      "role_counts": {
+        "서버·백엔드": 7,
+        "웹 프론트엔드": 1,
+        "모바일": 1,
+        "데이터·AI": 8
+      },
+      "tech_count": 10,
+      "job_count": 1,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
+      "name": "구름",
+      "blog_url": "https://tech.goorm.io/category/tech-ko/",
+      "passing_roles": [
+        "데이터·AI"
+      ],
+      "role_counts": {
+        "서버·백엔드": 3,
+        "웹 프론트엔드": 0,
+        "모바일": 0,
+        "데이터·AI": 12
+      },
+      "tech_count": 12,
+      "job_count": 1,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
+      "name": "넥스트리",
+      "blog_url": "https://www.nextree.io/tag/blog/",
+      "passing_roles": [
+        "서버·백엔드",
+        "웹 프론트엔드",
+        "데이터·AI"
+      ],
+      "role_counts": {
+        "서버·백엔드": 11,
+        "웹 프론트엔드": 9,
+        "모바일": 5,
+        "데이터·AI": 12
+      },
+      "tech_count": 14,
+      "job_count": 3,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
+      "name": "농심데이터시스템(NDS)",
+      "blog_url": "https://tech.cloud.nongshim.co.kr/post/",
+      "passing_roles": [
+        "서버·백엔드",
+        "데이터·AI"
+      ],
+      "role_counts": {
+        "서버·백엔드": 8,
+        "웹 프론트엔드": 2,
+        "모바일": 0,
+        "데이터·AI": 10
+      },
+      "tech_count": 10,
+      "job_count": 2,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
+      "name": "라인플러스",
+      "blog_url": "https://techblog.lycorp.co.jp/ko",
+      "passing_roles": [
+        "서버·백엔드",
+        "웹 프론트엔드",
+        "모바일",
+        "데이터·AI"
+      ],
+      "role_counts": {
+        "서버·백엔드": 22,
+        "웹 프론트엔드": 18,
+        "모바일": 8,
+        "데이터·AI": 23
+      },
+      "tech_count": 48,
+      "job_count": 4,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
+      "name": "라포랩스 / 퀸",
+      "blog_url": "https://blog.rapportlabs.kr/category/engineering",
+      "passing_roles": [
+        "서버·백엔드",
+        "웹 프론트엔드",
+        "모바일",
+        "데이터·AI"
+      ],
+      "role_counts": {
+        "서버·백엔드": 14,
+        "웹 프론트엔드": 9,
+        "모바일": 9,
+        "데이터·AI": 25
+      },
+      "tech_count": 34,
+      "job_count": 4,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
+      "name": "마이리얼트립",
+      "blog_url": "https://blog.myrealtrip.com/",
+      "passing_roles": [
+        "데이터·AI"
+      ],
+      "role_counts": {
+        "서버·백엔드": 7,
+        "웹 프론트엔드": 2,
+        "모바일": 3,
+        "데이터·AI": 10
+      },
+      "tech_count": 14,
+      "job_count": 1,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
+      "name": "메가존클라우드",
+      "blog_url": "https://blog.megazone.io/",
+      "passing_roles": [
+        "서버·백엔드",
+        "데이터·AI"
+      ],
+      "role_counts": {
+        "서버·백엔드": 8,
+        "웹 프론트엔드": 6,
+        "모바일": 0,
+        "데이터·AI": 10
+      },
+      "tech_count": 14,
+      "job_count": 2,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
+      "name": "버즈빌",
+      "blog_url": "https://tech.buzzvil.com/",
+      "passing_roles": [
+        "서버·백엔드",
+        "웹 프론트엔드",
+        "데이터·AI"
+      ],
+      "role_counts": {
+        "서버·백엔드": 11,
+        "웹 프론트엔드": 11,
+        "모바일": 1,
+        "데이터·AI": 14
+      },
+      "tech_count": 14,
+      "job_count": 3,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
+      "name": "비바리퍼블리카 / 토스",
+      "blog_url": "https://toss.tech/",
+      "passing_roles": [
+        "서버·백엔드",
+        "웹 프론트엔드",
+        "데이터·AI"
+      ],
+      "role_counts": {
+        "서버·백엔드": 12,
+        "웹 프론트엔드": 13,
+        "모바일": 7,
+        "데이터·AI": 12
+      },
+      "tech_count": 20,
+      "job_count": 3,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
+      "name": "삼성",
+      "blog_url": "https://techblog.samsung.com/",
+      "passing_roles": [
+        "서버·백엔드",
+        "웹 프론트엔드",
+        "데이터·AI"
+      ],
+      "role_counts": {
+        "서버·백엔드": 15,
+        "웹 프론트엔드": 8,
+        "모바일": 4,
+        "데이터·AI": 23
+      },
+      "tech_count": 24,
+      "job_count": 3,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
+      "name": "쏘카",
+      "blog_url": "https://tech.socar.kr/",
+      "passing_roles": [
+        "서버·백엔드"
+      ],
+      "role_counts": {
+        "서버·백엔드": 9,
+        "웹 프론트엔드": 5,
+        "모바일": 3,
+        "데이터·AI": 6
+      },
+      "tech_count": 9,
+      "job_count": 1,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
+      "name": "아임웹",
+      "blog_url": "https://tech.imweb.me/",
+      "passing_roles": [
+        "서버·백엔드",
+        "웹 프론트엔드",
+        "데이터·AI"
+      ],
+      "role_counts": {
+        "서버·백엔드": 17,
+        "웹 프론트엔드": 10,
+        "모바일": 1,
+        "데이터·AI": 17
+      },
+      "tech_count": 20,
+      "job_count": 3,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
+      "name": "안랩클라우드메이트",
+      "blog_url": "https://techblog.ahnlabcloudmate.com/",
+      "passing_roles": [
+        "서버·백엔드",
+        "데이터·AI"
+      ],
+      "role_counts": {
+        "서버·백엔드": 10,
+        "웹 프론트엔드": 3,
+        "모바일": 0,
+        "데이터·AI": 11
+      },
+      "tech_count": 12,
+      "job_count": 2,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
+      "name": "어피닛",
+      "blog_url": "https://blog.afinit.com/category/tech",
+      "passing_roles": [
+        "서버·백엔드",
+        "웹 프론트엔드",
+        "모바일",
+        "데이터·AI"
+      ],
+      "role_counts": {
+        "서버·백엔드": 39,
+        "웹 프론트엔드": 23,
+        "모바일": 11,
+        "데이터·AI": 52
+      },
+      "tech_count": 60,
+      "job_count": 4,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
+      "name": "인프랩 / 인프런",
+      "blog_url": "https://tech.inflab.com/",
+      "passing_roles": [
+        "서버·백엔드",
+        "웹 프론트엔드",
+        "데이터·AI"
+      ],
+      "role_counts": {
+        "서버·백엔드": 11,
+        "웹 프론트엔드": 8,
+        "모바일": 3,
+        "데이터·AI": 8
+      },
+      "tech_count": 11,
+      "job_count": 3,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
+      "name": "채널코퍼레이션 / 채널톡",
+      "blog_url": "https://tech.channel.io/kr",
+      "passing_roles": [
+        "서버·백엔드",
+        "웹 프론트엔드",
+        "데이터·AI"
+      ],
+      "role_counts": {
+        "서버·백엔드": 30,
+        "웹 프론트엔드": 25,
+        "모바일": 7,
+        "데이터·AI": 33
+      },
+      "tech_count": 42,
+      "job_count": 3,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
+      "name": "카카오엔터프라이즈 / 카카오클라우드",
+      "blog_url": "https://blog.kakaocloud.com/",
+      "passing_roles": [
+        "서버·백엔드",
+        "데이터·AI"
+      ],
+      "role_counts": {
+        "서버·백엔드": 10,
+        "웹 프론트엔드": 1,
+        "모바일": 0,
+        "데이터·AI": 10
+      },
+      "tech_count": 10,
+      "job_count": 2,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
+      "name": "컬리",
+      "blog_url": "https://helloworld.kurly.com/",
+      "passing_roles": [
+        "서버·백엔드",
+        "웹 프론트엔드"
+      ],
+      "role_counts": {
+        "서버·백엔드": 8,
+        "웹 프론트엔드": 12,
+        "모바일": 0,
+        "데이터·AI": 7
+      },
+      "tech_count": 18,
+      "job_count": 2,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
+      "name": "컴투스",
+      "blog_url": "https://on.com2us.com/tag/기술이야기/",
+      "passing_roles": [
+        "서버·백엔드",
+        "모바일",
+        "데이터·AI"
+      ],
+      "role_counts": {
+        "서버·백엔드": 9,
+        "웹 프론트엔드": 0,
+        "모바일": 8,
+        "데이터·AI": 9
+      },
+      "tech_count": 9,
+      "job_count": 3,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
+      "name": "한컴",
+      "blog_url": "https://tech.hancom.com/",
+      "passing_roles": [
+        "데이터·AI"
+      ],
+      "role_counts": {
+        "서버·백엔드": 6,
+        "웹 프론트엔드": 7,
+        "모바일": 3,
+        "데이터·AI": 9
+      },
+      "tech_count": 10,
+      "job_count": 1,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    }
+  ]
+}
