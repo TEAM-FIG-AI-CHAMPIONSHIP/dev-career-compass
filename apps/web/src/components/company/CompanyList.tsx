@@ -2,9 +2,14 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import type { Company } from "@/types/data";
-import { ArrowRightIcon, BuildingIcon, SearchIcon } from "@/components/ui/icons";
+import {
+  ArrowRightIcon,
+  BuildingIcon,
+  SearchIcon,
+} from "@/components/ui/icons";
+import { Button, ButtonLink } from "@/components/ui/Button";
+import { cardStyle } from "@/components/ui/Card";
 import { cn } from "@/lib/cn";
 import { routes } from "@/lib/routes";
 
@@ -29,13 +34,18 @@ export function CompanyList({ companies }: { companies: Company[] }) {
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredCompanies = filterCompanies(companies, searchQuery);
-  const totalPages = Math.max(1, Math.ceil(filteredCompanies.length / COMPANIES_PER_PAGE));
+  const totalPages = Math.max(
+    1,
+    Math.ceil(filteredCompanies.length / COMPANIES_PER_PAGE),
+  );
   const pageStart = currentPage * COMPANIES_PER_PAGE;
   const pageCompanies = filteredCompanies.slice(
     pageStart,
     pageStart + COMPANIES_PER_PAGE,
   );
-  const selectedCompany = companies.find((company) => company.slug === selectedSlug);
+  const selectedCompany = companies.find(
+    (company) => company.slug === selectedSlug,
+  );
 
   function goToPage(page: number) {
     const nextPage = Math.min(Math.max(page, 0), totalPages - 1);
@@ -45,7 +55,10 @@ export function CompanyList({ companies }: { companies: Company[] }) {
       nextStart + COMPANIES_PER_PAGE,
     );
 
-    if (selectedSlug && !nextPageCompanies.some((company) => company.slug === selectedSlug)) {
+    if (
+      selectedSlug &&
+      !nextPageCompanies.some((company) => company.slug === selectedSlug)
+    ) {
       setSelectedSlug(null);
     }
     setCurrentPage(nextPage);
@@ -53,10 +66,16 @@ export function CompanyList({ companies }: { companies: Company[] }) {
 
   return (
     <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-8">
-      <section aria-labelledby="company-list-title" className="flex min-w-0 flex-col gap-4">
+      <section
+        aria-labelledby="company-list-title"
+        className="flex min-w-0 flex-col gap-4"
+      >
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h2 id="company-list-title" className="text-h2 font-semibold text-balance">
+            <h2
+              id="company-list-title"
+              className="text-h2 font-semibold text-balance"
+            >
               회사 선택
             </h2>
             <p className="mt-1 text-body-sm text-ink-soft tabular-nums">
@@ -75,16 +94,18 @@ export function CompanyList({ companies }: { companies: Company[] }) {
               value={searchQuery}
               onChange={(event) => {
                 const nextQuery = event.target.value;
-                const nextPageCompanies = filterCompanies(companies, nextQuery).slice(
-                  0,
-                  COMPANIES_PER_PAGE,
-                );
+                const nextPageCompanies = filterCompanies(
+                  companies,
+                  nextQuery,
+                ).slice(0, COMPANIES_PER_PAGE);
 
                 setSearchQuery(nextQuery);
                 setCurrentPage(0);
                 if (
                   selectedSlug &&
-                  !nextPageCompanies.some((company) => company.slug === selectedSlug)
+                  !nextPageCompanies.some(
+                    (company) => company.slug === selectedSlug,
+                  )
                 ) {
                   setSelectedSlug(null);
                 }
@@ -97,7 +118,7 @@ export function CompanyList({ companies }: { companies: Company[] }) {
 
         {pageCompanies.length > 0 ? (
           <ul
-            className="grid grid-cols-1 content-start gap-2.5 sm:grid-cols-2 lg:min-h-[39.125rem] xl:min-h-[25.875rem] xl:grid-cols-3"
+            className="grid grid-cols-1 content-start gap-3 sm:grid-cols-2 lg:min-h-[39.125rem] xl:min-h-[25.875rem] xl:grid-cols-3"
             aria-label="회사 목록"
           >
             {pageCompanies.map((company) => {
@@ -111,12 +132,11 @@ export function CompanyList({ companies }: { companies: Company[] }) {
                     aria-pressed={isSelected}
                     aria-controls="selected-company-jobs"
                     onClick={() => setSelectedSlug(company.slug)}
-                    className={cn(
-                      "flex min-h-24 w-full cursor-pointer items-center gap-3 rounded-lg border p-4 text-left transition-colors duration-150",
-                      isSelected
-                        ? "border-accent bg-accent-tint"
-                        : "border-line-strong bg-surface hover:border-accent hover:bg-accent-tint",
-                    )}
+                    className={cardStyle("action", {
+                      selected: isSelected,
+                      className:
+                        "flex min-h-24 w-full cursor-pointer items-center gap-3 p-4 text-left",
+                    })}
                   >
                     <span
                       aria-hidden="true"
@@ -131,7 +151,7 @@ export function CompanyList({ companies }: { companies: Company[] }) {
                           className="size-8 object-contain"
                         />
                       ) : (
-                        company.mark ?? company.name.slice(0, 1)
+                        (company.mark ?? company.name.slice(0, 1))
                       )}
                     </span>
 
@@ -149,21 +169,27 @@ export function CompanyList({ companies }: { companies: Company[] }) {
             })}
           </ul>
         ) : (
-          <div className="flex min-h-64 flex-col items-center justify-center rounded-lg border border-dashed border-line-strong bg-surface p-6 text-center">
-            <h3 className="text-h3 font-semibold text-balance">검색 결과가 없습니다</h3>
+          <div
+            className={cardStyle("empty", {
+              className:
+                "flex min-h-64 flex-col items-center justify-center p-6 text-center",
+            })}
+          >
+            <h3 className="text-h3 font-semibold text-balance">
+              검색 결과가 없습니다
+            </h3>
             <p className="mt-1.5 text-body-sm text-pretty text-ink-soft">
               다른 회사명으로 다시 검색해보세요.
             </p>
-            <button
-              type="button"
+            <Button
               onClick={() => {
                 setSearchQuery("");
                 setCurrentPage(0);
               }}
-              className="mt-4 inline-flex min-h-11 items-center rounded-btn border border-line-strong bg-surface px-4 text-body-sm font-medium text-ink transition-colors duration-150 hover:border-accent hover:text-accent"
+              className="mt-4"
             >
               검색 초기화
-            </button>
+            </Button>
           </div>
         )}
 
@@ -174,8 +200,11 @@ export function CompanyList({ companies }: { companies: Company[] }) {
           >
             <p className="font-mono text-meta text-ink-muted tabular-nums">
               {pageStart + 1}–
-              {Math.min(pageStart + COMPANIES_PER_PAGE, filteredCompanies.length)} /{" "}
-              {filteredCompanies.length}
+              {Math.min(
+                pageStart + COMPANIES_PER_PAGE,
+                filteredCompanies.length,
+              )}{" "}
+              / {filteredCompanies.length}
             </p>
             <div className="flex items-center gap-1">
               {currentPage > 0 && (
@@ -245,11 +274,14 @@ export function CompanyList({ companies }: { companies: Company[] }) {
                     className="size-9 object-contain"
                   />
                 ) : (
-                  selectedCompany.mark ?? selectedCompany.name.slice(0, 1)
+                  (selectedCompany.mark ?? selectedCompany.name.slice(0, 1))
                 )}
               </span>
               <div className="min-w-0">
-                <h2 id="selected-company-title" className="truncate text-h2 font-semibold">
+                <h2
+                  id="selected-company-title"
+                  className="truncate text-h2 font-semibold"
+                >
                   {selectedCompany.name}
                 </h2>
                 <p className="mt-0.5 text-caption text-ink-soft tabular-nums">
@@ -259,7 +291,9 @@ export function CompanyList({ companies }: { companies: Company[] }) {
             </div>
 
             <div className="mt-5">
-              <h3 className="text-h3 font-semibold text-balance">어떤 직무로 볼까요?</h3>
+              <h3 className="text-h3 font-semibold text-balance">
+                어떤 직무로 볼까요?
+              </h3>
               <p className="mt-1 text-body-sm text-pretty text-ink-soft">
                 {selectedCompany.status === "published"
                   ? "확인할 직무를 선택하세요."
@@ -270,19 +304,19 @@ export function CompanyList({ companies }: { companies: Company[] }) {
             <div className="mt-4 flex flex-col gap-2">
               {(selectedCompany.jobs ?? []).map((job) =>
                 selectedCompany.status === "published" ? (
-                  <Link
+                  <ButtonLink
                     key={job.slug}
                     href={routes.companyResult(selectedCompany.slug, job.slug)}
-                    className="group inline-flex min-h-12 items-center justify-between gap-3 rounded-btn border border-line-strong bg-paper px-4 py-3 text-body font-medium text-ink no-underline transition-colors duration-150 hover:border-accent hover:bg-accent-tint hover:text-accent hover:no-underline"
+                    className="justify-between"
                   >
                     <span>{job.name}</span>
-                    <ArrowRightIcon size={17} className="shrink-0 text-accent" />
-                  </Link>
+                    <ArrowRightIcon size={17} className="shrink-0" />
+                  </ButtonLink>
                 ) : (
                   <span
                     key={job.slug}
                     aria-disabled="true"
-                    className="inline-flex min-h-12 cursor-not-allowed items-center justify-between gap-3 rounded-btn border border-dashed border-line bg-sunken px-4 py-3 text-body font-medium text-ink-muted"
+                    className="inline-flex min-h-11 cursor-not-allowed items-center justify-between gap-2 rounded-btn border border-dashed border-line bg-sunken px-5 py-3 text-[0.875rem] leading-none font-medium text-ink-muted"
                   >
                     <span>{job.name}</span>
                     <span className="shrink-0 font-mono text-meta text-ink-muted">
@@ -297,15 +331,19 @@ export function CompanyList({ companies }: { companies: Company[] }) {
           <div className="flex grow flex-col items-center justify-center px-2 py-10 text-center">
             <span
               aria-hidden="true"
-              className="flex size-12 items-center justify-center rounded-lg bg-accent-tint text-accent"
+              className="flex size-12 items-center justify-center rounded-card bg-accent-tint text-accent"
             >
               <BuildingIcon size={24} />
             </span>
-            <h2 id="selected-company-title" className="mt-4 text-h3 font-semibold text-balance">
+            <h2
+              id="selected-company-title"
+              className="mt-4 text-h3 font-semibold text-balance"
+            >
               회사를 선택하세요
             </h2>
             <p className="mt-1.5 max-w-56 break-keep text-body-sm text-pretty text-ink-soft">
-              왼쪽 회사 목록에서 관심 있는 회사를 고르면 직무를 확인할 수 있습니다.
+              왼쪽 회사 목록에서 관심 있는 회사를 고르면 직무를 확인할 수
+              있습니다.
             </p>
           </div>
         )}

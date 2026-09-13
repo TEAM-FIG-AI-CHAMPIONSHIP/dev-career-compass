@@ -1,13 +1,13 @@
 "use client";
 
-import Link from "next/link";
 import type { ExperienceCatalog } from "@/types/data";
 import { describeExperience, describeUnchosen } from "@/lib/personalize";
 import { useExperience, clearExperience } from "@/lib/experience-store";
 import { beginMatchFlow } from "@/lib/match-flow-store";
 import { routes } from "@/lib/routes";
 import { ArrowRightIcon, CheckIcon } from "@/components/ui/icons";
-import { Button } from "@/components/ui/Button";
+import { Button, ButtonLink } from "@/components/ui/Button";
+import { Card, CardLink } from "@/components/ui/Card";
 
 export function PersonalizedPanel({
   catalog,
@@ -24,10 +24,11 @@ export function PersonalizedPanel({
 
   if (!input) {
     return (
-      <Link
+      <CardLink
+        variant="cta"
         href={experienceHref}
         onClick={prepareExperienceFlow}
-        className="flex items-center justify-between gap-4 rounded-card border border-accent bg-accent-tint p-5 text-ink no-underline transition-colors hover:border-accent-ink hover:no-underline sm:p-6"
+        className="flex items-center justify-between gap-4 p-5 sm:p-6"
       >
         <span className="flex flex-col gap-1">
           <span className="text-[1.0625rem] leading-[1.55] font-semibold">
@@ -38,7 +39,7 @@ export function PersonalizedPanel({
           </span>
         </span>
         <ArrowRightIcon size={20} className="shrink-0 text-accent" />
-      </Link>
+      </CardLink>
     );
   }
 
@@ -56,32 +57,28 @@ export function PersonalizedPanel({
             </span>
           </div>
           <div className="flex items-center gap-2">
-            <Link
+            <ButtonLink
+              variant="ghost"
               href={experienceHref}
               onClick={prepareExperienceFlow}
-              className="text-[0.84375rem] text-ink-soft no-underline hover:text-ink"
             >
               입력 고치기
-            </Link>
-            <Button
-              variant="ghost"
-              className="px-3 py-2 text-[0.84375rem]"
-              onClick={clearExperience}
-            >
+            </ButtonLink>
+            <Button variant="ghost" onClick={clearExperience}>
               입력 지우기
             </Button>
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           {done.map((item) => (
-            <div
+            <Card
               key={`${item.origin}-${item.label}`}
-              className="flex items-start gap-2.5 rounded-card border border-line bg-surface p-4"
+              className="flex items-start gap-2.5 p-4"
             >
               <CheckIcon
                 size={17}
                 strokeWidth={1.9}
-                className="mt-0.5 shrink-0 text-stage-fit"
+                className="mt-0.5 shrink-0 text-accent"
               />
               <div className="flex flex-col gap-0.5">
                 <span className="text-[0.90625rem] leading-[1.65] font-medium break-all">
@@ -91,7 +88,7 @@ export function PersonalizedPanel({
                   {item.origin}
                 </span>
               </div>
-            </div>
+            </Card>
           ))}
         </div>
       </section>
@@ -113,11 +110,12 @@ export function PersonalizedPanel({
             지금 손대라는 뜻은 아닙니다. 다음 단계를 끝낸 뒤 돌아오세요
           </span>
         </div>
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           {gaps.map((gap) => (
-            <div
+            <Card
+              variant="empty"
               key={`${gap.origin}-${gap.label}`}
-              className="flex flex-col gap-1.5 rounded-card border border-dashed border-line-strong bg-surface p-5"
+              className="flex flex-col gap-1.5 p-5"
             >
               <span className="text-[0.9375rem] leading-[1.6] font-semibold text-ink-soft">
                 {gap.label}
@@ -125,7 +123,7 @@ export function PersonalizedPanel({
               <span className="font-mono text-[0.71875rem] text-ink-muted">
                 {gap.origin}
               </span>
-            </div>
+            </Card>
           ))}
         </div>
         <p className="text-body-sm text-ink-muted">
@@ -139,18 +137,19 @@ export function PersonalizedPanel({
 
 function NotWiredYet() {
   return (
-    <div className="flex flex-col gap-3 rounded-card border border-dashed border-line-strong bg-surface p-6">
+    <Card variant="empty" className="flex flex-col gap-3 p-6">
       <span className="font-mono text-[0.71875rem] tracking-[0.06em] text-ink-muted">
         아직 연결되지 않았습니다
       </span>
       <p className="max-w-2xl text-body text-ink-soft">
-        어떤 제안을 다음 한 걸음으로 고를지 정하는 규칙이 아직 없습니다. 임시 규칙을
-        넣으면 화면은 채워지지만 근거 없는 판단이 그대로 나가게 되어, 비워 둡니다.
+        어떤 제안을 다음 한 걸음으로 고를지 정하는 규칙이 아직 없습니다. 임시
+        규칙을 넣으면 화면은 채워지지만 근거 없는 판단이 그대로 나가게 되어,
+        비워 둡니다.
       </p>
       <p className="max-w-2xl text-body-sm text-ink-muted">
         연결 지점: <code className="font-mono">src/lib/personalize.ts</code> 의{" "}
         <code className="font-mono">personalize()</code>
       </p>
-    </div>
+    </Card>
   );
 }

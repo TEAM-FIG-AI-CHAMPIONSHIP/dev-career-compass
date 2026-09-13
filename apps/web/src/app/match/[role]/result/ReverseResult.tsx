@@ -6,7 +6,8 @@ import { describeExperience, type Stage } from "@/lib/personalize";
 import { useExperience, clearExperience } from "@/lib/experience-store";
 import { routes } from "@/lib/routes";
 import { StageBadge, STAGE_ORDER } from "@/components/ui/StageBadge";
-import { Button } from "@/components/ui/Button";
+import { Button, ButtonLink } from "@/components/ui/Button";
+import { cardStyle } from "@/components/ui/Card";
 import { Chip } from "@/components/ui/Chip";
 
 const STAGE_NOTE: Record<Stage, string> = {
@@ -31,22 +32,23 @@ export function ReverseResult({
 
   if (!input) {
     return (
-      <div className="flex flex-col items-start gap-5 rounded-card border border-accent bg-accent-tint p-[26px]">
+      <div
+        className={cardStyle("cta", {
+          className: "flex flex-col items-start gap-5 p-[26px]",
+        })}
+      >
         <div className="flex flex-col gap-1.5">
           <p className="text-[1.03125rem] leading-[1.55] font-semibold">
             해본 것을 먼저 알려주세요
           </p>
           <p className="max-w-2xl text-[0.875rem] leading-[1.75] text-ink-soft">
-            {roleName} 직무를 여는 회사 {companyCount}곳과 대조하려면 지금까지 만든
-            것이 필요합니다. 고른 값은 이 브라우저에만 남습니다.
+            {roleName} 직무를 여는 회사 {companyCount}곳과 대조하려면 지금까지
+            만든 것이 필요합니다. 고른 값은 이 브라우저에만 남습니다.
           </p>
         </div>
-        <Link
-          href={experienceHref}
-          className="inline-flex min-h-11 items-center rounded-btn border border-accent bg-accent px-5 py-3 text-[0.875rem] leading-none font-medium text-white no-underline transition-colors hover:border-accent-ink hover:bg-accent-ink hover:no-underline"
-        >
+        <ButtonLink variant="primary" href={experienceHref}>
           내 경험 입력하기
-        </Link>
+        </ButtonLink>
       </div>
     );
   }
@@ -96,24 +98,28 @@ export function ReverseResult({
               {STAGE_NOTE[stage]}
             </span>
           </div>
-          <div className="rounded-card border border-dashed border-line-strong bg-surface p-6">
-            <p className="text-body-sm text-ink-muted">아직 분류하지 않습니다.</p>
+          <div className={cardStyle("empty", { className: "p-6" })}>
+            <p className="text-body-sm text-ink-muted">
+              아직 분류하지 않습니다.
+            </p>
           </div>
         </section>
       ))}
 
-      <div className="flex flex-col gap-3 rounded-card border border-dashed border-line-strong bg-surface p-6">
+      <div
+        className={cardStyle("empty", { className: "flex flex-col gap-3 p-6" })}
+      >
         <span className="font-mono text-[0.71875rem] tracking-[0.06em] text-ink-muted">
           아직 연결되지 않았습니다
         </span>
         <p className="max-w-2xl text-body text-ink-soft">
-          경험과 각 조직을 대조해 3단계로 나누는 규칙이 아직 없습니다. 임시 규칙을
-          넣으면 회사가 어딘가로 배정되지만, 그 배정에 근거가 없습니다. 그래서 세
-          칸을 모두 열어 둔 채 비워 뒀습니다.
+          경험과 각 조직을 대조해 3단계로 나누는 규칙이 아직 없습니다. 임시
+          규칙을 넣으면 회사가 어딘가로 배정되지만, 그 배정에 근거가 없습니다.
+          그래서 세 칸을 모두 열어 둔 채 비워 뒀습니다.
         </p>
         <p className="max-w-2xl text-body-sm text-ink-muted">
-          연결 지점: <code className="font-mono">src/lib/personalize.ts</code> 의{" "}
-          <code className="font-mono">reverseMatch()</code>
+          연결 지점: <code className="font-mono">src/lib/personalize.ts</code>{" "}
+          의 <code className="font-mono">reverseMatch()</code>
         </p>
       </div>
     </div>

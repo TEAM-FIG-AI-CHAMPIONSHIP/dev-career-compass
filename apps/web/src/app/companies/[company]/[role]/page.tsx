@@ -7,12 +7,14 @@ import {
   dataSource,
 } from "@/lib/data";
 import { routes } from "@/lib/routes";
-import { NewSuggestions, DeepenSuggestions } from "@/components/result/SuggestionCards";
+import { PageWidth } from "@/components/ui/PageWidth";
+import {
+  NewSuggestions,
+  DeepenSuggestions,
+} from "@/components/result/SuggestionCards";
 import { DomainChips } from "@/components/result/DomainChips";
-import { EvidenceTimeline } from "@/components/result/EvidenceTimeline";
 import { BackHeader } from "@/components/ui/BackHeader";
 import { DataSourceNote } from "@/components/ui/PageHeader";
-import { CircleCheckIcon, ClockIcon, SparkleIcon } from "@/components/ui/icons";
 import { PersonalizedPanel } from "./PersonalizedPanel";
 
 type Props = { params: Promise<{ company: string; role: string }> };
@@ -37,7 +39,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
  * 해당하는 쪽을 고르는 단서입니다. 작은 회색 글씨로 흘리면 카드만 눈에 들어와
  * 두 무리가 왜 나뉘어 있는지 보이지 않습니다.
  */
-function GroupTitle({ children, caption }: { children: string; caption: string }) {
+function GroupTitle({
+  children,
+  caption,
+}: {
+  children: string;
+  caption: string;
+}) {
   return (
     <div className="flex flex-wrap items-baseline gap-2.5 border-b border-line pb-2">
       <h3 className="text-body font-semibold text-ink">{children}</h3>
@@ -46,22 +54,9 @@ function GroupTitle({ children, caption }: { children: string; caption: string }
   );
 }
 
-/** 절 제목. 아이콘은 장식이며 의미는 글자가 집니다. */
-function SectionTitle({
-  icon,
-  children,
-}: {
-  icon: React.ReactNode;
-  children: React.ReactNode;
-}) {
-  return (
-    <h2 className="flex items-center gap-2.5 text-h2 font-semibold">
-      <span aria-hidden="true" className="text-accent">
-        {icon}
-      </span>
-      {children}
-    </h2>
-  );
+/** 절 제목. */
+function SectionTitle({ children }: { children: React.ReactNode }) {
+  return <h2 className="text-h2 font-semibold">{children}</h2>;
 }
 
 /** 기본 결과와 개인화 결과는 브라우저 경험 유무에 따라 같은 URL에서 전환됩니다. */
@@ -71,11 +66,14 @@ export default async function CompanyResultPage({ params }: Props) {
   if (!analysis) notFound();
 
   const catalog = getExperienceCatalog();
-  const byId = new Map(analysis.evidence.map((evidence) => [evidence.id, evidence]));
+  const byId = new Map(
+    analysis.evidence.map((evidence) => [evidence.id, evidence]),
+  );
   const domainLabel = (id: string) =>
     analysis.domains.find((domain) => domain.id === id)?.label;
   const hasSuggestions =
-    analysis.suggestions.new.length > 0 || analysis.suggestions.deepen.length > 0;
+    analysis.suggestions.new.length > 0 ||
+    analysis.suggestions.deepen.length > 0;
 
   return (
     <>
@@ -89,8 +87,8 @@ export default async function CompanyResultPage({ params }: Props) {
         }
       />
 
-      <main className="grow bg-[linear-gradient(180deg,var(--accent-tint)_0%,var(--paper)_20rem)] px-4 pb-16 sm:px-8 lg:px-12 xl:px-20">
-        <div className="mx-auto flex w-full max-w-7xl flex-col gap-12">
+      <main className="grow bg-[linear-gradient(180deg,var(--accent-tint)_0%,var(--paper)_20rem)] pb-16">
+        <PageWidth className="flex flex-col gap-12">
           <header className="flex max-w-3xl flex-col gap-2 pt-10 lg:pt-12">
             <h1 className="text-display font-semibold text-balance sm:text-[2.125rem]">
               {analysis.company.name} {analysis.job.name}
@@ -100,12 +98,10 @@ export default async function CompanyResultPage({ params }: Props) {
             </p>
           </header>
 
-          {/* 제안이 맨 위입니다. 조직 영역과 근거보다 아래로 내려가지 않습니다. */}
+          {/* 제안이 맨 위입니다. 조직 영역보다 아래로 내려가지 않습니다. */}
           {hasSuggestions && (
             <section className="flex flex-col gap-5">
-              <SectionTitle icon={<SparkleIcon size={20} strokeWidth={1.6} />}>
-                프로젝트 방향 제안
-              </SectionTitle>
+              <SectionTitle>프로젝트 방향 제안</SectionTitle>
 
               {analysis.suggestions.new.length > 0 && (
                 <div className="flex flex-col gap-3.5">
@@ -143,20 +139,11 @@ export default async function CompanyResultPage({ params }: Props) {
 
           {analysis.domains.length > 0 && (
             <section className="flex flex-col gap-4">
-              <SectionTitle icon={<CircleCheckIcon size={20} strokeWidth={1.6} />}>
-                조직이 반복하는 영역
-              </SectionTitle>
+              <SectionTitle>조직이 반복하는 영역</SectionTitle>
               <DomainChips domains={analysis.domains} />
             </section>
           )}
-
-          <section className="flex flex-col gap-4">
-            <SectionTitle icon={<ClockIcon size={20} strokeWidth={1.6} />}>
-              근거 타임라인
-            </SectionTitle>
-            <EvidenceTimeline evidence={analysis.evidence} />
-          </section>
-        </div>
+        </PageWidth>
       </main>
 
       <footer className="mt-auto">

@@ -100,7 +100,7 @@ export function ExperienceForm({
   };
 
   return (
-    <div className="flex max-w-3xl flex-col gap-11">
+    <div className="flex flex-col gap-11">
       {groups.map((group) => (
         <section key={group.id} className="flex flex-col gap-3.5">
           <div className="flex flex-wrap items-baseline gap-2.5 border-b border-ink pb-2.5">
@@ -108,7 +108,7 @@ export function ExperienceForm({
               {group.id === "project-kind" ? "프로젝트 종류" : "직무별 경험"}
             </h2>
           </div>
-          <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {group.items.map((item) => (
               <CheckboxCard
                 key={item.id}
@@ -132,7 +132,7 @@ export function ExperienceForm({
         <div
           role="radiogroup"
           aria-label="프로젝트 진행 수준"
-          className="grid grid-cols-1 gap-2.5 sm:grid-cols-2"
+          className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3"
         >
           {catalog.levels.map((level) => (
             <RadioCard
