@@ -31,16 +31,10 @@ const RECOGNIZED_MANIFESTS = [
 ];
 
 type GithubRepoResponse = { private?: boolean; default_branch?: string };
-type GithubTreeEntry = {
-  path: string;
-  type: string;
-  sha: string;
-  size?: number;
-};
+type GithubTreeEntry = { path: string; type: string; sha: string; size?: number };
 type GithubTreeResponse = { tree?: GithubTreeEntry[] };
 type GithubBlobResponse = { content: string; encoding: string };
-type Reason =
-  "invalid_url" | "not_found" | "private" | "rate_limited" | "unknown";
+type Reason = "invalid_url" | "not_found" | "private" | "rate_limited" | "unknown";
 
 const MAX_MANIFEST_SIZE_BYTES = 512000;
 /** 아주 큰 모노레포에서 매니페스트를 무한정 받아오지 않도록 저장소당 상한을 둔다. */
@@ -53,9 +47,7 @@ function basename(path: string): string {
 }
 
 function githubHeaders(url: string): HeadersInit {
-  const headers: Record<string, string> = {
-    Accept: "application/vnd.github+json",
-  };
+  const headers: Record<string, string> = { Accept: "application/vnd.github+json" };
   if (process.env.GITHUB_TOKEN && new URL(url).hostname === "api.github.com") {
     headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
   }
@@ -113,17 +105,13 @@ export async function POST(request: Request): Promise<Response> {
 
     const [languagesRes, treeRes] = await Promise.all([
       fetchGithub(`${GITHUB_API}/repos/${owner}/${repo}/languages`),
-      fetchGithub(
-        `${GITHUB_API}/repos/${owner}/${repo}/git/trees/${branch}?recursive=1`,
-      ),
+      fetchGithub(`${GITHUB_API}/repos/${owner}/${repo}/git/trees/${branch}?recursive=1`),
     ]);
 
     const languages = languagesRes.ok
       ? ((await languagesRes.json()) as Record<string, number>)
       : {};
-    const treeJson = treeRes.ok
-      ? ((await treeRes.json()) as GithubTreeResponse)
-      : {};
+    const treeJson = treeRes.ok ? ((await treeRes.json()) as GithubTreeResponse) : {};
     const allFiles = treeJson.tree ?? [];
 
     const manifestEntries = allFiles
@@ -137,18 +125,14 @@ export async function POST(request: Request): Promise<Response> {
 
     const manifestTexts = await Promise.all(
       manifestEntries.map(async (entry) => {
-        const res = await fetchGithub(
-          `${GITHUB_API}/repos/${owner}/${repo}/git/blobs/${entry.sha}`,
-        );
+        const res = await fetchGithub(`${GITHUB_API}/repos/${owner}/${repo}/git/blobs/${entry.sha}`);
         if (!res.ok) return "";
         const blob = (await res.json()) as GithubBlobResponse;
         return Buffer.from(blob.content, "base64").toString("utf-8");
       }),
     );
 
-    const manifestKeywords = manifestTexts.flatMap((text) =>
-      extractKeywordsFromManifest(text),
-    );
+    const manifestKeywords = manifestTexts.flatMap((text) => extractKeywordsFromManifest(text));
     const languageKeywords = pickLanguageKeywords(languages);
     const dockerKeyword = allFiles.some(
       (entry) => entry.type === "blob" && basename(entry.path) === "Dockerfile",
@@ -156,11 +140,7 @@ export async function POST(request: Request): Promise<Response> {
       ? ["Docker"]
       : [];
 
-    const keywords = mergeKeywords(
-      languageKeywords,
-      manifestKeywords,
-      dockerKeyword,
-    );
+    const keywords = mergeKeywords(languageKeywords, manifestKeywords, dockerKeyword);
 
     return Response.json({ ok: true, keywords });
   } catch {
