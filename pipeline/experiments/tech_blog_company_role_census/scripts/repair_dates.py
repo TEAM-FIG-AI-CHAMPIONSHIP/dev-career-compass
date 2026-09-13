@@ -9,6 +9,9 @@ census의 다른 스크립트(collect.py 등)는 건드리지 않는다. 결과�
   JSON-LD article.datePublished
   -> og:article:published_time 메타 태그
   -> <time datetime="..."> 태그
+  -> Next.js __NEXT_DATA__ 페이로드의 publishedAt/datePublished
+     (JSON-LD·og·time 태그를 전혀 안 쓰는 Next.js SPA 대응 — 특정
+     회사 전용이 아니라 이 프레임워크를 쓰는 사이트 전반에 적용)
   -> 그래도 없으면 null (원래 sitemap lastmod로 되돌리지 않는다)
 """
 
@@ -18,6 +21,7 @@ import re
 import sys
 import time
 
+from datetime import datetime, timezone
 from pathlib import Path
 
 import requests
@@ -55,6 +59,19 @@ HEADERS = {
 
 TIMEOUT = 15
 DELAY = 0.1
+
+NEXT_DATA_DATE_KEYS = (
+    "publishedAt",
+    "datePublished",
+    "published_at"
+)
+
+EPOCH_MIN = datetime(
+    2005, 1, 1,
+    tzinfo=timezone.utc
+).timestamp()
+
+EPOCH_MAX_SLACK_DAYS = 1
 
 
 def load_json(path):
@@ -216,6 +233,89 @@ def find_time_tag(soup):
     return None
 
 
+def parse_epoch_safe(value):
+    if isinstance(value, bool):
+        return None
+
+    if not isinstance(value, (int, float)):
+        return None
+
+    seconds = (
+        value / 1000
+        if value > 10**12
+        else value
+    )
+
+    max_epoch = (
+        datetime.now(timezone.utc).timestamp()
+        + EPOCH_MAX_SLACK_DAYS * 86400
+    )
+
+    if not (EPOCH_MIN <= seconds <= max_epoch):
+        return None
+
+    return datetime.fromtimestamp(
+        seconds,
+        tz=timezone.utc
+    ).date().isoformat()
+
+
+def find_key_value(value, key):
+    if isinstance(value, dict):
+        if key in value:
+            return value[key]
+
+        for child in value.values():
+            result = find_key_value(child, key)
+
+            if result is not None:
+                return result
+
+        return None
+
+    if isinstance(value, list):
+        for item in value:
+            result = find_key_value(item, key)
+
+            if result is not None:
+                return result
+
+    return None
+
+
+def find_next_data_date(soup):
+    script = soup.find(
+        "script",
+        id="__NEXT_DATA__"
+    )
+
+    if not script or not script.string:
+        return None
+
+    try:
+        data = json.loads(script.string)
+
+    except json.JSONDecodeError:
+        return None
+
+    for key in NEXT_DATA_DATE_KEYS:
+        raw = find_key_value(data, key)
+
+        if raw is None:
+            continue
+
+        if isinstance(raw, str):
+            parsed = parse_date_safe(raw)
+
+        else:
+            parsed = parse_epoch_safe(raw)
+
+        if parsed:
+            return parsed
+
+    return None
+
+
 def resolve_real_date(html):
     soup = BeautifulSoup(
         html,
@@ -242,6 +342,13 @@ def resolve_real_date(html):
 
     if date:
         return date, "time_tag"
+
+    date = find_next_data_date(
+        soup
+    )
+
+    if date:
+        return date, "next_data"
 
     return None, None
 
