@@ -74,12 +74,6 @@ export const PlusIcon = (p: IconProps) => (
 );
 
 /** 심화 제안 — 층을 하나 더 쌓는다는 뜻 */
-export const LayersIcon = (p: IconProps) => (
-  <Icon {...p}>
-    <path d="M3 7l7-3 7 3-7 3-7-3z" />
-    <path d="M3 12l7 3 7-3" />
-  </Icon>
-);
 
 export const ExternalIcon = (p: IconProps) => (
   <Icon {...p}>
@@ -101,14 +95,6 @@ export const AlertIcon = (p: IconProps) => (
     <circle cx="10" cy="10" r="7.2" />
     <path d="M10 6.4v4.2" />
     <path d="M10 13.4v.2" />
-  </Icon>
-);
-
-export const InfoIcon = (p: IconProps) => (
-  <Icon {...p}>
-    <circle cx="10" cy="10" r="7.2" />
-    <path d="M10 9.4v4" />
-    <path d="M10 6.6v.2" />
   </Icon>
 );
 
