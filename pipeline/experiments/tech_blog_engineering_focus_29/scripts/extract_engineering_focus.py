@@ -9,6 +9,7 @@ from pathlib import Path
 from typing import List
 
 from anthropic import Anthropic
+from dateutil.relativedelta import relativedelta
 from pydantic import BaseModel
 
 
@@ -47,6 +48,16 @@ REPAIRED_TITLES_FILE = (
     OUTPUT_DIR
     / "repaired_titles.json"
 )
+
+# check_coverage.py/repair_dates.py(census 실험)가 만든 결과를
+# 읽기 전용으로 재사용한다 — 날짜만 다시 확인할 뿐, 원본 census
+# 파일은 건드리지 않는다.
+REPAIRED_DATES_FILE = (
+    CENSUS_WORK_DIR
+    / "date_repairs.json"
+)
+
+COVERAGE_MONTHS = 12
 
 OUTPUT_FILE = (
     OUTPUT_DIR
@@ -175,6 +186,35 @@ def is_lg_ai_english_duplicate(article):
     )
 
 
+def is_older_than_cutoff(article):
+    published_at = article.get(
+        "published_at"
+    )
+
+    if not published_at:
+        return False
+
+    try:
+        published_date = (
+            datetime.fromisoformat(
+                published_at
+            )
+            .date()
+        )
+
+    except (ValueError, TypeError):
+        return False
+
+    cutoff = (
+        datetime.now(timezone.utc)
+        - relativedelta(
+            months=COVERAGE_MONTHS
+        )
+    ).date()
+
+    return published_date < cutoff
+
+
 def build_exclusion_reason(article):
     if is_kakao_cloud_glossary(article):
         return "kakao_cloud_glossary_series"
@@ -184,6 +224,9 @@ def build_exclusion_reason(article):
 
     if is_lg_ai_english_duplicate(article):
         return "lg_ai_english_duplicate"
+
+    if is_older_than_cutoff(article):
+        return "older_than_12_months"
 
     return None
 
@@ -463,6 +506,22 @@ def load_repaired_titles():
         return {}
 
 
+def load_repaired_dates():
+    if not REPAIRED_DATES_FILE.exists():
+        return {}
+
+    try:
+        return load_json(
+            REPAIRED_DATES_FILE
+        )
+
+    except (
+        json.JSONDecodeError,
+        OSError
+    ):
+        return {}
+
+
 def load_target_articles(
     company_allowlist=None
 ):
@@ -479,6 +538,10 @@ def load_target_articles(
 
     repaired_titles = (
         load_repaired_titles()
+    )
+
+    repaired_dates = (
+        load_repaired_dates()
     )
 
     candidates = []
@@ -510,6 +573,21 @@ def load_target_articles(
         if repaired:
             title = repaired["title"]
 
+        published_at = item.get(
+            "published_at"
+        )
+
+        date_repair = repaired_dates.get(
+            item["article_id"]
+        )
+
+        if date_repair and date_repair.get(
+            "new_date"
+        ):
+            published_at = (
+                date_repair["new_date"]
+            )
+
         candidates.append(
             {
                 "article_id": (
@@ -519,7 +597,7 @@ def load_target_articles(
                 "title": title,
                 "url": item["url"],
                 "published_at": (
-                    item.get("published_at")
+                    published_at
                 ),
                 "content": (
                     extracted["content"]
