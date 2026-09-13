@@ -1,0 +1,297 @@
+{
+  "note": "Track A: 가벼운 필터(카카오클라우드 글로서리 시리즈, 업스테이지 카테고리 목록 페이지, LG AI연구원 한/영 중복) 적용 후 회사×직무 기술글 수 집계. census(#30, #40)의 1차 게이트 판정을 대체하지 않음 — engineering_focus/Area 작업 전 참고용 재집계.",
+  "excluded_by_filter": 285,
+  "company_count": 29,
+  "companies": [
+    {
+      "company": "CJ올리브영",
+      "tech_count_after_filter": 44,
+      "role_counts": {
+        "backend": 23,
+        "frontend": 5,
+        "mobile": 10,
+        "data-ai": 8
+      }
+    },
+    {
+      "company": "GS리테일",
+      "tech_count_after_filter": 14,
+      "role_counts": {
+        "backend": 8,
+        "frontend": 4,
+        "mobile": 6,
+        "data-ai": 14
+      }
+    },
+    {
+      "company": "LG AI연구원",
+      "tech_count_after_filter": 110,
+      "role_counts": {
+        "backend": 28,
+        "frontend": 53,
+        "mobile": 10,
+        "data-ai": 109
+      }
+    },
+    {
+      "company": "NHN Cloud",
+      "tech_count_after_filter": 102,
+      "role_counts": {
+        "backend": 27,
+        "frontend": 14,
+        "mobile": 17,
+        "data-ai": 13
+      }
+    },
+    {
+      "company": "SK플래닛",
+      "tech_count_after_filter": 20,
+      "role_counts": {
+        "backend": 8,
+        "frontend": 8,
+        "mobile": 5,
+        "data-ai": 18
+      }
+    },
+    {
+      "company": "kt cloud",
+      "tech_count_after_filter": 135,
+      "role_counts": {
+        "backend": 126,
+        "frontend": 37,
+        "mobile": 7,
+        "data-ai": 126
+      }
+    },
+    {
+      "company": "가비아",
+      "tech_count_after_filter": 10,
+      "role_counts": {
+        "backend": 7,
+        "frontend": 1,
+        "mobile": 1,
+        "data-ai": 8
+      }
+    },
+    {
+      "company": "구름",
+      "tech_count_after_filter": 12,
+      "role_counts": {
+        "backend": 3,
+        "frontend": 0,
+        "mobile": 0,
+        "data-ai": 12
+      }
+    },
+    {
+      "company": "넥스트리",
+      "tech_count_after_filter": 14,
+      "role_counts": {
+        "backend": 11,
+        "frontend": 9,
+        "mobile": 5,
+        "data-ai": 12
+      }
+    },
+    {
+      "company": "농심데이터시스템(NDS)",
+      "tech_count_after_filter": 11,
+      "role_counts": {
+        "backend": 8,
+        "frontend": 2,
+        "mobile": 0,
+        "data-ai": 11
+      }
+    },
+    {
+      "company": "라인플러스",
+      "tech_count_after_filter": 162,
+      "role_counts": {
+        "backend": 33,
+        "frontend": 27,
+        "mobile": 25,
+        "data-ai": 35
+      }
+    },
+    {
+      "company": "라포랩스 / 퀸",
+      "tech_count_after_filter": 34,
+      "role_counts": {
+        "backend": 14,
+        "frontend": 9,
+        "mobile": 9,
+        "data-ai": 25
+      }
+    },
+    {
+      "company": "마이리얼트립",
+      "tech_count_after_filter": 105,
+      "role_counts": {
+        "backend": 49,
+        "frontend": 36,
+        "mobile": 27,
+        "data-ai": 81
+      }
+    },
+    {
+      "company": "메가존클라우드",
+      "tech_count_after_filter": 29,
+      "role_counts": {
+        "backend": 18,
+        "frontend": 11,
+        "mobile": 0,
+        "data-ai": 21
+      }
+    },
+    {
+      "company": "버즈빌",
+      "tech_count_after_filter": 14,
+      "role_counts": {
+        "backend": 11,
+        "frontend": 11,
+        "mobile": 1,
+        "data-ai": 14
+      }
+    },
+    {
+      "company": "비바리퍼블리카 / 토스",
+      "tech_count_after_filter": 20,
+      "role_counts": {
+        "backend": 12,
+        "frontend": 13,
+        "mobile": 7,
+        "data-ai": 12
+      }
+    },
+    {
+      "company": "삼성",
+      "tech_count_after_filter": 24,
+      "role_counts": {
+        "backend": 15,
+        "frontend": 8,
+        "mobile": 4,
+        "data-ai": 23
+      }
+    },
+    {
+      "company": "삼성반도체",
+      "tech_count_after_filter": 383,
+      "role_counts": {
+        "backend": 131,
+        "frontend": 23,
+        "mobile": 129,
+        "data-ai": 236
+      }
+    },
+    {
+      "company": "쏘카",
+      "tech_count_after_filter": 9,
+      "role_counts": {
+        "backend": 9,
+        "frontend": 5,
+        "mobile": 3,
+        "data-ai": 6
+      }
+    },
+    {
+      "company": "아임웹",
+      "tech_count_after_filter": 29,
+      "role_counts": {
+        "backend": 25,
+        "frontend": 15,
+        "mobile": 1,
+        "data-ai": 23
+      }
+    },
+    {
+      "company": "안랩클라우드메이트",
+      "tech_count_after_filter": 12,
+      "role_counts": {
+        "backend": 10,
+        "frontend": 3,
+        "mobile": 0,
+        "data-ai": 11
+      }
+    },
+    {
+      "company": "어피닛",
+      "tech_count_after_filter": 60,
+      "role_counts": {
+        "backend": 39,
+        "frontend": 23,
+        "mobile": 11,
+        "data-ai": 52
+      }
+    },
+    {
+      "company": "업스테이지",
+      "tech_count_after_filter": 245,
+      "role_counts": {
+        "backend": 35,
+        "frontend": 59,
+        "mobile": 32,
+        "data-ai": 154
+      }
+    },
+    {
+      "company": "인프랩 / 인프런",
+      "tech_count_after_filter": 11,
+      "role_counts": {
+        "backend": 11,
+        "frontend": 8,
+        "mobile": 3,
+        "data-ai": 8
+      }
+    },
+    {
+      "company": "채널코퍼레이션 / 채널톡",
+      "tech_count_after_filter": 140,
+      "role_counts": {
+        "backend": 92,
+        "frontend": 79,
+        "mobile": 34,
+        "data-ai": 100
+      }
+    },
+    {
+      "company": "카카오엔터프라이즈 / 카카오클라우드",
+      "tech_count_after_filter": 38,
+      "role_counts": {
+        "backend": 37,
+        "frontend": 5,
+        "mobile": 3,
+        "data-ai": 36
+      }
+    },
+    {
+      "company": "컬리",
+      "tech_count_after_filter": 18,
+      "role_counts": {
+        "backend": 8,
+        "frontend": 12,
+        "mobile": 0,
+        "data-ai": 7
+      }
+    },
+    {
+      "company": "컴투스",
+      "tech_count_after_filter": 9,
+      "role_counts": {
+        "backend": 9,
+        "frontend": 0,
+        "mobile": 8,
+        "data-ai": 9
+      }
+    },
+    {
+      "company": "한컴",
+      "tech_count_after_filter": 10,
+      "role_counts": {
+        "backend": 6,
+        "frontend": 7,
+        "mobile": 3,
+        "data-ai": 9
+      }
+    }
+  ]
+}
