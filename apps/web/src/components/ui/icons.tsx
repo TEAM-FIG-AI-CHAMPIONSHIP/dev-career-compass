@@ -42,6 +42,13 @@ export const ArrowRightIcon = (p: IconProps) => (
   </Icon>
 );
 
+/** 접힌 것을 펼치는 표시. 방향 이동을 뜻하는 화살표와 구분해서 씁니다. */
+export const ChevronDownIcon = (p: IconProps) => (
+  <Icon {...p}>
+    <path d="M5 8l5 5 5-5" />
+  </Icon>
+);
+
 export const SearchIcon = (p: IconProps) => (
   <Icon {...p}>
     <circle cx="8.7" cy="8.7" r="4.8" />
@@ -124,4 +131,3 @@ export const ArrowLeftIcon = (p: IconProps) => (
     <path d="M9 6l-4 4 4 4" />
   </Icon>
 );
-

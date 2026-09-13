@@ -14,13 +14,13 @@ export function DomainChips({ domains }: { domains: Analysis["domains"] }) {
           key={domain.id}
           className="inline-flex items-center gap-2.5 rounded-pill border border-line-strong bg-surface px-4 py-2"
         >
-          <span className="text-[0.875rem] leading-normal font-medium text-ink">
+          <span className="text-body-sm font-medium text-ink">
             {domain.label}
           </span>
           <span aria-hidden="true" className="text-line-strong">
             —
           </span>
-          <span className="text-[0.8125rem] leading-normal text-ink-soft">
+          <span className="text-caption text-ink-soft">
             블로그 {domain.counts.blog}
             {domain.counts.job != null && domain.counts.job > 0 && (
               <> · 공고 {domain.counts.job}</>
