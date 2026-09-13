@@ -36,4 +36,5 @@ python pipeline/experiments/tech_blog_company_role_census/scripts/classify_and_g
 | --- | --- |
 | `data/work/tech_blog_company_role_census/` | 제외 (본문 포함) |
 | `data/research/tech_blog_company_role_census/summary.md` | 커밋 |
-| `data/research/tech_blog_company_role_census/selected_companies.json` | 커밋 |
+| `data/research/tech_blog_company_role_census/selected_companies.json` | 커밋 (게이트 통과 34곳) |
+| `data/research/tech_blog_company_role_census/candidate_companies.json` | 커밋 (미확인 후보 16곳. pass가 아님) |
