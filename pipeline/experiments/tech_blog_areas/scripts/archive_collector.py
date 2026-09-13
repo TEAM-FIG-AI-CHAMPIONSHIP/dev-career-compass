@@ -394,7 +394,8 @@ def collect_archive(
     cutoff,
     already_found_urls,
     normalize_url,
-    parse_date
+    parse_date,
+    max_pages=MAX_PAGES
 ):
     blog_url = source[
         "blog_url"
@@ -413,7 +414,7 @@ def collect_archive(
 
     for page_number in range(
         1,
-        MAX_PAGES + 1
+        max_pages + 1
     ):
         html, error = fetch_listing_page(
             session,
@@ -574,7 +575,7 @@ def collect_archive(
 
     else:
         stop_reason = (
-            f"안전 상한({MAX_PAGES}페이지) 도달"
+            f"안전 상한({max_pages}페이지) 도달"
         )
 
     report = {
