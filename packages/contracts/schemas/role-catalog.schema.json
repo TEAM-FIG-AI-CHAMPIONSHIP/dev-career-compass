@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://dev-career-compass.local/schemas/role-catalog.schema.json",
+  "title": "Role catalog",
+  "description": "사용자가 고르는 상위 직무와 분석·매칭에 쓰는 내부 세부 트랙",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "version", "roles"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "version": { "type": "integer", "minimum": 1 },
+    "roles": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/definitions/role" }
+    }
+  },
+  "definitions": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "published", "deprecated"]
+    },
+    "track": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "label", "status"],
+      "properties": {
+        "id": { "$ref": "#/definitions/slug" },
+        "label": { "type": "string", "minLength": 1, "maxLength": 60 },
+        "description": { "type": "string", "minLength": 1, "maxLength": 240 },
+        "status": { "$ref": "#/definitions/status" }
+      }
+    },
+    "role": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "label", "status", "tracks"],
+      "properties": {
+        "id": { "$ref": "#/definitions/slug" },
+        "label": { "type": "string", "minLength": 1, "maxLength": 60 },
+        "description": { "type": "string", "minLength": 1, "maxLength": 240 },
+        "status": { "$ref": "#/definitions/status" },
+        "tracks": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/track" }
+        }
+      }
+    }
+  }
+}
+

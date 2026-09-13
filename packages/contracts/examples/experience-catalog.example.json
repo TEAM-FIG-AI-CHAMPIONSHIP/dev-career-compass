@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "version": 1,
+  "categories": [
+    {
+      "id": "service-interface",
+      "label": "서비스 인터페이스",
+      "description": "서비스가 외부와 데이터를 주고받는 방식을 설계한 경험",
+      "status": "draft"
+    }
+  ],
+  "items": [
+    {
+      "id": "rest-api-design",
+      "categoryId": "service-interface",
+      "label": "REST API 설계",
+      "description": "엔드포인트와 요청·응답 계약을 직접 설계했다",
+      "roleIds": ["backend"],
+      "trackIds": ["application-backend"],
+      "verification": {
+        "githubAnalysis": true,
+        "strongEvidenceExamples": ["라우트와 요청·응답 타입이 함께 구현됨"],
+        "weakEvidenceExamples": ["웹 프레임워크 의존성만 존재함"],
+        "selfReportQuestion": "이 API의 구조와 요청·응답 형식을 직접 설계했나요?"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "request-validation",
+      "categoryId": "service-interface",
+      "label": "요청 검증",
+      "description": "잘못된 입력을 구분하고 오류 응답을 설계했다",
+      "roleIds": ["backend"],
+      "trackIds": ["application-backend"],
+      "verification": {
+        "githubAnalysis": true,
+        "strongEvidenceExamples": ["입력 스키마와 검증 실패 처리가 구현됨"],
+        "weakEvidenceExamples": ["검증 라이브러리 의존성만 존재함"],
+        "selfReportQuestion": "입력 검증 규칙과 실패 처리를 직접 구현했나요?"
+      },
+      "status": "draft"
+    }
+  ]
+}
+

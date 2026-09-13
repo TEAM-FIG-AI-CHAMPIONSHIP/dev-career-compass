@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "version": 1,
+  "id": "payment-idempotency",
+  "companyId": "example-company",
+  "roleId": "backend",
+  "trackIds": ["application-backend"],
+  "title": "중복 요청에도 안전한 결제 처리 만들기",
+  "body": "같은 결제 요청이 반복되어도 한 번만 처리되도록 요청 식별과 트랜잭션 경계를 설계한다.",
+  "entryExperienceIds": ["rest-api-design"],
+  "bridgeExperienceIds": ["request-validation"],
+  "evidenceIds": ["example-job-1"],
+  "status": "draft"
+}
+
