@@ -17,7 +17,7 @@ import { AppHeader } from "@/components/ui/AppHeader";
 import { ButtonLink } from "@/components/ui/Button";
 import { StepNav } from "@/components/ui/StepNav";
 import { DataSourceNote } from "@/components/ui/DataSourceNote";
-import { PersonalizedPanel } from "./PersonalizedPanel";
+import { ExperiencePanel } from "./ExperiencePanel";
 import { ArrowLeftIcon } from "@/components/ui/icons";
 
 type Props = { params: Promise<{ company: string; role: string }> };
@@ -36,11 +36,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 /**
- * 제안 무리의 소제목.
+ * 제안 무리의 제목.
  *
- * "지금부터 만들면 좋을 것"과 "이미 만든 게 있다면"은 읽는 사람이 자기에게
- * 해당하는 쪽을 고르는 단서입니다. 작은 회색 글씨로 흘리면 카드만 눈에 들어와
- * 두 무리가 왜 나뉘어 있는지 보이지 않습니다.
+ * 카드 제목보다 큰 글자를 씁니다. 라벨이 그 아래 내용보다 작으면 카드만 눈에
+ * 들어와 두 무리가 왜 나뉘어 있는지 보이지 않습니다.
  */
 function GroupTitle({
   children,
@@ -50,39 +49,45 @@ function GroupTitle({
   caption: string;
 }) {
   return (
-    <div className="flex flex-wrap items-baseline gap-2.5 border-b border-line pb-2">
-      <h3 className="text-body font-semibold text-ink">{children}</h3>
+    <div className="flex flex-wrap items-baseline gap-3 border-b border-line-strong pb-2.5">
+      <h2 className="text-h2 font-semibold text-ink">{children}</h2>
       <span className="text-body-sm text-ink-muted">{caption}</span>
     </div>
   );
 }
 
-/** 절 제목. */
-function SectionTitle({ children }: { children: React.ReactNode }) {
-  return <h2 className="text-h2 font-semibold">{children}</h2>;
-}
-
-/** 기본 결과와 개인화 결과는 브라우저 경험 유무에 따라 같은 URL에서 전환됩니다. */
+/**
+ * 화면 순서는 이렇습니다.
+ *
+ *  1. 이 조직이 반복해서 다루는 일   — 제목 바로 아래 배지
+ *  2. 새로 시작할 것
+ *  3. 이미 만든 것을 발전시킬 것
+ *  4. 내 경험                        — 유도 카드와 요약이 같은 자리를 씁니다
+ *
+ * 영역 배지가 위에 있는 이유는 제안 카드마다 그 영역 이름이 태그로 붙기
+ * 때문입니다. 배지가 아래에 있으면 태그에 쓰인 말을 화면 끝에 가서야 배웁니다.
+ *
+ * 두 제안 무리를 한 절로 묶지 않습니다. 바깥 제목을 하나 더 두면 무리 제목이
+ * 가운데 눌려 카드 제목보다 작아집니다.
+ */
 export default async function CompanyResultPage({ params }: Props) {
   const { company, role } = await params;
   const analysis = getAnalysis(company, role);
   if (!analysis) notFound();
 
   const catalog = getExperienceCatalog();
+  const returnTo = routes.companyResult(company, role);
   const byId = new Map(
     analysis.evidence.map((evidence) => [evidence.id, evidence]),
   );
   const domainLabel = (id: string) =>
     analysis.domains.find((domain) => domain.id === id)?.label;
-  const hasSuggestions =
-    analysis.suggestions.new.length > 0 ||
-    analysis.suggestions.deepen.length > 0;
 
   return (
     <>
       <AppHeader
         right={
-          <span className="text-[0.875rem] leading-[1.6] text-ink-soft">
+          <span className="text-body-sm text-ink-soft">
             {analysis.company.name} · {analysis.job.name}
           </span>
         }
@@ -90,60 +95,49 @@ export default async function CompanyResultPage({ params }: Props) {
 
       <main className="grow bg-[linear-gradient(180deg,var(--accent-tint)_0%,var(--paper)_20rem)] pb-16">
         <PageWidth className="flex flex-col gap-12">
-          <header className="flex max-w-3xl flex-col gap-2 pt-10 lg:pt-12">
-            <h1 className="text-display font-semibold text-balance sm:text-[2.125rem]">
-              {analysis.company.name} {analysis.job.name}
-            </h1>
-            <p className="text-body text-pretty text-ink-soft sm:text-base">
-              이 조직이 반복해서 다루는 일과, 당신이 만들 수 있는 것
-            </p>
+          <header className="flex flex-col gap-5 pt-10 lg:pt-12">
+            <div className="flex max-w-3xl flex-col gap-2">
+              <h1 className="text-display font-semibold text-balance">
+                {analysis.company.name} {analysis.job.name}
+              </h1>
+              <p className="text-body text-pretty text-ink-soft sm:text-base">
+                이 조직이 반복해서 다루는 일입니다. 아래 제안은 모두 여기서
+                나왔습니다.
+              </p>
+            </div>
+            {analysis.domains.length > 0 && (
+              <DomainChips domains={analysis.domains} />
+            )}
           </header>
 
-          {/* 제안이 맨 위입니다. 조직 영역보다 아래로 내려가지 않습니다. */}
-          {hasSuggestions && (
-            <section className="flex flex-col gap-5">
-              <SectionTitle>프로젝트 방향 제안</SectionTitle>
-
-              {analysis.suggestions.new.length > 0 && (
-                <div className="flex flex-col gap-3.5">
-                  <GroupTitle caption="아직 만든 게 없다면 여기서 시작하세요">
-                    지금부터 만들면 좋을 것
-                  </GroupTitle>
-                  <NewSuggestions
-                    suggestions={analysis.suggestions.new}
-                    byId={byId}
-                    domainLabel={domainLabel}
-                  />
-                </div>
-              )}
-
-              {analysis.suggestions.deepen.length > 0 && (
-                <div className="flex flex-col gap-3.5">
-                  <GroupTitle caption="버리지 말고 한 겹 더 파세요">
-                    이미 만든 게 있다면
-                  </GroupTitle>
-                  <DeepenSuggestions
-                    suggestions={analysis.suggestions.deepen}
-                    byId={byId}
-                    domainLabel={domainLabel}
-                  />
-                </div>
-              )}
-            </section>
-          )}
-
-          <PersonalizedPanel
-            catalog={catalog}
-            role={role}
-            returnTo={routes.companyResult(company, role)}
-          />
-
-          {analysis.domains.length > 0 && (
+          {analysis.suggestions.new.length > 0 && (
             <section className="flex flex-col gap-4">
-              <SectionTitle>조직이 반복하는 영역</SectionTitle>
-              <DomainChips domains={analysis.domains} />
+              <GroupTitle caption="만든 게 없어도 바로 시작할 수 있습니다">
+                새로 시작할 것
+              </GroupTitle>
+              <NewSuggestions
+                suggestions={analysis.suggestions.new}
+                byId={byId}
+                domainLabel={domainLabel}
+              />
             </section>
           )}
+
+          {analysis.suggestions.deepen.length > 0 && (
+            <section className="flex flex-col gap-4">
+              <GroupTitle caption="이미 만든 것 위에 한 겹 더 얹습니다">
+                이미 만든 것을 발전시킬 것
+              </GroupTitle>
+              <DeepenSuggestions
+                suggestions={analysis.suggestions.deepen}
+                byId={byId}
+                domainLabel={domainLabel}
+              />
+            </section>
+          )}
+
+          <ExperiencePanel catalog={catalog} role={role} returnTo={returnTo} />
+
           <StepNav
             back={
               <ButtonLink variant="secondary" href={routes.companies}>

@@ -65,7 +65,7 @@ export type Domain = {
   evidenceIds: string[];
 };
 
-/** 지금부터 만들면 좋을 것. */
+/** 새로 시작할 것. 만든 게 없어도 착수할 수 있는 제안입니다. */
 export type NewSuggestion = {
   id: string;
   title: string;
@@ -76,7 +76,7 @@ export type NewSuggestion = {
   juniorDemand?: boolean;
 };
 
-/** 이미 만든 게 있다면 — A를 만들었다면 → B. */
+/** 이미 만든 것을 발전시킬 것 — A를 만들었다면 → B. */
 export type DeepenSuggestion = {
   id: string;
   from: string;

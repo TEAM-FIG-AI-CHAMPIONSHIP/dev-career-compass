@@ -32,6 +32,13 @@ export type NextStep = {
   reason: string;
 };
 
+/**
+ * 고르지 않은 항목 중 이 조직이 반복해서 다루는 영역에 걸리는 것.
+ *
+ * 무엇과 대조해 "빈 곳"이라 부를지가 아직 정해지지 않았습니다. 체크하지 않은
+ * 항목을 그대로 나열하면 어느 회사를 보든 같은 목록이 나오므로 화면에서는
+ * 뺐습니다.
+ */
 export type Gap = {
   label: string;
   body: string;
@@ -81,22 +88,6 @@ export function describeExperience(
 
   for (const repo of input.repos ?? []) {
     out.push({ label: repo, origin: "GitHub 저장소" });
-  }
-  return out;
-}
-
-/** 고르지 않은 항목. 판단이 아니라 뺄셈이라 지금도 정확합니다. */
-export function describeUnchosen(
-  input: ExperienceInput,
-  catalog: ExperienceCatalog,
-  role?: string,
-): AlreadyDone[] {
-  const chosen = new Set(input.itemIds);
-  const out: AlreadyDone[] = [];
-  for (const group of visibleGroups(catalog, role)) {
-    for (const item of group.items) {
-      if (!chosen.has(item.id)) out.push({ label: item.label, origin: group.title });
-    }
   }
   return out;
 }
