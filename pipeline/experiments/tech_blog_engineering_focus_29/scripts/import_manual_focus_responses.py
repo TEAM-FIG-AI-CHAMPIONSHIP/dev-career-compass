@@ -81,7 +81,7 @@ MODEL_NAME = "manual/claude.ai"
 # 모델이 자발적으로 이 패턴으로 응답하는 것을 확인했다. 이 표시가
 # 붙은 항목은 engineering_focus가 아니라 "추출할 내용 없음"이므로
 # 최종 결과에서 제외하고 excluded_articles.json에 별도 기록한다.
-NO_CONTENT_MARKER = "추출 가능한 엔지니어링 내용이 없음"
+NO_CONTENT_MARKER = "엔지니어링 내용이 없음"
 
 
 def load_json(path):
