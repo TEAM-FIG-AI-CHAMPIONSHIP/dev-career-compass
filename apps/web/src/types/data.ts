@@ -141,6 +141,6 @@ export type ExperienceInput = {
   /** 최소 개수를 강제하지 않으므로 빈 배열일 수 있습니다. */
   itemIds: string[];
   levelId: string;
-  /** GitHub 사용자명/저장소. 최대 3개. */
+  /** GitHub 사용자명/저장소. 최대 5개. */
   repos?: string[];
 };

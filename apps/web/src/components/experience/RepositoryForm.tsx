@@ -11,7 +11,7 @@ import { saveMatchRepositories, useMatchFlow } from "@/lib/match-flow-store";
 import { parseGithubUrl } from "@/lib/repo-keywords";
 import { routes } from "@/lib/routes";
 
-const MAX_REPOSITORIES = 3;
+const MAX_REPOSITORIES = 5;
 
 /** `owner/repo` 형태(프로토콜·github.com 없이)만 매칭하는 레거시 저장소 형식 감지용. */
 const BARE_REPO_RE = /^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/;

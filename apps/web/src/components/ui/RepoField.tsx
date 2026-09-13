@@ -4,7 +4,7 @@ import { cn } from "@/lib/cn";
 import { GithubIcon } from "@/components/ui/icons";
 
 /**
- * GitHub 저장소 링크 입력. 선택 항목이고 최대 3개까지 받습니다.
+ * GitHub 저장소 링크 입력. 선택 항목이고 최대 5개까지 받습니다.
  *
  * README/설정 파일은 공개 저장소만 조회하고 원문을 저장하지 않습니다.
  * 읽을 수 없는 저장소는 막지 않고, 그 항목만 빼고 진행한다고 알립니다 —
