@@ -1,6 +1,7 @@
 "use client";
 
 import { CheckIcon } from "./icons";
+import { Chip } from "./Chip";
 import { cn } from "@/lib/cn";
 
 /**
@@ -11,11 +12,14 @@ export function CheckboxCard({
   description,
   checked,
   onChange,
+  badge,
 }: {
   label: string;
   description?: string;
   checked: boolean;
   onChange: (next: boolean) => void;
+  /** GitHub 저장소 키워드로 자동 제안된 항목임을 표시할 때만 넘깁니다. */
+  badge?: string;
 }) {
   return (
     <label
@@ -43,13 +47,20 @@ export function CheckboxCard({
         {checked && <CheckIcon size={12} strokeWidth={2.4} />}
       </span>
       <span className="flex flex-col gap-0.5">
-        <span
-          className={cn(
-            "text-[0.90625rem] leading-[1.7]",
-            checked && "font-medium",
+        <span className="flex flex-wrap items-center gap-1.5">
+          <span
+            className={cn(
+              "text-[0.90625rem] leading-[1.7]",
+              checked && "font-medium",
+            )}
+          >
+            {label}
+          </span>
+          {badge && (
+            <Chip tone="accent" className="px-2 py-0.5 text-[0.6875rem]">
+              {badge}
+            </Chip>
           )}
-        >
-          {label}
         </span>
         {description && (
           <span className="text-caption text-ink-soft">{description}</span>
