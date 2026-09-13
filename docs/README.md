@@ -16,4 +16,7 @@
 [`architecture/adr-001-route-structure.md`](./architecture/adr-001-route-structure.md)를
 기준으로 합니다.
 
+화면의 디자인 규칙은 [`design-system.md`](./design-system.md), 지금 어디까지
+되어 있고 다음에 무엇을 할지는 [`work-status.md`](./work-status.md) 를 봅니다.
+
 회의 중 임시 메모보다 구현과 검수에 계속 사용될 결정을 우선해 기록합니다.
