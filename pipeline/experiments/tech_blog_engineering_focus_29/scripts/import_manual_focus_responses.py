@@ -34,6 +34,7 @@ sys.path.insert(
 from extract_engineering_focus import (  # noqa: E402
     EXCLUDED_FILE,
     FOCUS_VERSION,
+    build_exclusion_reason,
     load_target_articles,
     normalize_text
 )
@@ -362,6 +363,34 @@ def main():
                         "(원본 목록에서 사라짐?)"
                     )
                 )
+
+                continue
+
+            exclusion_reason = (
+                build_exclusion_reason(
+                    meta
+                )
+            )
+
+            if exclusion_reason:
+                existing_results.pop(
+                    article_id,
+                    None
+                )
+
+                existing_excluded[
+                    article_id
+                ] = {
+                    "article_id": article_id,
+                    "company": meta["company"],
+                    "title": normalize_text(
+                        meta["title"]
+                    ),
+                    "url": meta["url"],
+                    "reason": exclusion_reason
+                }
+
+                excluded_count += 1
 
                 continue
 

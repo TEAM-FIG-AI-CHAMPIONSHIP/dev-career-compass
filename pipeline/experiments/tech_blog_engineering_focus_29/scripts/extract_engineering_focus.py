@@ -154,6 +154,10 @@ UPSTAGE_COMPANY = "업스테이지"
 
 LG_AI_COMPANY = "LG AI연구원"
 
+NAVER_COMPANY = "네이버"
+
+NAVER_FE_NEWS_TITLE_PREFIX = "FE News"
+
 
 def is_kakao_cloud_glossary(article):
     if article["company"] != KAKAO_CLOUD_COMPANY:
@@ -215,6 +219,15 @@ def is_older_than_cutoff(article):
     return published_date < cutoff
 
 
+def is_naver_fe_news_curation(article):
+    if article["company"] != NAVER_COMPANY:
+        return False
+
+    return article["title"].startswith(
+        NAVER_FE_NEWS_TITLE_PREFIX
+    )
+
+
 def build_exclusion_reason(article):
     if is_kakao_cloud_glossary(article):
         return "kakao_cloud_glossary_series"
@@ -224,6 +237,9 @@ def build_exclusion_reason(article):
 
     if is_lg_ai_english_duplicate(article):
         return "lg_ai_english_duplicate"
+
+    if is_naver_fe_news_curation(article):
+        return "naver_fe_news_curation"
 
     if is_older_than_cutoff(article):
         return "older_than_12_months"
