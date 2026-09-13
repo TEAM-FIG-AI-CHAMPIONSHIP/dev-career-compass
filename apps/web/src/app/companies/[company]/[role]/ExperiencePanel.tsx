@@ -59,38 +59,40 @@ export function ExperiencePanel({
   const done = describeExperience(input, catalog, role);
 
   return (
-    <div className="flex flex-col gap-2.5 rounded-card border border-line-strong bg-sunken px-4 py-3.5">
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <span className="flex items-center gap-2 font-mono text-meta text-ink-muted">
-          <span className="text-accent">$</span>
-          <span>내 경험 {done.length}개</span>
+    /* 한 줄입니다. 라벨·칩·조작이 세로로 쌓여 있었더니 내용은 세 덩어리인데
+       블록만 커졌습니다. 칩이 늘어나면 왼쪽 안에서만 줄바꿈되고, 조작은 늘
+       첫 줄 오른쪽에 붙어 있습니다. */
+    <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2 rounded-card border border-line-strong bg-sunken px-4 py-2.5">
+      <div className="flex min-w-0 flex-1 flex-wrap items-center gap-x-3 gap-y-1.5">
+        <span className="flex shrink-0 items-center gap-1.5 font-mono text-meta text-ink-muted">
+          <span className="text-accent">$</span>내 경험 {done.length}개
         </span>
-        <div className="flex items-center gap-1">
-          <ButtonLink
-            variant="ghost"
-            href={experienceHref}
-            onClick={prepareExperienceFlow}
-            className="min-h-9 px-2.5 py-1.5"
-          >
-            고치기
-          </ButtonLink>
-          <Button
-            variant="ghost"
-            onClick={clearExperience}
-            className="min-h-9 px-2.5 py-1.5"
-          >
-            지우기
-          </Button>
-        </div>
+        <ul className="flex flex-wrap gap-1.5">
+          {done.map((item) => (
+            <li key={`${item.origin}-${item.label}`}>
+              <Chip className="px-2 py-0.5 text-ink-soft">{item.label}</Chip>
+            </li>
+          ))}
+        </ul>
       </div>
 
-      <ul className="flex flex-wrap gap-1.5">
-        {done.map((item) => (
-          <li key={`${item.origin}-${item.label}`}>
-            <Chip className="px-2 py-0.5 break-all">{item.label}</Chip>
-          </li>
-        ))}
-      </ul>
+      <div className="-mr-2 flex shrink-0 items-center">
+        <ButtonLink
+          variant="ghost"
+          href={experienceHref}
+          onClick={prepareExperienceFlow}
+          className="min-h-8 px-2 py-1 text-caption"
+        >
+          고치기
+        </ButtonLink>
+        <Button
+          variant="ghost"
+          onClick={clearExperience}
+          className="min-h-8 px-2 py-1 text-caption"
+        >
+          지우기
+        </Button>
+      </div>
     </div>
   );
 }
