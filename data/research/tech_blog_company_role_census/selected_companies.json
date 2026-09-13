@@ -1,7 +1,7 @@
 {
-  "issue": 40,
+  "issue": 30,
   "note": "verdict=pass 만. 직무당 기술글 8개. Area 게이트는 아직 아니다.",
-  "company_count": 29,
+  "company_count": 31,
   "companies": [
     {
       "name": "CJ올리브영",
@@ -263,6 +263,23 @@
       "final_area_gate": false
     },
     {
+      "name": "무신사 / 29CM",
+      "blog_url": "https://techblog.musinsa.com/",
+      "passing_roles": [
+        "데이터·AI"
+      ],
+      "role_counts": {
+        "서버·백엔드": 3,
+        "웹 프론트엔드": 1,
+        "모바일": 0,
+        "데이터·AI": 8
+      },
+      "tech_count": 29,
+      "job_count": 1,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
       "name": "버즈빌",
       "blog_url": "https://tech.buzzvil.com/",
       "passing_roles": [
@@ -426,6 +443,24 @@
       },
       "tech_count": 144,
       "job_count": 1,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
+      "name": "여기어때",
+      "blog_url": "https://techblog.gccompany.co.kr/",
+      "passing_roles": [
+        "서버·백엔드",
+        "웹 프론트엔드"
+      ],
+      "role_counts": {
+        "서버·백엔드": 11,
+        "웹 프론트엔드": 15,
+        "모바일": 4,
+        "데이터·AI": 5
+      },
+      "tech_count": 56,
+      "job_count": 2,
       "gate": "first_count_only",
       "final_area_gate": false
     },

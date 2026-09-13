@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-09-13T06:22:13.686706+00:00",
-  "issue": 40,
+  "generated_at": "2026-09-13T06:46:06.750071+00:00",
+  "issue": 30,
   "gate": {
     "min_tech_posts_per_role": 8,
     "quality_band": 10
   },
   "totals": {
     "companies": 111,
-    "collectable": 80,
-    "twelve_month_closed": 43,
-    "articles": 3177,
+    "collectable": 83,
+    "twelve_month_closed": 46,
+    "articles": 3218,
     "extract_input": 837,
     "extract_success": 626,
-    "tech_articles": 1546,
-    "passing_companies": 29,
-    "fail_companies": 33,
-    "unknown_companies": 49,
-    "passing_pairs": 73
+    "tech_articles": 1642,
+    "passing_companies": 31,
+    "fail_companies": 36,
+    "unknown_companies": 44,
+    "passing_pairs": 76
   },
   "role_company_counts": {
-    "backend": 23,
-    "frontend": 14,
+    "backend": 24,
+    "frontend": 15,
     "mobile": 9,
-    "data-ai": 27
+    "data-ai": 28
   },
   "companies": [
     {
@@ -1916,12 +1916,12 @@
       "collected_count": 61,
       "collectable": true,
       "twelve_month_closed": false,
-      "tech_count": 8,
-      "non_tech_count": 53,
-      "unassigned_count": 53,
+      "tech_count": 29,
+      "non_tech_count": 32,
+      "unassigned_count": 32,
       "roles": {
         "backend": {
-          "tech_count": 1,
+          "tech_count": 3,
           "pass": false,
           "quality_band": false
         },
@@ -1936,14 +1936,16 @@
           "quality_band": false
         },
         "data-ai": {
-          "tech_count": 3,
-          "pass": false,
+          "tech_count": 8,
+          "pass": true,
           "quality_band": false
         }
       },
-      "passing_roles": [],
-      "pass_company": false,
-      "verdict": "unknown",
+      "passing_roles": [
+        "data-ai"
+      ],
+      "pass_company": true,
+      "verdict": "pass",
       "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
     },
     {
@@ -2776,34 +2778,37 @@
       "collected_count": 126,
       "collectable": true,
       "twelve_month_closed": false,
-      "tech_count": 6,
-      "non_tech_count": 120,
-      "unassigned_count": 120,
+      "tech_count": 56,
+      "non_tech_count": 70,
+      "unassigned_count": 70,
       "roles": {
         "backend": {
-          "tech_count": 1,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 11,
+          "pass": true,
+          "quality_band": true
         },
         "frontend": {
-          "tech_count": 3,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 15,
+          "pass": true,
+          "quality_band": true
         },
         "mobile": {
-          "tech_count": 0,
+          "tech_count": 4,
           "pass": false,
           "quality_band": false
         },
         "data-ai": {
-          "tech_count": 1,
+          "tech_count": 5,
           "pass": false,
           "quality_band": false
         }
       },
-      "passing_roles": [],
-      "pass_company": false,
-      "verdict": "unknown",
+      "passing_roles": [
+        "backend",
+        "frontend"
+      ],
+      "pass_company": true,
+      "verdict": "pass",
       "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
     },
     {
@@ -2992,22 +2997,22 @@
       "collected_count": 25,
       "collectable": true,
       "twelve_month_closed": false,
-      "tech_count": 4,
-      "non_tech_count": 21,
-      "unassigned_count": 21,
+      "tech_count": 11,
+      "non_tech_count": 14,
+      "unassigned_count": 14,
       "roles": {
         "backend": {
-          "tech_count": 0,
+          "tech_count": 1,
           "pass": false,
           "quality_band": false
         },
         "frontend": {
-          "tech_count": 1,
+          "tech_count": 4,
           "pass": false,
           "quality_band": false
         },
         "mobile": {
-          "tech_count": 1,
+          "tech_count": 2,
           "pass": false,
           "quality_band": false
         },
@@ -3250,12 +3255,12 @@
     {
       "name": "카카오모빌리티",
       "blog_url": "https://developers.kakaomobility.com/techblogs/",
-      "collected_count": 0,
-      "collectable": false,
-      "twelve_month_closed": false,
-      "tech_count": 0,
-      "non_tech_count": 0,
-      "unassigned_count": 0,
+      "collected_count": 7,
+      "collectable": true,
+      "twelve_month_closed": true,
+      "tech_count": 1,
+      "non_tech_count": 6,
+      "unassigned_count": 6,
       "roles": {
         "backend": {
           "tech_count": 0,
@@ -3280,26 +3285,26 @@
       },
       "passing_roles": [],
       "pass_company": false,
-      "verdict": "unknown",
-      "notes": "최근 12개월 메타데이터를 generic RSS로 못 모음"
+      "verdict": "fail",
+      "notes": ""
     },
     {
       "name": "카카오뱅크",
       "blog_url": "https://tech.kakaobank.com/",
-      "collected_count": 0,
-      "collectable": false,
-      "twelve_month_closed": false,
-      "tech_count": 0,
-      "non_tech_count": 0,
-      "unassigned_count": 0,
+      "collected_count": 18,
+      "collectable": true,
+      "twelve_month_closed": true,
+      "tech_count": 8,
+      "non_tech_count": 10,
+      "unassigned_count": 10,
       "roles": {
         "backend": {
-          "tech_count": 0,
+          "tech_count": 1,
           "pass": false,
           "quality_band": false
         },
         "frontend": {
-          "tech_count": 0,
+          "tech_count": 2,
           "pass": false,
           "quality_band": false
         },
@@ -3309,15 +3314,15 @@
           "quality_band": false
         },
         "data-ai": {
-          "tech_count": 0,
+          "tech_count": 1,
           "pass": false,
           "quality_band": false
         }
       },
       "passing_roles": [],
       "pass_company": false,
-      "verdict": "unknown",
-      "notes": "최근 12개월 메타데이터를 generic RSS로 못 모음"
+      "verdict": "fail",
+      "notes": ""
     },
     {
       "name": "카카오스타일",
@@ -3433,20 +3438,20 @@
     {
       "name": "카카오페이",
       "blog_url": "https://tech.kakaopay.com/",
-      "collected_count": 0,
-      "collectable": false,
-      "twelve_month_closed": false,
-      "tech_count": 0,
-      "non_tech_count": 0,
-      "unassigned_count": 0,
+      "collected_count": 16,
+      "collectable": true,
+      "twelve_month_closed": true,
+      "tech_count": 9,
+      "non_tech_count": 7,
+      "unassigned_count": 7,
       "roles": {
         "backend": {
-          "tech_count": 0,
+          "tech_count": 2,
           "pass": false,
           "quality_band": false
         },
         "frontend": {
-          "tech_count": 0,
+          "tech_count": 1,
           "pass": false,
           "quality_band": false
         },
@@ -3456,15 +3461,15 @@
           "quality_band": false
         },
         "data-ai": {
-          "tech_count": 0,
+          "tech_count": 1,
           "pass": false,
           "quality_band": false
         }
       },
       "passing_roles": [],
       "pass_company": false,
-      "verdict": "unknown",
-      "notes": "최근 12개월 메타데이터를 generic RSS로 못 모음"
+      "verdict": "fail",
+      "notes": ""
     },
     {
       "name": "카테노이드",
