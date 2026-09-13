@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { PageHeader } from "@/components/ui/PageHeader";
+import { AppHeader } from "@/components/ui/AppHeader";
 import { RepositoryEvidencePreview } from "./RepositoryEvidencePreview";
 
 export const metadata: Metadata = {
@@ -15,15 +15,12 @@ export default function RepositoryEvidencePreviewPage() {
 
   return (
     <>
-      <PageHeader
-        crumbs={[
-          <span key="development" className="text-body-sm text-ink-soft">
-            개발 도구
-          </span>,
-          <span key="collector" className="text-body-sm text-ink">
-            GitHub 근거 수집기
-          </span>,
-        ]}
+      <AppHeader
+        right={
+          <span className="text-body-sm text-ink-soft">
+            개발 도구 · GitHub 근거 수집기
+          </span>
+        }
       />
       <RepositoryEvidencePreview />
     </>
