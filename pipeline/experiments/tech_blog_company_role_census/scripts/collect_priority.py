@@ -236,7 +236,7 @@ def collect_woowahan(session, source, cutoff):
     return [], {
         "strategy": "blocked",
         "http": status,
-        "reason": "HTML/RSS/sitemap/wp-json 모두 403. custom 브라우저 우회는 하지 않음",
+        "reason": "이 경로의 HTML/RSS/sitemap/wp-json은 403. 별도 조사에서 수집 가능은 확인됨",
         "added": 0,
         "closed": False,
     }

@@ -316,7 +316,7 @@ def render_markdown(payload: dict) -> str:
             "## 한계",
             "",
             "- RSS 1라운드 뒤에 sitemap URL을 더 모을 수 있다. lastmod만 있으면 제목이 비어 분류가 안 된다.",
-            "- 우아한형제들 HTML/RSS/sitemap/wp-json은 모두 403이다. 이번 우선 라운드에서도 0건이다.",
+            "- 우아한형제들 표준 HTML/RSS/sitemap/wp-json은 이 census 경로에서 403이다. 별도 조사에서 기술블로그 수집 자체는 가능하다.",
             "- 카카오뱅크·페이·모빌리티는 archive/custom으로 12개월을 닫았고, 직무당 8개 미만이면 fail이다.",
             "- 분류는 제목(본문이 있으면 본문 포함) 키워드 다중 매핑이다. LLM이 아니다.",
             "- `데이터` 키워드가 데이터·AI를 과대 집계할 수 있다. 구름·한컴·삼성 등은 검수 필요.",

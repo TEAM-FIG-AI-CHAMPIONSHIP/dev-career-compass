@@ -33,3 +33,4 @@
 - 브랜치: `experiment/tech-blog-census-priority-collect`
 - 관련: #30, #40
 - 네이버 D2·토스 custom adapter는 팀원 실험에 이미 있다. 이번 7곳에는 넣지 않는다.
+- 우아한형제들은 별도 조사에서 기술블로그 수집이 가능하다. 이 census 경로의 표준 HTML/RSS/sitemap만 403이다.
