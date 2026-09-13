@@ -45,25 +45,17 @@ function CardMeta({
 /**
  * 이미 만든 것 → 갈 곳.
  *
- * 빨강·초록 diff 로도 보여줄 수 있지만, 카드가 여러 장 놓이면 색이 너무
- * 튑니다. 색 대신 명도로 말합니다 — 이미 한 것은 흐리게, 갈 곳은 진하게.
- * 앞의 `이미` 라벨이 없으면 흐린 줄이 "덜 중요한 글" 로 읽힙니다.
+ * 기호도 라벨도 쓰지 않습니다. 출발점 문장이 "…만들었다면" 으로 끝나 스스로
+ * 조건이라고 말하고 있어서, 앞에 라벨을 붙이면 같은 말을 두 번 합니다.
+ * 화살표도 마찬가지로 제목 첫 글자를 밀어낼 뿐 새로 말해 주는 것이 없습니다.
+ *
+ * 관계는 명도와 크기로 말합니다 — 조건은 작고 흐리게, 갈 곳은 크고 진하게.
  */
 function FromTo({ from, to }: { from: string; to: string }) {
   return (
-    <div className="flex flex-col gap-1.5">
-      <p className="flex flex-wrap items-baseline gap-2 text-body-sm text-ink-soft">
-        <span className="shrink-0 rounded-pill border border-line-strong bg-sunken px-1.5 py-px font-mono text-meta text-ink-muted">
-          이미
-        </span>
-        {from}
-      </p>
-      <h3 className="flex gap-2 text-h3 font-semibold text-pretty">
-        <span aria-hidden="true" className="shrink-0 font-mono text-accent">
-          └─&gt;
-        </span>
-        {to}
-      </h3>
+    <div className="flex flex-col gap-1">
+      <p className="text-caption text-ink-muted">{from}</p>
+      <h3 className="text-h3 font-semibold text-pretty">{to}</h3>
     </div>
   );
 }

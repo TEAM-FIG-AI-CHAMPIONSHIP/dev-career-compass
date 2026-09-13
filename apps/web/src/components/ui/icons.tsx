@@ -82,6 +82,35 @@ export const PersonIcon = (p: IconProps) => (
   </Icon>
 );
 
+/* 테마 아이콘 셋. 세 상태가 한 자리에서 번갈아 보이므로 실루엣이 서로
+   충분히 달라야 합니다 — 해는 밖으로 뻗고, 달은 한쪽이 파이고, 자동은 반만
+   찹니다. */
+export const SunIcon = (p: IconProps) => (
+  <Icon {...p}>
+    <circle cx="10" cy="10" r="3.4" />
+    <path d="M10 2.4v1.7M10 15.9v1.7M2.4 10h1.7M15.9 10h1.7M4.7 4.7l1.2 1.2M14.1 14.1l1.2 1.2M15.3 4.7l-1.2 1.2M5.9 14.1l-1.2 1.2" />
+  </Icon>
+);
+
+export const MoonIcon = (p: IconProps) => (
+  <Icon {...p}>
+    <path d="M16.3 11.7A6.7 6.7 0 018.3 3.7a6.7 6.7 0 108 8z" />
+  </Icon>
+);
+
+export const AutoThemeIcon = (p: IconProps) => (
+  <Icon {...p}>
+    <circle cx="10" cy="10" r="6.6" />
+    <path d="M10 3.4a6.6 6.6 0 000 13.2z" fill="currentColor" stroke="none" />
+  </Icon>
+);
+
+export const CloseIcon = (p: IconProps) => (
+  <Icon {...p}>
+    <path d="M5 5l10 10M15 5L5 15" />
+  </Icon>
+);
+
 export const PlusIcon = (p: IconProps) => (
   <Icon {...p}>
     <path d="M10 4v12M4 10h12" />

@@ -126,6 +126,22 @@ export function RepositoryForm({
   };
 
   /**
+   * 칸을 지웁니다.
+   *
+   * 칸이 하나만 남았을 때는 칸 자체를 없애지 않고 내용만 비웁니다. 칸이 모두
+   * 사라지면 "저장소 추가" 를 먼저 눌러야 입력을 시작할 수 있어, 아무것도 없는
+   * 화면에서 무엇을 해야 하는지 한 단계가 더 생깁니다.
+   */
+  const removeField = (index: number) => {
+    setDraft(
+      repositories.length === 1
+        ? [""]
+        : repositories.filter((_, currentIndex) => currentIndex !== index),
+    );
+    setAnalyzed(false);
+  };
+
+  /**
    * 저장소는 선택 사항이라 넘어가기는 언제나 가능합니다. 분석을 했으면 찾은
    * 키워드까지, 안 했으면 적어 둔 주소까지만 들고 넘어갑니다.
    */
@@ -211,6 +227,13 @@ export function RepositoryForm({
                   <RepoField
                     value={repository}
                     onChange={(next) => updateField(index, next)}
+                    onRemove={
+                      /* 비어 있는 한 칸뿐이면 지울 것이 없습니다. */
+                      repositories.length > 1 || repository.trim() !== ""
+                        ? () => removeField(index)
+                        : undefined
+                    }
+                    removeLabel={`${index + 1}번째 저장소 지우기`}
                     error={formatError}
                   />
                   {status?.kind === "loading" && (
