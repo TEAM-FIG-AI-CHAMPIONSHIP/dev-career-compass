@@ -1,6 +1,6 @@
 {
   "note": "12개월을 닫지 못해 탈락이 아니라 미수집이다. sitemap/custom 다음 라운드 대상.",
-  "company_count": 44,
+  "company_count": 43,
   "companies": [
     {
       "name": "AB180",
@@ -181,12 +181,6 @@
       "blog_url": "https://medium.com/@encar-ai",
       "collected_count": 6,
       "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
-    },
-    {
-      "name": "우아한형제들 / 배달의민족",
-      "blog_url": "https://techblog.woowahan.com/",
-      "collected_count": 0,
-      "notes": "최근 12개월 메타데이터를 generic RSS로 못 모음"
     },
     {
       "name": "웍스피어 / 잡코리아, 알바몬",

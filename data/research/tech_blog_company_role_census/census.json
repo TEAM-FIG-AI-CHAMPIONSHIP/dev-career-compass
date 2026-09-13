@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-09-13T06:46:06.750071+00:00",
-  "issue": 30,
+  "generated_at": "2026-09-13T06:49:44.362310+00:00",
+  "issue": 40,
   "gate": {
     "min_tech_posts_per_role": 8,
     "quality_band": 10
   },
   "totals": {
     "companies": 111,
-    "collectable": 83,
-    "twelve_month_closed": 46,
+    "collectable": 84,
+    "twelve_month_closed": 47,
     "articles": 3218,
     "extract_input": 837,
     "extract_success": 626,
     "tech_articles": 1642,
-    "passing_companies": 31,
+    "passing_companies": 32,
     "fail_companies": 36,
-    "unknown_companies": 44,
-    "passing_pairs": 76
+    "unknown_companies": 43,
+    "passing_pairs": 78
   },
   "role_company_counts": {
-    "backend": 24,
+    "backend": 25,
     "frontend": 15,
     "mobile": 9,
-    "data-ai": 28
+    "data-ai": 29
   },
   "companies": [
     {
@@ -2886,20 +2886,20 @@
     {
       "name": "우아한형제들 / 배달의민족",
       "blog_url": "https://techblog.woowahan.com/",
-      "collected_count": 0,
-      "collectable": false,
-      "twelve_month_closed": false,
-      "tech_count": 0,
+      "collected_count": 53,
+      "collectable": true,
+      "twelve_month_closed": true,
+      "tech_count": 42,
       "non_tech_count": 0,
       "unassigned_count": 0,
       "roles": {
         "backend": {
-          "tech_count": 0,
-          "pass": false,
+          "tech_count": 9,
+          "pass": true,
           "quality_band": false
         },
         "frontend": {
-          "tech_count": 0,
+          "tech_count": 6,
           "pass": false,
           "quality_band": false
         },
@@ -2909,15 +2909,18 @@
           "quality_band": false
         },
         "data-ai": {
-          "tech_count": 0,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 16,
+          "pass": true,
+          "quality_band": true
         }
       },
-      "passing_roles": [],
-      "pass_company": false,
-      "verdict": "unknown",
-      "notes": "최근 12개월 메타데이터를 generic RSS로 못 모음"
+      "passing_roles": [
+        "backend",
+        "data-ai"
+      ],
+      "pass_company": true,
+      "verdict": "pass",
+      "notes": "별도 조사 확인. Area 실험 RSS 53, 기술글 42. 이 census 경로는 403"
     },
     {
       "name": "웍스피어 / 잡코리아, 알바몬",

@@ -1,7 +1,7 @@
 {
-  "issue": 30,
+  "issue": 40,
   "note": "verdict=pass 만. 직무당 기술글 8개. Area 게이트는 아직 아니다.",
-  "company_count": 31,
+  "company_count": 32,
   "companies": [
     {
       "name": "CJ올리브영",
@@ -460,6 +460,24 @@
         "데이터·AI": 5
       },
       "tech_count": 56,
+      "job_count": 2,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
+      "name": "우아한형제들 / 배달의민족",
+      "blog_url": "https://techblog.woowahan.com/",
+      "passing_roles": [
+        "서버·백엔드",
+        "데이터·AI"
+      ],
+      "role_counts": {
+        "서버·백엔드": 9,
+        "웹 프론트엔드": 6,
+        "모바일": 0,
+        "데이터·AI": 16
+      },
+      "tech_count": 42,
       "job_count": 2,
       "gate": "first_count_only",
       "final_area_gate": false
