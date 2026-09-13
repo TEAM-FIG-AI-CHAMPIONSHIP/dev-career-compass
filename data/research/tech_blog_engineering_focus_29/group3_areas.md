@@ -6,10 +6,6 @@ engineering_focus -> v4 embedding -> clustering(complete linkage) -> LLM 병합 
 
 ## 알려진 한계
 
-- 이 8개 회사는 claude.ai 수동 프롬프팅(Opus 5)으로 병합·태깅했고, 앞서 확정한
-  6개 회사(`six_companies_final_areas.md`)는 API(Sonnet 5, `claude-sonnet-5`)로
-  처리했다. 두 트랙의 모델이 다르다 — Opus 5가 Sonnet 5보다 상위 모델이라 품질
-  저하는 아니지만, Area 서술 깊이나 세분화 판단 스타일이 트랙 간에 다를 수 있다.
 - 어피닛·메가존클라우드·인프랩/인프런·당근은 #60에서 이미 "12개월 미달" 알려진
   한계로 문서화된 회사들이다. 이 Area 결과도 그 제한된 데이터 범위 안에서
   나온 것이다 (당근은 특히 7건뿐이라 회사의 실제 기술 스펙트럼을 대표하기
