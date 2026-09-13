@@ -16,6 +16,25 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## GitHub repository evidence preview
+
+The repository evidence collector can be inspected without making a Claude API
+request. Add a GitHub personal access token to `apps/web/.env.local` to increase
+the GitHub API request limit:
+
+```bash
+GITHUB_TOKEN=your_github_token
+```
+
+Do not commit `.env.local` or the token. After starting the development server,
+open [http://localhost:3000/dev/repository-evidence](http://localhost:3000/dev/repository-evidence).
+The page and its API return `404` in production.
+
+The current selection logic is a baseline (`EVIDENCE_SELECTION_VERSION = 1`),
+not a validated final rule set. When changing file scores, quotas, path signals,
+or limits, validate the result against representative repositories, update the
+tests, and increment the selection version.
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
