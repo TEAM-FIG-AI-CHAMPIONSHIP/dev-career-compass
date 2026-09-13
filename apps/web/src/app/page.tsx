@@ -21,19 +21,20 @@ import { ThemeToggle } from "@/components/ui/ThemeToggle";
  */
 export default function Home() {
   return (
-    <main className="flex grow flex-col py-5">
-      <PageWidth className="flex grow flex-col gap-4">
+    <main className="flex min-h-0 grow flex-col py-3 sm:py-5">
+      <PageWidth className="flex min-h-0 grow flex-col gap-4">
         <div className="flex justify-end">
           <ThemeToggle />
         </div>
 
-        {/* 창을 화면 가운데 둡니다. 위에 붙이면 아래가 통째로 비어 페이지가
-            잘린 것처럼 보입니다. */}
-        <div className="flex grow items-center">
+        {/* 창이 남은 높이를 그대로 채웁니다. 높이를 px 로 고정하면 화면이
+            조금만 낮아도 진입 화면부터 스크롤이 생깁니다. 첫 화면에서 스크롤을
+            보게 하지 않습니다. */}
+        <div className="flex min-h-0 grow">
           <TerminalWindow
             title="refactor.me — bash"
-            className="w-full motion-safe:animate-[landing-enter_320ms_ease-out_both]"
-            bodyClassName="flex min-h-[30rem] flex-col items-center justify-center gap-14 px-5 py-20 font-sans sm:px-8 sm:py-24 lg:min-h-[36rem] lg:py-32"
+            className="flex w-full flex-col motion-safe:animate-[landing-enter_320ms_ease-out_both]"
+            bodyClassName="flex grow flex-col items-center justify-center gap-8 px-5 py-10 font-sans sm:gap-14 sm:px-8 sm:py-16"
           >
             <div className="flex flex-col items-center gap-5 text-center">
               <Wordmark className="text-[2.75rem] leading-none font-extrabold sm:text-[4rem] lg:text-[4.75rem]" />
