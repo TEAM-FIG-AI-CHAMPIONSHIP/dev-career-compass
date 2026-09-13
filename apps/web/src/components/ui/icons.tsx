@@ -155,3 +155,10 @@ export const ArrowLeftIcon = (p: IconProps) => (
     <path d="M9 6l-4 4 4 4" />
   </Icon>
 );
+
+export const CompassIcon = (p: IconProps) => (
+  <Icon {...p}>
+    <circle cx="10" cy="10" r="7.2" />
+    <path d="M12.9 7.1l-1.5 4.3-4.3 1.5 1.5-4.3z" />
+  </Icon>
+);

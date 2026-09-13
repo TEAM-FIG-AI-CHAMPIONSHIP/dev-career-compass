@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getExperienceCatalog, listJobs } from "@/lib/data";
 import { ExperienceForm } from "@/components/experience/ExperienceForm";
-import { ArrowLeftIcon, PersonIcon } from "@/components/ui/icons";
-import { routes } from "@/lib/routes";
+import { PersonIcon } from "@/components/ui/icons";
+import { StepHeader } from "@/components/ui/StepHeader";
 
 type Props = { params: Promise<{ role: string }> };
 
@@ -19,28 +18,7 @@ export default async function MatchExperiencePage({ params }: Props) {
 
   return (
     <>
-      <header className="flex flex-wrap items-center justify-between gap-3 border-b border-line px-4 py-4 sm:px-8 lg:px-20">
-        <Link
-          href={routes.home}
-          className="inline-flex items-center gap-1.5 text-[0.875rem] text-ink-soft no-underline hover:text-ink hover:no-underline"
-        >
-          <ArrowLeftIcon size={14} strokeWidth={1.7} />
-          처음으로
-        </Link>
-        <ol aria-label="진행 단계" className="flex items-center gap-2 text-[0.8125rem]">
-          <li className="text-ink-soft">1. 직무</li>
-          <li aria-hidden="true" className="text-line-strong">
-            →
-          </li>
-          <li className="text-ink-soft">2. GitHub</li>
-          <li aria-hidden="true" className="text-line-strong">
-            →
-          </li>
-          <li aria-current="step" className="font-semibold text-accent">
-            3. 경험
-          </li>
-        </ol>
-      </header>
+      <StepHeader current={3} />
 
       <main className="flex grow flex-col gap-11 px-4 py-12 sm:px-8 lg:px-20 lg:py-14">
         <div className="flex max-w-3xl flex-col gap-3">
