@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getExperienceCatalog, listJobs } from "@/lib/data";
 import { RepositoryForm } from "@/components/experience/RepositoryForm";
 import { StepHeader } from "@/components/ui/StepHeader";
+import { CommandLine } from "@/components/ui/CommandLine";
 import { PageWidth } from "@/components/ui/PageWidth";
 
 type Props = { params: Promise<{ role: string }> };
@@ -23,6 +24,7 @@ export default async function MatchRepositoryPage({ params }: Props) {
       <main className="grow py-12 lg:py-14">
         <PageWidth className="flex flex-col gap-11">
           <div className="flex max-w-3xl flex-col gap-3">
+            <CommandLine>github-scan --role {role}</CommandLine>
             <h1 className="text-[1.75rem] leading-[1.4] font-semibold tracking-[-0.012em] text-pretty sm:text-[1.875rem]">
               GitHub 저장소 (선택)
             </h1>

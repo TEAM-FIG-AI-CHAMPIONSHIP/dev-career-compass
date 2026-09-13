@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 import { StepNav } from "@/components/ui/StepNav";
-import { cardStyle } from "@/components/ui/Card";
+import { TerminalWindow } from "@/components/ui/TerminalWindow";
 import {
   AnalysisTerminal,
   type TerminalStep,
@@ -194,14 +194,13 @@ export function RepositoryForm({
       {analyzing ? (
         <AnalysisTerminal
           steps={SCAN_STEPS}
-          title="refactor.me — scan"
+          title={`refactor.me — ${role}/repository — bash`}
           label="저장소를 살펴보고 있습니다."
         />
       ) : (
-        <div
-          className={cardStyle("static", {
-            className: "flex flex-col gap-4 p-5 sm:p-6",
-          })}
+        <TerminalWindow
+          title={`refactor.me — ${role}/repository — bash`}
+          bodyClassName="flex flex-col gap-4 p-5 font-sans sm:p-6"
         >
           <div className="flex flex-col gap-3">
             {repositories.map((repository, index) => {
@@ -223,38 +222,47 @@ export function RepositoryForm({
                     : undefined;
 
               return (
-                <div key={index} className="flex flex-col gap-2">
-                  <RepoField
-                    value={repository}
-                    onChange={(next) => updateField(index, next)}
-                    onRemove={
-                      /* 비어 있는 한 칸뿐이면 지울 것이 없습니다. */
-                      repositories.length > 1 || repository.trim() !== ""
-                        ? () => removeField(index)
-                        : undefined
-                    }
-                    removeLabel={`${index + 1}번째 저장소 지우기`}
-                    error={formatError}
-                  />
-                  {status?.kind === "loading" && (
-                    <span className="text-caption text-ink-soft">
-                      저장소를 살펴보는 중이에요…
-                    </span>
-                  )}
-                  {status?.kind === "done" && status.keywords.length > 0 && (
-                    <div className="flex flex-wrap gap-1.5">
-                      {status.keywords.map((keyword) => (
-                        <Chip key={keyword} tone="accent">
-                          {keyword}
-                        </Chip>
-                      ))}
-                    </div>
-                  )}
-                  {status?.kind === "done" && status.keywords.length === 0 && (
-                    <span className="text-caption text-ink-soft">
-                      찾은 키워드가 없어요.
-                    </span>
-                  )}
+                <div key={index} className="flex items-start gap-3">
+                  <span
+                    aria-hidden="true"
+                    className="mt-3.5 font-mono text-body-sm text-accent"
+                  >
+                    $
+                  </span>
+                  <div className="flex min-w-0 flex-1 flex-col gap-2">
+                    <RepoField
+                      value={repository}
+                      onChange={(next) => updateField(index, next)}
+                      onRemove={
+                        /* 비어 있는 한 칸뿐이면 지울 것이 없습니다. */
+                        repositories.length > 1 || repository.trim() !== ""
+                          ? () => removeField(index)
+                          : undefined
+                      }
+                      removeLabel={`${index + 1}번째 저장소 지우기`}
+                      error={formatError}
+                    />
+                    {status?.kind === "loading" && (
+                      <span className="text-caption text-ink-soft">
+                        저장소를 살펴보는 중이에요…
+                      </span>
+                    )}
+                    {status?.kind === "done" && status.keywords.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5">
+                        {status.keywords.map((keyword) => (
+                          <Chip key={keyword} tone="accent">
+                            {keyword}
+                          </Chip>
+                        ))}
+                      </div>
+                    )}
+                    {status?.kind === "done" &&
+                      status.keywords.length === 0 && (
+                        <span className="text-caption text-ink-soft">
+                          찾은 키워드가 없어요.
+                        </span>
+                      )}
+                  </div>
                 </div>
               );
             })}
@@ -275,6 +283,9 @@ export function RepositoryForm({
               onClick={runAnalysis}
               disabled={invalid || analyzing || nothingToAnalyze}
             >
+              <span aria-hidden="true" className="font-mono text-accent">
+                $
+              </span>
               {analyzing
                 ? "살펴보는 중…"
                 : analyzed
@@ -287,7 +298,7 @@ export function RepositoryForm({
               </span>
             )}
           </div>
-        </div>
+        </TerminalWindow>
       )}
 
       <StepNav
