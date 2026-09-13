@@ -1,0 +1,21 @@
+{
+  "company": {
+    "slug": "kurly",
+    "name": "컬리"
+  },
+  "job": {
+    "slug": "frontend",
+    "name": "웹 프론트엔드"
+  },
+  "generatedAt": "2026-09-13T00:00:00Z",
+  "window": {
+    "from": "2025-09-13",
+    "to": "2026-09-13"
+  },
+  "domains": [],
+  "suggestions": {
+    "new": [],
+    "deepen": []
+  },
+  "evidence": []
+}

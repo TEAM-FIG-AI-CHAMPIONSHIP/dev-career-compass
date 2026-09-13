@@ -1,0 +1,21 @@
+{
+  "company": {
+    "slug": "musinsa",
+    "name": "무신사"
+  },
+  "job": {
+    "slug": "data-ai",
+    "name": "데이터·AI"
+  },
+  "generatedAt": "2026-09-13T00:00:00Z",
+  "window": {
+    "from": "2025-09-13",
+    "to": "2026-09-13"
+  },
+  "domains": [],
+  "suggestions": {
+    "new": [],
+    "deepen": []
+  },
+  "evidence": []
+}
