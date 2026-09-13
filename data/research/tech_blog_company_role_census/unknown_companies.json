@@ -1,6 +1,6 @@
 {
   "note": "12개월을 닫지 못해 탈락이 아니라 미수집이다. sitemap/custom 다음 라운드 대상.",
-  "company_count": 43,
+  "company_count": 38,
   "companies": [
     {
       "name": "AB180",
@@ -17,7 +17,7 @@
     {
       "name": "LG유플러스",
       "blog_url": "https://techblog.uplus.co.kr/",
-      "collected_count": 129,
+      "collected_count": 119,
       "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
     },
     {
@@ -51,12 +51,6 @@
       "notes": "최근 12개월 메타데이터를 generic RSS로 못 모음"
     },
     {
-      "name": "SSG.COM",
-      "blog_url": "https://medium.com/ssgtech",
-      "collected_count": 10,
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
-    },
-    {
       "name": "VCNC / 타다",
       "blog_url": "https://blog-tech.tadatada.com/",
       "collected_count": 0,
@@ -67,12 +61,6 @@
       "blog_url": "https://blog.kyobodts.co.kr/",
       "collected_count": 0,
       "notes": "최근 12개월 메타데이터를 generic RSS로 못 모음"
-    },
-    {
-      "name": "네이버",
-      "blog_url": "https://d2.naver.com/home",
-      "collected_count": 20,
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
     },
     {
       "name": "네이버랩스",
@@ -105,12 +93,6 @@
       "notes": "최근 12개월 메타데이터를 generic RSS로 못 모음"
     },
     {
-      "name": "당근마켓 / 당근",
-      "blog_url": "https://medium.com/daangn",
-      "collected_count": 10,
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
-    },
-    {
       "name": "데이블",
       "blog_url": "https://dabletech.oopy.io/",
       "collected_count": 0,
@@ -121,12 +103,6 @@
       "blog_url": "https://www.blog-dreamus.com/dreamus-now",
       "collected_count": 0,
       "notes": "최근 12개월 메타데이터를 generic RSS로 못 모음"
-    },
-    {
-      "name": "딜라이트룸",
-      "blog_url": "https://medium.com/delightroom",
-      "collected_count": 10,
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
     },
     {
       "name": "래블업",
@@ -147,10 +123,16 @@
       "notes": "최근 12개월 메타데이터를 generic RSS로 못 모음"
     },
     {
+      "name": "무신사 / 29CM",
+      "blog_url": "https://techblog.musinsa.com/",
+      "collected_count": 51,
+      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
+    },
+    {
       "name": "미리디",
       "blog_url": "https://medium.com/miridih/subpage/3d936b50f942",
-      "collected_count": 10,
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
+      "collected_count": 25,
+      "notes": "custom 보강: medium_stream"
     },
     {
       "name": "바비톡",
@@ -185,13 +167,7 @@
     {
       "name": "웍스피어 / 잡코리아, 알바몬",
       "blog_url": "https://techblog.jobkorea.co.kr/",
-      "collected_count": 49,
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
-    },
-    {
-      "name": "위대한상상 / 요기요",
-      "blog_url": "https://techblog.yogiyo.co.kr/",
-      "collected_count": 25,
+      "collected_count": 39,
       "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
     },
     {
@@ -204,12 +180,6 @@
       "name": "자비스앤빌런즈 / 삼쩜삼",
       "blog_url": "https://blog.3o3.co.kr/tag/tech/",
       "collected_count": 15,
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
-    },
-    {
-      "name": "카카오",
-      "blog_url": "https://tech.kakao.com/blog",
-      "collected_count": 10,
       "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
     },
     {
@@ -227,7 +197,7 @@
     {
       "name": "펫프렌즈",
       "blog_url": "https://techblog.pet-friends.co.kr/",
-      "collected_count": 23,
+      "collected_count": 13,
       "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
     },
     {

@@ -335,7 +335,8 @@ def render_markdown(payload: dict) -> str:
             "- 카카오뱅크·페이·모빌리티는 archive/custom으로 12개월을 닫았고, 직무당 8개 미만이면 fail이다.",
             "- 분류는 제목(본문이 있으면 본문 포함) 키워드 다중 매핑이다. LLM이 아니다.",
             "- `데이터` 키워드가 데이터·AI를 과대 집계할 수 있다. 구름·한컴·삼성 등은 검수 필요.",
-            "- RSS가 최근 N건만 주는 회사(토스, 네이버 D2, 당근, 카카오 등)는 sitemap/custom 전까지 과소 집계된다.",
+            "- 네이버 D2·카카오·당근은 custom/Medium stream으로 12개월을 보강했다. 요기요는 글은 모였지만 직무당 8 미만이다.",
+            "- 무신사는 RSS/sitemap 중복 URL을 합친 뒤 데이터·AI가 8 아래로 내려가 이번 집계에서 빠졌다.",
             "- 8개 통과는 Area 3개·근거 2개를 보장하지 않는다. 그건 다음 게이트다.",
             "- 60~80개는 목표가 아니며, 통과분이 적으면 억지로 채우지 않는다.",
             "",
@@ -410,8 +411,13 @@ def main() -> None:
             notes.append(f"수집 오류: {collect_row['error']}")
         if not confirmed and not collect_row.get("collectable") and not items:
             notes.append("최근 12개월 메타데이터를 generic RSS로 못 모음")
-        if collect_row.get("rss", {}).get("coverage") == "insufficient":
+        if collect_row.get("rss", {}).get("coverage") == "insufficient" and not collect_row.get("expand"):
             notes.append("RSS가 12개월을 닫지 못해 과소 집계 가능")
+        expand_detail = collect_row.get("expand_detail") or {}
+        if expand_detail.get("strategy"):
+            notes.append(f"custom 보강: {expand_detail['strategy']}")
+        elif collect_row.get("expand"):
+            notes.append("custom/Medium stream 보강")
         if collect_row.get("round2", {}).get("strategy") == "skip_medium_sitemap":
             notes.append("Medium sitemap은 제외. RSS만으로 12개월 판정")
         if collect_row.get("round2", {}).get("closed_by_sitemap"):
