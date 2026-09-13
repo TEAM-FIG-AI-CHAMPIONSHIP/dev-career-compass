@@ -1,7 +1,7 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
-import { AutoThemeIcon, MoonIcon, SunIcon } from "./icons";
+import { cn } from "@/lib/cn";
 
 /**
  * 테마 전환.
@@ -10,25 +10,20 @@ import { AutoThemeIcon, MoonIcon, SunIcon } from "./icons";
  * 맡깁니다. 두 상태만 두면 "지금 시스템을 따르는 중" 을 표현할 방법이 없어,
  * 시스템을 바꿔도 화면이 따라오지 않는 이유를 설명할 수 없습니다.
  *
- * 버튼은 하나이고 누를 때마다 순환합니다. 세 칸짜리 토글은 상단 바에서
- * 200px 가까이 차지해 회사·직무 이름과 단계 표시를 밀어냈습니다. 테마는
- * 한 번 정하면 다시 건드리지 않는 조작이라 그만한 자리를 줄 이유가 없습니다.
+ * 세 칸을 다 펼쳐 두는 이유는 지금 무엇이 켜져 있는지가 글자로 보이기
+ * 때문입니다. 아이콘 하나로 줄이면 자리는 아끼지만 현재 상태를 말로 읽을 수
+ * 없습니다.
  *
- * 대신 지금 무엇이 켜져 있는지 글자로 보이지 않으므로, 무엇이 켜져 있고
- * 누르면 무엇이 되는지를 aria-label 과 title 에 적습니다.
+ * 대신 진입 화면에만 둡니다. 상단 바에 두면 200px 가까이 차지해 회사·직무
+ * 이름과 단계 표시를 밀어냈습니다. 테마는 한 번 정하면 다시 건드리지 않는
+ * 조작이라 모든 화면에 자리를 내줄 이유가 없습니다.
  *
  * 실제 상태는 문서의 data-theme 속성입니다. state 를 따로 두면 첫 페인트 전에
  * layout.tsx 의 THEME_INIT 이 붙여 놓은 값과 어긋날 수 있습니다.
  */
 type Theme = "light" | "dark" | "auto";
 
-const ORDER: Theme[] = ["light", "dark", "auto"];
-
-const META: Record<Theme, { Icon: typeof SunIcon; label: string }> = {
-  light: { Icon: SunIcon, label: "라이트" },
-  dark: { Icon: MoonIcon, label: "다크" },
-  auto: { Icon: AutoThemeIcon, label: "시스템 설정" },
-};
+const OPTIONS: Theme[] = ["light", "dark", "auto"];
 
 const listeners = new Set<() => void>();
 
@@ -65,19 +60,29 @@ function apply(next: Theme): void {
 
 export function ThemeToggle() {
   const theme = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
-  const { Icon, label } = META[theme];
-  const next = ORDER[(ORDER.indexOf(theme) + 1) % ORDER.length];
-  const description = `테마: ${label}. 누르면 ${META[next].label}으로 바뀝니다`;
 
   return (
-    <button
-      type="button"
-      onClick={() => apply(next)}
-      aria-label={description}
-      title={description}
-      className="inline-flex size-8 shrink-0 cursor-pointer items-center justify-center rounded-btn border border-line-strong bg-surface text-ink-soft transition-colors hover:border-ink-muted hover:text-ink"
+    <div
+      role="group"
+      aria-label="테마"
+      className="inline-flex overflow-hidden rounded-btn border border-line-strong"
     >
-      <Icon size={16} />
-    </button>
+      {OPTIONS.map((option) => (
+        <button
+          key={option}
+          type="button"
+          aria-pressed={theme === option}
+          onClick={() => apply(option)}
+          className={cn(
+            "cursor-pointer border-r border-line-strong px-2.5 py-1 font-mono text-meta transition-colors last:border-r-0",
+            theme === option
+              ? "bg-accent text-accent-on"
+              : "bg-surface text-ink-soft hover:text-ink",
+          )}
+        >
+          {option}
+        </button>
+      ))}
+    </div>
   );
 }

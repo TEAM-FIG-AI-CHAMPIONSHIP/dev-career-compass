@@ -33,13 +33,13 @@ export default function Home() {
           <TerminalWindow
             title="refactor.me — bash"
             className="w-full motion-safe:animate-[landing-enter_320ms_ease-out_both]"
-            bodyClassName="flex flex-col items-center gap-11 px-5 py-14 font-sans sm:px-8 sm:py-16 lg:py-20"
+            bodyClassName="flex min-h-[30rem] flex-col items-center justify-center gap-14 px-5 py-20 font-sans sm:px-8 sm:py-24 lg:min-h-[36rem] lg:py-32"
           >
-            <div className="flex flex-col items-center gap-4 text-center">
-              <Wordmark className="text-[2.5rem] leading-none font-extrabold sm:text-[3.5rem]" />
+            <div className="flex flex-col items-center gap-5 text-center">
+              <Wordmark className="text-[2.75rem] leading-none font-extrabold sm:text-[4rem] lg:text-[4.75rem]" />
               {/* 태그라인은 셸 주석입니다. 설명이지 명령이 아니라는 뜻이 형식에
                 드러나고, 흔한 마케팅 문장과도 목소리가 달라집니다. */}
-              <div className="flex flex-col gap-1 font-mono text-caption text-comment">
+              <div className="flex flex-col gap-1 font-mono text-body-sm text-comment">
                 <p>
                   # bridge the gap between your projects and real-world problems
                 </p>
@@ -49,7 +49,7 @@ export default function Home() {
 
             <section
               aria-label="탐색 방법 선택"
-              className="grid w-full max-w-3xl grid-cols-1 gap-3 sm:grid-cols-2"
+              className="grid w-full max-w-4xl grid-cols-1 gap-3 sm:grid-cols-2"
             >
               <EntryCard
                 href={routes.companies}
@@ -88,7 +88,7 @@ function EntryCard({
   action: string;
 }) {
   return (
-    <CardLink href={href} className="group flex flex-col gap-2.5 p-5 sm:p-6">
+    <CardLink href={href} className="group flex flex-col gap-2.5 p-6 sm:p-7">
       <span className="font-mono text-meta text-accent uppercase">
         $ {command}
       </span>
