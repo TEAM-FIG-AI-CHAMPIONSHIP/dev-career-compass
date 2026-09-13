@@ -233,7 +233,7 @@ def render_markdown(payload: dict) -> str:
         "# 111개 기술블로그 회사×직무 census (1차 게이트)",
         "",
         f"조사 시각: {payload['generated_at']}",
-        f"관련 이슈: #{payload['issue']}",
+        f"관련 이슈: #{payload['issue']} (이전 #30)",
         "",
         "회사 전체 글 수가 아니라 **회사 × 직무당 최근 12개월 기술글 8개**를 1차 게이트로 본다.",
         "Area / embedding / clustering / LLM은 돌리지 않았다. 이 파일이 최종 60~80 확정이 아니다.",
@@ -413,7 +413,7 @@ def main() -> None:
 
     payload = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "issue": 30,
+        "issue": 40,
         "gate": {"min_tech_posts_per_role": GATE, "quality_band": QUALITY},
         "totals": {
             "companies": len(companies),
@@ -452,7 +452,7 @@ def main() -> None:
     save_json(
         RESEARCH / "selected_companies.json",
         {
-            "issue": 30,
+            "issue": 40,
             "note": "verdict=pass 만. 직무당 기술글 8개. Area 게이트는 아직 아니다.",
             "company_count": len(selected),
             "companies": selected,

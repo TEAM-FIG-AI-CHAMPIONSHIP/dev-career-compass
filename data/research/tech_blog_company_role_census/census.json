@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-09-13T05:56:24.684749+00:00",
-  "issue": 30,
+  "generated_at": "2026-09-13T06:22:13.686706+00:00",
+  "issue": 40,
   "gate": {
     "min_tech_posts_per_role": 8,
     "quality_band": 10
   },
   "totals": {
     "companies": 111,
-    "collectable": 86,
+    "collectable": 80,
     "twelve_month_closed": 43,
-    "articles": 4153,
+    "articles": 3177,
     "extract_input": 837,
     "extract_success": 626,
-    "tech_articles": 693,
-    "passing_companies": 25,
+    "tech_articles": 1546,
+    "passing_companies": 29,
     "fail_companies": 33,
-    "unknown_companies": 53,
-    "passing_pairs": 61
+    "unknown_companies": 49,
+    "passing_pairs": 73
   },
   "role_company_counts": {
-    "backend": 21,
-    "frontend": 12,
-    "mobile": 5,
-    "data-ai": 23
+    "backend": 23,
+    "frontend": 14,
+    "mobile": 9,
+    "data-ai": 27
   },
   "companies": [
     {
@@ -140,12 +140,12 @@
     {
       "name": "GS리테일",
       "blog_url": "https://gsretail.tistory.com/",
-      "collected_count": 14,
+      "collected_count": 13,
       "collectable": true,
       "twelve_month_closed": false,
-      "tech_count": 10,
-      "non_tech_count": 4,
-      "unassigned_count": 4,
+      "tech_count": 13,
+      "non_tech_count": 0,
+      "unassigned_count": 0,
       "roles": {
         "backend": {
           "tech_count": 8,
@@ -163,7 +163,7 @@
           "quality_band": false
         },
         "data-ai": {
-          "tech_count": 10,
+          "tech_count": 11,
           "pass": true,
           "quality_band": true
         }
@@ -179,15 +179,15 @@
     {
       "name": "kt cloud",
       "blog_url": "https://tech.ktcloud.com/",
-      "collected_count": 135,
+      "collected_count": 134,
       "collectable": true,
       "twelve_month_closed": false,
-      "tech_count": 15,
-      "non_tech_count": 120,
-      "unassigned_count": 120,
+      "tech_count": 107,
+      "non_tech_count": 27,
+      "unassigned_count": 27,
       "roles": {
         "backend": {
-          "tech_count": 15,
+          "tech_count": 42,
           "pass": true,
           "quality_band": true
         },
@@ -202,7 +202,7 @@
           "quality_band": false
         },
         "data-ai": {
-          "tech_count": 14,
+          "tech_count": 45,
           "pass": true,
           "quality_band": true
         }
@@ -213,7 +213,7 @@
       ],
       "pass_company": true,
       "verdict": "pass",
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능; 제목 없는 sitemap URL 120건. 분류 전 제목 보강 필요"
+      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
     },
     {
       "name": "LG AI연구원",
@@ -221,19 +221,19 @@
       "collected_count": 268,
       "collectable": true,
       "twelve_month_closed": false,
-      "tech_count": 0,
-      "non_tech_count": 268,
-      "unassigned_count": 268,
+      "tech_count": 136,
+      "non_tech_count": 132,
+      "unassigned_count": 132,
       "roles": {
         "backend": {
-          "tech_count": 0,
+          "tech_count": 2,
           "pass": false,
           "quality_band": false
         },
         "frontend": {
-          "tech_count": 0,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 10,
+          "pass": true,
+          "quality_band": true
         },
         "mobile": {
           "tech_count": 0,
@@ -241,25 +241,28 @@
           "quality_band": false
         },
         "data-ai": {
-          "tech_count": 0,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 20,
+          "pass": true,
+          "quality_band": true
         }
       },
-      "passing_roles": [],
-      "pass_company": false,
-      "verdict": "unknown",
-      "notes": "제목 없는 sitemap URL 268건. 분류 전 제목 보강 필요"
+      "passing_roles": [
+        "frontend",
+        "data-ai"
+      ],
+      "pass_company": true,
+      "verdict": "pass",
+      "notes": ""
     },
     {
       "name": "LG CNS",
       "blog_url": "https://www.lgcns.com/kr/moa/insight",
-      "collected_count": 2,
+      "collected_count": 1,
       "collectable": true,
       "twelve_month_closed": false,
       "tech_count": 0,
-      "non_tech_count": 2,
-      "unassigned_count": 2,
+      "non_tech_count": 1,
+      "unassigned_count": 1,
       "roles": {
         "backend": {
           "tech_count": 0,
@@ -290,12 +293,12 @@
     {
       "name": "LG유플러스",
       "blog_url": "https://techblog.uplus.co.kr/",
-      "collected_count": 173,
+      "collected_count": 129,
       "collectable": true,
       "twelve_month_closed": false,
       "tech_count": 5,
-      "non_tech_count": 168,
-      "unassigned_count": 168,
+      "non_tech_count": 124,
+      "unassigned_count": 124,
       "roles": {
         "backend": {
           "tech_count": 2,
@@ -321,35 +324,35 @@
       "passing_roles": [],
       "pass_company": false,
       "verdict": "unknown",
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능; 제목 없는 sitemap URL 163건. 분류 전 제목 보강 필요"
+      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
     },
     {
       "name": "LG유플러스 볼트업",
       "blog_url": "https://tech.voltup.kr/posts",
-      "collected_count": 22,
+      "collected_count": 21,
       "collectable": true,
       "twelve_month_closed": false,
-      "tech_count": 0,
-      "non_tech_count": 22,
-      "unassigned_count": 22,
+      "tech_count": 9,
+      "non_tech_count": 12,
+      "unassigned_count": 12,
       "roles": {
         "backend": {
-          "tech_count": 0,
+          "tech_count": 4,
           "pass": false,
           "quality_band": false
         },
         "frontend": {
-          "tech_count": 0,
+          "tech_count": 2,
           "pass": false,
           "quality_band": false
         },
         "mobile": {
-          "tech_count": 0,
+          "tech_count": 1,
           "pass": false,
           "quality_band": false
         },
         "data-ai": {
-          "tech_count": 0,
+          "tech_count": 2,
           "pass": false,
           "quality_band": false
         }
@@ -357,7 +360,7 @@
       "passing_roles": [],
       "pass_company": false,
       "verdict": "unknown",
-      "notes": "제목 없는 sitemap URL 22건. 분류 전 제목 보강 필요"
+      "notes": ""
     },
     {
       "name": "NC",
@@ -398,38 +401,43 @@
     {
       "name": "NHN Cloud",
       "blog_url": "https://meetup.nhncloud.com/",
-      "collected_count": 422,
+      "collected_count": 421,
       "collectable": true,
       "twelve_month_closed": false,
-      "tech_count": 6,
-      "non_tech_count": 416,
-      "unassigned_count": 416,
+      "tech_count": 102,
+      "non_tech_count": 319,
+      "unassigned_count": 319,
       "roles": {
         "backend": {
-          "tech_count": 4,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 27,
+          "pass": true,
+          "quality_band": true
         },
         "frontend": {
-          "tech_count": 0,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 14,
+          "pass": true,
+          "quality_band": true
         },
         "mobile": {
-          "tech_count": 0,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 17,
+          "pass": true,
+          "quality_band": true
         },
         "data-ai": {
-          "tech_count": 0,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 13,
+          "pass": true,
+          "quality_band": true
         }
       },
-      "passing_roles": [],
-      "pass_company": false,
-      "verdict": "unknown",
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능; 제목 없는 sitemap URL 412건. 분류 전 제목 보강 필요"
+      "passing_roles": [
+        "backend",
+        "frontend",
+        "mobile",
+        "data-ai"
+      ],
+      "pass_company": true,
+      "verdict": "pass",
+      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능; 제목 없는 sitemap URL 74건. 분류 전 제목 보강 필요"
     },
     {
       "name": "PRND / 헤이딜러",
@@ -506,12 +514,12 @@
     {
       "name": "SK AX",
       "blog_url": "https://www.skax.co.kr/insight/trends",
-      "collected_count": 1,
-      "collectable": true,
+      "collected_count": 0,
+      "collectable": false,
       "twelve_month_closed": false,
       "tech_count": 0,
-      "non_tech_count": 1,
-      "unassigned_count": 1,
+      "non_tech_count": 0,
+      "unassigned_count": 0,
       "roles": {
         "backend": {
           "tech_count": 0,
@@ -537,7 +545,7 @@
       "passing_roles": [],
       "pass_company": false,
       "verdict": "unknown",
-      "notes": ""
+      "notes": "최근 12개월 메타데이터를 generic RSS로 못 모음"
     },
     {
       "name": "SK쉴더스",
@@ -578,16 +586,16 @@
     {
       "name": "SK플래닛",
       "blog_url": "https://techtopic.skplanet.com/",
-      "collected_count": 21,
+      "collected_count": 20,
       "collectable": true,
       "twelve_month_closed": true,
-      "tech_count": 20,
+      "tech_count": 19,
       "non_tech_count": 1,
       "unassigned_count": 0,
       "roles": {
         "backend": {
-          "tech_count": 8,
-          "pass": true,
+          "tech_count": 7,
+          "pass": false,
           "quality_band": false
         },
         "frontend": {
@@ -601,13 +609,12 @@
           "quality_band": false
         },
         "data-ai": {
-          "tech_count": 18,
+          "tech_count": 17,
           "pass": true,
           "quality_band": true
         }
       },
       "passing_roles": [
-        "backend",
         "frontend",
         "data-ai"
       ],
@@ -1018,12 +1025,12 @@
     {
       "name": "넥스트리",
       "blog_url": "https://www.nextree.io/tag/blog/",
-      "collected_count": 16,
+      "collected_count": 15,
       "collectable": true,
       "twelve_month_closed": false,
       "tech_count": 14,
-      "non_tech_count": 2,
-      "unassigned_count": 2,
+      "non_tech_count": 1,
+      "unassigned_count": 1,
       "roles": {
         "backend": {
           "tech_count": 11,
@@ -1202,12 +1209,12 @@
     {
       "name": "농심데이터시스템(NDS)",
       "blog_url": "https://tech.cloud.nongshim.co.kr/post/",
-      "collected_count": 11,
+      "collected_count": 10,
       "collectable": true,
       "twelve_month_closed": false,
       "tech_count": 10,
-      "non_tech_count": 1,
-      "unassigned_count": 1,
+      "non_tech_count": 0,
+      "unassigned_count": 0,
       "roles": {
         "backend": {
           "tech_count": 8,
@@ -1421,12 +1428,12 @@
     {
       "name": "드림어스컴퍼니 / FLO",
       "blog_url": "https://www.blog-dreamus.com/dreamus-now",
-      "collected_count": 1,
-      "collectable": true,
+      "collected_count": 0,
+      "collectable": false,
       "twelve_month_closed": false,
       "tech_count": 0,
-      "non_tech_count": 1,
-      "unassigned_count": 1,
+      "non_tech_count": 0,
+      "unassigned_count": 0,
       "roles": {
         "backend": {
           "tech_count": 0,
@@ -1452,7 +1459,7 @@
       "passing_roles": [],
       "pass_company": false,
       "verdict": "unknown",
-      "notes": ""
+      "notes": "최근 12개월 메타데이터를 generic RSS로 못 모음"
     },
     {
       "name": "딜라이트룸",
@@ -1493,12 +1500,12 @@
     {
       "name": "라인플러스",
       "blog_url": "https://techblog.lycorp.co.jp/ko",
-      "collected_count": 188,
+      "collected_count": 84,
       "collectable": true,
       "twelve_month_closed": false,
-      "tech_count": 48,
-      "non_tech_count": 140,
-      "unassigned_count": 139,
+      "tech_count": 56,
+      "non_tech_count": 28,
+      "unassigned_count": 27,
       "roles": {
         "backend": {
           "tech_count": 22,
@@ -1516,7 +1523,7 @@
           "quality_band": false
         },
         "data-ai": {
-          "tech_count": 23,
+          "tech_count": 24,
           "pass": true,
           "quality_band": true
         }
@@ -1529,7 +1536,7 @@
       ],
       "pass_company": true,
       "verdict": "pass",
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능; 제목 없는 sitemap URL 138건. 분류 전 제목 보강 필요"
+      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
     },
     {
       "name": "라포랩스 / 퀸",
@@ -1575,12 +1582,12 @@
     {
       "name": "래블업",
       "blog_url": "https://www.backend.ai/ko/blog/category/engineering",
-      "collected_count": 1,
-      "collectable": true,
+      "collected_count": 0,
+      "collectable": false,
       "twelve_month_closed": false,
       "tech_count": 0,
-      "non_tech_count": 1,
-      "unassigned_count": 1,
+      "non_tech_count": 0,
+      "unassigned_count": 0,
       "roles": {
         "backend": {
           "tech_count": 0,
@@ -1606,7 +1613,7 @@
       "passing_roles": [],
       "pass_company": false,
       "verdict": "unknown",
-      "notes": ""
+      "notes": "최근 12개월 메타데이터를 generic RSS로 못 모음"
     },
     {
       "name": "롯데쇼핑 / 롯데ON",
@@ -1719,50 +1726,52 @@
     {
       "name": "마이리얼트립",
       "blog_url": "https://blog.myrealtrip.com/",
-      "collected_count": 108,
+      "collected_count": 105,
       "collectable": true,
       "twelve_month_closed": false,
-      "tech_count": 14,
-      "non_tech_count": 94,
-      "unassigned_count": 94,
+      "tech_count": 71,
+      "non_tech_count": 34,
+      "unassigned_count": 34,
       "roles": {
         "backend": {
+          "tech_count": 12,
+          "pass": true,
+          "quality_band": true
+        },
+        "frontend": {
           "tech_count": 7,
           "pass": false,
           "quality_band": false
         },
-        "frontend": {
-          "tech_count": 2,
-          "pass": false,
-          "quality_band": false
-        },
         "mobile": {
-          "tech_count": 3,
-          "pass": false,
+          "tech_count": 9,
+          "pass": true,
           "quality_band": false
         },
         "data-ai": {
-          "tech_count": 10,
+          "tech_count": 17,
           "pass": true,
           "quality_band": true
         }
       },
       "passing_roles": [
+        "backend",
+        "mobile",
         "data-ai"
       ],
       "pass_company": true,
       "verdict": "pass",
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능; 제목 없는 sitemap URL 93건. 분류 전 제목 보강 필요"
+      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
     },
     {
       "name": "마키나락스",
       "blog_url": "https://www.makinarocks.ai/category/tech/",
-      "collected_count": 1,
-      "collectable": true,
+      "collected_count": 0,
+      "collectable": false,
       "twelve_month_closed": false,
       "tech_count": 0,
-      "non_tech_count": 1,
-      "unassigned_count": 1,
+      "non_tech_count": 0,
+      "unassigned_count": 0,
       "roles": {
         "backend": {
           "tech_count": 0,
@@ -1788,7 +1797,7 @@
       "passing_roles": [],
       "pass_company": false,
       "verdict": "unknown",
-      "notes": ""
+      "notes": "최근 12개월 메타데이터를 generic RSS로 못 모음"
     },
     {
       "name": "매드업",
@@ -1829,12 +1838,12 @@
     {
       "name": "메가존클라우드",
       "blog_url": "https://blog.megazone.io/",
-      "collected_count": 59,
+      "collected_count": 24,
       "collectable": true,
       "twelve_month_closed": false,
       "tech_count": 14,
-      "non_tech_count": 45,
-      "unassigned_count": 45,
+      "non_tech_count": 10,
+      "unassigned_count": 10,
       "roles": {
         "backend": {
           "tech_count": 8,
@@ -1852,9 +1861,9 @@
           "quality_band": false
         },
         "data-ai": {
-          "tech_count": 10,
+          "tech_count": 9,
           "pass": true,
-          "quality_band": true
+          "quality_band": false
         }
       },
       "passing_roles": [
@@ -1863,7 +1872,7 @@
       ],
       "pass_company": true,
       "verdict": "pass",
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능; 제목 없는 sitemap URL 15건. 분류 전 제목 보강 필요"
+      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
     },
     {
       "name": "모두싸인",
@@ -1904,12 +1913,12 @@
     {
       "name": "무신사 / 29CM",
       "blog_url": "https://techblog.musinsa.com/",
-      "collected_count": 192,
+      "collected_count": 61,
       "collectable": true,
       "twelve_month_closed": false,
-      "tech_count": 6,
-      "non_tech_count": 186,
-      "unassigned_count": 186,
+      "tech_count": 8,
+      "non_tech_count": 53,
+      "unassigned_count": 53,
       "roles": {
         "backend": {
           "tech_count": 1,
@@ -1935,7 +1944,7 @@
       "passing_roles": [],
       "pass_company": false,
       "verdict": "unknown",
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능; 제목 없는 sitemap URL 182건. 분류 전 제목 보강 필요"
+      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
     },
     {
       "name": "미리디",
@@ -2160,12 +2169,12 @@
     {
       "name": "브레이브모바일 / 숨고",
       "blog_url": "https://soomgo.team/blog/category/tech",
-      "collected_count": 1,
-      "collectable": true,
+      "collected_count": 0,
+      "collectable": false,
       "twelve_month_closed": false,
       "tech_count": 0,
-      "non_tech_count": 1,
-      "unassigned_count": 1,
+      "non_tech_count": 0,
+      "unassigned_count": 0,
       "roles": {
         "backend": {
           "tech_count": 0,
@@ -2191,7 +2200,7 @@
       "passing_roles": [],
       "pass_company": false,
       "verdict": "unknown",
-      "notes": ""
+      "notes": "최근 12개월 메타데이터를 generic RSS로 못 모음"
     },
     {
       "name": "비바리퍼블리카 / 토스",
@@ -2387,14 +2396,14 @@
       "collected_count": 414,
       "collectable": true,
       "twelve_month_closed": false,
-      "tech_count": 0,
-      "non_tech_count": 414,
-      "unassigned_count": 414,
+      "tech_count": 129,
+      "non_tech_count": 285,
+      "unassigned_count": 285,
       "roles": {
         "backend": {
-          "tech_count": 0,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 12,
+          "pass": true,
+          "quality_band": true
         },
         "frontend": {
           "tech_count": 0,
@@ -2402,20 +2411,24 @@
           "quality_band": false
         },
         "mobile": {
-          "tech_count": 0,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 20,
+          "pass": true,
+          "quality_band": true
         },
         "data-ai": {
-          "tech_count": 0,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 33,
+          "pass": true,
+          "quality_band": true
         }
       },
-      "passing_roles": [],
-      "pass_company": false,
-      "verdict": "unknown",
-      "notes": "제목 없는 sitemap URL 414건. 분류 전 제목 보강 필요"
+      "passing_roles": [
+        "backend",
+        "mobile",
+        "data-ai"
+      ],
+      "pass_company": true,
+      "verdict": "pass",
+      "notes": ""
     },
     {
       "name": "스캐터랩 / 제타",
@@ -2566,15 +2579,15 @@
     {
       "name": "아임웹",
       "blog_url": "https://tech.imweb.me/",
-      "collected_count": 31,
+      "collected_count": 28,
       "collectable": true,
       "twelve_month_closed": false,
-      "tech_count": 20,
-      "non_tech_count": 11,
-      "unassigned_count": 11,
+      "tech_count": 25,
+      "non_tech_count": 3,
+      "unassigned_count": 3,
       "roles": {
         "backend": {
-          "tech_count": 17,
+          "tech_count": 19,
           "pass": true,
           "quality_band": true
         },
@@ -2589,7 +2602,7 @@
           "quality_band": false
         },
         "data-ai": {
-          "tech_count": 17,
+          "tech_count": 18,
           "pass": true,
           "quality_band": true
         }
@@ -2601,7 +2614,7 @@
       ],
       "pass_company": true,
       "verdict": "pass",
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능; 제목 없는 sitemap URL 11건. 분류 전 제목 보강 필요"
+      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
     },
     {
       "name": "안랩클라우드메이트",
@@ -2686,12 +2699,12 @@
     {
       "name": "업스테이지",
       "blog_url": "https://www.upstage.ai/blog",
-      "collected_count": 251,
+      "collected_count": 245,
       "collectable": true,
       "twelve_month_closed": false,
-      "tech_count": 0,
-      "non_tech_count": 251,
-      "unassigned_count": 251,
+      "tech_count": 144,
+      "non_tech_count": 101,
+      "unassigned_count": 101,
       "roles": {
         "backend": {
           "tech_count": 0,
@@ -2699,7 +2712,7 @@
           "quality_band": false
         },
         "frontend": {
-          "tech_count": 0,
+          "tech_count": 2,
           "pass": false,
           "quality_band": false
         },
@@ -2709,15 +2722,17 @@
           "quality_band": false
         },
         "data-ai": {
-          "tech_count": 0,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 32,
+          "pass": true,
+          "quality_band": true
         }
       },
-      "passing_roles": [],
-      "pass_company": false,
-      "verdict": "unknown",
-      "notes": "제목 없는 sitemap URL 251건. 분류 전 제목 보강 필요"
+      "passing_roles": [
+        "data-ai"
+      ],
+      "pass_company": true,
+      "verdict": "pass",
+      "notes": "제목 없는 sitemap URL 22건. 분류 전 제목 보강 필요"
     },
     {
       "name": "엔카닷컴",
@@ -2758,15 +2773,15 @@
     {
       "name": "여기어때",
       "blog_url": "https://techblog.gccompany.co.kr/",
-      "collected_count": 304,
+      "collected_count": 126,
       "collectable": true,
       "twelve_month_closed": false,
-      "tech_count": 5,
-      "non_tech_count": 299,
-      "unassigned_count": 299,
+      "tech_count": 6,
+      "non_tech_count": 120,
+      "unassigned_count": 120,
       "roles": {
         "backend": {
-          "tech_count": 0,
+          "tech_count": 1,
           "pass": false,
           "quality_band": false
         },
@@ -2789,7 +2804,7 @@
       "passing_roles": [],
       "pass_company": false,
       "verdict": "unknown",
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능; 제목 없는 sitemap URL 294건. 분류 전 제목 보강 필요"
+      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
     },
     {
       "name": "와드 / 캐치테이블",
@@ -2902,12 +2917,12 @@
     {
       "name": "웍스피어 / 잡코리아, 알바몬",
       "blog_url": "https://techblog.jobkorea.co.kr/",
-      "collected_count": 118,
+      "collected_count": 49,
       "collectable": true,
       "twelve_month_closed": false,
       "tech_count": 1,
-      "non_tech_count": 117,
-      "unassigned_count": 117,
+      "non_tech_count": 48,
+      "unassigned_count": 48,
       "roles": {
         "backend": {
           "tech_count": 0,
@@ -2933,7 +2948,7 @@
       "passing_roles": [],
       "pass_company": false,
       "verdict": "unknown",
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능; 제목 없는 sitemap URL 108건. 분류 전 제목 보강 필요"
+      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
     },
     {
       "name": "원티드랩 / 원티드",
@@ -2974,12 +2989,12 @@
     {
       "name": "위대한상상 / 요기요",
       "blog_url": "https://techblog.yogiyo.co.kr/",
-      "collected_count": 39,
+      "collected_count": 25,
       "collectable": true,
       "twelve_month_closed": false,
       "tech_count": 4,
-      "non_tech_count": 35,
-      "unassigned_count": 35,
+      "non_tech_count": 21,
+      "unassigned_count": 21,
       "roles": {
         "backend": {
           "tech_count": 0,
@@ -3005,20 +3020,20 @@
       "passing_roles": [],
       "pass_company": false,
       "verdict": "unknown",
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능; 제목 없는 sitemap URL 29건. 분류 전 제목 보강 필요"
+      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
     },
     {
       "name": "인포그랩",
       "blog_url": "https://insight.infograb.net/blog/",
-      "collected_count": 46,
+      "collected_count": 45,
       "collectable": true,
       "twelve_month_closed": false,
-      "tech_count": 0,
-      "non_tech_count": 46,
-      "unassigned_count": 46,
+      "tech_count": 16,
+      "non_tech_count": 29,
+      "unassigned_count": 29,
       "roles": {
         "backend": {
-          "tech_count": 0,
+          "tech_count": 6,
           "pass": false,
           "quality_band": false
         },
@@ -3033,7 +3048,7 @@
           "quality_band": false
         },
         "data-ai": {
-          "tech_count": 0,
+          "tech_count": 1,
           "pass": false,
           "quality_band": false
         }
@@ -3041,7 +3056,7 @@
       "passing_roles": [],
       "pass_company": false,
       "verdict": "unknown",
-      "notes": "제목 없는 sitemap URL 46건. 분류 전 제목 보강 필요"
+      "notes": ""
     },
     {
       "name": "인프랩 / 인프런",
@@ -3161,27 +3176,27 @@
       "collected_count": 149,
       "collectable": true,
       "twelve_month_closed": false,
-      "tech_count": 42,
-      "non_tech_count": 107,
-      "unassigned_count": 100,
+      "tech_count": 73,
+      "non_tech_count": 76,
+      "unassigned_count": 69,
       "roles": {
         "backend": {
-          "tech_count": 30,
+          "tech_count": 39,
           "pass": true,
           "quality_band": true
         },
         "frontend": {
-          "tech_count": 25,
+          "tech_count": 31,
           "pass": true,
           "quality_band": true
         },
         "mobile": {
-          "tech_count": 7,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 13,
+          "pass": true,
+          "quality_band": true
         },
         "data-ai": {
-          "tech_count": 33,
+          "tech_count": 37,
           "pass": true,
           "quality_band": true
         }
@@ -3189,11 +3204,12 @@
       "passing_roles": [
         "backend",
         "frontend",
+        "mobile",
         "data-ai"
       ],
       "pass_company": true,
       "verdict": "pass",
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능; 제목 없는 sitemap URL 99건. 분류 전 제목 보강 필요"
+      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
     },
     {
       "name": "카카오",
@@ -3306,12 +3322,12 @@
     {
       "name": "카카오스타일",
       "blog_url": "https://devblog.kakaostyle.com/ko/",
-      "collected_count": 6,
+      "collected_count": 3,
       "collectable": true,
       "twelve_month_closed": false,
-      "tech_count": 0,
-      "non_tech_count": 6,
-      "unassigned_count": 6,
+      "tech_count": 1,
+      "non_tech_count": 2,
+      "unassigned_count": 2,
       "roles": {
         "backend": {
           "tech_count": 0,
@@ -3324,7 +3340,7 @@
           "quality_band": false
         },
         "mobile": {
-          "tech_count": 0,
+          "tech_count": 1,
           "pass": false,
           "quality_band": false
         },
@@ -3378,15 +3394,15 @@
     {
       "name": "카카오엔터프라이즈 / 카카오클라우드",
       "blog_url": "https://blog.kakaocloud.com/",
-      "collected_count": 159,
+      "collected_count": 158,
       "collectable": true,
       "twelve_month_closed": false,
-      "tech_count": 10,
-      "non_tech_count": 149,
-      "unassigned_count": 149,
+      "tech_count": 111,
+      "non_tech_count": 47,
+      "unassigned_count": 47,
       "roles": {
         "backend": {
-          "tech_count": 10,
+          "tech_count": 16,
           "pass": true,
           "quality_band": true
         },
@@ -3401,7 +3417,7 @@
           "quality_band": false
         },
         "data-ai": {
-          "tech_count": 10,
+          "tech_count": 32,
           "pass": true,
           "quality_band": true
         }
@@ -3412,7 +3428,7 @@
       ],
       "pass_company": true,
       "verdict": "pass",
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능; 제목 없는 sitemap URL 149건. 분류 전 제목 보강 필요"
+      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
     },
     {
       "name": "카카오페이",
@@ -3748,12 +3764,12 @@
     {
       "name": "펫프렌즈",
       "blog_url": "https://techblog.pet-friends.co.kr/",
-      "collected_count": 44,
+      "collected_count": 23,
       "collectable": true,
       "twelve_month_closed": false,
       "tech_count": 8,
-      "non_tech_count": 36,
-      "unassigned_count": 36,
+      "non_tech_count": 15,
+      "unassigned_count": 15,
       "roles": {
         "backend": {
           "tech_count": 1,
@@ -3779,7 +3795,7 @@
       "passing_roles": [],
       "pass_company": false,
       "verdict": "unknown",
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능; 제목 없는 sitemap URL 34건. 분류 전 제목 보강 필요"
+      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
     },
     {
       "name": "포그리트 / 뷰저블",
@@ -3856,12 +3872,12 @@
     {
       "name": "플렉스",
       "blog_url": "https://flex.team/blog/category/tech",
-      "collected_count": 1,
-      "collectable": true,
+      "collected_count": 0,
+      "collectable": false,
       "twelve_month_closed": false,
       "tech_count": 0,
-      "non_tech_count": 1,
-      "unassigned_count": 1,
+      "non_tech_count": 0,
+      "unassigned_count": 0,
       "roles": {
         "backend": {
           "tech_count": 0,
@@ -3880,6 +3896,42 @@
         },
         "data-ai": {
           "tech_count": 0,
+          "pass": false,
+          "quality_band": false
+        }
+      },
+      "passing_roles": [],
+      "pass_company": false,
+      "verdict": "unknown",
+      "notes": "최근 12개월 메타데이터를 generic RSS로 못 모음"
+    },
+    {
+      "name": "하이퍼엑셀",
+      "blog_url": "https://hyper-accel.github.io/",
+      "collected_count": 65,
+      "collectable": true,
+      "twelve_month_closed": false,
+      "tech_count": 23,
+      "non_tech_count": 42,
+      "unassigned_count": 42,
+      "roles": {
+        "backend": {
+          "tech_count": 6,
+          "pass": false,
+          "quality_band": false
+        },
+        "frontend": {
+          "tech_count": 0,
+          "pass": false,
+          "quality_band": false
+        },
+        "mobile": {
+          "tech_count": 0,
+          "pass": false,
+          "quality_band": false
+        },
+        "data-ai": {
+          "tech_count": 2,
           "pass": false,
           "quality_band": false
         }
@@ -3888,42 +3940,6 @@
       "pass_company": false,
       "verdict": "unknown",
       "notes": ""
-    },
-    {
-      "name": "하이퍼엑셀",
-      "blog_url": "https://hyper-accel.github.io/",
-      "collected_count": 414,
-      "collectable": true,
-      "twelve_month_closed": false,
-      "tech_count": 0,
-      "non_tech_count": 414,
-      "unassigned_count": 414,
-      "roles": {
-        "backend": {
-          "tech_count": 0,
-          "pass": false,
-          "quality_band": false
-        },
-        "frontend": {
-          "tech_count": 0,
-          "pass": false,
-          "quality_band": false
-        },
-        "mobile": {
-          "tech_count": 0,
-          "pass": false,
-          "quality_band": false
-        },
-        "data-ai": {
-          "tech_count": 0,
-          "pass": false,
-          "quality_band": false
-        }
-      },
-      "passing_roles": [],
-      "pass_company": false,
-      "verdict": "unknown",
-      "notes": "제목 없는 sitemap URL 414건. 분류 전 제목 보강 필요"
     },
     {
       "name": "하이퍼커넥트 / 아자르",

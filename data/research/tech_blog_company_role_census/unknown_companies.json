@@ -1,6 +1,6 @@
 {
   "note": "12개월을 닫지 못해 탈락이 아니라 미수집이다. sitemap/custom 다음 라운드 대상.",
-  "company_count": 53,
+  "company_count": 49,
   "companies": [
     {
       "name": "AB180",
@@ -9,40 +9,28 @@
       "notes": "최근 12개월 메타데이터를 generic RSS로 못 모음"
     },
     {
-      "name": "LG AI연구원",
-      "blog_url": "https://www.lgresearch.ai/blog",
-      "collected_count": 268,
-      "notes": "제목 없는 sitemap URL 268건. 분류 전 제목 보강 필요"
-    },
-    {
       "name": "LG CNS",
       "blog_url": "https://www.lgcns.com/kr/moa/insight",
-      "collected_count": 2,
+      "collected_count": 1,
       "notes": ""
     },
     {
       "name": "LG유플러스",
       "blog_url": "https://techblog.uplus.co.kr/",
-      "collected_count": 173,
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능; 제목 없는 sitemap URL 163건. 분류 전 제목 보강 필요"
+      "collected_count": 129,
+      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
     },
     {
       "name": "LG유플러스 볼트업",
       "blog_url": "https://tech.voltup.kr/posts",
-      "collected_count": 22,
-      "notes": "제목 없는 sitemap URL 22건. 분류 전 제목 보강 필요"
+      "collected_count": 21,
+      "notes": ""
     },
     {
       "name": "NC",
       "blog_url": "https://ncsoft.github.io/ncresearch/blogs/",
       "collected_count": 0,
       "notes": "최근 12개월 메타데이터를 generic RSS로 못 모음"
-    },
-    {
-      "name": "NHN Cloud",
-      "blog_url": "https://meetup.nhncloud.com/",
-      "collected_count": 422,
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능; 제목 없는 sitemap URL 412건. 분류 전 제목 보강 필요"
     },
     {
       "name": "SK",
@@ -53,8 +41,8 @@
     {
       "name": "SK AX",
       "blog_url": "https://www.skax.co.kr/insight/trends",
-      "collected_count": 1,
-      "notes": ""
+      "collected_count": 0,
+      "notes": "최근 12개월 메타데이터를 generic RSS로 못 모음"
     },
     {
       "name": "SK쉴더스",
@@ -131,8 +119,8 @@
     {
       "name": "드림어스컴퍼니 / FLO",
       "blog_url": "https://www.blog-dreamus.com/dreamus-now",
-      "collected_count": 1,
-      "notes": ""
+      "collected_count": 0,
+      "notes": "최근 12개월 메타데이터를 generic RSS로 못 모음"
     },
     {
       "name": "딜라이트룸",
@@ -143,8 +131,8 @@
     {
       "name": "래블업",
       "blog_url": "https://www.backend.ai/ko/blog/category/engineering",
-      "collected_count": 1,
-      "notes": ""
+      "collected_count": 0,
+      "notes": "최근 12개월 메타데이터를 generic RSS로 못 모음"
     },
     {
       "name": "리디",
@@ -155,14 +143,14 @@
     {
       "name": "마키나락스",
       "blog_url": "https://www.makinarocks.ai/category/tech/",
-      "collected_count": 1,
-      "notes": ""
+      "collected_count": 0,
+      "notes": "최근 12개월 메타데이터를 generic RSS로 못 모음"
     },
     {
       "name": "무신사 / 29CM",
       "blog_url": "https://techblog.musinsa.com/",
-      "collected_count": 192,
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능; 제목 없는 sitemap URL 182건. 분류 전 제목 보강 필요"
+      "collected_count": 61,
+      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
     },
     {
       "name": "미리디",
@@ -185,26 +173,14 @@
     {
       "name": "브레이브모바일 / 숨고",
       "blog_url": "https://soomgo.team/blog/category/tech",
-      "collected_count": 1,
-      "notes": ""
+      "collected_count": 0,
+      "notes": "최근 12개월 메타데이터를 generic RSS로 못 모음"
     },
     {
       "name": "삼성SDS",
       "blog_url": "https://www.samsungsds.com/kr/research-blog/index.html",
       "collected_count": 0,
       "notes": "최근 12개월 메타데이터를 generic RSS로 못 모음"
-    },
-    {
-      "name": "삼성반도체",
-      "blog_url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/",
-      "collected_count": 414,
-      "notes": "제목 없는 sitemap URL 414건. 분류 전 제목 보강 필요"
-    },
-    {
-      "name": "업스테이지",
-      "blog_url": "https://www.upstage.ai/blog",
-      "collected_count": 251,
-      "notes": "제목 없는 sitemap URL 251건. 분류 전 제목 보강 필요"
     },
     {
       "name": "엔카닷컴",
@@ -215,8 +191,8 @@
     {
       "name": "여기어때",
       "blog_url": "https://techblog.gccompany.co.kr/",
-      "collected_count": 304,
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능; 제목 없는 sitemap URL 294건. 분류 전 제목 보강 필요"
+      "collected_count": 126,
+      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
     },
     {
       "name": "우아한형제들 / 배달의민족",
@@ -227,20 +203,20 @@
     {
       "name": "웍스피어 / 잡코리아, 알바몬",
       "blog_url": "https://techblog.jobkorea.co.kr/",
-      "collected_count": 118,
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능; 제목 없는 sitemap URL 108건. 분류 전 제목 보강 필요"
+      "collected_count": 49,
+      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
     },
     {
       "name": "위대한상상 / 요기요",
       "blog_url": "https://techblog.yogiyo.co.kr/",
-      "collected_count": 39,
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능; 제목 없는 sitemap URL 29건. 분류 전 제목 보강 필요"
+      "collected_count": 25,
+      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
     },
     {
       "name": "인포그랩",
       "blog_url": "https://insight.infograb.net/blog/",
-      "collected_count": 46,
-      "notes": "제목 없는 sitemap URL 46건. 분류 전 제목 보강 필요"
+      "collected_count": 45,
+      "notes": ""
     },
     {
       "name": "자비스앤빌런즈 / 삼쩜삼",
@@ -269,7 +245,7 @@
     {
       "name": "카카오스타일",
       "blog_url": "https://devblog.kakaostyle.com/ko/",
-      "collected_count": 6,
+      "collected_count": 3,
       "notes": ""
     },
     {
@@ -287,8 +263,8 @@
     {
       "name": "펫프렌즈",
       "blog_url": "https://techblog.pet-friends.co.kr/",
-      "collected_count": 44,
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능; 제목 없는 sitemap URL 34건. 분류 전 제목 보강 필요"
+      "collected_count": 23,
+      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
     },
     {
       "name": "포그리트 / 뷰저블",
@@ -305,14 +281,14 @@
     {
       "name": "플렉스",
       "blog_url": "https://flex.team/blog/category/tech",
-      "collected_count": 1,
-      "notes": ""
+      "collected_count": 0,
+      "notes": "최근 12개월 메타데이터를 generic RSS로 못 모음"
     },
     {
       "name": "하이퍼엑셀",
       "blog_url": "https://hyper-accel.github.io/",
-      "collected_count": 414,
-      "notes": "제목 없는 sitemap URL 414건. 분류 전 제목 보강 필요"
+      "collected_count": 65,
+      "notes": ""
     },
     {
       "name": "현대오토에버",
