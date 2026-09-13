@@ -1,0 +1,121 @@
+{
+  "generated_at": "2026-09-13T04:56:35.322230+00:00",
+  "companies": [
+    {
+      "company": "올리브영",
+      "blog_url": "https://oliveyoung.tech/",
+      "platform": "자체 기술블로그 (oliveyoung.tech)",
+      "rss_atom": "O",
+      "rss_url": "https://oliveyoung.tech/rss.xml",
+      "rss_entry_count": 202,
+      "rss_coverage": "likely_sufficient",
+      "sitemap": "O",
+      "sitemap_urls_under_blog": 558,
+      "sitemap_urls_outside_blog": 0,
+      "recent_12m_ok": "O",
+      "recent_12m_count": 48,
+      "extract_success": 48,
+      "extract_failure": 0,
+      "extract_total": 48,
+      "extract_short": 0,
+      "extract_rate": 100.0,
+      "discovered_sources": [
+        "rss",
+        "sitemap"
+      ],
+      "probe_strategy": "rss",
+      "generic_failure_reason": "",
+      "custom_needed": "X",
+      "collect_strategy": "RSS",
+      "notes": [
+        "sitemap HTML 게시일 확인 실패 533건. 12개월 확정분은 RSS"
+      ]
+    },
+    {
+      "company": "네이버 D2",
+      "blog_url": "https://d2.naver.com/",
+      "platform": "자체 플랫폼 (d2.naver.com)",
+      "rss_atom": "O",
+      "rss_url": "https://d2.naver.com/d2.atom",
+      "rss_entry_count": 20,
+      "rss_coverage": "insufficient",
+      "sitemap": "X",
+      "sitemap_urls_under_blog": 0,
+      "sitemap_urls_outside_blog": 0,
+      "recent_12m_ok": "X",
+      "recent_12m_count": 20,
+      "extract_success": 0,
+      "extract_failure": 20,
+      "extract_total": 20,
+      "extract_short": 0,
+      "extract_rate": 0.0,
+      "discovered_sources": [
+        "rss"
+      ],
+      "probe_strategy": "rss_insufficient",
+      "generic_failure_reason": "RSS가 최근 20건만 내려줌 (oldest=2026-06-15T10:51:03+00:00); sitemap에서 게시글 URL을 못 찾음",
+      "custom_needed": "O",
+      "collect_strategy": "Custom",
+      "notes": [
+        "Trafilatura 본문 추출 실패 20/20"
+      ]
+    },
+    {
+      "company": "토스",
+      "blog_url": "https://toss.tech/",
+      "platform": "자체 기술블로그 (toss.tech, Next.js)",
+      "rss_atom": "O",
+      "rss_url": "https://toss.tech/rss.xml",
+      "rss_entry_count": 20,
+      "rss_coverage": "insufficient",
+      "sitemap": "X",
+      "sitemap_urls_under_blog": 0,
+      "sitemap_urls_outside_blog": 0,
+      "recent_12m_ok": "X",
+      "recent_12m_count": 20,
+      "extract_success": 20,
+      "extract_failure": 0,
+      "extract_total": 20,
+      "extract_short": 0,
+      "extract_rate": 100.0,
+      "discovered_sources": [
+        "rss"
+      ],
+      "probe_strategy": "rss_insufficient",
+      "generic_failure_reason": "RSS가 최근 20건만 내려줌 (oldest=2026-06-23T02:01:00+00:00); sitemap에서 게시글 URL을 못 찾음",
+      "custom_needed": "O",
+      "collect_strategy": "Custom",
+      "notes": []
+    },
+    {
+      "company": "당근",
+      "blog_url": "https://medium.com/daangn",
+      "platform": "Medium publication (medium.com/daangn)",
+      "rss_atom": "O",
+      "rss_url": "https://medium.com/feed/daangn",
+      "rss_entry_count": 10,
+      "rss_coverage": "insufficient",
+      "sitemap": "X",
+      "sitemap_urls_under_blog": 0,
+      "sitemap_urls_outside_blog": 111132,
+      "recent_12m_ok": "X",
+      "recent_12m_count": 10,
+      "extract_success": 1,
+      "extract_failure": 9,
+      "extract_total": 10,
+      "extract_short": 0,
+      "extract_rate": 10.0,
+      "discovered_sources": [
+        "rss"
+      ],
+      "probe_strategy": "rss_insufficient",
+      "generic_failure_reason": "RSS가 최근 10건만 내려줌 (oldest=2026-05-14T09:05:19+00:00); sitemap URL 111132개 중 blog_url 접두어 밖 111132개",
+      "custom_needed": "O",
+      "collect_strategy": "Custom",
+      "notes": [
+        "sitemap 전체 111132개 중 111132개는 blog_url 밖이라 generic 가드로 제외",
+        "Trafilatura 본문 추출 실패 9/10"
+      ]
+    }
+  ]
+}
