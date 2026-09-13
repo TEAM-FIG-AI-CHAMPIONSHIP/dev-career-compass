@@ -29,25 +29,29 @@ OUT = RESEARCH_DIR / "keyword_audit.md"
 
 TOKEN = re.compile(r"[A-Za-z][A-Za-z0-9\-]*|[가-힣]+")
 
-SOURCES = ("greeting", "ninehire", "custom")
+SOURCES = ("greeting", "ninehire", "custom", "recruiter")
 
 COMPANY_ORDER = [
     # 그리팅 계열
     "oliveyoung", "musinsa", "kurly", "catchtable", "kakaopay",
     "yeogieotdae", "kakaomobility", "watcha", "ssg", "devsisters",
-    "myrealtrip",
+    "myrealtrip", "ahnlabcloudmate", "upstage", "kakaoenterprise",
+    "hancom", "buzzvil",
     # 나인하이어 계열
-    "remember", "yogiyo",
+    "remember", "yogiyo", "megazone",
+    # 리크루터
+    "gsretail", "com2us",
     # 자체구축
     "naver", "kakaobank", "line", "daangn", "tving",
     "channeltalk", "banksalad", "hyperconnect", "socar", "kakao",
-    "toss",
+    "toss", "skplanet",
 ]
 
 # ATS마다 구조화 필드 이름이 다르다. 문서에서는 occupation / job으로 통일해 표기한다.
 FIELD_MAP = {
     "greeting": "occupation = `workspaceOccupation.occupation`, job = `workspaceJob.job`",
     "ninehire": "occupation = `recruitment.jobGroup.title`, job = `recruitment.jobTask.title`",
+    "recruiter": "occupation = 직군 필터명 또는 `classificationCode`, job = 없음",
     "custom": (
         "회사마다 다름 — 네이버: occupation = `classCdNm`, job = `subJobCdNm` / "
         "카카오뱅크: occupation = `recruitClassName`, job = 없음 / "
@@ -59,7 +63,8 @@ FIELD_MAP = {
         "하이퍼커넥트: occupation = `categories.team`, job = 없음 / "
         "쏘카: occupation = `job_group_code` 라벨, job = 없음 / "
         "카카오: occupation = `jobTypeName`, job = `skillSetList[].skillSetName` / "
-        "토스: occupation = metadata Job Category, job = metadata 세부 포지션 명"
+        "토스: occupation = metadata Job Category, job = metadata 세부 포지션 명 / "
+        "SK그룹: occupation = `jobRole`, job = 없음"
     ),
 }
 

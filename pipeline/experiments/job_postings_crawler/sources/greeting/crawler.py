@@ -34,10 +34,16 @@ GREETING_COMPANIES = {
     # Vite SPA로 이 그리팅 워크스페이스를 가리키는 것을 확인해 여기로 옮겼다.
     # robots.txt도 다른 10곳과 동일하다(`Allow: /` + apply 경로만 차단).
     "myrealtrip": ("마이리얼트립", "https://myrealtrip.career.greetinghr.com/ko/home"),
+    "ahnlabcloudmate": ("안랩클라우드메이트", "https://ahnlabcloudmate.career.greetinghr.com/ko/intro"),
+    "upstage": ("업스테이지", "https://careers.upstage.ai/ko/hiring"),
+    "kakaoenterprise": ("카카오엔터프라이즈", "https://careers.kakaoenterprise.com/ko/intro"),
+    "hancom": ("한컴", "https://hancom.career.greetinghr.com/ko/guide"),
+    # 34곳 표에서 그리팅으로 확인됨. A 목록 4곳과 같이 기존 모듈에만 추가.
+    "buzzvil": ("버즈빌", "https://buzzvil.career.greetinghr.com/ko/home"),
 }
 
 # 지정 URL에서 openings를 못 찾았을 때만 시도할 대체 경로
-FALLBACK_PATHS = ["/ko/home", "/ko/main", "/ko/recruit", "/ko"]
+FALLBACK_PATHS = ["/ko/home", "/ko/main", "/ko/recruit", "/ko/intro", "/ko/hiring", "/ko/guide", "/ko"]
 
 
 def _looks_like_openings(value):

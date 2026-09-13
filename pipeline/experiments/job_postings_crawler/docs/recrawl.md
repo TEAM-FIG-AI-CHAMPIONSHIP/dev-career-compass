@@ -4,7 +4,7 @@
 
 다른 회사 raw는 건드리지 않습니다. 숫자를 보고서에 반영하려면 재수집 후 [aggregation.md](aggregation.md)를 다시 돌립니다.
 
-## 그리팅 (11곳)
+## 그리팅 (16곳)
 
 ```bash
 python3 sources/greeting/run.py
@@ -21,17 +21,25 @@ print(crawl_company(cid, name, url))
 "
 ```
 
-`cid`: `oliveyoung` `yeogieotdae` `kakaopay` `kurly` `musinsa` `ssg` `watcha` `catchtable` `kakaomobility` `devsisters` `myrealtrip`
+`cid`: `oliveyoung` `yeogieotdae` `kakaopay` `kurly` `musinsa` `ssg` `watcha` `catchtable` `kakaomobility` `devsisters` `myrealtrip` `ahnlabcloudmate` `upstage` `kakaoenterprise` `hancom` `buzzvil`
 
 목록 HTML의 `__NEXT_DATA__` `["openings"]`만 읽습니다. 지원 URL(`/o/*/apply`)은 요청하지 않습니다.
 
-## 나인하이어 (2곳)
+## 나인하이어 (3곳)
 
 ```bash
 python3 sources/ninehire/run.py
 ```
 
-`yogiyo`, `remember`. sitemap → 상세 SSR. `*.ninehire.site`의 `/api`는 치지 않습니다.
+`yogiyo`, `remember`는 sitemap → 상세 SSR. `megazone`은 자체 도메인에서 `companyId`를 읽고 `api.ninehire.com`을 직접 호출합니다. `*.ninehire.site`의 `/api`는 치지 않습니다.
+
+## 리크루터 (2곳)
+
+```bash
+python3 sources/recruiter/run.py
+```
+
+`gsretail`, `com2us`. `api-recruiter.recruiter.co.kr`에 `prefix` 헤더로 POST. 본문 호스트의 `/app`·`/attachFile`은 치지 않습니다.
 
 ## 자체구축 (1곳씩)
 
@@ -47,6 +55,7 @@ python3 sources/custom/hyperconnect.py
 python3 sources/custom/socar.py
 python3 sources/custom/kakao.py          # Playwright + Chromium
 python3 sources/custom/toss.py
+python3 sources/custom/skcareers.py      # SK플래닛. corpCode만 바꿔 계열사 추가
 ```
 
 카카오 raw에는 관계사(`[공동체]`)가 같이 들어갑니다. STEP 6은 본사(`group == 카카오`)만 카카오 몫으로 셉니다. 필터를 바꾸려면 집계 스크립트만 고칩니다.
