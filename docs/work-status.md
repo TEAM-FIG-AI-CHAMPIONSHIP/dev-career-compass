@@ -59,10 +59,13 @@
 `data/fixtures` 의 20개 파일 중 **`oliveyoung/backend.json` 하나만 내용이 있고
 19개는 빈 껍데기입니다.** 나머지 회사는 화면에서 "준비 중" 으로만 보입니다.
 
-파이프라인(`pipeline/src/`)은 아직 `__init__.py` 하나뿐이라 당장 데이터를 뽑지
-못합니다. 일정이 급하면 두세 개를 손으로 채우는 편이 현실적입니다. 형식은
-`oliveyoung/backend.json` 을 그대로 따릅니다 — `steps[]`, `coversItemIds`,
-`fromItemIds` 까지 포함해야 화면이 제 기능을 합니다.
+파이프라인은 아직 수집 단계라 당장 데이터를 뽑지 못합니다. 일정이 급하면
+두세 개를 손으로 채우는 편이 현실적입니다. 형식은 `oliveyoung/backend.json` 을
+그대로 따릅니다 — `steps[]`, `coversItemIds`, `fromItemIds` 까지 포함해야 화면이
+제 기능을 합니다.
+
+**단, 아래 "계약이 둘로 갈라져 있습니다" 를 먼저 읽으세요.** 지금 손으로 채운
+파일은 파이프라인이 만들 형식과 다릅니다.
 
 ### 4. 파이프라인
 
@@ -76,8 +79,22 @@
   → `data/published/` 에 놓이면 → 빌드 시점에 읽어 정적으로 굽습니다. DB 도 API
   서버도 없습니다. `data/published/` 가 비어 있으면 `data/fixtures/` 를 읽습니다
   (`apps/web/src/lib/data.ts`).
-- **`packages/contracts` 는 README 만 있고 스키마가 없습니다.** 지금은
-  `apps/web/src/types/data.ts` 가 사실상의 계약입니다.
+- **계약이 둘로 갈라져 있습니다.** 2026-09-13 main(#52)에 `packages/contracts`
+  JSON Schema 와 `pipeline/src/career_compass_pipeline/contracts.py`(문서 간 참조
+  검증)가 들어왔습니다. 그런데 그 스키마는 화면이 읽는 형식과 다릅니다:
+
+  | 화면 (`apps/web/src/types/data.ts`) | 계약 (`company-project.schema.json`)         |
+  | ----------------------------------- | -------------------------------------------- |
+  | `suggestions.new[]` / `.deepen[]`   | 제안 하나가 문서 하나                        |
+  | `steps[]` (할 일 여러 줄)           | `body` (문단 하나, 600자)                    |
+  | `coversItemIds` / `fromItemIds`     | `entryExperienceIds` / `bridgeExperienceIds` |
+  | `domainId`                          | `trackIds`                                   |
+  | 경험 항목 id — `rest-api`, `crud`   | `rest-api-design` 등 다른 어휘               |
+
+  스키마는 `additionalProperties: false` 라 여분의 필드를 실어 보낼 수도
+  없습니다. **둘 중 무엇이 진짜 계약인지 정하는 일이 데이터 채우기(3번)보다
+  먼저입니다.** 지금 손으로 채운 fixture 는 파이프라인이 만들 형식이 아닙니다.
+
 - **`data/fixtures/oliveyoung/backend.json` 이 유일한 완성 데이터 샘플입니다.**
 - 폴더 구조는 바꾸지 않기로 했습니다. 새 파일은 기존 폴더 안에 둡니다.
 - 저장하지 않는 것들 — 경험 입력과 테마는 브라우저에만, 고른 제안은 메모리에만
