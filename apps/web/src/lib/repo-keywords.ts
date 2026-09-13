@@ -51,7 +51,9 @@ export function extractKeywordsFromManifest(manifestText: string): string[] {
 const LANGUAGE_STOPLIST = new Set(["CSS", "HTML"]);
 
 /** GitHub `/languages` 응답(언어→바이트)에서 상위 언어 이름을 뽑는다. */
-export function pickLanguageKeywords(languages: Record<string, number>): string[] {
+export function pickLanguageKeywords(
+  languages: Record<string, number>,
+): string[] {
   const names = Object.entries(languages)
     .sort((a, b) => b[1] - a[1])
     .map(([name]) => name);
@@ -83,10 +85,13 @@ const GITHUB_URL_RE =
  * "https://github.com/owner/repo" 형태(.git 접미사·후행 슬래시·프로토콜 생략
  * 허용)만 owner/repo로 뽑는다. 추가 경로 세그먼트(/tree/main 등)가 붙으면 null.
  */
-export function parseGithubUrl(input: string): { owner: string; repo: string } | null {
+export function parseGithubUrl(
+  input: string,
+): { owner: string; repo: string } | null {
   const match = GITHUB_URL_RE.exec(input.trim());
   if (!match) return null;
   const [, owner, repo] = match;
-  if (owner === "." || owner === ".." || repo === "." || repo === "..") return null;
+  if (owner === "." || owner === ".." || repo === "." || repo === "..")
+    return null;
   return { owner, repo };
 }

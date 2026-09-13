@@ -35,29 +35,27 @@ export function CheckboxCard({
         onChange={(e) => onChange(e.target.checked)}
         className="sr-only"
       />
+      {/* 네모는 터미널처럼 각지게 두되, 테두리를 진하게 해서 누를 수 있게
+          생기도록 합니다. 흐린 테두리는 "표시" 로 읽히고 "조작" 으로 읽히지
+          않습니다. */}
       <span
         aria-hidden="true"
         className={cn(
-          "mt-0.5 flex size-[18px] shrink-0 items-center justify-center rounded-[3px] border",
+          "mt-[3px] flex size-4 shrink-0 items-center justify-center rounded-[2px] border transition-colors",
           checked
-            ? "border-accent bg-accent text-white"
+            ? "border-accent bg-accent text-accent-on"
             : "border-ink-muted bg-surface",
         )}
       >
-        {checked && <CheckIcon size={12} strokeWidth={2.4} />}
+        {checked && <CheckIcon size={11} strokeWidth={2.6} />}
       </span>
       <span className="flex flex-col gap-0.5">
         <span className="flex flex-wrap items-center gap-1.5">
-          <span
-            className={cn(
-              "text-[0.90625rem] leading-[1.7]",
-              checked && "font-medium",
-            )}
-          >
+          <span className={cn("text-body-sm", checked && "font-medium")}>
             {label}
           </span>
           {badge && (
-            <Chip tone="accent" className="px-2 py-0.5 text-[0.6875rem]">
+            <Chip tone="accent" className="px-2 py-0.5 font-mono text-meta">
               {badge}
             </Chip>
           )}
@@ -104,19 +102,15 @@ export function RadioCard({
       {step ? (
         <span
           className={cn(
-            "font-mono text-[0.6875rem] tracking-[0.06em]",
+            "font-mono text-meta",
             selected ? "text-accent" : "text-ink-muted",
           )}
         >
           {step}
         </span>
       ) : null}
-      <span className="text-[0.9375rem] leading-[1.6] font-semibold text-ink">
-        {title}
-      </span>
-      <span className="text-[0.8125rem] leading-[1.7] text-ink-soft">
-        {description}
-      </span>
+      <span className="text-body font-semibold text-ink">{title}</span>
+      <span className="text-caption text-ink-soft">{description}</span>
     </button>
   );
 }

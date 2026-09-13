@@ -12,8 +12,10 @@ type Variant = "primary" | "secondary" | "ghost";
  * 덮어쓰지 않습니다 — 크기가 달라야 할 이유가 생기면 여기에 변형을 추가합니다.
  */
 const VARIANTS: Record<Variant, string> = {
+  /* 강조색 위의 글자는 accent-on 입니다. 테마마다 뒤집히므로 paper 나 ink 를
+     직접 쓰면 한쪽 테마에서 글자가 바탕에 묻습니다. */
   primary:
-    "bg-accent border-accent text-white hover:bg-accent-ink hover:border-accent-ink",
+    "bg-accent border-accent text-accent-on hover:bg-accent-ink hover:border-accent-ink",
   secondary:
     "bg-surface border-line-strong text-ink hover:border-accent hover:text-accent",
   ghost:
@@ -22,7 +24,7 @@ const VARIANTS: Record<Variant, string> = {
 
 const BASE = [
   "inline-flex min-h-11 cursor-pointer items-center justify-center gap-2",
-  "rounded-btn border px-5 py-3 text-[0.875rem] leading-none font-medium",
+  "rounded-btn border px-5 py-3 text-body-sm leading-none font-medium",
   "transition-colors no-underline hover:no-underline",
   "disabled:cursor-default disabled:border-line disabled:bg-sunken disabled:text-ink-muted",
 ].join(" ");

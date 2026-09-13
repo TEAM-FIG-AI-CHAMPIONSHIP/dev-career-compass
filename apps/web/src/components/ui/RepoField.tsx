@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/cn";
-import { GithubIcon } from "@/components/ui/icons";
+import { CloseIcon, GithubIcon } from "@/components/ui/icons";
 
 /**
  * GitHub 저장소 링크 입력. 선택 항목이고 최대 3개까지 받습니다.
@@ -13,11 +13,16 @@ import { GithubIcon } from "@/components/ui/icons";
 export function RepoField({
   value,
   onChange,
+  onRemove,
+  removeLabel,
   error,
   ...props
 }: {
   value: string;
   onChange: (next: string) => void;
+  /** 칸을 지웁니다. 칸이 하나뿐일 때는 넘기지 않습니다. */
+  onRemove?: () => void;
+  removeLabel?: string;
   error?: string;
 } & Omit<React.InputHTMLAttributes<HTMLInputElement>, "value" | "onChange">) {
   return (
@@ -52,6 +57,18 @@ export function RepoField({
           )}
           {...props}
         />
+        {/* 지우기는 칸 안 오른쪽 끝에 둡니다. 줄 밖에 두면 칸이 늘어날수록
+            버튼이 어느 줄의 것인지 눈으로 다시 이어야 합니다. */}
+        {onRemove && (
+          <button
+            type="button"
+            onClick={onRemove}
+            aria-label={removeLabel ?? "이 저장소 지우기"}
+            className="-mr-1 flex size-7 shrink-0 cursor-pointer items-center justify-center rounded-btn text-ink-muted transition-colors hover:bg-sunken hover:text-ink"
+          >
+            <CloseIcon size={15} />
+          </button>
+        )}
       </div>
       {error && (
         <span className="text-caption leading-[1.7] text-warn">{error}</span>

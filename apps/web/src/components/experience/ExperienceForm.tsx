@@ -109,7 +109,7 @@ export function ExperienceForm({
     <div className="flex flex-col gap-11">
       {groups.map((group) => (
         <section key={group.id} className="flex flex-col gap-3.5">
-          <div className="flex flex-wrap items-baseline gap-2.5 border-b border-ink pb-2.5">
+          <div className="flex flex-wrap items-baseline gap-2.5 border-b border-line-strong pb-2.5">
             <h2 className="text-h3 font-semibold sm:text-[1.125rem]">
               {group.id === "project-kind" ? "프로젝트 종류" : "직무별 경험"}
             </h2>
@@ -122,7 +122,9 @@ export function ExperienceForm({
                 description={item.description}
                 checked={itemIds.includes(item.id)}
                 onChange={() => toggle(item.id)}
-                badge={suggestedItemIdSet.has(item.id) ? "GitHub 제안" : undefined}
+                badge={
+                  suggestedItemIdSet.has(item.id) ? "GitHub 제안" : undefined
+                }
               />
             ))}
           </div>
@@ -130,7 +132,7 @@ export function ExperienceForm({
       ))}
 
       <section className="flex flex-col gap-3.5">
-        <div className="border-b border-ink pb-2.5">
+        <div className="border-b border-line-strong pb-2.5">
           <h2 className="text-h3 font-semibold sm:text-[1.125rem]">
             프로젝트 진행 수준
           </h2>

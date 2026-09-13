@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getCompanyIndex } from "@/lib/data";
 import { CompanyList } from "@/components/company/CompanyList";
 import { AppHeader } from "@/components/ui/AppHeader";
+import { CommandLine } from "@/components/ui/CommandLine";
 import { PageWidth } from "@/components/ui/PageWidth";
 
 export const metadata: Metadata = {
@@ -16,10 +17,11 @@ export default function CompaniesPage() {
     <>
       <AppHeader />
 
-      <main className="grow bg-[linear-gradient(180deg,var(--accent-tint)_0%,var(--paper)_20rem)] pb-16">
+      <main className="grow pb-16">
         <PageWidth>
           <header className="flex flex-col gap-3 pt-10 pb-8 lg:pt-12 lg:pb-10">
-            <h1 className="text-display font-semibold text-balance sm:text-[2.125rem]">
+            <CommandLine>ls ./companies</CommandLine>
+            <h1 className="text-display font-semibold text-balance">
               회사와 직무를 선택하세요
             </h1>
             <p className="text-body text-pretty text-ink-soft sm:text-base sm:leading-[1.8] lg:whitespace-nowrap">

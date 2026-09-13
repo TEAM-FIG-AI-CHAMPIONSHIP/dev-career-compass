@@ -6,6 +6,7 @@ import { ButtonLink } from "@/components/ui/Button";
 import { StepNav } from "@/components/ui/StepNav";
 import { PageWidth } from "@/components/ui/PageWidth";
 import { StepHeader } from "@/components/ui/StepHeader";
+import { CommandLine } from "@/components/ui/CommandLine";
 import { ArrowLeftIcon, ArrowRightIcon } from "@/components/ui/icons";
 import { Empty } from "@/components/ui/state/Empty";
 
@@ -19,10 +20,11 @@ export default function MatchPage() {
     <>
       <StepHeader current={1} role="" />
 
-      <main className="grow bg-[linear-gradient(180deg,var(--accent-tint)_0%,var(--paper)_20rem)] py-12 lg:py-14">
+      <main className="grow py-12 lg:py-14">
         <PageWidth className="flex flex-col gap-11">
           <div className="flex max-w-3xl flex-col gap-3">
-            <h1 className="text-[1.75rem] leading-[1.4] font-semibold tracking-[-0.012em] text-pretty sm:text-[1.875rem]">
+            <CommandLine>jobs --list</CommandLine>
+            <h1 className="text-display font-semibold text-pretty">
               어떤 직무를 찾고 있나요?
             </h1>
             <p className="text-body text-ink-soft">
@@ -39,20 +41,28 @@ export default function MatchPage() {
               />
             </div>
           ) : (
-            /* 직무 수가 아직 정해지지 않았습니다. 2열은 개수가 홀수여도 마지막
-             한 칸만 남고, 늘어나면 행이 늘 뿐이라 개수에 휘둘리지 않습니다. */
+            /* 회사 선택(`/companies`)의 회사 카드와 같은 모양입니다. 고르는
+               화면이 둘인데 서로 다르게 생기면, 한쪽에서 익힌 "이건 누르는
+               것" 이 다른 쪽에서 다시 시작됩니다.
+
+               터미널이라는 인상은 카드가 아니라 위 `$ jobs --list` 한 줄이
+               맡습니다 — `/companies` 도 `$ ls ./companies` 위에 평범한
+               카드를 둡니다. */
             <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               {jobs.map((job) => (
-                <li key={job.slug}>
+                <li key={job.slug} className="flex">
                   <CardLink
                     href={routes.matchRepository(job.slug)}
-                    className="flex h-full min-h-11 items-center justify-between gap-3 p-[18px]"
+                    className="flex min-h-24 w-full items-center justify-between gap-3 p-4"
                   >
-                    <span className="flex flex-col gap-1.5">
-                      <span className="text-[0.9375rem] leading-[1.6] font-semibold text-ink">
+                    <span className="min-w-0">
+                      <span className="block truncate text-h3 font-semibold">
                         {job.name}
                       </span>
-                      <span className="w-fit rounded-pill bg-sunken px-2.5 py-1 text-[0.8125rem] leading-[1.5] text-ink-soft">
+                      {/* 회사 수는 알약 배지에 넣지 않습니다. 누를 수도 없고
+                          상태도 아닌 값이라, 회사 카드의 "N개 직무" 와 같은
+                          고정폭 한 줄로 둡니다. */}
+                      <span className="mt-0.5 block font-mono text-meta text-ink-muted tabular-nums">
                         {job.companyCount}곳 매칭 가능
                       </span>
                     </span>
@@ -65,6 +75,7 @@ export default function MatchPage() {
               ))}
             </ul>
           )}
+
           <StepNav
             back={
               <ButtonLink variant="secondary" href={routes.home}>

@@ -26,8 +26,13 @@ function safeReturnTo(value: string | undefined, role: string): string {
 function safeKeywords(value: unknown): Record<string, string[]> {
   if (typeof value !== "object" || value === null) return {};
   const out: Record<string, string[]> = {};
-  for (const [url, keywords] of Object.entries(value as Record<string, unknown>)) {
-    if (Array.isArray(keywords) && keywords.every((k) => typeof k === "string")) {
+  for (const [url, keywords] of Object.entries(
+    value as Record<string, unknown>,
+  )) {
+    if (
+      Array.isArray(keywords) &&
+      keywords.every((k) => typeof k === "string")
+    ) {
       out[url] = keywords;
     }
   }
@@ -36,7 +41,10 @@ function safeKeywords(value: unknown): Record<string, string[]> {
 
 function readRaw(): string | null {
   try {
-    return window.sessionStorage.getItem(KEY) ?? window.sessionStorage.getItem(LEGACY_KEY);
+    return (
+      window.sessionStorage.getItem(KEY) ??
+      window.sessionStorage.getItem(LEGACY_KEY)
+    );
   } catch {
     return null;
   }
@@ -48,7 +56,9 @@ function getSnapshot(): MatchFlow | null {
     lastRaw = raw;
     try {
       const value = raw
-        ? (JSON.parse(raw) as Partial<MatchFlow> & { repositoryKeywords?: unknown })
+        ? (JSON.parse(raw) as Partial<MatchFlow> & {
+            repositoryKeywords?: unknown;
+          })
         : null;
       lastParsed =
         value &&
@@ -59,7 +69,8 @@ function getSnapshot(): MatchFlow | null {
               role: value.role,
               returnTo: safeReturnTo(value.returnTo, value.role),
               repositories: value.repositories.filter(
-                (repository): repository is string => typeof repository === "string",
+                (repository): repository is string =>
+                  typeof repository === "string",
               ),
               repositoryKeywords: safeKeywords(value.repositoryKeywords),
             }
@@ -110,7 +121,8 @@ export function beginMatchFlow(role: string, returnTo?: string): void {
     role,
     returnTo: safeReturnTo(returnTo, role),
     repositories: current?.role === role ? current.repositories : [],
-    repositoryKeywords: current?.role === role ? current.repositoryKeywords : {},
+    repositoryKeywords:
+      current?.role === role ? current.repositoryKeywords : {},
   });
 }
 

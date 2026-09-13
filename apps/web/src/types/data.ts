@@ -70,7 +70,21 @@ export type NewSuggestion = {
   id: string;
   title: string;
   body: string;
+  /**
+   * 해볼 것. 화면은 문단이 아니라 이 목록을 보여줍니다.
+   *
+   * 문장을 나누는 일은 사람(또는 생성 단계)이 합니다. 화면에서 문장 부호로
+   * 자르면 "…가 핵심입니다" 같은 조언까지 할 일로 섞입니다.
+   */
+  steps: string[];
   domainId: string;
+  /**
+   * 이 제안이 쓰는 경험 항목(`data/experience.json` 의 item id).
+   *
+   * 고른 경험과 겹치면 카드에 "내 경험과 겹침" 이름표가 붙습니다. 순서는
+   * 바꾸지 않습니다 — 쉬운 것이 먼저 와야 할 이유가 없습니다.
+   */
+  coversItemIds: string[];
   evidenceIds: string[];
   /** 신입 공고에서도 요구되는지. 채용 데이터가 있을 때만 붙습니다. */
   juniorDemand?: boolean;
@@ -82,7 +96,17 @@ export type DeepenSuggestion = {
   from: string;
   to: string;
   body: string;
+  /** 해볼 것. NewSuggestion 과 같은 규칙입니다. */
+  steps: string[];
   domainId: string;
+  /**
+   * 이 제안이 전제하는 경험 항목.
+   *
+   * `from` 이 "…만들었다면" 이므로, 그 경험이 없는 사람에게는 제안 자체가
+   * 성립하지 않습니다. 그래서 이쪽은 순서를 바꿉니다 — 전제가 있는 제안이
+   * 먼저입니다.
+   */
+  fromItemIds: string[];
   evidenceIds: string[];
   juniorDemand?: boolean;
 };

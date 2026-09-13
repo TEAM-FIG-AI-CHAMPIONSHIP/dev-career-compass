@@ -1,119 +1,163 @@
 @import "tailwindcss";
 
 /* ---------------------------------------------------------------------------
-   Refactor.me 디자인 토큰
-   design/Tokens.dc.html 아트보드가 원본입니다. 값을 바꾸려면 거기서 먼저 바꾸세요.
+   Refactor.me 디자인 토큰 — 맥 터미널
 
-   라이트가 기본이고 다크는 같은 이름으로 값만 바꿉니다. 그래서 컴포넌트에는
-   dark: 접두사가 거의 없습니다 — bg-surface 하나면 양쪽이 다 맞습니다.
+   기본은 라이트입니다. 맥 터미널의 기본 프로파일(Basic)이 흰 바탕이고,
+   이 서비스는 글이 많아 긴 한글 본문이 흰 바탕에서 더 잘 읽힙니다.
+
+   다크는 같은 이름의 토큰이 값만 바꿔 받습니다. 컴포넌트는 테마를 모릅니다.
+   테마는 세 상태입니다 — light / dark / auto(운영체제 설정).
+
+   바탕과 창의 관계는 맥 그대로입니다. 라이트에서는 바탕이 회색이고 창이
+   흰색, 다크에서는 반대로 창이 바탕보다 밝습니다. 두 값이 같으면 창이
+   창으로 보이지 않습니다.
 --------------------------------------------------------------------------- */
 
 :root {
+  color-scheme: light;
+
   /* 중립 */
-  --paper: #fbfbf9;
-  --surface: #ffffff;
-  --sunken: #f1f1ec;
-  --line: #e4e4df;
-  --line-strong: #d3d3cc;
-  --ink-muted: #8a909c;
-  --ink-soft: #646b78;
-  --ink: #16181d;
+  --paper: #eceef1; /* 데스크톱 바탕 */
+  --surface: #ffffff; /* 창 — 글이 놓이는 면 */
+  --sunken: #f4f5f7; /* 파인 칸: 입력, 보조 패널 */
+  --line: #e5e7eb;
+  --line-strong: #d2d6dc;
+  --ink-muted: #79808a;
+  --ink-soft: #4c535c;
+  --ink: #17191c;
 
-  /* 악센트 — 단 한 색 */
-  --accent: #33528c;
-  --accent-ink: #243c69;
-  --accent-tint: #edf1f8;
+  /* 강조 — 파랑 하나입니다.
+     링크, $ 프롬프트, 선택된 항목, 주 버튼이 모두 이 색을 씁니다.
+     accent-on 은 강조색 위에 얹는 글자색이라 테마마다 뒤집힙니다. */
+  --accent: #1c6fbd;
+  --accent-ink: #14548f; /* hover — 라이트에서는 더 진해집니다 */
+  --accent-on: #ffffff;
+  --accent-tint: #eaf2fa;
+  --accent-line: #b9d3ec;
 
-  /* 출처 구분 — 뉴스는 MVP 제외. 소스를 붙이면 --src-news 를 되살립니다. */
-  --src-blog: #3e5c8a;
-  --src-job: #4e7a52;
+  /* 이름표 바탕.
+     칩은 바탕(paper)·창(surface)·파인 칸(sunken) 위에 모두 놓입니다. 흰색을
+     쓰면 창 위에서 사라지고, 세 면 중 어느 것을 골라도 그 면 위에서는 안
+     보입니다. 그래서 칩만의 한 톤을 따로 둡니다 — 라이트에서는 어느 면보다
+     어둡고, 다크에서는 어느 면보다 밝습니다. */
+  --chip: #dfe3e9;
 
-  /* 경고 — 입력 오류, 실패 안내. 출처 색과 이름을 분리해 둡니다. */
-  --warn: #8a5a3e;
-  --warn-tint: #f7f0ea;
+  /* 주석 — 셸의 # 줄. 랜딩 태그라인이 이 색을 씁니다. */
+  --comment: #55806a;
 
-  /* 역매칭 3단계 */
-  --stage-fit: #3f6e4a;
-  --stage-fit-edge: #4e7a52;
-  --stage-fit-tint: #edf4ee;
-  --stage-step: #8a6a2e;
-  --stage-step-edge: #8a6a2e;
-  --stage-step-tint: #f7f2e8;
-  --stage-far: #6b6f78;
-  --stage-far-edge: #a8acb4;
-  --stage-far-tint: #f1f1ec;
+  /* 창 장식 — 맥 신호등의 실제 색입니다. 제목 표시줄 밖에 쓰지 않습니다. */
+  --mac-close: #ff5f57;
+  --mac-min: #febc2e;
+  --mac-max: #28c840;
+  --mac-edge: rgb(0 0 0 / 0.08);
 
-  --raised: 0 1px 2px rgb(22 24 29 / 0.05);
+  /* 경고 — 입력 오류, 조회 실패. 그 밖의 자리에 쓰지 않습니다. */
+  --warn: #b23a2f;
+  --warn-tint: #fbecea;
+  --warn-edge: #eec4bf;
+
+  /* 역매칭 3단계. 배지 테두리 안에서만 살고 밖으로 나가지 않습니다.
+     "잘 맞아요" 가 초록인 것은 상태이지 누를 대상이 아니기 때문입니다. */
+  --stage-fit: #2d7a4e;
+  --stage-fit-edge: #b3dcc2;
+  --stage-fit-tint: #e8f4ec;
+  --stage-step: #8a6410;
+  --stage-step-edge: #e6d3a8;
+  --stage-step-tint: #fbf1dc;
+  --stage-far: #6b727c;
+  --stage-far-edge: #d8dce1;
+  --stage-far-tint: #eff1f3;
+
+  /* 창이 바탕에서 떠 보이도록 깝니다. 다크에서는 더 짙어집니다. */
+  --raised: 0 1px 2px rgb(16 24 40 / 0.06), 0 10px 28px rgb(16 24 40 / 0.08);
 }
 
-/* 시스템 설정이 다크일 때. [data-theme="light"]로 명시 고정하면 적용되지 않습니다. */
+/* 시스템이 다크일 때 — 사용자가 라이트를 직접 고르지 않았다면 */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper: #14161a;
-    --surface: #1b1e24;
-    --sunken: #22262d;
-    --line: #2c313a;
-    --line-strong: #3a4049;
-    --ink-muted: #6e7682;
-    --ink-soft: #98a0ac;
-    --ink: #eceff3;
+    color-scheme: dark;
 
-    --accent: #7ea0da;
-    --accent-ink: #a8c1e8;
-    --accent-tint: #1e2839;
+    --paper: #0d0f14;
+    --surface: #161920;
+    --sunken: #11141a;
+    --line: #262b34;
+    --line-strong: #39404b;
+    --ink-muted: #848c98;
+    --ink-soft: #b3bac5;
+    --ink: #eceef2;
 
-    --src-blog: #8fa9d2;
-    --src-job: #93bd97;
+    --accent: #74b3e0;
+    --accent-ink: #9acbec;
+    --accent-on: #0b1620;
+    --accent-tint: #0f1f2c;
+    --accent-line: #2d4d66;
 
-    --warn: #d2a68f;
-    --warn-tint: #2a211b;
+    --chip: #272d38;
 
-    --stage-fit: #93bd97;
-    --stage-fit-edge: #4e7a52;
-    --stage-fit-tint: #1b2620;
-    --stage-step: #d4b478;
-    --stage-step-edge: #8a6a2e;
-    --stage-step-tint: #26221a;
-    --stage-far: #98a0ac;
-    --stage-far-edge: #3a4049;
-    --stage-far-tint: #22262d;
+    --comment: #7d9f88;
 
-    --raised: 0 1px 2px rgb(0 0 0 / 0.4);
+    --mac-edge: rgb(255 255 255 / 0.08);
+
+    --warn: #e28b8b;
+    --warn-tint: #241417;
+    --warn-edge: #5c3034;
+
+    --stage-fit: #6cc48a;
+    --stage-fit-edge: #2d5a40;
+    --stage-fit-tint: #0f2119;
+    --stage-step: #d5ab5f;
+    --stage-step-edge: #574725;
+    --stage-step-tint: #231d0f;
+    --stage-far: #929aa6;
+    --stage-far-edge: #39404b;
+    --stage-far-tint: #1a1e25;
+
+    --raised: 0 1px 2px rgb(0 0 0 / 0.4), 0 12px 30px rgb(0 0 0 / 0.35);
   }
 }
 
-/* 사용자가 직접 다크로 고정했을 때 */
+/* 사용자가 다크를 직접 골랐을 때. 위 미디어 질의와 같은 값을 씁니다 —
+   한쪽만 고치면 시스템 다크와 직접 고른 다크가 달라집니다. */
 :root[data-theme="dark"] {
-  --paper: #14161a;
-  --surface: #1b1e24;
-  --sunken: #22262d;
-  --line: #2c313a;
-  --line-strong: #3a4049;
-  --ink-muted: #6e7682;
-  --ink-soft: #98a0ac;
-  --ink: #eceff3;
+  color-scheme: dark;
 
-  --accent: #7ea0da;
-  --accent-ink: #a8c1e8;
-  --accent-tint: #1e2839;
+  --paper: #0d0f14;
+  --surface: #161920;
+  --sunken: #11141a;
+  --line: #262b34;
+  --line-strong: #39404b;
+  --ink-muted: #848c98;
+  --ink-soft: #b3bac5;
+  --ink: #eceef2;
 
-  --src-blog: #8fa9d2;
-  --src-job: #93bd97;
+  --accent: #74b3e0;
+  --accent-ink: #9acbec;
+  --accent-on: #0b1620;
+  --accent-tint: #0f1f2c;
+  --accent-line: #2d4d66;
 
-  --warn: #d2a68f;
-  --warn-tint: #2a211b;
+  --chip: #272d38;
 
-  --stage-fit: #93bd97;
-  --stage-fit-edge: #4e7a52;
-  --stage-fit-tint: #1b2620;
-  --stage-step: #d4b478;
-  --stage-step-edge: #8a6a2e;
-  --stage-step-tint: #26221a;
-  --stage-far: #98a0ac;
-  --stage-far-edge: #3a4049;
-  --stage-far-tint: #22262d;
+  --comment: #7d9f88;
 
-  --raised: 0 1px 2px rgb(0 0 0 / 0.4);
+  --mac-edge: rgb(255 255 255 / 0.08);
+
+  --warn: #e28b8b;
+  --warn-tint: #241417;
+  --warn-edge: #5c3034;
+
+  --stage-fit: #6cc48a;
+  --stage-fit-edge: #2d5a40;
+  --stage-fit-tint: #0f2119;
+  --stage-step: #d5ab5f;
+  --stage-step-edge: #574725;
+  --stage-step-tint: #231d0f;
+  --stage-far: #929aa6;
+  --stage-far-edge: #39404b;
+  --stage-far-tint: #1a1e25;
+
+  --raised: 0 1px 2px rgb(0 0 0 / 0.4), 0 12px 30px rgb(0 0 0 / 0.35);
 }
 
 @theme inline {
@@ -128,13 +172,20 @@
 
   --color-accent: var(--accent);
   --color-accent-ink: var(--accent-ink);
+  --color-accent-on: var(--accent-on);
   --color-accent-tint: var(--accent-tint);
+  --color-accent-line: var(--accent-line);
 
-  --color-src-blog: var(--src-blog);
-  --color-src-job: var(--src-job);
+  --color-chip: var(--chip);
+  --color-comment: var(--comment);
+
+  --color-mac-close: var(--mac-close);
+  --color-mac-min: var(--mac-min);
+  --color-mac-max: var(--mac-max);
 
   --color-warn: var(--warn);
   --color-warn-tint: var(--warn-tint);
+  --color-warn-edge: var(--warn-edge);
 
   --color-stage-fit: var(--stage-fit);
   --color-stage-fit-edge: var(--stage-fit-edge);
@@ -146,35 +197,44 @@
   --color-stage-far-edge: var(--stage-far-edge);
   --color-stage-far-tint: var(--stage-far-tint);
 
-  /* 폰트 — layout.tsx의 next/font 변수를 받습니다 */
-  --font-sans: var(--font-plex-kr), "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-  --font-mono: var(--font-plex-mono), ui-monospace, SFMono-Regular, monospace;
+  /* 폰트 — 본문은 고딕입니다. 고정폭 한글은 자간이 벌어져 긴 글에서 읽는
+     속도를 떨어뜨립니다. 고정폭은 셸 줄·라벨·숫자·경로에만 씁니다. */
+  --font-sans:
+    var(--font-plex-kr), "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-mono:
+    var(--font-plex-mono), ui-monospace, SFMono-Regular, Menlo,
+    "Apple SD Gothic Neo", monospace;
+  /* 워드마크 전용. 다른 곳에 쓰지 않습니다. */
+  --font-display:
+    var(--font-archivo), var(--font-plex-kr), "Apple SD Gothic Neo", sans-serif;
 
   /* 타이포 스케일 — 행간은 한글 기준으로 잡았습니다 */
-  --text-display: 1.875rem;        /* 30 */
-  --text-display--line-height: 1.35;
-  --text-display--letter-spacing: -0.01em;
-  --text-h1: 1.5rem;               /* 24 */
-  --text-h1--line-height: 1.45;
-  --text-h1--letter-spacing: -0.008em;
-  --text-h2: 1.1875rem;            /* 19 */
-  --text-h2--line-height: 1.5;
-  --text-h3: 1rem;                 /* 16 */
-  --text-h3--line-height: 1.6;
-  --text-body: 0.9375rem;          /* 15 */
-  --text-body--line-height: 1.75;
-  --text-body-sm: 0.84375rem;      /* 13.5 */
-  --text-body-sm--line-height: 1.7;
-  --text-caption: 0.78125rem;      /* 12.5 */
-  --text-caption--line-height: 1.6;
-  --text-meta: 0.75rem;            /* 12, 모노 전용 */
+  --text-display: 1.875rem; /* 30 */
+  --text-display--line-height: 1.4;
+  --text-display--letter-spacing: -0.018em;
+  --text-h1: 1.4375rem; /* 23 */
+  --text-h1--line-height: 1.5;
+  --text-h1--letter-spacing: -0.018em;
+  --text-h2: 1.1875rem; /* 19 */
+  --text-h2--line-height: 1.55;
+  --text-h3: 1.03125rem; /* 16.5 */
+  --text-h3--line-height: 1.55;
+  --text-body: 0.9375rem; /* 15 */
+  --text-body--line-height: 1.9;
+  --text-body-sm: 0.875rem; /* 14 */
+  --text-body-sm--line-height: 1.8;
+  --text-caption: 0.8125rem; /* 13 */
+  --text-caption--line-height: 1.7;
+  --text-meta: 0.71875rem; /* 11.5, 모노 전용 */
   --text-meta--line-height: 1.5;
-  --text-meta--letter-spacing: 0.02em;
+  --text-meta--letter-spacing: 0.07em;
 
-  /* 라운드 — 문서처럼 보여야 해서 작게 씁니다 */
-  --radius-card: 4px;
-  --radius-btn: 6px;
-  --radius-pill: 999px;
+  /* 모서리 — 둥근 것은 창 하나뿐입니다. 안쪽은 거의 각집니다.
+     모든 블록에 같은 라운드를 주면 무엇이 창인지 사라집니다. */
+  --radius-window: 10px;
+  --radius-card: 3px;
+  --radius-btn: 3px;
+  --radius-pill: 3px;
 
   --shadow-raised: var(--raised);
 }
@@ -224,5 +284,29 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* 커서 깜빡임. 랜딩 히어로 한 곳에서만 씁니다 — 화면에서 움직이는 것이
+   둘 이상이면 어디를 봐야 할지 흩어집니다. */
+@keyframes caret-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* 픽셀 로고가 제자리에서 한 칸 떴다 내려옵니다. */
+@keyframes pixel-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.4px);
   }
 }
