@@ -22,6 +22,7 @@ python3 -m pip install -r pipeline/experiments/tech_blog_company_role_census/req
 python pipeline/experiments/tech_blog_company_role_census/scripts/collect.py
 python pipeline/experiments/tech_blog_company_role_census/scripts/collect_round2.py
 python pipeline/experiments/tech_blog_company_role_census/scripts/backfill_titles.py
+python pipeline/experiments/tech_blog_company_role_census/scripts/collect_priority.py
 python pipeline/experiments/tech_blog_company_role_census/scripts/extract.py
 python pipeline/experiments/tech_blog_company_role_census/scripts/classify_and_gate.py
 ```

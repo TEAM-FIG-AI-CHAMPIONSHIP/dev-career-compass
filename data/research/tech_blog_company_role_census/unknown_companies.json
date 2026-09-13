@@ -1,6 +1,6 @@
 {
   "note": "12개월을 닫지 못해 탈락이 아니라 미수집이다. sitemap/custom 다음 라운드 대상.",
-  "company_count": 49,
+  "company_count": 44,
   "companies": [
     {
       "name": "AB180",
@@ -147,12 +147,6 @@
       "notes": "최근 12개월 메타데이터를 generic RSS로 못 모음"
     },
     {
-      "name": "무신사 / 29CM",
-      "blog_url": "https://techblog.musinsa.com/",
-      "collected_count": 61,
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
-    },
-    {
       "name": "미리디",
       "blog_url": "https://medium.com/miridih/subpage/3d936b50f942",
       "collected_count": 10,
@@ -186,12 +180,6 @@
       "name": "엔카닷컴",
       "blog_url": "https://medium.com/@encar-ai",
       "collected_count": 6,
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
-    },
-    {
-      "name": "여기어때",
-      "blog_url": "https://techblog.gccompany.co.kr/",
-      "collected_count": 126,
       "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
     },
     {
@@ -231,28 +219,10 @@
       "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
     },
     {
-      "name": "카카오모빌리티",
-      "blog_url": "https://developers.kakaomobility.com/techblogs/",
-      "collected_count": 0,
-      "notes": "최근 12개월 메타데이터를 generic RSS로 못 모음"
-    },
-    {
-      "name": "카카오뱅크",
-      "blog_url": "https://tech.kakaobank.com/",
-      "collected_count": 0,
-      "notes": "최근 12개월 메타데이터를 generic RSS로 못 모음"
-    },
-    {
       "name": "카카오스타일",
       "blog_url": "https://devblog.kakaostyle.com/ko/",
       "collected_count": 3,
       "notes": ""
-    },
-    {
-      "name": "카카오페이",
-      "blog_url": "https://tech.kakaopay.com/",
-      "collected_count": 0,
-      "notes": "최근 12개월 메타데이터를 generic RSS로 못 모음"
     },
     {
       "name": "티빙",
