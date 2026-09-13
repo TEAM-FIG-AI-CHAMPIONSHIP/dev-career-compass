@@ -99,7 +99,7 @@ export default async function CompanyResultPage({ params }: Props) {
 
       <main className="grow pb-16">
         <PageWidth className="flex flex-col gap-12">
-          <header className="flex flex-col gap-5 pt-10 lg:pt-12">
+          <header className="flex flex-col gap-4 pt-10 lg:pt-12">
             <div className="flex max-w-3xl flex-col gap-2">
               <h1 className="text-display font-semibold text-balance">
                 {analysis.company.name} {analysis.job.name}
@@ -112,6 +112,11 @@ export default async function CompanyResultPage({ params }: Props) {
             {analysis.domains.length > 0 && (
               <DomainChips domains={analysis.domains} />
             )}
+            <ExperiencePanel
+              catalog={catalog}
+              role={role}
+              returnTo={returnTo}
+            />
           </header>
 
           {analysis.suggestions.new.length > 0 && (
@@ -140,13 +145,12 @@ export default async function CompanyResultPage({ params }: Props) {
             </section>
           )}
 
-          {/* 고른 제안은 여기서 밖으로 나갑니다. 제안 무리 바로 아래에 두어,
-              체크한 다음 눈을 멀리 옮기지 않고 담긴 것을 확인하게 합니다. */}
+          {/* 고른 제안은 여기서 밖으로 나갑니다. 세션을 끝내는 행동이라 맨
+              아래에 혼자 둡니다 — 결과를 다시 계산하는 경험 입력과 같은 자리에
+              놓으면 둘 다 흐려집니다. */}
           <PickedExport
             heading={`${analysis.company.name} · ${analysis.job.name} — 다음에 만들 것`}
           />
-
-          <ExperiencePanel catalog={catalog} role={role} returnTo={returnTo} />
 
           <StepNav
             back={

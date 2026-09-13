@@ -7,16 +7,19 @@ import { beginMatchFlow } from "@/lib/match-flow-store";
 import { routes } from "@/lib/routes";
 import { ArrowRightIcon } from "@/components/ui/icons";
 import { Button, ButtonLink } from "@/components/ui/Button";
-import { Card, CardLink } from "@/components/ui/Card";
+import { Chip } from "@/components/ui/Chip";
 
 /**
- * 경험을 넣기 전의 유도 카드와 넣은 뒤의 요약이 같은 자리를 씁니다.
+ * 경험은 결과를 규정하는 조건이라 제안 목록보다 **위**에 둡니다.
  *
- * 자리가 다르면 입력을 마치고 돌아왔을 때 화면 아래에 있던 것이 위로 올라가
- * 페이지가 통째로 밀립니다. 두 상태의 여백을 맞춰 두면 내용만 바뀝니다.
+ * 전에는 제안을 다 읽고 난 맨 아래에 있었습니다. 일곱 장을 읽고 나서야 "사실
+ * 더 정확하게 볼 수 있었어요" 라고 말하는 셈이라, 눌러도 이미 늦은 자리였습니다.
  *
- * 넣은 경험은 카드 격자로 다시 펼치지 않습니다. 방금 자기가 입력한 값이라
- * 확인만 되면 충분하고, 이 화면의 주인공은 위의 제안입니다.
+ * 카드가 아니라 한 줄입니다. 이 화면의 주인공은 아래 제안이고, 경험은 그
+ * 제안을 어떻게 볼지 정하는 단서입니다. 카드로 세우면 제안과 무게를 다툽니다.
+ *
+ * 넣기 전과 넣은 뒤가 같은 자리를 씁니다. 자리가 다르면 입력을 마치고
+ * 돌아왔을 때 아래 내용이 통째로 밀립니다.
  */
 export function ExperiencePanel({
   catalog,
@@ -33,40 +36,49 @@ export function ExperiencePanel({
 
   if (!input) {
     return (
-      <CardLink
-        variant="cta"
+      /* 문구가 이 화면을 더 정확하게 만든다고 말하지 않습니다. 지금은 넣어도
+         아래 목록이 그대로입니다. 대신 경험이 실제로 쓰이는 곳 — 맞는 회사
+         찾기 — 으로 가는 입구라고 밝힙니다. */
+      <ButtonLink
+        variant="secondary"
         href={experienceHref}
         onClick={prepareExperienceFlow}
-        className="flex items-center justify-between gap-4 p-5 sm:p-6"
+        className="justify-between gap-4 px-4 font-normal"
       >
-        <span className="flex flex-col gap-1">
-          <span className="text-h3 font-semibold">
-            내 경험을 넣으면 더 정확해져요
-          </span>
-          <span className="text-body-sm text-ink-soft">
-            만든 것을 선택하면 다음 한 걸음을 좁혀드립니다
+        <span className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+          <span className="font-mono text-meta text-accent">$ cat</span>
+          <span className="text-body-sm">
+            만든 것을 알려주면 맞는 회사까지 찾아드립니다
           </span>
         </span>
-        <ArrowRightIcon size={20} className="shrink-0 text-accent" />
-      </CardLink>
+        <ArrowRightIcon size={16} className="shrink-0 text-accent" />
+      </ButtonLink>
     );
   }
 
   const done = describeExperience(input, catalog, role);
 
   return (
-    <Card className="flex flex-col gap-4 p-5 sm:p-6">
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <h2 className="text-h3 font-semibold">내 경험</h2>
+    <div className="flex flex-col gap-2.5 rounded-card border border-line-strong bg-sunken px-4 py-3.5">
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <span className="flex items-center gap-2 font-mono text-meta text-ink-muted">
+          <span className="text-accent">$</span>
+          <span>내 경험 {done.length}개</span>
+        </span>
         <div className="flex items-center gap-1">
           <ButtonLink
             variant="ghost"
             href={experienceHref}
             onClick={prepareExperienceFlow}
+            className="min-h-9 px-2.5 py-1.5"
           >
             고치기
           </ButtonLink>
-          <Button variant="ghost" onClick={clearExperience}>
+          <Button
+            variant="ghost"
+            onClick={clearExperience}
+            className="min-h-9 px-2.5 py-1.5"
+          >
             지우기
           </Button>
         </div>
@@ -74,22 +86,11 @@ export function ExperiencePanel({
 
       <ul className="flex flex-wrap gap-1.5">
         {done.map((item) => (
-          <li
-            key={`${item.origin}-${item.label}`}
-            className="rounded-pill bg-sunken px-2.5 py-1 text-caption break-all text-ink-soft"
-          >
-            {item.label}
+          <li key={`${item.origin}-${item.label}`}>
+            <Chip className="px-2 py-0.5 break-all">{item.label}</Chip>
           </li>
         ))}
       </ul>
-
-      {/* 경험을 넣어도 위 목록이 그대로인 이유를 화면에서 밝힙니다. */}
-      <p className="text-body-sm text-ink-muted">
-        지금은 넣은 경험에 따라 위 제안의 순서나 표시가 달라지지 않습니다. 어떤
-        제안이 먼저인지 가리는 규칙이 아직 정해지지 않았습니다. 연결 지점:{" "}
-        <code className="font-mono text-caption">src/lib/personalize.ts</code> 의{" "}
-        <code className="font-mono text-caption">personalize()</code>
-      </p>
-    </Card>
+    </div>
   );
 }
