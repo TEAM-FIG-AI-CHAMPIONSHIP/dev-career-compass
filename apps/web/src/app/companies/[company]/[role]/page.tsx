@@ -13,6 +13,7 @@ import {
   DeepenSuggestions,
 } from "@/components/result/SuggestionCards";
 import { DomainChips } from "@/components/result/DomainChips";
+import { PickedExport } from "@/components/result/PickedExport";
 import { AppHeader } from "@/components/ui/AppHeader";
 import { ButtonLink } from "@/components/ui/Button";
 import { StepNav } from "@/components/ui/StepNav";
@@ -51,7 +52,7 @@ function GroupTitle({
   return (
     <div className="flex flex-wrap items-baseline gap-3 border-b border-line-strong pb-2.5">
       <h2 className="text-h2 font-semibold text-ink">{children}</h2>
-      <span className="text-body-sm text-ink-muted">{caption}</span>
+      <span className="text-caption text-ink-muted">{caption}</span>
     </div>
   );
 }
@@ -77,11 +78,14 @@ export default async function CompanyResultPage({ params }: Props) {
 
   const catalog = getExperienceCatalog();
   const returnTo = routes.companyResult(company, role);
-  const byId = new Map(
-    analysis.evidence.map((evidence) => [evidence.id, evidence]),
+  /* 제안 카드는 클라이언트 컴포넌트입니다. Map 이나 함수는 서버 경계를 넘지
+     못하므로 평범한 객체로 만들어 넘깁니다. */
+  const evidence = Object.fromEntries(
+    analysis.evidence.map((item) => [item.id, item]),
   );
-  const domainLabel = (id: string) =>
-    analysis.domains.find((domain) => domain.id === id)?.label;
+  const domainLabels = Object.fromEntries(
+    analysis.domains.map((domain) => [domain.id, domain.label]),
+  );
 
   return (
     <>
@@ -93,7 +97,7 @@ export default async function CompanyResultPage({ params }: Props) {
         }
       />
 
-      <main className="grow bg-[linear-gradient(180deg,var(--accent-tint)_0%,var(--paper)_20rem)] pb-16">
+      <main className="grow pb-16">
         <PageWidth className="flex flex-col gap-12">
           <header className="flex flex-col gap-5 pt-10 lg:pt-12">
             <div className="flex max-w-3xl flex-col gap-2">
@@ -117,8 +121,8 @@ export default async function CompanyResultPage({ params }: Props) {
               </GroupTitle>
               <NewSuggestions
                 suggestions={analysis.suggestions.new}
-                byId={byId}
-                domainLabel={domainLabel}
+                evidence={evidence}
+                domainLabels={domainLabels}
               />
             </section>
           )}
@@ -130,11 +134,17 @@ export default async function CompanyResultPage({ params }: Props) {
               </GroupTitle>
               <DeepenSuggestions
                 suggestions={analysis.suggestions.deepen}
-                byId={byId}
-                domainLabel={domainLabel}
+                evidence={evidence}
+                domainLabels={domainLabels}
               />
             </section>
           )}
+
+          {/* 고른 제안은 여기서 밖으로 나갑니다. 제안 무리 바로 아래에 두어,
+              체크한 다음 눈을 멀리 옮기지 않고 담긴 것을 확인하게 합니다. */}
+          <PickedExport
+            heading={`${analysis.company.name} · ${analysis.job.name} — 다음에 만들 것`}
+          />
 
           <ExperiencePanel catalog={catalog} role={role} returnTo={returnTo} />
 

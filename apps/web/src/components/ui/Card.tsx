@@ -21,7 +21,8 @@ const VARIANTS: Record<CardVariant, string> = {
   static: "border-line-strong bg-surface",
   action: "border-line-strong bg-surface transition-colors hover:border-accent",
   cta: "border-accent bg-accent-tint transition-colors hover:border-accent-ink",
-  empty: "border-dashed border-line-strong bg-surface",
+  /* 아직 없는 것. 바탕을 파 두면 "여기 무언가 들어올 자리" 로 읽힙니다. */
+  empty: "border-dashed border-line-strong bg-sunken",
 };
 
 /**

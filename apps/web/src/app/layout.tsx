@@ -14,9 +14,17 @@ const plexKR = IBM_Plex_Sans_KR({
 const plexMono = IBM_Plex_Mono({
   variable: "--font-plex-mono",
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
+
+/**
+ * 첫 페인트 전에 저장된 테마를 붙입니다.
+ *
+ * 이 줄이 없으면 다크를 고른 사람에게 흰 화면이 한 번 번쩍입니다. 저장된 값이
+ * 없으면 아무것도 붙이지 않고 운영체제 설정(prefers-color-scheme)에 맡깁니다.
+ */
+const THEME_INIT = `(function(){try{var t=localStorage.getItem("rm-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}})()`;
 
 export const metadata: Metadata = {
   title: {
@@ -34,6 +42,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${plexKR.variable} ${plexMono.variable} h-full`}
       suppressHydrationWarning
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT }} />
+      </head>
       <body className="flex min-h-full flex-col">{children}</body>
     </html>
   );

@@ -21,7 +21,7 @@ export default async function MatchResultPage({ params }: Props) {
     <>
       <StepHeader current="done" role={role} />
 
-      <main className="grow bg-[linear-gradient(180deg,var(--accent-tint)_0%,var(--paper)_20rem)] py-12 lg:py-14">
+      <main className="grow py-12 lg:py-14">
         <PageWidth className="flex flex-col gap-11">
           <div className="flex max-w-3xl flex-col gap-3">
             <h1 className="text-[1.75rem] leading-[1.4] font-semibold tracking-[-0.014em] text-pretty sm:text-[1.875rem]">

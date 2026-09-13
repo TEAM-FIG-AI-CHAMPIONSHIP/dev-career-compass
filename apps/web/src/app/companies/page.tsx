@@ -16,7 +16,7 @@ export default function CompaniesPage() {
     <>
       <AppHeader />
 
-      <main className="grow bg-[linear-gradient(180deg,var(--accent-tint)_0%,var(--paper)_20rem)] pb-16">
+      <main className="grow pb-16">
         <PageWidth>
           <header className="flex flex-col gap-3 pt-10 pb-8 lg:pt-12 lg:pb-10">
             <h1 className="text-display font-semibold text-balance sm:text-[2.125rem]">

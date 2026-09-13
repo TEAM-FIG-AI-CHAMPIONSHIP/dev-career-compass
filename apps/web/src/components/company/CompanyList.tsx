@@ -78,7 +78,7 @@ export function CompanyList({ companies }: { companies: Company[] }) {
             >
               회사 선택
             </h2>
-            <p className="mt-1 text-body-sm text-ink-soft tabular-nums">
+            <p className="mt-1 font-mono text-meta text-ink-muted tabular-nums">
               {filteredCompanies.length}곳
             </p>
           </div>
@@ -111,7 +111,7 @@ export function CompanyList({ companies }: { companies: Company[] }) {
                 }
               }}
               placeholder="회사명 검색"
-              className="min-h-11 w-full rounded-btn border border-line-strong bg-surface py-2.5 pr-3.5 pl-10 text-body text-ink outline-none transition-colors duration-150 placeholder:text-ink-muted hover:border-ink-muted focus:border-accent"
+              className="min-h-11 w-full rounded-btn border border-line-strong bg-sunken py-2.5 pr-3.5 pl-10 text-body-sm text-ink outline-none transition-colors duration-150 placeholder:text-ink-muted hover:border-ink-muted focus:border-accent"
             />
           </label>
         </div>
@@ -159,7 +159,7 @@ export function CompanyList({ companies }: { companies: Company[] }) {
                       <span className="block truncate text-h3 font-semibold">
                         {company.name}
                       </span>
-                      <span className="mt-0.5 block text-caption text-ink-soft tabular-nums">
+                      <span className="mt-0.5 block font-mono text-meta text-ink-muted tabular-nums">
                         {jobCount}개 직무
                       </span>
                     </span>
@@ -228,7 +228,7 @@ export function CompanyList({ companies }: { companies: Company[] }) {
                   className={cn(
                     "inline-flex size-11 items-center justify-center rounded-btn border font-mono text-meta tabular-nums transition-colors duration-150",
                     page === currentPage
-                      ? "border-accent bg-accent text-paper"
+                      ? "border-accent bg-accent text-accent-on"
                       : "border-line-strong bg-surface text-ink-soft hover:border-accent hover:text-accent",
                   )}
                 >
@@ -255,11 +255,11 @@ export function CompanyList({ companies }: { companies: Company[] }) {
         id="selected-company-jobs"
         aria-labelledby="selected-company-title"
         aria-live="polite"
-        className="flex h-full flex-col rounded-xl border border-line-strong bg-surface p-5 lg:p-6"
+        className="flex h-full flex-col rounded-card border border-line-strong bg-sunken p-5 lg:p-6"
       >
         {selectedCompany ? (
           <>
-            <p className="font-mono text-meta text-accent">선택한 회사</p>
+            <p className="font-mono text-meta text-accent">$ selected</p>
             <div className="mt-3 flex items-center gap-3 border-b border-line pb-5">
               <span
                 aria-hidden="true"
@@ -284,7 +284,7 @@ export function CompanyList({ companies }: { companies: Company[] }) {
                 >
                   {selectedCompany.name}
                 </h2>
-                <p className="mt-0.5 text-caption text-ink-soft tabular-nums">
+                <p className="mt-0.5 font-mono text-meta text-ink-muted tabular-nums">
                   {selectedCompany.jobs?.length ?? 0}개 직무
                 </p>
               </div>
@@ -316,7 +316,7 @@ export function CompanyList({ companies }: { companies: Company[] }) {
                   <span
                     key={job.slug}
                     aria-disabled="true"
-                    className="inline-flex min-h-11 cursor-not-allowed items-center justify-between gap-2 rounded-btn border border-dashed border-line-strong bg-surface px-5 py-3 text-[0.875rem] leading-none font-medium text-ink-muted"
+                    className="inline-flex min-h-11 cursor-not-allowed items-center justify-between gap-2 rounded-btn border border-dashed border-line-strong bg-sunken px-5 py-3 text-body-sm leading-none font-medium text-ink-muted"
                   >
                     <span>{job.name}</span>
                     <span className="shrink-0 font-mono text-meta text-ink-muted">

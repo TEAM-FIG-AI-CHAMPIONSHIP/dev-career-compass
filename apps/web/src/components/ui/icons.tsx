@@ -42,6 +42,14 @@ export const ArrowRightIcon = (p: IconProps) => (
   </Icon>
 );
 
+/** 터미널 창 표시. 프롬프트 꺾쇠와 입력 줄. */
+export const TerminalIcon = (p: IconProps) => (
+  <Icon {...p}>
+    <path d="M4 6l3.5 3.5L4 13" />
+    <path d="M10.5 13.5H16" />
+  </Icon>
+);
+
 /** 접힌 것을 펼치는 표시. 방향 이동을 뜻하는 화살표와 구분해서 씁니다. */
 export const ChevronDownIcon = (p: IconProps) => (
   <Icon {...p}>
