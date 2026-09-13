@@ -40,9 +40,12 @@ export function ExperienceForm({
     flow?.repositoryKeywords,
     allowedItemIds,
   );
+  const suggestedItemIdSet = new Set(suggestedItemIds);
 
   const current: Draft = draft ?? {
-    itemIds: stored?.itemIds ?? suggestedItemIds,
+    // 저장된 값이 있어도(빈 배열이어도) GitHub 키워드 제안을 항상 반영한다 —
+    // ?? 는 빈 배열을 "값 있음"으로 보고 제안을 통째로 무시해 버리는 문제가 있었다.
+    itemIds: [...new Set([...(stored?.itemIds ?? []), ...suggestedItemIds])],
     levelId: stored?.levelId ?? "",
   };
   const { itemIds, levelId } = current;
@@ -113,6 +116,7 @@ export function ExperienceForm({
                 description={item.description}
                 checked={itemIds.includes(item.id)}
                 onChange={() => toggle(item.id)}
+                badge={suggestedItemIdSet.has(item.id) ? "GitHub 제안" : undefined}
               />
             ))}
           </div>
