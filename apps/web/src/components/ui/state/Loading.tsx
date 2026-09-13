@@ -1,3 +1,5 @@
+import { cardStyle } from "../Card";
+
 /**
  * 개인화 대기 화면.
  *
@@ -15,7 +17,9 @@ export function Loading({
     <div
       role="status"
       aria-live="polite"
-      className="flex flex-col gap-3.5 rounded-card border border-line bg-surface p-6"
+      className={cardStyle("static", {
+        className: "flex flex-col gap-3.5 p-6",
+      })}
     >
       <p className="text-[0.9375rem] leading-[1.6] font-semibold">{title}</p>
       <div className="flex flex-col gap-2.5" aria-hidden="true">

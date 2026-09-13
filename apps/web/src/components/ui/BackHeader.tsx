@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { ArrowLeftIcon } from "./icons";
+import { PageWidth } from "./PageWidth";
 
 /**
  * 흐름 안에 있는 화면의 상단 바. 왼쪽은 돌아갈 곳, 오른쪽은 지금 어디인지입니다.
@@ -17,15 +18,17 @@ export function BackHeader({
   right?: ReactNode;
 }) {
   return (
-    <header className="flex flex-wrap items-center justify-between gap-3 border-b border-line bg-paper px-4 py-4 sm:px-8 lg:px-20">
-      <Link
-        href={href}
-        className="inline-flex items-center gap-1.5 text-[0.875rem] text-ink-soft no-underline hover:text-ink hover:no-underline"
-      >
-        <ArrowLeftIcon size={14} strokeWidth={1.7} />
-        {label}
-      </Link>
-      {right}
+    <header className="border-b border-line bg-paper">
+      <PageWidth className="flex flex-wrap items-center justify-between gap-3 py-4">
+        <Link
+          href={href}
+          className="inline-flex items-center gap-1.5 text-[0.875rem] text-ink-soft no-underline hover:text-ink hover:no-underline"
+        >
+          <ArrowLeftIcon size={14} strokeWidth={1.7} />
+          {label}
+        </Link>
+        {right}
+      </PageWidth>
     </header>
   );
 }
