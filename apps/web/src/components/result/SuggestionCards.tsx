@@ -26,21 +26,24 @@ import { groundedFirst, groundedSuggestionIds } from "@/lib/personalize";
 function CardMeta({
   domain,
   juniorDemand,
-  ground,
+  grounded,
 }: {
   domain?: string;
   juniorDemand?: boolean;
-  /** 고른 경험에 닿아 있을 때만 넘깁니다. 무리마다 말이 다릅니다. */
-  ground?: string;
+  /** 이 제안이 쓰는 경험 항목을 고른 경험에서 하나라도 체크했는지. */
+  grounded?: boolean;
 }) {
-  if (!domain && !juniorDemand && !ground) return null;
+  if (!domain && !juniorDemand && !grounded) return null;
   return (
     <div className="flex flex-wrap items-center gap-2">
       {domain && <Chip>{domain}</Chip>}
-      {ground && (
+      {/* 이름표 한 장입니다. 문장으로 적으면 데이터가 말하지 않은 것까지
+          말합니다 — "바로 붙는다" 도 "출발점이다" 도 계산한 적이 없고, 실제로
+          아는 것은 겹친다는 사실뿐입니다. 두 무리가 같은 계산을 쓰므로 말도
+          하나입니다. */}
+      {grounded && (
         <Chip tone="accent">
-          <CheckIcon size={12} strokeWidth={1.8} />
-          {ground}
+          <CheckIcon size={12} strokeWidth={1.8} />내 경험과 겹침
         </Chip>
       )}
       {juniorDemand && (
@@ -237,7 +240,7 @@ export function NewSuggestions({
             <CardMeta
               domain={domainLabels[s.domainId]}
               juniorDemand={s.juniorDemand}
-              ground={marks.has(s.id) ? "해본 기술로 바로 붙습니다" : undefined}
+              grounded={marks.has(s.id)}
             />
             <h3 className="text-h3 font-semibold text-pretty">{s.title}</h3>
             <StepList id={s.id} title={s.title} steps={s.steps} />
@@ -287,7 +290,7 @@ export function DeepenSuggestions({
             <CardMeta
               domain={domainLabels[s.domainId]}
               juniorDemand={s.juniorDemand}
-              ground={marks.has(s.id) ? "내가 만든 것에서 출발" : undefined}
+              grounded={marks.has(s.id)}
             />
             <FromTo from={s.from} to={s.to} />
             <StepList id={s.id} title={s.to} steps={s.steps} />

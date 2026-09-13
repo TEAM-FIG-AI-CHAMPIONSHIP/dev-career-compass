@@ -81,8 +81,8 @@ export type NewSuggestion = {
   /**
    * 이 제안이 쓰는 경험 항목(`data/experience.json` 의 item id).
    *
-   * 고른 경험과 겹치면 "해본 기술로 바로 붙는" 제안입니다. 순서는 바꾸지
-   * 않습니다 — 쉬운 것이 먼저 와야 할 이유가 없습니다.
+   * 고른 경험과 겹치면 카드에 "내 경험과 겹침" 이름표가 붙습니다. 순서는
+   * 바꾸지 않습니다 — 쉬운 것이 먼저 와야 할 이유가 없습니다.
    */
   coversItemIds: string[];
   evidenceIds: string[];
