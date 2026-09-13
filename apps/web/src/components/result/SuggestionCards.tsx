@@ -82,7 +82,11 @@ export function NewSuggestions({
     <ol className="grid grid-cols-1 items-start gap-3 lg:grid-cols-2">
       {suggestions.map((s, index) => (
         <li key={s.id}>
-          <article className={cardStyle("static", { className: "flex gap-4 p-5 sm:gap-5 sm:p-6" })}>
+          <article
+            className={cardStyle("static", {
+              className: "flex gap-4 p-5 sm:gap-5 sm:p-6",
+            })}
+          >
             <span
               aria-hidden="true"
               className="flex size-8 shrink-0 items-center justify-center rounded-card bg-accent-tint text-[0.875rem] font-semibold text-accent"
@@ -126,7 +130,11 @@ export function DeepenSuggestions({
     <ul className="grid grid-cols-1 items-start gap-3 lg:grid-cols-2">
       {suggestions.map((s, index) => (
         <li key={s.id}>
-          <article className={cardStyle("static", { className: "flex gap-4 p-5 sm:gap-5 sm:p-6" })}>
+          <article
+            className={cardStyle("static", {
+              className: "flex gap-4 p-5 sm:gap-5 sm:p-6",
+            })}
+          >
             <span
               aria-hidden="true"
               className="flex size-8 shrink-0 items-center justify-center rounded-card bg-accent-tint text-[0.875rem] font-semibold text-accent"

@@ -7,8 +7,10 @@ import { CheckboxCard, RadioCard } from "@/components/ui/CheckOption";
 import { Button } from "@/components/ui/Button";
 import { useExperience, saveExperience } from "@/lib/experience-store";
 import { finishMatchFlow, useMatchFlow } from "@/lib/match-flow-store";
-import { itemIdsFromRepositoryKeywords } from "@/lib/keyword-experience";
 import { routes } from "@/lib/routes";
+import { StepNav } from "@/components/ui/StepNav";
+import { itemIdsFromRepositoryKeywords } from "@/lib/keyword-experience";
+import { ArrowLeftIcon } from "@/components/ui/icons";
 
 type Draft = { itemIds: string[]; levelId: string };
 
@@ -35,7 +37,9 @@ export function ExperienceForm({
   const groups = catalog.groups.filter(
     (g) => !g.appliesTo || g.appliesTo.includes(role),
   );
-  const allowedItemIds = new Set(groups.flatMap((group) => group.items.map((item) => item.id)));
+  const allowedItemIds = new Set(
+    groups.flatMap((group) => group.items.map((item) => item.id)),
+  );
   const suggestedItemIds = itemIdsFromRepositoryKeywords(
     flow?.repositoryKeywords,
     allowedItemIds,
@@ -51,7 +55,9 @@ export function ExperienceForm({
   const { itemIds, levelId } = current;
 
   const projectKindIds = new Set(
-    groups.find((group) => group.id === "project-kind")?.items.map((item) => item.id) ?? [],
+    groups
+      .find((group) => group.id === "project-kind")
+      ?.items.map((item) => item.id) ?? [],
   );
   const roleExperienceIds = new Set(
     groups
@@ -95,7 +101,7 @@ export function ExperienceForm({
     router.push(finished.returnTo);
   };
 
-  const cancel = () => {
+  const goBack = () => {
     router.push(routes.matchRepository(role));
   };
 
@@ -137,7 +143,6 @@ export function ExperienceForm({
           {catalog.levels.map((level) => (
             <RadioCard
               key={level.id}
-              name="experience-level"
               step={level.step || undefined}
               title={level.title}
               description={level.description}
@@ -148,24 +153,25 @@ export function ExperienceForm({
         </div>
       </section>
 
-      <div className="flex flex-wrap items-center gap-3.5">
-        <Button variant="secondary" onClick={cancel} className="min-h-12 px-6 py-4">
-          취소
-        </Button>
-        <Button
-          variant="primary"
-          onClick={submit}
-          disabled={!canSubmit}
-          className="min-h-12 px-6 py-4 text-[0.9375rem]"
-        >
-          맞는 회사 찾기
-        </Button>
-        {!canSubmit && (
-          <span className="text-[0.8125rem] leading-[1.7] text-ink-soft">
-            프로젝트 종류, 직무별 경험, 진행 수준을 각각 하나 이상 골라 주세요
-          </span>
-        )}
-      </div>
+      {!canSubmit && (
+        <span className="text-[0.8125rem] leading-[1.7] text-ink-soft">
+          프로젝트 종류, 직무별 경험, 진행 수준을 각각 하나 이상 골라 주세요
+        </span>
+      )}
+
+      <StepNav
+        back={
+          <Button variant="secondary" onClick={goBack}>
+            <ArrowLeftIcon size={14} strokeWidth={1.7} />
+            GitHub 저장소
+          </Button>
+        }
+        next={
+          <Button variant="primary" onClick={submit} disabled={!canSubmit}>
+            맞는 회사 찾기
+          </Button>
+        }
+      />
     </div>
   );
 }

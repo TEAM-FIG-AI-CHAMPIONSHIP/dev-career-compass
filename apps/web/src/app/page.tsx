@@ -1,4 +1,4 @@
-import { PageHeader } from "@/components/ui/PageHeader";
+import { AppHeader } from "@/components/ui/AppHeader";
 import {
   ArrowRightIcon,
   BuildingIcon,
@@ -12,7 +12,7 @@ import { PageWidth } from "@/components/ui/PageWidth";
 export default function Home() {
   return (
     <>
-      <PageHeader />
+      <AppHeader />
 
       <main className="flex grow flex-col items-center justify-center bg-[radial-gradient(ellipse_at_50%_18%,var(--accent-tint)_0%,var(--paper)_62%)] py-12 sm:py-14 lg:py-16">
         <PageWidth className="flex flex-col">

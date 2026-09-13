@@ -13,9 +13,12 @@ import {
   DeepenSuggestions,
 } from "@/components/result/SuggestionCards";
 import { DomainChips } from "@/components/result/DomainChips";
-import { BackHeader } from "@/components/ui/BackHeader";
-import { DataSourceNote } from "@/components/ui/PageHeader";
+import { AppHeader } from "@/components/ui/AppHeader";
+import { ButtonLink } from "@/components/ui/Button";
+import { StepNav } from "@/components/ui/StepNav";
+import { DataSourceNote } from "@/components/ui/DataSourceNote";
 import { PersonalizedPanel } from "./PersonalizedPanel";
+import { ArrowLeftIcon } from "@/components/ui/icons";
 
 type Props = { params: Promise<{ company: string; role: string }> };
 
@@ -77,9 +80,7 @@ export default async function CompanyResultPage({ params }: Props) {
 
   return (
     <>
-      <BackHeader
-        href={routes.companies}
-        label="회사 선택"
+      <AppHeader
         right={
           <span className="text-[0.875rem] leading-[1.6] text-ink-soft">
             {analysis.company.name} · {analysis.job.name}
@@ -143,6 +144,14 @@ export default async function CompanyResultPage({ params }: Props) {
               <DomainChips domains={analysis.domains} />
             </section>
           )}
+          <StepNav
+            back={
+              <ButtonLink variant="secondary" href={routes.companies}>
+                <ArrowLeftIcon size={14} strokeWidth={1.7} />
+                회사 선택
+              </ButtonLink>
+            }
+          />
         </PageWidth>
       </main>
 

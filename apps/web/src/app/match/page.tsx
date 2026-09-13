@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { listJobs } from "@/lib/data";
 import { routes } from "@/lib/routes";
 import { CardLink } from "@/components/ui/Card";
+import { ButtonLink } from "@/components/ui/Button";
+import { StepNav } from "@/components/ui/StepNav";
 import { PageWidth } from "@/components/ui/PageWidth";
 import { StepHeader } from "@/components/ui/StepHeader";
-import { ArrowRightIcon } from "@/components/ui/icons";
+import { ArrowLeftIcon, ArrowRightIcon } from "@/components/ui/icons";
 import { Empty } from "@/components/ui/state/Empty";
 
 export const metadata: Metadata = { title: "직무 선택" };
@@ -15,7 +17,7 @@ export default function MatchPage() {
 
   return (
     <>
-      <StepHeader current={1} />
+      <StepHeader current={1} role="" />
 
       <main className="grow bg-[linear-gradient(180deg,var(--accent-tint)_0%,var(--paper)_20rem)] py-12 lg:py-14">
         <PageWidth className="flex flex-col gap-11">
@@ -63,6 +65,14 @@ export default function MatchPage() {
               ))}
             </ul>
           )}
+          <StepNav
+            back={
+              <ButtonLink variant="secondary" href={routes.home}>
+                <ArrowLeftIcon size={14} strokeWidth={1.7} />
+                처음으로
+              </ButtonLink>
+            }
+          />
         </PageWidth>
       </main>
     </>

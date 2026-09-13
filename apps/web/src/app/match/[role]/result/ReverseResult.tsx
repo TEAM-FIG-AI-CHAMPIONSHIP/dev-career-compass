@@ -7,8 +7,10 @@ import { useExperience, clearExperience } from "@/lib/experience-store";
 import { routes } from "@/lib/routes";
 import { StageBadge, STAGE_ORDER } from "@/components/ui/StageBadge";
 import { Button, ButtonLink } from "@/components/ui/Button";
+import { StepNav } from "@/components/ui/StepNav";
 import { cardStyle } from "@/components/ui/Card";
 import { Chip } from "@/components/ui/Chip";
+import { ArrowLeftIcon } from "@/components/ui/icons";
 
 const STAGE_NOTE: Record<Stage, string> = {
   fit: "지금 가진 것으로 바로 한 겹 더 팔 수 있는 조직입니다",
@@ -122,6 +124,15 @@ export function ReverseResult({
           의 <code className="font-mono">reverseMatch()</code>
         </p>
       </div>
+
+      <StepNav
+        back={
+          <ButtonLink variant="secondary" href={routes.matchExperience(role)}>
+            <ArrowLeftIcon size={14} strokeWidth={1.7} />
+            경험 입력
+          </ButtonLink>
+        }
+      />
     </div>
   );
 }

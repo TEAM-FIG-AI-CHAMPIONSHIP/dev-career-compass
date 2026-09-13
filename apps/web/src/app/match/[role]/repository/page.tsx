@@ -18,7 +18,7 @@ export default async function MatchRepositoryPage({ params }: Props) {
 
   return (
     <>
-      <StepHeader current={2} />
+      <StepHeader current={2} role={role} />
 
       <main className="grow bg-[linear-gradient(180deg,var(--accent-tint)_0%,var(--paper)_20rem)] py-12 lg:py-14">
         <PageWidth className="flex flex-col gap-11">

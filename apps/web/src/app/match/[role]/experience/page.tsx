@@ -18,7 +18,7 @@ export default async function MatchExperiencePage({ params }: Props) {
 
   return (
     <>
-      <StepHeader current={3} />
+      <StepHeader current={3} role={role} />
 
       <main className="grow bg-[linear-gradient(180deg,var(--accent-tint)_0%,var(--paper)_20rem)] py-12 lg:py-14">
         <PageWidth className="flex flex-col gap-11">

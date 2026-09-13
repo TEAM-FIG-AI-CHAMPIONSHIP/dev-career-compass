@@ -3,12 +3,17 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/Button";
+import { StepNav } from "@/components/ui/StepNav";
 import { cardStyle } from "@/components/ui/Card";
 import { Chip } from "@/components/ui/Chip";
 import { RepoField } from "@/components/ui/RepoField";
-import { PlusIcon } from "@/components/ui/icons";
+import { ArrowLeftIcon, PlusIcon } from "@/components/ui/icons";
 import { useExperience } from "@/lib/experience-store";
-import { saveMatchRepositories, useMatchFlow } from "@/lib/match-flow-store";
+import {
+  saveMatchRepositories,
+  useMatchExit,
+  useMatchFlow,
+} from "@/lib/match-flow-store";
 import { parseGithubUrl } from "@/lib/repo-keywords";
 import { routes } from "@/lib/routes";
 
@@ -70,6 +75,7 @@ export function RepositoryForm({
 }) {
   const router = useRouter();
   const flow = useMatchFlow(role);
+  const exit = useMatchExit(role);
   const experience = useExperience(catalogVersion);
   const [draft, setDraft] = useState<string[] | null>(null);
   const [statuses, setStatuses] = useState<Record<string, FieldStatus>>({});
@@ -236,22 +242,27 @@ export function RepositoryForm({
         </div>
       </div>
 
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <Button
-          variant="secondary"
-          onClick={() => router.push(routes.match)}
-          disabled={analyzing}
-        >
-          ← 직무로
-        </Button>
-        <Button
-          variant="primary"
-          onClick={goNext}
-          disabled={invalid || analyzing}
-        >
-          다음: 경험 입력
-        </Button>
-      </div>
+      <StepNav
+        back={
+          <Button
+            variant="secondary"
+            onClick={() => router.push(exit.href)}
+            disabled={analyzing}
+          >
+            <ArrowLeftIcon size={14} strokeWidth={1.7} />
+            {exit.label}
+          </Button>
+        }
+        next={
+          <Button
+            variant="primary"
+            onClick={goNext}
+            disabled={invalid || analyzing}
+          >
+            경험 입력
+          </Button>
+        }
+      />
     </div>
   );
 }

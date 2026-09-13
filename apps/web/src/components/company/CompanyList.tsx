@@ -316,7 +316,7 @@ export function CompanyList({ companies }: { companies: Company[] }) {
                   <span
                     key={job.slug}
                     aria-disabled="true"
-                    className="inline-flex min-h-11 cursor-not-allowed items-center justify-between gap-2 rounded-btn border border-dashed border-line bg-sunken px-5 py-3 text-[0.875rem] leading-none font-medium text-ink-muted"
+                    className="inline-flex min-h-11 cursor-not-allowed items-center justify-between gap-2 rounded-btn border border-dashed border-line-strong bg-surface px-5 py-3 text-[0.875rem] leading-none font-medium text-ink-muted"
                   >
                     <span>{job.name}</span>
                     <span className="shrink-0 font-mono text-meta text-ink-muted">

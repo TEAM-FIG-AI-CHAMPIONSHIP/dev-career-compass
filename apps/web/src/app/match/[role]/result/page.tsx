@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getExperienceCatalog, listJobs, dataSource } from "@/lib/data";
-import { DataSourceNote } from "@/components/ui/PageHeader";
+import { DataSourceNote } from "@/components/ui/DataSourceNote";
 import { StepHeader } from "@/components/ui/StepHeader";
 import { ReverseResult } from "./ReverseResult";
 import { PageWidth } from "@/components/ui/PageWidth";
@@ -19,7 +19,7 @@ export default async function MatchResultPage({ params }: Props) {
 
   return (
     <>
-      <StepHeader current="done" />
+      <StepHeader current="done" role={role} />
 
       <main className="grow bg-[linear-gradient(180deg,var(--accent-tint)_0%,var(--paper)_20rem)] py-12 lg:py-14">
         <PageWidth className="flex flex-col gap-11">

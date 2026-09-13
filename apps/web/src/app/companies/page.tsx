@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getCompanyIndex } from "@/lib/data";
 import { CompanyList } from "@/components/company/CompanyList";
-import { PageHeader } from "@/components/ui/PageHeader";
+import { AppHeader } from "@/components/ui/AppHeader";
 import { PageWidth } from "@/components/ui/PageWidth";
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export default function CompaniesPage() {
 
   return (
     <>
-      <PageHeader />
+      <AppHeader />
 
       <main className="grow bg-[linear-gradient(180deg,var(--accent-tint)_0%,var(--paper)_20rem)] pb-16">
         <PageWidth>
