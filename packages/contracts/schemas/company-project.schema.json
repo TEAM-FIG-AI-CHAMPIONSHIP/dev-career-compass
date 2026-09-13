@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://dev-career-compass.local/schemas/company-project.schema.json",
+  "title": "Company project",
+  "description": "회사 근거에서 만든 프로젝트와 사용자의 진입·연결 경험",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "version",
+    "id",
+    "companyId",
+    "roleId",
+    "trackIds",
+    "title",
+    "body",
+    "entryExperienceIds",
+    "bridgeExperienceIds",
+    "evidenceIds",
+    "status"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "version": { "type": "integer", "minimum": 1 },
+    "id": { "$ref": "#/definitions/slug" },
+    "companyId": { "$ref": "#/definitions/slug" },
+    "roleId": { "$ref": "#/definitions/slug" },
+    "trackIds": { "$ref": "#/definitions/uniqueSlugs" },
+    "title": { "type": "string", "minLength": 1, "maxLength": 120 },
+    "body": { "type": "string", "minLength": 1, "maxLength": 600 },
+    "entryExperienceIds": { "$ref": "#/definitions/uniqueSlugs" },
+    "bridgeExperienceIds": { "$ref": "#/definitions/uniqueSlugs" },
+    "evidenceIds": { "$ref": "#/definitions/uniqueSlugs" },
+    "status": { "$ref": "#/definitions/status" }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "status": { "const": "published" } }
+      },
+      "then": {
+        "properties": { "evidenceIds": { "minItems": 1 } },
+        "anyOf": [
+          { "properties": { "entryExperienceIds": { "minItems": 1 } } },
+          { "properties": { "bridgeExperienceIds": { "minItems": 1 } } }
+        ]
+      }
+    }
+  ],
+  "definitions": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "published", "deprecated"]
+    },
+    "uniqueSlugs": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "$ref": "#/definitions/slug" }
+    }
+  }
+}
+

@@ -1,0 +1,113 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://dev-career-compass.local/schemas/experience-catalog.schema.json",
+  "title": "Experience catalog",
+  "description": "사용자 확인과 회사 프로젝트 연결에 쓰는 표준 기술 경험",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "version", "categories", "items"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "version": { "type": "integer", "minimum": 1 },
+    "categories": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/definitions/category" }
+    },
+    "items": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/experience" }
+    }
+  },
+  "definitions": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "published", "deprecated"]
+    },
+    "nonEmptyUniqueSlugs": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "$ref": "#/definitions/slug" }
+    },
+    "uniqueSlugs": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "$ref": "#/definitions/slug" }
+    },
+    "examples": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1, "maxLength": 200 }
+    },
+    "category": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "label", "status"],
+      "properties": {
+        "id": { "$ref": "#/definitions/slug" },
+        "label": { "type": "string", "minLength": 1, "maxLength": 60 },
+        "description": { "type": "string", "minLength": 1, "maxLength": 240 },
+        "status": { "$ref": "#/definitions/status" }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "githubAnalysis",
+        "strongEvidenceExamples",
+        "weakEvidenceExamples",
+        "selfReportQuestion"
+      ],
+      "properties": {
+        "githubAnalysis": { "type": "boolean" },
+        "strongEvidenceExamples": { "$ref": "#/definitions/examples" },
+        "weakEvidenceExamples": { "$ref": "#/definitions/examples" },
+        "selfReportQuestion": { "type": "string", "minLength": 1, "maxLength": 200 }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "githubAnalysis": { "const": true } }
+          },
+          "then": {
+            "properties": {
+              "strongEvidenceExamples": { "minItems": 1 },
+              "weakEvidenceExamples": { "minItems": 1 }
+            }
+          }
+        }
+      ]
+    },
+    "experience": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "categoryId",
+        "label",
+        "description",
+        "roleIds",
+        "trackIds",
+        "verification",
+        "status"
+      ],
+      "properties": {
+        "id": { "$ref": "#/definitions/slug" },
+        "categoryId": { "$ref": "#/definitions/slug" },
+        "label": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "description": { "type": "string", "minLength": 1, "maxLength": 240 },
+        "roleIds": { "$ref": "#/definitions/nonEmptyUniqueSlugs" },
+        "trackIds": { "$ref": "#/definitions/uniqueSlugs" },
+        "verification": { "$ref": "#/definitions/verification" },
+        "status": { "$ref": "#/definitions/status" }
+      }
+    }
+  }
+}
+

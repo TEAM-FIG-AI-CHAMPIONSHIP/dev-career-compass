@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "version": 1,
+  "roles": [
+    {
+      "id": "backend",
+      "label": "서버·백엔드",
+      "description": "서버 애플리케이션과 플랫폼을 만드는 직무군",
+      "status": "published",
+      "tracks": [
+        {
+          "id": "application-backend",
+          "label": "애플리케이션 서버",
+          "status": "draft"
+        },
+        {
+          "id": "platform-infra",
+          "label": "플랫폼·인프라",
+          "status": "draft"
+        }
+      ]
+    }
+  ]
+}
+
