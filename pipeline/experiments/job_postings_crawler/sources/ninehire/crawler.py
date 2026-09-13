@@ -43,14 +43,33 @@ from bs4 import BeautifulSoup
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-from common.http_utils import fetch  # noqa: E402
+from common.http_utils import fetch, fetch_json  # noqa: E402
 from common.job_classifier import classify_job  # noqa: E402
 from common.paths import PROCESSED_DIR, RAW_DIR  # noqa: E402
 
+# mode:
+#   sitemap — (1) *.ninehire.site / sitemap SSR
+#   api     — (2) 자체 도메인 + api.ninehire.com
 NINEHIRE_COMPANIES = {
-    "yogiyo": ("요기요", "https://wesangcareer.ninehire.site"),
-    "remember": ("리멤버", "https://hello.remember.co.kr"),
+    "yogiyo": {
+        "name": "요기요",
+        "base_url": "https://wesangcareer.ninehire.site",
+        "mode": "sitemap",
+    },
+    "remember": {
+        "name": "리멤버",
+        "base_url": "https://hello.remember.co.kr",
+        "mode": "sitemap",
+    },
+    "megazone": {
+        "name": "메가존클라우드",
+        "base_url": "https://career.megazone.com",
+        "mode": "api",
+    },
 }
+
+NINEHIRE_API = "https://api.ninehire.com/identity-access/homepage/recruitments"
+API_PAGE_SIZE = 100
 
 LOC = re.compile(r"<loc>(.*?)</loc>", re.S)
 
@@ -69,6 +88,34 @@ def extract_recruitment(html):
         return None, None
     props = json.loads(tag.string).get("props", {}).get("pageProps", {})
     return props.get("recruitment"), props.get("jobPosting")
+
+
+def extract_company_id(html):
+    """자체 도메인 홈의 __NEXT_DATA__에서 나인하이어 companyId를 읽는다."""
+    tag = BeautifulSoup(html, "html.parser").find("script", id="__NEXT_DATA__")
+    if not tag or not tag.string:
+        return None
+    props = json.loads(tag.string).get("props", {}).get("pageProps", {})
+    homepage = (props.get("homepageProps") or {}).get("homepage") or {}
+    return homepage.get("companyId")
+
+
+def fetch_recruitments_via_api(company_uuid):
+    """api.ninehire.com 공개 목록. page는 1부터, 한 페이지 최대 100건."""
+    collected, page, total = [], 1, None
+    while True:
+        body = fetch_json(
+            NINEHIRE_API,
+            params={"companyId": company_uuid, "page": page, "countPerPage": API_PAGE_SIZE},
+        )
+        batch = body.get("results") or []
+        if total is None:
+            total = body.get("count") or 0
+        collected.extend(batch)
+        if not batch or len(collected) >= total:
+            break
+        page += 1
+    return collected, total
 
 
 def to_processed(company_id, record):
@@ -101,7 +148,7 @@ def to_processed(company_id, record):
     }
 
 
-def crawl_company(company_id, company_name, base_url):
+def crawl_company_sitemap(company_id, company_name, base_url):
     urls = job_posting_urls(base_url)
 
     records, failures = [], []
@@ -116,6 +163,56 @@ def crawl_company(company_id, company_name, base_url):
             continue
         records.append({"url": url, "recruitment": recruitment, "jobPosting": job_posting})
 
+    return save_ninehire(
+        company_id,
+        company_name,
+        base_url,
+        records,
+        failures,
+        source_url=f"{base_url}/sitemap.xml",
+        extracted_from="job_posting 상세 __NEXT_DATA__.pageProps.recruitment",
+        extra={"sitemap_job_urls": len(urls)},
+        sitemap_urls=len(urls),
+    )
+
+
+def crawl_company_api(company_id, company_name, base_url):
+    html = fetch(base_url)
+    company_uuid = extract_company_id(html)
+    if not company_uuid:
+        raise RuntimeError(f"{company_id}: __NEXT_DATA__에서 companyId를 못 찾음")
+
+    recruitments, total = fetch_recruitments_via_api(company_uuid)
+    records = []
+    for recruitment in recruitments:
+        address_key = recruitment.get("addressKey")
+        url = f"{base_url.rstrip('/')}/job_posting/{address_key}" if address_key else base_url
+        records.append({"url": url, "recruitment": recruitment, "jobPosting": None})
+
+    return save_ninehire(
+        company_id,
+        company_name,
+        base_url,
+        records,
+        failures=[],
+        source_url=NINEHIRE_API,
+        extracted_from="api.ninehire.com identity-access/homepage/recruitments",
+        extra={"ninehire_company_id": company_uuid, "api_total": total},
+        sitemap_urls=0,
+    )
+
+
+def save_ninehire(
+    company_id,
+    company_name,
+    base_url,
+    records,
+    failures,
+    source_url,
+    extracted_from,
+    extra,
+    sitemap_urls,
+):
     fetched_at = datetime.now(timezone.utc).isoformat()
 
     RAW_DIR.mkdir(parents=True, exist_ok=True)
@@ -125,10 +222,10 @@ def crawl_company(company_id, company_name, base_url):
                 "company_id": company_id,
                 "company_name": company_name,
                 "source": "ninehire",
-                "source_url": f"{base_url}/sitemap.xml",
-                "extracted_from": "job_posting 상세 __NEXT_DATA__.pageProps.recruitment",
+                "source_url": source_url,
+                "extracted_from": extracted_from,
                 "fetched_at": fetched_at,
-                "sitemap_job_urls": len(urls),
+                **extra,
                 "failures": failures,
                 "openings": records,
             },
@@ -161,7 +258,7 @@ def crawl_company(company_id, company_name, base_url):
         "company_id": company_id,
         "company_name": company_name,
         "url": base_url,
-        "sitemap_urls": len(urls),
+        "sitemap_urls": sitemap_urls,
         "raw_count": len(records),
         "deploy_true": len(active),
         "deploy_false": len(processed) - len(active),
@@ -173,12 +270,19 @@ def crawl_company(company_id, company_name, base_url):
     }
 
 
+def crawl_company(company_id, company_name, base_url, mode="sitemap"):
+    if mode == "api":
+        return crawl_company_api(company_id, company_name, base_url)
+    return crawl_company_sitemap(company_id, company_name, base_url)
+
+
 def crawl_all():
     results = []
-    for company_id, (name, base_url) in NINEHIRE_COMPANIES.items():
+    for company_id, meta in NINEHIRE_COMPANIES.items():
+        name, base_url, mode = meta["name"], meta["base_url"], meta.get("mode", "sitemap")
         print(f"  수집 중: {company_id} ({name}) ...", flush=True)
         try:
-            results.append(crawl_company(company_id, name, base_url))
+            results.append(crawl_company(company_id, name, base_url, mode=mode))
         except Exception as exc:
             results.append({"company_id": company_id, "company_name": name, "error": str(exc), "url": base_url})
     return results
