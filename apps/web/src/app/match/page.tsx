@@ -6,6 +6,7 @@ import { ButtonLink } from "@/components/ui/Button";
 import { StepNav } from "@/components/ui/StepNav";
 import { PageWidth } from "@/components/ui/PageWidth";
 import { StepHeader } from "@/components/ui/StepHeader";
+import { CommandLine } from "@/components/ui/CommandLine";
 import { ArrowLeftIcon, ArrowRightIcon } from "@/components/ui/icons";
 import { Empty } from "@/components/ui/state/Empty";
 
@@ -22,7 +23,8 @@ export default function MatchPage() {
       <main className="grow py-12 lg:py-14">
         <PageWidth className="flex flex-col gap-11">
           <div className="flex max-w-3xl flex-col gap-3">
-            <h1 className="text-[1.75rem] leading-[1.4] font-semibold tracking-[-0.012em] text-pretty sm:text-[1.875rem]">
+            <CommandLine>jobs --list</CommandLine>
+            <h1 className="text-display font-semibold text-pretty">
               어떤 직무를 찾고 있나요?
             </h1>
             <p className="text-body text-ink-soft">

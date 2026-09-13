@@ -25,7 +25,7 @@ export default async function MatchRepositoryPage({ params }: Props) {
         <PageWidth className="flex flex-col gap-11">
           <div className="flex max-w-3xl flex-col gap-3">
             <CommandLine>github-scan --role {role}</CommandLine>
-            <h1 className="text-[1.75rem] leading-[1.4] font-semibold tracking-[-0.012em] text-pretty sm:text-[1.875rem]">
+            <h1 className="text-display font-semibold text-pretty">
               GitHub 저장소 (선택)
             </h1>
             <p className="text-body text-ink-soft">

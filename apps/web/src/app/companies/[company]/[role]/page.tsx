@@ -15,6 +15,7 @@ import {
 import { DomainChips } from "@/components/result/DomainChips";
 import { PickedExport } from "@/components/result/PickedExport";
 import { AppHeader } from "@/components/ui/AppHeader";
+import { CommandLine } from "@/components/ui/CommandLine";
 import { ButtonLink } from "@/components/ui/Button";
 import { StepNav } from "@/components/ui/StepNav";
 import { DataSourceNote } from "@/components/ui/DataSourceNote";
@@ -101,6 +102,9 @@ export default async function CompanyResultPage({ params }: Props) {
         <PageWidth className="flex flex-col gap-12">
           <header className="flex flex-col gap-4 pt-10 lg:pt-12">
             <div className="flex max-w-3xl flex-col gap-2">
+              <CommandLine>
+                analyze {company}/{role}
+              </CommandLine>
               <h1 className="text-display font-semibold text-balance">
                 {analysis.company.name} {analysis.job.name}
               </h1>

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getExperienceCatalog, listJobs, dataSource } from "@/lib/data";
 import { DataSourceNote } from "@/components/ui/DataSourceNote";
 import { StepHeader } from "@/components/ui/StepHeader";
+import { CommandLine } from "@/components/ui/CommandLine";
 import { ReverseResult } from "./ReverseResult";
 import { PageWidth } from "@/components/ui/PageWidth";
 
@@ -24,7 +25,8 @@ export default async function MatchResultPage({ params }: Props) {
       <main className="grow py-12 lg:py-14">
         <PageWidth className="flex flex-col gap-11">
           <div className="flex max-w-3xl flex-col gap-3">
-            <h1 className="text-[1.75rem] leading-[1.4] font-semibold tracking-[-0.014em] text-pretty sm:text-[1.875rem]">
+            <CommandLine>match --role {role}</CommandLine>
+            <h1 className="text-display font-semibold text-pretty">
               지금 경험으로 이야기가 통하는 조직부터
             </h1>
             <p className="text-body text-ink-soft">
