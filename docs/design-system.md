@@ -151,6 +151,25 @@
 
 ## 컴포넌트
 
+이 문서는 **규칙**으로 묶여 있습니다. 파일에서 찾아 들어갈 때 쓰는 목록입니다.
+
+| 파일                            | 규칙이 적힌 곳                    |
+| ------------------------------- | --------------------------------- |
+| `ui/TerminalWindow.tsx`         | 창                                |
+| `ui/Card.tsx`                   | 카드 / 고르는 화면                |
+| `ui/Chip.tsx`                   | 태그 / 이름표 바탕                |
+| `ui/StageBadge.tsx`             | 태그                              |
+| `ui/Button.tsx`                 | 버튼                              |
+| `ui/CheckOption.tsx`            | 체크박스                          |
+| `ui/CommandLine.tsx`            | 명령 한 줄                        |
+| `ui/StepHeader.tsx`             | 단계 표시                         |
+| `ui/ThemeToggle.tsx`            | 테마 — 진입 화면에만              |
+| `ui/PixelLogo.tsx` (Wordmark)   | 타이포 — Archivo 는 로고 한 곳    |
+| `ui/RepoField.tsx`              | 모서리 — 입력 칸 3px              |
+| `ui/state/AnalysisTerminal.tsx` | 움직임 — 커서 깜빡임은 여기 한 곳 |
+| `result/PickedExport.tsx`       | 선택과 내보내기                   |
+| `lib/suggestion-picks.ts`       | 선택과 내보내기                   |
+
 ### 창 — `TerminalWindow`
 
 제목은 가운데가 아니라 **왼쪽**이고 `>_` 로 시작합니다. 신호등은 눌리지
