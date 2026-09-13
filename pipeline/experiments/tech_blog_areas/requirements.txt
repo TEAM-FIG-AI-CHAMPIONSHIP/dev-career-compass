@@ -1,0 +1,9 @@
+requests
+feedparser
+trafilatura
+python-dateutil
+sentence-transformers
+scikit-learn
+beautifulsoup4
+anthropic
+pydantic
