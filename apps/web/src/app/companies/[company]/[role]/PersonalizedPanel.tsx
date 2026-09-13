@@ -6,7 +6,7 @@ import { describeExperience, describeUnchosen } from "@/lib/personalize";
 import { useExperience, clearExperience } from "@/lib/experience-store";
 import { beginMatchFlow } from "@/lib/match-flow-store";
 import { routes } from "@/lib/routes";
-import { CheckIcon } from "@/components/ui/icons";
+import { ArrowRightIcon, CheckIcon } from "@/components/ui/icons";
 import { Button } from "@/components/ui/Button";
 
 export function PersonalizedPanel({
@@ -24,24 +24,21 @@ export function PersonalizedPanel({
 
   if (!input) {
     return (
-      <div className="flex flex-col items-start justify-between gap-5 rounded-card border border-accent bg-accent-tint p-[26px] sm:flex-row sm:items-center">
-        <div className="flex flex-col gap-1.5">
-          <p className="text-[1.03125rem] leading-[1.55] font-semibold">
+      <Link
+        href={experienceHref}
+        onClick={prepareExperienceFlow}
+        className="flex items-center justify-between gap-4 rounded-card border border-accent bg-accent-tint p-5 text-ink no-underline transition-colors hover:border-accent-ink hover:no-underline sm:p-6"
+      >
+        <span className="flex flex-col gap-1">
+          <span className="text-[1.0625rem] leading-[1.55] font-semibold">
             내 경험을 넣으면 더 정확해져요
-          </p>
-          <p className="max-w-2xl text-[0.875rem] leading-[1.75] text-ink-soft">
-            해본 것을 몇 개 체크하면 위 제안 중에서 지금 당신에게 맞는 한 걸음만
-            남깁니다. 고른 값은 이 브라우저에만 남고 서버로 보내지 않습니다.
-          </p>
-        </div>
-        <Link
-          href={experienceHref}
-          onClick={prepareExperienceFlow}
-          className="inline-flex min-h-11 shrink-0 items-center rounded-btn border border-accent bg-accent px-5 py-3 text-[0.875rem] leading-none font-medium text-white no-underline transition-colors hover:border-accent-ink hover:bg-accent-ink hover:no-underline"
-        >
-          내 경험 넣기
-        </Link>
-      </div>
+          </span>
+          <span className="text-[0.875rem] leading-[1.75] text-ink-soft">
+            만든 것을 선택하면 다음 한 걸음을 좁혀드립니다
+          </span>
+        </span>
+        <ArrowRightIcon size={20} className="shrink-0 text-accent" />
+      </Link>
     );
   }
 
@@ -87,7 +84,7 @@ export function PersonalizedPanel({
                 className="mt-0.5 shrink-0 text-stage-fit"
               />
               <div className="flex flex-col gap-0.5">
-                <span className="text-[0.90625rem] leading-[1.65] font-medium">
+                <span className="text-[0.90625rem] leading-[1.65] font-medium break-all">
                   {item.label}
                 </span>
                 <span className="font-mono text-[0.71875rem] text-ink-muted">
