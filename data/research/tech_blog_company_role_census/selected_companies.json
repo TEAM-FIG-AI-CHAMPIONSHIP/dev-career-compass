@@ -1,7 +1,7 @@
 {
-  "issue": 30,
+  "issue": 40,
   "note": "verdict=pass 만. 직무당 기술글 8개. Area 게이트는 아직 아니다.",
-  "company_count": 31,
+  "company_count": 34,
   "companies": [
     {
       "name": "CJ올리브영",
@@ -62,17 +62,19 @@
       "name": "LG AI연구원",
       "blog_url": "https://www.lgresearch.ai/blog",
       "passing_roles": [
+        "서버·백엔드",
         "웹 프론트엔드",
+        "모바일",
         "데이터·AI"
       ],
       "role_counts": {
-        "서버·백엔드": 2,
-        "웹 프론트엔드": 10,
-        "모바일": 0,
-        "데이터·AI": 20
+        "서버·백엔드": 14,
+        "웹 프론트엔드": 37,
+        "모바일": 14,
+        "데이터·AI": 46
       },
-      "tech_count": 136,
-      "job_count": 2,
+      "tech_count": 57,
+      "job_count": 4,
       "gate": "first_count_only",
       "final_area_gate": false
     },
@@ -149,6 +151,23 @@
       "final_area_gate": false
     },
     {
+      "name": "네이버",
+      "blog_url": "https://d2.naver.com/home",
+      "passing_roles": [
+        "데이터·AI"
+      ],
+      "role_counts": {
+        "서버·백엔드": 6,
+        "웹 프론트엔드": 0,
+        "모바일": 3,
+        "데이터·AI": 10
+      },
+      "tech_count": 35,
+      "job_count": 1,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
       "name": "넥스트리",
       "blog_url": "https://www.nextree.io/tag/blog/",
       "passing_roles": [
@@ -182,6 +201,23 @@
       },
       "tech_count": 10,
       "job_count": 2,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
+      "name": "당근마켓 / 당근",
+      "blog_url": "https://medium.com/daangn",
+      "passing_roles": [
+        "웹 프론트엔드"
+      ],
+      "role_counts": {
+        "서버·백엔드": 4,
+        "웹 프론트엔드": 9,
+        "모바일": 4,
+        "데이터·AI": 7
+      },
+      "tech_count": 12,
+      "job_count": 1,
       "gate": "first_count_only",
       "final_area_gate": false
     },
@@ -259,23 +295,6 @@
       },
       "tech_count": 14,
       "job_count": 2,
-      "gate": "first_count_only",
-      "final_area_gate": false
-    },
-    {
-      "name": "무신사 / 29CM",
-      "blog_url": "https://techblog.musinsa.com/",
-      "passing_roles": [
-        "데이터·AI"
-      ],
-      "role_counts": {
-        "서버·백엔드": 3,
-        "웹 프론트엔드": 1,
-        "모바일": 0,
-        "데이터·AI": 8
-      },
-      "tech_count": 29,
-      "job_count": 1,
       "gate": "first_count_only",
       "final_area_gate": false
     },
@@ -455,11 +474,29 @@
       ],
       "role_counts": {
         "서버·백엔드": 11,
-        "웹 프론트엔드": 15,
+        "웹 프론트엔드": 12,
         "모바일": 4,
-        "데이터·AI": 5
+        "데이터·AI": 4
       },
-      "tech_count": 56,
+      "tech_count": 51,
+      "job_count": 2,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
+      "name": "우아한형제들 / 배달의민족",
+      "blog_url": "https://techblog.woowahan.com/",
+      "passing_roles": [
+        "서버·백엔드",
+        "데이터·AI"
+      ],
+      "role_counts": {
+        "서버·백엔드": 9,
+        "웹 프론트엔드": 6,
+        "모바일": 0,
+        "데이터·AI": 16
+      },
+      "tech_count": 42,
       "job_count": 2,
       "gate": "first_count_only",
       "final_area_gate": false
@@ -500,6 +537,24 @@
       },
       "tech_count": 73,
       "job_count": 4,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
+      "name": "카카오",
+      "blog_url": "https://tech.kakao.com/blog",
+      "passing_roles": [
+        "서버·백엔드",
+        "데이터·AI"
+      ],
+      "role_counts": {
+        "서버·백엔드": 17,
+        "웹 프론트엔드": 0,
+        "모바일": 0,
+        "데이터·AI": 15
+      },
+      "tech_count": 73,
+      "job_count": 2,
       "gate": "first_count_only",
       "final_area_gate": false
     },

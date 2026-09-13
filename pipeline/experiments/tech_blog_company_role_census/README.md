@@ -1,6 +1,6 @@
 # Tech Blog Company × Role Census
 
-관련 이슈: #40 (이전 #30)
+관련 이슈: census 보강 (이전 #40 #30)
 
 111개 기술블로그를 저비용으로 전수 조사해 `회사 × 직무` 1차 게이트를 만든다.
 회사 이름으로 60~80개를 먼저 고르지 않는다.
@@ -23,6 +23,7 @@ python pipeline/experiments/tech_blog_company_role_census/scripts/collect.py
 python pipeline/experiments/tech_blog_company_role_census/scripts/collect_round2.py
 python pipeline/experiments/tech_blog_company_role_census/scripts/backfill_titles.py
 python pipeline/experiments/tech_blog_company_role_census/scripts/collect_priority.py
+python pipeline/experiments/tech_blog_company_role_census/scripts/collect_expand.py
 python pipeline/experiments/tech_blog_company_role_census/scripts/extract.py
 python pipeline/experiments/tech_blog_company_role_census/scripts/classify_and_gate.py
 ```

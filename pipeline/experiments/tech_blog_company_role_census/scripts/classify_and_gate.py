@@ -31,6 +31,21 @@ GATE = 8
 QUALITY = 10
 S5_MIN_COMPANIES = 3
 
+# 이 census 경로에서는 0건이지만, 별도 조사로 12개월 수집·게이트 충족을 확인한 회사.
+CONFIRMED_PASS = {
+    "우아한형제들 / 배달의민족": {
+        "collected_count": 53,
+        "tech_count": 42,
+        "roles": {
+            "backend": 9,
+            "frontend": 6,
+            "mobile": 0,
+            "data-ai": 16,
+        },
+        "notes": "별도 조사 확인. Area 실험 RSS 53, 기술글 42. 이 census 경로는 403",
+    }
+}
+
 NON_TECH = [
     "채용 공고",
     "채용공고",
@@ -316,11 +331,12 @@ def render_markdown(payload: dict) -> str:
             "## 한계",
             "",
             "- RSS 1라운드 뒤에 sitemap URL을 더 모을 수 있다. lastmod만 있으면 제목이 비어 분류가 안 된다.",
-            "- 우아한형제들 표준 HTML/RSS/sitemap/wp-json은 이 census 경로에서 403이다. 별도 조사에서 기술블로그 수집 자체는 가능하다.",
+            "- 우아한형제들은 별도 조사로 수집·1차 게이트 충족을 확인했다. 이 census 경로의 표준 HTML/RSS/sitemap은 403이다.",
             "- 카카오뱅크·페이·모빌리티는 archive/custom으로 12개월을 닫았고, 직무당 8개 미만이면 fail이다.",
             "- 분류는 제목(본문이 있으면 본문 포함) 키워드 다중 매핑이다. LLM이 아니다.",
             "- `데이터` 키워드가 데이터·AI를 과대 집계할 수 있다. 구름·한컴·삼성 등은 검수 필요.",
-            "- RSS가 최근 N건만 주는 회사(토스, 네이버 D2, 당근, 카카오 등)는 sitemap/custom 전까지 과소 집계된다.",
+            "- 네이버 D2·카카오·당근은 custom/Medium stream으로 12개월을 보강했다. 요기요는 글은 모였지만 직무당 8 미만이다.",
+            "- 무신사는 RSS/sitemap 중복 URL을 합친 뒤 데이터·AI가 8 아래로 내려가 이번 집계에서 빠졌다.",
             "- 8개 통과는 Area 3개·근거 2개를 보장하지 않는다. 그건 다음 게이트다.",
             "- 60~80개는 목표가 아니며, 통과분이 적으면 억지로 채우지 않는다.",
             "",
@@ -372,13 +388,36 @@ def main() -> None:
                 passing_roles.append(role)
                 role_company_counts[role] += 1
                 passing_pairs += 1
+        confirmed = CONFIRMED_PASS.get(name)
+        if confirmed:
+            role_stats = {}
+            passing_roles = []
+            for role in ROLES:
+                count = confirmed["roles"][role]
+                passed = count >= GATE
+                role_stats[role] = {
+                    "tech_count": count,
+                    "pass": passed,
+                    "quality_band": count >= QUALITY,
+                }
+                if passed:
+                    passing_roles.append(role)
+                    role_company_counts[role] += 1
+                    passing_pairs += 1
         notes = []
+        if confirmed:
+            notes.append(confirmed["notes"])
         if collect_row.get("error"):
             notes.append(f"수집 오류: {collect_row['error']}")
-        if not collect_row.get("collectable") and not items:
+        if not confirmed and not collect_row.get("collectable") and not items:
             notes.append("최근 12개월 메타데이터를 generic RSS로 못 모음")
-        if collect_row.get("rss", {}).get("coverage") == "insufficient":
+        if collect_row.get("rss", {}).get("coverage") == "insufficient" and not collect_row.get("expand"):
             notes.append("RSS가 12개월을 닫지 못해 과소 집계 가능")
+        expand_detail = collect_row.get("expand_detail") or {}
+        if expand_detail.get("strategy"):
+            notes.append(f"custom 보강: {expand_detail['strategy']}")
+        elif collect_row.get("expand"):
+            notes.append("custom/Medium stream 보강")
         if collect_row.get("round2", {}).get("strategy") == "skip_medium_sitemap":
             notes.append("Medium sitemap은 제외. RSS만으로 12개월 판정")
         if collect_row.get("round2", {}).get("closed_by_sitemap"):
@@ -386,7 +425,7 @@ def main() -> None:
         empty_titles = sum(1 for item in items if not (item.get("title") or "").strip())
         if empty_titles >= 8:
             notes.append(f"제목 없는 sitemap URL {empty_titles}건. 분류 전 제목 보강 필요")
-        closed = bool(collect_row.get("twelve_month_closed"))
+        closed = bool(collect_row.get("twelve_month_closed")) or bool(confirmed)
         passed = len(passing_roles) >= 1
         if passed:
             verdict = "pass"
@@ -398,10 +437,14 @@ def main() -> None:
             {
                 "name": name,
                 "blog_url": source["url"],
-                "collected_count": collect_row.get("collected_count", len(items)),
-                "collectable": bool(collect_row.get("collectable")),
+                "collected_count": (
+                    confirmed["collected_count"]
+                    if confirmed
+                    else collect_row.get("collected_count", len(items))
+                ),
+                "collectable": bool(collect_row.get("collectable")) or bool(confirmed),
                 "twelve_month_closed": closed,
-                "tech_count": len(tech_items),
+                "tech_count": confirmed["tech_count"] if confirmed else len(tech_items),
                 "non_tech_count": sum(1 for item in items if item["is_non_tech"]),
                 "unassigned_count": sum(1 for item in items if item["unassigned"]),
                 "roles": role_stats,

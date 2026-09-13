@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-09-13T06:46:06.750071+00:00",
-  "issue": 30,
+  "generated_at": "2026-09-13T07:07:41.015420+00:00",
+  "issue": 40,
   "gate": {
     "min_tech_posts_per_role": 8,
     "quality_band": 10
   },
   "totals": {
     "companies": 111,
-    "collectable": 83,
-    "twelve_month_closed": 46,
-    "articles": 3218,
-    "extract_input": 837,
-    "extract_success": 626,
-    "tech_articles": 1642,
-    "passing_companies": 31,
-    "fail_companies": 36,
-    "unknown_companies": 44,
-    "passing_pairs": 76
+    "collectable": 84,
+    "twelve_month_closed": 54,
+    "articles": 3118,
+    "extract_input": 1140,
+    "extract_success": 761,
+    "tech_articles": 1667,
+    "passing_companies": 34,
+    "fail_companies": 39,
+    "unknown_companies": 38,
+    "passing_pairs": 83
   },
   "role_company_counts": {
-    "backend": 24,
-    "frontend": 15,
-    "mobile": 9,
-    "data-ai": 28
+    "backend": 27,
+    "frontend": 16,
+    "mobile": 10,
+    "data-ai": 30
   },
   "companies": [
     {
@@ -218,41 +218,43 @@
     {
       "name": "LG AI연구원",
       "blog_url": "https://www.lgresearch.ai/blog",
-      "collected_count": 268,
+      "collected_count": 57,
       "collectable": true,
-      "twelve_month_closed": false,
-      "tech_count": 136,
-      "non_tech_count": 132,
-      "unassigned_count": 132,
+      "twelve_month_closed": true,
+      "tech_count": 57,
+      "non_tech_count": 0,
+      "unassigned_count": 0,
       "roles": {
         "backend": {
-          "tech_count": 2,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 14,
+          "pass": true,
+          "quality_band": true
         },
         "frontend": {
-          "tech_count": 10,
+          "tech_count": 37,
           "pass": true,
           "quality_band": true
         },
         "mobile": {
-          "tech_count": 0,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 14,
+          "pass": true,
+          "quality_band": true
         },
         "data-ai": {
-          "tech_count": 20,
+          "tech_count": 46,
           "pass": true,
           "quality_band": true
         }
       },
       "passing_roles": [
+        "backend",
         "frontend",
+        "mobile",
         "data-ai"
       ],
       "pass_company": true,
       "verdict": "pass",
-      "notes": ""
+      "notes": "custom 보강: lg_ai_sitemap_html"
     },
     {
       "name": "LG CNS",
@@ -293,12 +295,12 @@
     {
       "name": "LG유플러스",
       "blog_url": "https://techblog.uplus.co.kr/",
-      "collected_count": 129,
+      "collected_count": 119,
       "collectable": true,
       "twelve_month_closed": false,
       "tech_count": 5,
-      "non_tech_count": 124,
-      "unassigned_count": 124,
+      "non_tech_count": 114,
+      "unassigned_count": 114,
       "roles": {
         "backend": {
           "tech_count": 2,
@@ -625,12 +627,12 @@
     {
       "name": "SSG.COM",
       "blog_url": "https://medium.com/ssgtech",
-      "collected_count": 10,
+      "collected_count": 13,
       "collectable": true,
-      "twelve_month_closed": false,
+      "twelve_month_closed": true,
       "tech_count": 5,
-      "non_tech_count": 5,
-      "unassigned_count": 5,
+      "non_tech_count": 8,
+      "unassigned_count": 8,
       "roles": {
         "backend": {
           "tech_count": 0,
@@ -655,8 +657,8 @@
       },
       "passing_roles": [],
       "pass_company": false,
-      "verdict": "unknown",
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
+      "verdict": "fail",
+      "notes": "custom 보강: medium_stream"
     },
     {
       "name": "VCNC / 타다",
@@ -845,15 +847,15 @@
     {
       "name": "네이버",
       "blog_url": "https://d2.naver.com/home",
-      "collected_count": 20,
+      "collected_count": 69,
       "collectable": true,
-      "twelve_month_closed": false,
-      "tech_count": 12,
-      "non_tech_count": 8,
-      "unassigned_count": 8,
+      "twelve_month_closed": true,
+      "tech_count": 35,
+      "non_tech_count": 34,
+      "unassigned_count": 34,
       "roles": {
         "backend": {
-          "tech_count": 0,
+          "tech_count": 6,
           "pass": false,
           "quality_band": false
         },
@@ -863,20 +865,22 @@
           "quality_band": false
         },
         "mobile": {
-          "tech_count": 0,
+          "tech_count": 3,
           "pass": false,
           "quality_band": false
         },
         "data-ai": {
-          "tech_count": 4,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 10,
+          "pass": true,
+          "quality_band": true
         }
       },
-      "passing_roles": [],
-      "pass_company": false,
-      "verdict": "unknown",
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
+      "passing_roles": [
+        "data-ai"
+      ],
+      "pass_company": true,
+      "verdict": "pass",
+      "notes": "custom 보강: d2_api"
     },
     {
       "name": "네이버랩스",
@@ -1248,38 +1252,40 @@
     {
       "name": "당근마켓 / 당근",
       "blog_url": "https://medium.com/daangn",
-      "collected_count": 10,
+      "collected_count": 25,
       "collectable": true,
-      "twelve_month_closed": false,
-      "tech_count": 5,
-      "non_tech_count": 5,
-      "unassigned_count": 5,
+      "twelve_month_closed": true,
+      "tech_count": 12,
+      "non_tech_count": 13,
+      "unassigned_count": 13,
       "roles": {
         "backend": {
-          "tech_count": 2,
-          "pass": false,
-          "quality_band": false
-        },
-        "frontend": {
           "tech_count": 4,
           "pass": false,
           "quality_band": false
         },
+        "frontend": {
+          "tech_count": 9,
+          "pass": true,
+          "quality_band": false
+        },
         "mobile": {
-          "tech_count": 1,
+          "tech_count": 4,
           "pass": false,
           "quality_band": false
         },
         "data-ai": {
-          "tech_count": 1,
+          "tech_count": 7,
           "pass": false,
           "quality_band": false
         }
       },
-      "passing_roles": [],
-      "pass_company": false,
-      "verdict": "unknown",
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
+      "passing_roles": [
+        "frontend"
+      ],
+      "pass_company": true,
+      "verdict": "pass",
+      "notes": "custom 보강: medium_stream"
     },
     {
       "name": "더스윙 / 스윙",
@@ -1464,20 +1470,20 @@
     {
       "name": "딜라이트룸",
       "blog_url": "https://medium.com/delightroom",
-      "collected_count": 10,
+      "collected_count": 27,
       "collectable": true,
-      "twelve_month_closed": false,
-      "tech_count": 2,
-      "non_tech_count": 8,
-      "unassigned_count": 8,
+      "twelve_month_closed": true,
+      "tech_count": 12,
+      "non_tech_count": 15,
+      "unassigned_count": 14,
       "roles": {
         "backend": {
-          "tech_count": 0,
+          "tech_count": 1,
           "pass": false,
           "quality_band": false
         },
         "frontend": {
-          "tech_count": 0,
+          "tech_count": 1,
           "pass": false,
           "quality_band": false
         },
@@ -1487,15 +1493,15 @@
           "quality_band": false
         },
         "data-ai": {
-          "tech_count": 0,
+          "tech_count": 3,
           "pass": false,
           "quality_band": false
         }
       },
       "passing_roles": [],
       "pass_company": false,
-      "verdict": "unknown",
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
+      "verdict": "fail",
+      "notes": "custom 보강: medium_stream"
     },
     {
       "name": "라인플러스",
@@ -1913,68 +1919,30 @@
     {
       "name": "무신사 / 29CM",
       "blog_url": "https://techblog.musinsa.com/",
-      "collected_count": 61,
+      "collected_count": 51,
       "collectable": true,
       "twelve_month_closed": false,
-      "tech_count": 29,
-      "non_tech_count": 32,
-      "unassigned_count": 32,
+      "tech_count": 23,
+      "non_tech_count": 28,
+      "unassigned_count": 28,
       "roles": {
         "backend": {
-          "tech_count": 3,
-          "pass": false,
-          "quality_band": false
-        },
-        "frontend": {
-          "tech_count": 1,
-          "pass": false,
-          "quality_band": false
-        },
-        "mobile": {
-          "tech_count": 0,
-          "pass": false,
-          "quality_band": false
-        },
-        "data-ai": {
-          "tech_count": 8,
-          "pass": true,
-          "quality_band": false
-        }
-      },
-      "passing_roles": [
-        "data-ai"
-      ],
-      "pass_company": true,
-      "verdict": "pass",
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
-    },
-    {
-      "name": "미리디",
-      "blog_url": "https://medium.com/miridih/subpage/3d936b50f942",
-      "collected_count": 10,
-      "collectable": true,
-      "twelve_month_closed": false,
-      "tech_count": 8,
-      "non_tech_count": 2,
-      "unassigned_count": 2,
-      "roles": {
-        "backend": {
-          "tech_count": 0,
-          "pass": false,
-          "quality_band": false
-        },
-        "frontend": {
-          "tech_count": 3,
-          "pass": false,
-          "quality_band": false
-        },
-        "mobile": {
-          "tech_count": 0,
-          "pass": false,
-          "quality_band": false
-        },
-        "data-ai": {
           "tech_count": 2,
+          "pass": false,
+          "quality_band": false
+        },
+        "frontend": {
+          "tech_count": 0,
+          "pass": false,
+          "quality_band": false
+        },
+        "mobile": {
+          "tech_count": 0,
+          "pass": false,
+          "quality_band": false
+        },
+        "data-ai": {
+          "tech_count": 5,
           "pass": false,
           "quality_band": false
         }
@@ -1983,6 +1951,42 @@
       "pass_company": false,
       "verdict": "unknown",
       "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
+    },
+    {
+      "name": "미리디",
+      "blog_url": "https://medium.com/miridih/subpage/3d936b50f942",
+      "collected_count": 25,
+      "collectable": true,
+      "twelve_month_closed": false,
+      "tech_count": 20,
+      "non_tech_count": 5,
+      "unassigned_count": 5,
+      "roles": {
+        "backend": {
+          "tech_count": 1,
+          "pass": false,
+          "quality_band": false
+        },
+        "frontend": {
+          "tech_count": 7,
+          "pass": false,
+          "quality_band": false
+        },
+        "mobile": {
+          "tech_count": 0,
+          "pass": false,
+          "quality_band": false
+        },
+        "data-ai": {
+          "tech_count": 5,
+          "pass": false,
+          "quality_band": false
+        }
+      },
+      "passing_roles": [],
+      "pass_company": false,
+      "verdict": "unknown",
+      "notes": "custom 보강: medium_stream"
     },
     {
       "name": "바비톡",
@@ -2775,12 +2779,12 @@
     {
       "name": "여기어때",
       "blog_url": "https://techblog.gccompany.co.kr/",
-      "collected_count": 126,
+      "collected_count": 116,
       "collectable": true,
       "twelve_month_closed": false,
-      "tech_count": 56,
-      "non_tech_count": 70,
-      "unassigned_count": 70,
+      "tech_count": 51,
+      "non_tech_count": 65,
+      "unassigned_count": 65,
       "roles": {
         "backend": {
           "tech_count": 11,
@@ -2788,7 +2792,7 @@
           "quality_band": true
         },
         "frontend": {
-          "tech_count": 15,
+          "tech_count": 12,
           "pass": true,
           "quality_band": true
         },
@@ -2798,7 +2802,7 @@
           "quality_band": false
         },
         "data-ai": {
-          "tech_count": 5,
+          "tech_count": 4,
           "pass": false,
           "quality_band": false
         }
@@ -2886,20 +2890,20 @@
     {
       "name": "우아한형제들 / 배달의민족",
       "blog_url": "https://techblog.woowahan.com/",
-      "collected_count": 0,
-      "collectable": false,
-      "twelve_month_closed": false,
-      "tech_count": 0,
+      "collected_count": 53,
+      "collectable": true,
+      "twelve_month_closed": true,
+      "tech_count": 42,
       "non_tech_count": 0,
       "unassigned_count": 0,
       "roles": {
         "backend": {
-          "tech_count": 0,
-          "pass": false,
+          "tech_count": 9,
+          "pass": true,
           "quality_band": false
         },
         "frontend": {
-          "tech_count": 0,
+          "tech_count": 6,
           "pass": false,
           "quality_band": false
         },
@@ -2909,25 +2913,28 @@
           "quality_band": false
         },
         "data-ai": {
-          "tech_count": 0,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 16,
+          "pass": true,
+          "quality_band": true
         }
       },
-      "passing_roles": [],
-      "pass_company": false,
-      "verdict": "unknown",
-      "notes": "최근 12개월 메타데이터를 generic RSS로 못 모음"
+      "passing_roles": [
+        "backend",
+        "data-ai"
+      ],
+      "pass_company": true,
+      "verdict": "pass",
+      "notes": "별도 조사 확인. Area 실험 RSS 53, 기술글 42. 이 census 경로는 403"
     },
     {
       "name": "웍스피어 / 잡코리아, 알바몬",
       "blog_url": "https://techblog.jobkorea.co.kr/",
-      "collected_count": 49,
+      "collected_count": 39,
       "collectable": true,
       "twelve_month_closed": false,
       "tech_count": 1,
-      "non_tech_count": 48,
-      "unassigned_count": 48,
+      "non_tech_count": 38,
+      "unassigned_count": 38,
       "roles": {
         "backend": {
           "tech_count": 0,
@@ -2994,20 +3001,20 @@
     {
       "name": "위대한상상 / 요기요",
       "blog_url": "https://techblog.yogiyo.co.kr/",
-      "collected_count": 25,
+      "collected_count": 15,
       "collectable": true,
-      "twelve_month_closed": false,
-      "tech_count": 11,
-      "non_tech_count": 14,
-      "unassigned_count": 14,
+      "twelve_month_closed": true,
+      "tech_count": 8,
+      "non_tech_count": 7,
+      "unassigned_count": 7,
       "roles": {
         "backend": {
-          "tech_count": 1,
+          "tech_count": 2,
           "pass": false,
           "quality_band": false
         },
         "frontend": {
-          "tech_count": 4,
+          "tech_count": 3,
           "pass": false,
           "quality_band": false
         },
@@ -3017,15 +3024,15 @@
           "quality_band": false
         },
         "data-ai": {
-          "tech_count": 0,
+          "tech_count": 1,
           "pass": false,
           "quality_band": false
         }
       },
       "passing_roles": [],
       "pass_company": false,
-      "verdict": "unknown",
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
+      "verdict": "fail",
+      "notes": "custom 보강: yogiyo_sitemap_leftover"
     },
     {
       "name": "인포그랩",
@@ -3219,17 +3226,17 @@
     {
       "name": "카카오",
       "blog_url": "https://tech.kakao.com/blog",
-      "collected_count": 10,
+      "collected_count": 82,
       "collectable": true,
-      "twelve_month_closed": false,
-      "tech_count": 7,
-      "non_tech_count": 3,
-      "unassigned_count": 3,
+      "twelve_month_closed": true,
+      "tech_count": 73,
+      "non_tech_count": 9,
+      "unassigned_count": 9,
       "roles": {
         "backend": {
-          "tech_count": 0,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 17,
+          "pass": true,
+          "quality_band": true
         },
         "frontend": {
           "tech_count": 0,
@@ -3242,15 +3249,18 @@
           "quality_band": false
         },
         "data-ai": {
-          "tech_count": 1,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 15,
+          "pass": true,
+          "quality_band": true
         }
       },
-      "passing_roles": [],
-      "pass_company": false,
-      "verdict": "unknown",
-      "notes": "RSS가 12개월을 닫지 못해 과소 집계 가능"
+      "passing_roles": [
+        "backend",
+        "data-ai"
+      ],
+      "pass_company": true,
+      "verdict": "pass",
+      "notes": "custom 보강: kakao_sitemap_html"
     },
     {
       "name": "카카오모빌리티",
@@ -3769,12 +3779,12 @@
     {
       "name": "펫프렌즈",
       "blog_url": "https://techblog.pet-friends.co.kr/",
-      "collected_count": 23,
+      "collected_count": 13,
       "collectable": true,
       "twelve_month_closed": false,
       "tech_count": 8,
-      "non_tech_count": 15,
-      "unassigned_count": 15,
+      "non_tech_count": 5,
+      "unassigned_count": 5,
       "roles": {
         "backend": {
           "tech_count": 1,
