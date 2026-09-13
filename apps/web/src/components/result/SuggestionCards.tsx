@@ -11,6 +11,8 @@ import { cardStyle } from "@/components/ui/Card";
 import { Chip } from "@/components/ui/Chip";
 import { cn } from "@/lib/cn";
 import { isPicked, togglePick, usePicks } from "@/lib/suggestion-picks";
+import { useExperience } from "@/lib/experience-store";
+import { groundedFirst, groundedSuggestionIds } from "@/lib/personalize";
 
 /**
  * 카드 맨 윗줄.
@@ -24,14 +26,23 @@ import { isPicked, togglePick, usePicks } from "@/lib/suggestion-picks";
 function CardMeta({
   domain,
   juniorDemand,
+  ground,
 }: {
   domain?: string;
   juniorDemand?: boolean;
+  /** 고른 경험에 닿아 있을 때만 넘깁니다. 무리마다 말이 다릅니다. */
+  ground?: string;
 }) {
-  if (!domain && !juniorDemand) return null;
+  if (!domain && !juniorDemand && !ground) return null;
   return (
     <div className="flex flex-wrap items-center gap-2">
       {domain && <Chip>{domain}</Chip>}
+      {ground && (
+        <Chip tone="accent">
+          <CheckIcon size={12} strokeWidth={1.8} />
+          {ground}
+        </Chip>
+      )}
       {juniorDemand && (
         <Chip tone="accent">
           <CheckIcon size={12} strokeWidth={1.8} />
@@ -198,12 +209,25 @@ export function NewSuggestions({
   suggestions,
   evidence,
   domainLabels,
+  catalogVersion,
 }: {
   suggestions: Analysis["suggestions"]["new"];
   evidence: Record<string, Evidence>;
   domainLabels: Record<string, string>;
+  catalogVersion: number;
 }) {
   const picks = usePicks();
+  const input = useExperience(catalogVersion);
+  /* 여기서는 표시만 하고 순서는 그대로 둡니다. 해본 기술이 들어간 제안이
+     먼저 와야 할 이유가 없습니다 — 오히려 안 해본 쪽이 배울 것이 많습니다. */
+  const grounded = groundedSuggestionIds(
+    suggestions.map((s) => ({ id: s.id, itemIds: s.coversItemIds })),
+    input,
+  );
+  /* 전부 걸리면 표시가 아무것도 가르지 않습니다. 모든 카드에 붙은 배지는
+     읽는 사람에게 잡음일 뿐입니다. */
+  const marks =
+    grounded.size < suggestions.length ? grounded : new Set<string>();
 
   return (
     <ul className="grid grid-cols-1 gap-3 lg:grid-cols-2">
@@ -213,6 +237,7 @@ export function NewSuggestions({
             <CardMeta
               domain={domainLabels[s.domainId]}
               juniorDemand={s.juniorDemand}
+              ground={marks.has(s.id) ? "해본 기술로 바로 붙습니다" : undefined}
             />
             <h3 className="text-h3 font-semibold text-pretty">{s.title}</h3>
             <StepList id={s.id} title={s.title} steps={s.steps} />
@@ -234,21 +259,35 @@ export function DeepenSuggestions({
   suggestions,
   evidence,
   domainLabels,
+  catalogVersion,
 }: {
   suggestions: Analysis["suggestions"]["deepen"];
   evidence: Record<string, Evidence>;
   domainLabels: Record<string, string>;
+  catalogVersion: number;
 }) {
   const picks = usePicks();
+  const input = useExperience(catalogVersion);
+  /* 이쪽은 순서를 바꿉니다. 출발점이 없는 사람에게는 제안 자체가 성립하지
+     않아서, 성립하는 것부터 보는 편이 낫습니다. */
+  const grounded = groundedSuggestionIds(
+    suggestions.map((s) => ({ id: s.id, itemIds: s.fromItemIds })),
+    input,
+  );
+  const ordered = groundedFirst(suggestions, grounded);
+  /* 순서는 늘 바꾸되, 배지는 가를 것이 있을 때만 붙입니다. */
+  const marks =
+    grounded.size < suggestions.length ? grounded : new Set<string>();
 
   return (
     <ul className="grid grid-cols-1 gap-3 lg:grid-cols-2">
-      {suggestions.map((s) => (
+      {ordered.map((s) => (
         <li key={s.id}>
           <SuggestionCard picked={!!picks[s.id]}>
             <CardMeta
               domain={domainLabels[s.domainId]}
               juniorDemand={s.juniorDemand}
+              ground={marks.has(s.id) ? "내가 만든 것에서 출발" : undefined}
             />
             <FromTo from={s.from} to={s.to} />
             <StepList id={s.id} title={s.to} steps={s.steps} />

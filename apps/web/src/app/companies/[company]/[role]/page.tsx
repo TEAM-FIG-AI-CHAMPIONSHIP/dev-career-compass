@@ -128,6 +128,7 @@ export default async function CompanyResultPage({ params }: Props) {
                 suggestions={analysis.suggestions.new}
                 evidence={evidence}
                 domainLabels={domainLabels}
+                catalogVersion={catalog.version}
               />
             </section>
           )}
@@ -141,6 +142,7 @@ export default async function CompanyResultPage({ params }: Props) {
                 suggestions={analysis.suggestions.deepen}
                 evidence={evidence}
                 domainLabels={domainLabels}
+                catalogVersion={catalog.version}
               />
             </section>
           )}

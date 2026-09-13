@@ -1,18 +1,21 @@
-import type { Analysis, ExperienceInput, ExperienceCatalog } from "@/types/data";
+import type {
+  Analysis,
+  ExperienceInput,
+  ExperienceCatalog,
+} from "@/types/data";
 
 /**
- * 개인화(S4)와 역매칭(S6)의 판단 부분입니다.
+ * 고른 경험으로 화면을 조금 다르게 그리는 판단 부분입니다.
  *
  * ─────────────────────────────────────────────────────────────────────────
- * 아직 구현하지 않았습니다. 의도한 공백입니다.
+ * 점수도 퍼센트도 만들지 않습니다.
  *
- * "다음 단계로 무엇을 고를지", "이 회사가 지금 경험과 얼마나 가까운지" 는
- * 판단이 필요한 일이고, 그 규칙이 아직 정해지지 않았습니다. 임시로 키워드
- * 매칭 같은 것을 넣으면 화면은 그럴듯해지지만 근거 없는 판단이 사용자에게
- * 나가게 됩니다. 그래서 자리만 만들어 두고 비워 뒀습니다.
+ * 판단은 하나뿐입니다 — 이 제안이 사용자가 고른 경험에 닿아 있는가. 데이터에
+ * 적힌 `coversItemIds` / `fromItemIds` 와 고른 항목이 겹치는지만 봅니다.
+ * 키워드를 추측해 맞추거나, 없는 근거를 만들어 순위를 매기지 않습니다.
  *
- * 규칙이 정해지면(LLM 이든 결정적 코드든) 아래 두 함수만 채우면 됩니다.
- * 화면은 이미 결과가 없는 상태를 그릴 수 있게 되어 있습니다.
+ * 역매칭(3단계로 회사를 나누는 일)은 아직 비어 있습니다. 그쪽은 규칙이
+ * 정해지지 않았고, 임시 규칙을 넣으면 근거 없는 배정이 사용자에게 나갑니다.
  * ─────────────────────────────────────────────────────────────────────────
  */
 
@@ -21,32 +24,6 @@ export type AlreadyDone = {
   label: string;
   /** 어디서 온 값인지 — 체크 항목인지 진행 수준인지 저장소인지 */
   origin: string;
-};
-
-export type NextStep = {
-  /** 이미 만든 것 위에 얹는 제안이면 그 출발점 */
-  from?: string;
-  title: string;
-  body: string;
-  evidence: { title: string; url: string; publishedAt: string; source: string }[];
-  reason: string;
-};
-
-/**
- * 고르지 않은 항목 중 이 조직이 반복해서 다루는 영역에 걸리는 것.
- *
- * 무엇과 대조해 "빈 곳"이라 부를지가 아직 정해지지 않았습니다. 체크하지 않은
- * 항목을 그대로 나열하면 어느 회사를 보든 같은 목록이 나오므로 화면에서는
- * 뺐습니다.
- */
-export type Gap = {
-  label: string;
-  body: string;
-};
-
-export type PersonalizedResult = {
-  nextStep: NextStep;
-  gaps: Gap[];
 };
 
 export type Stage = "fit" | "step" | "far";
@@ -79,7 +56,8 @@ export function describeExperience(
 
   for (const group of visibleGroups(catalog, role)) {
     for (const item of group.items) {
-      if (chosen.has(item.id)) out.push({ label: item.label, origin: group.title });
+      if (chosen.has(item.id))
+        out.push({ label: item.label, origin: group.title });
     }
   }
 
@@ -93,17 +71,45 @@ export function describeExperience(
 }
 
 /**
- * 다음 한 걸음을 고릅니다. 미구현 — 규칙이 정해지면 여기를 채웁니다.
+ * 고른 경험에 닿아 있는 제안을 가려냅니다.
  *
- * 채울 때 지킬 것:
- *  - 제안은 반드시 analysis 안의 근거에 연결되어야 합니다. 없는 근거를 만들지 않습니다.
- *  - 점수나 퍼센트를 만들어 내지 않습니다.
+ * 제안마다 데이터에 적힌 경험 항목(`coversItemIds` 또는 `fromItemIds`)이
+ * 있고, 그중 하나라도 고른 항목과 겹치면 "닿아 있다" 고 봅니다. 겹침은
+ * 데이터에 적힌 사실이라 추측이 들어가지 않습니다.
+ *
+ * 경험을 넣지 않았거나 아무것도 고르지 않았으면 빈 집합입니다 — 화면은 아무
+ * 표시 없이 원래 순서를 그립니다.
  */
-export function personalize(
-  _analysis: Analysis,
-  _input: ExperienceInput,
-): PersonalizedResult | null {
-  return null;
+export function groundedSuggestionIds(
+  suggestions: { id: string; itemIds: string[] }[],
+  input: ExperienceInput | null,
+): Set<string> {
+  if (!input || input.itemIds.length === 0) return new Set();
+  const chosen = new Set(input.itemIds);
+  return new Set(
+    suggestions
+      .filter(({ itemIds }) => itemIds.some((id) => chosen.has(id)))
+      .map(({ id }) => id),
+  );
+}
+
+/**
+ * 전제가 있는 제안을 앞으로 보냅니다.
+ *
+ * "이미 만든 것을 발전시킬 것" 에만 씁니다. 출발점이 없는 사람에게는 제안
+ * 자체가 성립하지 않아서, 성립하는 것부터 보는 편이 낫습니다. 같은 무리
+ * 안에서는 데이터가 준 순서를 그대로 둡니다 — 무리 안에서 다시 줄을 세울
+ * 근거가 없습니다.
+ */
+export function groundedFirst<T extends { id: string }>(
+  suggestions: T[],
+  grounded: Set<string>,
+): T[] {
+  if (grounded.size === 0) return suggestions;
+  return [
+    ...suggestions.filter((s) => grounded.has(s.id)),
+    ...suggestions.filter((s) => !grounded.has(s.id)),
+  ];
 }
 
 /**

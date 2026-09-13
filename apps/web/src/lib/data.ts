@@ -24,7 +24,10 @@ function hasCompanies(dir: string): boolean {
   if (!existsSync(dir)) return false;
   return readdirSync(dir).some((entry) => {
     const path = join(dir, entry);
-    return statSync(path).isDirectory() && readdirSync(path).some((f) => f.endsWith(".json"));
+    return (
+      statSync(path).isDirectory() &&
+      readdirSync(path).some((f) => f.endsWith(".json"))
+    );
   });
 }
 
@@ -62,7 +65,8 @@ export function listCombinations(): { company: string; job: string }[] {
     const cdir = join(dir, company);
     if (!statSync(cdir).isDirectory()) continue;
     for (const f of readdirSync(cdir)) {
-      if (f.endsWith(".json")) out.push({ company, job: f.replace(/\.json$/, "") });
+      if (f.endsWith(".json"))
+        out.push({ company, job: f.replace(/\.json$/, "") });
     }
   }
   return out;
@@ -83,7 +87,11 @@ export function getAnalysesForJob(job: string): Analysis[] {
 }
 
 /** 게시된 조합이 3곳 이상인 직무만. 회사 수가 많은 순서입니다. */
-export function listJobs(): { slug: string; name: string; companyCount: number }[] {
+export function listJobs(): {
+  slug: string;
+  name: string;
+  companyCount: number;
+}[] {
   const counts = new Map<string, { name: string; count: number }>();
   for (const { company, job } of listCombinations()) {
     const analysis = getAnalysis(company, job);
@@ -93,5 +101,7 @@ export function listJobs(): { slug: string; name: string; companyCount: number }
   }
   return [...counts.entries()]
     .map(([slug, v]) => ({ slug, name: v.name, companyCount: v.count }))
-    .sort((a, b) => b.companyCount - a.companyCount || a.slug.localeCompare(b.slug));
+    .sort(
+      (a, b) => b.companyCount - a.companyCount || a.slug.localeCompare(b.slug),
+    );
 }

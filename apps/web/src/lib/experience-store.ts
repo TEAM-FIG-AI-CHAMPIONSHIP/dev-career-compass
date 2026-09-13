@@ -20,7 +20,10 @@ const listeners = new Set<() => void>();
 
 function readRaw(): string | null {
   try {
-    return window.localStorage.getItem(KEY) ?? window.localStorage.getItem(LEGACY_KEY);
+    return (
+      window.localStorage.getItem(KEY) ??
+      window.localStorage.getItem(LEGACY_KEY)
+    );
   } catch {
     // 프라이빗 모드나 저장소 차단. 저장이 안 될 뿐 화면은 그대로 돌아야 합니다.
     return null;
@@ -68,7 +71,11 @@ function emit(): void {
  * 있으면, 사라진 항목 id 가 그대로 개인화에 실려 나갑니다.
  */
 export function useExperience(catalogVersion: number): ExperienceInput | null {
-  const stored = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  const stored = useSyncExternalStore(
+    subscribe,
+    getSnapshot,
+    getServerSnapshot,
+  );
   if (!stored) return null;
   return stored.catalogVersion === catalogVersion ? stored : null;
 }

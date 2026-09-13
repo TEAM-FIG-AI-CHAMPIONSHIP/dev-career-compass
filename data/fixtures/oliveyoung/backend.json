@@ -73,6 +73,9 @@
           "어디까지 늦어도 괜찮은지 정하고 그 기준을 README에 적기"
         ],
         "domainId": "dom-inventory-consistency",
+        "coversItemIds": [
+          "messaging-queue"
+        ],
         "evidenceIds": [
           "ev-oy-kafka-out-of-stock",
           "ev-oy-inventory-pipeline"
@@ -89,6 +92,9 @@
           "규칙을 넣기 전후에 무엇이 달라졌는지 기록으로 남기기"
         ],
         "domainId": "dom-inventory-consistency",
+        "coversItemIds": [
+          "concurrency"
+        ],
         "evidenceIds": [
           "ev-oy-inventory-pipeline",
           "ev-oy-store-data-interconnection"
@@ -104,6 +110,10 @@
           "무엇이 빨라지고 무엇이 복잡해졌는지 양쪽 다 적기"
         ],
         "domainId": "dom-event-driven",
+        "coversItemIds": [
+          "data-pipeline",
+          "messaging-queue"
+        ],
         "evidenceIds": [
           "ev-oy-display-benefits-migration"
         ]
@@ -121,6 +131,10 @@
           "온라인과 오프라인이 같은 재고를 볼 때 무엇이 더 어려워지는지 적기"
         ],
         "domainId": "dom-order-payment",
+        "fromItemIds": [
+          "rest-api",
+          "crud"
+        ],
         "evidenceIds": [
           "ev-oy-offline-payment",
           "ev-oy-orderpay-squad"
@@ -137,6 +151,9 @@
           "바꾸기 전후를 비교해 그 현상이 실제로 사라졌는지 확인하기"
         ],
         "domainId": "dom-inventory-consistency",
+        "fromItemIds": [
+          "rest-api"
+        ],
         "evidenceIds": [
           "ev-oy-kafka-out-of-stock"
         ]
@@ -152,6 +169,9 @@
           "왜 그 기준인지 근거를 적어 두기"
         ],
         "domainId": "dom-observability",
+        "fromItemIds": [
+          "monitoring"
+        ],
         "evidenceIds": [
           "ev-oy-product-monitoring"
         ]
@@ -167,6 +187,9 @@
           "동기 호출과 복제 중 무엇을 골랐고 그 대가가 무엇이었는지 적기"
         ],
         "domainId": "dom-event-driven",
+        "fromItemIds": [
+          "crud"
+        ],
         "evidenceIds": [
           "ev-oy-store-data-interconnection",
           "ev-oy-display-benefits-migration"
