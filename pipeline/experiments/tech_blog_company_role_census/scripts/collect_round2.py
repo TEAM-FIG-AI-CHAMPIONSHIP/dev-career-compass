@@ -22,6 +22,7 @@ from dateutil.relativedelta import relativedelta
 
 sys.path.insert(0, str(Path(__file__).parent))
 from paths import ARTICLES_FILE, COLLECT_REPORT, COMPANIES_FILE, ROUND2_REPORT
+from url_filters import looks_like_article
 
 HEADERS = {
     "User-Agent": (
@@ -198,7 +199,11 @@ def collect_one(session, source, cutoff, existing_urls, delay):
     old_count = [0]
     for root in roots:
         parse_sitemap(session, root, cutoff, visited, raw, old_count)
-    under = {url: lastmod for url, lastmod in raw.items() if under_blog(url, blog_url)}
+    under = {
+        url: lastmod
+        for url, lastmod in raw.items()
+        if under_blog(url, blog_url) and looks_like_article(url, blog_url)
+    }
     print("sitemap under blog", len(under), "outside", len(raw) - len(under), "visited", len(visited))
 
     added = []
