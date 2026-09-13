@@ -1,40 +1,49 @@
+"use client";
+
 import { Fragment } from "react";
-import { routes } from "@/lib/routes";
-import { BackHeader } from "./BackHeader";
+import { useMatchExit } from "@/lib/match-flow-store";
+import { AppHeader } from "./AppHeader";
+import { ArrowRightIcon } from "./icons";
 
 /**
  * 경험 기반 탐색의 상단 바. 직무 · GitHub · 경험 세 화면이 같은 것을 씁니다.
  *
+ * 1단계는 흐름에 따라 다릅니다. 회사 결과에서 시작했으면 고른 적 없는 직무
+ * 선택이 아니라 그 회사·직무가 1단계이고, 그곳이 곧 돌아갈 곳입니다.
+ *
  * 결과 화면은 네 번째 단계가 아니라 세 단계를 모두 지나온 도착점이라 "done" 을
  * 넘깁니다. 그때는 어느 단계도 현재로 표시하지 않습니다.
- *
- * 단계를 늘리거나 줄이면 STEPS 만 고치면 되고, 화면 쪽은 현재 번호만 넘깁니다.
  */
-const STEPS = ["직무", "GitHub", "경험"] as const;
+const LATER_STEPS = ["GitHub", "경험"] as const;
 
 export type StepNumber = 1 | 2 | 3;
-
-/** "done" 은 세 단계를 모두 끝낸 상태입니다. */
 export type StepState = StepNumber | "done";
 
-export function StepHeader({ current }: { current: StepState }) {
-  const active = current === "done" ? STEPS.length + 1 : current;
+export function StepHeader({
+  current,
+  role,
+}: {
+  current: StepState;
+  role: string;
+}) {
+  const exit = useMatchExit(role);
+  const active = current === "done" ? LATER_STEPS.length + 2 : current;
+  const steps = [exit.label, ...LATER_STEPS];
+
   return (
-    <BackHeader
-      href={routes.home}
-      label="처음으로"
+    <AppHeader
       right={
         <ol
           aria-label="진행 단계"
           className="flex items-center gap-2 text-[0.8125rem]"
         >
-          {STEPS.map((label, index) => {
+          {steps.map((label, index) => {
             const step = index + 1;
             return (
               <Fragment key={label}>
                 {index > 0 && (
-                  <li aria-hidden="true" className="text-line-strong">
-                    →
+                  <li aria-hidden="true" className="flex text-line-strong">
+                    <ArrowRightIcon size={13} strokeWidth={1.7} />
                   </li>
                 )}
                 <li

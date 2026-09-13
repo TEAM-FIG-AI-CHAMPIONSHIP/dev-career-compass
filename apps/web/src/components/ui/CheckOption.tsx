@@ -3,6 +3,7 @@
 import { CheckIcon } from "./icons";
 import { Chip } from "./Chip";
 import { cn } from "@/lib/cn";
+import { cardStyle } from "./Card";
 
 /**
  * 경험 입력의 다중 선택 카드. 최소 선택 개수를 강제하지 않습니다.
@@ -23,11 +24,10 @@ export function CheckboxCard({
 }) {
   return (
     <label
-      className={cn(
-        "flex h-full min-h-11 cursor-pointer items-start gap-3 rounded-card border p-4",
-        "bg-surface transition-colors",
-        checked ? "border-ink" : "border-line hover:border-ink-muted",
-      )}
+      className={cardStyle("action", {
+        selected: checked,
+        className: "flex h-full min-h-11 cursor-pointer items-start gap-3 p-4",
+      })}
     >
       <input
         type="checkbox"
@@ -40,7 +40,7 @@ export function CheckboxCard({
         className={cn(
           "mt-0.5 flex size-[18px] shrink-0 items-center justify-center rounded-[3px] border",
           checked
-            ? "border-ink bg-ink text-paper"
+            ? "border-accent bg-accent text-white"
             : "border-ink-muted bg-surface",
         )}
       >
@@ -77,14 +77,12 @@ export const CheckOption = CheckboxCard;
  * 진행 수준 단일 선택 카드. 한 그룹에서 하나만 고릅니다.
  */
 export function RadioCard({
-  name,
   step,
   title,
   description,
   selected,
   onSelect,
 }: {
-  name: string;
   step?: string;
   title: string;
   description: string;
@@ -92,74 +90,33 @@ export function RadioCard({
   onSelect: () => void;
 }) {
   return (
-    <label
-      className={cn(
-        "flex h-full cursor-pointer flex-col gap-1.5 rounded-card border p-[18px] text-left",
-        "transition-colors",
-        selected
-          ? "border-ink bg-ink"
-          : "border-line bg-surface hover:border-ink-muted",
-      )}
+    <button
+      type="button"
+      role="radio"
+      aria-checked={selected}
+      onClick={onSelect}
+      className={cardStyle("action", {
+        selected,
+        className:
+          "flex h-full cursor-pointer flex-col gap-1.5 p-[18px] text-left",
+      })}
     >
-      <input
-        type="radio"
-        name={name}
-        checked={selected}
-        onChange={onSelect}
-        className="sr-only"
-      />
       {step ? (
         <span
           className={cn(
             "font-mono text-[0.6875rem] tracking-[0.06em]",
-            selected ? "text-ink-soft" : "text-ink-muted",
+            selected ? "text-accent" : "text-ink-muted",
           )}
         >
           {step}
         </span>
       ) : null}
-      <span
-        className={cn(
-          "text-[0.9375rem] leading-[1.6] font-semibold",
-          selected ? "text-paper" : "text-ink",
-        )}
-      >
+      <span className="text-[0.9375rem] leading-[1.6] font-semibold text-ink">
         {title}
       </span>
-      <span
-        className={cn(
-          "text-[0.8125rem] leading-[1.7]",
-          selected ? "text-line-strong" : "text-ink-soft",
-        )}
-      >
+      <span className="text-[0.8125rem] leading-[1.7] text-ink-soft">
         {description}
       </span>
-    </label>
-  );
-}
-
-/** 디자인 시스템 갤러리와 기존 import를 위한 별칭. */
-export function LevelOption({
-  step,
-  title,
-  description,
-  selected,
-  onSelect,
-}: {
-  step: string;
-  title: string;
-  description: string;
-  selected: boolean;
-  onSelect: () => void;
-}) {
-  return (
-    <RadioCard
-      name="experience-level-gallery"
-      step={step}
-      title={title}
-      description={description}
-      selected={selected}
-      onSelect={onSelect}
-    />
+    </button>
   );
 }

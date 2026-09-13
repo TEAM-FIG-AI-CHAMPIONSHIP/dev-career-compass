@@ -1,5 +1,6 @@
 import type { Analysis, Evidence } from "@/types/data";
 import { ArrowRightIcon, CheckIcon, ExternalIcon } from "@/components/ui/icons";
+import { cardStyle } from "@/components/ui/Card";
 
 /** 제안이 어느 영역에서 나왔는지. 카드 바닥에 알약으로 답니다. */
 function DomainTag({ label }: { label?: string }) {
@@ -11,7 +12,13 @@ function DomainTag({ label }: { label?: string }) {
   );
 }
 
-function EvidenceLinks({ ids, byId }: { ids: string[]; byId: Map<string, Evidence> }) {
+function EvidenceLinks({
+  ids,
+  byId,
+}: {
+  ids: string[];
+  byId: Map<string, Evidence>;
+}) {
   const items = ids.map((id) => byId.get(id)).filter((e): e is Evidence => !!e);
   if (items.length === 0) return null;
 
@@ -34,7 +41,11 @@ function EvidenceLinks({ ids, byId }: { ids: string[]; byId: Map<string, Evidenc
               className="inline-flex items-start gap-1.5 text-[0.8125rem] leading-[1.65]"
             >
               {e.title}
-              <ExternalIcon size={13} strokeWidth={1.5} className="mt-1 shrink-0" />
+              <ExternalIcon
+                size={13}
+                strokeWidth={1.5}
+                className="mt-1 shrink-0"
+              />
             </a>
           </li>
         ))}
@@ -45,7 +56,7 @@ function EvidenceLinks({ ids, byId }: { ids: string[]; byId: Map<string, Evidenc
 
 function JuniorBadge() {
   return (
-    <span className="inline-flex w-fit items-center gap-1.5 rounded-pill border border-stage-fit-edge bg-stage-fit-tint px-2.5 py-1 text-caption leading-normal text-stage-fit">
+    <span className="inline-flex w-fit items-center gap-1.5 rounded-pill border border-accent bg-accent-tint px-2.5 py-1 text-caption leading-normal text-accent">
       <CheckIcon size={13} strokeWidth={1.8} />
       신입 공고에서도 요구됨
     </span>
@@ -71,7 +82,11 @@ export function NewSuggestions({
     <ol className="grid grid-cols-1 items-start gap-3 lg:grid-cols-2">
       {suggestions.map((s, index) => (
         <li key={s.id}>
-          <article className="flex gap-4 rounded-card border border-line bg-surface p-5 transition-colors hover:border-accent sm:gap-5 sm:p-6">
+          <article
+            className={cardStyle("static", {
+              className: "flex gap-4 p-5 sm:gap-5 sm:p-6",
+            })}
+          >
             <span
               aria-hidden="true"
               className="flex size-8 shrink-0 items-center justify-center rounded-card bg-accent-tint text-[0.875rem] font-semibold text-accent"
@@ -82,7 +97,9 @@ export function NewSuggestions({
               <h3 className="text-[1.0625rem] leading-[1.55] font-semibold text-pretty">
                 {s.title}
               </h3>
-              <p className="text-[0.90625rem] leading-[1.75] text-ink-soft">{s.body}</p>
+              <p className="text-[0.90625rem] leading-[1.75] text-ink-soft">
+                {s.body}
+              </p>
               <DomainTag label={domainLabel(s.domainId)} />
               {s.juniorDemand && <JuniorBadge />}
               <EvidenceLinks ids={s.evidenceIds} byId={byId} />
@@ -113,10 +130,14 @@ export function DeepenSuggestions({
     <ul className="grid grid-cols-1 items-start gap-3 lg:grid-cols-2">
       {suggestions.map((s, index) => (
         <li key={s.id}>
-          <article className="flex gap-4 rounded-card border border-line bg-paper p-5 transition-colors hover:border-stage-fit-edge sm:gap-5 sm:p-6">
+          <article
+            className={cardStyle("static", {
+              className: "flex gap-4 p-5 sm:gap-5 sm:p-6",
+            })}
+          >
             <span
               aria-hidden="true"
-              className="flex size-8 shrink-0 items-center justify-center rounded-card bg-stage-fit-tint text-[0.875rem] font-semibold text-stage-fit"
+              className="flex size-8 shrink-0 items-center justify-center rounded-card bg-accent-tint text-[0.875rem] font-semibold text-accent"
             >
               {index + 1}
             </span>
@@ -131,7 +152,9 @@ export function DeepenSuggestions({
               <h3 className="text-[1.0625rem] leading-[1.55] font-semibold text-pretty">
                 {s.to}
               </h3>
-              <p className="text-[0.90625rem] leading-[1.75] text-ink-soft">{s.body}</p>
+              <p className="text-[0.90625rem] leading-[1.75] text-ink-soft">
+                {s.body}
+              </p>
               <DomainTag label={domainLabel(s.domainId)} />
               {s.juniorDemand && <JuniorBadge />}
               <EvidenceLinks ids={s.evidenceIds} byId={byId} />

@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { listJobs } from "@/lib/data";
 import { routes } from "@/lib/routes";
+import { CardLink } from "@/components/ui/Card";
+import { ButtonLink } from "@/components/ui/Button";
+import { StepNav } from "@/components/ui/StepNav";
+import { PageWidth } from "@/components/ui/PageWidth";
 import { StepHeader } from "@/components/ui/StepHeader";
-import { ArrowRightIcon, CompassIcon } from "@/components/ui/icons";
+import { ArrowLeftIcon, ArrowRightIcon } from "@/components/ui/icons";
 import { Empty } from "@/components/ui/state/Empty";
 
 export const metadata: Metadata = { title: "직무 선택" };
@@ -14,54 +17,63 @@ export default function MatchPage() {
 
   return (
     <>
-      <StepHeader current={1} />
+      <StepHeader current={1} role="" />
 
-      <main className="flex grow flex-col gap-11 px-4 py-12 sm:px-8 lg:px-20 lg:py-14">
-        <div className="flex max-w-3xl flex-col gap-3">
-          <div className="flex size-11 items-center justify-center rounded-card bg-accent-tint text-accent">
-            <CompassIcon size={22} strokeWidth={1.5} />
+      <main className="grow bg-[linear-gradient(180deg,var(--accent-tint)_0%,var(--paper)_20rem)] py-12 lg:py-14">
+        <PageWidth className="flex flex-col gap-11">
+          <div className="flex max-w-3xl flex-col gap-3">
+            <h1 className="text-[1.75rem] leading-[1.4] font-semibold tracking-[-0.012em] text-pretty sm:text-[1.875rem]">
+              어떤 직무를 찾고 있나요?
+            </h1>
+            <p className="text-body text-ink-soft">
+              직무를 선택하면, GitHub 저장소와 경험을 입력하고 맞는 회사를 찾을
+              수 있어요.
+            </p>
           </div>
-          <h1 className="text-[1.75rem] leading-[1.4] font-semibold tracking-[-0.012em] text-pretty sm:text-[1.875rem]">
-            어떤 직무를 찾고 있나요?
-          </h1>
-          <p className="text-body text-ink-soft">
-            직무를 선택하면, GitHub 저장소와 경험을 입력하고 맞는 회사를 찾을 수
-            있어요.
-          </p>
-        </div>
 
-        {jobs.length === 0 ? (
-          <div className="max-w-3xl">
-            <Empty
-              title="아직 고를 직무가 없습니다"
-              description="근거가 충분히 모인 조합이 생기면 여기에 나타납니다."
-            />
-          </div>
-        ) : (
-          /* 머리말은 줄이 길어지면 읽기 나쁘므로 max-w-3xl 로 묶고, 카드는
-             그 상한을 풀어 화면 폭을 씁니다. 넓은 화면에서는 네 직무가 한 줄에
-             들어와 오른쪽이 비지 않습니다. */
-          <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
-            {jobs.map((job) => (
-              <li key={job.slug}>
-                <Link
-                  href={routes.matchRepository(job.slug)}
-                  className="flex h-full min-h-11 items-center justify-between gap-3 rounded-card border border-line bg-surface p-[18px] no-underline transition-colors hover:border-ink-muted hover:no-underline"
-                >
-                  <span className="flex flex-col gap-1.5">
-                    <span className="text-[0.9375rem] leading-[1.6] font-semibold text-ink">
-                      {job.name}
+          {jobs.length === 0 ? (
+            <div className="max-w-3xl">
+              <Empty
+                title="아직 고를 직무가 없습니다"
+                description="근거가 충분히 모인 조합이 생기면 여기에 나타납니다."
+              />
+            </div>
+          ) : (
+            /* 직무 수가 아직 정해지지 않았습니다. 2열은 개수가 홀수여도 마지막
+             한 칸만 남고, 늘어나면 행이 늘 뿐이라 개수에 휘둘리지 않습니다. */
+            <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {jobs.map((job) => (
+                <li key={job.slug}>
+                  <CardLink
+                    href={routes.matchRepository(job.slug)}
+                    className="flex h-full min-h-11 items-center justify-between gap-3 p-[18px]"
+                  >
+                    <span className="flex flex-col gap-1.5">
+                      <span className="text-[0.9375rem] leading-[1.6] font-semibold text-ink">
+                        {job.name}
+                      </span>
+                      <span className="w-fit rounded-pill bg-sunken px-2.5 py-1 text-[0.8125rem] leading-[1.5] text-ink-soft">
+                        {job.companyCount}곳 매칭 가능
+                      </span>
                     </span>
-                    <span className="w-fit rounded-pill bg-sunken px-2.5 py-1 text-[0.8125rem] leading-[1.5] text-ink-soft">
-                      {job.companyCount}곳 매칭 가능
-                    </span>
-                  </span>
-                  <ArrowRightIcon size={18} className="shrink-0 text-ink-muted" />
-                </Link>
-              </li>
-            ))}
-          </ul>
-        )}
+                    <ArrowRightIcon
+                      size={18}
+                      className="shrink-0 text-ink-muted"
+                    />
+                  </CardLink>
+                </li>
+              ))}
+            </ul>
+          )}
+          <StepNav
+            back={
+              <ButtonLink variant="secondary" href={routes.home}>
+                <ArrowLeftIcon size={14} strokeWidth={1.7} />
+                처음으로
+              </ButtonLink>
+            }
+          />
+        </PageWidth>
       </main>
     </>
   );

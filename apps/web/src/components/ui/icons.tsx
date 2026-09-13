@@ -74,24 +74,6 @@ export const PlusIcon = (p: IconProps) => (
 );
 
 /** 심화 제안 — 층을 하나 더 쌓는다는 뜻 */
-export const LayersIcon = (p: IconProps) => (
-  <Icon {...p}>
-    <path d="M3 7l7-3 7 3-7 3-7-3z" />
-    <path d="M3 12l7 3 7-3" />
-  </Icon>
-);
-
-export const ChevronDownIcon = (p: IconProps) => (
-  <Icon {...p}>
-    <path d="M5 8l5 5 5-5" />
-  </Icon>
-);
-
-export const ChevronUpIcon = (p: IconProps) => (
-  <Icon {...p}>
-    <path d="M5 12l5-5 5 5" />
-  </Icon>
-);
 
 export const ExternalIcon = (p: IconProps) => (
   <Icon {...p}>
@@ -102,25 +84,12 @@ export const ExternalIcon = (p: IconProps) => (
 );
 
 /** 개인정보 안내 */
-export const ShieldIcon = (p: IconProps) => (
-  <Icon {...p}>
-    <path d="M10 2.8l6 2.4v4.2c0 3.9-2.5 6.3-6 7.4-3.5-1.1-6-3.5-6-7.4V5.2l6-2.4z" />
-  </Icon>
-);
 
 export const AlertIcon = (p: IconProps) => (
   <Icon {...p}>
     <circle cx="10" cy="10" r="7.2" />
     <path d="M10 6.4v4.2" />
     <path d="M10 13.4v.2" />
-  </Icon>
-);
-
-export const InfoIcon = (p: IconProps) => (
-  <Icon {...p}>
-    <circle cx="10" cy="10" r="7.2" />
-    <path d="M10 9.4v4" />
-    <path d="M10 6.6v.2" />
   </Icon>
 );
 
@@ -156,52 +125,3 @@ export const ArrowLeftIcon = (p: IconProps) => (
   </Icon>
 );
 
-export const CompassIcon = (p: IconProps) => (
-  <Icon {...p}>
-    <circle cx="10" cy="10" r="7.2" />
-    <path d="M12.9 7.1l-1.5 4.3-4.3 1.5 1.5-4.3z" />
-  </Icon>
-);
-
-export const SparkleIcon = (p: IconProps) => (
-  <Icon {...p}>
-    <path d="M8 3l1.4 3.6L13 8l-3.6 1.4L8 13l-1.4-3.6L3 8l3.6-1.4z" />
-    <path d="M14.5 12l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z" />
-  </Icon>
-);
-
-export const CircleCheckIcon = (p: IconProps) => (
-  <Icon {...p}>
-    <circle cx="10" cy="10" r="7.2" />
-    <path d="M6.8 10.2l2.2 2.2 4.2-4.6" />
-  </Icon>
-);
-
-export const ClockIcon = (p: IconProps) => (
-  <Icon {...p}>
-    <circle cx="10" cy="10" r="7.2" />
-    <path d="M10 6v4.3l2.8 1.7" />
-  </Icon>
-);
-
-export const TrendingUpIcon = (p: IconProps) => (
-  <Icon {...p}>
-    <path d="M3.5 13.5l4-4.2 3 2.6 5.8-6" />
-    <path d="M12.6 5.9h3.9v3.9" />
-  </Icon>
-);
-
-export const DocumentIcon = (p: IconProps) => (
-  <Icon {...p}>
-    <path d="M11.4 2.8H6a1.6 1.6 0 00-1.6 1.6v11.2A1.6 1.6 0 006 17.2h8a1.6 1.6 0 001.6-1.6V7z" />
-    <path d="M11.4 2.8V7h4.2" />
-  </Icon>
-);
-
-export const BriefcaseIcon = (p: IconProps) => (
-  <Icon {...p}>
-    <rect x="2.8" y="6.2" width="14.4" height="10" rx="1.6" />
-    <path d="M7.4 6.2V4.8a1.4 1.4 0 011.4-1.4h2.4a1.4 1.4 0 011.4 1.4v1.4" />
-    <path d="M2.8 10.4h14.4" />
-  </Icon>
-);
