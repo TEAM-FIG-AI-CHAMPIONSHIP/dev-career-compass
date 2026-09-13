@@ -32,6 +32,7 @@ sys.path.insert(
 )
 
 from extract_engineering_focus import (  # noqa: E402
+    EXCLUDED_FILE,
     FOCUS_VERSION,
     load_target_articles,
     normalize_text
@@ -73,6 +74,13 @@ RESULTS_FILE = (
 )
 
 MODEL_NAME = "manual/claude.ai"
+
+# 시스템 프롬프트가 이 문구를 강제 지시하지는 않지만, 실제 수동
+# 프롬프팅 결과에서 비엔지니어링 글(사내 행사/문화 회고 등)에 대해
+# 모델이 자발적으로 이 패턴으로 응답하는 것을 확인했다. 이 표시가
+# 붙은 항목은 engineering_focus가 아니라 "추출할 내용 없음"이므로
+# 최종 결과에서 제외하고 excluded_articles.json에 별도 기록한다.
+NO_CONTENT_MARKER = "추출 가능한 엔지니어링 내용이 없음"
 
 
 def load_json(path):
@@ -212,7 +220,18 @@ def main():
                 item["article_id"]
             ] = item
 
+    existing_excluded = {}
+
+    if EXCLUDED_FILE.exists():
+        for item in load_json(
+            EXCLUDED_FILE
+        ):
+            existing_excluded[
+                item["article_id"]
+            ] = item
+
     merged_count = 0
+    excluded_count = 0
     skipped_parts = []
 
     for row in manifest_rows:
@@ -346,6 +365,43 @@ def main():
 
                 continue
 
+            focus_text = normalize_text(
+                entry.get(
+                    "engineering_focus",
+                    ""
+                )
+            )
+
+            if NO_CONTENT_MARKER in focus_text:
+                existing_results.pop(
+                    article_id,
+                    None
+                )
+
+                existing_excluded[
+                    article_id
+                ] = {
+                    "article_id": article_id,
+                    "company": meta["company"],
+                    "title": normalize_text(
+                        meta["title"]
+                    ),
+                    "url": meta["url"],
+                    "reason": (
+                        "manual_no_"
+                        "engineering_content"
+                    )
+                }
+
+                excluded_count += 1
+
+                continue
+
+            existing_excluded.pop(
+                article_id,
+                None
+            )
+
             existing_results[
                 article_id
             ] = {
@@ -362,12 +418,7 @@ def main():
                     meta["content_hash"]
                 ),
                 "engineering_focus": (
-                    normalize_text(
-                        entry.get(
-                            "engineering_focus",
-                            ""
-                        )
-                    )
+                    focus_text
                 ),
                 "focus_version": (
                     FOCUS_VERSION
@@ -389,6 +440,13 @@ def main():
         )
     )
 
+    save_json(
+        EXCLUDED_FILE,
+        list(
+            existing_excluded.values()
+        )
+    )
+
     print()
     print("=" * 60)
     print("완료")
@@ -400,8 +458,20 @@ def main():
     )
 
     print(
-        "전체 누적:",
+        "이번에 제외 "
+        "(추출 가능한 엔지니어링 "
+        "내용이 없음):",
+        excluded_count
+    )
+
+    print(
+        "전체 누적(병합):",
         len(existing_results)
+    )
+
+    print(
+        "전체 누적(제외):",
+        len(existing_excluded)
     )
 
     if skipped_parts:
