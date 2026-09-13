@@ -1,14 +1,24 @@
 {
-  "company": { "slug": "oliveyoung", "name": "올리브영" },
-  "job": { "slug": "backend", "name": "서버·백엔드" },
+  "company": {
+    "slug": "oliveyoung",
+    "name": "올리브영"
+  },
+  "job": {
+    "slug": "backend",
+    "name": "서버·백엔드"
+  },
   "generatedAt": "2026-09-12T00:00:00Z",
-  "window": { "from": "2025-09-12", "to": "2026-09-12" },
-
+  "window": {
+    "from": "2025-09-12",
+    "to": "2026-09-12"
+  },
   "domains": [
     {
       "id": "dom-inventory-consistency",
       "label": "재고 정합성·품절 반영",
-      "counts": { "blog": 4 },
+      "counts": {
+        "blog": 4
+      },
       "evidenceIds": [
         "ev-oy-inventory-pipeline",
         "ev-oy-kafka-out-of-stock",
@@ -19,13 +29,20 @@
     {
       "id": "dom-event-driven",
       "label": "배치를 이벤트로 옮기기",
-      "counts": { "blog": 2 },
-      "evidenceIds": ["ev-oy-display-benefits-migration", "ev-oy-kafka-out-of-stock"]
+      "counts": {
+        "blog": 2
+      },
+      "evidenceIds": [
+        "ev-oy-display-benefits-migration",
+        "ev-oy-kafka-out-of-stock"
+      ]
     },
     {
       "id": "dom-order-payment",
       "label": "주문·결제·배송 처리",
-      "counts": { "blog": 3 },
+      "counts": {
+        "blog": 3
+      },
       "evidenceIds": [
         "ev-oy-offline-payment",
         "ev-oy-delivery-optimization",
@@ -35,33 +52,61 @@
     {
       "id": "dom-observability",
       "label": "운영 중 문제 찾아내기",
-      "counts": { "blog": 2 },
-      "evidenceIds": ["ev-oy-product-monitoring", "ev-oy-wms-pda"]
+      "counts": {
+        "blog": 2
+      },
+      "evidenceIds": [
+        "ev-oy-product-monitoring",
+        "ev-oy-wms-pda"
+      ]
     }
   ],
-
   "suggestions": {
     "new": [
       {
         "id": "sg-stock-event-propagation",
         "title": "재고가 0이 되는 순간을 이벤트로 퍼뜨려 보기",
         "body": "재고 테이블이 바뀌면 그 사실을 이벤트로 흘려보내고, 목록·검색·상세가 각자 그 이벤트를 받아 품절 표시를 갱신하게 만듭니다. 어디까지 늦어도 괜찮은지를 정하고 그 기준을 README에 적어 두세요.",
+        "steps": [
+          "재고 테이블이 바뀌면 그 사실을 이벤트로 흘려보내기",
+          "목록·검색·상세가 각자 이벤트를 받아 품절 표시를 갱신하게 만들기",
+          "어디까지 늦어도 괜찮은지 정하고 그 기준을 README에 적기"
+        ],
         "domainId": "dom-inventory-consistency",
-        "evidenceIds": ["ev-oy-kafka-out-of-stock", "ev-oy-inventory-pipeline"]
+        "evidenceIds": [
+          "ev-oy-kafka-out-of-stock",
+          "ev-oy-inventory-pipeline"
+        ]
       },
       {
         "id": "sg-stale-update-guard",
         "title": "늦게 도착한 재고 갱신이 최신 값을 덮지 않게 막기",
         "body": "여러 경로에서 재고 변경이 들어온다고 가정하고, 순서가 뒤바뀐 메시지를 일부러 만들어 보세요. 버전이나 타임스탬프로 옛 값을 버리는 규칙을 넣고, 넣기 전후에 무엇이 달라졌는지 기록으로 남깁니다.",
+        "steps": [
+          "여러 경로에서 재고 변경이 들어오는 상황 만들기",
+          "순서가 뒤바뀐 메시지를 일부러 흘려보내기",
+          "버전이나 타임스탬프로 옛 값을 버리는 규칙 넣기",
+          "규칙을 넣기 전후에 무엇이 달라졌는지 기록으로 남기기"
+        ],
         "domainId": "dom-inventory-consistency",
-        "evidenceIds": ["ev-oy-inventory-pipeline", "ev-oy-store-data-interconnection"]
+        "evidenceIds": [
+          "ev-oy-inventory-pipeline",
+          "ev-oy-store-data-interconnection"
+        ]
       },
       {
         "id": "sg-batch-to-near-realtime",
         "title": "배치로 돌던 것 하나를 준실시간으로 바꿔 보기",
         "body": "주기적으로 전체를 다시 계산하는 배치를 하나 만들어 두고, 바뀐 것만 흘려보내는 방식으로 옮깁니다. 무엇이 빨라졌고 대신 무엇이 복잡해졌는지 양쪽을 다 적는 것이 핵심입니다.",
+        "steps": [
+          "주기적으로 전체를 다시 계산하는 배치를 하나 만들기",
+          "바뀐 것만 흘려보내는 방식으로 옮기기",
+          "무엇이 빨라지고 무엇이 복잡해졌는지 양쪽 다 적기"
+        ],
         "domainId": "dom-event-driven",
-        "evidenceIds": ["ev-oy-display-benefits-migration"]
+        "evidenceIds": [
+          "ev-oy-display-benefits-migration"
+        ]
       }
     ],
     "deepen": [
@@ -70,36 +115,65 @@
         "from": "쇼핑몰 주문 API를 만들었다면",
         "to": "결제와 재고가 따로 놀 때 되돌리는 데까지",
         "body": "결제는 됐는데 재고 차감이 실패한 상황을 일부러 만들어 두고, 어디까지 자동으로 되돌리고 무엇을 사람이 처리할지 나눠 정리합니다. 온라인과 오프라인이 같은 재고를 본다면 더 어려워진다는 점도 함께 적어 보세요.",
+        "steps": [
+          "결제는 됐는데 재고 차감이 실패한 상황을 일부러 만들기",
+          "어디까지 자동으로 되돌리고 무엇을 사람이 처리할지 나누기",
+          "온라인과 오프라인이 같은 재고를 볼 때 무엇이 더 어려워지는지 적기"
+        ],
         "domainId": "dom-order-payment",
-        "evidenceIds": ["ev-oy-offline-payment", "ev-oy-orderpay-squad"]
+        "evidenceIds": [
+          "ev-oy-offline-payment",
+          "ev-oy-orderpay-squad"
+        ]
       },
       {
         "id": "sg-cursor-pagination",
         "from": "상품 목록 API에 페이지네이션을 붙였다면",
         "to": "품절이 실시간으로 섞여도 흔들리지 않는 목록으로",
         "body": "스크롤하는 동안 품절이 생기면 목록이 밀리거나 같은 상품이 두 번 보입니다. 커서 기준으로 바꿔 그 현상이 실제로 사라지는지 직접 비교해 보세요.",
+        "steps": [
+          "스크롤 도중 품절이 생겨 목록이 밀리는 상황 재현하기",
+          "오프셋 대신 커서 기준으로 바꾸기",
+          "바꾸기 전후를 비교해 그 현상이 실제로 사라졌는지 확인하기"
+        ],
         "domainId": "dom-inventory-consistency",
-        "evidenceIds": ["ev-oy-kafka-out-of-stock"]
+        "evidenceIds": [
+          "ev-oy-kafka-out-of-stock"
+        ]
       },
       {
         "id": "sg-failure-triage",
         "from": "로그를 찍어 본 적 있다면",
         "to": "무엇이 터졌는지 5분 안에 짚어내는 데까지",
         "body": "에러를 그냥 쌓지 말고, 어떤 요청이 어디서 실패했는지 하나로 이어 볼 수 있게 만듭니다. 알림을 걸 기준을 직접 정하고, 왜 그 기준인지를 적어 두면 그것이 곧 운영 경험입니다.",
+        "steps": [
+          "어떤 요청이 어디서 실패했는지 하나로 이어 볼 수 있게 만들기",
+          "알림을 걸 기준을 직접 정하기",
+          "왜 그 기준인지 근거를 적어 두기"
+        ],
         "domainId": "dom-observability",
-        "evidenceIds": ["ev-oy-product-monitoring"]
+        "evidenceIds": [
+          "ev-oy-product-monitoring"
+        ]
       },
       {
         "id": "sg-domain-split",
         "from": "하나의 서비스에 기능을 계속 붙여 왔다면",
         "to": "흩어진 도메인 사이의 데이터를 잇는 데까지",
         "body": "서비스를 둘로 나눠 보고, 나눈 뒤 서로의 데이터가 필요할 때 어떻게 가져올지 정합니다. 동기 호출과 복제 중 무엇을 골랐고 그 대가가 무엇이었는지가 남길 만한 기록입니다.",
+        "steps": [
+          "서비스를 둘로 나눠 보기",
+          "나눈 뒤 서로의 데이터가 필요할 때 어떻게 가져올지 정하기",
+          "동기 호출과 복제 중 무엇을 골랐고 그 대가가 무엇이었는지 적기"
+        ],
         "domainId": "dom-event-driven",
-        "evidenceIds": ["ev-oy-store-data-interconnection", "ev-oy-display-benefits-migration"]
+        "evidenceIds": [
+          "ev-oy-store-data-interconnection",
+          "ev-oy-display-benefits-migration"
+        ]
       }
     ]
   },
-
   "evidence": [
     {
       "id": "ev-oy-delivery-optimization",

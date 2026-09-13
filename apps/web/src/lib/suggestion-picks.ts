@@ -88,5 +88,5 @@ export function toMarkdown(all: Picks, heading: string): string {
   const blocks = Object.values(all).map(({ title, steps }) =>
     [`### ${title}`, ...steps.map((step) => `- [ ] ${step}`)].join("\n"),
   );
-  return [`## ${heading}`, "", ...blocks].join("\n\n").trim();
+  return [`## ${heading}`, ...blocks].join("\n\n").trim();
 }

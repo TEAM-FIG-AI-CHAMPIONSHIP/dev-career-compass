@@ -1,3 +1,5 @@
+import { cn } from "@/lib/cn";
+
 /**
  * 픽셀 로고.
  *
@@ -93,10 +95,13 @@ export function PixelLogo({
 /**
  * 글자 로고. 가운뎃점은 원이 아니라 사각형입니다 — 격자 위에 놓인 한 칸으로
  * 읽히도록 모서리를 깎지 않습니다.
+ *
+ * 서체는 워드마크 전용(`font-display`)입니다. 본문 고딕으로 쓰면 이름이
+ * 문단처럼 보여 로고로 서지 않습니다.
  */
 export function Wordmark({ className }: { className?: string }) {
   return (
-    <span className={className}>
+    <span className={cn("font-display tracking-[-0.035em]", className)}>
       Refactor
       <span
         aria-hidden="true"

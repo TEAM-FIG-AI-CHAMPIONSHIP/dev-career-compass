@@ -70,6 +70,13 @@ export type NewSuggestion = {
   id: string;
   title: string;
   body: string;
+  /**
+   * 해볼 것. 화면은 문단이 아니라 이 목록을 보여줍니다.
+   *
+   * 문장을 나누는 일은 사람(또는 생성 단계)이 합니다. 화면에서 문장 부호로
+   * 자르면 "…가 핵심입니다" 같은 조언까지 할 일로 섞입니다.
+   */
+  steps: string[];
   domainId: string;
   evidenceIds: string[];
   /** 신입 공고에서도 요구되는지. 채용 데이터가 있을 때만 붙습니다. */
@@ -82,6 +89,8 @@ export type DeepenSuggestion = {
   from: string;
   to: string;
   body: string;
+  /** 해볼 것. NewSuggestion 과 같은 규칙입니다. */
+  steps: string[];
   domainId: string;
   evidenceIds: string[];
   juniorDemand?: boolean;

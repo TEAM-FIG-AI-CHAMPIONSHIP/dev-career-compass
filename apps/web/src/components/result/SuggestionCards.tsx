@@ -13,24 +13,6 @@ import { cn } from "@/lib/cn";
 import { isPicked, togglePick, usePicks } from "@/lib/suggestion-picks";
 
 /**
- * 제안 본문을 해볼 것 목록으로 나눕니다.
- *
- * 제안은 읽고 지나가는 글이 아니라 해볼 것입니다. 한 문단으로 두면 세 줄을
- * 다 읽어야 무엇을 하라는 건지 알 수 있어, 카드가 일곱 장 쌓이면 아무도
- * 끝까지 읽지 않습니다.
- *
- * 지금은 파이프라인이 `body` 를 문단 하나로 주기 때문에 문장 단위로 끊어
- * 씁니다. 데이터에 `steps[]` 가 생기면 이 함수는 사라집니다 — 문장 부호로
- * 자르는 것은 사람이 나눈 단위를 이길 수 없습니다.
- */
-function toSteps(body: string): string[] {
-  return body
-    .split(/(?<=[.!?])\s+/)
-    .map((sentence) => sentence.trim())
-    .filter(Boolean);
-}
-
-/**
  * 카드 맨 윗줄.
  *
  * 어느 영역에서 나온 제안인지를 제목보다 먼저 둡니다. 본문 아래에 있으면
@@ -241,7 +223,7 @@ export function NewSuggestions({
               juniorDemand={s.juniorDemand}
             />
             <h3 className="text-h3 font-semibold text-pretty">{s.title}</h3>
-            <StepList id={s.id} title={s.title} steps={toSteps(s.body)} />
+            <StepList id={s.id} title={s.title} steps={s.steps} />
             <EvidenceLinks ids={s.evidenceIds} evidence={evidence} />
           </SuggestionCard>
         </li>
@@ -277,7 +259,7 @@ export function DeepenSuggestions({
               juniorDemand={s.juniorDemand}
             />
             <FromTo from={s.from} to={s.to} />
-            <StepList id={s.id} title={s.to} steps={toSteps(s.body)} />
+            <StepList id={s.id} title={s.to} steps={s.steps} />
             <EvidenceLinks ids={s.evidenceIds} evidence={evidence} />
           </SuggestionCard>
         </li>

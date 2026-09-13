@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans_KR, IBM_Plex_Mono } from "next/font/google";
+import { Archivo, IBM_Plex_Sans_KR, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
 // subsets는 preload 대상만 고릅니다. next/font가 받아오는 Google CSS에는
@@ -26,6 +26,19 @@ const plexMono = IBM_Plex_Mono({
  */
 const THEME_INIT = `(function(){try{var t=localStorage.getItem("rm-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}})()`;
 
+/**
+ * 워드마크 전용 서체.
+ *
+ * 로고 한 곳에만 씁니다. 제목까지 이 얼굴로 쓰면 화면이 광고처럼 보이고,
+ * 터미널의 차분한 목소리와도 맞지 않습니다.
+ */
+const archivo = Archivo({
+  variable: "--font-archivo",
+  subsets: ["latin"],
+  weight: ["800"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: {
     default: "Refactor.me",
@@ -39,7 +52,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="ko"
-      className={`${plexKR.variable} ${plexMono.variable} h-full`}
+      className={`${plexKR.variable} ${plexMono.variable} ${archivo.variable} h-full`}
       suppressHydrationWarning
     >
       <head>

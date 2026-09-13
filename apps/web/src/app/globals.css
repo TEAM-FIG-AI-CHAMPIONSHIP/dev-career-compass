@@ -192,6 +192,9 @@
   --font-mono:
     var(--font-plex-mono), ui-monospace, SFMono-Regular, Menlo,
     "Apple SD Gothic Neo", monospace;
+  /* 워드마크 전용. 다른 곳에 쓰지 않습니다. */
+  --font-display:
+    var(--font-archivo), var(--font-plex-kr), "Apple SD Gothic Neo", sans-serif;
 
   /* 타이포 스케일 — 행간은 한글 기준으로 잡았습니다 */
   --text-display: 1.875rem; /* 30 */
