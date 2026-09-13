@@ -69,7 +69,7 @@ apps/web/src/
 │   │   ├── page.tsx                        /companies
 │   │   └── [company]/[role]/
 │   │       ├── page.tsx                    회사 기본·개인화 결과
-│   │       └── PersonalizedPanel.tsx        브라우저 경험에 따른 개인화 영역
+│   │       └── ExperiencePanel.tsx          넣은 경험 요약과 입력 유도 카드
 │   ├── match/
 │   │   ├── page.tsx                        /match
 │   │   └── [role]/
