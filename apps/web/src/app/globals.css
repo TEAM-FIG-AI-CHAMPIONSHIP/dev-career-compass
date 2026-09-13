@@ -36,6 +36,13 @@
   --accent-tint: #eaf2fa;
   --accent-line: #b9d3ec;
 
+  /* 이름표 바탕.
+     칩은 바탕(paper)·창(surface)·파인 칸(sunken) 위에 모두 놓입니다. 흰색을
+     쓰면 창 위에서 사라지고, 세 면 중 어느 것을 골라도 그 면 위에서는 안
+     보입니다. 그래서 칩만의 한 톤을 따로 둡니다 — 라이트에서는 어느 면보다
+     어둡고, 다크에서는 어느 면보다 밝습니다. */
+  --chip: #dfe3e9;
+
   /* 주석 — 셸의 # 줄. 랜딩 태그라인이 이 색을 씁니다. */
   --comment: #55806a;
 
@@ -86,6 +93,8 @@
     --accent-tint: #0f1f2c;
     --accent-line: #2d4d66;
 
+    --chip: #272d38;
+
     --comment: #7d9f88;
 
     --mac-edge: rgb(255 255 255 / 0.08);
@@ -128,6 +137,8 @@
   --accent-tint: #0f1f2c;
   --accent-line: #2d4d66;
 
+  --chip: #272d38;
+
   --comment: #7d9f88;
 
   --mac-edge: rgb(255 255 255 / 0.08);
@@ -165,6 +176,7 @@
   --color-accent-tint: var(--accent-tint);
   --color-accent-line: var(--accent-line);
 
+  --color-chip: var(--chip);
   --color-comment: var(--comment);
 
   --color-mac-close: var(--mac-close);

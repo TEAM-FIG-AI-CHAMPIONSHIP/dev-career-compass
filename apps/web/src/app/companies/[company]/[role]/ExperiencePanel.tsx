@@ -70,7 +70,7 @@ export function ExperiencePanel({
         <ul className="flex flex-wrap gap-1.5">
           {done.map((item) => (
             <li key={`${item.origin}-${item.label}`}>
-              <Chip className="px-2 py-0.5 text-ink-soft">{item.label}</Chip>
+              <Chip className="px-2 py-0.5">{item.label}</Chip>
             </li>
           ))}
         </ul>
