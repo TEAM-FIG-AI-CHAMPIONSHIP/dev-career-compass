@@ -19,14 +19,21 @@ const BASE = "rounded-card border";
 
 const VARIANTS: Record<CardVariant, string> = {
   static: "border-line-strong bg-surface",
-  action:
-    "border-line-strong bg-surface transition-colors hover:border-accent hover:bg-accent-tint",
+  action: "border-line-strong bg-surface transition-colors hover:border-accent",
   cta: "border-accent bg-accent-tint transition-colors hover:border-accent-ink",
   empty: "border-dashed border-line-strong bg-surface",
 };
 
-/** 고른 상태는 hover 와 같은 모습입니다 — 손이 닿았을 때와 고른 뒤가 이어집니다. */
-const SELECTED = "border-accent bg-accent-tint";
+/**
+ * 고른 상태는 테두리에 더해 배경까지 강조색입니다. hover 가 테두리만 바꾸는
+ * 이유가 여기 있습니다 — 둘이 같으면 방금 누른 카드 위에 커서가 있는 동안
+ * 골랐는지 아닌지 구분되지 않습니다.
+ *
+ * action 의 클래스에 덧붙이지 않고 통째로 갈아끼웁니다. cn 은 클래스를 잇기만
+ * 하므로 bg-surface 와 bg-accent-tint 가 함께 남으면 어느 쪽이 이길지는
+ * 스타일시트 순서가 정합니다.
+ */
+const SELECTED = "border-accent bg-accent-tint transition-colors";
 
 export function cardStyle(
   variant: CardVariant = "static",
@@ -34,7 +41,7 @@ export function cardStyle(
 ) {
   return cn(
     BASE,
-    options?.selected ? `${VARIANTS.action} ${SELECTED}` : VARIANTS[variant],
+    options?.selected ? SELECTED : VARIANTS[variant],
     options?.className,
   );
 }
@@ -44,8 +51,13 @@ export function Card({
   selected,
   className,
   ...props
-}: HTMLAttributes<HTMLDivElement> & { variant?: CardVariant; selected?: boolean }) {
-  return <div className={cardStyle(variant, { selected, className })} {...props} />;
+}: HTMLAttributes<HTMLDivElement> & {
+  variant?: CardVariant;
+  selected?: boolean;
+}) {
+  return (
+    <div className={cardStyle(variant, { selected, className })} {...props} />
+  );
 }
 
 /** 눌러서 다른 화면으로 가는 카드. 기본이 action 입니다. */

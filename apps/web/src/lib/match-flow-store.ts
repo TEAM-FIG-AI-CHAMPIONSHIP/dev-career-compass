@@ -154,3 +154,22 @@ export function finishMatchFlow(role: string): {
   emit();
   return result;
 }
+
+/**
+ * 이 흐름에서 나갈 곳.
+ *
+ * 회사 결과에서 시작했으면 그 회사 결과로, 아니면 직무 선택으로 돌아갑니다.
+ * 단계 표시의 1단계이자 화면 안의 나가기 버튼이 같은 곳을 가리키도록 한곳에서
+ * 정합니다.
+ */
+export function useMatchExit(role: string): {
+  href: string;
+  label: string;
+  fromCompany: boolean;
+} {
+  const flow = useMatchFlow(role);
+  const fromCompany = flow?.returnTo.startsWith("/companies/") ?? false;
+  return fromCompany
+    ? { href: flow!.returnTo, label: "회사 결과 보기", fromCompany }
+    : { href: routes.match, label: "직무 고르기", fromCompany };
+}

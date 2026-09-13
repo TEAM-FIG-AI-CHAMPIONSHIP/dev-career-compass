@@ -84,11 +84,6 @@ export const ExternalIcon = (p: IconProps) => (
 );
 
 /** 개인정보 안내 */
-export const ShieldIcon = (p: IconProps) => (
-  <Icon {...p}>
-    <path d="M10 2.8l6 2.4v4.2c0 3.9-2.5 6.3-6 7.4-3.5-1.1-6-3.5-6-7.4V5.2l6-2.4z" />
-  </Icon>
-);
 
 export const AlertIcon = (p: IconProps) => (
   <Icon {...p}>
@@ -130,9 +125,3 @@ export const ArrowLeftIcon = (p: IconProps) => (
   </Icon>
 );
 
-export const TrendingUpIcon = (p: IconProps) => (
-  <Icon {...p}>
-    <path d="M3.5 13.5l4-4.2 3 2.6 5.8-6" />
-    <path d="M12.6 5.9h3.9v3.9" />
-  </Icon>
-);

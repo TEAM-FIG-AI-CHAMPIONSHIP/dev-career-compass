@@ -77,14 +77,12 @@ export const CheckOption = CheckboxCard;
  * 진행 수준 단일 선택 카드. 한 그룹에서 하나만 고릅니다.
  */
 export function RadioCard({
-  name,
   step,
   title,
   description,
   selected,
   onSelect,
 }: {
-  name: string;
   step?: string;
   title: string;
   description: string;
@@ -92,19 +90,17 @@ export function RadioCard({
   onSelect: () => void;
 }) {
   return (
-    <label
+    <button
+      type="button"
+      role="radio"
+      aria-checked={selected}
+      onClick={onSelect}
       className={cardStyle("action", {
         selected,
-        className: "flex h-full cursor-pointer flex-col gap-1.5 p-[18px] text-left",
+        className:
+          "flex h-full cursor-pointer flex-col gap-1.5 p-[18px] text-left",
       })}
     >
-      <input
-        type="radio"
-        name={name}
-        checked={selected}
-        onChange={onSelect}
-        className="sr-only"
-      />
       {step ? (
         <span
           className={cn(
@@ -121,32 +117,6 @@ export function RadioCard({
       <span className="text-[0.8125rem] leading-[1.7] text-ink-soft">
         {description}
       </span>
-    </label>
-  );
-}
-
-/** 디자인 시스템 갤러리와 기존 import를 위한 별칭. */
-export function LevelOption({
-  step,
-  title,
-  description,
-  selected,
-  onSelect,
-}: {
-  step: string;
-  title: string;
-  description: string;
-  selected: boolean;
-  onSelect: () => void;
-}) {
-  return (
-    <RadioCard
-      name="experience-level-gallery"
-      step={step}
-      title={title}
-      description={description}
-      selected={selected}
-      onSelect={onSelect}
-    />
+    </button>
   );
 }

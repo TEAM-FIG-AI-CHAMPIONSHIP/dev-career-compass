@@ -12,9 +12,12 @@ type Variant = "primary" | "secondary" | "ghost";
  * 덮어쓰지 않습니다 — 크기가 달라야 할 이유가 생기면 여기에 변형을 추가합니다.
  */
 const VARIANTS: Record<Variant, string> = {
-  primary: "bg-accent border-accent text-white hover:bg-accent-ink hover:border-accent-ink",
-  secondary: "bg-surface border-line-strong text-ink hover:border-accent hover:text-accent",
-  ghost: "bg-transparent border-transparent text-ink-soft hover:text-accent hover:bg-accent-tint",
+  primary:
+    "bg-accent border-accent text-white hover:bg-accent-ink hover:border-accent-ink",
+  secondary:
+    "bg-surface border-line-strong text-ink hover:border-accent hover:text-accent",
+  ghost:
+    "bg-transparent border-transparent text-ink-soft hover:text-accent hover:bg-accent-tint",
 };
 
 const BASE = [
@@ -29,7 +32,9 @@ export function Button({
   className,
   ...props
 }: ButtonHTMLAttributes<HTMLButtonElement> & { variant?: Variant }) {
-  return <button className={cn(BASE, VARIANTS[variant], className)} {...props} />;
+  return (
+    <button className={cn(BASE, VARIANTS[variant], className)} {...props} />
+  );
 }
 
 /** 눌러서 다른 화면으로 가는 것. 생김새는 Button 과 같습니다. */
@@ -38,28 +43,14 @@ export function ButtonLink({
   className,
   href,
   ...props
-}: AnchorHTMLAttributes<HTMLAnchorElement> & { variant?: Variant; href: string }) {
+}: AnchorHTMLAttributes<HTMLAnchorElement> & {
+  variant?: Variant;
+  href: string;
+}) {
   return (
-    <Link href={href} className={cn(BASE, VARIANTS[variant], className)} {...props} />
-  );
-}
-
-/** 회사를 누르면 펼쳐지는 직무 버튼. 고른 것은 악센트로 채웁니다. */
-export function JobButton({
-  selected = false,
-  className,
-  ...props
-}: ButtonHTMLAttributes<HTMLButtonElement> & { selected?: boolean }) {
-  return (
-    <button
-      aria-pressed={selected}
-      className={cn(
-        BASE,
-        selected
-          ? "border-accent bg-accent-tint text-accent"
-          : "border-line-strong bg-surface text-ink hover:border-accent hover:bg-accent-tint hover:text-accent",
-        className,
-      )}
+    <Link
+      href={href}
+      className={cn(BASE, VARIANTS[variant], className)}
       {...props}
     />
   );
