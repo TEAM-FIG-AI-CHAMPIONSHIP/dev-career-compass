@@ -6120,18 +6120,18 @@
     "article_count": 20,
     "areas": [
       {
-        "area_name": "Agentic AI 하네스 및 조합형 모델 설계",
-        "area_description": "동일 LLM에서도 갈리는 에이전트 성능을 하네스·결정론적 검사로 올리고, SLM Planner–Caller–Generator와 조합형(LLM/SLM/VLM) 아키텍처, 온디바이스 에이전트 동향을 다룬다.",
-        "rationale": "cluster 2의 다섯 글은 모델이 아니라 하네스·역할 분리·조합형 생태계로 에이전트 품질을 설계하는 문제로 모여 있어 병합 없이 유지했다.",
-        "note": "맞춤법 검사기 하이브리드 파이프라인은 NLP 제품 구축이라 하네스 방법론과 결이 다소 다름",
+        "area_name": "에이전틱 AI 시스템 아키텍처 설계",
+        "area_description": "단일 LLM을 넘어 하네스 설계, 온디바이스/하이브리드 에이전트 구조, SLM 기반 Planner-Caller-Generator 분업, 특화 모델 조합형 아키텍처 등 에이전트 시스템 자체를 어떻게 설계하고 검증 신뢰도를 높일지를 다룬다.",
+        "rationale": "cluster_rank 2의 모든 게시글이 '에이전트/LLM 시스템을 어떻게 구조화하고 검증할 것인가'라는 공통된 엔지니어링 문제를 다루고 있어(하네스 설계, 온디바이스 에이전트, SLM 분업 구조, 조합형 아키텍처) 하나의 Area로 유지했다. 맞춤법 검사기 사례도 규칙 기반+모델 기반 하이브리드 파이프라인 설계라는 점에서 같은 아키텍처적 관심사에 속해 포함시켰다.",
+        "note": "",
         "keywords": [
+          "하네스",
           "LLM-as-judge",
-          "Planner–Caller–Generator",
+          "SLM",
+          "Planner-Caller-Generator",
           "OpenClaw",
           "MoltBook",
-          "KoBART",
-          "SLM/LLM 위임",
-          "VLM"
+          "KoBART"
         ],
         "article_count": 5,
         "roles": [
@@ -6149,7 +6149,7 @@
             "article_id": "3e75a1688318a73b",
             "title": "같은 LLM인데 왜 결과가 다를까? 답은 하네스에 있다.",
             "url": "https://tech.hancom.com/harness-engineering/",
-            "similarity": 0.909,
+            "similarity": 0.901,
             "roles": [
               "backend",
               "frontend",
@@ -6160,7 +6160,7 @@
             "article_id": "98555bc43cdad273",
             "title": "OpenClaw와 MoltBook로 살펴보는 2026년 에이전틱 AI 기술 동향",
             "url": "https://tech.hancom.com/openclaw-moltbook-2026-agentic-ai-trends/",
-            "similarity": 0.9015,
+            "similarity": 0.898,
             "roles": [
               "backend",
               "frontend",
@@ -6171,7 +6171,7 @@
             "article_id": "45c640f712f9832f",
             "title": "나만의 맞춤법 검사기 만들기: 개발 과정과 노하우 공유",
             "url": "https://tech.hancom.com/custom-spell-checker-development-process-and-best-practices/",
-            "similarity": 0.8628,
+            "similarity": 0.8771,
             "roles": [
               "frontend",
               "data-ai"
@@ -6181,7 +6181,7 @@
             "article_id": "032f7c128173bed8",
             "title": "SLM 기반 Agentic AI: Planner–Caller–Generator 구조 설계와 성능 분석",
             "url": "https://tech.hancom.com/slm-agentic-ai-planner-caller-generator/",
-            "similarity": 0.9159,
+            "similarity": 0.9097,
             "roles": [
               "frontend",
               "data-ai"
@@ -6191,7 +6191,7 @@
             "article_id": "4e3bc98c48f41740",
             "title": "Post-LLM 시대: 조합형 AI 생태계에 대한 아키텍처 분석",
             "url": "https://tech.hancom.com/post-llm/",
-            "similarity": 0.8968,
+            "similarity": 0.9028,
             "roles": [
               "backend",
               "frontend",
@@ -6202,16 +6202,16 @@
         "id": "hancom-01"
       },
       {
-        "area_name": "문서 파일 포맷 파싱과 한글 오픈소스",
-        "area_description": "DOC/DOCX/HWP/HWPX의 바이너리·XML 구조를 파싱해 본문을 추출하고, 한글 문서를 AI 학습 파이프라인에 쓰기 위한 오픈소스 생태계를 다룬다.",
-        "rationale": "cluster 3은 문서 포맷 스펙과 파서 구현만 다루므로 다른 Area와 합치지 않았다.",
+        "area_name": "문서 파일 포맷 파싱 엔지니어링",
+        "area_description": "DOC, DOCX, HWP, HWPX 등 워드/한글 문서의 바이너리·XML 기반 내부 포맷 구조를 분석하고, 이를 실제로 파싱해 텍스트·표·서식을 추출하는 엔지니어링 문제를 다룬다.",
+        "rationale": "cluster_rank 3은 문서 포맷(DOC/DOCX/HWP/HWPX)의 내부 구조 분석과 파싱이라는 동일한 엔지니어링 문제를 일관되게 다루고 있어 그대로 하나의 Area로 유지했다. 오픈소스 생태계 현황 게시글도 동일한 파싱 기술 스택을 전제로 하고 있어 함께 묶었다.",
         "note": "",
         "keywords": [
-          "OLE2",
-          "FIB",
           "OOXML",
+          "OLE2",
           "HWPX",
           "HWP",
+          "FIB",
           "PlcPcd",
           "CharShape"
         ],
@@ -6229,7 +6229,7 @@
             "article_id": "a8bca2f32a90f6b1",
             "title": "워드 문서 파일 형식: DOC 포맷의 구조와 이해 (1)",
             "url": "https://tech.hancom.com/doc-file-format-structure-and-overview-1/",
-            "similarity": 0.8931,
+            "similarity": 0.9102,
             "roles": [
               "data-ai"
             ]
@@ -6238,7 +6238,7 @@
             "article_id": "0546b5a16bc12eb8",
             "title": "워드 문서 파일 형식: DOCX 포맷의 구조와 이해 (1)",
             "url": "https://tech.hancom.com/docx-file-format-structure-and-overview-1/",
-            "similarity": 0.8819,
+            "similarity": 0.8903,
             "roles": [
               "frontend",
               "data-ai"
@@ -6248,7 +6248,7 @@
             "article_id": "e123ef9a40aa0513",
             "title": "AX 시대를 위한 한글 문서: 오픈소스 생태계 현황 분석과 활성화 전략",
             "url": "https://tech.hancom.com/ax-era-open-source-ecosystem-strategy-hwp/",
-            "similarity": 0.9187,
+            "similarity": 0.8612,
             "roles": [
               "frontend",
               "data-ai"
@@ -6258,7 +6258,7 @@
             "article_id": "11ca269361b712d7",
             "title": "한/글 문서 파일 형식: Python을 통한 HWPX 포맷 파싱하기 (2)",
             "url": "https://tech.hancom.com/python-hwpx-parsing-2/",
-            "similarity": 0.9088,
+            "similarity": 0.8998,
             "roles": [
               "frontend",
               "data-ai"
@@ -6268,7 +6268,7 @@
             "article_id": "a5642372abe3d77e",
             "title": "한/글 문서 파일 형식: Python을 통한 HWP 포맷 파싱하기 (2)",
             "url": "https://tech.hancom.com/python-hwp-parsing-2/",
-            "similarity": 0.8923,
+            "similarity": 0.8869,
             "roles": [
               "frontend",
               "data-ai"
@@ -6278,20 +6278,20 @@
         "id": "hancom-02"
       },
       {
-        "area_name": "AI 코딩 하네스·테스트와 프론트/워크플로 도구",
-        "area_description": "LLM 세션 휘발과 컨텍스트 부패를 테스트 코드·CLAUDE.md·하네스로 붙잡고, Vue3·모노레포·n8n·Health Check 같은 프론트/운영 도구를 실무에 적용하는 문제를 다룬다.",
-        "rationale": "cluster 1은 AI 코딩 방법론과 프론트·인프라 도구가 섞여 있지만, 다른 cluster(에이전틱 모델 구조, 문서 포맷 파싱)와는 문제 영역이 달라 단독 Area로 유지했다.",
-        "note": "Unity→React 마이그레이션, CLAUDE.md, MCP 목록, Vue3, 테스트 케이스 생성, 생성형 검색, Health Check, n8n, 모노레포 등 하위 주제가 한 cluster에 섞여 있음",
+        "area_name": "AI 협업 개발 도구 및 워크플로 자동화",
+        "area_description": "LLM/AI 코딩 도구(Claude Code, 생성형 AI)를 실제 개발·테스트·문서화 워크플로에 통합해 컨텍스트 관리, 테스트 자동화, 외부 시스템 연동(MCP, n8n)을 개선하는 문제와, 이를 뒷받침하는 프론트엔드/리포지토리 구조(Vue, 모노레포) 및 인프라 장애 대응 자동화를 다룬다.",
+        "rationale": "cluster_rank 1은 AI 페어코딩/컨텍스트 엔지니어링, 프론트엔드 기술 선택, 테스트·검색·장애대응·워크플로 자동화 등 서로 다른 하위 주제가 섞여 있어 다른 cluster와 억지로 병합하기보다 단독 Area로 유지했다. cluster 2(에이전틱 AI 아키텍처 자체 설계)나 cluster 3(문서 포맷 파싱)과는 다루는 엔지니어링 문제의 성격이 명확히 달라 병합하지 않았다.",
+        "note": "이 cluster는 'AI를 개발 도구로 활용하는 사례'라는 느슨한 공통점만 있을 뿐, 실제로는 AI 페어코딩 방법론, 프론트엔드 프레임워크 선택, QA 자동화, 검색 시스템 개선, 인프라 장애 대응, 워크플로 자동화, 모노레포 도입 등 서로 독립적인 엔지니어링 주제가 혼재되어 있다.",
         "keywords": [
-          "하네스 엔지니어링",
           "CLAUDE.md",
           "MCP",
-          "Vue3",
-          "@DisplayName",
+          "n8n",
           "Health Check",
-          "JIT 전략"
+          "테스트 케이스 자동 생성",
+          "모노레포",
+          "@DisplayName"
         ],
-        "article_count": 6,
+        "article_count": 7,
         "roles": [
           "backend",
           "data-ai",
@@ -6306,22 +6306,10 @@
         },
         "evidence": [
           {
-            "article_id": "f711c869e95b7c86",
-            "title": "Unity를 모르는 프론트엔드 개발자가 AI로 Unity 서비스를 React로 옮긴 방법",
-            "url": "https://tech.hancom.com/migrated-unity-to-react-with-ai/",
-            "similarity": 0.8691,
-            "roles": [
-              "backend",
-              "frontend",
-              "mobile",
-              "data-ai"
-            ]
-          },
-          {
             "article_id": "13cac0bfda0fabc3",
             "title": "AI 시대에 테스트 코드를 잘 쓰는 기준이 달라진다.",
             "url": "https://tech.hancom.com/test-code-in-ai-era/",
-            "similarity": 0.8886,
+            "similarity": 0.8781,
             "roles": [
               "backend"
             ]
@@ -6330,7 +6318,7 @@
             "article_id": "3f8f44af05c1b53e",
             "title": "효율적인 CLAUDE.md 파일관리 및 컨텍스트 최적화 전략",
             "url": "https://tech.hancom.com/claude-md-context-optimization/",
-            "similarity": 0.8704,
+            "similarity": 0.8647,
             "roles": [
               "backend",
               "frontend",
@@ -6342,7 +6330,7 @@
             "article_id": "854db85d194f9154",
             "title": "개발자가 알아두면 유용한 MCP 서버 7가지",
             "url": "https://tech.hancom.com/7-useful-mcp-servers-for-developers/",
-            "similarity": 0.8614,
+            "similarity": 0.8786,
             "roles": [
               "backend",
               "frontend",
@@ -6351,13 +6339,12 @@
             ]
           },
           {
-            "article_id": "d803a5c0a1c35faa",
-            "title": "프론트엔드 도구의 전략적 선택: 경량 프레임워크 Vue.js 탐구와 Vue3 적용기",
-            "url": "https://tech.hancom.com/strategic-frontend-choice-vue3-adoption/",
-            "similarity": 0.8676,
+            "article_id": "c681b3402aa80e75",
+            "title": "생성형 AI와 테스트 케이스 자동 생성: 반복 업무 자동화로 품질 혁신",
+            "url": "https://tech.hancom.com/generative-ai-test-case-automation/",
+            "similarity": 0.877,
             "roles": [
-              "backend",
-              "frontend",
+              "mobile",
               "data-ai"
             ]
           },
@@ -6365,17 +6352,38 @@
             "article_id": "e034befbc932252a",
             "title": "Health Check로 구축하는 장애 대응 자동화",
             "url": "https://tech.hancom.com/automate-failover-with-health-check/",
-            "similarity": 0.8642,
+            "similarity": 0.8625,
             "roles": [
               "backend",
               "data-ai"
+            ]
+          },
+          {
+            "article_id": "655f591fd59c0607",
+            "title": "워크플로 자동화 도구(n8n)의 서비스 자동화 전략",
+            "url": "https://tech.hancom.com/workflow-n8n-service/",
+            "similarity": 0.8786,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "e41a5c61b70db940",
+            "title": "모노레포 소개 및 도입기",
+            "url": "https://tech.hancom.com/intro-to-monorepo/",
+            "similarity": 0.8632,
+            "roles": [
+              "backend",
+              "frontend"
             ]
           }
         ],
         "id": "hancom-03"
       }
     ],
-    "unassigned_count": 4,
+    "unassigned_count": 3,
     "unassigned_diagnostic": [],
     "role_counts": {
       "backend": 11,

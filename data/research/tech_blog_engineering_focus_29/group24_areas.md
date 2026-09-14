@@ -2,7 +2,7 @@
 
 engineering_focus -> v4 embedding -> clustering(complete linkage) -> LLM 병합 -> deterministic membership -> 키워드 태깅 전체 파이프라인을 16개 회사에 독립적으로 적용한 결과다 (LLM 두 단계는 claude.ai 수동 프롬프팅으로 수행).
 
-그룹2 8곳 + 그룹4 8곳. 수기 필터 후 **573건** 중 evidence **456건**, unassigned **117건**.
+그룹2 8곳 + 그룹4 8곳. 수기 필터 후 **573건** 중 evidence **457건**, unassigned **116건**.
 
 각 Area는 안정적인 `id`(예: `gabia-01`)를 갖는다. 스키마와 한계는
 `../../../pipeline/experiments/tech_blog_engineering_focus_29/config/README.md` 참고.
@@ -35,10 +35,6 @@ RSS 상한으로 창이 짧았던 곳을 보강한 뒤, 수기 필터 → 임베
 
 넥스트리 unassigned 64/210은 글이 넓게 퍼져 membership 임계를 못 넘긴 몫이다.
 토스 unassigned 16/56도 레거시 개편·QA·지표가 한 Area에 안 붙는 글이 있다.
-
-한컴은 재클러스터 이후에도 이전 merge 응답이 남아 있어 cluster_rank가
-문서 포맷↔에이전틱으로 뒤집혀 있었다. 새 3개 cluster 기준으로 merge/tag를
-다시 맞춰 Area를 냈다.
 
 ## LG AI연구원 (17개 글)
 
@@ -199,8 +195,8 @@ unassigned: 2
 
 | Area | 근거 수 | 키워드 |
 |---|---:|---|
-| Agentic AI 하네스 및 조합형 모델 설계 | 5 | LLM-as-judge, Planner–Caller–Generator, OpenClaw, MoltBook, KoBART, SLM/LLM 위임, VLM |
-| 문서 파일 포맷 파싱과 한글 오픈소스 | 5 | OLE2, FIB, OOXML, HWPX, HWP, PlcPcd, CharShape |
-| AI 코딩 하네스·테스트와 프론트/워크플로 도구 | 6 | 하네스 엔지니어링, CLAUDE.md, MCP, Vue3, @DisplayName, Health Check, JIT 전략 |
+| 에이전틱 AI 시스템 아키텍처 설계 | 5 | 하네스, LLM-as-judge, SLM, Planner-Caller-Generator, OpenClaw, MoltBook, KoBART |
+| 문서 파일 포맷 파싱 엔지니어링 | 5 | OOXML, OLE2, HWPX, HWP, FIB, PlcPcd, CharShape |
+| AI 협업 개발 도구 및 워크플로 자동화 | 7 | CLAUDE.md, MCP, n8n, Health Check, 테스트 케이스 자동 생성, 모노레포, @DisplayName |
 
-unassigned: 4
+unassigned: 3
