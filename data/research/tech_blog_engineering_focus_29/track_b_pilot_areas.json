@@ -30,153 +30,245 @@
             "article_id": "f4ab63bc718652d4",
             "title": "배송최적화 시스템 구축기 Part 02. 복잡한 비즈니스 로직에 유연한 디자인 패턴 입히기",
             "url": "https://oliveyoung.tech/2026-09-04/delivery-optimization-design-pattern/",
-            "similarity": 0.8721
+            "similarity": 0.8721,
+            "roles": []
           },
           {
             "article_id": "d6e59f8e2a2fce9a",
             "title": "프레임워크에 구애받지 않는 통합 백오피스 구축하기",
             "url": "https://oliveyoung.tech/2026-07-14/building-integrated-backoffice-with-vue-web-components/",
-            "similarity": 0.8623
+            "similarity": 0.8623,
+            "roles": [
+              "frontend",
+              "mobile"
+            ]
           },
           {
             "article_id": "838b860e5277a08b",
             "title": "옴니채널 재고 정합성 한계에 대응하는 인벤토리 데이터 파이프라인 구축기",
             "url": "https://oliveyoung.tech/2026-07-01/inventory-pipeline/",
-            "similarity": 0.8872
+            "similarity": 0.8872,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "8883e43f5fabe811",
             "title": "에러로그 하나에 깨던 새벽에서 벗어나기까지 — 상품 모니터링 진화기",
             "url": "https://oliveyoung.tech/2026-06-30/product-monitoring-evolution/",
-            "similarity": 0.8755
+            "similarity": 0.8755,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "5f08ffcb4b1a9d24",
             "title": "45분 배치에서 준실시간으로! 다수 도메인 데이터를 Kafka로 통합한 전환기",
             "url": "https://oliveyoung.tech/2026-04-22/display-benefits-migration/",
-            "similarity": 0.8883
+            "similarity": 0.8883,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "80123896269fcc4f",
             "title": "올영매장은 MSA 환경에서 흩어진 도메인 데이터를 어떻게 연동했을까?",
             "url": "https://oliveyoung.tech/2026-03-18/oy-store-data-interconnection-strategy/",
-            "similarity": 0.9013
+            "similarity": 0.9013,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "0d5bac6d0d6b9107",
             "title": "배송최적화 시스템 구축기 Part 01. 올리브영이 멀티 센터 체제로 배송 시간을 14시간 단축한 과정",
             "url": "https://oliveyoung.tech/2026-03-06/delivery-optimization/",
-            "similarity": 0.8719
+            "similarity": 0.8719,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "91f4009df2860ee2",
             "title": "Spring 트랜잭션 동기화로 레거시 알림톡 발송 시스템 한계 넘어서기",
             "url": "https://oliveyoung.tech/2026-02-23/from-legacy-to-modern-architecture-journey/",
-            "similarity": 0.8932
+            "similarity": 0.8932,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "3ff2581d48ea29ee",
             "title": "오프라인 매장에 코드를 배포하다 Part 2: 올리브영 전자라벨(ESL) 최적화 여정",
             "url": "https://oliveyoung.tech/2026-02-10/esl-series-2/",
-            "similarity": 0.8695
+            "similarity": 0.8695,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "55ca51ad7d45cd31",
             "title": "오프라인 매장에 코드를 배포하다 Part 1: 종이 없는 매장을 만드는 데이터 파이프라인 구축",
             "url": "https://oliveyoung.tech/2026-02-09/esl-series-1/",
-            "similarity": 0.8791
+            "similarity": 0.8791,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
           },
           {
             "article_id": "6f93f27e59a744cf",
             "title": "올리브영 대규모 트래픽 레거시 시스템의 무중단 OAuth2 전환기",
             "url": "https://oliveyoung.tech/2025-10-28/oliveyoung-zero-downtime-oauth2-migration/",
-            "similarity": 0.8794
+            "similarity": 0.8794,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "52b0c9cd7f8f8278",
             "title": "SQS 기반 알림톡 처리에서 발생한 DB 커넥션 데드락 분석기",
             "url": "https://oliveyoung.tech/2025-12-30/alimtalk_improve_event_driven_architecture/",
-            "similarity": 0.8654
+            "similarity": 0.8654,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "bf3fe69b40f3d4ea",
             "title": "올리브영의 실시간 캠페인 타겟팅을 위한 CDC 전환기",
             "url": "https://oliveyoung.tech/2025-12-29/campaign-worekr_review/",
-            "similarity": 0.8816
+            "similarity": 0.8816,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "08bf23d5de1d1b46",
             "title": "권한마다 보안 솔루션이 다르다면? 하이브리드 환경에서 우아하게 파일 보호하기",
             "url": "https://oliveyoung.tech/2025-12-26/protection-switch/",
-            "similarity": 0.8658
+            "similarity": 0.8658,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "5631bc0c578c5e14",
             "title": "한 기기에 개발·운영 앱을 동시에 설치하는 방법: 올리브영 DEV/PROD 환경 분리",
             "url": "https://oliveyoung.tech/2025-12-24/dev-prod-app-environment-separation/",
-            "similarity": 0.8606
+            "similarity": 0.8606,
+            "roles": [
+              "mobile"
+            ]
           },
           {
             "article_id": "634c660e49e7a9fa",
             "title": "Kafka Streams 기반 EDA 구축 사례: 올리브영 품절 시스템 현대화 프로젝트",
             "url": "https://oliveyoung.tech/2025-12-15/kafka-streams-for-out-of-stock/",
-            "similarity": 0.8687
+            "similarity": 0.8687,
+            "roles": [
+              "backend",
+              "frontend"
+            ]
           },
           {
             "article_id": "efb264d9e5f58c9d",
             "title": "올영세일 선착순 쿠폰, 미발급 0%를 향한 여정",
             "url": "https://oliveyoung.tech/2025-12-15/fcfs-coupon/",
-            "similarity": 0.8777
+            "similarity": 0.8777,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "23c075bca8763b3d",
             "title": "배달대행사 API 연동과 장애 대응 - 오늘드림 서비스 개발기",
             "url": "https://oliveyoung.tech/2025-12-01/o2o_delivery/",
-            "similarity": 0.8749
+            "similarity": 0.8749,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "6970678e1b6f1b4e",
             "title": "SDUI의 성능 병목을 넘어: 올리브영 로컬 캐시 기반 백엔드 최적화 성공기",
             "url": "https://oliveyoung.tech/2025-11-11/sdui_with_caffein/",
-            "similarity": 0.8777
+            "similarity": 0.8777,
+            "roles": [
+              "backend",
+              "mobile"
+            ]
           },
           {
             "article_id": "4383843a6f09baad",
             "title": "대규모 프론트엔드 아키텍처의 새로운 패러다임 - Part 3. Nx를 활용한 마이크로프론트엔드",
             "url": "https://oliveyoung.tech/2025-11-10/what-is-MFE-part3/",
-            "similarity": 0.8668
+            "similarity": 0.8668,
+            "roles": [
+              "frontend"
+            ]
           },
           {
             "article_id": "94fc4afb0e7713b5",
             "title": "7,000줄 PL/SQL 프로시저와의 결별: 클레임 로직 Java 모듈 이관기",
             "url": "https://oliveyoung.tech/2025-11-06/claim-Procedure/",
-            "similarity": 0.8636
+            "similarity": 0.8636,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "49c86c1127091f88",
             "title": "대규모 프론트엔드 아키텍처의 새로운 패러다임 - Part 2. 모듈 페더레이션 PoC",
             "url": "https://oliveyoung.tech/2025-11-06/what-is-MFE-part2/",
-            "similarity": 0.8659
+            "similarity": 0.8659,
+            "roles": [
+              "frontend"
+            ]
           },
           {
             "article_id": "c831b9ec6541118f",
             "title": "Spring Cloud Config & Bus-Refresh 도입기",
             "url": "https://oliveyoung.tech/2025-11-04/spring-cloud-config-server/",
-            "similarity": 0.8784
+            "similarity": 0.8784,
+            "roles": [
+              "backend",
+              "mobile"
+            ]
           },
           {
             "article_id": "406b459df2131062",
             "title": "\"이 버튼 왜 안 눌려요?\" 물류 현장의 목소리로 PDA 시스템 완성하기",
             "url": "https://oliveyoung.tech/2025-09-24/wms-pda-web-app/",
-            "similarity": 0.8703
+            "similarity": 0.8703,
+            "roles": []
           },
           {
             "article_id": "843a07e45c0bb114",
             "title": "메시징 시스템 QA, 정합성을 지켜낸 올리브영의 이야기",
             "url": "https://oliveyoung.tech/2025-09-24/API-testing-v1/",
-            "similarity": 0.8866
+            "similarity": 0.8866,
+            "roles": []
           }
-        ]
+        ],
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "frontend": 4,
+          "mobile": 5,
+          "backend": 18,
+          "data-ai": 6
+        }
       },
       {
         "area_name": "조직문화·협업 프로세스",
@@ -198,33 +290,46 @@
             "article_id": "13e75ae5487ea94d",
             "title": "한 끼의 점심이 협업 문화를 만든다면?",
             "url": "https://oliveyoung.tech/2026-08-31/a-lunch-that-builds-collaboration-culture/",
-            "similarity": 0.9028
+            "similarity": 0.9028,
+            "roles": []
           },
           {
             "article_id": "0532611a5ea8af51",
             "title": "AI와 협업하는 새로운 개발 프로세스, 올리브영은 어떻게 시작했을까 (feat. AI-DLC)",
             "url": "https://oliveyoung.tech/2026-04-16/oliveyoung-tech-ai-dlc-workshop/",
-            "similarity": 0.8791
+            "similarity": 0.8791,
+            "roles": []
           },
           {
             "article_id": "26d836f5c20dcf1f",
             "title": "120개의 점을 잇다: 프로덕트센터 ‘Connect the Dots’ 워크숍 비하인드",
             "url": "https://oliveyoung.tech/2026-04-08/product-center-connect-the-dots-workshop/",
-            "similarity": 0.8709
+            "similarity": 0.8709,
+            "roles": []
           },
           {
             "article_id": "c8db6f0a2b2e9e75",
             "title": "QA Built on Trust - 팀워크가 품질을 만든다",
             "url": "https://oliveyoung.tech/2025-12-17/QA-Conference-2025/",
-            "similarity": 0.9058
+            "similarity": 0.9058,
+            "roles": []
           },
           {
             "article_id": "0be47ae8fcd34486",
             "title": "QA 엔지니어가 AI로 만든 교육 영상, 25분짜리 인시던트 가이드 탄생기",
             "url": "https://oliveyoung.tech/2025-12-08/creating-video-with-ai/",
-            "similarity": 0.8743
+            "similarity": 0.8743,
+            "roles": [
+              "mobile"
+            ]
           }
-        ]
+        ],
+        "roles": [
+          "mobile"
+        ],
+        "role_counts": {
+          "mobile": 1
+        }
       },
       {
         "area_name": "사내 행사·워크숍(비-엔지니어링)",
@@ -244,9 +349,12 @@
             "article_id": "27d522907dcebfc8",
             "title": "150개국 K-뷰티 플랫폼 뒤의 팀, 올리브영 글로벌엔지니어링센터의 첫 번째 워크숍 이야기",
             "url": "https://oliveyoung.tech/2026-04-24/global-center-tech-workshop/",
-            "similarity": 0.886
+            "similarity": 0.886,
+            "roles": []
           }
-        ]
+        ],
+        "roles": [],
+        "role_counts": {}
       },
       {
         "area_name": "타입스크립트 타입 시스템",
@@ -266,9 +374,12 @@
             "article_id": "519005ffbb6d159e",
             "title": "올리브영 타입스크립트로 알아보는 제네릭과 매개변수 다형성",
             "url": "https://oliveyoung.tech/2025-12-31/generics-and-parametric-polymorphism/",
-            "similarity": 0.9337
+            "similarity": 0.9337,
+            "roles": []
           }
-        ]
+        ],
+        "roles": [],
+        "role_counts": {}
       }
     ],
     "unassigned_count": 12,
@@ -305,7 +416,13 @@
           "SDUI로 네이티브 운영 민첩성 높이기"
         ]
       }
-    ]
+    ],
+    "role_counts": {
+      "mobile": 10,
+      "data-ai": 8,
+      "frontend": 5,
+      "backend": 23
+    }
   },
   {
     "company": "NHN Cloud",
@@ -338,183 +455,274 @@
             "article_id": "b0cdefce249ea4b0",
             "title": "안드로이드 M(마시멜로) 특징 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/49",
-            "similarity": 0.8635
+            "similarity": 0.8635,
+            "roles": [
+              "mobile"
+            ]
           },
           {
             "article_id": "519a1ae5a86b89ab",
             "title": "Front-End 테스트 환경 (1) : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/126",
-            "similarity": 0.8845
+            "similarity": 0.8845,
+            "roles": []
           },
           {
             "article_id": "9b435fa95ada5e4a",
             "title": "What's New in iOS11 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/128",
-            "similarity": 0.8751
+            "similarity": 0.8751,
+            "roles": [
+              "mobile"
+            ]
           },
           {
             "article_id": "08a6533402704ee4",
             "title": "Front-End 테스트 환경 (2)",
             "url": "https://meetup.nhncloud.com/posts/132",
-            "similarity": 0.8871
+            "similarity": 0.8871,
+            "roles": []
           },
           {
             "article_id": "d787b0811fbc49e7",
             "title": "(Spring Boot)Logging과 Profile 전략 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/149",
-            "similarity": 0.8702
+            "similarity": 0.8702,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "40f3345b6b82ca7a",
             "title": "요즘 잘나가는 프론트엔드 개발 환경 만들기(2018): Webpack 4 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/153",
-            "similarity": 0.9052
+            "similarity": 0.9052,
+            "roles": [
+              "frontend"
+            ]
           },
           {
             "article_id": "a62b6bdc931cd3d1",
             "title": "요즘 잘나가는 프론트엔드 개발환경 만들기(2018): ES6 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/157",
-            "similarity": 0.905
+            "similarity": 0.905,
+            "roles": [
+              "frontend"
+            ]
           },
           {
             "article_id": "ff48db90dde8f0b2",
             "title": "실용적인 프론트엔드 테스트 전략 (1) : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/174",
-            "similarity": 0.8658
+            "similarity": 0.8658,
+            "roles": [
+              "frontend"
+            ]
           },
           {
             "article_id": "18895dc9cf4ff343",
             "title": "실용적인 프론트엔드 테스트 전략 (2) : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/178",
-            "similarity": 0.8832
+            "similarity": 0.8832,
+            "roles": [
+              "frontend"
+            ]
           },
           {
             "article_id": "e542b89918cca5ce",
             "title": "실용적인 프론트엔드 테스트 전략 (3) : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/180",
-            "similarity": 0.8783
+            "similarity": 0.8783,
+            "roles": [
+              "frontend"
+            ]
           },
           {
             "article_id": "3c91333decb0eba8",
             "title": "[Android] Unit Testing Framework",
             "url": "https://meetup.nhncloud.com/posts/187",
-            "similarity": 0.8693
+            "similarity": 0.8693,
+            "roles": [
+              "mobile"
+            ]
           },
           {
             "article_id": "613d5edeb73cae96",
             "title": "Expo Web(React Native for web) 튜토리얼 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/191",
-            "similarity": 0.884
+            "similarity": 0.884,
+            "roles": [
+              "frontend",
+              "mobile"
+            ]
           },
           {
             "article_id": "3e56e54398398f06",
             "title": "Prometheus + Grafana로 Java 애플리케이션 모니터링하기 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/237",
-            "similarity": 0.8656
+            "similarity": 0.8656,
+            "roles": []
           },
           {
             "article_id": "92c6bdeef926e761",
             "title": "레디스 버전6 뉴피처와 주요 기능 테스트 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/245",
-            "similarity": 0.8657
+            "similarity": 0.8657,
+            "roles": []
           },
           {
             "article_id": "33bbfee2d2210535",
             "title": "TOAST SMS와 Email 서비스의 webhook 기능 소개 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/257",
-            "similarity": 0.8678
+            "similarity": 0.8678,
+            "roles": []
           },
           {
             "article_id": "54d1f93ff12a299f",
             "title": "쉽지만 어려운 WebView! 이젠 그만, 쉽기로 하자! : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/265",
-            "similarity": 0.9013
+            "similarity": 0.9013,
+            "roles": [
+              "frontend"
+            ]
           },
           {
             "article_id": "622d3335aba71d71",
             "title": "API Gateway 서비스 알아보기 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/270",
-            "similarity": 0.8686
+            "similarity": 0.8686,
+            "roles": []
           },
           {
             "article_id": "1b0f27f928bf5643",
             "title": "GraalVM, Spring Native 맛보기 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/273",
-            "similarity": 0.8803
+            "similarity": 0.8803,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "1452bad32ab86708",
             "title": "안드로이드 런처와 위젯 톺아보기 (1)",
             "url": "https://meetup.nhncloud.com/posts/304",
-            "similarity": 0.8793
+            "similarity": 0.8793,
+            "roles": [
+              "mobile"
+            ]
           },
           {
             "article_id": "deada89c9221a6f6",
             "title": "안드로이드 런처와 위젯 톺아보기 (2)",
             "url": "https://meetup.nhncloud.com/posts/306",
-            "similarity": 0.8997
+            "similarity": 0.8997,
+            "roles": [
+              "mobile"
+            ]
           },
           {
             "article_id": "be80a2e89435b688",
             "title": "안드로이드 런처와 위젯 톺아보기 (3)",
             "url": "https://meetup.nhncloud.com/posts/307",
-            "similarity": 0.8914
+            "similarity": 0.8914,
+            "roles": [
+              "mobile"
+            ]
           },
           {
             "article_id": "6339feaaa1b5bed3",
             "title": "안드로이드 런처와 위젯 톺아보기 (4)",
             "url": "https://meetup.nhncloud.com/posts/308",
-            "similarity": 0.8812
+            "similarity": 0.8812,
+            "roles": [
+              "mobile"
+            ]
           },
           {
             "article_id": "ac303b706df8a243",
             "title": "Android 변조앱 만들기(feat. sandhook) : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/322",
-            "similarity": 0.8798
+            "similarity": 0.8798,
+            "roles": [
+              "mobile"
+            ]
           },
           {
             "article_id": "93a400976af159e6",
             "title": "Android Architecture 패턴: MV 형제들, 옆에서 볼까 앞에서 볼까? : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/342",
-            "similarity": 0.8931
+            "similarity": 0.8931,
+            "roles": [
+              "mobile"
+            ]
           },
           {
             "article_id": "aa3ead66435460c1",
             "title": "[Android] 요즘 핫한 Clean Architecture 왜 쓰는 거야? : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/345",
-            "similarity": 0.8798
+            "similarity": 0.8798,
+            "roles": [
+              "mobile"
+            ]
           },
           {
             "article_id": "d4d527c9cdc227fa",
             "title": "frida-gum을 활용한 iOS 앱 Hook : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/346",
-            "similarity": 0.8676
+            "similarity": 0.8676,
+            "roles": [
+              "mobile"
+            ]
           },
           {
             "article_id": "41f2b07e9482c30c",
             "title": "멀티 테넌트 데이터를 격리하고 더 안전하게 만드는 방법 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/388",
-            "similarity": 0.8674
+            "similarity": 0.8674,
+            "roles": [
+              "data-ai"
+            ]
           },
           {
             "article_id": "487940b58a92301a",
             "title": "iOS 앱 개발자가 알아야 할 iOS 탈옥의 위험성 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/393",
-            "similarity": 0.8773
+            "similarity": 0.8773,
+            "roles": [
+              "mobile"
+            ]
           },
           {
             "article_id": "880fefb6ffd1c5e9",
             "title": "모바일 앱 난독화(Mobile App Obfuscation)란? : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/394",
-            "similarity": 0.8897
+            "similarity": 0.8897,
+            "roles": [
+              "mobile"
+            ]
           },
           {
             "article_id": "4b8c68737c47b191",
             "title": "2025 프론트엔드 뉴스 한 방에 몰아 보기 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/407",
-            "similarity": 0.8644
+            "similarity": 0.8644,
+            "roles": [
+              "frontend"
+            ]
           }
-        ]
+        ],
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "mobile": 14,
+          "backend": 2,
+          "frontend": 8,
+          "data-ai": 1
+        }
       },
       {
         "area_name": "클라우드 인프라 및 쿠버네티스 운영",
@@ -537,57 +745,82 @@
             "article_id": "97aa53766e808c02",
             "title": "CloudTrail 소개 (TOAST Service 들여다 보기) : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/199",
-            "similarity": 0.8683
+            "similarity": 0.8683,
+            "roles": []
           },
           {
             "article_id": "af591f1a6f86c9fc",
             "title": "[K8S] kubernetes POC를 위한 portainer, rancher 소개 및 설치 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/207",
-            "similarity": 0.8822
+            "similarity": 0.8822,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "ed7b99824bec93f6",
             "title": "당신의 자바스크립트 API 문서는 안녕하신가요? : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/208",
-            "similarity": 0.8673
+            "similarity": 0.8673,
+            "roles": []
           },
           {
             "article_id": "b6031578bd1b5b54",
             "title": "Github Actions으로 배포 자동화하기 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/286",
-            "similarity": 0.8674
+            "similarity": 0.8674,
+            "roles": []
           },
           {
             "article_id": "0e3dcf1faeafbcf6",
             "title": "NHN Kubernetes Service(NKS) 쿠버네티스 클러스터 업그레이드 기능 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/298",
-            "similarity": 0.8747
+            "similarity": 0.8747,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "22282e7be2416e25",
             "title": "Kubernetes 클러스터에 배포할 애플리케이션 로컬 디버깅 및 개발하기 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/364",
-            "similarity": 0.8923
+            "similarity": 0.8923,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "804cebc782ccca8e",
             "title": "Redis Cluster를 사용할 때 Spring Boot와 Lettuce client를 설정해 드립니다 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/379",
-            "similarity": 0.8664
+            "similarity": 0.8664,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "6c9e76e94f5cf71e",
             "title": "NHN Cloud Pipeline을 이용한 CD 파이프라인 구성하기! : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/380",
-            "similarity": 0.8628
+            "similarity": 0.8628,
+            "roles": []
           },
           {
             "article_id": "a6ae8ed9561e2329",
             "title": "Kubernetes CPU Limit을 사용하면 벌어지는 일 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/395",
-            "similarity": 0.8799
+            "similarity": 0.8799,
+            "roles": [
+              "backend"
+            ]
           }
-        ]
+        ],
+        "roles": [
+          "backend"
+        ],
+        "role_counts": {
+          "backend": 5
+        }
       },
       {
         "area_name": "시스템 성능 및 네트워크 튜닝",
@@ -610,81 +843,124 @@
             "article_id": "57ace3c961b6f955",
             "title": "Redis와 Valkey를 해킹해 보자(Feat. CVE ID)",
             "url": "https://meetup.nhncloud.com/posts/416",
-            "similarity": 0.8801
+            "similarity": 0.8801,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "baec0be2f091530e",
             "title": "MySQL 3분 vs ClickHouse 0.3초 — 같은 쿼리입니다",
             "url": "https://meetup.nhncloud.com/posts/414",
-            "similarity": 0.898
+            "similarity": 0.898,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "891579a23587bd78",
             "title": "리눅스 서버의 TCP 네트워크 성능을 결정짓는 커널 파라미터 이야기 - 1편 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/53",
-            "similarity": 0.9172
+            "similarity": 0.9172,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "fa5cf3ef210f3dc3",
             "title": "리눅스 서버의 TCP 네트워크 성능을 결정짓는 커널 파라미터 이야기 - 2편 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/54",
-            "similarity": 0.9115
+            "similarity": 0.9115,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "63f33c6580f21450",
             "title": "리눅스 서버의 TCP 네트워크 성능을 결정짓는 커널 파라미터 이야기 - 3편 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/55",
-            "similarity": 0.9208
+            "similarity": 0.9208,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "8d0741155acd7791",
             "title": "[Kotlin] 메모리릭 방지하기",
             "url": "https://meetup.nhncloud.com/posts/186",
-            "similarity": 0.8822
+            "similarity": 0.8822,
+            "roles": [
+              "mobile"
+            ]
           },
           {
             "article_id": "86a2ad24439b8eeb",
             "title": "대상 서버의 포트가 열려 있는지 확인하는 3가지 방법 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/204",
-            "similarity": 0.8675
+            "similarity": 0.8675,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "985aff74746c36d8",
             "title": "브라우저 싸움에 등 터지는 개발자들을 위한 HTTP쿠키와 톰캣 쿠키 프로세서 이야기 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/209",
-            "similarity": 0.8693
+            "similarity": 0.8693,
+            "roles": [
+              "frontend"
+            ]
           },
           {
             "article_id": "e73e39b4fbda3233",
             "title": "유용한 테스트 케이스를 위한 개발자의 자세 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/246",
-            "similarity": 0.8717
+            "similarity": 0.8717,
+            "roles": []
           },
           {
             "article_id": "7127eea426b7e914",
             "title": "캐시 성능 향상기 (Improving Cache Speed at Scale) : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/251",
-            "similarity": 0.8824
+            "similarity": 0.8824,
+            "roles": []
           },
           {
             "article_id": "4bff92648c73ffc5",
             "title": "TOAST Log&Crash Search의 데이터 무결성 검증 기능 사용하기 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/254",
-            "similarity": 0.8642
+            "similarity": 0.8642,
+            "roles": [
+              "data-ai"
+            ]
           },
           {
             "article_id": "2ea49d653425e1f5",
             "title": "LogViewer를 사용하여 더 편한 테스트 환경 만들기 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/266",
-            "similarity": 0.8615
+            "similarity": 0.8615,
+            "roles": []
           },
           {
             "article_id": "da5b109f8580b075",
             "title": "Unity 네트워크 성능을 2배 빠르게 하는 웹 캐시! 쉽게 사용하기 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/354",
-            "similarity": 0.8726
+            "similarity": 0.8726,
+            "roles": []
           }
-        ]
+        ],
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "backend": 6,
+          "mobile": 1,
+          "frontend": 1,
+          "data-ai": 1
+        }
       },
       {
         "area_name": "백엔드 웹 프레임워크 및 데이터 처리",
@@ -705,45 +981,77 @@
             "article_id": "44a0ce1d1df8241d",
             "title": "Spring Interceptor(혹은 Servlet Filter)에서 POST 방식으로 전달된 JSON 데이터 처리하기 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/44",
-            "similarity": 0.8846
+            "similarity": 0.8846,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "53e1035f969dd783",
             "title": "Spring BindingResult를 json으로 받기 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/147",
-            "similarity": 0.8806
+            "similarity": 0.8806,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "183cc3d6965471b0",
             "title": "Spring에서 요청에 따른 부가 응답 추가하기 (1) : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/148",
-            "similarity": 0.8638
+            "similarity": 0.8638,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "1637952c7cd03af1",
             "title": "Spring에서 요청에 따른 부가 응답 추가하기(2)",
             "url": "https://meetup.nhncloud.com/posts/150",
-            "similarity": 0.8616
+            "similarity": 0.8616,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "fbd8391ee48df320",
             "title": "(Spring)Filter와 Interceptor의 차이 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/151",
-            "similarity": 0.8915
+            "similarity": 0.8915,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "a19bdd732806ff62",
             "title": "[Kotlin",
             "url": "https://meetup.nhncloud.com/posts/184",
-            "similarity": 0.8645
+            "similarity": 0.8645,
+            "roles": [
+              "mobile"
+            ]
           },
           {
             "article_id": "b2edfa6debb92caa",
             "title": "VSCode의 Jupyter Extension을 사용하여 간단하게 Python으로 데이터 시각화하기 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/283",
-            "similarity": 0.8603
+            "similarity": 0.8603,
+            "roles": [
+              "data-ai"
+            ]
           }
-        ]
+        ],
+        "roles": [
+          "backend",
+          "data-ai",
+          "mobile"
+        ],
+        "role_counts": {
+          "backend": 5,
+          "data-ai": 2,
+          "mobile": 1
+        }
       },
       {
         "area_name": "데이터 분석 및 AI 활용",
@@ -765,81 +1073,118 @@
             "article_id": "8095c60f9ee8323f",
             "title": "AI와 개발하기: 숨은 결정을 드러내기",
             "url": "https://meetup.nhncloud.com/posts/419",
-            "similarity": 0.8755
+            "similarity": 0.8755,
+            "roles": []
           },
           {
             "article_id": "a87ea5c8c8ab3536",
             "title": "AI 인프라 설계의 기술적 레퍼런스, <NHN FactoryX 기술 백서>를 소개합니다",
             "url": "https://meetup.nhncloud.com/posts/417",
-            "similarity": 0.8801
+            "similarity": 0.8801,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "5acdb6b604275c88",
             "title": "상호작용 데이터모델링 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/108",
-            "similarity": 0.8746
+            "similarity": 0.8746,
+            "roles": [
+              "data-ai"
+            ]
           },
           {
             "article_id": "0e87e4faaf8982a3",
             "title": "(빅데이터를 위한) 리버스 지오코딩 솔루션 개발기 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/193",
-            "similarity": 0.8828
+            "similarity": 0.8828,
+            "roles": [
+              "data-ai"
+            ]
           },
           {
             "article_id": "80a5cb650521a0b3",
             "title": "데이터테크랩의 빨리 세는 법 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/197",
-            "similarity": 0.8859
+            "similarity": 0.8859,
+            "roles": [
+              "data-ai"
+            ]
           },
           {
             "article_id": "959133280a6011a8",
             "title": "웹로그 히스토리 데이터를 이용한 데이터 분석 꼼수 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/278",
-            "similarity": 0.8683
+            "similarity": 0.8683,
+            "roles": [
+              "data-ai"
+            ]
           },
           {
             "article_id": "7d5c5c881d0ac719",
             "title": "구매 데이터를 이용한 고객 세분화 기법",
             "url": "https://meetup.nhncloud.com/posts/279",
-            "similarity": 0.9033
+            "similarity": 0.9033,
+            "roles": [
+              "data-ai"
+            ]
           },
           {
             "article_id": "cff11d7189517530",
             "title": "뼈대 있는 가문의 데이터로 만들기 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/289",
-            "similarity": 0.8715
+            "similarity": 0.8715,
+            "roles": [
+              "data-ai"
+            ]
           },
           {
             "article_id": "7e0750f3ed352eed",
             "title": "게으른 개발자의 코딩 방법: AI주도 개발방법론 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/290",
-            "similarity": 0.8843
+            "similarity": 0.8843,
+            "roles": []
           },
           {
             "article_id": "670f8ed71fe30f15",
             "title": "AI Fashion 서비스 소개 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/299",
-            "similarity": 0.8895
+            "similarity": 0.8895,
+            "roles": []
           },
           {
             "article_id": "4917a92dc89597e8",
             "title": "좌표계 위치데이터의 시각화 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/316",
-            "similarity": 0.8639
+            "similarity": 0.8639,
+            "roles": [
+              "data-ai"
+            ]
           },
           {
             "article_id": "f2c832b5cbb000d3",
             "title": "AI EasyMaker 서비스 소개 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/360",
-            "similarity": 0.8776
+            "similarity": 0.8776,
+            "roles": []
           },
           {
             "article_id": "0bae627a25a7bce2",
             "title": "AI 코딩 도구 보안 가이드: 실제 사고 사례와 DevContainer 격리 환경 구축 방법 : NHN Cloud Meetup",
             "url": "https://meetup.nhncloud.com/posts/396",
-            "similarity": 0.8758
+            "similarity": 0.8758,
+            "roles": []
           }
-        ]
+        ],
+        "roles": [
+          "backend",
+          "data-ai"
+        ],
+        "role_counts": {
+          "backend": 1,
+          "data-ai": 7
+        }
       }
     ],
     "unassigned_count": 30,
@@ -871,7 +1216,13 @@
           "NHN Container Registry(NCR) 이미지 캐시 기능 소개 : NHN Cloud Meetup"
         ]
       }
-    ]
+    ],
+    "role_counts": {
+      "backend": 27,
+      "frontend": 14,
+      "data-ai": 13,
+      "mobile": 17
+    }
   },
   {
     "company": "kt cloud",
@@ -904,195 +1255,337 @@
             "article_id": "19fc84e670de1246",
             "title": "[분석] 무인 데이터센터의 마지막 열쇠, 냉동기 자동재기동(Auto-Restart)",
             "url": "https://tech.ktcloud.com/entry/2026-08-ktcloud-chiller-datacenter-cooling-recovery",
-            "similarity": 0.8777
+            "similarity": 0.8777,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "a05cf6c907ef25ce",
             "title": "케클s피드 7월호｜AI 데이터센터의 새로운 기준을 말하다",
             "url": "https://tech.ktcloud.com/entry/202607-ktcloud-newsletter",
-            "similarity": 0.9228
+            "similarity": 0.9228,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "91697590a418d44d",
             "title": "[케클러 인터뷰 시리즈] #4 전국에 1GW 규모 AI 데이터센터를 준비하는 kt cloud의 방식",
             "url": "https://tech.ktcloud.com/entry/2026-07-ktcloud-aidc-strategy",
-            "similarity": 0.9185
+            "similarity": 0.9185,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "66f5ff9ce743187a",
             "title": "[기술분석] 데이터센터 냉각수 효율(WUE) 개선: 전기산화 기반 하이브리드 수처리 전략",
             "url": "https://tech.ktcloud.com/entry/2026-07-ktcloud-datacenter-cooling-wue-water-efficiency",
-            "similarity": 0.8988
+            "similarity": 0.8988,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "c840413105cba3fa",
             "title": "[AI인프라] 네오클라우드 GPUaaS와 고밀도 AIDC의 공학적 결합",
             "url": "https://tech.ktcloud.com/entry/2026-07-ktcloud-neocloud-gpuaas-aidc-infrastructure",
-            "similarity": 0.9215
+            "similarity": 0.9215,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "cf9ff9c46cede023",
             "title": "[운영가이드] kt cloud 데이터센터 냉동기 원리와 냉각 효율 최적화 방법",
             "url": "https://tech.ktcloud.com/entry/2026-07-ktcloud-datacenter-chiller-cooling-efficiency-optimization",
-            "similarity": 0.9212
+            "similarity": 0.9212,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "bd01e40f787ac2aa",
             "title": "[기술분석] AI 데이터센터에서 WUE가 중요해지는 이유",
             "url": "https://tech.ktcloud.com/entry/2026-07-ktcloud-ai-datacenter-wue-water-efficiency",
-            "similarity": 0.9204
+            "similarity": 0.9204,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "ba38573cf49b11e3",
             "title": "[기술분석] AI 데이터센터 고조파 원인과 전력 품질 대책",
             "url": "https://tech.ktcloud.com/entry/2026-07-ktcloud-ai-datacenter-harmonics-quality-mitigation",
-            "similarity": 0.9146
+            "similarity": 0.9146,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "77f1c0ed02c8177b",
             "title": "[트렌드 리포트] 2026 상반기 트렌드 결산: AI 활용부터 인프라 전환까지",
             "url": "https://tech.ktcloud.com/entry/2026-07-ktcloud-trendreport",
-            "similarity": 0.9183
+            "similarity": 0.9183,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "9ec92b77e204fed1",
             "title": "[AI인프라] AI 시대의 보이지 않는 혈관, 데이터센터 전력 케이블 이해하기",
             "url": "https://tech.ktcloud.com/entry/2026-06-ktcloud-ai-datacenter-cable-%EC%A0%84%EB%A0%A5-%EC%9D%B4%ED%95%B4",
-            "similarity": 0.9282
+            "similarity": 0.9282,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "ce08b48872302d69",
             "title": "[AI인프라] AI 데이터센터(AIDC)는 무엇이 다른가: GPU 전력과 운영 전환",
             "url": "https://tech.ktcloud.com/entry/2026-05-ktcloud-ai-datacenter-gpu-%EC%9D%B8%ED%94%84%EB%9D%BC-%EC%A0%84%ED%99%98",
-            "similarity": 0.9338
+            "similarity": 0.9338,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "a6149b9b9c29c496",
             "title": "[운영가이드] kt cloud AIDC UPS 전원설비 단락사고 특성과 보호장치",
             "url": "https://tech.ktcloud.com/entry/2026-05-ktcloud-aidc-ups-shortcircuit-%EC%A0%84%EC%9B%90%EC%84%A4%EB%B9%84-%EB%B3%B4%ED%98%B8",
-            "similarity": 0.8729
+            "similarity": 0.8729,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "2e01715c3bf6ada1",
             "title": "[인사이트] 정전 0.1초의 싸움",
             "url": "https://tech.ktcloud.com/entry/2026-04-ktcloud-datacenter-emergency-generator-%EC%A0%95%EC%A0%84-%EB%8C%80%EC%9D%91",
-            "similarity": 0.8954
+            "similarity": 0.8954,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "90b796eb9870baaf",
             "title": "[기술동향] 차단기는 멀쩡한데 전원이 꺼졌다? – 데이터센터 순시 전압 강하(Voltage Sag) 원인과 대응방안",
             "url": "https://tech.ktcloud.com/entry/2026-03-ktcloud-voltage-sag-datacenter-%EC%A0%84%EC%9B%90-%EB%8C%80%EC%9D%91",
-            "similarity": 0.8782
+            "similarity": 0.8782,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "07c337c6712bdda1",
             "title": "[기술동향] 2026 피지컬 AI 확산과 AI 데이터센터(AIDC) 인프라 전망",
             "url": "https://tech.ktcloud.com/entry/2026-03-ktcloud-physical-ai-datacenter-%EC%9D%B8%ED%94%84%EB%9D%BC-%EC%A0%84%EB%A7%9D",
-            "similarity": 0.9139
+            "similarity": 0.9139,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "27bf3f806ae404f4",
             "title": "[인사이트] AI 인프라의 숨겨진 뇌관, 무효전력과 전압 안정성",
             "url": "https://tech.ktcloud.com/entry/2026-03-ktcloud-ai-infrastructure-power-%EC%95%88%EC%A0%95%EC%84%B1-%EA%B4%80%EB%A6%AC",
-            "similarity": 0.9019
+            "similarity": 0.9019,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "088824c40ffe0288",
             "title": "[트렌드분석] Floating Data Center(FDC) 완전 분석: 해양 데이터센터의 기술 구조와 인프라 가능성",
             "url": "https://tech.ktcloud.com/entry/2026-03-ktcloud-floating-datacenter-fdc-%ED%95%B4%EC%96%91-%EB%B6%84%EC%84%9D",
-            "similarity": 0.9089
+            "similarity": 0.9089,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "f92175b18b89ec7a",
             "title": "[인사이트] AI 서버 전력 한계 극복: kt cloud가 주목하는 800V DC 데이터센터",
             "url": "https://tech.ktcloud.com/entry/2026-02-ktcloud-ai-server-dc-%EC%A0%84%EB%A0%A5-%EA%B7%B9%EB%B3%B5",
-            "similarity": 0.8995
+            "similarity": 0.8995,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "99fb525354ad202b",
             "title": "[트렌드분석] 글로벌 데이터센터의 전력 문제와 AI 인프라 – Megawatt 시대의 도전과제",
             "url": "https://tech.ktcloud.com/entry/2026-02-ktcloud-ai-datacenter-power-%EC%A0%84%EB%A0%A5-%EC%9D%B8%ED%94%84%EB%9D%BC",
-            "similarity": 0.9307
+            "similarity": 0.9307,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "f023345120d427e0",
             "title": "[인사이트] kt cloud의 꺼지지 않는 심장: 데이터센터 비상발전기 시스템의 모든 것",
             "url": "https://tech.ktcloud.com/entry/2026-02-ktcloud-datacenter-emergency-%EB%B9%84%EC%83%81%EB%B0%9C%EC%A0%84%EA%B8%B0-%EC%95%88%EC%A0%95%EC%84%B1",
-            "similarity": 0.9092
+            "similarity": 0.9092,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "46613e64497316b7",
             "title": "[트렌드분석] 데이터센터 자산 전쟁 : 투자 자본이 몰리는 AI 인프라의 현재와 미래",
             "url": "https://tech.ktcloud.com/entry/2026-01-ktcloud-ai-datacenter-%EC%9D%B8%ED%94%84%EB%9D%BC-%ED%88%AC%EC%9E%90",
-            "similarity": 0.9192
+            "similarity": 0.9192,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "e62cb2083cb0923e",
             "title": "[kt cloud DC Series] #4 동남아 데이터센터 격전지, Southeast Asia 시장 분석",
             "url": "https://tech.ktcloud.com/entry/2026-01-ktcloud-dc-southeast-asia-%EC%8B%9C%EC%9E%A5-%EB%B6%84%EC%84%9D",
-            "similarity": 0.9084
+            "similarity": 0.9084,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "a743241c89914a1c",
             "title": "[트렌드 리포트] AI 인프라 전환 가이드",
             "url": "https://tech.ktcloud.com/entry/2026-01-ktcloud-trendreport",
-            "similarity": 0.9165
+            "similarity": 0.9165,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "bff75a61c743bb00",
             "title": "[인사이트] 데이터센터 전력품질 관리의 중요성 – 7가지 위협 유형과 ITIC 곡선 분석",
             "url": "https://tech.ktcloud.com/entry/2026-01-ktcloud-datacenter-powergrid-itic-%EC%A0%84%EB%A0%A5-%EA%B4%80%EB%A6%AC",
-            "similarity": 0.9032
+            "similarity": 0.9032,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "7e9cbeebc989715b",
             "title": "[kt cloud DC Series] #3 글로벌 데이터센터 격전지, Europe 데이터센터 분석",
             "url": "https://tech.ktcloud.com/entry/2026-01-ktcloud-datacenter-%EC%9C%A0%EB%9F%BD%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%84%BC%ED%84%B0-%EB%B6%84%EC%84%9D",
-            "similarity": 0.8884
+            "similarity": 0.8884,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "068fde7df703e75e",
             "title": "케클s피드 12월호｜기술의 변화, 실행으로 이어지다",
             "url": "https://tech.ktcloud.com/entry/202512-ktcloud-newsletter",
-            "similarity": 0.9175
+            "similarity": 0.9175,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "816b2bf7809e37c6",
             "title": "[웨비나 후기] AI 데이터센터, 이론을 넘어 실증으로 검증하다",
             "url": "https://tech.ktcloud.com/entry/2025-12-ktcloud-webinar-review",
-            "similarity": 0.9328
+            "similarity": 0.9328,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "5a19b89371676e1a",
             "title": "[kt cloud DC Series] #2 아시아 클라우드 허브, Tokyo 데이터센터 분석",
             "url": "https://tech.ktcloud.com/entry/2025-12-ktcloud-datacenter-tokyo-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%84%BC%ED%84%B0-%EB%B6%84%EC%84%9D",
-            "similarity": 0.8786
+            "similarity": 0.8786,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "5c79c2f7f79e85ec",
             "title": "[kt cloud 웨비나] 국내 유일, AI 시대의 데이터센터를 실증하다",
             "url": "https://tech.ktcloud.com/entry/2025-12-ktcloud-webinar",
-            "similarity": 0.9242
+            "similarity": 0.9242,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "99e876d1b1ed98e9",
             "title": "[심층분석] 액침냉각 기술의 현재와 미래: AI 데이터센터 냉각 트렌드",
             "url": "https://tech.ktcloud.com/entry/2025-11-liquid-cooling-datacenter-%EB%83%89%EA%B0%81%EA%B8%B0%EC%88%A0-%EB%B6%84%EC%84%9D",
-            "similarity": 0.9228
+            "similarity": 0.9228,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "6b62846b7b54c65a",
             "title": "[News Digest] kt cloud, 국내 최초 리퀴드 쿨링 상용화한",
             "url": "https://tech.ktcloud.com/entry/2025-11-ktcloud-liquidcooling-ai-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%84%BC%ED%84%B0-%EA%B0%80%EC%82%B0",
-            "similarity": 0.909
+            "similarity": 0.909,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "4100281dcc7410d4",
             "title": "[기술리포트] 배터리의 구조부터 화재 위험까지: 데이터센터 UPS 배터리의 모든 것",
             "url": "https://tech.ktcloud.com/entry/2025-10-datacenter-ups-battery-%EB%B0%B0%ED%84%B0%EB%A6%AC%EC%95%88%EC%A0%84-%EB%A6%AC%ED%8F%AC%ED%8A%B8",
-            "similarity": 0.8837
+            "similarity": 0.8837,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           }
-        ]
+        ],
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend"
+        ],
+        "role_counts": {
+          "backend": 32,
+          "data-ai": 32,
+          "frontend": 4
+        }
       },
       {
         "area_name": "클라우드 플랫폼 아키텍처 및 운영 안정성",
@@ -1114,129 +1607,231 @@
             "article_id": "67f93a982198fd6d",
             "title": "[케클러 인터뷰 시리즈] #5 - AI가 클라우드를 운영하려면, 데이터부터 이해해야 합니다",
             "url": "https://tech.ktcloud.com/entry/2026-08-ktcloud-observability-platform",
-            "similarity": 0.8954
+            "similarity": 0.8954,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "012b6229c8e06378",
             "title": "[kt cloud] kt cloud PLATFORM IAM, 계정 관리를 넘어 정교한 보안 거버넌스로",
             "url": "https://tech.ktcloud.com/entry/2026-08-ktcloud-iam-rbac-mfa-access-governance",
-            "similarity": 0.9113
+            "similarity": 0.9113,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "371a5ba10b2cbf86",
             "title": "[kt cloud summit 2026] AX에 필요한 핵심 기술과 구축·운영 경험을 한자리에서 만나보세요",
             "url": "https://tech.ktcloud.com/entry/2026-08-ktcloud-summit",
-            "similarity": 0.8959
+            "similarity": 0.8959,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "cb040fb4e43c0940",
             "title": "[웨비나 후기] 장애를 견디는 아키텍처, 운영 안정성의 새로운 기준",
             "url": "https://tech.ktcloud.com/entry/2026-07-ktcloud-webinar-review",
-            "similarity": 0.92
+            "similarity": 0.92,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "062171146a482bc4",
             "title": "[kt cloud 웨비나] 중단 없는 운영을 위한 클라우드",
             "url": "https://tech.ktcloud.com/entry/2026-07-ktcloud-webinar",
-            "similarity": 0.9186
+            "similarity": 0.9186,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
           },
           {
             "article_id": "f8d6cabdbf573e39",
             "title": "[설계가이드] Terraform 모듈 설계, 원칙 없이 만들면 반드시 무너진다",
             "url": "https://tech.ktcloud.com/entry/2026-06-ktcloud-terraform-module-%EC%9D%B8%ED%94%84%EB%9D%BC-%EC%95%88%EC%A0%95",
-            "similarity": 0.8871
+            "similarity": 0.8871,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "720251946af1a32d",
             "title": "케클s피드 5월호｜안정적인 클라우드를 만드는 핵심 아키텍처",
             "url": "https://tech.ktcloud.com/entry/202605-ktcloud-newsletter",
-            "similarity": 0.932
+            "similarity": 0.932,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "328cc1ed6c8c58b9",
             "title": "[케클러 인터뷰 시리즈] #2 장애에도 서비스가 멈추지 않는 ‘Multi-AZ’ 엔지니어링 비하인드",
             "url": "https://tech.ktcloud.com/entry/2026-05-ktcloud-platform-multi-az-%EB%8B%A4%EC%A4%91-%EA%B0%80%EC%9A%A9-%EC%98%81%EC%97%AD",
-            "similarity": 0.9094
+            "similarity": 0.9094,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "29351cf95c163245",
             "title": "[백업·DR] kt cloud 재해복구 설계: Multi-AZ와 Multi-Region",
             "url": "https://tech.ktcloud.com/entry/2026-05-ktcloud-dr-multiaz-multiregion-%EC%9E%AC%ED%95%B4%EB%B3%B5%EA%B5%AC-%EC%84%A4%EA%B3%84",
-            "similarity": 0.9213
+            "similarity": 0.9213,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "4726421dbc709797",
             "title": "[인사이트] 코드에서 근육으로: 피지컬 AI와 데이터센터 인프라",
             "url": "https://tech.ktcloud.com/entry/2026-05-ktcloud-physical-ai-datacenter-%EC%9D%B8%ED%94%84%EB%9D%BC-%EA%B5%AC%EC%B6%95",
-            "similarity": 0.8889
+            "similarity": 0.8889,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "903a768ca29b8033",
             "title": "[도입가이드] 인프라 관리의 표준, IaC의 본질과 도입 가치",
             "url": "https://tech.ktcloud.com/entry/2026-05-ktcloud-iac-%EC%9D%B8%ED%94%84%EB%9D%BC-%EA%B4%80%EB%A6%AC",
-            "similarity": 0.8976
+            "similarity": 0.8976,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "6d2c736813e72fc1",
             "title": "[kt cloud CDN] #2 보안 혁신의 실현: 웹·API·봇을 위한 글로벌 엣지 기반 통합 방어 솔루션",
             "url": "https://tech.ktcloud.com/entry/2026-04-ktcloud-cdn-web-api-%EB%B3%B4%EC%95%88-%ED%86%B5%ED%95%A9",
-            "similarity": 0.8881
+            "similarity": 0.8881,
+            "roles": [
+              "backend",
+              "frontend",
+              "mobile",
+              "data-ai"
+            ]
           },
           {
             "article_id": "a3d4eeac185bddf3",
             "title": "[AI활용] Claude Code를 선택한 이유와 개발 아키텍처 설계 실무 적용기",
             "url": "https://tech.ktcloud.com/entry/2026-04-ktcloud-claude-ai-architecture-%EC%8B%A4%EB%AC%B4-%EC%A0%81%EC%9A%A9",
-            "similarity": 0.886
+            "similarity": 0.886,
+            "roles": [
+              "backend",
+              "frontend"
+            ]
           },
           {
             "article_id": "e24a5484d00929af",
             "title": "[트렌드 리포트] 공공 AX가 생각보다 느린 이유",
             "url": "https://tech.ktcloud.com/entry/2026-03-ktcloud-trendreport-dr",
-            "similarity": 0.8862
+            "similarity": 0.8862,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "882472ddc65f796e",
             "title": "[인사이트] EU AI Act 2026년 발효, 한국 기업의 AI 거버넌스 대응 전략",
             "url": "https://tech.ktcloud.com/entry/2026-03-ktcloud-eu-ai-act-%EA%B1%B0%EB%B2%84%EB%84%8C%EC%8A%A4-%EB%8C%80%EC%9D%91",
-            "similarity": 0.872
+            "similarity": 0.872,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "45d0f2654a7318f2",
             "title": "[인사이트] Cloud 3.0 시대의 하이브리드 전략: 진정한 소버린을 달성하는 ktcloud와 Azure의 만남 #1",
             "url": "https://tech.ktcloud.com/entry/2026-03-ktcloud-hybrid-sovereign-azure-%EC%A3%BC%EA%B6%8C-%EB%8B%AC%EC%84%B1",
-            "similarity": 0.8845
+            "similarity": 0.8845,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "0f353d19155aa2e3",
             "title": "[기술리포트] 클라우드 네이티브 3편 : 장애 도메인과 격리 설계",
             "url": "https://tech.ktcloud.com/entry/2026-02-ktcloud-cloud-native-%EC%9E%A5%EC%95%A0%EA%B2%A9%EB%A6%AC-%EA%B0%80%EC%9A%A9%EC%84%B1%EC%84%A4%EA%B3%84",
-            "similarity": 0.8951
+            "similarity": 0.8951,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "0ad252dbac93377d",
             "title": "[기술리포트] 클라우드 네이티브 2편 : 애플리케이션 이식성 강화",
             "url": "https://tech.ktcloud.com/entry/2026-02-ktcloud-cloud-native-container-%EC%9D%B4%EC%8B%9D%EC%84%B1-%EA%B0%95%ED%99%94",
-            "similarity": 0.8877
+            "similarity": 0.8877,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "f829e3b5378d01f5",
             "title": "[기술리포트] 클라우드 네이티브 1편 : 가용성 설계 재조명",
             "url": "https://tech.ktcloud.com/entry/2026-01-ktcloud-cloud-native-%EA%B0%80%EC%9A%A9%EC%84%B1-%EC%84%A4%EA%B3%84",
-            "similarity": 0.8905
+            "similarity": 0.8905,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "e0481c44110bc487",
             "title": "[kt cloud CDN] #1 보안 혁신의 출발: 글로벌 엣지 기반 올인원 제로 트러스트 전략",
             "url": "https://tech.ktcloud.com/entry/2025-12-ktcloud-cdn-zerotrust-%EB%B3%B4%EC%95%88%EC%A0%84%EB%9E%B5-%EA%B5%AC%EC%B6%95",
-            "similarity": 0.8732
+            "similarity": 0.8732,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
           },
           {
             "article_id": "8d3e61f36cb2a444",
             "title": "[기술리포트] kt cloud로 완성하는 복원력 : 백업·DR·Multi-Region·HA 개념부터 설계 전략까지",
             "url": "https://tech.ktcloud.com/entry/2025-10-ktcloud-backup-dr-%EB%B3%B5%EC%9B%90%EC%A0%84%EB%9E%B5-%EC%84%A4%EA%B3%84",
-            "similarity": 0.8967
+            "similarity": 0.8967,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           }
-        ]
+        ],
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "backend": 21,
+          "data-ai": 20,
+          "mobile": 3,
+          "frontend": 4
+        }
       },
       {
         "area_name": "쿠버네티스·오픈스택 인프라 운영 및 플랫폼 엔지니어링",
@@ -1259,189 +1854,332 @@
             "article_id": "0f0f42daacfcfa76",
             "title": "케클s피드 8월호｜개발부터 운영까지, 일하는 방식을 재설계하다",
             "url": "https://tech.ktcloud.com/entry/202608-ktcloud-newsletter",
-            "similarity": 0.9071
+            "similarity": 0.9071,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "19ccd5ae75efd448",
             "title": "[기술사례] 대규모 Kubernetes 환경의 중단 없는 진화를 위한 선택: kt cloud의 Chkk 기반 클러스터 관리",
             "url": "https://tech.ktcloud.com/entry/2026-08-ktcloud-kubernetes-cluster-upgrade-management",
-            "similarity": 0.9036
+            "similarity": 0.9036,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "c54ab281e3785212",
             "title": "[사례연구] 사내 개인용 개발환경 이미지 실험기 2부: 만들면서 마주친 것들과 풀어간 방법",
             "url": "https://tech.ktcloud.com/entry/2026-08-ktcloud-development-environment-image-challenge",
-            "similarity": 0.9039
+            "similarity": 0.9039,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "87a2b9167df1b61e",
             "title": "[구축사례] 흩어진 운영 데이터를 하나로, kt cloud 운영 데이터 통합 플랫폼 Deck 구축기",
             "url": "https://tech.ktcloud.com/entry/2026-08-ktcloud-operations-data-integration",
-            "similarity": 0.878
+            "similarity": 0.878,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "c5928b30114851ee",
             "title": "[기술사례] OVN ACL Flow Sampling 기반 VPC Flow Log 서비스 개발",
             "url": "https://tech.ktcloud.com/entry/2026-07-ktcloud-ovn-acl-ipfix-logging-architecture",
-            "similarity": 0.8777
+            "similarity": 0.8777,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "91132f6daf925626",
             "title": "[구축사례] IPFIX와 Goflow2로 구현한 kt cloud Network 미터링 내재화",
             "url": "https://tech.ktcloud.com/entry/2026-07-ktcloud-ipfix-goflow2-metering-network-internalization",
-            "similarity": 0.8857
+            "similarity": 0.8857,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "935b3a9f3a582518",
             "title": "[kt cloud] kt cloud PLATFORM, 공공 클라우드를 위한 차세대 운영 기반",
             "url": "https://tech.ktcloud.com/entry/2026-07-ktcloud-cloud-platform",
-            "similarity": 0.9035
+            "similarity": 0.9035,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "7185fa9efe0aa451",
             "title": "[기술검증] 물리 서버는 그대로, Kubernetes는 새 버전으로: Cluster API In-place Upgrade",
             "url": "https://tech.ktcloud.com/entry/2026-07-ktcloud-kubernetes-clusterapi-upgrade-server-retention",
-            "similarity": 0.8902
+            "similarity": 0.8902,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "d50e23dbb8871192",
             "title": "[구축사례] kt cloud PLATFORM OpenStack 검증용 Zuul.CI Gating System 구축",
             "url": "https://tech.ktcloud.com/entry/2026-07-ktcloud-openstack-zuul-ci-validation-deployment",
-            "similarity": 0.9072
+            "similarity": 0.9072,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "d82345b020aed81b",
             "title": "[AI 인프라] RoCEv2 기반 AI GPU 클러스터 네트워크 설계 고려사항",
             "url": "https://tech.ktcloud.com/entry/2026-07-ktcloud-rocev2-gpu-network-design-considerations",
-            "similarity": 0.8971
+            "similarity": 0.8971,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
           },
           {
             "article_id": "7dd0d6db97e12ab9",
             "title": "[기술사례] Ceph 기반 스토리지 내재화로 상용 스토리지 대체하기",
             "url": "https://tech.ktcloud.com/entry/2026-07-ktcloud-ceph-storage-infrastructure-replacement",
-            "similarity": 0.881
+            "similarity": 0.881,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "a2d7641e5db5f418",
             "title": "[기술사례] Proxmox와 Pulumi로 구현한 ControlPlane 가상화",
             "url": "https://tech.ktcloud.com/entry/2026-07-ktcloud-proxmox-pulumi-controlplane-deployment",
-            "similarity": 0.8779
+            "similarity": 0.8779,
+            "roles": [
+              "backend",
+              "frontend"
+            ]
           },
           {
             "article_id": "af27fbaa99e3186f",
             "title": "케클s피드 6월호｜AI 시대, 인프라 운영 역량이 더 중요해진 이유",
             "url": "https://tech.ktcloud.com/entry/%EC%BC%80%ED%81%B4s%ED%94%BC%EB%93%9C-6%EC%9B%94%ED%98%B8%EF%BD%9CAI-%EC%8B%9C%EB%8C%80-%EC%9D%B8%ED%94%84%EB%9D%BC-%EC%9A%B4%EC%98%81-%EC%97%AD%EB%9F%89%EC%9D%B4-%EB%8D%94-%EC%A4%91%EC%9A%94%ED%95%B4%EC%A7%84-%EC%9D%B4%EC%9C%A0",
-            "similarity": 0.92
+            "similarity": 0.92,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "025b2f4c1ab47be1",
             "title": "[케클러 인터뷰 시리즈] #3 개발자가 본질에 집중하도록: kt cloud 플랫폼 엔지니어링 이야기",
             "url": "https://tech.ktcloud.com/entry/2026-06-ktcloud-%ED%94%8C%EB%9E%AB%ED%8F%BC-%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4%EB%A7%81",
-            "similarity": 0.8969
+            "similarity": 0.8969,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "5a0e082b561cafb1",
             "title": "[사례연구] 사내 개인용 개발환경 이미지 실험기 1부: git push로 업데이트되는 OpenStack 샌드박스 만들기",
             "url": "https://tech.ktcloud.com/entry/2026-06-ktcloud-openstack-git-sandbox-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95",
-            "similarity": 0.8933
+            "similarity": 0.8933,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "cef0a9bbbc122bd6",
             "title": "[기술분석] Kubernetes Gateway API에서 트래픽을 세밀하게 제어하는 Policy 객체 파헤치기",
             "url": "https://tech.ktcloud.com/entry/2026-06-ktcloud-kubernetes-gateway-api-%ED%8A%B8%EB%9E%98%ED%94%BD-%EC%A0%9C%EC%96%B4",
-            "similarity": 0.8812
+            "similarity": 0.8812,
+            "roles": [
+              "backend",
+              "frontend"
+            ]
           },
           {
             "article_id": "6025e802b52ec2d7",
             "title": "[전환가이드] ArgoCD·FluxCD GitOps 배포를 HelmRelease로 전환하는 방법",
             "url": "https://tech.ktcloud.com/entry/2026-06-ktcloud-argocd-fluxcd-helmrelease-%EB%B0%B0%ED%8F%AC-%EC%A0%84%ED%99%98",
-            "similarity": 0.8742
+            "similarity": 0.8742,
+            "roles": [
+              "backend",
+              "frontend"
+            ]
           },
           {
             "article_id": "4b25bddbca292c23",
             "title": "[운영가이드] Kubernetes 기반 Fault-Tolerant GPU 클러스터 유지 관리",
             "url": "https://tech.ktcloud.com/entry/2026-06-ktcloud-kubernetes-gpu-cluster-%EC%9E%A5%EC%95%A0-%EA%B4%80%EB%A6%AC",
-            "similarity": 0.9082
+            "similarity": 0.9082,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "5a4313b2a1464bdd",
             "title": "[도입전략] Git 시크릿 관리와 Vault 도입으로 보안 강화하기",
             "url": "https://tech.ktcloud.com/entry/2026-06-ktcloud-git-vault-secrets-%EB%B3%B4%EC%95%88-%EA%B0%95%ED%99%94",
-            "similarity": 0.8855
+            "similarity": 0.8855,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "4960fffadcbde254",
             "title": "[기술 분석] kubernetes Ingress API의 중단. 그 뒤를 잇는 Gateway API 파헤치기",
             "url": "https://tech.ktcloud.com/entry/2026-05-ktcloud-kubernetes-ingress-gateway-%EC%A0%84%ED%99%98-%EB%B6%84%EC%84%9D",
-            "similarity": 0.8962
+            "similarity": 0.8962,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "b186834dad2e9369",
             "title": "[케클러 인터뷰 시리즈] #1 kt cloud PLATFORM 재설계 이야기",
             "url": "https://tech.ktcloud.com/entry/2026-04-ktcloud-platform-redesign-%ED%94%8C%EB%9E%AB%ED%8F%BC-%EC%9E%AC%EC%84%A4%EA%B3%84",
-            "similarity": 0.9037
+            "similarity": 0.9037,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "8089fd9e32cfc71c",
             "title": "[트러블슈팅] Kubernetes StatefulSet 스토리지 확장: Non-cascade 전략으로 무중단 Immutable 제약 극복",
             "url": "https://tech.ktcloud.com/entry/2026-04-ktcloud-kubernetes-statefulset-storage-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80-%ED%99%95%EC%9E%A5",
-            "similarity": 0.884
+            "similarity": 0.884,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "138580d0d0c4efd7",
             "title": "[아키텍처] kt cloud PLATFORM 보안 거버넌스의 수립: Vault 도입과 효율적인 시크릿 전달 전략 (ESO & CSI)",
             "url": "https://tech.ktcloud.com/entry/2026-03-ktcloud-vault-eso-csi-%EB%B3%B4%EC%95%88-%EB%8F%84%EC%9E%85",
-            "similarity": 0.9003
+            "similarity": 0.9003,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "cfeaad6ef9b3d64d",
             "title": "[비교분석] Calico vs Cilium : kubernetes에서 eBPF를 대하는 두 CNI 거인",
             "url": "https://tech.ktcloud.com/entry/2026-03-ktcloud-calico-cilium-ebpf-%EB%B9%84%EA%B5%90-%EB%B6%84%EC%84%9D",
-            "similarity": 0.8809
+            "similarity": 0.8809,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "7a6c66b1001306de",
             "title": "[기술리포트] 클라우드 네이티브 4편 : 상태 관리와 데이터 일관성",
             "url": "https://tech.ktcloud.com/entry/2026-02-ktcloud-cloud-native-state-%EC%95%88%EC%A0%95%EC%84%B1-%ED%99%95%EB%B3%B4",
-            "similarity": 0.8924
+            "similarity": 0.8924,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "6ad6afb00ba0c517",
             "title": "케클s피드 1월호｜AI는 이미 도입됐습니다. 관건은 운영입니다.",
             "url": "https://tech.ktcloud.com/entry/202601-ktcloud-newsletter",
-            "similarity": 0.898
+            "similarity": 0.898,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "8d86d7134b6dc2ff",
             "title": "[튜토리얼] kt cloud가 자원을 최적화하는 방법: 컨테이너 리소스 동적할당 구현기",
             "url": "https://tech.ktcloud.com/entry/2026-01-ktcloud-container-resource-dynamic-%EB%A6%AC%EC%86%8C%EC%8A%A4-%EC%B5%9C%EC%A0%81%ED%99%94",
-            "similarity": 0.8762
+            "similarity": 0.8762,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "cbc7a5f1a762f0f8",
             "title": "[실전가이드] OpenStack Helm 배포를 GitOps로 전환: FluxCD+Argo CD 아키텍처 설계와 운영 전략",
             "url": "https://tech.ktcloud.com/entry/2026-01-ktcloud-openstack-helm-gitops-%EB%B0%B0%ED%8F%AC-%EC%A0%84%ED%99%98",
-            "similarity": 0.8783
+            "similarity": 0.8783,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "10d9e05e61c92240",
             "title": "[kt cloud] OpenStack과 Kubernetes의 통합, 그리고 NEXT 플랫폼의 탄생",
             "url": "https://tech.ktcloud.com/entry/2025-12-ktcloud-openstack-kubernetes-next-%ED%94%8C%EB%9E%AB%ED%8F%BC",
-            "similarity": 0.9083
+            "similarity": 0.9083,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "5cf5c7f0cde0eaa6",
             "title": "[세션 리포트] OpenInfra Summit Europe 2025:kt cloud의 OpenStack-Kubernetes 클라우드 네이티브 CSP 구축 사례",
             "url": "https://tech.ktcloud.com/entry/2025-11-ktcloud-openstack-kubernetes-%ED%96%89%EC%82%AC-%ED%9B%84%EA%B8%B0",
-            "similarity": 0.9031
+            "similarity": 0.9031,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "8eef0e22f92b4af6",
             "title": "[가이드] kt cloud에서 사용하는 Umbrella Helm Chart 설계 전략",
             "url": "https://tech.ktcloud.com/entry/2025-11-ktcloud-umbrella-helm-%EC%84%A4%EA%B3%84-%EA%B0%80%EC%9D%B4%EB%93%9C",
-            "similarity": 0.8766
+            "similarity": 0.8766,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           }
-        ]
+        ],
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "backend": 31,
+          "data-ai": 25,
+          "frontend": 12,
+          "mobile": 1
+        }
       },
       {
         "area_name": "AI 서비스화 및 LLM 인프라 최적화",
@@ -1464,159 +2202,285 @@
             "article_id": "8749e98b95bb45a4",
             "title": "[AI활용] Claude 실무편 - kt cloud VM에서 PR 리뷰 자동화하기",
             "url": "https://tech.ktcloud.com/entry/2026-08-ktcloud-claude-pr-review-automation",
-            "similarity": 0.8738
+            "similarity": 0.8738,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "f984811c3e0359c6",
             "title": "[AI활용] Claude 실무편 - Technical Writer Skill 만들기",
             "url": "https://tech.ktcloud.com/entry/2026-08-ktcloud-claude-ai-skill-writer-creation",
-            "similarity": 0.8803
+            "similarity": 0.8803,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "108294394ed0362d",
             "title": "[기술동향] LLM 추론 최적화 핵심 기술: 양자화, KV 캐시, 추론 칩",
             "url": "https://tech.ktcloud.com/entry/2026-08-ktcloud-llm-inference-quantization-optimization-technology",
-            "similarity": 0.9066
+            "similarity": 0.9066,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "b35ee42112a9b9fa",
             "title": "[AI활용] AI가 코딩하고, kt cloud AI NEXUS로 AI 서비스를 배포한다",
             "url": "https://tech.ktcloud.com/entry/2026-08-ktcloud-ai-nexus-firebase-service-deployment",
-            "similarity": 0.8867
+            "similarity": 0.8867,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "64adfbf9d964449c",
             "title": "[Tech Series] kt cloud AI 검색 증강 생성(RAG) #5 : 검색 고도화(Retrieval Optimization)와 리랭킹(Re-ranking) 기술",
             "url": "https://tech.ktcloud.com/entry/2026-06-ktcloud-ai-rag-reranking-%EA%B2%80%EC%83%89-%EA%B3%A0%EB%8F%84%ED%99%94",
-            "similarity": 0.8939
+            "similarity": 0.8939,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "87377dbd4021c62b",
             "title": "[인사이트] 프롬프트·컨텍스트 엔지니어링 다음은 하네스 엔지니어링: AI 에이전트 환경 설계",
             "url": "https://tech.ktcloud.com/entry/2026-06-ktcloud-prompt-context-agent-%ED%99%98%EA%B2%BD-%EC%84%A4%EA%B3%84",
-            "similarity": 0.887
+            "similarity": 0.887,
+            "roles": [
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "95b3d5cad6fe6b01",
             "title": "[리뷰] 책상 위의 데이터센터, Dell Pro Max GB10 AI 워크스테이션 실사용기",
             "url": "https://tech.ktcloud.com/entry/2026-05-ktcloud-dell-ai-workstation-%EA%B0%9C%EB%B0%9C-%EA%B2%80%EC%A6%9D",
-            "similarity": 0.8852
+            "similarity": 0.8852,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "581f0f8ee6ef6aad",
             "title": "[AI활용] kt cloud AI Foundry로 AI 서비스 구축 흐름 한 번에 살펴보기",
             "url": "https://tech.ktcloud.com/entry/2026-04-ktcloud-ai-foundry-%EC%84%9C%EB%B9%84%EC%8A%A4-%EA%B5%AC%EC%B6%95",
-            "similarity": 0.9061
+            "similarity": 0.9061,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "7907274137b1db49",
             "title": "[인사이트] AI는 버블인가?",
             "url": "https://tech.ktcloud.com/entry/2026-04-ktcloud-ai-infra-capex-%ED%88%AC%EC%9E%90%EB%B6%84%EC%84%9D",
-            "similarity": 0.8863
+            "similarity": 0.8863,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "fa472722ec78c80d",
             "title": "케클s피드 4월호｜AI, 더 빠르고 더 효율적인 방식으로",
             "url": "https://tech.ktcloud.com/entry/%EC%BC%80%ED%81%B4s%ED%94%BC%EB%93%9C-4%EC%9B%94%ED%98%B8%EF%BD%9CAI-%EB%8D%94-%EB%B9%A0%EB%A5%B4%EA%B3%A0-%EB%8D%94-%ED%9A%A8%EC%9C%A8%EC%A0%81%EC%9D%B8-%EB%B0%A9%EC%8B%9D%EC%9C%BC%EB%A1%9C",
-            "similarity": 0.9062
+            "similarity": 0.9062,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "b8ba4e766f711aef",
             "title": "[비교분석] FastAPI는 충분히 빠르지 않다? Robyn과의 성능 차이 직접 비교",
             "url": "https://tech.ktcloud.com/entry/2026-04-ktcloud-fastapi-robyn-%EC%84%B1%EB%8A%A5-%EB%B9%84%EA%B5%90",
-            "similarity": 0.8781
+            "similarity": 0.8781,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "2b7e3ef87391c43e",
             "title": "[활용가이드] kt cloud AI RAG(검색 증강 생성) 활용법 – 컨텍스트 최적화로 성능 높이기",
             "url": "https://tech.ktcloud.com/entry/2026-04-ktcloud-ai-rag-%EC%84%B1%EB%8A%A5-%EC%B5%9C%EC%A0%81%ED%99%94",
-            "similarity": 0.9056
+            "similarity": 0.9056,
+            "roles": [
+              "data-ai"
+            ]
           },
           {
             "article_id": "a5ad4d6b61ee20d1",
             "title": "[Tech Series] kt cloud AI 검색 증강 생성(RAG) #4 : 임베딩(Embedding)과 벡터 인덱싱 기술",
             "url": "https://tech.ktcloud.com/entry/2026-03-ktcloud-rag-embedding-vectorindex-%EA%B2%80%EC%83%89-%EC%83%89%EC%9D%B8",
-            "similarity": 0.9104
+            "similarity": 0.9104,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "1966041b2446f656",
             "title": "[공모전 후기] Dev Agent, kt cloud의 업무 방식을 혁신하다",
             "url": "https://tech.ktcloud.com/entry/%EA%B3%B5%EB%AA%A8%EC%A0%84-%ED%9B%84%EA%B8%B0-Dev-Agent-kt-cloud%EC%9D%98-%EC%97%85%EB%AC%B4-%EB%B0%A9%EC%8B%9D%EC%9D%84-%ED%98%81%EC%8B%A0%ED%95%98%EB%8B%A4",
-            "similarity": 0.8882
+            "similarity": 0.8882,
+            "roles": [
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "5a0bff44ec8542f5",
             "title": "[분석] 2025 AI 트렌드 결산 #5: Frontier AI와 거버넌스, 인류가 마주한 새로운 과제",
             "url": "https://tech.ktcloud.com/entry/2025-12-ktcloud-frontierai-agi-governance-%EA%B8%B0%EC%88%A0%EC%A0%84%EB%A7%9D-%EA%B1%B0%EB%B2%84%EB%84%8C%EC%8A%A4%EA%B3%BC%EC%A0%9C",
-            "similarity": 0.8805
+            "similarity": 0.8805,
+            "roles": [
+              "data-ai"
+            ]
           },
           {
             "article_id": "fe64292a07f61962",
             "title": "[트렌드 리포트] kt cloud 2025 하반기 결산 리포트",
             "url": "https://tech.ktcloud.com/entry/2025-12-ktcloud-trendreport",
-            "similarity": 0.9053
+            "similarity": 0.9053,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "41b1dd698b4629b1",
             "title": "[분석] 2025 AI 트렌드 결산 #2: AI 소비자화(Consumerization)가 바꾼 산업 표준",
             "url": "https://tech.ktcloud.com/entry/2025-12-ai-trend-%EC%86%8C%EB%B9%84%EC%9E%90%ED%99%94-%EB%B6%84%EC%84%9D",
-            "similarity": 0.9006
+            "similarity": 0.9006,
+            "roles": [
+              "backend",
+              "frontend",
+              "mobile",
+              "data-ai"
+            ]
           },
           {
             "article_id": "f68f034e48d56c68",
             "title": "[트렌드 리포트] 산업별 AI 활용 인사이트와 AX 구현 전략 로드맵",
             "url": "https://tech.ktcloud.com/entry/2025-11-ktcloud-trendreport-ax",
-            "similarity": 0.8958
+            "similarity": 0.8958,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "26ce9a97e0b684f8",
             "title": "[Tech Series] kt cloud AI 검색 증강 생성(RAG) #3 : 청킹(Chunking) 전략과 최적화",
             "url": "https://tech.ktcloud.com/entry/2025-11-ktcloud-rag-ai-%EC%B2%AD%ED%82%B9%EC%A0%84%EB%9E%B5-%EC%B5%9C%EC%A0%81%ED%99%94",
-            "similarity": 0.8852
+            "similarity": 0.8852,
+            "roles": [
+              "data-ai"
+            ]
           },
           {
             "article_id": "9b20e6d4c1054585",
             "title": "[후기] Opensource Summit 2025에서 AI Foundry를 만나다: kt cloud 미니 챗봇 구축기",
             "url": "https://tech.ktcloud.com/entry/2025-11-ktcloud-ai-chatbot-%EC%B1%97%EB%B4%87%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95",
-            "similarity": 0.9012
+            "similarity": 0.9012,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "f12ee3d76c8015ae",
             "title": "[인사이트] 2025 글로벌 AI 경쟁 시대, 국내 클라우드 기업이 해결해야 할 5대 기술 과제",
             "url": "https://tech.ktcloud.com/entry/2025-11-cloud-ai-%EA%B8%B0%EC%88%A0%EA%B3%BC%EC%A0%9C-%EA%B2%BD%EC%9F%81%EC%8B%9C%EB%8C%80",
-            "similarity": 0.8954
+            "similarity": 0.8954,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
           },
           {
             "article_id": "0910765c6867fff6",
             "title": "[AI 트렌드] AI는 어디에 쓰이고 있나?(농업편) #1 : 디지털 육종부터 스펙트럴 이미징까지",
             "url": "https://tech.ktcloud.com/entry/2025-10-ai-agriculture-%EB%86%8D%EC%97%85%EA%B8%B0%EC%88%A0-%EC%A0%81%EC%9A%A9",
-            "similarity": 0.868
+            "similarity": 0.868,
+            "roles": [
+              "data-ai"
+            ]
           },
           {
             "article_id": "ecbed11408abfd8b",
             "title": "[Tech Series] kt cloud AI 검색 증강 생성(RAG) #2 : 데이터 파싱과 전처리 최적화",
             "url": "https://tech.ktcloud.com/entry/2025-09-ktcloud-ai-rag-parsing-%EC%A0%84%EC%B2%98%EB%A6%AC-%EC%B5%9C%EC%A0%81%ED%99%94",
-            "similarity": 0.8864
+            "similarity": 0.8864,
+            "roles": [
+              "backend",
+              "frontend",
+              "mobile",
+              "data-ai"
+            ]
           },
           {
             "article_id": "1fbe75cda20535b9",
             "title": "[분석] NVIDIA H200으로 업그레이드된 kt cloud AI Train: 더 빠른 추론, 더 효율적인 학습 성능 실측",
             "url": "https://tech.ktcloud.com/entry/2025-09-ktcloud-aitrain-nvidia-ai%EC%84%B1%EB%8A%A5-%EC%97%85%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C",
-            "similarity": 0.8763
+            "similarity": 0.8763,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "853cbe24b8f50f9c",
             "title": "[기술리포트] 양자컴퓨팅의 현재와 미래: 클라우드 시대의 새로운 도약",
             "url": "https://tech.ktcloud.com/entry/2025-09-techreport-quantum-cloud-%EA%B8%B0%EC%88%A0%EB%8F%99%ED%96%A5-%EB%B6%84%EC%84%9D",
-            "similarity": 0.8752
+            "similarity": 0.8752,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "be138aa612cb8e92",
             "title": "[Tech Series] kt cloud AI 검색 증강 생성(RAG) #1 : 핵심 개념과 시스템 구조 이해",
             "url": "https://tech.ktcloud.com/entry/2025-08-ktcloud-ai-rag-%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B5%AC%EC%A1%B0-%EC%9D%B4%ED%95%B4",
-            "similarity": 0.8986
+            "similarity": 0.8986,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           }
-        ]
+        ],
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "backend": 20,
+          "data-ai": 26,
+          "frontend": 13,
+          "mobile": 3
+        }
       },
       {
         "area_name": "AI 트렌드 및 조직 뉴스레터(비엔지니어링 성격)",
@@ -1636,21 +2500,41 @@
             "article_id": "b5413cd82aee4af6",
             "title": "[트렌드 리포트] \"DR은 필요하지만...\" 진짜 고민은 따로 있었다",
             "url": "https://tech.ktcloud.com/entry/2026-07-ktcloud-trendreport-1",
-            "similarity": 0.8815
+            "similarity": 0.8815,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "93baf2f6f12eeaae",
             "title": "케클s피드 3월호｜AI 시대, 인프라를 다시 생각하다",
             "url": "https://tech.ktcloud.com/entry/202603-ktcloud-newsletter",
-            "similarity": 0.8942
+            "similarity": 0.8942,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "4de8370a5453da70",
             "title": "케클s피드 2월호｜AI 시대, 실행력이 경쟁력입니다",
             "url": "https://tech.ktcloud.com/entry/202602-ktcloud-newsletter",
-            "similarity": 0.8929
+            "similarity": 0.8929,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           }
-        ]
+        ],
+        "roles": [
+          "backend",
+          "data-ai"
+        ],
+        "role_counts": {
+          "backend": 3,
+          "data-ai": 3
+        }
       }
     ],
     "unassigned_count": 21,
@@ -1673,7 +2557,13 @@
           "[분석] ArgoCD 3.0이 선언한 GitOps 새로운 시대: 주요 업데이트 기능 완벽 해부"
         ]
       }
-    ]
+    ],
+    "role_counts": {
+      "backend": 126,
+      "data-ai": 125,
+      "frontend": 37,
+      "mobile": 7
+    }
   },
   {
     "company": "라인플러스",
@@ -1706,135 +2596,219 @@
             "article_id": "0f88518ee5166e38",
             "title": "AI를 전제로 다시 설계하다, Tech-Verse 2026 참관기",
             "url": "https://techblog.lycorp.co.jp/ko/tech-verse-2026-ai-driven-development-review",
-            "similarity": 0.9024
+            "similarity": 0.9024,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "c7d00573c02ce3e7",
             "title": "보안 업무를 위한 AI 에이전트 플랫폼 「SAGE」 개발기 1편: 판단은 사람에게 남기는 설계",
             "url": "https://techblog.lycorp.co.jp/ko/ai-agent-platform-sage-dev-log-part-1",
-            "similarity": 0.8821
+            "similarity": 0.8821,
+            "roles": [
+              "data-ai"
+            ]
           },
           {
             "article_id": "1b464ccc3008cd6f",
             "title": "개인 AI 활용의 다음 단계는 무엇인가 - LY Corporation에서 AIDD 워크숍을 통해 살펴본 AIDD 조직 도입의 조건",
             "url": "https://techblog.lycorp.co.jp/ko/conditions-for-organizational-aidd-adoption",
-            "similarity": 0.8747
+            "similarity": 0.8747,
+            "roles": []
           },
           {
             "article_id": "1d86f7e2ccf0bff9",
             "title": "Grafana에서 자연어로 장애 원인을 분석하기: LLM 에이전트 기반 SRELens 개발기",
             "url": "https://techblog.lycorp.co.jp/ko/analyzing-incident-root-causes-in-grafana-using-natural-language-with-llm-agent",
-            "similarity": 0.8731
+            "similarity": 0.8731,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "fc584354289ef378",
             "title": "AI 에이전트를 위한 Android CLI: 대규모 모바일 개발 환경에 적용하기",
             "url": "https://techblog.lycorp.co.jp/ko/android-cli-for-ai-agents-at-scale",
-            "similarity": 0.8787
+            "similarity": 0.8787,
+            "roles": [
+              "frontend",
+              "mobile"
+            ]
           },
           {
             "article_id": "732d4cb0f1da0625",
             "title": "프롬프팅에서 워크플로로, AI로 프런트엔드 개발 생산성 끌어올리기",
             "url": "https://techblog.lycorp.co.jp/ko/techverse2026-10",
-            "similarity": 0.8904
+            "similarity": 0.8904,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "c815a66246add949",
             "title": "AI 에이전트끼리 토론한다면? 멀티 에이전트 협업으로 재설계하는 개발 프로세스",
             "url": "https://techblog.lycorp.co.jp/ko/techverse2026-219",
-            "similarity": 0.9089
+            "similarity": 0.9089,
+            "roles": []
           },
           {
             "article_id": "4c6013a7a5627112",
             "title": "AI 시대의 개발 능력은 검증력으로 결정된다, Flava API Gateway 개발 중 배운 빠른 검증과 로컬 환경 구성 전략",
             "url": "https://techblog.lycorp.co.jp/ko/techverse2026-223",
-            "similarity": 0.8957
+            "similarity": 0.8957,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "be7ddeff2dd41ce4",
             "title": "시멘틱 컨텍스트 OS 설계: 에이전트 시스템의 토큰 스터핑을 넘어",
             "url": "https://techblog.lycorp.co.jp/ko/techverse2026-59",
-            "similarity": 0.8901
+            "similarity": 0.8901,
+            "roles": [
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "dbdf3a6e20e207ec",
             "title": "분석 에이전트의 힘으로 분석을 하나로 연결하다! 전문 조직에서 도전하는 생성 AI 시대의 업무 혁신과 역할 전환",
             "url": "https://techblog.lycorp.co.jp/ko/techverse2026-105",
-            "similarity": 0.8837
+            "similarity": 0.8837,
+            "roles": [
+              "data-ai"
+            ]
           },
           {
             "article_id": "22095dc9b999f659",
             "title": "ODW #7: 세 가지 방법으로 토큰 소비량 40% 절감! ADK를 이용한 컨텍스트 엔지니어링",
             "url": "https://techblog.lycorp.co.jp/ko/cut-token-usage-40-percent-with-adk-context-engineering",
-            "similarity": 0.8806
+            "similarity": 0.8806,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
           },
           {
             "article_id": "8333f5f757073f6f",
             "title": "ODW #6: Git 자동화 관점에서 본 MCP와 에이전트 스킬의 장단점",
             "url": "https://techblog.lycorp.co.jp/ko/git-automation-mcp-vs-agent-skills-pros-and-cons",
-            "similarity": 0.8752
+            "similarity": 0.8752,
+            "roles": [
+              "data-ai"
+            ]
           },
           {
             "article_id": "12e695132f428fee",
             "title": "AI는 QA를 대체하지 않았다, 대신 확장했다",
             "url": "https://techblog.lycorp.co.jp/ko/ai-augments-qa-rather-than-replacing-it",
-            "similarity": 0.8877
+            "similarity": 0.8877,
+            "roles": [
+              "mobile"
+            ]
           },
           {
             "article_id": "9682e7e1ff73a994",
             "title": "ODW #5: 벡터 DB와 에이전트 스킬로 RAG 시스템 만들기",
             "url": "https://techblog.lycorp.co.jp/ko/building-rag-system-with-vector-db-and-agent-skills",
-            "similarity": 0.876
+            "similarity": 0.876,
+            "roles": [
+              "mobile"
+            ]
           },
           {
             "article_id": "b1326b198fcbd8fd",
             "title": "ODW #4: 코파일럿에서 파일럿으로, 에이전틱 코딩으로 구현부터 PR까지 자동화",
             "url": "https://techblog.lycorp.co.jp/ko/from-copilot-to-pilot-agentic-coding-implementation-to-pr-automation",
-            "similarity": 0.8731
+            "similarity": 0.8731,
+            "roles": []
           },
           {
             "article_id": "80a653d5f3b7f721",
             "title": "ODW #3: MCP 서버를 안전하게 활용해 개발 효율 높이기",
             "url": "https://techblog.lycorp.co.jp/ko/improving-development-efficiency-with-secure-mcp-servers",
-            "similarity": 0.8935
+            "similarity": 0.8935,
+            "roles": [
+              "backend",
+              "mobile"
+            ]
           },
           {
             "article_id": "3bfa0d87bfb39ff2",
             "title": "ODW #2: ADK로 싱글/멀티 에이전트를 개발해 사내 시스템과 통합",
             "url": "https://techblog.lycorp.co.jp/ko/developing-single-and-multi-agent-systems-with-adk-and-integrating-into-internal-systems",
-            "similarity": 0.9002
+            "similarity": 0.9002,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "95ee151c23bf67aa",
             "title": "AI 활용 능력을 높이기 위한 사내 워크숍, 'Orchestration Development Workshop' 기사 목록",
             "url": "https://techblog.lycorp.co.jp/ko/orchestration-development-workshop-article-list",
-            "similarity": 0.8892
+            "similarity": 0.8892,
+            "roles": []
           },
           {
             "article_id": "e562248b889c4909",
             "title": "AI 활용의 열쇠는 '조직적 학습'에 있다 - Orchestration Development Workshop의 시작",
             "url": "https://techblog.lycorp.co.jp/ko/start-orchestration-development-workshop",
-            "similarity": 0.8812
+            "similarity": 0.8812,
+            "roles": []
           },
           {
             "article_id": "ebd12886f6888a58",
             "title": "엔터프라이즈 LLM 서비스 구축기 2: 에이전트 엔지니어링",
             "url": "https://techblog.lycorp.co.jp/ko/building-an-llm-service-for-enterprise-2-agent-engineering",
-            "similarity": 0.8971
+            "similarity": 0.8971,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "a04342e1e15895b2",
             "title": "IUI 2025 ì°¸ê´ê¸°: AIì ì§ìì±ê³¼ ì¸ê° ì¤ì¬ì AIì ëí´ì",
             "url": "https://techblog.lycorp.co.jp/ko/iui-2025-recap",
-            "similarity": 0.8976
+            "similarity": 0.8976,
+            "roles": [
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "4304943751d9463a",
             "title": "ìí°íë¼ì´ì¦ LLM ìë¹ì¤ êµ¬ì¶ê¸° 1: ì»¨í ì¤í¸ ìì§ëì´ë§",
             "url": "https://techblog.lycorp.co.jp/ko/building-an-llm-service-for-enterprise-1-context-engineering",
-            "similarity": 0.887
+            "similarity": 0.887,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           }
-        ]
+        ],
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "backend": 9,
+          "data-ai": 12,
+          "frontend": 7,
+          "mobile": 5
+        }
       },
       {
         "area_name": "AI 보안 및 가드레일",
@@ -1856,51 +2830,80 @@
             "article_id": "9cf6399309a56819",
             "title": "프롬프트 튜닝을 수작업에서 AI 튜닝으로: 유전 알고리즘 기반 자동 최적화와 고속화",
             "url": "https://techblog.lycorp.co.jp/ko/techverse2026-60",
-            "similarity": 0.8765
+            "similarity": 0.8765,
+            "roles": [
+              "data-ai"
+            ]
           },
           {
             "article_id": "705232e2bf2451de",
             "title": "ID-JAG The Hard Way: 실패로 배우는 AI 에이전트 보안 핸즈온",
             "url": "https://techblog.lycorp.co.jp/ko/id-jag-the-hard-way-learning-ai-agent-authz-through-failure",
-            "similarity": 0.9065
+            "similarity": 0.9065,
+            "roles": []
           },
           {
             "article_id": "b2d7ebfb743a97fe",
             "title": "AI 시대에 인증 과제를 해결할 차세대 표준 후보, ID-JAG",
             "url": "https://techblog.lycorp.co.jp/ko/id-jag-next-generation-authentication-ai-era",
-            "similarity": 0.893
+            "similarity": 0.893,
+            "roles": [
+              "data-ai"
+            ]
           },
           {
             "article_id": "a1dc6e658ae1888b",
             "title": "코딩 에이전트를 활용한 취약점 수집·생성 자동화로 가드레일 모델 고도화",
             "url": "https://techblog.lycorp.co.jp/ko/advancing-guardrail-models-with-coding-agents",
-            "similarity": 0.9201
+            "similarity": 0.9201,
+            "roles": [
+              "data-ai"
+            ]
           },
           {
             "article_id": "46d2696d24341575",
             "title": "완벽한 AI 가드레일을 향한 여정: NeurIPS 2025 최신 안전성 기술 분석",
             "url": "https://techblog.lycorp.co.jp/ko/journey-to-perfect-ai-guardrails-neurips-2025-recap",
-            "similarity": 0.8822
+            "similarity": 0.8822,
+            "roles": [
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "cfc971c40af32324",
             "title": "AI ì í ê°ë° ì¤ ë§ì£¼ì¹ ì ìë ë³´ì ìí ì¬ë¡ì ëì± ë°©ì",
             "url": "https://techblog.lycorp.co.jp/ko/risks-and-mitigations-in-ai-products-development",
-            "similarity": 0.9057
+            "similarity": 0.9057,
+            "roles": [
+              "data-ai"
+            ]
           },
           {
             "article_id": "f3c7f0078025d943",
             "title": "ì»¤ë®¤ëí°ì í¨ê» ì±ì¥íë ì¤ë¬´ ë³´ì ì§ì, LINE CTF",
             "url": "https://techblog.lycorp.co.jp/ko/line-ctf-practical-security-knowledge-that-grows-with-community",
-            "similarity": 0.8662
+            "similarity": 0.8662,
+            "roles": []
           },
           {
             "article_id": "91f7d0703240603d",
             "title": "ìì ì ê¸°ë³¸, ë¹ì© ì ê°ì ë¤: AI ìë¹ì¤ì ë³ë ê°ëë ì¼ì´ íìí ì´ì",
             "url": "https://techblog.lycorp.co.jp/ko/safety-and-cost-saving-why-separate-guardrails-are-necessary",
-            "similarity": 0.9239
+            "similarity": 0.9239,
+            "roles": [
+              "data-ai"
+            ]
           }
-        ]
+        ],
+        "roles": [
+          "data-ai",
+          "frontend"
+        ],
+        "role_counts": {
+          "data-ai": 6,
+          "frontend": 1
+        }
       },
       {
         "area_name": "백엔드 인프라 및 분산 시스템 아키텍처",
@@ -1922,39 +2925,69 @@
             "article_id": "57b5d5c29ee22548",
             "title": "초당 100만 건, LINE 앱에 Apache Kafka 종단 간 암호화 적용기",
             "url": "https://techblog.lycorp.co.jp/ko/applying-e2ee-to-apache-kafka-in-line-app",
-            "similarity": 0.8644
+            "similarity": 0.8644,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "16275ef72e55adbc",
             "title": "Flava DBaaS 딥다이브: 아키텍처부터 마이그레이션, 그리고 미래까지",
             "url": "https://techblog.lycorp.co.jp/ko/techverse2026-231",
-            "similarity": 0.8721
+            "similarity": 0.8721,
+            "roles": [
+              "backend",
+              "frontend"
+            ]
           },
           {
             "article_id": "9f93d4ffe8d3de12",
             "title": "LY Corporation의 클라우드 인프라 개편: 거대한 두 개의 클라우드를 통합한 차세대 플랫폼 Flava의 아키텍처 소개",
             "url": "https://techblog.lycorp.co.jp/ko/ly-corporation-next-generation-cloud-platform-flava-introduction",
-            "similarity": 0.861
+            "similarity": 0.861,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "f69313e11cb88b90",
             "title": "Athenz ìì§ëì´ë ì Kubestronautì ëì íëê°?",
             "url": "https://techblog.lycorp.co.jp/ko/why-did-an-athenz-engineer-take-on-the-kubestronaut-challenge",
-            "similarity": 0.8696
+            "similarity": 0.8696,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "87b9bb66ba4ebb4a",
             "title": "Pushsphere: LINE ë©ì ì ì ë¹ ë¥´ê³ ì ë¢°í ì ìë ëë í¸ì ìë¦¼ ë¹ë²",
             "url": "https://techblog.lycorp.co.jp/ko/pushsphere-reliable-and-prompt-high-volume-push-notification",
-            "similarity": 0.8726
+            "similarity": 0.8726,
+            "roles": [
+              "mobile"
+            ]
           },
           {
             "article_id": "c16cd0c4b15bdfb6",
             "title": "Central Dogma ì»¨í¸ë¡¤ íë ì¸ì¼ë¡ LY Corporationì ìì² ê° ìë¹ì¤ë¥¼ ì°ê²°íê¸°",
             "url": "https://techblog.lycorp.co.jp/ko/connecting-thousands-of-services-with-central-dogma-control-plane",
-            "similarity": 0.8818
+            "similarity": 0.8818,
+            "roles": []
           }
-        ]
+        ],
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "backend": 4,
+          "frontend": 1,
+          "data-ai": 1,
+          "mobile": 1
+        }
       },
       {
         "area_name": "데이터 플랫폼 및 대규모 데이터 처리",
@@ -1976,51 +3009,95 @@
             "article_id": "23cf6350ff5eb6c3",
             "title": "총 용량 1EB 초과! 서로 역사가 다른 두 HDFS를 어떻게 연결할까? 데이터 플랫폼 연계 중 직면한 과제와 설계 결정",
             "url": "https://techblog.lycorp.co.jp/ko/techverse2026-184",
-            "similarity": 0.8787
+            "similarity": 0.8787,
+            "roles": [
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "c11b5345951a8b7b",
             "title": "Hive에서 Iceberg로: 데이터 반영 속도 12배 향상의 비밀",
             "url": "https://techblog.lycorp.co.jp/ko/from-hive-to-iceberg-12x-faster-data-updates",
-            "similarity": 0.8812
+            "similarity": 0.8812,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "61b374ee9d7ece39",
             "title": "LINE 서비스의 대규모 광고 데이터를 처리하기 위한 Spark on Kubernetes 적용기",
             "url": "https://techblog.lycorp.co.jp/ko/processing-large-scale-data-with-spark-on-kubernetes",
-            "similarity": 0.8806
+            "similarity": 0.8806,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "3e331a33fd4c18ba",
             "title": "대규모 서비스 환경에서의 이미지 콘텐츠 모더레이션(feat. 멀티모달 LLM)",
             "url": "https://techblog.lycorp.co.jp/ko/image-content-moderation-at-scale-with-multimodal-llm",
-            "similarity": 0.8803
+            "similarity": 0.8803,
+            "roles": [
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "9b4643532c35b61f",
             "title": "ì½ë íì§ ê°ì ê¸°ë² 24í¸: ì ì°ì ê°ì¹",
             "url": "https://techblog.lycorp.co.jp/ko/techniques-for-improving-code-quality-24",
-            "similarity": 0.8747
+            "similarity": 0.8747,
+            "roles": [
+              "frontend",
+              "mobile"
+            ]
           },
           {
             "article_id": "12c3be837e65ed10",
             "title": "ì½ë íì§ ê°ì ê¸°ë² 29í¸: ê³ ë¥´ëì°ì¤ ë³ì",
             "url": "https://techblog.lycorp.co.jp/ko/techniques-for-improving-code-quality-29",
-            "similarity": 0.8777
+            "similarity": 0.8777,
+            "roles": []
           },
           {
             "article_id": "053eae56df51295d",
             "title": "ëì  ì¬ì©ì ë¶í ì íì©í ìë¡ì´ A/B í ì¤í¸ ìì¤í ì ìê°í©ëë¤Â",
             "url": "https://techblog.lycorp.co.jp/ko/advanced-ab-test-system-with-dynamic-user-segmentation",
-            "similarity": 0.8929
+            "similarity": 0.8929,
+            "roles": [
+              "backend",
+              "frontend",
+              "mobile"
+            ]
           },
           {
             "article_id": "c05502800f7d06e0",
             "title": "Scaling to Infinity: íê³ë¥¼ ëì´ìë LY Corporationì ê´ì¸¡ ê°ë¥ì± íë«í¼ ì§íê¸°",
             "url": "https://techblog.lycorp.co.jp/ko/the-evolution-of-the-ly-observability-platform",
-            "similarity": 0.8897
+            "similarity": 0.8897,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           }
-        ]
+        ],
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "frontend": 6,
+          "data-ai": 5,
+          "backend": 4,
+          "mobile": 2
+        }
       },
       {
         "area_name": "코드 품질·서비스 신뢰성(SLO)·AI 활용 도구화 잡다 사례",
@@ -2043,159 +3120,248 @@
             "article_id": "85ac372029536172",
             "title": "장애 Alert의 원인을 스스로 찾다: SRE Observer 개발기",
             "url": "https://techblog.lycorp.co.jp/ko/building-sre-observer-for-alert-root-cause-analysis",
-            "similarity": 0.8677
+            "similarity": 0.8677,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "468431b8d6341b94",
             "title": "LLM Wiki: 코드 기준으로 자동 최신화되는 도메인 지식 SSOT 만들기",
             "url": "https://techblog.lycorp.co.jp/ko/llm-wiki-code-driven-knowledge-ssot",
-            "similarity": 0.8745
+            "similarity": 0.8745,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "d79b592842b1ef3a",
             "title": "오픈챗 이름 및 설명 글로 유해성 판단하는 모델 개발하기",
             "url": "https://techblog.lycorp.co.jp/ko/developing-harmfulness-detection-model-for-open-chat-metadata",
-            "similarity": 0.8618
+            "similarity": 0.8618,
+            "roles": []
           },
           {
             "article_id": "40f038baf58fc5af",
             "title": "코드형 인프라(IaC)로 자동화에서 AI까지: OpenTofu와 ChatOps 도입기",
             "url": "https://techblog.lycorp.co.jp/ko/techverse2026-86",
-            "similarity": 0.8862
+            "similarity": 0.8862,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "d1b66e8b336967f1",
             "title": "신뢰성 향상을 위한 SLO/SLI 도입 3편 - 서비스 적용 사례",
             "url": "https://techblog.lycorp.co.jp/ko/sli-and-slo-for-improving-reliability-3",
-            "similarity": 0.9052
+            "similarity": 0.9052,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "06db977f83407f24",
             "title": "ODW #1: AI로 리뷰 정체를 해소하다 - PR 리뷰 지원과 사내 워크숍으로 리뷰 문화 바꾸기",
             "url": "https://techblog.lycorp.co.jp/ko/resolving-pr-review-bottlenecks-with-ai-and-transforming-review-culture",
-            "similarity": 0.8692
+            "similarity": 0.8692,
+            "roles": []
           },
           {
             "article_id": "57acbddedaa06dc7",
             "title": "도메인에 의존하지 않는 채팅 플랫폼은 어떻게 만들었을까?",
             "url": "https://techblog.lycorp.co.jp/ko/how-we-built-a-domain-agnostic-chat-platform",
-            "similarity": 0.8671
+            "similarity": 0.8671,
+            "roles": [
+              "frontend",
+              "mobile"
+            ]
           },
           {
             "article_id": "f3f7a07e40c61276",
             "title": "SRE 팀의 반복 작업을 10분의 1로 줄인 SRE 봇 개발기",
             "url": "https://techblog.lycorp.co.jp/ko/reduce-repetitive-tasks-with-sre-bot",
-            "similarity": 0.8879
+            "similarity": 0.8879,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "36d8190c8c8e408e",
             "title": "기획서 없이 내재화하기: 검증 로직으로 동일함을 증명하다",
             "url": "https://techblog.lycorp.co.jp/ko/internalizing-without-specification-proving-equivalence-through-verification-logic",
-            "similarity": 0.8665
+            "similarity": 0.8665,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "2c140725c8dd2462",
             "title": "신뢰성 향상을 위한 SLI/SLO 활용 1편 - SLI/SLO 프레임워크 및 서비스 상태 확인 도구 LINE Status 개발기",
             "url": "https://techblog.lycorp.co.jp/ko/using-sli-slo-for-improving-reliability-1-developing-framework-and-line-status",
-            "similarity": 0.8984
+            "similarity": 0.8984,
+            "roles": [
+              "backend",
+              "frontend"
+            ]
           },
           {
             "article_id": "6629c15e9585409a",
             "title": "AttributedString 구조로 풀어낸 대규모 iOS 설정 시스템",
             "url": "https://techblog.lycorp.co.jp/ko/a-large-scale-ios-configuration-system-implemented-with-an-attributedstring-structure",
-            "similarity": 0.87
+            "similarity": 0.87,
+            "roles": [
+              "mobile"
+            ]
           },
           {
             "article_id": "a4ac63c37eb16c78",
             "title": "LINE 앱의 다자간 대화 기능 통합",
             "url": "https://techblog.lycorp.co.jp/ko/unification-of-group-chat-on-the-line-app",
-            "similarity": 0.8694
+            "similarity": 0.8694,
+            "roles": []
           },
           {
             "article_id": "1d2cfe29ec90e6d1",
             "title": "ì½ë íì§ ê°ì ê¸°ë² 22í¸: To equal, or not to equal",
             "url": "https://techblog.lycorp.co.jp/ko/techniques-for-improving-code-quality-22",
-            "similarity": 0.8666
+            "similarity": 0.8666,
+            "roles": [
+              "mobile"
+            ]
           },
           {
             "article_id": "1a850b88f9497ebf",
             "title": "ì½ë íì§ ê°ì ê¸°ë² 23í¸: ë°íì ëì´ ìì§ ì¼ì´ì¤ì ë",
             "url": "https://techblog.lycorp.co.jp/ko/techniques-for-improving-code-quality-23",
-            "similarity": 0.8873
+            "similarity": 0.8873,
+            "roles": []
           },
           {
             "article_id": "9f0c7187584df3a5",
             "title": "ì½ë íì§ ê°ì ê¸°ë² 26í¸: ì¤ëª ì íµì¬ì ì²« ë¬¸ì¥ì ìë¤",
             "url": "https://techblog.lycorp.co.jp/ko/techniques-for-improving-code-quality-26",
-            "similarity": 0.8618
+            "similarity": 0.8618,
+            "roles": []
           },
           {
             "article_id": "c35040e122e74ab0",
             "title": "ì½ë íì§ ê°ì ê¸°ë² 28í¸: ì ì½ ì¡°ê±´ìë ììì¸ê° ë°ìíë¤",
             "url": "https://techblog.lycorp.co.jp/ko/techniques-for-improving-code-quality-28",
-            "similarity": 0.8762
+            "similarity": 0.8762,
+            "roles": [
+              "mobile"
+            ]
           },
           {
             "article_id": "9647061c4d67d453",
             "title": "ì½ë íì§ ê°ì ê¸°ë² ìë¦¬ì¦ ìê°",
             "url": "https://techblog.lycorp.co.jp/ko/techniques-for-improving-code-quality-list",
-            "similarity": 0.8906
+            "similarity": 0.8906,
+            "roles": [
+              "mobile"
+            ]
           },
           {
             "article_id": "31a118f490a40167",
             "title": "ì½ë íì§ ê°ì ê¸°ë² 30í¸: (í¬ëª í) ì´ëª ì ë¶ì ì¤",
             "url": "https://techblog.lycorp.co.jp/ko/techniques-for-improving-code-quality-30",
-            "similarity": 0.8657
+            "similarity": 0.8657,
+            "roles": [
+              "mobile"
+            ]
           },
           {
             "article_id": "2392a5d3cb287754",
             "title": "ì ë¢°ì± í¥ìì ìí SLI/SLO ëì 1í¸",
             "url": "https://techblog.lycorp.co.jp/ko/sli-and-slo-for-improving-reliability-1",
-            "similarity": 0.9085
+            "similarity": 0.9085,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "c109618f6a48b44f",
             "title": "PD1 AI í´ì»¤í¤, ê·¸ ë¨ê±°ì ë ì´ê¸° ìì¼ë¡!",
             "url": "https://techblog.lycorp.co.jp/ko/pd1-ai-hackathon-recap",
-            "similarity": 0.8771
+            "similarity": 0.8771,
+            "roles": [
+              "mobile"
+            ]
           },
           {
             "article_id": "43f99861317c7d1c",
             "title": "í ë¬ì§ë¦¬ ê³¼ì , ë°ì´ë¸ ì½ë©ì¼ë¡ 5ì¼ ë§ì!(ChatGPTÂ·Cursor)",
             "url": "https://techblog.lycorp.co.jp/ko/finishing-a-1-month-assignment-in-5-days-with-vibe-coding",
-            "similarity": 0.882
+            "similarity": 0.882,
+            "roles": [
+              "mobile"
+            ]
           },
           {
             "article_id": "cf27cabaf659cd52",
             "title": "ì± ì±ê³µì ìí íì ìì: ì¥ì ëª¨ëí°ë§",
             "url": "https://techblog.lycorp.co.jp/ko/outage-monitoring-for-app-success",
-            "similarity": 0.8878
+            "similarity": 0.8878,
+            "roles": [
+              "mobile"
+            ]
           },
           {
             "article_id": "55240cda3659fef2",
             "title": "Claude Code Action: ì¡°ì§ ì ë°ì ì½ë íì§ì ì§í¤ë AI ì½ë ë¦¬ë·° íë«í¼í",
             "url": "https://techblog.lycorp.co.jp/ko/building-ai-code-review-platform-with-claude-code-action",
-            "similarity": 0.8696
+            "similarity": 0.8696,
+            "roles": [
+              "backend",
+              "frontend",
+              "mobile"
+            ]
           },
           {
             "article_id": "0742f8731dd04686",
             "title": "ì¬ë¡ì° ì¿¼ë¦¬ í´ê²°ê¸°: í¨ìí ì¸ë±ì¤ë¡ ë¹í¸ ì°ì° ì¿¼ë¦¬ ìµì ííê¸°",
             "url": "https://techblog.lycorp.co.jp/ko/solving-slow-queries-optimizing-bitwise-operation-queries-with-functional-indexes",
-            "similarity": 0.8631
+            "similarity": 0.8631,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "7b2ced627ac54470",
             "title": "LINE DEV AI ë¦¬í¬í°ì¦ì ì¬ì ì ê³µì í©ëë¤!",
             "url": "https://techblog.lycorp.co.jp/ko/introducing-the-journey-of-the-line-dev-ai-reporters",
-            "similarity": 0.8803
+            "similarity": 0.8803,
+            "roles": [
+              "data-ai"
+            ]
           },
           {
             "article_id": "ff858639672af3af",
             "title": "ë©ì ì ì© ì¨ëë°ì´ì¤ ì´ë¯¸ì§ ëª¨ë¸ íìµê¸° 2í¸: ì´ì ì§ì° ë¹ìê¸°íê·(non-autoregressive) ìº¡ì  ìì± ì ëµ",
             "url": "https://techblog.lycorp.co.jp/ko/on-device-image-model-trainer-for-messenger-2",
-            "similarity": 0.8888
+            "similarity": 0.8888,
+            "roles": [
+              "mobile",
+              "data-ai"
+            ]
           }
-        ]
+        ],
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "backend": 10,
+          "frontend": 4,
+          "data-ai": 5,
+          "mobile": 11
+        }
       }
     ],
     "unassigned_count": 10,
@@ -2219,7 +3385,13 @@
           "ë¯¸ëì í´ë¼ì°ëë¥¼ ì°½ì¡°íë¤"
         ]
       }
-    ]
+    ],
+    "role_counts": {
+      "backend": 29,
+      "frontend": 25,
+      "data-ai": 32,
+      "mobile": 22
+    }
   },
   {
     "company": "컬리",
@@ -2251,33 +3423,64 @@
             "article_id": "28c5d3f6886a300b",
             "title": "현관문에도 얼굴이 있다: 배송 완료 사진 기반 On-device 오배송 탐지 시스템",
             "url": "https://helloworld.kurly.com/blog/image-based-misdelivery-detection/",
-            "similarity": 0.8898
+            "similarity": 0.8898,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "22149a05582521a1",
             "title": "컬리의 입고 시스템이 외부 인입 데이터를 안전하게 동기화하는 방법",
             "url": "https://helloworld.kurly.com/blog/2026-outbox-pattern-and-retry-topic/",
-            "similarity": 0.8973
+            "similarity": 0.8973,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "2e83f687543a1a91",
             "title": "Kafka Streams 윈도우 도입기",
             "url": "https://helloworld.kurly.com/blog/2025-kafka-streams-window/",
-            "similarity": 0.8758
+            "similarity": 0.8758,
+            "roles": [
+              "backend"
+            ]
           },
           {
             "article_id": "0841ba1d0bac23a7",
             "title": "배송 완료 사진 속 객체 탐지를 통한 수기 검수 비용 줄이기",
             "url": "https://helloworld.kurly.com/blog/2025-delivery-photo-object-detection/",
-            "similarity": 0.8924
+            "similarity": 0.8924,
+            "roles": [
+              "data-ai"
+            ]
           },
           {
             "article_id": "c71736f602da0310",
             "title": "nginx 설정 없이 우아하게 서비스 점검하기 (下)",
             "url": "https://helloworld.kurly.com/blog/access-block-2/",
-            "similarity": 0.8604
+            "similarity": 0.8604,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           }
-        ]
+        ],
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend"
+        ],
+        "role_counts": {
+          "backend": 4,
+          "frontend": 3,
+          "data-ai": 4
+        }
       },
       {
         "area_name": "AI 코딩 에이전트 활용 생산성 워크플로우",
@@ -2300,39 +3503,66 @@
             "article_id": "d7a62003e5bdad96",
             "title": "클로드 코드로 개발 팀장의 하루를 재설계한 이야기",
             "url": "https://helloworld.kurly.com/blog/claude-code-redesign-my-day/",
-            "similarity": 0.8889
+            "similarity": 0.8889,
+            "roles": []
           },
           {
             "article_id": "382b5718424ac290",
             "title": "AI 에이전트 15개를 동시에 굴리는 법 — AI 병렬 오케스트레이션 실전 운용기",
             "url": "https://helloworld.kurly.com/blog/ai-orchestration-2/",
-            "similarity": 0.9013
+            "similarity": 0.9013,
+            "roles": [
+              "frontend"
+            ]
           },
           {
             "article_id": "e2d3d50cb0d14d29",
             "title": "AI 토큰 사용량 전사 1위 개발자가 148,000번의 대화에서 배운 것",
             "url": "https://helloworld.kurly.com/blog/ai-orchestration-1/",
-            "similarity": 0.8678
+            "similarity": 0.8678,
+            "roles": []
           },
           {
             "article_id": "61e797aa8668e65f",
             "title": "OMS에서 Claude AI를 활용하여 변화된 업무 방식",
             "url": "https://helloworld.kurly.com/blog/oms-claude-ai-workflow/",
-            "similarity": 0.913
+            "similarity": 0.913,
+            "roles": [
+              "backend",
+              "frontend"
+            ]
           },
           {
             "article_id": "2ac79c5a055f73a9",
             "title": "Claude Code를 활용한 예측 가능한 바이브 코딩 전략",
             "url": "https://helloworld.kurly.com/blog/vibe-coding-with-claude-code/",
-            "similarity": 0.8898
+            "similarity": 0.8898,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "7edb4ebcd3127eef",
             "title": "개발자의 시간을 벌어주는 두 가지 도구: 잘 쓴 테크 스펙, 그리고 AI",
             "url": "https://helloworld.kurly.com/blog/tech-spec-adoption-with-ai-automation/",
-            "similarity": 0.8921
+            "similarity": 0.8921,
+            "roles": [
+              "frontend"
+            ]
           }
-        ]
+        ],
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend"
+        ],
+        "role_counts": {
+          "frontend": 4,
+          "backend": 2,
+          "data-ai": 1
+        }
       },
       {
         "area_name": "프론트엔드 빌드 시스템 및 도메인 지식 검색 인프라 개선",
@@ -2355,30 +3585,54 @@
             "article_id": "af35676d951f30da",
             "title": "AI에게 도메인을 가르치다 두 번 갈아엎은 이야기 — LLM Wiki + RAG 혼합기",
             "url": "https://helloworld.kurly.com/blog/2026-delivery-domain-rag/",
-            "similarity": 0.9096
+            "similarity": 0.9096,
+            "roles": [
+              "frontend",
+              "data-ai"
+            ]
           },
           {
             "article_id": "9c71b26a1550ca56",
             "title": "Nx에서 Bun 더 잘 사용하기: Nx 18 -> 21 마이그레이션",
             "url": "https://helloworld.kurly.com/blog/nx-bun-migration/",
-            "similarity": 0.8701
+            "similarity": 0.8701,
+            "roles": []
           },
           {
             "article_id": "8710b6fe9bbf6e6d",
             "title": "디자인 컴포넌트 라이브러리를 ‘실제 사용 방식’에 맞게 다시 설계한 이야기",
             "url": "https://helloworld.kurly.com/blog/klds-web-structure-refactor/",
-            "similarity": 0.8659
+            "similarity": 0.8659,
+            "roles": [
+              "frontend"
+            ]
           },
           {
             "article_id": "02d6ae58ace5a00a",
             "title": "빌드가 터졌다: 5년 된 CMS 프로젝트의 Webpack4 → Vite 전환",
             "url": "https://helloworld.kurly.com/blog/cms-vite-%EC%A0%84%ED%99%98%EA%B8%B0/",
-            "similarity": 0.8817
+            "similarity": 0.8817,
+            "roles": [
+              "frontend"
+            ]
           }
-        ]
+        ],
+        "roles": [
+          "data-ai",
+          "frontend"
+        ],
+        "role_counts": {
+          "frontend": 3,
+          "data-ai": 1
+        }
       }
     ],
     "unassigned_count": 3,
-    "unassigned_diagnostic": []
+    "unassigned_diagnostic": [],
+    "role_counts": {
+      "frontend": 12,
+      "data-ai": 7,
+      "backend": 8
+    }
   }
 ]

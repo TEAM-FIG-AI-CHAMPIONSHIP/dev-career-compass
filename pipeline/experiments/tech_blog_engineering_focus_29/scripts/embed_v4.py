@@ -344,7 +344,11 @@ def main():
                 ],
                 "url": article[
                     "url"
-                ]
+                ],
+                "roles": article.get(
+                    "roles",
+                    []
+                )
             }
         )
 
