@@ -1,3 +1,4 @@
+import argparse
 import json
 import os
 
@@ -20,18 +21,6 @@ WORK_DIR = (
     / "data"
     / "work"
     / "tech_blog_engineering_focus_29"
-)
-
-EMBEDDINGS_FILE = (
-    WORK_DIR
-    / "embeddings_v4"
-    / "article_embeddings.npy"
-)
-
-METADATA_FILE = (
-    WORK_DIR
-    / "embeddings_v4"
-    / "articles.json"
 )
 
 AREAS_OUTPUT_DIR = (
@@ -961,12 +950,56 @@ def main():
             "ANTHROPIC_API_KEY가 설정되어 있지 않습니다."
         )
 
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument(
+        "--output-suffix",
+        type=str,
+        default="",
+        help=(
+            "embed_v4.py --output-suffix와 동일한 값을 "
+            "넘긴다. embeddings_v4_<suffix>에서 읽고, "
+            "결과 파일명도 track_b_pilot_areas 대신 "
+            "<suffix>_areas로 바꿔 기존 확정 결과를 "
+            "덮어쓰지 않는다. 비우면 기존 기본 경로/파일명 "
+            "그대로 동작한다."
+        )
+    )
+
+    args = parser.parse_args()
+
+    suffix = args.output_suffix.strip()
+
+    embeddings_dir_name = (
+        "embeddings_v4"
+        if not suffix
+        else f"embeddings_v4_{suffix}"
+    )
+
+    output_basename = (
+        "track_b_pilot_areas"
+        if not suffix
+        else f"{suffix}_areas"
+    )
+
+    embeddings_file = (
+        WORK_DIR
+        / embeddings_dir_name
+        / "article_embeddings.npy"
+    )
+
+    metadata_file = (
+        WORK_DIR
+        / embeddings_dir_name
+        / "articles.json"
+    )
+
     embeddings = np.load(
-        EMBEDDINGS_FILE
+        embeddings_file
     )
 
     metadata = load_json(
-        METADATA_FILE
+        metadata_file
     )
 
     client = Anthropic()
@@ -1018,19 +1051,20 @@ def main():
 
     save_json(
         RESEARCH_DIR
-        / "track_b_pilot_areas.json",
+        / f"{output_basename}.json",
         all_results
     )
 
     lines = [
-        "# Track B: 파일럿 5개 회사 Area 생성 결과",
+        f"# {output_basename}: "
+        f"{len(companies)}개 회사 Area 생성 결과",
         "",
         (
             "engineering_focus -> v4 embedding -> "
             "clustering(complete linkage) -> LLM 병합 -> "
             "deterministic membership -> 키워드 태깅 "
-            "전체 파이프라인을 5개 회사에 독립적으로 적용한 "
-            "결과다."
+            f"전체 파이프라인을 {len(companies)}개 회사에 "
+            "독립적으로 적용한 결과다."
         ),
         ""
     ]
@@ -1071,7 +1105,7 @@ def main():
 
     with open(
         RESEARCH_DIR
-        / "track_b_pilot_areas.md",
+        / f"{output_basename}.md",
         "w",
         encoding="utf-8"
     ) as f:
@@ -1081,13 +1115,13 @@ def main():
 
     print()
     print("=" * 60)
-    print("TRACK B 파일럿 완료")
+    print("완료")
     print("=" * 60)
 
     print(
         "저장:",
         RESEARCH_DIR
-        / "track_b_pilot_areas.md"
+        / f"{output_basename}.md"
     )
 
 
