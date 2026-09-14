@@ -1,0 +1,204 @@
+[
+  {
+    "company": "쏘카",
+    "article_count": 9,
+    "areas": [
+      {
+        "area_name": "디자인 시스템과 크로스플랫폼 앱 프레임워크 설계",
+        "area_description": "파편화된 UI 개발과 플랫폼별 API 차이를 공통 추상화로 흡수하는 문제를, 컴포넌트를 정책 객체와 Hook 어댑터로 분리하고 Figma Code Connect·Slot으로 디자인-코드 정합성을 맞추며, 블루투스 기기의 정적 스펙과 동적 통신 로직을 분리해 여러 이동수단을 하나의 모듈로 다루는 방식으로 풉니다.",
+        "rationale": "cluster 1은 쏘카프레임이라는 하나의 사내 프레임워크 아래 웹 디자인 시스템 2건과 앱 프레임워크·블루투스 모듈 2건이 모두 '플랫폼 차이를 공통 추상화로 감싸 재사용 가능한 구조를 만든다'는 축을 공유해 단독 Area로 유지했습니다. cluster 2의 배포·런타임 트러블슈팅이나 cluster 3의 AI 에이전트와는 문제 성격이 달라 병합하지 않았습니다.",
+        "note": "",
+        "keywords": [
+          "Figma Code Connect",
+          "Slot 기반 합성 컴포넌트",
+          "정책 객체 + Hook 어댑터",
+          "트리쉐이킹 번들 구조",
+          "Figma Plugin 토큰 PR",
+          "BluetoothSpec / BluetoothHandle 분리",
+          "플랫폼 API 래핑 (Android/iOS)",
+          "웹·네이티브 화면 교체 구조"
+        ],
+        "article_count": 4,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "backend": 4,
+          "frontend": 2,
+          "data-ai": 2,
+          "mobile": 2
+        },
+        "evidence": [
+          {
+            "article_id": "40ca85f39b5dc7ec",
+            "title": "쏘카 디자인 시스템 2.0 개발기 2편: 기술로 굴리기(웹)",
+            "url": "https://tech.socar.kr/fe/2026/02/25/socar-frame2-web-part2",
+            "similarity": 0.9114,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "f8ca35d83c532384",
+            "title": "쏘카 디자인 시스템 2.0 개발기 1편: 시스템으로 굴리기(웹)",
+            "url": "https://tech.socar.kr/fe/2026/02/24/socar-frame2-web",
+            "similarity": 0.9125,
+            "roles": [
+              "backend",
+              "frontend"
+            ]
+          },
+          {
+            "article_id": "0a93ce2313cbe4b3",
+            "title": "쏘카프레임 - 블루투스 모듈",
+            "url": "https://tech.socar.kr/socarframe/2026/01/08/socarframe-bluetooth",
+            "similarity": 0.9176,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "c86984a9b70b3710",
+            "title": "쏘카프레임 - 앱 프레임워크와 개발자 경험",
+            "url": "https://tech.socar.kr/socarframe/2026/01/07/socarframe-introduce",
+            "similarity": 0.8951,
+            "roles": [
+              "backend",
+              "mobile"
+            ]
+          }
+        ],
+        "id": "socar-01"
+      },
+      {
+        "area_name": "배포·종료 동작과 레거시 코드베이스 정리",
+        "area_description": "CloudFront 캐시 무효화 범위를 잘못 잡아 생기는 배포 후 ChunkLoadError, Kubernetes에서 SIGTERM을 받고도 종료되지 않는 Node.js 컨테이너처럼 운영 환경의 생명주기 문제를 원인 계층별로 특정해 해결하고, 컬럼이 100개에 달하는 엔티티와 FK 없는 시스템의 스키마·문서를 무중단으로 정리하는 문제를 다룹니다.",
+        "rationale": "cluster 2는 SPA 배포 캐시, 컨테이너 graceful shutdown, 레거시 스키마 개선으로 주제가 다르지만 모두 '운영 중인 시스템에서 눈에 잘 안 보이는 동작을 파고들어 안전하게 고친다'는 성격을 공유합니다. 3건뿐이라 더 쪼개면 각 Area가 1건씩 남아 하나로 유지했습니다.",
+        "note": "세 글의 세부 주제(프론트엔드 배포 캐시, Node.js 런타임 종료, DB 스키마·문서 레거시)는 서로 이질적입니다. 게시글이 쌓이면 배포·런타임 트러블슈팅과 레거시 개선으로 분리하는 편이 적절합니다.",
+        "keywords": [
+          "CloudFront invalidation 범위",
+          "ChunkLoadError",
+          "해시 에셋 캐시 생명주기",
+          "Graceful shutdown (SIGTERM)",
+          "dumb-init (PID 1)",
+          "terminationGracePeriodSeconds",
+          "무중단 스키마 변경 절차",
+          "ERD 문서화 (Confluence)"
+        ],
+        "article_count": 3,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "backend": 3,
+          "frontend": 2,
+          "mobile": 1,
+          "data-ai": 2
+        },
+        "evidence": [
+          {
+            "article_id": "59fdc675630f9de9",
+            "title": "S3 + CloudFront 기반 SPA 배포에서 캐시와 fallback 전략 설계하기",
+            "url": "https://tech.socar.kr/fe/2026/06/24/spa-cache-fallback-strategy-with-s3-cloudfront",
+            "similarity": 0.9007,
+            "roles": [
+              "backend",
+              "frontend",
+              "mobile"
+            ]
+          },
+          {
+            "article_id": "4c01c42bcd3d4770",
+            "title": "팀 레거시 개선 (3) 쏘카존 관리 시스템 - 6년간 진행된 팀 레거시 코드 및 문서 개선기",
+            "url": "https://tech.socar.kr/dev/2026/02/14/legacy-code-and-docs-improvement",
+            "similarity": 0.8983,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "a635cd49407af9d2",
+            "title": "Node.js 컨테이너, 왜 깔끔하게 안 죽을까? (feat. Graceful shutdown)",
+            "url": "https://tech.socar.kr/dev/2026/01/20/nodejs-graceful-shutdown",
+            "similarity": 0.901,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "socar-02"
+      },
+      {
+        "area_name": "LLM 에이전트의 판단 신뢰성 확보",
+        "area_description": "흩어진 도메인 지식 때문에 에이전트가 기존 기능을 중복 구현하거나, 외부 웹 화면 변경으로 룰 베이스 자동화가 대량 실패하는 문제를, 사람이 정의한 시드와 신뢰도 임계값 기반 승인 절차를 둔 지식 그래프, 그리고 structured output 스키마와 위반 시 안전한 기본값 폴백으로 에이전트 판단을 검증 가능하게 만드는 방식으로 다룹니다.",
+        "rationale": "cluster 3의 두 글은 대상은 다르지만(코드 지식 그래프, 정산 웹 자동화) 모두 'LLM의 판단을 그대로 신뢰하지 않고 사람 승인이나 스키마 검증·폴백이라는 게이트를 두는 설계'라는 동일한 문제의식을 공유해 단독 Area로 두었습니다.",
+        "note": "2건 규모로 작습니다.",
+        "keywords": [
+          "지식 그래프 (Neo4j)",
+          "사람 정의 시드",
+          "LLM 신뢰도 점수 임계값",
+          "structured output 스키마",
+          "Few-shot 예시",
+          "안전한 기본값 폴백",
+          "DOM·접근성 트리 기반 화면 이해"
+        ],
+        "article_count": 2,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend"
+        ],
+        "role_counts": {
+          "backend": 2,
+          "data-ai": 2,
+          "frontend": 1
+        },
+        "evidence": [
+          {
+            "article_id": "a181dba1dfc8bb32",
+            "title": "이미 있는 기능을 AI가 또 만들지 않도록 하기 — 지식 그래프 도입기",
+            "url": "https://tech.socar.kr/dev/2026/07/27/parking-brain-1",
+            "similarity": 0.9049,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "64039ff2e167648a",
+            "title": "장애를 스스로 복구하는 AI 에이전트",
+            "url": "https://tech.socar.kr/dev/2026/07/22/agentic-engineering-in-production",
+            "similarity": 0.9085,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "socar-03"
+      }
+    ],
+    "unassigned_count": 0,
+    "unassigned_diagnostic": [],
+    "role_counts": {
+      "backend": 9,
+      "data-ai": 6,
+      "frontend": 5,
+      "mobile": 3
+    }
+  }
+]
