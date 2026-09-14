@@ -198,8 +198,8 @@
     "unassigned_count": 1,
     "unassigned_diagnostic": [],
     "role_counts": {
+      "data-ai": 11,
       "backend": 8,
-      "data-ai": 10,
       "mobile": 4,
       "frontend": 4
     }
@@ -981,10 +981,10 @@
       }
     ],
     "role_counts": {
-      "backend": 23,
-      "data-ai": 25,
-      "frontend": 14,
-      "mobile": 6
+      "backend": 27,
+      "frontend": 19,
+      "data-ai": 31,
+      "mobile": 7
     }
   },
   {
@@ -1161,9 +1161,9 @@
     "unassigned_count": 0,
     "unassigned_diagnostic": [],
     "role_counts": {
+      "backend": 6,
       "frontend": 6,
       "mobile": 4,
-      "backend": 6,
       "data-ai": 5
     }
   },
@@ -1454,9 +1454,9 @@
     "unassigned_count": 4,
     "unassigned_diagnostic": [],
     "role_counts": {
-      "backend": 15,
-      "frontend": 10,
-      "data-ai": 16
+      "frontend": 11,
+      "data-ai": 17,
+      "backend": 18
     }
   },
   {
@@ -1821,10 +1821,10 @@
     "unassigned_count": 4,
     "unassigned_diagnostic": [],
     "role_counts": {
-      "data-ai": 25,
-      "backend": 16,
+      "backend": 19,
+      "data-ai": 29,
       "mobile": 6,
-      "frontend": 11
+      "frontend": 14
     }
   },
   {
@@ -2648,10 +2648,10 @@
     "unassigned_count": 6,
     "unassigned_diagnostic": [],
     "role_counts": {
-      "backend": 28,
-      "data-ai": 40,
-      "frontend": 29,
-      "mobile": 7
+      "data-ai": 44,
+      "frontend": 35,
+      "backend": 32,
+      "mobile": 10
     }
   }
 ]

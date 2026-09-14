@@ -641,9 +641,9 @@
     }
   ],
   "role_counts": {
-    "backend": 28,
-    "frontend": 24,
-    "data-ai": 32,
-    "mobile": 8
+    "backend": 32,
+    "frontend": 29,
+    "mobile": 12,
+    "data-ai": 37
   }
 }
