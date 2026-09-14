@@ -44,6 +44,14 @@ from export_manual_focus_extra import (  # noqa: E402
     load_naver_d2_articles
 )
 
+# export_manual_focus_extra가 census 스크립트 경로를 이미
+# sys.path에 넣어 둔다. 네이버 D2·당근처럼 census 표준 경로를 안 타는
+# 회사는 roles가 원래 없으므로, classify_article()(map_roles() 기반,
+# 회사명 분기 없는 동일 로직)을 그대로 재사용해 계산한다.
+from classify_and_gate import (  # noqa: E402
+    classify_article
+)
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
@@ -153,6 +161,10 @@ def build_metadata_index():
             ),
             "content_hash": (
                 article["content_hash"]
+            ),
+            "roles": article.get(
+                "roles",
+                []
             )
         }
 
@@ -180,6 +192,10 @@ def build_metadata_index():
                 )
             ).hexdigest()
 
+            classification = classify_article(
+                article
+            )
+
             index[
                 article["article_id"]
             ] = {
@@ -189,7 +205,11 @@ def build_metadata_index():
                 "published_at": (
                     article["published_at"]
                 ),
-                "content_hash": content_hash
+                "content_hash": content_hash,
+                "roles": classification.get(
+                    "roles",
+                    []
+                )
             }
 
     return index
@@ -458,7 +478,11 @@ def main():
                 "focus_version": (
                     FOCUS_VERSION
                 ),
-                "model": MODEL_NAME
+                "model": MODEL_NAME,
+                "roles": meta.get(
+                    "roles",
+                    []
+                )
             }
 
             merged_count += 1

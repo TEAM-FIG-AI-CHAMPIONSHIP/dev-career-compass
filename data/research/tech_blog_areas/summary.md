@@ -5,6 +5,11 @@
 스크립트는 `pipeline/experiments/tech_blog_areas/scripts`에 있고,
 실행 결과 데이터는 정책상 `data/work/`(git 제외)에 둔다.
 
+Area·evidence마다 직무(roles) 정보를 추가한 기계 판독용 결과는
+`data/research/tech_blog_areas/final_areas_with_roles.json`에 있다
+(#80 — census가 계산해 둔 article 단위 roles를 그대로 재사용해 집계,
+새로 판단하지 않음).
+
 ## 데이터 범위
 
 - 대상 기업: 우아한형제들 1곳

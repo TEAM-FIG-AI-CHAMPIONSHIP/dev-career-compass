@@ -620,6 +620,13 @@ def load_target_articles(
                 ),
                 "content_hash": (
                     extracted["content_hash"]
+                ),
+                # census(classify_and_gate.py)가 이미 결정적으로
+                # 계산해 둔 직무 목록. 여기서 새로 판단하지 않고
+                # 그대로 가져와 이후 단계(Area 집계)까지 흘려보낸다.
+                "roles": item.get(
+                    "roles",
+                    []
                 )
             }
         )
@@ -725,6 +732,18 @@ def main():
         )
 
         if cached:
+            # roles는 census 쪽에서 계속 갱신될 수 있는 값이라,
+            # engineering_focus 자체는 캐시를 재사용하더라도 roles는
+            # 이번 실행에서 다시 계산된 값으로 덮어써 최신 상태를
+            # 유지한다 (LLM 재호출 없이 값만 갱신, 비용 없음).
+            cached = {
+                **cached,
+                "roles": article.get(
+                    "roles",
+                    []
+                )
+            }
+
             results_by_id[
                 article["article_id"]
             ] = cached
@@ -838,6 +857,10 @@ def main():
                 ),
                 "model": (
                     MODEL_NAME
+                ),
+                "roles": article.get(
+                    "roles",
+                    []
                 )
             }
 

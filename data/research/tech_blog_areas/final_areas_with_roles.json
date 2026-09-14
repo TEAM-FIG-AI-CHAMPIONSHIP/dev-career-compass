@@ -1,0 +1,649 @@
+{
+  "company": "우아한형제들 / 배달의민족",
+  "article_count": 42,
+  "areas": [
+    {
+      "area_name": "AI·LLM 서비스 개발 및 플랫폼화",
+      "area_description": "LLM 기반 기능(번역, 리서치 분석, 챗봇, RAG, 에이전트)을 실제 서비스에 적용하고, 프롬프트/컨텍스트 엔지니어링, 멀티 LLM 연동, AI 코딩 도구 활용, LLMOps 플랫폼 구축까지 AI 도입 전 과정의 엔지니어링 문제를 다룬다.",
+      "keywords": [
+        "RAG",
+        "MCP",
+        "Langfuse",
+        "LLMOps",
+        "SSE",
+        "LiteLLM",
+        "ESLint",
+        "컨텍스트 엔지니어링"
+      ],
+      "article_count": 11,
+      "roles": [
+        "backend",
+        "data-ai",
+        "frontend",
+        "mobile"
+      ],
+      "role_counts": {
+        "backend": 9,
+        "frontend": 10,
+        "data-ai": 11,
+        "mobile": 2
+      },
+      "evidence": [
+        {
+          "article_id": "00e15b41a24f5d63",
+          "title": "LLMOps로 확장하는 AI플랫폼 2.0",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/22839/",
+          "similarity": 0.9266,
+          "roles": [
+            "backend",
+            "frontend",
+            "data-ai"
+          ]
+        },
+        {
+          "article_id": "e2f31b92a471dc06",
+          "title": "AI가 분석한 리서치 결과, 어떻게 만들고 전달할까요?",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/27381/",
+          "similarity": 0.9104,
+          "roles": [
+            "backend",
+            "frontend",
+            "data-ai"
+          ]
+        },
+        {
+          "article_id": "80cc45c68e7c005f",
+          "title": "복잡한 LLM 연동, GenAI SDK 하나로 끝내기",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/23667/",
+          "similarity": 0.9053,
+          "roles": [
+            "backend",
+            "data-ai"
+          ]
+        },
+        {
+          "article_id": "7e55d649b11ff22b",
+          "title": "RAG, 들어는 봤는데… 내 서비스엔 어떻게 쓰지?",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/25900/",
+          "similarity": 0.8994,
+          "roles": [
+            "backend",
+            "frontend",
+            "data-ai"
+          ]
+        },
+        {
+          "article_id": "f4f64e29c603aaa6",
+          "title": "하네스 엔지니어링(harness engineering)으로 팀 맞춤형 AI 환경 구축하기",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/26177/",
+          "similarity": 0.8985,
+          "roles": [
+            "frontend",
+            "mobile",
+            "data-ai"
+          ]
+        },
+        {
+          "article_id": "c9dc1cb1599a6a1a",
+          "title": "사람도 AI도 놓친 번역 누락, ESLint 플러그인을 만들어 해결하기",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/26388/",
+          "similarity": 0.8975,
+          "roles": [
+            "frontend",
+            "data-ai"
+          ]
+        },
+        {
+          "article_id": "790ad5a78bd7bbbc",
+          "title": "AI가 내 프롬프트를 흘려듣는 이유: 원리부터 다시 본 컨텍스트 엔지니어링",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/26459/",
+          "similarity": 0.8956,
+          "roles": [
+            "backend",
+            "frontend",
+            "data-ai"
+          ]
+        },
+        {
+          "article_id": "7812f53d6eb2d3c0",
+          "title": "5년 동안 못 푼 배민 다국어 숙제, AI와 함께 한 달 만에 끝내기",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/26162/",
+          "similarity": 0.8928,
+          "roles": [
+            "backend",
+            "frontend",
+            "data-ai"
+          ]
+        },
+        {
+          "article_id": "0311b44350e3e2b0",
+          "title": "흩어져 있는 AI 자산, ‘MCP stdio’로 헤쳐모여!",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/25986/",
+          "similarity": 0.8873,
+          "roles": [
+            "backend",
+            "frontend",
+            "mobile",
+            "data-ai"
+          ]
+        },
+        {
+          "article_id": "709a407f2bb1ff3f",
+          "title": "AI 데이터 분석가 ‘물어보새’- 3부. Agent로 더 넓고 깊은 지식 공유하기",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/23273/",
+          "similarity": 0.8812,
+          "roles": [
+            "backend",
+            "frontend",
+            "data-ai"
+          ]
+        },
+        {
+          "article_id": "9b8dbdf5761a59fe",
+          "title": "우아한공방의 새로운 동료, 시스템 맥락을 가진 챗봇서비스 개발기(feat. RAG)",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/26319/",
+          "similarity": 0.878,
+          "roles": [
+            "backend",
+            "frontend",
+            "data-ai"
+          ]
+        }
+      ]
+    },
+    {
+      "area_name": "백엔드 인프라·시스템 안정성",
+      "area_description": "실시간 통신 구조(SSE, 웹소켓), 메시지 큐/캐시(Kafka, Redis) 운영 이슈, 장애 탐지 및 대응 프로세스, 비용 최적화(FinOps) 등 대규모 트래픽을 다루는 백엔드 시스템의 성능·안정성 문제를 해결한 경험을 포함한다.",
+      "keywords": [
+        "Redis",
+        "Kafka",
+        "SSE",
+        "KEDA",
+        "Lettuce",
+        "FinOps",
+        "@CacheEvict",
+        "MTTD"
+      ],
+      "article_count": 9,
+      "roles": [
+        "backend",
+        "data-ai",
+        "frontend",
+        "mobile"
+      ],
+      "role_counts": {
+        "backend": 9,
+        "frontend": 6,
+        "data-ai": 8,
+        "mobile": 1
+      },
+      "evidence": [
+        {
+          "article_id": "e02cb48b618b689f",
+          "title": "AI에게 만드는 법 대신 실패하는 법을 묻다: 포토그래퍼의 수천 명 동시 접속 게임 만들기",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/27268/",
+          "similarity": 0.8944,
+          "roles": [
+            "backend",
+            "frontend"
+          ]
+        },
+        {
+          "article_id": "8d9c863490978f38",
+          "title": "우아한 Cloud FinOps 여정",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/22855/",
+          "similarity": 0.8936,
+          "roles": [
+            "backend",
+            "frontend",
+            "data-ai"
+          ]
+        },
+        {
+          "article_id": "b5af9f1b5a1fb82d",
+          "title": "Server-Sent Events로 실시간 알림 전달하기",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/23199/",
+          "similarity": 0.8875,
+          "roles": [
+            "backend",
+            "frontend",
+            "mobile",
+            "data-ai"
+          ]
+        },
+        {
+          "article_id": "d05f0d535ea21593",
+          "title": "장시간 비동기 작업, Kafka 대신 RDB 기반 Task Queue로 해결하기",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/23625/",
+          "similarity": 0.8816,
+          "roles": [
+            "backend",
+            "frontend",
+            "data-ai"
+          ]
+        },
+        {
+          "article_id": "49a00bb9ceed0ef7",
+          "title": "BFF 서버에 SSE를 도입한 이유: 전시 서버의 통신 구조 재설계",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/26507/",
+          "similarity": 0.8705,
+          "roles": [
+            "backend",
+            "frontend",
+            "data-ai"
+          ]
+        },
+        {
+          "article_id": "d465743a504e7ddf",
+          "title": "장애 대응의 성패를 가르는 First Action: 우아한형제들의 장애 관리 라이프사이클",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/25189/",
+          "similarity": 0.8704,
+          "roles": [
+            "backend",
+            "data-ai"
+          ]
+        },
+        {
+          "article_id": "605382df5bf1557a",
+          "title": "100만 TPS 로그 시스템, KEDA를 이용한 오토스케일링 적용기",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/24405/",
+          "similarity": 0.8703,
+          "roles": [
+            "backend",
+            "frontend",
+            "data-ai"
+          ]
+        },
+        {
+          "article_id": "ab8a559d149be065",
+          "title": "Redis New Connection 증가 이슈 돌아보기",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/23121/",
+          "similarity": 0.8679,
+          "roles": [
+            "backend",
+            "data-ai"
+          ]
+        },
+        {
+          "article_id": "f45f4225b02174fa",
+          "title": "이제 Redis를 멈춰보겠습니다: @CacheEvict 파헤치기",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/23138/",
+          "similarity": 0.8674,
+          "roles": [
+            "backend",
+            "data-ai"
+          ]
+        }
+      ]
+    },
+    {
+      "area_name": "클라이언트·프론트엔드 아키텍처",
+      "area_description": "웹뷰-네이티브 연동, 멀티 플랫폼 클라이언트 아키텍처(Flutter, Clean Architecture), 빌드 시스템(Vite) 및 프론트엔드 배포 구조, 원격 디버깅 툴 등 클라이언트 개발 생산성과 구조 개선 문제를 다룬다.",
+      "keywords": [
+        "플로팅웹뷰",
+        "CloudFront Function",
+        "Flutter",
+        "Clean Architecture",
+        "Chrome DevTools Protocol",
+        "Vite",
+        "Lambda@Edge"
+      ],
+      "article_count": 6,
+      "roles": [
+        "backend",
+        "data-ai",
+        "frontend",
+        "mobile"
+      ],
+      "role_counts": {
+        "frontend": 6,
+        "mobile": 3,
+        "data-ai": 4,
+        "backend": 4
+      },
+      "evidence": [
+        {
+          "article_id": "644c85d190688071",
+          "title": "웹과 네이티브, 조화로운 공존은 가능한가? 플로팅웹뷰 도입으로 찾은 희망",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/24165/",
+          "similarity": 0.899,
+          "roles": [
+            "frontend",
+            "mobile",
+            "data-ai"
+          ]
+        },
+        {
+          "article_id": "bbc3a7096110b868",
+          "title": "배포 없이 앱과 로컬 웹을 잇다",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/26729/",
+          "similarity": 0.8968,
+          "roles": [
+            "backend",
+            "frontend",
+            "mobile"
+          ]
+        },
+        {
+          "article_id": "1fd94c6f399f4472",
+          "title": "우리 팀엔 자바스크립트 상차만 하는 프런트엔드가 있었다",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/24066/",
+          "similarity": 0.8955,
+          "roles": [
+            "backend",
+            "frontend",
+            "data-ai"
+          ]
+        },
+        {
+          "article_id": "38e0a526a41b1ed4",
+          "title": "배달의민족 주문접수 채널에 Flutter를 도입하며 고민한 것",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/24337/",
+          "similarity": 0.8918,
+          "roles": [
+            "backend",
+            "frontend",
+            "mobile",
+            "data-ai"
+          ]
+        },
+        {
+          "article_id": "3fbb71e3eb3326d0",
+          "title": "우아한 디버깅 툴 1부: 웹뷰/웹페이지 원격으로 디버깅하기",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/23343/",
+          "similarity": 0.8848,
+          "roles": [
+            "backend",
+            "frontend",
+            "data-ai"
+          ]
+        },
+        {
+          "article_id": "5810faa416a6eb3d",
+          "title": "Vite에서 CSS 우선순위를 지키는 법: 우아한공방의 문제 해결기",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/23866/",
+          "similarity": 0.8747,
+          "roles": [
+            "frontend"
+          ]
+        }
+      ]
+    },
+    {
+      "area_name": "데이터·추천·실험 기반 프로덕트 개선",
+      "area_description": "A/B 테스트 기반 UI/UX 실험 설계, 추천 모델(임베딩, LLM 증류) 고도화, 접근성 개선 등 사용자 경험과 데이터 기반 의사결정으로 프로덕트 지표를 개선하는 문제를 다룬다.",
+      "keywords": [
+        "Item2Vec",
+        "ELECTRA",
+        "A/B 테스트",
+        "RAG",
+        "Transformer",
+        "컨텍스트 엔지니어링"
+      ],
+      "article_count": 5,
+      "roles": [
+        "backend",
+        "data-ai",
+        "frontend",
+        "mobile"
+      ],
+      "role_counts": {
+        "backend": 3,
+        "data-ai": 5,
+        "frontend": 1,
+        "mobile": 1
+      },
+      "evidence": [
+        {
+          "article_id": "387e2726318ee170",
+          "title": "“함께 구매하면 좋은 상품” 추천 모델 고도화",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/24434/",
+          "similarity": 0.9069,
+          "roles": [
+            "backend",
+            "data-ai"
+          ]
+        },
+        {
+          "article_id": "9acd24079499f3ca",
+          "title": "안녕하세요! AI UX라이터 제민희입니다. 무엇을 도와드릴까요?",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/23836/",
+          "similarity": 0.8893,
+          "roles": [
+            "backend",
+            "frontend",
+            "data-ai"
+          ]
+        },
+        {
+          "article_id": "a40265b56b70f1d5",
+          "title": "별점 뒤에 숨겨진 리뷰의 온도, LLM으로 한 끗 차이가 다른 추천 만들기",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/25888/",
+          "similarity": 0.8816,
+          "roles": [
+            "data-ai"
+          ]
+        },
+        {
+          "article_id": "df297d0c769d15f4",
+          "title": "우아한형제들이 장애를 놓치지 않고 탐지하는 방법",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/24488/",
+          "similarity": 0.8774,
+          "roles": [
+            "backend",
+            "data-ai"
+          ]
+        },
+        {
+          "article_id": "97fa5cda82cd9ac1",
+          "title": "한 번 성공하니 다음도 쉬울 줄 알았다: 최소주문금액바 4번의 A/B실험",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/26379/",
+          "similarity": 0.8665,
+          "roles": [
+            "mobile",
+            "data-ai"
+          ]
+        }
+      ]
+    },
+    {
+      "area_name": "개발 프로세스·품질 자동화",
+      "area_description": "아키텍처 규칙의 테스트 코드화, 인프라 자동화 도구의 신뢰성 개선, 반복 업무의 워크플로우 자동화 등 개발 및 운영 프로세스 자체를 코드/규칙으로 강제하고 자동화하는 문제를 다룬다.",
+      "keywords": [
+        "ArchUnit",
+        "FreezingArchRule",
+        "Jira Automation",
+        "NACL",
+        "Flowkit",
+        "IntelliJ 플러그인"
+      ],
+      "article_count": 5,
+      "roles": [
+        "backend",
+        "data-ai",
+        "frontend",
+        "mobile"
+      ],
+      "role_counts": {
+        "backend": 3,
+        "data-ai": 4,
+        "frontend": 1,
+        "mobile": 1
+      },
+      "evidence": [
+        {
+          "article_id": "33c060269b1af502",
+          "title": "문서로만 지키던 아키텍처 규칙, 테스트 코드로 강제하기",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/26835/",
+          "similarity": 0.8951,
+          "roles": [
+            "backend"
+          ]
+        },
+        {
+          "article_id": "fbb189ec36d31981",
+          "title": "AI와 함께하는 테스트 자동화: 플러그인 개발기",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/24568/",
+          "similarity": 0.8939,
+          "roles": [
+            "data-ai"
+          ]
+        },
+        {
+          "article_id": "94b5964c8450f2fc",
+          "title": "Jira Automation으로 반복 업무를 효율적으로 관리해보자",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/23377/",
+          "similarity": 0.8863,
+          "roles": [
+            "backend",
+            "data-ai"
+          ]
+        },
+        {
+          "article_id": "7077393465fb7aae",
+          "title": "멀티 어카운트 NACL 차단 자동화 도구 운영 및 개선 경험",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/26492/",
+          "similarity": 0.8823,
+          "roles": [
+            "data-ai"
+          ]
+        },
+        {
+          "article_id": "292f4dd937129094",
+          "title": "한꺼번에 짊어지던 배치를 내려놓고, 하나씩 흘려보내는 워크플로로",
+          "company": "우아한형제들",
+          "url": "https://techblog.woowahan.com/26832/",
+          "similarity": 0.8762,
+          "roles": [
+            "backend",
+            "frontend",
+            "mobile",
+            "data-ai"
+          ]
+        }
+      ]
+    }
+  ],
+  "unassigned_count": 6,
+  "unassigned_evidence": [
+    {
+      "article_id": "9e401c49265492ef",
+      "title": "우아한 디버깅 툴 2부: 좀 더 편하게 일하기 위한 개선들",
+      "company": "우아한형제들",
+      "url": "https://techblog.woowahan.com/23457/",
+      "best_similarity": 0.884,
+      "closest_area": "개발 프로세스·품질 자동화",
+      "roles": [
+        "backend",
+        "frontend",
+        "mobile",
+        "data-ai"
+      ]
+    },
+    {
+      "article_id": "4e8716bd400c8654",
+      "title": "기술이 없던 곳에 기술 더하기: 사내 해커톤 플랫폼 만들기",
+      "company": "우아한형제들",
+      "url": "https://techblog.woowahan.com/26624/",
+      "best_similarity": 0.8739,
+      "closest_area": "클라이언트·프론트엔드 아키텍처",
+      "roles": [
+        "backend",
+        "frontend",
+        "mobile",
+        "data-ai"
+      ]
+    },
+    {
+      "article_id": "53b25358d5e6e0c8",
+      "title": "WOOWACON 2025 미니게임 WOOWA POP!",
+      "company": "우아한형제들",
+      "url": "https://techblog.woowahan.com/24999/",
+      "best_similarity": 0.8678,
+      "closest_area": "백엔드 인프라·시스템 안정성",
+      "roles": [
+        "backend",
+        "frontend",
+        "data-ai"
+      ]
+    },
+    {
+      "article_id": "927094afe7ee5f10",
+      "title": "잃어버린 접근성을 찾아서",
+      "company": "우아한형제들",
+      "url": "https://techblog.woowahan.com/24605/",
+      "best_similarity": 0.866,
+      "closest_area": "백엔드 인프라·시스템 안정성",
+      "roles": [
+        "frontend",
+        "mobile",
+        "data-ai"
+      ]
+    },
+    {
+      "article_id": "bb12af98519b1713",
+      "title": "끊김 없는 사용 경험을 위하여 : 카카오톡 선물함 속 교환권을 배달의민족 주문으로 연결한 여정",
+      "company": "우아한형제들",
+      "url": "https://techblog.woowahan.com/25049/",
+      "best_similarity": 0.8644,
+      "closest_area": "백엔드 인프라·시스템 안정성",
+      "roles": [
+        "backend",
+        "mobile",
+        "data-ai"
+      ]
+    },
+    {
+      "article_id": "09722dc22947b45a",
+      "title": "pnpm 모노레포에서 React 19 마이그레이션하기: 숨겨진 호이스팅 레이어가 만든 타입 충돌 트러블슈팅",
+      "company": "우아한형제들",
+      "url": "https://techblog.woowahan.com/26128/",
+      "best_similarity": 0.8547,
+      "closest_area": "클라이언트·프론트엔드 아키텍처",
+      "roles": [
+        "frontend"
+      ]
+    }
+  ],
+  "role_counts": {
+    "backend": 28,
+    "frontend": 24,
+    "data-ai": 32,
+    "mobile": 8
+  }
+}

@@ -357,8 +357,19 @@ def process_company(
         if not classification["is_tech"]:
             continue
 
-        with_hash = {
+        # census 표준 경로를 안 타는 회사라 roles가 원래 없다.
+        # classify_article()이 이미 계산해 둔 값(map_roles() 기반,
+        # 회사명 분기 없는 동일 로직)을 그대로 가져와 붙인다.
+        article_with_roles = {
             **article,
+            "roles": classification.get(
+                "roles",
+                []
+            )
+        }
+
+        with_hash = {
+            **article_with_roles,
             "content_hash": (
                 hashlib.sha256(
                     article["content"]
@@ -373,7 +384,7 @@ def process_company(
             continue
 
         tech_articles.append(
-            article
+            article_with_roles
         )
 
     print(

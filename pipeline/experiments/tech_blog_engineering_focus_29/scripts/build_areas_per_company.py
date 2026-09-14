@@ -2,6 +2,7 @@ import argparse
 import json
 import os
 
+from collections import Counter
 from pathlib import Path
 from typing import List
 
@@ -770,12 +771,20 @@ def process_company(
         merge_result.areas
     )
 
-    # membership 행에 engineering_focus를 채운다
-    # (태그 추출에서 재사용).
+    # membership 행에 engineering_focus·roles를 채운다
+    # (태그 추출·Area roles 집계에서 재사용).
     focus_by_id = {
         m["article_id"]: m[
             "engineering_focus"
         ]
+        for m in company_metadata
+    }
+
+    roles_by_id = {
+        m["article_id"]: m.get(
+            "roles",
+            []
+        )
         for m in company_metadata
     }
 
@@ -785,6 +794,11 @@ def process_company(
                 row["article_id"],
                 ""
             )
+        )
+
+        row["roles"] = roles_by_id.get(
+            row["article_id"],
+            []
         )
 
     assigned_counts = {}
@@ -839,6 +853,19 @@ def process_company(
             == area.area_name
         ]
 
+        # Area의 roles는 LLM이 새로 판단하지 않는다. 이미 이 Area에
+        # 배정된(임베딩 유사도 기반 deterministic 매칭) evidence
+        # article들의 roles(census가 결정적으로 계산한 값)를
+        # 합집합·집계해서 만든다.
+        role_counter = Counter()
+
+        for m in members:
+            for role in m.get(
+                "roles",
+                []
+            ):
+                role_counter[role] += 1
+
         final_areas.append(
             {
                 "area_name": (
@@ -860,6 +887,12 @@ def process_company(
                 "article_count": len(
                     members
                 ),
+                "roles": sorted(
+                    role_counter.keys()
+                ),
+                "role_counts": dict(
+                    role_counter
+                ),
                 "evidence": [
                     {
                         "article_id": (
@@ -869,6 +902,10 @@ def process_company(
                         "url": m["url"],
                         "similarity": (
                             m["similarity"]
+                        ),
+                        "roles": m.get(
+                            "roles",
+                            []
                         )
                     }
                     for m in members
@@ -911,6 +948,19 @@ def process_company(
                     title
                 )
 
+    # 회사 전체 roles 집계는 Area 소속과 무관하게 전체 기술글
+    # 기준으로 낸다 — census 1차 게이트와 같은 집계 단위를 유지해야
+    # "이 회사가 이 직무 페이지에 나올 만큼 근거가 있는지"를 Area
+    # 구성과 별개로 판단할 수 있다.
+    company_role_counter = Counter()
+
+    for row in membership:
+        for role in row.get(
+            "roles",
+            []
+        ):
+            company_role_counter[role] += 1
+
     company_result = {
         "company": company,
         "article_count": len(
@@ -930,6 +980,9 @@ def process_company(
         ),
         "unassigned_diagnostic": (
             unassigned_diagnostic
+        ),
+        "role_counts": dict(
+            company_role_counter
         )
     }
 
