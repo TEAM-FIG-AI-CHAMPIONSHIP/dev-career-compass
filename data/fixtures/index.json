@@ -34,15 +34,15 @@
         {
           "slug": "frontend",
           "name": "웹 프론트엔드",
-          "evidenceCount": 11
+          "evidenceCount": 10
         },
         {
           "slug": "mobile",
           "name": "모바일",
-          "evidenceCount": 7
+          "evidenceCount": 6
         }
       ],
-      "evidenceCount": 15
+      "evidenceCount": 14
     },
     {
       "slug": "toss",

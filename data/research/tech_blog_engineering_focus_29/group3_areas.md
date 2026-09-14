@@ -2,7 +2,7 @@
 
 engineering_focus -> v4 embedding -> clustering(complete linkage) -> LLM 병합 -> deterministic membership -> 키워드 태깅 전체 파이프라인을 8개 회사에 독립적으로 적용한 결과다 (LLM 두 단계는 claude.ai 수동 프롬프팅으로 수행).
 
-전체 204건 중 evidence 181건, unassigned 23건.
+전체 203건 중 evidence 180건, unassigned 23건.
 
 당근은 이후 별도로 재작업됐다 — RSS만으로는 최근 3개월치(7건)만 잡혔던
 것을, Wayback Machine 아카이브(`web.archive.org` CDX API로 과거
@@ -10,6 +10,12 @@ engineering_focus -> v4 embedding -> clustering(complete linkage) -> LLM 병합 
 그 이전 7개월치(8건, 겹치는 시기 없음)를 추가로 확보해 15건으로
 재구성했다. RSS는 최신 글만, Wayback은 크롤이 끝난 과거 글만 보여줘서
 두 방식이 서로 다른 시기를 보완한다.
+
+재구성 직후 검토하다가, 기존 RSS 7건 안에 같은 글의 한국어판·영어판이
+둘 다 들어가 있던 걸 발견했다("Laying the Rails Beyond WebView"와
+"웹뷰 다음의 레일을 깔다" — 이 백필 이전부터 있던 중복이지 이번에
+새로 생긴 건 아니다). 두 판 중 먼저 게시되고 내용이 조금 더 상세한
+한국어판만 남기고 영어판을 제거해 최종 14건으로 확정했다.
 
 각 Area는 안정적인 `id`(예: `channel-01`)를 갖는다. 스키마와 한계는
 `../../../pipeline/experiments/tech_blog_engineering_focus_29/config/README.md` 참고.
@@ -57,11 +63,11 @@ unassigned: 0
 
 unassigned: 8
 
-## 당근마켓 / 당근 (15개 글)
+## 당근마켓 / 당근 (14개 글)
 
 | Area | 근거 수 | 키워드 |
 |---|---:|---|
-| 결제·인증 도메인 아키텍처와 클라이언트 렌더링 구조 | 7 | 헥사고날/클린 아키텍처, EMV QR (CPM), 카드망 경유 결제 흐름 (VAN), OAuth 2.0 / OIDC, CI 기반 본인인증, Lynx (PrimJS·IFR), Brownfield 점진 도입, GraphQL 전환 |
+| 결제·인증 도메인 아키텍처와 클라이언트 렌더링 구조 | 6 | 헥사고날/클린 아키텍처, EMV QR (CPM), 카드망 경유 결제 흐름 (VAN), OAuth 2.0 / OIDC, CI 기반 본인인증, Lynx (PrimJS·IFR), Brownfield 점진 도입, GraphQL 전환 |
 | 서비스 확장에 따른 내부 플랫폼화와 경계 설계 | 4 | 선언적 정의 계층 분리, Airflow + Spark (EMR on EKS), Dynamic DAG Generation, 모듈 경계와 계약, 공유 플랫폼 모듈, A/B 실험 상호배제 그룹, Experiment MCP, Prompt Studio 파이프라인 |
 | Kubernetes 클러스터 운영과 데이터 표준 레이어 | 4 | EKS Node Group 오토스케일링, Bin-packing, hostNetwork, dnsPolicy ClusterFirstWithHostNet, Dataflow (Beam), LLM 분류 품질 모니터링, 공용 데이터 레이어 (Activation), 활동 상태·상태 전이 모델링 |
 

@@ -999,7 +999,7 @@
   },
   {
     "company": "당근마켓 / 당근",
-    "article_count": 15,
+    "article_count": 14,
     "areas": [
       {
         "area_name": "Kubernetes 클러스터 운영과 데이터 표준 레이어",
@@ -1166,7 +1166,7 @@
           "Brownfield 점진 도입",
           "GraphQL 전환"
         ],
-        "article_count": 7,
+        "article_count": 6,
         "roles": [
           "backend",
           "data-ai",
@@ -1175,8 +1175,8 @@
         ],
         "role_counts": {
           "backend": 5,
-          "frontend": 5,
-          "mobile": 5,
+          "frontend": 4,
+          "mobile": 4,
           "data-ai": 5
         },
         "evidence": [
@@ -1187,16 +1187,6 @@
             "similarity": 0.8955,
             "roles": [
               "backend",
-              "frontend",
-              "mobile"
-            ]
-          },
-          {
-            "article_id": "81034311f332bc2d",
-            "title": "Laying the Rails Beyond WebView: Why Karrot Chose Lynx",
-            "url": "https://medium.com/daangn/laying-the-rails-beyond-webview-why-karrot-chose-lynx-db1aa92af5e4?source=rss----4505f82a2dbd---4",
-            "similarity": 0.895,
-            "roles": [
               "frontend",
               "mobile"
             ]
@@ -1264,8 +1254,8 @@
     "unassigned_diagnostic": [],
     "role_counts": {
       "backend": 12,
-      "frontend": 11,
-      "mobile": 7,
+      "frontend": 10,
+      "mobile": 6,
       "data-ai": 12
     }
   },
