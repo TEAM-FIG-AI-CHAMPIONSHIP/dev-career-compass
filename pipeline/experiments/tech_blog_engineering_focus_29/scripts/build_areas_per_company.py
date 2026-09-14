@@ -36,6 +36,12 @@ RESEARCH_DIR = (
     / "tech_blog_engineering_focus_29"
 )
 
+COMPANY_SLUGS_FILE = (
+    Path(__file__).resolve().parent.parent
+    / "config"
+    / "company_slugs.json"
+)
+
 
 MODEL_NAME = "claude-sonnet-5"
 
@@ -174,6 +180,66 @@ def save_json(path, data):
             ensure_ascii=False,
             indent=2
         )
+
+
+def load_company_slug(company):
+    slugs = load_json(
+        COMPANY_SLUGS_FILE
+    )
+
+    slug = slugs.get(company)
+
+    if not slug:
+        raise ValueError(
+            f"'{company}'의 slug가 "
+            f"{COMPANY_SLUGS_FILE}에 없습니다. "
+            "data/fixtures/index.json에 이 회사를 "
+            "등록할 때 정한 slug를 먼저 추가하세요."
+        )
+
+    return slug
+
+
+def assign_area_ids(company, areas):
+    """Area id는 area_name(LLM이 매번 다르게 지을 수 있음)이 아니라
+    그 Area에 배정된 evidence 중 가장 작은 article_id(콘텐츠 해시 기반이라
+    안정적)를 anchor로 정렬해서 순번을 매긴다. 같은 회사를 다시 돌려도
+    Area 구성원이 그대로면 같은 id가 나온다 — 구성원 자체가 바뀌면
+    id도 재배정될 수 있다는 한계는 있지만, 여러 실행에 걸친 id 유지를
+    보장하는 registry는 아직 아무도 area id를 참조해 저장하지 않는
+    시점이라 지금은 만들지 않는다(필요해지면 별도 이슈로)."""
+
+    slug = load_company_slug(
+        company
+    )
+
+    def anchor(area):
+        ids = [
+            e["article_id"]
+            for e in area["evidence"]
+        ]
+
+        return min(ids) if ids else ""
+
+    ordered = sorted(
+        range(len(areas)),
+        key=lambda i: anchor(
+            areas[i]
+        )
+    )
+
+    for rank, idx in enumerate(
+        ordered,
+        start=1
+    ):
+        areas[idx]["id"] = (
+            f"{slug}-{rank:02d}"
+        )
+
+    return [
+        areas[i]
+        for i in ordered
+    ]
 
 
 def pick_cluster_target(n):
@@ -912,6 +978,11 @@ def process_company(
                 ]
             }
         )
+
+    final_areas = assign_area_ids(
+        company,
+        final_areas
+    )
 
     unassigned_rows = [
         row

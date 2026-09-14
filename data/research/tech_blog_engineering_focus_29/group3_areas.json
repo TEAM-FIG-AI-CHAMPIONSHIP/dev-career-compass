@@ -4,63 +4,6 @@
     "article_count": 11,
     "areas": [
       {
-        "area_name": "커머스 검색·추천 시스템과 LLM 기반 콘텐츠 이해",
-        "area_description": "쇼핑 도메인의 자연어 질의 이해와 영상 콘텐츠 이해를 LLM·멀티모달 모델로 구조화하고, 임베딩과 OpenSearch 하이브리드 검색·Redis 선호 신호를 결합해 검색/추천 후보를 서빙하며 그 실험 결과를 평가 지표로 판단하는 문제를 다룹니다.",
-        "rationale": "cluster 1은 뷰티 자연어 검색(Query Understanding + BM25/벡터 하이브리드), 영상 이해 파이프라인, 숏폼 추천 온라인 서빙, 추천 실험의 평가·leakage 검증이 모두 '커머스 검색/추천을 위한 콘텐츠 이해와 후보 랭킹'이라는 한 축으로 이어져 단독 Area로 유지했습니다. 사내 지식 RAG(cluster 2)와는 검색 기술을 공유하지만, 대상이 고객 대면 커머스 트래픽이고 문제의식이 검색 품질·추천 점수 산출이라 병합하지 않았습니다.",
-        "note": "'테크 블로그 TechBlog' 게시글은 노코드 GenAI 워크플로우로 정성 리서치를 자동화한 내용으로, 검색·추천 도메인과는 이질적입니다. 제목도 추출되지 않아 클러스터 대표성과 무관하게 묶인 것으로 보입니다.",
-        "keywords": [
-          "OpenSearch",
-          "하이브리드 검색 (BM25+벡터)",
-          "임베딩 (BGE-M3, Cohere)",
-          "Query Understanding",
-          "Claude tool use",
-          "TwelveLabs Pegasus",
-          "Redis 선호 신호",
-          "추천 랭킹 스코어링"
-        ],
-        "article_count": 3,
-        "evidence": [
-          {
-            "article_id": "0c9c9a8791ff4b9c",
-            "title": "[ AI-DLC 사례 1: 검색 ] AI-DLC로 3일, 뷰티 자연어 검색을 만드는 여정",
-            "url": "https://gsretail.tistory.com/97",
-            "similarity": 0.9117,
-            "roles": [
-              "backend",
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "3cb9f49e8245015e",
-            "title": "쇼핑에 영상을 더하다: Part 3. 이해한 영상을 추천으로 연결하기",
-            "url": "https://gsretail.tistory.com/88",
-            "similarity": 0.9209,
-            "roles": [
-              "backend",
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "b99913fc4b0ae232",
-            "title": "쇼핑에 영상을 더하다: Part 2. 영상을 '이해'하기 시작하다",
-            "url": "https://gsretail.tistory.com/87",
-            "similarity": 0.8983,
-            "roles": [
-              "backend",
-              "data-ai"
-            ]
-          }
-        ],
-        "roles": [
-          "backend",
-          "data-ai"
-        ],
-        "role_counts": {
-          "backend": 3,
-          "data-ai": 3
-        }
-      },
-      {
         "area_name": "사내 지식 RAG 파이프라인과 권한 기반 벡터 검색",
         "area_description": "20년치 이질적 사내 문서를 수집·정제해 벡터 DB에 적재하고, 멀티테넌시 컬렉션 설계와 payload 필터 RBAC, AgenticRAG 기반 KB 라우팅·멀티턴 대화 재작성으로 검색 정확도와 실제 답변 가능성을 동시에 끌어올리는 문제를 다룹니다.",
         "rationale": "cluster 2는 수집(connector·Temporal·PII 스크럽), 저장(Qdrant 통합 컬렉션·무중단 재색인), 권한(fail-closed RBAC), 대화(AgenticRAG·Query Expansion)가 하나의 사내 지식 AI 시스템을 층위별로 나눈 연작이라 그대로 하나의 Area로 유지했습니다.",
@@ -145,7 +88,66 @@
           "mobile": 3,
           "data-ai": 5,
           "frontend": 3
-        }
+        },
+        "id": "gs-retail-01"
+      },
+      {
+        "area_name": "커머스 검색·추천 시스템과 LLM 기반 콘텐츠 이해",
+        "area_description": "쇼핑 도메인의 자연어 질의 이해와 영상 콘텐츠 이해를 LLM·멀티모달 모델로 구조화하고, 임베딩과 OpenSearch 하이브리드 검색·Redis 선호 신호를 결합해 검색/추천 후보를 서빙하며 그 실험 결과를 평가 지표로 판단하는 문제를 다룹니다.",
+        "rationale": "cluster 1은 뷰티 자연어 검색(Query Understanding + BM25/벡터 하이브리드), 영상 이해 파이프라인, 숏폼 추천 온라인 서빙, 추천 실험의 평가·leakage 검증이 모두 '커머스 검색/추천을 위한 콘텐츠 이해와 후보 랭킹'이라는 한 축으로 이어져 단독 Area로 유지했습니다. 사내 지식 RAG(cluster 2)와는 검색 기술을 공유하지만, 대상이 고객 대면 커머스 트래픽이고 문제의식이 검색 품질·추천 점수 산출이라 병합하지 않았습니다.",
+        "note": "'테크 블로그 TechBlog' 게시글은 노코드 GenAI 워크플로우로 정성 리서치를 자동화한 내용으로, 검색·추천 도메인과는 이질적입니다. 제목도 추출되지 않아 클러스터 대표성과 무관하게 묶인 것으로 보입니다.",
+        "keywords": [
+          "OpenSearch",
+          "하이브리드 검색 (BM25+벡터)",
+          "임베딩 (BGE-M3, Cohere)",
+          "Query Understanding",
+          "Claude tool use",
+          "TwelveLabs Pegasus",
+          "Redis 선호 신호",
+          "추천 랭킹 스코어링"
+        ],
+        "article_count": 3,
+        "evidence": [
+          {
+            "article_id": "0c9c9a8791ff4b9c",
+            "title": "[ AI-DLC 사례 1: 검색 ] AI-DLC로 3일, 뷰티 자연어 검색을 만드는 여정",
+            "url": "https://gsretail.tistory.com/97",
+            "similarity": 0.9117,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "3cb9f49e8245015e",
+            "title": "쇼핑에 영상을 더하다: Part 3. 이해한 영상을 추천으로 연결하기",
+            "url": "https://gsretail.tistory.com/88",
+            "similarity": 0.9209,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "b99913fc4b0ae232",
+            "title": "쇼핑에 영상을 더하다: Part 2. 영상을 '이해'하기 시작하다",
+            "url": "https://gsretail.tistory.com/87",
+            "similarity": 0.8983,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          }
+        ],
+        "roles": [
+          "backend",
+          "data-ai"
+        ],
+        "role_counts": {
+          "backend": 3,
+          "data-ai": 3
+        },
+        "id": "gs-retail-02"
       },
       {
         "area_name": "사내 AI 봇의 채널 연동과 인증 게이트웨이",
@@ -192,7 +194,8 @@
           "frontend": 1,
           "mobile": 1,
           "data-ai": 2
-        }
+        },
+        "id": "gs-retail-03"
       }
     ],
     "unassigned_count": 1,
@@ -208,6 +211,54 @@
     "company": "SK플래닛",
     "article_count": 13,
     "areas": [
+      {
+        "area_name": "멀티모달 센싱과 웹 기반 실시간 렌더링",
+        "area_description": "카메라 단일 모달로는 부족한 노면 결빙 감지를 주행 음향·영상 Late Fusion과 환경 정보 기반 Attention 가중치로 보완하고, 앱 설치 없는 Web AR을 WebRTC·A-Frame으로 구현하며 저사양 기기의 렌더링 성능과 초기 로딩을 최적화하는 문제를 다룹니다.",
+        "rationale": "cluster 3은 2건뿐이지만 결빙 감지와 Web AR 모두 센서·카메라 입력을 실시간으로 처리해 판단하거나 화면에 그리는 과제로, cluster 2의 텍스트 기반 LLM 서비스와는 다루는 데이터 형태와 최적화 대상이 뚜렷이 다릅니다. 억지로 묶으면 두 Area 모두 설명이 공허해져 분리했습니다.",
+        "note": "2건 규모이며 결빙 감지(모델링)와 Web AR(브라우저 렌더링)은 기술 스택이 서로 다릅니다. 게시글이 더 쌓이면 분리 가능성이 있습니다.",
+        "keywords": [
+          "Late Fusion",
+          "Environmental Attention Layer",
+          "WebRTC 카메라 스트리밍",
+          "A-Frame",
+          "마커 기반 추적",
+          "쉐이더·프레임 속도 조정",
+          "프로그레시브 로딩"
+        ],
+        "article_count": 2,
+        "evidence": [
+          {
+            "article_id": "3b388e61f6c2df18",
+            "title": "도로의 숨결과 표정으로 결빙을 감지하는 멀티모달 AI 솔루션 'ARHIS Ambient'",
+            "url": "https://techtopic.skplanet.com/arhis-multimodal/",
+            "similarity": 0.9172,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "865b36cc72a61f32",
+            "title": "play AR: SK플래닛의 Web AR 기반 마케팅 솔루션(feat. '춘식이는 홈런왕')",
+            "url": "https://techtopic.skplanet.com/skp-playar/",
+            "similarity": 0.9155,
+            "roles": [
+              "frontend",
+              "mobile"
+            ]
+          }
+        ],
+        "roles": [
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "data-ai": 1,
+          "frontend": 1,
+          "mobile": 1
+        },
+        "id": "sk-planet-01"
+      },
       {
         "area_name": "LLM 기반 데이터 조회·마케팅 서비스 구축",
         "area_description": "비개발 직군이 SQL이나 데이터 구조를 몰라도 데이터를 다룰 수 있게 하는 문제를, LangChain/LangGraph 기반 Text2SQL 에이전트와 Reranker를 결합한 RAG, 세그먼트 의미 확장 임베딩과 벡터 검색으로 풀고, 그 서비스의 SSE 스트리밍·리스트 가상화·Bedrock Prompt Caching으로 응답 지연과 토큰 비용까지 다룹니다.",
@@ -280,54 +331,8 @@
           "frontend": 3,
           "data-ai": 4,
           "mobile": 1
-        }
-      },
-      {
-        "area_name": "멀티모달 센싱과 웹 기반 실시간 렌더링",
-        "area_description": "카메라 단일 모달로는 부족한 노면 결빙 감지를 주행 음향·영상 Late Fusion과 환경 정보 기반 Attention 가중치로 보완하고, 앱 설치 없는 Web AR을 WebRTC·A-Frame으로 구현하며 저사양 기기의 렌더링 성능과 초기 로딩을 최적화하는 문제를 다룹니다.",
-        "rationale": "cluster 3은 2건뿐이지만 결빙 감지와 Web AR 모두 센서·카메라 입력을 실시간으로 처리해 판단하거나 화면에 그리는 과제로, cluster 2의 텍스트 기반 LLM 서비스와는 다루는 데이터 형태와 최적화 대상이 뚜렷이 다릅니다. 억지로 묶으면 두 Area 모두 설명이 공허해져 분리했습니다.",
-        "note": "2건 규모이며 결빙 감지(모델링)와 Web AR(브라우저 렌더링)은 기술 스택이 서로 다릅니다. 게시글이 더 쌓이면 분리 가능성이 있습니다.",
-        "keywords": [
-          "Late Fusion",
-          "Environmental Attention Layer",
-          "WebRTC 카메라 스트리밍",
-          "A-Frame",
-          "마커 기반 추적",
-          "쉐이더·프레임 속도 조정",
-          "프로그레시브 로딩"
-        ],
-        "article_count": 2,
-        "evidence": [
-          {
-            "article_id": "3b388e61f6c2df18",
-            "title": "도로의 숨결과 표정으로 결빙을 감지하는 멀티모달 AI 솔루션 'ARHIS Ambient'",
-            "url": "https://techtopic.skplanet.com/arhis-multimodal/",
-            "similarity": 0.9172,
-            "roles": [
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "865b36cc72a61f32",
-            "title": "play AR: SK플래닛의 Web AR 기반 마케팅 솔루션(feat. '춘식이는 홈런왕')",
-            "url": "https://techtopic.skplanet.com/skp-playar/",
-            "similarity": 0.9155,
-            "roles": [
-              "frontend",
-              "mobile"
-            ]
-          }
-        ],
-        "roles": [
-          "data-ai",
-          "frontend",
-          "mobile"
-        ],
-        "role_counts": {
-          "data-ai": 1,
-          "frontend": 1,
-          "mobile": 1
-        }
+        },
+        "id": "sk-planet-02"
       },
       {
         "area_name": "외부 LLM 활용 사례와 기술 조직 운영",
@@ -426,7 +431,8 @@
           "data-ai": 6,
           "backend": 3,
           "mobile": 1
-        }
+        },
+        "id": "sk-planet-03"
       }
     ],
     "unassigned_count": 0,
@@ -442,6 +448,126 @@
     "company": "네이버",
     "article_count": 49,
     "areas": [
+      {
+        "area_name": "서비스 클라이언트 성능·품질과 로그 처리 파이프라인",
+        "area_description": "통합검색 AI 요약 도입 후 LCP 악화 원인을 DOM 재구성 로직에서 규명하거나 Android 빌드 병목·Manifest 회귀를 캐시와 Baseline 방어로 잡는 등 사용자 접점 품질을 다루고, 전사 로그 파이프라인의 무중단 배포와 트래픽 편차 대응, 클릭 로그 시각화, 웹툰 워터마킹까지 서비스 운영 과제를 포함합니다.",
+        "rationale": "cluster 3은 웹·Android 클라이언트의 성능과 품질 확보(LCP 분석, 빌드 시간, Large Screen, Manifest 방어)를 중심으로, 로그 파이프라인과 클릭 로그 시각화 같은 서비스 운영 글이 함께 묶여 있습니다. 에이전트·데이터 저장소 cluster와는 다루는 계층이 달라 별도 Area로 유지했습니다.",
+        "note": "Logiss 로그 파이프라인과 웹툰 워터마킹·학습방지 연구는 클라이언트 성능 축과 성격이 다르고, 'DAN25 기술세션 영상 공개' 글은 컨퍼런스 안내성 메타 콘텐츠로 엔지니어링 실체가 없습니다.",
+        "keywords": [
+          "LCP p95",
+          "DOM 재구성·텍스트 애니메이션",
+          "Logiss 로그 파이프라인",
+          "Storm 토폴로지",
+          "Jetpack Compose·View 대응",
+          "Baseline 기반 회귀 방어 (Manifest Shield)",
+          "클릭 로그 히트맵 시각화",
+          "이미지 워터마킹·protective perturbation"
+        ],
+        "article_count": 9,
+        "evidence": [
+          {
+            "article_id": "c5d1d2b5ec5433e9",
+            "title": "Android 앱의 의도치 않은 변경 방지하기",
+            "url": "https://d2.naver.com/helloworld/3431313",
+            "similarity": 0.8883,
+            "roles": [
+              "mobile"
+            ]
+          },
+          {
+            "article_id": "0a8c471e63d7025e",
+            "title": "네이버 통합검색 AIB 도입과 웹 성능 변화 분석",
+            "url": "https://d2.naver.com/helloworld/4241703",
+            "similarity": 0.9016,
+            "roles": [
+              "backend",
+              "frontend",
+              "mobile"
+            ]
+          },
+          {
+            "article_id": "e7e8fbdc61a4c351",
+            "title": "비용, 성능, 안정성을 목표로 한 지능형 로그 파이프라인 도입",
+            "url": "https://d2.naver.com/helloworld/0004394",
+            "similarity": 0.8811,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "c961c5529d3c348d",
+            "title": "웹툰 창작 생태계 보호를 위한 연구",
+            "url": "https://d2.naver.com/helloworld/4571155",
+            "similarity": 0.8617,
+            "roles": [
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "01dde3c76b0837d0",
+            "title": "[DAN25] 기술세션 영상이 모두 공개되었습니다.",
+            "url": "https://d2.naver.com/news/9333656",
+            "similarity": 0.8638,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "7af78d03b40210c4",
+            "title": "경험이 쌓일수록 똑똑해지는 네이버 통합검색 LLM Devops Agent",
+            "url": "https://d2.naver.com/helloworld/4199466",
+            "similarity": 0.8731,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "40441941d5aea15c",
+            "title": "AI와 함께하는 프로젝트 자동화 : 더 빠르고, 더 스마트하게",
+            "url": "https://d2.naver.com/helloworld/3691494",
+            "similarity": 0.8814,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "4270af42e0b96596",
+            "title": "이건 첫 번째 클릭! 히트맵 같이 보기",
+            "url": "https://d2.naver.com/helloworld/0957098",
+            "similarity": 0.8722,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "97fe077c1e0c31a0",
+            "title": "글로벌웹툰 안드로이드 Large Screen 적용기",
+            "url": "https://d2.naver.com/helloworld/1072010",
+            "similarity": 0.8633,
+            "roles": [
+              "mobile"
+            ]
+          }
+        ],
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "mobile": 3,
+          "backend": 4,
+          "frontend": 3,
+          "data-ai": 6
+        },
+        "id": "naver-01"
+      },
       {
         "area_name": "AI 에이전트 개발 환경과 GPU·LLM 서빙 인프라",
         "area_description": "세션마다 초기화되는 코딩 에이전트에 기억·컨텍스트·도구를 붙여 테스트 생성, 코드 자율 개선, 사내 업무 자동화를 맡기는 문제와, 쿠버네티스 위에서 GPU 자원 샤딩·KV Cache 라우팅·ARC 기반 CI로 LLM 서빙과 학습 파이프라인을 운영하는 문제를 함께 다룹니다.",
@@ -623,7 +749,104 @@
           "data-ai": 8,
           "frontend": 4,
           "mobile": 1
-        }
+        },
+        "id": "naver-02"
+      },
+      {
+        "area_name": "언어 런타임 동작과 저수준 코드 정합성",
+        "area_description": "C++ 객체 수명·암묵적 객체 생성과 std::bit_cast 기반 타입 퍼닝처럼 표준이 규정하는 미정의 동작을 피하는 문제, JVM JIT 웜업 방식과 Spring 요청 범위 캐싱 애너테이션의 생명주기 설계처럼 런타임 동작을 정확히 이해해 코드를 고치는 문제를 다룹니다.",
+        "rationale": "cluster 4는 4건 규모로 작지만 C++ 표준 동작, JVM 웜업, Spring ThreadLocal 캐시 생명주기처럼 '언어·프레임워크 런타임의 정확한 동작에 기반한 코드 설계'라는 뚜렷한 공통 축이 있어, 인프라나 데이터 플랫폼 Area에 흡수하지 않고 단독으로 두었습니다.",
+        "note": "",
+        "keywords": [
+          "미정의 동작 (엄격한 앨리어싱)",
+          "std::bit_cast",
+          "객체 수명·placement new",
+          "JVM JIT 웜업",
+          "ThreadLocal 요청 범위 캐싱",
+          "fork vs spawn 멀티프로세싱",
+          "Kafka Consumer Group Protocol v2"
+        ],
+        "article_count": 7,
+        "evidence": [
+          {
+            "article_id": "57837176f27ed4e7",
+            "title": "Python의 멀티프로세싱과 Airflow, 그리고 관련된 문제 해결기 1편",
+            "url": "https://d2.naver.com/helloworld/4452165",
+            "similarity": 0.8811,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "fa27328b742787cc",
+            "title": "비개발자가 한 달 동안 풀스택으로 개발하면서 배운 것",
+            "url": "https://d2.naver.com/helloworld/0107009",
+            "similarity": 0.8645,
+            "roles": [
+              "backend",
+              "frontend"
+            ]
+          },
+          {
+            "article_id": "8979cd8313db9af0",
+            "title": "C++ 객체 수명과 암묵적 객체 생성",
+            "url": "https://d2.naver.com/helloworld/7997284",
+            "similarity": 0.8995,
+            "roles": [
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "066ec43873ebbabb",
+            "title": "C++ std::bit_cast와 reinterpret_cast — 언제 어떤 것을 써야 하는가",
+            "url": "https://d2.naver.com/helloworld/1155434",
+            "similarity": 0.9003,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "3350114853f526f7",
+            "title": "@RequestCache: HTTP 요청 범위 캐싱을 위한 커스텀 애너테이션 개발기",
+            "url": "https://d2.naver.com/helloworld/7610642",
+            "similarity": 0.8923,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "de3f394feeafa984",
+            "title": "서비스 조직에서 Kafka를 사용할 때 알아 두어야 할 것들 (5)",
+            "url": "https://d2.naver.com/helloworld/3974242",
+            "similarity": 0.8657,
+            "roles": [
+              "backend"
+            ]
+          },
+          {
+            "article_id": "5995d7259ef2d101",
+            "title": "API 호출식 웜업의 부작용을 넘어서 : 라이브러리만 데우는 JVM 웜업",
+            "url": "https://d2.naver.com/helloworld/1580651",
+            "similarity": 0.8767,
+            "roles": []
+          }
+        ],
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend"
+        ],
+        "role_counts": {
+          "backend": 5,
+          "frontend": 3,
+          "data-ai": 4
+        },
+        "id": "naver-03"
       },
       {
         "area_name": "대규모 데이터 파이프라인과 시계열 모니터링 저장소 운영",
@@ -737,221 +960,8 @@
           "frontend": 4,
           "mobile": 2,
           "data-ai": 7
-        }
-      },
-      {
-        "area_name": "서비스 클라이언트 성능·품질과 로그 처리 파이프라인",
-        "area_description": "통합검색 AI 요약 도입 후 LCP 악화 원인을 DOM 재구성 로직에서 규명하거나 Android 빌드 병목·Manifest 회귀를 캐시와 Baseline 방어로 잡는 등 사용자 접점 품질을 다루고, 전사 로그 파이프라인의 무중단 배포와 트래픽 편차 대응, 클릭 로그 시각화, 웹툰 워터마킹까지 서비스 운영 과제를 포함합니다.",
-        "rationale": "cluster 3은 웹·Android 클라이언트의 성능과 품질 확보(LCP 분석, 빌드 시간, Large Screen, Manifest 방어)를 중심으로, 로그 파이프라인과 클릭 로그 시각화 같은 서비스 운영 글이 함께 묶여 있습니다. 에이전트·데이터 저장소 cluster와는 다루는 계층이 달라 별도 Area로 유지했습니다.",
-        "note": "Logiss 로그 파이프라인과 웹툰 워터마킹·학습방지 연구는 클라이언트 성능 축과 성격이 다르고, 'DAN25 기술세션 영상 공개' 글은 컨퍼런스 안내성 메타 콘텐츠로 엔지니어링 실체가 없습니다.",
-        "keywords": [
-          "LCP p95",
-          "DOM 재구성·텍스트 애니메이션",
-          "Logiss 로그 파이프라인",
-          "Storm 토폴로지",
-          "Jetpack Compose·View 대응",
-          "Baseline 기반 회귀 방어 (Manifest Shield)",
-          "클릭 로그 히트맵 시각화",
-          "이미지 워터마킹·protective perturbation"
-        ],
-        "article_count": 9,
-        "evidence": [
-          {
-            "article_id": "c5d1d2b5ec5433e9",
-            "title": "Android 앱의 의도치 않은 변경 방지하기",
-            "url": "https://d2.naver.com/helloworld/3431313",
-            "similarity": 0.8883,
-            "roles": [
-              "mobile"
-            ]
-          },
-          {
-            "article_id": "0a8c471e63d7025e",
-            "title": "네이버 통합검색 AIB 도입과 웹 성능 변화 분석",
-            "url": "https://d2.naver.com/helloworld/4241703",
-            "similarity": 0.9016,
-            "roles": [
-              "backend",
-              "frontend",
-              "mobile"
-            ]
-          },
-          {
-            "article_id": "e7e8fbdc61a4c351",
-            "title": "비용, 성능, 안정성을 목표로 한 지능형 로그 파이프라인 도입",
-            "url": "https://d2.naver.com/helloworld/0004394",
-            "similarity": 0.8811,
-            "roles": [
-              "backend",
-              "frontend",
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "c961c5529d3c348d",
-            "title": "웹툰 창작 생태계 보호를 위한 연구",
-            "url": "https://d2.naver.com/helloworld/4571155",
-            "similarity": 0.8617,
-            "roles": [
-              "frontend",
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "01dde3c76b0837d0",
-            "title": "[DAN25] 기술세션 영상이 모두 공개되었습니다.",
-            "url": "https://d2.naver.com/news/9333656",
-            "similarity": 0.8638,
-            "roles": [
-              "backend",
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "7af78d03b40210c4",
-            "title": "경험이 쌓일수록 똑똑해지는 네이버 통합검색 LLM Devops Agent",
-            "url": "https://d2.naver.com/helloworld/4199466",
-            "similarity": 0.8731,
-            "roles": [
-              "backend",
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "40441941d5aea15c",
-            "title": "AI와 함께하는 프로젝트 자동화 : 더 빠르고, 더 스마트하게",
-            "url": "https://d2.naver.com/helloworld/3691494",
-            "similarity": 0.8814,
-            "roles": [
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "4270af42e0b96596",
-            "title": "이건 첫 번째 클릭! 히트맵 같이 보기",
-            "url": "https://d2.naver.com/helloworld/0957098",
-            "similarity": 0.8722,
-            "roles": [
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "97fe077c1e0c31a0",
-            "title": "글로벌웹툰 안드로이드 Large Screen 적용기",
-            "url": "https://d2.naver.com/helloworld/1072010",
-            "similarity": 0.8633,
-            "roles": [
-              "mobile"
-            ]
-          }
-        ],
-        "roles": [
-          "backend",
-          "data-ai",
-          "frontend",
-          "mobile"
-        ],
-        "role_counts": {
-          "mobile": 3,
-          "backend": 4,
-          "frontend": 3,
-          "data-ai": 6
-        }
-      },
-      {
-        "area_name": "언어 런타임 동작과 저수준 코드 정합성",
-        "area_description": "C++ 객체 수명·암묵적 객체 생성과 std::bit_cast 기반 타입 퍼닝처럼 표준이 규정하는 미정의 동작을 피하는 문제, JVM JIT 웜업 방식과 Spring 요청 범위 캐싱 애너테이션의 생명주기 설계처럼 런타임 동작을 정확히 이해해 코드를 고치는 문제를 다룹니다.",
-        "rationale": "cluster 4는 4건 규모로 작지만 C++ 표준 동작, JVM 웜업, Spring ThreadLocal 캐시 생명주기처럼 '언어·프레임워크 런타임의 정확한 동작에 기반한 코드 설계'라는 뚜렷한 공통 축이 있어, 인프라나 데이터 플랫폼 Area에 흡수하지 않고 단독으로 두었습니다.",
-        "note": "",
-        "keywords": [
-          "미정의 동작 (엄격한 앨리어싱)",
-          "std::bit_cast",
-          "객체 수명·placement new",
-          "JVM JIT 웜업",
-          "ThreadLocal 요청 범위 캐싱",
-          "fork vs spawn 멀티프로세싱",
-          "Kafka Consumer Group Protocol v2"
-        ],
-        "article_count": 7,
-        "evidence": [
-          {
-            "article_id": "57837176f27ed4e7",
-            "title": "Python의 멀티프로세싱과 Airflow, 그리고 관련된 문제 해결기 1편",
-            "url": "https://d2.naver.com/helloworld/4452165",
-            "similarity": 0.8811,
-            "roles": [
-              "backend",
-              "frontend",
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "fa27328b742787cc",
-            "title": "비개발자가 한 달 동안 풀스택으로 개발하면서 배운 것",
-            "url": "https://d2.naver.com/helloworld/0107009",
-            "similarity": 0.8645,
-            "roles": [
-              "backend",
-              "frontend"
-            ]
-          },
-          {
-            "article_id": "8979cd8313db9af0",
-            "title": "C++ 객체 수명과 암묵적 객체 생성",
-            "url": "https://d2.naver.com/helloworld/7997284",
-            "similarity": 0.8995,
-            "roles": [
-              "frontend",
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "066ec43873ebbabb",
-            "title": "C++ std::bit_cast와 reinterpret_cast — 언제 어떤 것을 써야 하는가",
-            "url": "https://d2.naver.com/helloworld/1155434",
-            "similarity": 0.9003,
-            "roles": [
-              "backend",
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "3350114853f526f7",
-            "title": "@RequestCache: HTTP 요청 범위 캐싱을 위한 커스텀 애너테이션 개발기",
-            "url": "https://d2.naver.com/helloworld/7610642",
-            "similarity": 0.8923,
-            "roles": [
-              "backend",
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "de3f394feeafa984",
-            "title": "서비스 조직에서 Kafka를 사용할 때 알아 두어야 할 것들 (5)",
-            "url": "https://d2.naver.com/helloworld/3974242",
-            "similarity": 0.8657,
-            "roles": [
-              "backend"
-            ]
-          },
-          {
-            "article_id": "5995d7259ef2d101",
-            "title": "API 호출식 웜업의 부작용을 넘어서 : 라이브러리만 데우는 JVM 웜업",
-            "url": "https://d2.naver.com/helloworld/1580651",
-            "similarity": 0.8767,
-            "roles": []
-          }
-        ],
-        "roles": [
-          "backend",
-          "data-ai",
-          "frontend"
-        ],
-        "role_counts": {
-          "backend": 5,
-          "frontend": 3,
-          "data-ai": 4
-        }
+        },
+        "id": "naver-04"
       }
     ],
     "unassigned_count": 8,
@@ -1053,7 +1063,8 @@
           "mobile": 2,
           "backend": 2,
           "data-ai": 2
-        }
+        },
+        "id": "daangn-01"
       },
       {
         "area_name": "대규모 트래픽 서비스 아키텍처와 사내 데이터 플랫폼",
@@ -1117,7 +1128,8 @@
           "data-ai": 3,
           "frontend": 2,
           "mobile": 1
-        }
+        },
+        "id": "daangn-02"
       },
       {
         "area_name": "사용자 인증 체계와 계정 식별",
@@ -1155,7 +1167,8 @@
           "backend": 1,
           "frontend": 1,
           "mobile": 1
-        }
+        },
+        "id": "daangn-03"
       }
     ],
     "unassigned_count": 0,
@@ -1279,7 +1292,8 @@
           "backend": 7,
           "frontend": 3,
           "data-ai": 7
-        }
+        },
+        "id": "megazone-01"
       },
       {
         "area_name": "코딩 에이전트 실행 구조와 에이전트 친화적 코드 설계",
@@ -1358,7 +1372,8 @@
           "frontend": 4,
           "data-ai": 4,
           "backend": 3
-        }
+        },
+        "id": "megazone-02"
       },
       {
         "area_name": "하이브리드 사설망 연결과 경계 보안 아키텍처",
@@ -1448,7 +1463,8 @@
           "backend": 5,
           "data-ai": 5,
           "frontend": 3
-        }
+        },
+        "id": "megazone-03"
       }
     ],
     "unassigned_count": 4,
@@ -1463,93 +1479,6 @@
     "company": "어피닛",
     "article_count": 30,
     "areas": [
-      {
-        "area_name": "신용 심사 모델링과 금융 플랫폼 아키텍처",
-        "area_description": "인도 대출 심사에서 규칙 기반 정책을 Behavior Cloning으로 모사해 학습 정책으로 점진 전환하고, 누락된 EMI를 상각 기반으로 역산하거나 LLM logprobs를 연체확률로 보정하는 등 심사 의사결정을 정량화하며, DDD 기반 마이크로서비스와 파트너 Rule Engine 병렬 실행으로 대출 매칭 플랫폼을 설계하는 문제를 다룹니다.",
-        "rationale": "cluster 1은 크기가 16건으로 가장 크고 내부가 여러 갈래지만, 대출 심사 모델링(Behavior Cloning, EMI 추정, GenAI PD 산출)과 FPJR 금융 플랫폼 아키텍처가 이 회사의 핵심 도메인 축을 이룹니다. cluster 3의 Iceberg 저장소 운영과는 다루는 계층이 다르고, cluster 2의 업무 자동화와도 문제의식이 달라 병합하지 않았습니다.",
-        "note": "cluster 1은 응집도가 낮습니다. (1) 심사 모델링·금융 플랫폼 아키텍처 계열, (2) 해커톤 프로젝트 4건(WhatsApp 대화형 대출, 카드 우선 지시 엔진, 사전 승인 오퍼 등), (3) CDC 파이프라인 2건(Debezium/Flink 재설계, 로우 해시 기반 멱등 병합), (4) JupyterHub 통합 데이터 허브 3부작, (5) PM·CS의 바이브 코딩 모니터링 자동화가 섞여 있습니다. 특히 CDC 2건과 JupyterHub 3건은 cluster 3의 데이터 저장소 Area에, 바이브 코딩 자동화 글은 cluster 2에 더 가깝습니다. 게시글이 더 쌓이면 최소 3개 Area로 분할하는 것이 적절합니다.",
-        "keywords": [
-          "Behavior Cloning (XGBoost)",
-          "logprobs 기반 PD 산출",
-          "Scheduled Amortization EMI 역산",
-          "DDD 마이크로서비스",
-          "Business Rule Engine 병렬 실행",
-          "LangChain/LangGraph 대화형 엔진",
-          "사전 승인 오퍼 계산",
-          "LLM Rate-Limiting"
-        ],
-        "article_count": 6,
-        "evidence": [
-          {
-            "article_id": "f888289ae01bfdca",
-            "title": "어피닛 AI 엔진이 규칙 기반 심사 정책을 학습 정책으로 전환해가는 과정",
-            "url": "https://blog.afinit.com/어피닛-ai-엔진이-규칙-기반-심사-정책을-학습-정책으로-전환해가는-과정-256395",
-            "similarity": 0.917,
-            "roles": [
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "d36fd5e2d1a53d69",
-            "title": "AI 해커톤: 약속한 그대로 받는 대출",
-            "url": "https://blog.afinit.com/ai-해커톤-약속한-그대로-받는-대출-253185",
-            "similarity": 0.8747,
-            "roles": [
-              "backend",
-              "mobile",
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "66ed37b3ad6fddbc",
-            "title": "AI 해커톤: 금융의 틀을 깨다",
-            "url": "https://blog.afinit.com/ai-해커톤-금융의-틀을-깨다-235587",
-            "similarity": 0.8758,
-            "roles": [
-              "backend",
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "108c814f97c24a99",
-            "title": "AI 기반 금융 플랫폼 아키텍처와 혁신적인 금융 여정",
-            "url": "https://blog.afinit.com/ai-financial-platform-architecture",
-            "similarity": 0.9004,
-            "roles": [
-              "backend",
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "b52b320850007002",
-            "title": "어피닛 AI 엔진이 고객의 EMI를 추정하는 방법",
-            "url": "https://blog.afinit.com/ai-engine-emi-estimation",
-            "similarity": 0.8998,
-            "roles": [
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "4a48f56690f499fa",
-            "title": "어피닛에서 GenAI를 금융 심사에 활용해보기",
-            "url": "https://blog.afinit.com/ai-loan-screening",
-            "similarity": 0.8877,
-            "roles": [
-              "data-ai"
-            ]
-          }
-        ],
-        "roles": [
-          "backend",
-          "data-ai",
-          "mobile"
-        ],
-        "role_counts": {
-          "data-ai": 6,
-          "backend": 3,
-          "mobile": 1
-        }
-      },
       {
         "area_name": "사내 AI 에이전트 업무 위임 구조와 데이터 거버넌스",
         "area_description": "세션마다 끊기는 에이전트 맥락을 단일 서버·CLAUDE.md·공용 skills로 이어붙이고, 허브-스포크 MCP로 인증·권한·라우팅을 표준화하며, SQL 실행이나 Dynamic Rule 변경 같은 민감 작업은 AI가 제안하고 사람이 승인하는 Closed System으로 위임 경계를 설계하는 문제, 그리고 에이전트가 접근할 데이터를 PII 자동 탐지와 Tag-Based Access Control로 통제하는 문제를 다룹니다.",
@@ -1733,7 +1662,96 @@
           "data-ai": 14,
           "mobile": 5,
           "frontend": 6
-        }
+        },
+        "id": "afinit-01"
+      },
+      {
+        "area_name": "신용 심사 모델링과 금융 플랫폼 아키텍처",
+        "area_description": "인도 대출 심사에서 규칙 기반 정책을 Behavior Cloning으로 모사해 학습 정책으로 점진 전환하고, 누락된 EMI를 상각 기반으로 역산하거나 LLM logprobs를 연체확률로 보정하는 등 심사 의사결정을 정량화하며, DDD 기반 마이크로서비스와 파트너 Rule Engine 병렬 실행으로 대출 매칭 플랫폼을 설계하는 문제를 다룹니다.",
+        "rationale": "cluster 1은 크기가 16건으로 가장 크고 내부가 여러 갈래지만, 대출 심사 모델링(Behavior Cloning, EMI 추정, GenAI PD 산출)과 FPJR 금융 플랫폼 아키텍처가 이 회사의 핵심 도메인 축을 이룹니다. cluster 3의 Iceberg 저장소 운영과는 다루는 계층이 다르고, cluster 2의 업무 자동화와도 문제의식이 달라 병합하지 않았습니다.",
+        "note": "cluster 1은 응집도가 낮습니다. (1) 심사 모델링·금융 플랫폼 아키텍처 계열, (2) 해커톤 프로젝트 4건(WhatsApp 대화형 대출, 카드 우선 지시 엔진, 사전 승인 오퍼 등), (3) CDC 파이프라인 2건(Debezium/Flink 재설계, 로우 해시 기반 멱등 병합), (4) JupyterHub 통합 데이터 허브 3부작, (5) PM·CS의 바이브 코딩 모니터링 자동화가 섞여 있습니다. 특히 CDC 2건과 JupyterHub 3건은 cluster 3의 데이터 저장소 Area에, 바이브 코딩 자동화 글은 cluster 2에 더 가깝습니다. 게시글이 더 쌓이면 최소 3개 Area로 분할하는 것이 적절합니다.",
+        "keywords": [
+          "Behavior Cloning (XGBoost)",
+          "logprobs 기반 PD 산출",
+          "Scheduled Amortization EMI 역산",
+          "DDD 마이크로서비스",
+          "Business Rule Engine 병렬 실행",
+          "LangChain/LangGraph 대화형 엔진",
+          "사전 승인 오퍼 계산",
+          "LLM Rate-Limiting"
+        ],
+        "article_count": 6,
+        "evidence": [
+          {
+            "article_id": "f888289ae01bfdca",
+            "title": "어피닛 AI 엔진이 규칙 기반 심사 정책을 학습 정책으로 전환해가는 과정",
+            "url": "https://blog.afinit.com/어피닛-ai-엔진이-규칙-기반-심사-정책을-학습-정책으로-전환해가는-과정-256395",
+            "similarity": 0.917,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "d36fd5e2d1a53d69",
+            "title": "AI 해커톤: 약속한 그대로 받는 대출",
+            "url": "https://blog.afinit.com/ai-해커톤-약속한-그대로-받는-대출-253185",
+            "similarity": 0.8747,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "66ed37b3ad6fddbc",
+            "title": "AI 해커톤: 금융의 틀을 깨다",
+            "url": "https://blog.afinit.com/ai-해커톤-금융의-틀을-깨다-235587",
+            "similarity": 0.8758,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "108c814f97c24a99",
+            "title": "AI 기반 금융 플랫폼 아키텍처와 혁신적인 금융 여정",
+            "url": "https://blog.afinit.com/ai-financial-platform-architecture",
+            "similarity": 0.9004,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "b52b320850007002",
+            "title": "어피닛 AI 엔진이 고객의 EMI를 추정하는 방법",
+            "url": "https://blog.afinit.com/ai-engine-emi-estimation",
+            "similarity": 0.8998,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "4a48f56690f499fa",
+            "title": "어피닛에서 GenAI를 금융 심사에 활용해보기",
+            "url": "https://blog.afinit.com/ai-loan-screening",
+            "similarity": 0.8877,
+            "roles": [
+              "data-ai"
+            ]
+          }
+        ],
+        "roles": [
+          "backend",
+          "data-ai",
+          "mobile"
+        ],
+        "role_counts": {
+          "data-ai": 6,
+          "backend": 3,
+          "mobile": 1
+        },
+        "id": "afinit-02"
       },
       {
         "area_name": "Apache Iceberg 기반 대용량 저장소 비용·성능 운영",
@@ -1815,7 +1833,8 @@
           "backend": 3,
           "frontend": 5,
           "data-ai": 5
-        }
+        },
+        "id": "afinit-03"
       }
     ],
     "unassigned_count": 4,
@@ -1831,6 +1850,55 @@
     "company": "인프랩 / 인프런",
     "article_count": 11,
     "areas": [
+      {
+        "area_name": "프런트엔드 UI 구조 설계와 렌더링 제약 대응",
+        "area_description": "MFE 환경에서 공통 헤더를 앱쉘로 통합하며 Module Federation fallback과 하이드레이션 제약을 CSS 변수·data attribute로 우회하고, 연쇄 모달의 강한 결합을 FunnelStep 배열 기반 useFunnel hook으로 선언적 구조로 바꾸는 문제를 다룹니다.",
+        "rationale": "cluster 3은 2건 모두 'React 애플리케이션에서 컴포넌트 간 결합과 렌더링 제약을 구조로 푸는' 과제로 응집도가 높습니다. 규모는 작지만 다른 Area에 넣으면 LLM 서비스나 인프라 운영이라는 설명과 어긋나 단독으로 두었습니다.",
+        "note": "2건 규모로 작습니다.",
+        "keywords": [
+          "Module Federation",
+          "하이드레이션 에러 회피",
+          "CSS 변수·속성 셀렉터 스냅샷",
+          "GPU composite 애니메이션",
+          "useFunnel hook",
+          "FunnelStep 선언적 정의"
+        ],
+        "article_count": 2,
+        "evidence": [
+          {
+            "article_id": "0764139f4ca20e67",
+            "title": "MFE 환경에서 공통 헤더(GNB) 개편하기",
+            "url": "https://tech.inflab.com/20260305-new-header/",
+            "similarity": 0.9233,
+            "roles": [
+              "backend",
+              "frontend"
+            ]
+          },
+          {
+            "article_id": "f691508707d3b92f",
+            "title": "강의실 모달 지옥에서 탈출하기: React useFunnel hook 설계",
+            "url": "https://tech.inflab.com/20250921-react-funnel-hook/",
+            "similarity": 0.9058,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          }
+        ],
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend"
+        ],
+        "role_counts": {
+          "backend": 2,
+          "frontend": 2,
+          "data-ai": 1
+        },
+        "id": "inflab-01"
+      },
       {
         "area_name": "LLM 서비스 구축과 미디어 처리 파이프라인",
         "area_description": "학습 에이전트의 컨텍스트·Tool 설계와 Virtual Thread 기반 SSE 스트리밍 백엔드, 사내 LLM 호출을 중앙 라우팅하는 게이트웨이, OCR·VLM·LLM을 엮은 영상 화면 번역 파이프라인처럼 LLM을 실제 제품에 태우면서 품질과 비용을 함께 관리하는 문제를 다룹니다.",
@@ -1913,7 +1981,8 @@
           "data-ai": 5,
           "frontend": 2,
           "mobile": 1
-        }
+        },
+        "id": "inflab-02"
       },
       {
         "area_name": "배포 환경·의존성 공급망과 시스템 레벨 디버깅",
@@ -1988,55 +2057,8 @@
           "frontend": 4,
           "mobile": 2,
           "data-ai": 2
-        }
-      },
-      {
-        "area_name": "프런트엔드 UI 구조 설계와 렌더링 제약 대응",
-        "area_description": "MFE 환경에서 공통 헤더를 앱쉘로 통합하며 Module Federation fallback과 하이드레이션 제약을 CSS 변수·data attribute로 우회하고, 연쇄 모달의 강한 결합을 FunnelStep 배열 기반 useFunnel hook으로 선언적 구조로 바꾸는 문제를 다룹니다.",
-        "rationale": "cluster 3은 2건 모두 'React 애플리케이션에서 컴포넌트 간 결합과 렌더링 제약을 구조로 푸는' 과제로 응집도가 높습니다. 규모는 작지만 다른 Area에 넣으면 LLM 서비스나 인프라 운영이라는 설명과 어긋나 단독으로 두었습니다.",
-        "note": "2건 규모로 작습니다.",
-        "keywords": [
-          "Module Federation",
-          "하이드레이션 에러 회피",
-          "CSS 변수·속성 셀렉터 스냅샷",
-          "GPU composite 애니메이션",
-          "useFunnel hook",
-          "FunnelStep 선언적 정의"
-        ],
-        "article_count": 2,
-        "evidence": [
-          {
-            "article_id": "0764139f4ca20e67",
-            "title": "MFE 환경에서 공통 헤더(GNB) 개편하기",
-            "url": "https://tech.inflab.com/20260305-new-header/",
-            "similarity": 0.9233,
-            "roles": [
-              "backend",
-              "frontend"
-            ]
-          },
-          {
-            "article_id": "f691508707d3b92f",
-            "title": "강의실 모달 지옥에서 탈출하기: React useFunnel hook 설계",
-            "url": "https://tech.inflab.com/20250921-react-funnel-hook/",
-            "similarity": 0.9058,
-            "roles": [
-              "backend",
-              "frontend",
-              "data-ai"
-            ]
-          }
-        ],
-        "roles": [
-          "backend",
-          "data-ai",
-          "frontend"
-        ],
-        "role_counts": {
-          "backend": 2,
-          "frontend": 2,
-          "data-ai": 1
-        }
+        },
+        "id": "inflab-03"
       }
     ],
     "unassigned_count": 0,
@@ -2052,270 +2074,6 @@
     "company": "채널코퍼레이션 / 채널톡",
     "article_count": 52,
     "areas": [
-      {
-        "area_name": "대규모 트래픽 처리와 데이터 저장소·성능 엔지니어링",
-        "area_description": "16억 건 규모 DynamoDB 테이블 온라인 마이그레이션, 인덱스를 타지 못하는 대용량 쿼리 개선, 벌크 워커 동적 스케일링, ClickHouse/dagster 도입 같은 저장소·파이프라인 선택과, 웹·에디터·화상회의 클라이언트의 렌더링 성능 개선, CI 파이프라인 단축까지 실제 운영 시스템의 병목을 계측하고 구조를 바꿔 해결하는 문제를 다룹니다.",
-        "rationale": "cluster 1은 규모가 28건으로 가장 크고 내부적으로 여러 갈래(백엔드 데이터 저장소, 프론트엔드 성능, AI 네이티브 개발 환경, 에이전트 아키텍처)를 품고 있지만, 대다수 글이 '실서비스의 구체적 병목을 계측→원인 규명→구조 변경'이라는 동일한 문제 해결 패턴을 공유하고 다른 cluster(음성/상담 AI 도메인, 디자이너 AI 활용, 서비스 메시 운영)와는 대상 시스템이 뚜렷이 달라 병합하지 않고 단독 Area로 두었습니다.",
-        "note": "cluster 1은 응집도가 낮습니다. (1) DynamoDB 마이그레이션·IndexedDAO·ClickHouse·dagster·동적 스케일링 같은 백엔드 데이터/트래픽 계열, (2) WebGL 블러·화상회의 레이아웃·RxJS SDK·iOS26 대응·Swift 6 동시성 같은 클라이언트 계열, (3) Go AST 아키텍처 테스트·Neo4j 지식그래프 MCP·CI 개선·AI 생성 코드 샌드박스 같은 AI Native 개발 인프라 계열, (4) LLM 모델 교체 벤치마크·Ralph Loop 에이전트 아키텍처·리트리벌 벤치마크 계열이 섞여 있어, 게시글 수가 더 쌓이면 최소 3개 Area로 분할하는 것이 적절합니다. 'AWS가 DynamoDB를 만든 방법', 'OpenAI Codex 사용법'은 외부 세션 정리 글이고, 'Notion DB Figma 플러그인'은 cluster 3의 디자이너 바이브 코딩 계열에 더 가깝습니다.",
-        "keywords": [
-          "DynamoDB",
-          "온라인 마이그레이션 (Export/Import, Dual Write)",
-          "ClickHouse",
-          "인덱스 히트 (IndexedDAO)",
-          "동적 스케일링 (Per-Worker Queue Depth)",
-          "렌더링 성능 프로파일링 (INP, flame chart)",
-          "WebGL 프래그먼트 쉐이더",
-          "셀 아키텍처·셔플 샤딩"
-        ],
-        "article_count": 10,
-        "evidence": [
-          {
-            "article_id": "24d02d3e58b26831",
-            "title": "AWS가 DynamoDB를 만든 방법",
-            "url": "https://tech.channel.io/kr/articles/0e09a182",
-            "similarity": 0.887,
-            "roles": [
-              "backend",
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "d9b89cbae2217c68",
-            "title": "느려터진 에디터 좀 고쳐줘를 AI에게 시켜봤다",
-            "url": "https://tech.channel.io/kr/articles/2d39f66f",
-            "similarity": 0.8702,
-            "roles": [
-              "frontend",
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "d36ef86b16167499",
-            "title": "AI를 활용한 Web 성능개선 실전 사례",
-            "url": "https://tech.channel.io/kr/articles/dc49411c",
-            "similarity": 0.8838,
-            "roles": [
-              "backend",
-              "frontend",
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "e3933c28d1508ec2",
-            "title": "biz-crm IndexedDAO 적용기",
-            "url": "https://tech.channel.io/kr/articles/fcb35d5d",
-            "similarity": 0.8804,
-            "roles": [
-              "backend",
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "62fe0d8e89c5ce8c",
-            "title": "메시지 전송 트래픽 100배에도 끄떡 없는 User 테이블로 뜯어고치기 (2)",
-            "url": "https://tech.channel.io/kr/articles/ece3f7e9",
-            "similarity": 0.905,
-            "roles": [
-              "backend",
-              "frontend",
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "0b6290932d145420",
-            "title": "급증하는 트래픽 안정적으로 처리하기: 개선편(1) 동적 스케일링",
-            "url": "https://tech.channel.io/kr/articles/6748dc7e",
-            "similarity": 0.879,
-            "roles": [
-              "backend",
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "4e449e45411b4e35",
-            "title": "고객 타게팅을 좀 더 정교하게, ClickHouse 도입기",
-            "url": "https://tech.channel.io/kr/articles/16084dd4",
-            "similarity": 0.8956,
-            "roles": [
-              "backend",
-              "frontend",
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "17836ca7cc4860cd",
-            "title": "메시지 트래픽 100배에도 끄떡 없게 고객 테이블 뜯어고치기 (1)",
-            "url": "https://tech.channel.io/kr/articles/6ace7347",
-            "similarity": 0.9058,
-            "roles": [
-              "backend",
-              "frontend",
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "831bcec5f9a6db12",
-            "title": "WebGL 활용한 화상회의 배경 블러 처리 개선",
-            "url": "https://tech.channel.io/kr/articles/68510682",
-            "similarity": 0.8692,
-            "roles": [
-              "frontend",
-              "mobile",
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "f42494a07ccbe533",
-            "title": "화상회의 참여자 화면 최적 배치 알고리즘 개발기",
-            "url": "https://tech.channel.io/kr/articles/c1b9c86c",
-            "similarity": 0.8741,
-            "roles": [
-              "frontend",
-              "mobile"
-            ]
-          }
-        ],
-        "roles": [
-          "backend",
-          "data-ai",
-          "frontend",
-          "mobile"
-        ],
-        "role_counts": {
-          "backend": 7,
-          "data-ai": 9,
-          "frontend": 7,
-          "mobile": 2
-        }
-      },
-      {
-        "area_name": "상담 AI 에이전트와 음성·대화 데이터 처리",
-        "area_description": "ALF 상담 에이전트를 실제 고객 응대에 투입하기 위한 RAG 청킹·검색 전략, 상담 데이터 기반 SOP 자동 추출, 비결정적 에이전트의 시나리오 자동 QA와, 전화 상담을 위한 Turn Detection·상담사향 TTS 자체 모델 학습, 개인정보 마스킹·콜센터 지표 설계 같은 상담 도메인 인프라를 다룹니다.",
-        "rationale": "cluster 2는 전화/채팅 상담이라는 단일 제품 도메인 위에서 음성 모델 학습, 대화 데이터 전처리, 에이전트 품질 평가, 상담 데이터 보호가 하나의 파이프라인으로 이어져 응집도가 높습니다. cluster 1에도 LLM 에이전트 글이 있지만 그쪽은 개발 생산성·시스템 아키텍처 관점이고 이쪽은 상담 도메인 데이터와 음성 모델링이 핵심이라 합치지 않았습니다.",
-        "note": "'채널톡 프로덕트 디자이너는 어떤 일을 할까?'는 사용성 검증 인터뷰 글로, 상담 AI 도메인과 무관하며 cluster 3의 디자인 계열에 더 가깝습니다.",
-        "keywords": [
-          "RAG 청킹·검색",
-          "hybrid search (BM25+벡터)",
-          "자체 벤치마크 (Hit@k, nDCG@k, pass@k)",
-          "TTS 파인튜닝 (GRPO, Iterative DPO)",
-          "Turn Detection",
-          "에이전트 자동 QA (시나리오 생성)",
-          "Stateful Task / Agent Loop",
-          "dagster 전처리 파이프라인"
-        ],
-        "article_count": 10,
-        "evidence": [
-          {
-            "article_id": "76e231d8e3bf4056",
-            "title": "Voice Turn Detection 모델 개발기",
-            "url": "https://tech.channel.io/kr/articles/df1ca834",
-            "similarity": 0.8997,
-            "roles": [
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "b159516533a98c5d",
-            "title": "채널톡이 글로벌 상담 Agent를 GPT-5.6 Luna로 갈아탄 이유",
-            "url": "https://tech.channel.io/kr/articles/d1671db1",
-            "similarity": 0.8806,
-            "roles": [
-              "backend",
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "843a615245abe9ac",
-            "title": "AI는 미래지만, 기본은 현재입니다",
-            "url": "https://tech.channel.io/kr/articles/1fe635f5",
-            "similarity": 0.9054,
-            "roles": [
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "8fff0851cc993ec9",
-            "title": "AI ENGINEER NIGHT Q&A 총정리",
-            "url": "https://tech.channel.io/kr/articles/4052f1f4",
-            "similarity": 0.893,
-            "roles": [
-              "frontend",
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "cad35eadc7ced51b",
-            "title": "팀장님이 QA 100번 시키길래 만들었습니다.",
-            "url": "https://tech.channel.io/kr/articles/23a19040",
-            "similarity": 0.8955,
-            "roles": [
-              "backend",
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "7b4e5cda2b1d3d5b",
-            "title": "상담 데이터 분석을 통해 메뉴얼 추출하기",
-            "url": "https://tech.channel.io/kr/articles/5e13175f",
-            "similarity": 0.9242,
-            "roles": [
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "5b453441e082713e",
-            "title": "Ralph Loop, OpenClaw",
-            "url": "https://tech.channel.io/kr/articles/9a2e654c",
-            "similarity": 0.8757,
-            "roles": [
-              "frontend",
-              "mobile",
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "c4c27d489f9a3e0a",
-            "title": "팀 내 전처리 프레임워크 dagster 도입기",
-            "url": "https://tech.channel.io/kr/articles/854ff19c",
-            "similarity": 0.8952,
-            "roles": [
-              "backend",
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "c7f6f03d30b41b63",
-            "title": "채널 AI팀은 왜 새로운 ML 모델 벤치마크가 필요로 했을까?",
-            "url": "https://tech.channel.io/kr/articles/63847003",
-            "similarity": 0.869,
-            "roles": [
-              "frontend",
-              "data-ai"
-            ]
-          },
-          {
-            "article_id": "29751e7437fb43bd",
-            "title": "상담사향 TTS 만들기",
-            "url": "https://tech.channel.io/kr/articles/406f203b",
-            "similarity": 0.8781,
-            "roles": [
-              "data-ai"
-            ]
-          }
-        ],
-        "roles": [
-          "backend",
-          "data-ai",
-          "frontend",
-          "mobile"
-        ],
-        "role_counts": {
-          "data-ai": 10,
-          "backend": 3,
-          "frontend": 3,
-          "mobile": 1
-        }
-      },
       {
         "area_name": "AI 에이전트를 전제로 한 디자인 시스템과 비개발 직군 실행 환경",
         "area_description": "AI 에이전트가 코드를 직접 작성하는 환경에 맞춰 디자인 시스템 컴포넌트 추상화를 타입·구조로 규칙을 강제하도록 재설계하고, 디자이너가 Cursor·Codex로 UI 버그 수정 PR과 프로토타입을 직접 만들며, 팀챗을 공용 인터페이스로 삼아 조직 전체 AI 실행 harness와 메모리 계층을 구축하는 문제를 다룹니다.",
@@ -2539,7 +2297,8 @@
           "data-ai": 16,
           "backend": 11,
           "mobile": 4
-        }
+        },
+        "id": "channel-01"
       },
       {
         "area_name": "Kubernetes 서비스 메시와 모니터링 인프라 운영",
@@ -2642,7 +2401,274 @@
           "backend": 7,
           "frontend": 6,
           "data-ai": 5
-        }
+        },
+        "id": "channel-02"
+      },
+      {
+        "area_name": "대규모 트래픽 처리와 데이터 저장소·성능 엔지니어링",
+        "area_description": "16억 건 규모 DynamoDB 테이블 온라인 마이그레이션, 인덱스를 타지 못하는 대용량 쿼리 개선, 벌크 워커 동적 스케일링, ClickHouse/dagster 도입 같은 저장소·파이프라인 선택과, 웹·에디터·화상회의 클라이언트의 렌더링 성능 개선, CI 파이프라인 단축까지 실제 운영 시스템의 병목을 계측하고 구조를 바꿔 해결하는 문제를 다룹니다.",
+        "rationale": "cluster 1은 규모가 28건으로 가장 크고 내부적으로 여러 갈래(백엔드 데이터 저장소, 프론트엔드 성능, AI 네이티브 개발 환경, 에이전트 아키텍처)를 품고 있지만, 대다수 글이 '실서비스의 구체적 병목을 계측→원인 규명→구조 변경'이라는 동일한 문제 해결 패턴을 공유하고 다른 cluster(음성/상담 AI 도메인, 디자이너 AI 활용, 서비스 메시 운영)와는 대상 시스템이 뚜렷이 달라 병합하지 않고 단독 Area로 두었습니다.",
+        "note": "cluster 1은 응집도가 낮습니다. (1) DynamoDB 마이그레이션·IndexedDAO·ClickHouse·dagster·동적 스케일링 같은 백엔드 데이터/트래픽 계열, (2) WebGL 블러·화상회의 레이아웃·RxJS SDK·iOS26 대응·Swift 6 동시성 같은 클라이언트 계열, (3) Go AST 아키텍처 테스트·Neo4j 지식그래프 MCP·CI 개선·AI 생성 코드 샌드박스 같은 AI Native 개발 인프라 계열, (4) LLM 모델 교체 벤치마크·Ralph Loop 에이전트 아키텍처·리트리벌 벤치마크 계열이 섞여 있어, 게시글 수가 더 쌓이면 최소 3개 Area로 분할하는 것이 적절합니다. 'AWS가 DynamoDB를 만든 방법', 'OpenAI Codex 사용법'은 외부 세션 정리 글이고, 'Notion DB Figma 플러그인'은 cluster 3의 디자이너 바이브 코딩 계열에 더 가깝습니다.",
+        "keywords": [
+          "DynamoDB",
+          "온라인 마이그레이션 (Export/Import, Dual Write)",
+          "ClickHouse",
+          "인덱스 히트 (IndexedDAO)",
+          "동적 스케일링 (Per-Worker Queue Depth)",
+          "렌더링 성능 프로파일링 (INP, flame chart)",
+          "WebGL 프래그먼트 쉐이더",
+          "셀 아키텍처·셔플 샤딩"
+        ],
+        "article_count": 10,
+        "evidence": [
+          {
+            "article_id": "24d02d3e58b26831",
+            "title": "AWS가 DynamoDB를 만든 방법",
+            "url": "https://tech.channel.io/kr/articles/0e09a182",
+            "similarity": 0.887,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "d9b89cbae2217c68",
+            "title": "느려터진 에디터 좀 고쳐줘를 AI에게 시켜봤다",
+            "url": "https://tech.channel.io/kr/articles/2d39f66f",
+            "similarity": 0.8702,
+            "roles": [
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "d36ef86b16167499",
+            "title": "AI를 활용한 Web 성능개선 실전 사례",
+            "url": "https://tech.channel.io/kr/articles/dc49411c",
+            "similarity": 0.8838,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "e3933c28d1508ec2",
+            "title": "biz-crm IndexedDAO 적용기",
+            "url": "https://tech.channel.io/kr/articles/fcb35d5d",
+            "similarity": 0.8804,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "62fe0d8e89c5ce8c",
+            "title": "메시지 전송 트래픽 100배에도 끄떡 없는 User 테이블로 뜯어고치기 (2)",
+            "url": "https://tech.channel.io/kr/articles/ece3f7e9",
+            "similarity": 0.905,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "0b6290932d145420",
+            "title": "급증하는 트래픽 안정적으로 처리하기: 개선편(1) 동적 스케일링",
+            "url": "https://tech.channel.io/kr/articles/6748dc7e",
+            "similarity": 0.879,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "4e449e45411b4e35",
+            "title": "고객 타게팅을 좀 더 정교하게, ClickHouse 도입기",
+            "url": "https://tech.channel.io/kr/articles/16084dd4",
+            "similarity": 0.8956,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "17836ca7cc4860cd",
+            "title": "메시지 트래픽 100배에도 끄떡 없게 고객 테이블 뜯어고치기 (1)",
+            "url": "https://tech.channel.io/kr/articles/6ace7347",
+            "similarity": 0.9058,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "831bcec5f9a6db12",
+            "title": "WebGL 활용한 화상회의 배경 블러 처리 개선",
+            "url": "https://tech.channel.io/kr/articles/68510682",
+            "similarity": 0.8692,
+            "roles": [
+              "frontend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "f42494a07ccbe533",
+            "title": "화상회의 참여자 화면 최적 배치 알고리즘 개발기",
+            "url": "https://tech.channel.io/kr/articles/c1b9c86c",
+            "similarity": 0.8741,
+            "roles": [
+              "frontend",
+              "mobile"
+            ]
+          }
+        ],
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "backend": 7,
+          "data-ai": 9,
+          "frontend": 7,
+          "mobile": 2
+        },
+        "id": "channel-03"
+      },
+      {
+        "area_name": "상담 AI 에이전트와 음성·대화 데이터 처리",
+        "area_description": "ALF 상담 에이전트를 실제 고객 응대에 투입하기 위한 RAG 청킹·검색 전략, 상담 데이터 기반 SOP 자동 추출, 비결정적 에이전트의 시나리오 자동 QA와, 전화 상담을 위한 Turn Detection·상담사향 TTS 자체 모델 학습, 개인정보 마스킹·콜센터 지표 설계 같은 상담 도메인 인프라를 다룹니다.",
+        "rationale": "cluster 2는 전화/채팅 상담이라는 단일 제품 도메인 위에서 음성 모델 학습, 대화 데이터 전처리, 에이전트 품질 평가, 상담 데이터 보호가 하나의 파이프라인으로 이어져 응집도가 높습니다. cluster 1에도 LLM 에이전트 글이 있지만 그쪽은 개발 생산성·시스템 아키텍처 관점이고 이쪽은 상담 도메인 데이터와 음성 모델링이 핵심이라 합치지 않았습니다.",
+        "note": "'채널톡 프로덕트 디자이너는 어떤 일을 할까?'는 사용성 검증 인터뷰 글로, 상담 AI 도메인과 무관하며 cluster 3의 디자인 계열에 더 가깝습니다.",
+        "keywords": [
+          "RAG 청킹·검색",
+          "hybrid search (BM25+벡터)",
+          "자체 벤치마크 (Hit@k, nDCG@k, pass@k)",
+          "TTS 파인튜닝 (GRPO, Iterative DPO)",
+          "Turn Detection",
+          "에이전트 자동 QA (시나리오 생성)",
+          "Stateful Task / Agent Loop",
+          "dagster 전처리 파이프라인"
+        ],
+        "article_count": 10,
+        "evidence": [
+          {
+            "article_id": "76e231d8e3bf4056",
+            "title": "Voice Turn Detection 모델 개발기",
+            "url": "https://tech.channel.io/kr/articles/df1ca834",
+            "similarity": 0.8997,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "b159516533a98c5d",
+            "title": "채널톡이 글로벌 상담 Agent를 GPT-5.6 Luna로 갈아탄 이유",
+            "url": "https://tech.channel.io/kr/articles/d1671db1",
+            "similarity": 0.8806,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "843a615245abe9ac",
+            "title": "AI는 미래지만, 기본은 현재입니다",
+            "url": "https://tech.channel.io/kr/articles/1fe635f5",
+            "similarity": 0.9054,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "8fff0851cc993ec9",
+            "title": "AI ENGINEER NIGHT Q&A 총정리",
+            "url": "https://tech.channel.io/kr/articles/4052f1f4",
+            "similarity": 0.893,
+            "roles": [
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "cad35eadc7ced51b",
+            "title": "팀장님이 QA 100번 시키길래 만들었습니다.",
+            "url": "https://tech.channel.io/kr/articles/23a19040",
+            "similarity": 0.8955,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "7b4e5cda2b1d3d5b",
+            "title": "상담 데이터 분석을 통해 메뉴얼 추출하기",
+            "url": "https://tech.channel.io/kr/articles/5e13175f",
+            "similarity": 0.9242,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "5b453441e082713e",
+            "title": "Ralph Loop, OpenClaw",
+            "url": "https://tech.channel.io/kr/articles/9a2e654c",
+            "similarity": 0.8757,
+            "roles": [
+              "frontend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "c4c27d489f9a3e0a",
+            "title": "팀 내 전처리 프레임워크 dagster 도입기",
+            "url": "https://tech.channel.io/kr/articles/854ff19c",
+            "similarity": 0.8952,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "c7f6f03d30b41b63",
+            "title": "채널 AI팀은 왜 새로운 ML 모델 벤치마크가 필요로 했을까?",
+            "url": "https://tech.channel.io/kr/articles/63847003",
+            "similarity": 0.869,
+            "roles": [
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "29751e7437fb43bd",
+            "title": "상담사향 TTS 만들기",
+            "url": "https://tech.channel.io/kr/articles/406f203b",
+            "similarity": 0.8781,
+            "roles": [
+              "data-ai"
+            ]
+          }
+        ],
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "data-ai": 10,
+          "backend": 3,
+          "frontend": 3,
+          "mobile": 1
+        },
+        "id": "channel-04"
       }
     ],
     "unassigned_count": 6,
