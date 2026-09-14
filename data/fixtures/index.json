@@ -92,21 +92,26 @@
       "jobs": [
         {
           "slug": "backend",
-          "name": "서버·백엔드"
+          "name": "서버·백엔드",
+          "evidenceCount": 43
         },
         {
           "slug": "frontend",
-          "name": "웹 프론트엔드"
+          "name": "웹 프론트엔드",
+          "evidenceCount": 24
         },
         {
           "slug": "mobile",
-          "name": "모바일"
+          "name": "모바일",
+          "evidenceCount": 14
         },
         {
           "slug": "data-ai",
-          "name": "데이터·AI"
+          "name": "데이터·AI",
+          "evidenceCount": 61
         }
-      ]
+      ],
+      "evidenceCount": 71
     },
     {
       "slug": "naver",
