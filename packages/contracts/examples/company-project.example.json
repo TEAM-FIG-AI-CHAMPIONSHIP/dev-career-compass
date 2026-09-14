@@ -7,6 +7,11 @@
   "trackIds": ["application-backend"],
   "title": "중복 요청에도 안전한 결제 처리 만들기",
   "body": "같은 결제 요청이 반복되어도 한 번만 처리되도록 요청 식별과 트랜잭션 경계를 설계한다.",
+  "steps": [
+    "같은 요청을 두 번 보내도 한 번만 처리되는지 확인하는 테스트 만들기",
+    "요청 식별자를 받아 저장하고 중복이면 이전 결과를 돌려주기",
+    "트랜잭션 경계를 어디에 둘지 정하고 그 이유를 적기"
+  ],
   "entryExperienceIds": ["rest-api-design"],
   "bridgeExperienceIds": ["request-validation"],
   "evidenceIds": ["example-job-1"],
