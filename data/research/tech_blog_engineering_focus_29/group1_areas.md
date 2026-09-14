@@ -3,8 +3,9 @@
 engineering_focus -> v4 embedding -> clustering(complete linkage) -> LLM 병합 -> deterministic membership -> 키워드 태깅 전체 파이프라인을 그룹1(#58) 회사에 독립적으로 적용한 결과다 (LLM 두 단계는 claude.ai 수동 프롬프팅으로 수행).
 
 그룹1은 삼성반도체·여기어때·쏘카·카카오 4곳이다. 이 파일은 완료된 회사만
-담는다 — 현재 쏘카·카카오 2곳 완료, 나머지 2곳은 engineering_focus
-단계(#58)가 아직 안 끝나서 Area 대상이 아니다.
+담는다 — 현재 쏘카·카카오·삼성반도체 3곳 완료, 여기어때는 engineering_focus
+단계(#58)가 아직 안 끝나서 Area 대상이 아니다(사이트가 Cloudflare로
+막혀 있어 수기로 확보 중).
 
 각 Area는 안정적인 `id`(예: `socar-01`)를 갖는다. 스키마와 한계는
 `../../../pipeline/experiments/tech_blog_engineering_focus_29/config/README.md` 참고.
@@ -26,6 +27,17 @@ engineering_focus -> v4 embedding -> clustering(complete linkage) -> LLM 병합 
 - 카카오는 unassigned가 18/71(25%)로 그룹1 중 가장 높다 — cluster 3
   ("개발자 대상 기술 공유와 문제 출제")이 행사 안내·모집 공고 같은 메타
   콘텐츠 위주라 응집도가 낮은 영향으로 보인다.
+- 삼성반도체는 #58에 적혀 있던 "sitemap lastmod 383건이 전부 수집
+  당일로 찍히는 버그성 데이터" 문제가 해결된 채로 전달됐다 — 최종
+  41건의 발행일이 2025-10~2026-09로 정상 분포한다. census 키워드
+  분류가 반도체 하드웨어 콘텐츠에도 backend/data-ai를 주로 매핑해서
+  다른 소프트웨어 회사보다 역할 분포가 치우쳐 있다(#78에서 이미
+  지적된 "census 키워드 분류 오탐 가능성" 범주에 속하는 사례로 보고,
+  이번 작업에서 임의로 보정하지 않았다).
+- 삼성반도체 Area 1("AI 인프라용 메모리·스토리지 아키텍처와 첨단
+  패키징")도 raw cluster 33건으로 응집도가 낮다고 명시돼 있다 — 메모리
+  제품 / 패키징·공정 / 시스템 인터페이스(CXL·NVMe) / 보안 / 소프트웨어
+  툴체인 최소 4개로 나중에 분할하는 게 적절하다.
 
 ## 쏘카 (9개 글)
 
@@ -48,3 +60,13 @@ unassigned: 0
 | MySQL 데이터 타입 저장 구조 분석 | 2 | hexdump ibd 분석, JSON 타입 직렬화, TEXT 타입 무변환 저장, DATETIME Fraction Seconds, 바이너리 정렬 오프셋, TIMESTAMP UTC 변환, Y2K38 |
 
 unassigned: 18
+
+## 삼성반도체 (41개 글)
+
+| Area | 근거 수 | 키워드 |
+|---|---:|---|
+| AI 인프라용 메모리·스토리지 아키텍처와 첨단 패키징 | 21 | 3D 적층 (zHBM, zNAND-O), 하이브리드 구리 본딩 (HCB), CXL 메모리 풀링 (CMM-D), KV 캐시 오프로딩, V10 BV-NAND (400단 적층), HPB (Heat Path Block), DTCO (설계-공정 공동 최적화), SSD 하드웨어 가상화 (SR-IOV) |
+| 모바일 SoC의 이미지센서·온디바이스 AI 연산 | 12 | DTI 구조 (DCC, FDTI), 픽셀 비닝·리모자이크, Arm SME2, VPS 카메라 AI 서브시스템, Exynos AI Studio (온디바이스 SDK), AI 업스케일링·프레임 생성 (ENSS), LPDDR6 저전력 DRAM |
+| 반도체 분야 개방형 협업과 AI 연구 동향 공유 | 3 | HBM4 / HBM4E, SOCAMM2, CMM-D / CXL 메모리 풀링, CMX (Context Memory eXtension), AI-EDA, 에이전틱 AI 제조 이상탐지, Virtual SSD Migration·FDP |
+
+unassigned: 5

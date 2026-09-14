@@ -901,5 +901,466 @@
       "data-ai": 61,
       "mobile": 14
     }
+  },
+  {
+    "company": "삼성반도체",
+    "article_count": 41,
+    "areas": [
+      {
+        "area_name": "AI 인프라용 메모리·스토리지 아키텍처와 첨단 패키징",
+        "area_description": "메모리 대역폭과 전력이 AI 시스템의 병목이 되는 문제를 zHBM·zNAND-O·400단 V10 BV-NAND 같은 3D 적층 구조와 하이브리드 구리 본딩·CPO 등 첨단 패키징으로 풀고, CXL 메모리 풀링과 SSD 기반 KV 캐시 오프로딩으로 LLM 추론의 메모리 한계를 확장하며, GAA·3D Stacked FET와 DTCO 기반 설계 플로우로 미세화 한계에 대응하는 문제를 다룹니다.",
+        "rationale": "cluster 1은 33건으로 가장 크지만, zHBM·zNAND·HBM4E·SOCAMM2·GDDR7·LPDDR6 같은 메모리 제품군, 이를 물리적으로 구현하는 패키징·공정·트랜지스터 기술, 그리고 CXL·NVMe·KV 캐시 오프로딩처럼 이 메모리를 시스템에 붙이는 인터페이스 기술이 'AI 인프라의 데이터 이동과 전력 병목'이라는 하나의 축으로 이어져 단독 Area로 유지했습니다.",
+        "note": "cluster 1은 응집도가 낮습니다. (1) 3D 메모리·NAND·DRAM 제품 개발, (2) 패키징·공정·트랜지스터(3D Stacked FET, 4nm FinFET, 2.xD/3D Cube), (3) CXL·NVMe·SSD 가상화·KV 캐시 오프로딩 같은 시스템 인터페이스, (4) PQC 보안칩·시큐어 부트·CSMS 인증 같은 보안, (5) ENSS 모바일 그래픽스와 Exynos AI Studio 툴체인 등 소프트웨어 계열이 섞여 있습니다. 특히 보안 3건과 온디바이스 AI SDK·ENSS는 메모리 축과 무관하며, GTC·COMPUTEX 참가기 등 행사 소개성 글도 포함되어 있어 게시글이 더 쌓이면 최소 3개로 분할하는 것이 적절합니다.",
+        "keywords": [
+          "3D 적층 (zHBM, zNAND-O)",
+          "하이브리드 구리 본딩 (HCB)",
+          "CXL 메모리 풀링 (CMM-D)",
+          "KV 캐시 오프로딩",
+          "V10 BV-NAND (400단 적층)",
+          "HPB (Heat Path Block)",
+          "DTCO (설계-공정 공동 최적화)",
+          "SSD 하드웨어 가상화 (SR-IOV)"
+        ],
+        "article_count": 21,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "backend": 17,
+          "data-ai": 18,
+          "mobile": 4,
+          "frontend": 1
+        },
+        "evidence": [
+          {
+            "article_id": "99fc852aa7f999ad",
+            "title": "새로운 AI 인프라 사이클을 여는 메모리 혁신 2편",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/memory-innovation-powering-a-new-ai-infrastructure-cycle-ep2/",
+            "similarity": 0.9152,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "e54911fcccfe7ca5",
+            "title": "새로운 AI 인프라 사이클을 여는 메모리 혁신 1편",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/memory-innovation-powering-a-new-ai-infrastructure-cycle-ep1/",
+            "similarity": 0.8907,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "868673caf18d88cc",
+            "title": "[FMS 2026 3D & NAND Innovation Award] V10 BV-NAND: 400단을 넘어 AI 스토리지의 한계를 확장하다",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/fms-2026-3d-nand-innovation-award-v10-bv-nand-pushing-the-boundaries-of-ai-storage-beyond-400-layers/",
+            "similarity": 0.9012,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "06151cff82a998cf",
+            "title": "AI 시대를 위한 통합 패키징 솔루션과 생태계 혁신",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/integrated-packaging-solutions-and-ecosystem-innovation-for-the-ai-era/",
+            "similarity": 0.8968,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "6f282a0b0c10863d",
+            "title": "FMS 2026에서 제시한 3D Memory Architecture 기반 차세대 AI 인프라 비전",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/samsung-presents-its-vision-for-next-generation-ai-infrastructure-with-3d-memory-architecture-at-fms-2026/",
+            "similarity": 0.931,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "8225eb1c38e6cfab",
+            "title": "AI 시대 메모리의 진화, 더 빠르게·더 촘촘하게… 삼성전자, FMS 2026에서 차세대 3D 메모리 비전 공개",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/the-evolution-of-ai-era-memory-faster-denser-computing/",
+            "similarity": 0.9206,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "b69e6a57c5e8f5b7",
+            "title": "차세대 Edge AI를 구동하다: 시장 성장에서 확장 가능한 실리콘 혁신까지",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/powering-the-next-wave-of-edge-ai-from-market-momentum-to-scalable-silicon-innovation/",
+            "similarity": 0.8834,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "64e83341d726e313",
+            "title": "CXL 메모리 풀링을 통한 AI 메모리 확장 한계 해결",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/breaking-ai-memory-limits-with-cxl-memory-pooling/",
+            "similarity": 0.9088,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "c661c6bc519d40c1",
+            "title": "삼성전자, COMPUTEX 2026에서 AI 시대 반도체 경쟁력의 새로운 기준을 제시하다.",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/samsung-showcases-next-generation-ai-semiconductor-innovations-at-computex-2026/",
+            "similarity": 0.8783,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "b6327e7a3aaeeff5",
+            "title": "From GAA to 3D Stacked FET: 트랜지스터의 영역이 3차원으로 확장되다",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/from-gaa-to-3d-stacked-fet-expanding-the-transistor-into-the-third-dimension/",
+            "similarity": 0.8882,
+            "roles": []
+          },
+          {
+            "article_id": "35cf0c971952d68a",
+            "title": "AI 시대 반도체 혁신의 연결고리, ‘The Nexus for Silicon Intelligence’",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/the-nexus-for-silicon-intelligence-connecting-semiconductor-innovation-in-the-ai-era/",
+            "similarity": 0.9012,
+            "roles": [
+              "backend"
+            ]
+          },
+          {
+            "article_id": "0d12743b4829483b",
+            "title": "첨단 패키징과 시스템 레벨 반도체 혁신으로의 전환",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/advanced-packaging-and-the-shift-to-system-level-semiconductor-innovation/",
+            "similarity": 0.894,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "21b77cee9eacce44",
+            "title": "SSD 가상화 기술이 바꾸는 차세대 시스템 아키텍처",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/a-peek-into-ssd-virtualization/",
+            "similarity": 0.8687,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "d4b378e5829f0cff",
+            "title": "Samsung Foundry 4nm FinFET: 성숙도 위에 확장성을 더하다",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/samsung-foundry-4nm-finfet-scaling-built-on-maturity/",
+            "similarity": 0.8792,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "43b504f932315db3",
+            "title": "삼성 CMM-D를 통한 차세대 IMDB 인프라의 메모리 병목 해소",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/breaking-the-memory-wall-with-samsung-cmm-d-for-next-generation-imdb-infrastructure/",
+            "similarity": 0.8926,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "5e45e20dc43cf2cb",
+            "title": "AI 추론 확장을 위한 KV 캐시 오프로딩: 차세대 AI 시스템 아키텍처와 스토리지의 역할",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/scaling-ai-inference-with-kv-cache-offloading-why-storage-is-becoming-a-key-enabler-for-next-generation-ai-systems/",
+            "similarity": 0.9066,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "51a2186f4ca57aaf",
+            "title": "모바일 애플리케이션 프로세서의 열 효율 개선을 위한 신규 패키지 아키텍처 도입",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/introducing-a-new-package-architecture-for-improved-thermal-efficiency-in-mobile-application-processors/",
+            "similarity": 0.8823,
+            "roles": [
+              "mobile"
+            ]
+          },
+          {
+            "article_id": "904c4b7be8ee24e9",
+            "title": "고용량 메모리를 활용한 AI 기반 부정거래 탐지 인프라 비용 절감",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/significant-infrastructure-cost-savings-for-ai-fraud-detection-using-high-density-memory/",
+            "similarity": 0.8909,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "2187c31fa1ed5d48",
+            "title": "[CES 2026 혁신상 수상작] Detachable AutoSSD: 업계 최초의 탈부착 가능한 최고 성능의 차량용 SSD",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/ces-innovations-awards-2026-honoree-interview-detachable-autossd/",
+            "similarity": 0.8602,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "261f28c64c87bccc",
+            "title": "Samsung GDDR7: 개인 창작부터 기업 인텔리전스로, 가능성을 확장하다",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/samsung-gddr7-bridging-the-gap-between-consumer-creativity-and-enterprise-intelligence/",
+            "similarity": 0.8644,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "67897bcb5c2d5564",
+            "title": "[CES 2026 혁신상 수상작] S3SSE2A: 양자 보안의 미래를 여는 하드웨어 PQC",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/ces-innovations-awards-2026-honoree-interview-s3sse2a/",
+            "similarity": 0.8644,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "samsung-semiconductor-01"
+      },
+      {
+        "area_name": "반도체 분야 개방형 협업과 AI 연구 동향 공유",
+        "area_description": "OCP Summit에서 HBM4·SOCAMM2·CMM-D와 CXL 메모리 풀링 실증을 공유하고, AI 포럼에서 AI-EDA와 에이전틱 AI 기반 제조 이상탐지 같은 반도체 특화 AI 연구 과제를 논의한 내용을 전달합니다.",
+        "rationale": "cluster 3의 2건은 모두 외부 행사 참관기로, 자체 개발 과정이 아니라 포트폴리오 소개와 연구 동향 공유가 중심입니다. cluster 1에 흡수하면 해당 Area의 기술 축이 희석되어 별도로 두되 이름에 콘텐츠 성격을 반영했습니다.",
+        "note": "2건 모두 행사 참관기로 자체 엔지니어링 실체가 얕습니다. 다만 다루는 소재(HBM4, CMM-D, CXL 풀링, AI-EDA)는 cluster 1·3의 주제와 겹치므로 독립된 기술 영역으로 보기는 어렵습니다.",
+        "keywords": [
+          "HBM4 / HBM4E",
+          "SOCAMM2",
+          "CMM-D / CXL 메모리 풀링",
+          "CMX (Context Memory eXtension)",
+          "AI-EDA",
+          "에이전틱 AI 제조 이상탐지",
+          "Virtual SSD Migration·FDP"
+        ],
+        "article_count": 3,
+        "roles": [
+          "backend",
+          "data-ai"
+        ],
+        "role_counts": {
+          "backend": 2,
+          "data-ai": 2
+        },
+        "evidence": [
+          {
+            "article_id": "f688aa4c5e100f8b",
+            "title": "GTC 2026에서 만난 삼성전자 AI 반도체의 미래",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/architecting-the-ai-era-samsung-electronics-and-nvidia-define-the-future-at-gtc-2026/",
+            "similarity": 0.888,
+            "roles": [
+              "backend"
+            ]
+          },
+          {
+            "article_id": "1d2032e1131aa7be",
+            "title": "삼성전자, OCP Global Summit 2025: AI 시대를 위한 다양한 개방형 협업을 강조하다.",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/samsung-electronics-highlights-open-collaboration-for-the-ai-era-at-ocp-global-summit-2025/",
+            "similarity": 0.9223,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "42b83bc894ca5147",
+            "title": "AI가 가져올 반도체 산업의 미래는? ‘삼성 AI 포럼 2025’에서 살펴보다",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/future-of-semiconductor-industry-with-ai-samsung-ai-forum-2025/",
+            "similarity": 0.8972,
+            "roles": [
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "samsung-semiconductor-02"
+      },
+      {
+        "area_name": "모바일 SoC의 이미지센서·온디바이스 AI 연산",
+        "area_description": "0.5㎛ 초미세 픽셀에서 생기는 감도·노이즈 저하를 DTI 구조 변경과 픽셀 비닝·AI 리모자이크로 보완하고, 카메라 전용 AI 서브시스템(VPS)과 Arm SME2 기반 행렬 연산 유닛으로 모바일 환경의 전력 제약 속에서 비전 워크로드 성능을 끌어올리는 문제를 다룹니다.",
+        "rationale": "cluster 2는 아이소셀 HP5 관련 3건과 엑시노스 2600의 VPS·SME2 2건이 '모바일 기기에서 이미지를 받아들이고 저전력으로 처리한다'는 축을 공유해 그대로 유지했습니다. cluster 1의 데이터센터 메모리 인프라와는 대상 시스템과 제약 조건이 달라 병합하지 않았습니다.",
+        "note": "'5G CPE 모뎀 기술'은 통신 장비 관련 글로, 이미지센서·모바일 AP 연산과 기술적 접점이 거의 없습니다.",
+        "keywords": [
+          "DTI 구조 (DCC, FDTI)",
+          "픽셀 비닝·리모자이크",
+          "Arm SME2",
+          "VPS 카메라 AI 서브시스템",
+          "Exynos AI Studio (온디바이스 SDK)",
+          "AI 업스케일링·프레임 생성 (ENSS)",
+          "LPDDR6 저전력 DRAM",
+          "PCIe Gen5 NVMe SSD (PM9E1)"
+        ],
+        "article_count": 12,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "frontend": 2,
+          "mobile": 9,
+          "data-ai": 10,
+          "backend": 5
+        },
+        "evidence": [
+          {
+            "article_id": "f3d3131f80278321",
+            "title": "ENSS™: 모바일 AI 그래픽스의 새로운 기준",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/enss-the-next-frontier-in-mobile-ai-graphics/",
+            "similarity": 0.8857,
+            "roles": [
+              "frontend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "69aa96aa212f7e9c",
+            "title": "진정한 2억 화소 경험은 무엇으로 완성되는가",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/what-defines-a-true-200-megapixel-experience/",
+            "similarity": 0.8925,
+            "roles": [
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "dbdd4145025ed16b",
+            "title": "엑시노스 2600 VPS가 이끄는 AI 기반 모바일 카메라 혁신",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/inside-the-intelligent-mobile-camera-powered-by-exynos-2600-vps/",
+            "similarity": 0.9047,
+            "roles": [
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "568b71fdc07635f2",
+            "title": "온디바이스 AI 진화를 위한 Arm SME2 기반의 CPU 성능 향상",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/expanding-cpu-capabilities-for-on-device-ai-with-arm-sme2/",
+            "similarity": 0.9146,
+            "roles": [
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "5a017e379ee80b6e",
+            "title": "삼성 PM9E1: 개인용 AI 슈퍼컴퓨팅을 위한 고성능 PC 스토리지",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/samsung-pm9e1-inside-the-leading-ai-optimized-pcie-gen5-ssd/",
+            "similarity": 0.8783,
+            "roles": [
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "9ce1f8f0ef6d381e",
+            "title": "차세대 AI 인프라를 위한 삼성 SOCAMM2, 새로운 LPDDR 기반 서버 메모리 모듈",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/introducing-samsungs-socamm2-new-lpddr-memory-module-empowering-next-generation-ai-infrastructure/",
+            "similarity": 0.8835,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "5eaeb3f65b85c770",
+            "title": "삼성의 온디바이스 AI SDK 툴체인 전략 파헤치기",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/unpacking-samsungs-comprehensive-on-device-ai-sdk-toolchain-strategy/",
+            "similarity": 0.8802,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "364c066b6220617c",
+            "title": "[CES 2026 혁신상 수상작] PM9E1 M.2 22x42: 초소형·고성능의 AI 최적화 PCIe Gen5 NVMe SSD",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/ces-innovations-awards-2026-honoree-interview-pm9e1-2242/",
+            "similarity": 0.8733,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "520d6727ecfe8797",
+            "title": "[CES 2026 혁신상 수상작] 아이소셀 HP5: 더 많은 빛을 담은 0.5㎛픽셀 이미지 센서",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/ces-innovations-awards-2026-honoree-interview-isocell-hp5/",
+            "similarity": 0.893,
+            "roles": [
+              "mobile"
+            ]
+          },
+          {
+            "article_id": "42ab6c7cf288fb14",
+            "title": "[CES 2026 혁신상 수상작] LPDDR6: 고성능 온디바이스 AI에 최적화된 세계 최초의 차세대 저전력 DRAM",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/ces-innovations-awards-2026-honoree-interview-lpddr6/",
+            "similarity": 0.8683,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "51ab653f080fe70a",
+            "title": "삼성의 5G CPE 기술, 글로벌 커넥티비티 확산에 기여하다",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/how-samsungs-5g-cpe-technology-is-helping-expand-global-connectivity/",
+            "similarity": 0.8696,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "fab024e0acf0dad0",
+            "title": "ISOCELL HP5 딥다이브: 0.5㎛ 픽셀 심층 탐구",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/inside-isocell-hp5-exploring-05-pixel-technology/",
+            "similarity": 0.9006,
+            "roles": []
+          }
+        ],
+        "id": "samsung-semiconductor-03"
+      }
+    ],
+    "unassigned_count": 5,
+    "unassigned_diagnostic": [],
+    "role_counts": {
+      "backend": 26,
+      "data-ai": 35,
+      "mobile": 14,
+      "frontend": 4
+    }
   }
 ]

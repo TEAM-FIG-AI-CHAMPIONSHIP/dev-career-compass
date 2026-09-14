@@ -855,6 +855,35 @@
           "name": "데이터·AI"
         }
       ]
+    },
+    {
+      "slug": "samsung-semiconductor",
+      "name": "삼성반도체",
+      "mark": "삼",
+      "status": "collecting",
+      "jobs": [
+        {
+          "slug": "backend",
+          "name": "서버·백엔드",
+          "evidenceCount": 26
+        },
+        {
+          "slug": "data-ai",
+          "name": "데이터·AI",
+          "evidenceCount": 35
+        },
+        {
+          "slug": "frontend",
+          "name": "웹 프론트엔드",
+          "evidenceCount": 4
+        },
+        {
+          "slug": "mobile",
+          "name": "모바일",
+          "evidenceCount": 14
+        }
+      ],
+      "evidenceCount": 41
     }
   ]
 }
