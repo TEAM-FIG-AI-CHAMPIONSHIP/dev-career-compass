@@ -106,3 +106,30 @@ def test_published_project_requires_published_references(
 
     with pytest.raises(ContractValidationError, match="requires published track"):
         validate_contract_links(roles, experiences, projects)
+
+
+def company_project_validator() -> Draft7Validator:
+    return Draft7Validator(load_json(SCHEMAS / "company-project.schema.json"))
+
+
+def test_draft_company_project_may_omit_steps() -> None:
+    """다듬는 중인 문서는 할 일이 비어 있어도 된다."""
+    project = deepcopy(load_example("company-project.example.json"))
+    project["status"] = "draft"
+    project.pop("steps")
+
+    assert not list(company_project_validator().iter_errors(project))
+
+
+def test_published_company_project_requires_steps() -> None:
+    """게시된 문서는 실행할 수 있어야 한다 — 요약 문단만으로는 화면이 할 일을 만들지 못한다."""
+    project = deepcopy(load_example("company-project.example.json"))
+    project["status"] = "published"
+
+    without_steps = deepcopy(project)
+    without_steps.pop("steps")
+    assert list(company_project_validator().iter_errors(without_steps))
+
+    empty_steps = deepcopy(project)
+    empty_steps["steps"] = []
+    assert list(company_project_validator().iter_errors(empty_steps))
