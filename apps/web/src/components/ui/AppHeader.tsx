@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { routes } from "@/lib/routes";
 import { PageWidth } from "./PageWidth";
-import { PixelLogo, Wordmark } from "./PixelLogo";
+import { BrandLogo } from "./Logo";
 
 /**
  * 모든 화면의 상단 바.
@@ -20,10 +20,9 @@ export function AppHeader({ right }: { right?: ReactNode }) {
       <PageWidth className="flex flex-wrap items-center justify-between gap-3 py-4">
         <Link
           href={routes.home}
-          className="inline-flex items-center gap-2.5 text-ink no-underline hover:text-accent hover:no-underline"
+          className="inline-flex items-center no-underline transition-opacity hover:opacity-70 hover:no-underline"
         >
-          <PixelLogo size={26} />
-          <Wordmark className="font-mono text-h3 font-bold tracking-tight" />
+          <BrandLogo />
         </Link>
         {right}
       </PageWidth>
