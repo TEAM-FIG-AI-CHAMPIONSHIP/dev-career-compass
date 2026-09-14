@@ -9,6 +9,7 @@ from pathlib import Path
 from typing import List
 
 from anthropic import Anthropic
+from dateutil import parser as dateutil_parser
 from dateutil.relativedelta import relativedelta
 from pydantic import BaseModel
 
@@ -207,7 +208,19 @@ def is_older_than_cutoff(article):
         )
 
     except (ValueError, TypeError):
-        return False
+        # ISO가 아닌 형식(예: RSS의 RFC822 "Thu, 20 Aug 2026 ...")으로
+        # 저장된 published_at이 조용히 cutoff를 통과하던 문제(#91).
+        # dateutil로 한 번 더 시도하고, 그래도 안 되면 그때만 포기한다.
+        try:
+            published_date = (
+                dateutil_parser.parse(
+                    published_at
+                )
+                .date()
+            )
+
+        except (ValueError, TypeError):
+            return False
 
     cutoff = (
         datetime.now(timezone.utc)
