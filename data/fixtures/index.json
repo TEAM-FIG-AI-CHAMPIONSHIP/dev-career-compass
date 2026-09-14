@@ -573,6 +573,270 @@
           "evidenceCount": 3
         }
       ]
+    },
+    {
+      "slug": "upstage",
+      "name": "업스테이지",
+      "mark": "업",
+      "status": "collecting",
+      "jobs": [
+        {
+          "slug": "data-ai",
+          "name": "데이터·AI"
+        }
+      ]
+    },
+    {
+      "slug": "rapportlabs",
+      "name": "라포랩스",
+      "mark": "라",
+      "status": "collecting",
+      "jobs": [
+        {
+          "slug": "backend",
+          "name": "서버·백엔드"
+        },
+        {
+          "slug": "frontend",
+          "name": "웹 프론트엔드"
+        },
+        {
+          "slug": "mobile",
+          "name": "모바일"
+        },
+        {
+          "slug": "data-ai",
+          "name": "데이터·AI"
+        }
+      ]
+    },
+    {
+      "slug": "nextree",
+      "name": "넥스트리",
+      "mark": "넥",
+      "status": "collecting",
+      "jobs": [
+        {
+          "slug": "backend",
+          "name": "서버·백엔드"
+        },
+        {
+          "slug": "frontend",
+          "name": "웹 프론트엔드"
+        },
+        {
+          "slug": "data-ai",
+          "name": "데이터·AI"
+        }
+      ]
+    },
+    {
+      "slug": "goorm",
+      "name": "구름",
+      "mark": "구",
+      "status": "collecting",
+      "jobs": [
+        {
+          "slug": "data-ai",
+          "name": "데이터·AI"
+        }
+      ]
+    },
+    {
+      "slug": "gabia",
+      "name": "가비아",
+      "mark": "가",
+      "status": "collecting",
+      "jobs": [
+        {
+          "slug": "data-ai",
+          "name": "데이터·AI"
+        }
+      ]
+    },
+    {
+      "slug": "hancom",
+      "name": "한컴",
+      "mark": "한",
+      "status": "collecting",
+      "jobs": [
+        {
+          "slug": "data-ai",
+          "name": "데이터·AI"
+        }
+      ]
+    },
+    {
+      "slug": "com2us",
+      "name": "컴투스",
+      "mark": "컴",
+      "status": "collecting",
+      "jobs": [
+        {
+          "slug": "backend",
+          "name": "서버·백엔드"
+        },
+        {
+          "slug": "mobile",
+          "name": "모바일"
+        },
+        {
+          "slug": "data-ai",
+          "name": "데이터·AI"
+        }
+      ]
+    },
+    {
+      "slug": "lg-ai-research",
+      "name": "LG AI연구원",
+      "mark": "L",
+      "status": "collecting",
+      "jobs": [
+        {
+          "slug": "backend",
+          "name": "서버·백엔드"
+        },
+        {
+          "slug": "frontend",
+          "name": "웹 프론트엔드"
+        },
+        {
+          "slug": "mobile",
+          "name": "모바일"
+        },
+        {
+          "slug": "data-ai",
+          "name": "데이터·AI"
+        }
+      ]
+    },
+    {
+      "slug": "myrealtrip",
+      "name": "마이리얼트립",
+      "mark": "마",
+      "status": "collecting",
+      "jobs": [
+        {
+          "slug": "backend",
+          "name": "서버·백엔드"
+        },
+        {
+          "slug": "mobile",
+          "name": "모바일"
+        },
+        {
+          "slug": "data-ai",
+          "name": "데이터·AI"
+        }
+      ]
+    },
+    {
+      "slug": "kakao-cloud",
+      "name": "카카오클라우드",
+      "mark": "클",
+      "status": "collecting",
+      "jobs": [
+        {
+          "slug": "backend",
+          "name": "서버·백엔드"
+        },
+        {
+          "slug": "data-ai",
+          "name": "데이터·AI"
+        }
+      ]
+    },
+    {
+      "slug": "imweb",
+      "name": "아임웹",
+      "mark": "아",
+      "status": "collecting",
+      "jobs": [
+        {
+          "slug": "backend",
+          "name": "서버·백엔드"
+        },
+        {
+          "slug": "frontend",
+          "name": "웹 프론트엔드"
+        },
+        {
+          "slug": "data-ai",
+          "name": "데이터·AI"
+        }
+      ]
+    },
+    {
+      "slug": "samsung",
+      "name": "삼성",
+      "mark": "삼",
+      "status": "collecting",
+      "jobs": [
+        {
+          "slug": "backend",
+          "name": "서버·백엔드"
+        },
+        {
+          "slug": "frontend",
+          "name": "웹 프론트엔드"
+        },
+        {
+          "slug": "data-ai",
+          "name": "데이터·AI"
+        }
+      ]
+    },
+    {
+      "slug": "buzzvil",
+      "name": "버즈빌",
+      "mark": "버",
+      "status": "collecting",
+      "jobs": [
+        {
+          "slug": "backend",
+          "name": "서버·백엔드"
+        },
+        {
+          "slug": "frontend",
+          "name": "웹 프론트엔드"
+        },
+        {
+          "slug": "data-ai",
+          "name": "데이터·AI"
+        }
+      ]
+    },
+    {
+      "slug": "ahnlab-cloudmate",
+      "name": "안랩클라우드메이트",
+      "mark": "안",
+      "status": "collecting",
+      "jobs": [
+        {
+          "slug": "backend",
+          "name": "서버·백엔드"
+        },
+        {
+          "slug": "data-ai",
+          "name": "데이터·AI"
+        }
+      ]
+    },
+    {
+      "slug": "nds",
+      "name": "농심데이터시스템",
+      "mark": "농",
+      "status": "collecting",
+      "jobs": [
+        {
+          "slug": "backend",
+          "name": "서버·백엔드"
+        },
+        {
+          "slug": "data-ai",
+          "name": "데이터·AI"
+        }
+      ]
     }
   ]
 }
