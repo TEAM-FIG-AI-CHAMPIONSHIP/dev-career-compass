@@ -24,25 +24,25 @@
         {
           "slug": "backend",
           "name": "서버·백엔드",
-          "evidenceCount": 6
+          "evidenceCount": 12
         },
         {
           "slug": "data-ai",
           "name": "데이터·AI",
-          "evidenceCount": 5
+          "evidenceCount": 12
         },
         {
           "slug": "frontend",
           "name": "웹 프론트엔드",
-          "evidenceCount": 6
+          "evidenceCount": 11
         },
         {
           "slug": "mobile",
           "name": "모바일",
-          "evidenceCount": 4
+          "evidenceCount": 7
         }
       ],
-      "evidenceCount": 7
+      "evidenceCount": 15
     },
     {
       "slug": "toss",

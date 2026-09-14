@@ -999,40 +999,42 @@
   },
   {
     "company": "당근마켓 / 당근",
-    "article_count": 7,
+    "article_count": 15,
     "areas": [
       {
-        "area_name": "앱 렌더링 런타임 전환과 배포 정보 자동화",
-        "area_description": "웹뷰의 네트워크 기반 초기 로딩 비용을 근본적으로 없애기 위해 PrimJS와 이중 스레드 IFR 구조의 Lynx를 평가해 CDN 번들 분리 배포와 Brownfield 방식으로 점진 도입하고, 배포 내역을 PR description 기반 LLM 파이프라인으로 요약해 비개발자도 조회할 수 있게 만드는 문제를 다룹니다.",
-        "rationale": "cluster 1은 동일 글의 한국어·영어 버전 2건이 Lynx 도입이라는 하나의 주제를 이루고, LLM 릴리즈 노트 글이 함께 묶여 있습니다. 3건뿐이라 쪼개면 각각 1~2건만 남아 무의미해져 하나의 Area로 유지했습니다.",
-        "note": "Lynx 도입기 2건은 사실상 같은 글의 번역본이라 실질 주제는 1건입니다. 'LLM 릴리즈 노트 도입기'는 클라이언트 렌더링과 무관한 배포 메타데이터 파이프라인 글로 이 묶음에서 이질적입니다.",
+        "area_name": "Kubernetes 클러스터 운영과 데이터 표준 레이어",
+        "area_description": "중단하기 어려운 Job 워크로드를 Bin-packing으로 소수 노드에 모아 EKS Node Group 오토스케일링을 가능하게 하고, hostNetwork로 Pod IP 고갈과 생성 지연을 해소하는 클러스터 운영 문제, 그리고 팀마다 흩어진 Activation 정의를 상태·상태 전이 기준의 공용 데이터 레이어로 표준화하는 문제를 다룹니다.",
+        "rationale": "cluster 3의 EKS 관련 2건은 SRE Cluster 팀의 동일한 운영 맥락(Job 워크로드, 노드·네트워크 자원)을 공유합니다. Activation Layer 글은 성격이 다르지만 3건뿐이라 분리하면 1건짜리 Area가 생겨 함께 두었습니다.",
+        "note": "'Standardizing User Activation'은 데이터 분석 표준화 글로, EKS 운영 2건과 기술적 접점이 없습니다. 게시글이 쌓이면 cluster 2의 플랫폼화 Area로 옮기는 편이 더 적절합니다.",
         "keywords": [
-          "Lynx",
-          "PrimJS (QuickJS)",
-          "IFR (Instant First-Frame Rendering)",
-          "Brownfield 점진 도입 (LynxView)",
-          "CDN 번들 분리 배포",
-          "Rspeedy 툴체인",
-          "PR description 기반 LLM 요약",
-          "Notion DB + CronJob 파이프라인"
+          "EKS Node Group 오토스케일링",
+          "Bin-packing",
+          "hostNetwork",
+          "dnsPolicy ClusterFirstWithHostNet",
+          "Dataflow (Beam)",
+          "LLM 분류 품질 모니터링",
+          "공용 데이터 레이어 (Activation)",
+          "활동 상태·상태 전이 모델링"
         ],
-        "article_count": 3,
+        "article_count": 4,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "backend": 3,
+          "frontend": 3,
+          "mobile": 1,
+          "data-ai": 3
+        },
         "evidence": [
           {
-            "article_id": "81034311f332bc2d",
-            "title": "Laying the Rails Beyond WebView: Why Karrot Chose Lynx",
-            "url": "https://medium.com/daangn/laying-the-rails-beyond-webview-why-karrot-chose-lynx-db1aa92af5e4?source=rss----4505f82a2dbd---4",
-            "similarity": 0.9422,
-            "roles": [
-              "frontend",
-              "mobile"
-            ]
-          },
-          {
-            "article_id": "9428f45e8013a873",
-            "title": "웹뷰 다음의 레일을 깔다: 당근이 Lynx를 선택한 이유",
-            "url": "https://medium.com/daangn/%EC%9B%B9%EB%B7%B0-%EB%8B%A4%EC%9D%8C%EC%9D%98-%EB%A0%88%EC%9D%BC%EC%9D%84-%EA%B9%94%EB%8B%A4-%EB%8B%B9%EA%B7%BC%EC%9D%B4-lynx%EB%A5%BC-%EC%84%A0%ED%83%9D%ED%95%9C-%EC%9D%B4%EC%9C%A0-34dd50abbfb7?source=rss----4505f82a2dbd---4",
-            "similarity": 0.9371,
+            "article_id": "ce03502e6754a9c3",
+            "title": "2조 토큰을 카테고리 분류에 쓰면서 알게된 것들",
+            "url": "https://medium.com/daangn/2%EC%A1%B0-%ED%86%A0%ED%81%B0%EC%9D%84-%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC-%EB%B6%84%EB%A5%98%EC%97%90-%EC%93%B0%EB%A9%B4%EC%84%9C-%EC%95%8C%EA%B2%8C%EB%90%9C-%EA%B2%83%EB%93%A4-f619f1db6b7b",
+            "similarity": 0.8808,
             "roles": [
               "backend",
               "frontend",
@@ -1041,17 +1043,54 @@
             ]
           },
           {
-            "article_id": "1d810734338642f7",
-            "title": "누구나 찾아볼 수 있는 중고거래 서버 LLM 릴리즈 노트 도입기",
-            "url": "https://medium.com/daangn/%EB%88%84%EA%B5%AC%EB%82%98-%EC%B0%BE%EC%95%84%EB%B3%BC-%EC%88%98-%EC%9E%88%EB%8A%94-%EC%A4%91%EA%B3%A0%EA%B1%B0%EB%9E%98-%EC%84%9C%EB%B2%84-llm-%EB%A6%B4%EB%A6%AC%EC%A6%88-%EB%85%B8%ED%8A%B8-%EB%8F%84%EC%9E%85%EA%B8%B0-93afe203d766?source=rss----4505f82a2dbd---4",
-            "similarity": 0.9007,
+            "article_id": "905ea0bb68b92abf",
+            "title": "Our Journey to Autoscaling EKS Node Groups for Job Workloads",
+            "url": "https://medium.com/daangn/our-journey-to-autoscaling-eks-node-groups-for-job-workloads-e8a6a7ed845e",
+            "similarity": 0.9357,
             "roles": [
               "backend",
               "frontend",
               "data-ai"
             ]
+          },
+          {
+            "article_id": "0e4d257161a6ccd5",
+            "title": "Our Journey to Using Host Network in Kubernetes Pods",
+            "url": "https://medium.com/daangn/our-journey-to-using-host-network-in-kubernetes-pods-c87e19b63c78",
+            "similarity": 0.9101,
+            "roles": [
+              "backend"
+            ]
+          },
+          {
+            "article_id": "6891e53d7432d54d",
+            "title": "Standardizing User Activation: How We Built a Shared Data Layer at Karrot",
+            "url": "https://medium.com/daangn/standardizing-user-activation-how-we-built-a-shared-data-layer-at-karrot-342ed895508f",
+            "similarity": 0.884,
+            "roles": [
+              "frontend",
+              "data-ai"
+            ]
           }
         ],
+        "id": "daangn-01"
+      },
+      {
+        "area_name": "서비스 확장에 따른 내부 플랫폼화와 경계 설계",
+        "area_description": "200여 개 DB의 ELT 파이프라인 정의와 A/B 실험 지표 등록이 코드·PR에 강결합돼 리뷰 병목이 되던 구조를 선언적 UI 정의 계층으로 분리하고, 100에서 20,000 RPS로 커진 커뮤니티 시스템의 복잡성을 모듈 경계와 공유 플랫폼 모듈로 통제하는 문제를 다룹니다.",
+        "rationale": "cluster 2는 세 글 모두 '규모가 커지며 특정 팀이 병목이 되거나 코드가 얽히는 문제를 경계 분리와 셀프서비스 플랫폼으로 푼다'는 동일한 해법 구조를 공유해 그대로 유지했습니다. cluster 3의 클러스터 인프라 운영과는 추상화 수준이 달라 합치지 않았습니다.",
+        "note": "",
+        "keywords": [
+          "선언적 정의 계층 분리",
+          "Airflow + Spark (EMR on EKS)",
+          "Dynamic DAG Generation",
+          "모듈 경계와 계약",
+          "공유 플랫폼 모듈",
+          "A/B 실험 상호배제 그룹",
+          "Experiment MCP",
+          "Prompt Studio 파이프라인"
+        ],
+        "article_count": 4,
         "roles": [
           "backend",
           "data-ai",
@@ -1059,35 +1098,17 @@
           "mobile"
         ],
         "role_counts": {
+          "backend": 4,
+          "data-ai": 4,
           "frontend": 3,
-          "mobile": 2,
-          "backend": 2,
-          "data-ai": 2
+          "mobile": 1
         },
-        "id": "daangn-01"
-      },
-      {
-        "area_name": "대규모 트래픽 서비스 아키텍처와 사내 데이터 플랫폼",
-        "area_description": "100 RPS에서 20,000 RPS로 커진 커뮤니티 시스템의 복잡성을 모듈 경계와 공유 플랫폼 모듈로 통제하고, 200여 개 DB의 ELT 파이프라인이나 A/B 실험 지표 등록에서 PR 리뷰가 병목이 되던 구조를 선언적 UI 정의 계층으로 분리해 셀프서비스화하는 문제를 다룹니다.",
-        "rationale": "cluster 2는 커뮤니티 아키텍처, ELT 플랫폼, 실험 플랫폼이 모두 '규모가 커지면서 생긴 코드 결합과 리뷰 병목을 경계 분리와 플랫폼화로 푼다'는 공통 축을 공유합니다. cluster 1의 클라이언트 렌더링이나 cluster 3의 인증과는 계층이 달라 병합하지 않았습니다.",
-        "note": "",
-        "keywords": [
-          "선언적 정의 계층 분리",
-          "Airflow + Spark (EMR on EKS)",
-          "Dynamic DAG Generation",
-          "모듈 경계와 계약",
-          "공유 플랫폼 모듈 (모델 변환)",
-          "A/B 테스트 상호배제 그룹",
-          "Experiment MCP",
-          "RPS 스케일 대응"
-        ],
-        "article_count": 3,
         "evidence": [
           {
             "article_id": "6d0b51f2ec0f5077",
             "title": "실험을 더 편하게 설계할 수 있게: 당근 실험플랫폼 이야기",
             "url": "https://medium.com/daangn/%EC%8B%A4%ED%97%98%EC%9D%84-%EB%8D%94-%ED%8E%B8%ED%95%98%EA%B2%8C-%EC%84%A4%EA%B3%84%ED%95%A0-%EC%88%98-%EC%9E%88%EA%B2%8C-%EB%8B%B9%EA%B7%BC-%EC%8B%A4%ED%97%98%ED%94%8C%EB%9E%AB%ED%8F%BC-%EC%9D%B4%EC%95%BC%EA%B8%B0-3fa344b4391b?source=rss----4505f82a2dbd---4",
-            "similarity": 0.9008,
+            "similarity": 0.9096,
             "roles": [
               "backend",
               "data-ai"
@@ -1097,7 +1118,7 @@
             "article_id": "a9d6e3afe08d48ce",
             "title": "천만 MAU를 지탱하는 커뮤니티 시스템을 소개해요",
             "url": "https://medium.com/daangn/%EC%B2%9C%EB%A7%8C-mau%EB%A5%BC-%EC%A7%80%ED%83%B1%ED%95%98%EB%8A%94-%EC%BB%A4%EB%AE%A4%EB%8B%88%ED%8B%B0-%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%84-%EC%86%8C%EA%B0%9C%ED%95%B4%EC%9A%94-090fb4021e20?source=rss----4505f82a2dbd---4",
-            "similarity": 0.9096,
+            "similarity": 0.9131,
             "roles": [
               "backend",
               "frontend",
@@ -1109,7 +1130,18 @@
             "article_id": "a5c45c0e9e861f45",
             "title": "당근 200+개 DB 를 옮기는 ELT 플랫폼, DT Platform 을 만든 이야기",
             "url": "https://medium.com/daangn/%EB%8B%B9%EA%B7%BC-200-%EA%B0%9C-db-%EB%A5%BC-%EC%98%AE%EA%B8%B0%EB%8A%94-elt-%ED%94%8C%EB%9E%AB%ED%8F%BC-dt-platform-%EC%9D%84-%EB%A7%8C%EB%93%A0-%EC%9D%B4%EC%95%BC%EA%B8%B0-65a499b4967a?source=rss----4505f82a2dbd---4",
-            "similarity": 0.9152,
+            "similarity": 0.921,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "1d810734338642f7",
+            "title": "누구나 찾아볼 수 있는 중고거래 서버 LLM 릴리즈 노트 도입기",
+            "url": "https://medium.com/daangn/%EB%88%84%EA%B5%AC%EB%82%98-%EC%B0%BE%EC%95%84%EB%B3%BC-%EC%88%98-%EC%9E%88%EB%8A%94-%EC%A4%91%EA%B3%A0%EA%B1%B0%EB%9E%98-%EC%84%9C%EB%B2%84-llm-%EB%A6%B4%EB%A6%AC%EC%A6%88-%EB%85%B8%ED%8A%B8-%EB%8F%84%EC%9E%85%EA%B8%B0-93afe203d766?source=rss----4505f82a2dbd---4",
+            "similarity": 0.878,
             "roles": [
               "backend",
               "frontend",
@@ -1117,6 +1149,24 @@
             ]
           }
         ],
+        "id": "daangn-02"
+      },
+      {
+        "area_name": "결제·인증 도메인 아키텍처와 클라이언트 렌더링 구조",
+        "area_description": "송금 서비스가 커지며 생긴 Service 계층 결합을 헥사고날·클린 아키텍처와 모노레포로 재정비하고, 기존 카드망과 EMV QR 표준 위에 오프라인 결제를 얹으며, 전화번호 점유 인증을 CI 기반 본인인증과 OAuth/OIDC 단일 도메인으로 통합하는 문제, 그리고 웹뷰 로딩 비용을 Lynx 런타임으로, 서버 드리븐 UI의 경직성을 GraphQL로 푸는 클라이언트 구조 문제를 다룹니다.",
+        "rationale": "cluster 1은 9건으로 가장 크고 내부가 여러 갈래지만, 당근페이 관련 3건(백엔드 아키텍처, QR 현장결제, 이용 내역 GraphQL)과 인증 통합이 금융·계정 도메인이라는 축을 이루고 Lynx 2건이 클라이언트 렌더링 축을 이룹니다. cluster 2의 플랫폼화나 cluster 3의 클러스터 운영과는 다루는 계층이 뚜렷이 달라 병합하지 않았습니다.",
+        "note": "cluster 1은 응집도가 낮습니다. (1) 당근페이 결제·인증 도메인 4건, (2) Lynx 웹뷰 대체 2건(같은 글의 한국어·영어 버전이라 실질 1건), (3) LLM 관련 2건(GenAI 플랫폼, 릴리즈 노트 자동화), (4) Taxonomy Management System이 섞여 있습니다. 특히 GenAI 플랫폼·택소노미 분류는 LLM 인프라 축으로 묶이는 편이 자연스러워, 게시글이 더 쌓이면 최소 3개 Area로 분할하는 것이 적절합니다.",
+        "keywords": [
+          "헥사고날/클린 아키텍처",
+          "EMV QR (CPM)",
+          "카드망 경유 결제 흐름 (VAN)",
+          "OAuth 2.0 / OIDC",
+          "CI 기반 본인인증",
+          "Lynx (PrimJS·IFR)",
+          "Brownfield 점진 도입",
+          "GraphQL 전환"
+        ],
+        "article_count": 7,
         "roles": [
           "backend",
           "data-ai",
@@ -1124,60 +1174,99 @@
           "mobile"
         ],
         "role_counts": {
-          "backend": 3,
-          "data-ai": 3,
-          "frontend": 2,
-          "mobile": 1
+          "backend": 5,
+          "frontend": 5,
+          "mobile": 5,
+          "data-ai": 5
         },
-        "id": "daangn-02"
-      },
-      {
-        "area_name": "사용자 인증 체계와 계정 식별",
-        "area_description": "전화번호 점유 인증만으로는 번호 변경 시 계정 승계와 다중 번호 기반 사기 계정을 막을 수 없어 CI 기반 본인인증을 도입하고, 여러 도메인에 흩어진 토큰 처리를 OAuth 2.0/OIDC 기반 단일 인증 도메인으로 통합하며 모바일 웹 전환율을 앱 리다이렉트 로그인으로 끌어올린 문제를 다룹니다.",
-        "rationale": "cluster 3은 1건뿐이지만 계정 식별과 인증 토큰 통합이라는 주제가 다른 두 Area(클라이언트 런타임, 서비스 아키텍처·데이터 플랫폼)와 명확히 달라, 억지로 흡수하면 해당 Area 설명이 흐려지므로 단독 Area로 두었습니다.",
-        "note": "1건 규모입니다. 수집된 게시글이 7건뿐이라(Medium RSS 제약으로 최근 약 4개월치만 확보) 이 회사의 실제 기술 스펙트럼을 대표한다고 보기 어렵습니다.",
-        "keywords": [
-          "CI 기반 본인인증",
-          "SMS 점유 인증",
-          "OAuth 2.0 / OIDC",
-          "단일 인증 도메인 통합",
-          "앱 리다이렉트 로그인",
-          "QR 로그인"
-        ],
-        "article_count": 1,
         "evidence": [
           {
             "article_id": "75d1f9653594bba8",
             "title": "당근의 인증은 어떻게 달라져 왔을까요?",
             "url": "https://medium.com/daangn/%EB%8B%B9%EA%B7%BC%EC%9D%98-%EC%9D%B8%EC%A6%9D%EC%9D%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%8B%AC%EB%9D%BC%EC%A0%B8-%EC%99%94%EC%9D%84%EA%B9%8C%EC%9A%94-a50dd4b7b44c?source=rss----4505f82a2dbd---4",
-            "similarity": 0.9638,
+            "similarity": 0.8955,
             "roles": [
               "backend",
               "frontend",
               "mobile"
             ]
+          },
+          {
+            "article_id": "81034311f332bc2d",
+            "title": "Laying the Rails Beyond WebView: Why Karrot Chose Lynx",
+            "url": "https://medium.com/daangn/laying-the-rails-beyond-webview-why-karrot-chose-lynx-db1aa92af5e4?source=rss----4505f82a2dbd---4",
+            "similarity": 0.895,
+            "roles": [
+              "frontend",
+              "mobile"
+            ]
+          },
+          {
+            "article_id": "9428f45e8013a873",
+            "title": "웹뷰 다음의 레일을 깔다: 당근이 Lynx를 선택한 이유",
+            "url": "https://medium.com/daangn/%EC%9B%B9%EB%B7%B0-%EB%8B%A4%EC%9D%8C%EC%9D%98-%EB%A0%88%EC%9D%BC%EC%9D%84-%EA%B9%94%EB%8B%A4-%EB%8B%B9%EA%B7%BC%EC%9D%B4-lynx%EB%A5%BC-%EC%84%A0%ED%83%9D%ED%95%9C-%EC%9D%B4%EC%9C%A0-34dd50abbfb7?source=rss----4505f82a2dbd---4",
+            "similarity": 0.8923,
+            "roles": [
+              "backend",
+              "frontend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "7c4adef4ea09dfd8",
+            "title": "당근페이 백엔드 아키텍처가 걸어온 여정",
+            "url": "https://medium.com/daangn/%EB%8B%B9%EA%B7%BC%ED%8E%98%EC%9D%B4-%EB%B0%B1%EC%97%94%EB%93%9C-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EA%B0%80-%EA%B1%B8%EC%96%B4%EC%98%A8-%EC%97%AC%EC%A0%95-98615d5a6b06",
+            "similarity": 0.9011,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "e1e59a0b88c24bcb",
+            "title": "오늘도 엔지니어가 된다고 말했다 — 당근페이 이용 내역 개편기",
+            "url": "https://medium.com/daangn/%EC%98%A4%EB%8A%98%EB%8F%84-%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4%EA%B0%80-%EB%90%9C%EB%8B%A4%EA%B3%A0-%EB%A7%90%ED%96%88%EB%8B%A4-%EB%8B%B9%EA%B7%BC%ED%8E%98%EC%9D%B4-%EC%9D%B4%EC%9A%A9%EB%82%B4%EC%97%AD-%EA%B0%9C%ED%8E%B8%EA%B8%B0-89ca764ef5eb",
+            "similarity": 0.9114,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "c547f9471257e079",
+            "title": "Karrot’s Generative AI Platform",
+            "url": "https://medium.com/daangn/karrots-genai-platform-5cf6e813838e",
+            "similarity": 0.8841,
+            "roles": [
+              "frontend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "520a54257b136b7a",
+            "title": "QR을 찍으면 무슨 일이 벌어질까? 당근페이 현장 결제의 모든 것",
+            "url": "https://medium.com/daangn/qr%EC%9D%84-%EC%B0%8D%EC%9C%BC%EB%A9%B4-%EB%AC%B4%EC%8A%A8-%EC%9D%BC%EC%9D%B4-%EB%B2%8C%EC%96%B4%EC%A7%88%EA%B9%8C-%EB%8B%B9%EA%B7%BC%ED%8E%98%EC%9D%B4-%ED%98%84%EC%9E%A5%EA%B2%B0%EC%A0%9C%EC%9D%98-%EB%AA%A8%EB%93%A0-%EA%B2%83-c311780b9b75",
+            "similarity": 0.8908,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
           }
         ],
-        "roles": [
-          "backend",
-          "frontend",
-          "mobile"
-        ],
-        "role_counts": {
-          "backend": 1,
-          "frontend": 1,
-          "mobile": 1
-        },
         "id": "daangn-03"
       }
     ],
     "unassigned_count": 0,
     "unassigned_diagnostic": [],
     "role_counts": {
-      "backend": 6,
-      "frontend": 6,
-      "mobile": 4,
-      "data-ai": 5
+      "backend": 12,
+      "frontend": 11,
+      "mobile": 7,
+      "data-ai": 12
     }
   },
   {
