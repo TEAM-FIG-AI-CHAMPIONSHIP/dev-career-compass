@@ -10,6 +10,10 @@ Area·evidence마다 직무(roles) 정보를 추가한 기계 판독용 결과�
 (#80 — census가 계산해 둔 article 단위 roles를 그대로 재사용해 집계,
 새로 판단하지 않음).
 
+각 Area는 안정적인 `id`(예: `baemin-01`)를 갖는다. 스키마와 한계는
+`../../../pipeline/experiments/tech_blog_engineering_focus_29/config/README.md` 참고
+(이 실험은 별도 파이프라인이지만 id 스키마는 공유한다).
+
 ## 데이터 범위
 
 - 대상 기업: 우아한형제들 1곳

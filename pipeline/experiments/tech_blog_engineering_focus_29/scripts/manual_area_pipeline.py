@@ -47,6 +47,7 @@ from build_areas_per_company import (  # noqa: E402
     RESEARCH_DIR,
     TAG_SYSTEM_PROMPT,
     WORK_DIR,
+    assign_area_ids,
     build_cluster_detail,
     diagnose_unassigned,
     load_json,
@@ -671,6 +672,11 @@ def cmd_import_tags(args):
                 ]
             }
         )
+
+    final_areas = assign_area_ids(
+        company,
+        final_areas
+    )
 
     unassigned_rows = [
         row

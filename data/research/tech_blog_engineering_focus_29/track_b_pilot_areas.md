@@ -2,6 +2,9 @@
 
 engineering_focus -> v4 embedding -> clustering(complete linkage) -> LLM 병합 -> deterministic membership -> 키워드 태깅 전체 파이프라인을 5개 회사에 독립적으로 적용한 결과다.
 
+각 Area는 안정적인 `id`(예: `oliveyoung-01`)를 갖는다. 스키마와 한계는
+`../../../pipeline/experiments/tech_blog_engineering_focus_29/config/README.md` 참고.
+
 ## CJ올리브영 (44개 글)
 
 | Area | 근거 수 | 키워드 |

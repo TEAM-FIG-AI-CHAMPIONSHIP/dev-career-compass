@@ -4,6 +4,9 @@ engineering_focus -> v4 embedding -> clustering(complete linkage) -> LLM 병합 
 
 전체 196건 중 evidence 173건, unassigned 23건.
 
+각 Area는 안정적인 `id`(예: `channel-01`)를 갖는다. 스키마와 한계는
+`../../../pipeline/experiments/tech_blog_engineering_focus_29/config/README.md` 참고.
+
 ## 알려진 한계
 
 - 어피닛·메가존클라우드·인프랩/인프런·당근은 #60에서 이미 "12개월 미달" 알려진
