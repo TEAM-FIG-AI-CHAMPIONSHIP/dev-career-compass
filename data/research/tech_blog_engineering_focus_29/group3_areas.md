@@ -2,17 +2,35 @@
 
 engineering_focus -> v4 embedding -> clustering(complete linkage) -> LLM 병합 -> deterministic membership -> 키워드 태깅 전체 파이프라인을 8개 회사에 독립적으로 적용한 결과다 (LLM 두 단계는 claude.ai 수동 프롬프팅으로 수행).
 
-전체 196건 중 evidence 173건, unassigned 23건.
+전체 203건 중 evidence 180건, unassigned 23건.
+
+당근은 이후 별도로 재작업됐다 — RSS만으로는 최근 3개월치(7건)만 잡혔던
+것을, Wayback Machine 아카이브(`web.archive.org` CDX API로 과거
+크롤 이력을 찾고, 개별 스냅샷을 `id_` 모드로 받아 Cloudflare 우회)로
+그 이전 7개월치(8건, 겹치는 시기 없음)를 추가로 확보해 15건으로
+재구성했다. RSS는 최신 글만, Wayback은 크롤이 끝난 과거 글만 보여줘서
+두 방식이 서로 다른 시기를 보완한다.
+
+재구성 직후 검토하다가, 기존 RSS 7건 안에 같은 글의 한국어판·영어판이
+둘 다 들어가 있던 걸 발견했다("Laying the Rails Beyond WebView"와
+"웹뷰 다음의 레일을 깔다" — 이 백필 이전부터 있던 중복이지 이번에
+새로 생긴 건 아니다). 두 판 중 먼저 게시되고 내용이 조금 더 상세한
+한국어판만 남기고 영어판을 제거해 최종 14건으로 확정했다.
 
 각 Area는 안정적인 `id`(예: `channel-01`)를 갖는다. 스키마와 한계는
 `../../../pipeline/experiments/tech_blog_engineering_focus_29/config/README.md` 참고.
 
 ## 알려진 한계
 
-- 어피닛·메가존클라우드·인프랩/인프런·당근은 #60에서 이미 "12개월 미달" 알려진
+- 어피닛·메가존클라우드·인프랩/인프런은 #60에서 이미 "12개월 미달" 알려진
   한계로 문서화된 회사들이다. 이 Area 결과도 그 제한된 데이터 범위 안에서
-  나온 것이다 (당근은 특히 7건뿐이라 회사의 실제 기술 스펙트럼을 대표하기
-  어렵다는 점을 merge rationale에서도 직접 언급함).
+  나온 것이다.
+- 당근은 위 Wayback 백필로 15건까지 늘었지만, 그중 4건은 페이지에 실제
+  표시되는 날짜(byline)를 못 찾아 메타태그(`article:published_time`)로
+  대체했다 — 이 메타태그가 재편집 시각을 반영할 수 있어 완전히 신뢰하진
+  못한다. 어떤 글이 어느 방식으로 날짜를 얻었는지는 evidence에는 안
+  남기고(스키마 유지) `data/work/.../daangn_wayback/articles.json`의
+  `date_source` 필드에만 기록해 뒀다.
 
 ## GS리테일 (11개 글)
 
@@ -45,13 +63,13 @@ unassigned: 0
 
 unassigned: 8
 
-## 당근마켓 / 당근 (7개 글)
+## 당근마켓 / 당근 (14개 글)
 
 | Area | 근거 수 | 키워드 |
 |---|---:|---|
-| 앱 렌더링 런타임 전환과 배포 정보 자동화 | 3 | Lynx, PrimJS (QuickJS), IFR (Instant First-Frame Rendering), Brownfield 점진 도입 (LynxView), CDN 번들 분리 배포, Rspeedy 툴체인, PR description 기반 LLM 요약, Notion DB + CronJob 파이프라인 |
-| 대규모 트래픽 서비스 아키텍처와 사내 데이터 플랫폼 | 3 | 선언적 정의 계층 분리, Airflow + Spark (EMR on EKS), Dynamic DAG Generation, 모듈 경계와 계약, 공유 플랫폼 모듈 (모델 변환), A/B 테스트 상호배제 그룹, Experiment MCP, RPS 스케일 대응 |
-| 사용자 인증 체계와 계정 식별 | 1 | CI 기반 본인인증, SMS 점유 인증, OAuth 2.0 / OIDC, 단일 인증 도메인 통합, 앱 리다이렉트 로그인, QR 로그인 |
+| 결제·인증 도메인 아키텍처와 클라이언트 렌더링 구조 | 6 | 헥사고날/클린 아키텍처, EMV QR (CPM), 카드망 경유 결제 흐름 (VAN), OAuth 2.0 / OIDC, CI 기반 본인인증, Lynx (PrimJS·IFR), Brownfield 점진 도입, GraphQL 전환 |
+| 서비스 확장에 따른 내부 플랫폼화와 경계 설계 | 4 | 선언적 정의 계층 분리, Airflow + Spark (EMR on EKS), Dynamic DAG Generation, 모듈 경계와 계약, 공유 플랫폼 모듈, A/B 실험 상호배제 그룹, Experiment MCP, Prompt Studio 파이프라인 |
+| Kubernetes 클러스터 운영과 데이터 표준 레이어 | 4 | EKS Node Group 오토스케일링, Bin-packing, hostNetwork, dnsPolicy ClusterFirstWithHostNet, Dataflow (Beam), LLM 분류 품질 모니터링, 공용 데이터 레이어 (Activation), 활동 상태·상태 전이 모델링 |
 
 unassigned: 0
 
