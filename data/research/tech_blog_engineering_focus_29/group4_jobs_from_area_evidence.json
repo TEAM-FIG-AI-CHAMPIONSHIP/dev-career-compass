@@ -1,0 +1,265 @@
+{
+  "generated_at": "2026-09-15T05:45:17.685929+00:00",
+  "source": "data/research/tech_blog_engineering_focus_29/group4_areas.json",
+  "note": "Area evidence 글만 센다. census 1차 게이트(직무당 8건)가 아니라, 보정 후 Area에 배정된 근거 글의 직무 태그를 고유 article_id 기준으로 다시 센 결과다. 직무당 evidence 4건 이상인 직무만 jobs에 넣는다. 구름은 제외 예정이라 companies에서 뺐다.",
+  "threshold": 4,
+  "roles": [
+    {
+      "id": "backend",
+      "name": "서버·백엔드"
+    },
+    {
+      "id": "frontend",
+      "name": "웹 프론트엔드"
+    },
+    {
+      "id": "mobile",
+      "name": "모바일"
+    },
+    {
+      "id": "data-ai",
+      "name": "데이터·AI"
+    }
+  ],
+  "company_count": 8,
+  "pair_count": 24,
+  "companies": [
+    {
+      "company": "LG AI연구원",
+      "source_file": "data/work/tech_blog_engineering_focus_29/areas_per_company_group24/LG_AI연구원.json",
+      "area_count": 4,
+      "evidence_article_count": 16,
+      "unassigned_count": null,
+      "jobs": [
+        {
+          "id": "backend",
+          "name": "서버·백엔드",
+          "evidence_count": 5
+        },
+        {
+          "id": "frontend",
+          "name": "웹 프론트엔드",
+          "evidence_count": 6
+        },
+        {
+          "id": "data-ai",
+          "name": "데이터·AI",
+          "evidence_count": 16
+        }
+      ],
+      "job_count": 3,
+      "below_threshold": [
+        {
+          "id": "mobile",
+          "name": "모바일",
+          "evidence_count": 1
+        }
+      ]
+    },
+    {
+      "company": "농심데이터시스템(NDS)",
+      "source_file": "data/work/tech_blog_engineering_focus_29/areas_per_company_group24/농심데이터시스템(NDS).json",
+      "area_count": 3,
+      "evidence_article_count": 14,
+      "unassigned_count": null,
+      "jobs": [
+        {
+          "id": "backend",
+          "name": "서버·백엔드",
+          "evidence_count": 11
+        },
+        {
+          "id": "frontend",
+          "name": "웹 프론트엔드",
+          "evidence_count": 4
+        },
+        {
+          "id": "data-ai",
+          "name": "데이터·AI",
+          "evidence_count": 9
+        }
+      ],
+      "job_count": 3,
+      "below_threshold": []
+    },
+    {
+      "company": "마이리얼트립",
+      "source_file": "data/work/tech_blog_engineering_focus_29/areas_per_company_group24/마이리얼트립.json",
+      "area_count": 3,
+      "evidence_article_count": 36,
+      "unassigned_count": null,
+      "jobs": [
+        {
+          "id": "backend",
+          "name": "서버·백엔드",
+          "evidence_count": 27
+        },
+        {
+          "id": "frontend",
+          "name": "웹 프론트엔드",
+          "evidence_count": 11
+        },
+        {
+          "id": "mobile",
+          "name": "모바일",
+          "evidence_count": 9
+        },
+        {
+          "id": "data-ai",
+          "name": "데이터·AI",
+          "evidence_count": 35
+        }
+      ],
+      "job_count": 4,
+      "below_threshold": []
+    },
+    {
+      "company": "버즈빌",
+      "source_file": "data/work/tech_blog_engineering_focus_29/areas_per_company_group24/버즈빌.json",
+      "area_count": 3,
+      "evidence_article_count": 11,
+      "unassigned_count": null,
+      "jobs": [
+        {
+          "id": "backend",
+          "name": "서버·백엔드",
+          "evidence_count": 9
+        },
+        {
+          "id": "frontend",
+          "name": "웹 프론트엔드",
+          "evidence_count": 8
+        },
+        {
+          "id": "data-ai",
+          "name": "데이터·AI",
+          "evidence_count": 11
+        }
+      ],
+      "job_count": 3,
+      "below_threshold": [
+        {
+          "id": "mobile",
+          "name": "모바일",
+          "evidence_count": 1
+        }
+      ]
+    },
+    {
+      "company": "삼성",
+      "source_file": "data/work/tech_blog_engineering_focus_29/areas_per_company_group24/삼성.json",
+      "area_count": 3,
+      "evidence_article_count": 19,
+      "unassigned_count": 3,
+      "jobs": [
+        {
+          "id": "backend",
+          "name": "서버·백엔드",
+          "evidence_count": 13
+        },
+        {
+          "id": "frontend",
+          "name": "웹 프론트엔드",
+          "evidence_count": 6
+        },
+        {
+          "id": "mobile",
+          "name": "모바일",
+          "evidence_count": 4
+        },
+        {
+          "id": "data-ai",
+          "name": "데이터·AI",
+          "evidence_count": 18
+        }
+      ],
+      "job_count": 4,
+      "below_threshold": []
+    },
+    {
+      "company": "아임웹",
+      "source_file": "data/work/tech_blog_engineering_focus_29/areas_per_company_group24/아임웹.json",
+      "area_count": 3,
+      "evidence_article_count": 20,
+      "unassigned_count": null,
+      "jobs": [
+        {
+          "id": "backend",
+          "name": "서버·백엔드",
+          "evidence_count": 20
+        },
+        {
+          "id": "frontend",
+          "name": "웹 프론트엔드",
+          "evidence_count": 10
+        },
+        {
+          "id": "data-ai",
+          "name": "데이터·AI",
+          "evidence_count": 19
+        }
+      ],
+      "job_count": 3,
+      "below_threshold": []
+    },
+    {
+      "company": "안랩클라우드메이트",
+      "source_file": "data/work/tech_blog_engineering_focus_29/areas_per_company_group24/안랩클라우드메이트.json",
+      "area_count": 3,
+      "evidence_article_count": 9,
+      "unassigned_count": null,
+      "jobs": [
+        {
+          "id": "backend",
+          "name": "서버·백엔드",
+          "evidence_count": 9
+        },
+        {
+          "id": "data-ai",
+          "name": "데이터·AI",
+          "evidence_count": 8
+        }
+      ],
+      "job_count": 2,
+      "below_threshold": [
+        {
+          "id": "frontend",
+          "name": "웹 프론트엔드",
+          "evidence_count": 3
+        }
+      ]
+    },
+    {
+      "company": "카카오엔터프라이즈 / 카카오클라우드",
+      "source_file": "data/work/tech_blog_engineering_focus_29/areas_per_company_group24/카카오엔터프라이즈___카카오클라우드.json",
+      "area_count": 3,
+      "evidence_article_count": 14,
+      "unassigned_count": null,
+      "jobs": [
+        {
+          "id": "backend",
+          "name": "서버·백엔드",
+          "evidence_count": 14
+        },
+        {
+          "id": "data-ai",
+          "name": "데이터·AI",
+          "evidence_count": 14
+        }
+      ],
+      "job_count": 2,
+      "below_threshold": [
+        {
+          "id": "frontend",
+          "name": "웹 프론트엔드",
+          "evidence_count": 1
+        },
+        {
+          "id": "mobile",
+          "name": "모바일",
+          "evidence_count": 2
+        }
+      ]
+    }
+  ]
+}
