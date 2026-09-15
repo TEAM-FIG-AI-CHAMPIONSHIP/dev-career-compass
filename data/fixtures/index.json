@@ -8,8 +8,9 @@
       "slug": "oliveyoung",
       "name": "CJ올리브영",
       "mark": "올",
+      "logoSrc": "/companies/oliveyoung.png",
       "evidenceCount": 32,
-      "status": "collecting",
+      "status": "published",
       "jobs": [
         { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 18 },
         { "slug": "frontend", "name": "웹 프론트엔드", "evidenceCount": 4 },
@@ -21,6 +22,7 @@
       "slug": "gs-retail",
       "name": "GS리테일",
       "mark": "GS",
+      "logoSrc": "/companies/gs-retail.png",
       "evidenceCount": 10,
       "status": "collecting",
       "jobs": [
@@ -34,6 +36,7 @@
       "slug": "kt-cloud",
       "name": "kt cloud",
       "mark": "kt",
+      "logoSrc": "/companies/kt-cloud.png",
       "evidenceCount": 113,
       "status": "collecting",
       "jobs": [
@@ -47,6 +50,7 @@
       "slug": "lg-ai-research",
       "name": "LG AI연구원",
       "mark": "LG",
+      "logoSrc": "/companies/lg-ai-research.png",
       "evidenceCount": 16,
       "status": "collecting",
       "jobs": [
@@ -59,6 +63,7 @@
       "slug": "nhn-cloud",
       "name": "NHN Cloud",
       "mark": "N",
+      "logoSrc": "/companies/nhn-cloud.png",
       "evidenceCount": 72,
       "status": "collecting",
       "jobs": [
@@ -72,6 +77,7 @@
       "slug": "sk-planet",
       "name": "SK플래닛",
       "mark": "SK",
+      "logoSrc": "/companies/sk-planet.png",
       "evidenceCount": 13,
       "status": "collecting",
       "jobs": [
@@ -84,6 +90,7 @@
       "slug": "gabia",
       "name": "가비아",
       "mark": "가",
+      "logoSrc": "/companies/gabia.png",
       "evidenceCount": 15,
       "status": "collecting",
       "jobs": [
@@ -96,6 +103,7 @@
       "slug": "naver",
       "name": "네이버",
       "mark": "네",
+      "logoSrc": "/companies/naver.png",
       "evidenceCount": 41,
       "status": "collecting",
       "jobs": [
@@ -109,6 +117,7 @@
       "slug": "nextree",
       "name": "넥스트리",
       "mark": "넥",
+      "logoSrc": "/companies/nextree.png",
       "evidenceCount": 129,
       "status": "collecting",
       "jobs": [
@@ -122,6 +131,7 @@
       "slug": "nds",
       "name": "농심데이터시스템(NDS)",
       "mark": "N",
+      "logoSrc": "/companies/nds.svg",
       "evidenceCount": 14,
       "status": "collecting",
       "jobs": [
@@ -134,6 +144,7 @@
       "slug": "daangn",
       "name": "당근마켓 / 당근",
       "mark": "당",
+      "logoSrc": "/companies/daangn.png",
       "evidenceCount": 14,
       "status": "collecting",
       "jobs": [
@@ -147,6 +158,7 @@
       "slug": "line-plus",
       "name": "라인플러스",
       "mark": "라",
+      "logoSrc": "/companies/line-plus.png",
       "evidenceCount": 70,
       "status": "collecting",
       "jobs": [
@@ -160,6 +172,7 @@
       "slug": "rapportlabs",
       "name": "라포랩스 / 퀸",
       "mark": "라",
+      "logoSrc": "/companies/rapportlabs.png",
       "evidenceCount": 8,
       "status": "collecting",
       "jobs": [
@@ -172,6 +185,7 @@
       "slug": "myrealtrip",
       "name": "마이리얼트립",
       "mark": "마",
+      "logoSrc": "/companies/myrealtrip.png",
       "evidenceCount": 36,
       "status": "collecting",
       "jobs": [
@@ -185,6 +199,7 @@
       "slug": "megazone",
       "name": "메가존클라우드",
       "mark": "메",
+      "logoSrc": "/companies/megazone.png",
       "evidenceCount": 19,
       "status": "collecting",
       "jobs": [
@@ -197,6 +212,7 @@
       "slug": "buzzvil",
       "name": "버즈빌",
       "mark": "버",
+      "logoSrc": "/companies/buzzvil.png",
       "evidenceCount": 11,
       "status": "collecting",
       "jobs": [
@@ -209,6 +225,7 @@
       "slug": "toss",
       "name": "비바리퍼블리카 / 토스",
       "mark": "토",
+      "logoSrc": "/companies/toss.png",
       "evidenceCount": 49,
       "status": "collecting",
       "jobs": [
@@ -222,6 +239,7 @@
       "slug": "samsung",
       "name": "삼성",
       "mark": "삼",
+      "logoSrc": "/companies/samsung.png",
       "evidenceCount": 19,
       "status": "collecting",
       "jobs": [
@@ -235,6 +253,7 @@
       "slug": "samsung-semiconductor",
       "name": "삼성반도체",
       "mark": "반",
+      "logoSrc": "/companies/samsung-semiconductor.png",
       "evidenceCount": 36,
       "status": "collecting",
       "jobs": [
@@ -247,6 +266,7 @@
       "slug": "socar",
       "name": "쏘카",
       "mark": "쏘",
+      "logoSrc": "/companies/socar.png",
       "evidenceCount": 9,
       "status": "collecting",
       "jobs": [
@@ -259,6 +279,7 @@
       "slug": "imweb",
       "name": "아임웹",
       "mark": "아",
+      "logoSrc": "/companies/imweb.png",
       "evidenceCount": 20,
       "status": "collecting",
       "jobs": [
@@ -271,6 +292,7 @@
       "slug": "ahnlab-cloudmate",
       "name": "안랩클라우드메이트",
       "mark": "안",
+      "logoSrc": "/companies/ahnlab-cloudmate.png",
       "evidenceCount": 9,
       "status": "collecting",
       "jobs": [
@@ -282,6 +304,7 @@
       "slug": "afinit",
       "name": "어피닛",
       "mark": "어",
+      "logoSrc": "/companies/afinit.png",
       "evidenceCount": 26,
       "status": "collecting",
       "jobs": [
@@ -295,6 +318,7 @@
       "slug": "upstage",
       "name": "업스테이지",
       "mark": "업",
+      "logoSrc": "/companies/upstage.png",
       "evidenceCount": 12,
       "status": "collecting",
       "jobs": [
@@ -305,6 +329,7 @@
       "slug": "yeogieotdae",
       "name": "여기어때",
       "mark": "여",
+      "logoSrc": "/companies/yeogieotdae.png",
       "evidenceCount": 43,
       "status": "collecting",
       "jobs": [
@@ -318,6 +343,7 @@
       "slug": "baemin",
       "name": "우아한형제들 / 배달의민족",
       "mark": "배",
+      "logoSrc": "/companies/baemin.png",
       "evidenceCount": 36,
       "status": "collecting",
       "jobs": [
@@ -331,6 +357,7 @@
       "slug": "inflab",
       "name": "인프랩 / 인프런",
       "mark": "인",
+      "logoSrc": "/companies/inflab.png",
       "evidenceCount": 11,
       "status": "collecting",
       "jobs": [
@@ -343,6 +370,7 @@
       "slug": "channel",
       "name": "채널코퍼레이션 / 채널톡",
       "mark": "채",
+      "logoSrc": "/companies/channel.png",
       "evidenceCount": 46,
       "status": "collecting",
       "jobs": [
@@ -356,6 +384,7 @@
       "slug": "kakao",
       "name": "카카오",
       "mark": "카",
+      "logoSrc": "/companies/kakao.png",
       "evidenceCount": 53,
       "status": "collecting",
       "jobs": [
@@ -369,6 +398,7 @@
       "slug": "kakao-cloud",
       "name": "카카오엔터프라이즈 / 카카오클라우드",
       "mark": "K",
+      "logoSrc": "/companies/kakao-cloud.png",
       "evidenceCount": 14,
       "status": "collecting",
       "jobs": [
@@ -380,6 +410,7 @@
       "slug": "kurly",
       "name": "컬리",
       "mark": "컬",
+      "logoSrc": "/companies/kurly.png",
       "evidenceCount": 15,
       "status": "collecting",
       "jobs": [
@@ -392,6 +423,7 @@
       "slug": "com2us",
       "name": "컴투스",
       "mark": "컴",
+      "logoSrc": "/companies/com2us.png",
       "evidenceCount": 24,
       "status": "collecting",
       "jobs": [
@@ -405,6 +437,7 @@
       "slug": "hancom",
       "name": "한컴",
       "mark": "한",
+      "logoSrc": "/companies/hancom.png",
       "evidenceCount": 17,
       "status": "collecting",
       "jobs": [
