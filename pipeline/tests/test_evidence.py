@@ -1,12 +1,12 @@
-"""build_evidence_catalog() 테스트 — F-04. 근거 타임라인.
+"""build_evidence_catalog() 테스트 — F-02/F-03 근거 카탈로그.
 
 검증 축:
  - role 필터링 (일치·불일치·교집합)
  - 여러 Area에 걸친 article_id 중복 제거
  - Evidence 필드 매핑 (id·title·source·url·publishedAt)
- - 발행일 역순 정렬 (최신→과거→날짜 없음)
  - source_by_id / published_at_by_id 오버라이드
  - 빈 입력 처리
+ - 입력 순서 유지
  - build_domains evidenceIds와 id 일관성
 """
 
@@ -236,46 +236,11 @@ def test_published_at_none_same_as_empty() -> None:
     assert r1 == r2
 
 
-# ── 발행일 역순 정렬 (F-04: 시간 역순) ─────────────────────────────────────────
+# ── 입력 순서 유지 ────────────────────────────────────────────────────────────
 
 
-def test_sorted_newest_first() -> None:
-    areas = [
-        _area(
-            evidence=[
-                _ev("old", ["backend"]),
-                _ev("new", ["backend"]),
-                _ev("mid", ["backend"]),
-            ]
-        )
-    ]
-    pub = {"old": "2025-01-01", "new": "2026-09-01", "mid": "2025-12-15"}
-    catalog = build_evidence_catalog(areas, "backend", published_at_by_id=pub)
-    dates = [e["publishedAt"] for e in catalog]
-    assert dates == sorted(dates, reverse=True)
-
-
-def test_no_date_items_go_to_end() -> None:
-    areas = [
-        _area(
-            evidence=[
-                _ev("nodateA", ["backend"]),
-                _ev("dated", ["backend"]),
-                _ev("nodateB", ["backend"]),
-            ]
-        )
-    ]
-    pub = {"dated": "2026-01-15"}
-    catalog = build_evidence_catalog(areas, "backend", published_at_by_id=pub)
-    ids = _ids(catalog)
-    # 날짜 있는 항목이 먼저
-    assert ids[0] == "ev-dated"
-    # 날짜 없는 항목이 뒤
-    assert set(ids[1:]) == {"ev-nodateA", "ev-nodateB"}
-
-
-def test_all_same_date_order_stable() -> None:
-    """같은 날짜면 입력 순서가 유지됩니다."""
+def test_input_order_preserved() -> None:
+    """정렬 없이 입력 areas의 evidence 등장 순서를 유지합니다."""
     areas = [
         _area(
             evidence=[
@@ -285,19 +250,27 @@ def test_all_same_date_order_stable() -> None:
             ]
         )
     ]
-    pub = {"a": "2026-05-01", "b": "2026-05-01", "c": "2026-05-01"}
-    catalog = build_evidence_catalog(areas, "backend", published_at_by_id=pub)
-    assert _ids(catalog) == ["ev-a", "ev-b", "ev-c"]
-
-
-def test_all_no_date_order_stable() -> None:
-    areas = [
-        _area(
-            evidence=[_ev("a", ["backend"]), _ev("b", ["backend"]), _ev("c", ["backend"])]
-        )
-    ]
     catalog = build_evidence_catalog(areas, "backend")
     assert _ids(catalog) == ["ev-a", "ev-b", "ev-c"]
+
+
+def test_published_at_field_present_but_not_sorted() -> None:
+    """publishedAt는 필드로 포함되지만 정렬 기준이 아닙니다."""
+    areas = [
+        _area(
+            evidence=[
+                _ev("old", ["backend"]),
+                _ev("new", ["backend"]),
+            ]
+        )
+    ]
+    pub = {"old": "2025-01-01", "new": "2026-09-01"}
+    catalog = build_evidence_catalog(areas, "backend", published_at_by_id=pub)
+    # 입력 순서 유지 (정렬 없음)
+    assert _ids(catalog) == ["ev-old", "ev-new"]
+    # publishedAt 필드는 그대로 매핑됨
+    assert catalog[0]["publishedAt"] == "2025-01-01"
+    assert catalog[1]["publishedAt"] == "2026-09-01"
 
 
 # ── build_domains evidenceIds와 id 일관성 ─────────────────────────────────────
