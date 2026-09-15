@@ -4,7 +4,9 @@
 - Area를 새로 만들거나 이름·keywords를 바꾸지 않는다.
 - area_name을 ·/공백 등으로 쪼갠 토큰(2자+, 불용어 제외) ↔ 공고 title·occupation·job·skills.
 - 매칭·카운트는 Python만 사용한다.
-- 공고 raw/processed는 data/work에만 두고, 이 스크립트 산출만 data/research에 쓴다.
+- 공고 raw/processed는 data/work에만 둔다.
+- 산출은 data/research/area_postings_match/{json,md}/.
+  Area 원본은 tech_blog_engineering_focus_29 (실험 시작 당시 29개사. 지금은 33곳).
 """
 
 from __future__ import annotations
@@ -28,18 +30,18 @@ from common.paths import PROCESSED_DIR  # noqa: E402
 
 CONFIG_DIR = EXPERIMENT_ROOT / "config"
 COMPANY_IDS_FILE = CONFIG_DIR / "company_job_posting_ids.json"
-SELECTED_COMPANIES_FILE = (
-    REPO_ROOT / "data" / "research" / "tech_blog_company_role_census" / "selected_companies.json"
-)
-OUTPUT_DIR = REPO_ROOT / "data" / "research" / "tech_blog_engineering_focus_29" / "postings_by_area"
+RESEARCH_DIR = REPO_ROOT / "data" / "research"
+SELECTED_COMPANIES_FILE = RESEARCH_DIR / "tech_blog_company_role_census" / "selected_companies.json"
+AREA_RESEARCH_DIR = RESEARCH_DIR / "tech_blog_engineering_focus_29"
+OUTPUT_ROOT = RESEARCH_DIR / "area_postings_match"
 
 AREA_CATALOG_PATHS = [
-    REPO_ROOT / "data/research/tech_blog_engineering_focus_29/group1_areas.json",
-    REPO_ROOT / "data/research/tech_blog_engineering_focus_29/group2_areas.json",
-    REPO_ROOT / "data/research/tech_blog_engineering_focus_29/group3_areas.json",
-    REPO_ROOT / "data/research/tech_blog_engineering_focus_29/group4_areas.json",
-    REPO_ROOT / "data/research/tech_blog_engineering_focus_29/track_b_pilot_areas.json",
-    REPO_ROOT / "data/research/tech_blog_areas/final_areas_with_roles.json",
+    AREA_RESEARCH_DIR / "group1_areas.json",
+    AREA_RESEARCH_DIR / "group2_areas.json",
+    AREA_RESEARCH_DIR / "group3_areas.json",
+    AREA_RESEARCH_DIR / "group4_areas.json",
+    AREA_RESEARCH_DIR / "track_b_pilot_areas.json",
+    RESEARCH_DIR / "tech_blog_areas" / "final_areas_with_roles.json",
 ]
 WORK_AREA_DIRS = [
     REPO_ROOT / "data/work/tech_blog_engineering_focus_29/areas_per_company_group24",
@@ -87,6 +89,10 @@ NAME_STOP = frozenset(
 )
 
 MATCH_RULE = "area_name_tokens"
+
+
+def output_dirs(root: Path) -> tuple[Path, Path]:
+    return root / "json", root / "md"
 
 
 def load_company_ids() -> dict[str, str]:
@@ -279,12 +285,40 @@ def to_markdown(result: dict) -> str:
     return "\n".join(lines) + "\n"
 
 
+def to_index_markdown(index: dict) -> str:
+    totals = index["totals"]
+    lines = [
+        "# Area × 공고 매칭",
+        "",
+        f"회사 {index['company_count']}곳 · "
+        f"활성 {totals['active_postings']}건 · "
+        f"매칭 {totals['matched_postings']}건 · "
+        f"미매칭 {totals['unmatched_postings']}건",
+        "",
+        "구름은 F-01에서 빠져 이 목록에 없다.",
+        "",
+        "| 회사 | 활성 | 매칭 | 미매칭 |",
+        "|---|---:|---:|---:|",
+    ]
+    for row in index["companies"]:
+        lines.append(
+            f"| {row['company']} | {row['active_postings']} | "
+            f"{row['matched_postings']} | {row['unmatched_postings']} |"
+        )
+    if index["skipped"]:
+        lines.extend(["", "## 건너뜀", ""])
+        for row in index["skipped"]:
+            lines.append(f"- {row['company']}: {row['reason']}")
+    return "\n".join(lines) + "\n"
+
+
 def process_company(
     company: str,
     *,
     company_ids: dict[str, str],
     processed_dir: Path,
-    output_dir: Path,
+    json_dir: Path,
+    md_dir: Path,
 ) -> dict:
     if company in SKIP_COMPANIES:
         raise ValueError(f"제외 회사: {company}")
@@ -316,9 +350,10 @@ def process_company(
         **match,
     }
 
-    output_dir.mkdir(parents=True, exist_ok=True)
-    json_path = output_dir / f"{company_id}.json"
-    md_path = output_dir / f"{company_id}.md"
+    json_dir.mkdir(parents=True, exist_ok=True)
+    md_dir.mkdir(parents=True, exist_ok=True)
+    json_path = json_dir / f"{company_id}.json"
+    md_path = md_dir / f"{company_id}.md"
     json_path.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     md_path.write_text(to_markdown(result), encoding="utf-8")
     result["_output_json"] = str(json_path.relative_to(REPO_ROOT))
@@ -342,13 +377,14 @@ def main() -> None:
     parser.add_argument(
         "--output-dir",
         type=Path,
-        default=OUTPUT_DIR,
-        help="JSON/MD 산출 디렉터리 (data/research)",
+        default=OUTPUT_ROOT,
+        help="산출 루트. 회사 JSON은 json/, MD는 md/ (data/research/area_postings_match)",
     )
     args = parser.parse_args()
 
     company_ids = load_company_ids()
     companies = args.company or load_selected_companies()
+    json_dir, md_dir = output_dirs(args.output_dir)
 
     rows = []
     skipped: list[dict] = []
@@ -358,7 +394,8 @@ def main() -> None:
                 company,
                 company_ids=company_ids,
                 processed_dir=args.processed_dir,
-                output_dir=args.output_dir,
+                json_dir=json_dir,
+                md_dir=md_dir,
             )
         except FileNotFoundError as exc:
             skipped.append({"company": company, "reason": str(exc)})
@@ -401,9 +438,16 @@ def main() -> None:
             for r in rows
         ],
     }
-    index_path = args.output_dir / "index.json"
-    index_path.write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"\nindex → {index_path.relative_to(REPO_ROOT)}")
+    json_dir.mkdir(parents=True, exist_ok=True)
+    md_dir.mkdir(parents=True, exist_ok=True)
+    index_json_path = json_dir / "index.json"
+    index_md_path = md_dir / "index.md"
+    index_json_path.write_text(
+        json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    index_md_path.write_text(to_index_markdown(index), encoding="utf-8")
+    print(f"\nindex → {index_json_path.relative_to(REPO_ROOT)}")
+    print(f"index → {index_md_path.relative_to(REPO_ROOT)}")
 
 
 if __name__ == "__main__":

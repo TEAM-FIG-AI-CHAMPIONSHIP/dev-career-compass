@@ -3,6 +3,7 @@
 회사 및 직무 범위를 결정하기 위해 생성한 공유 가능한 통계와 요약 결과를 둡니다.
 
 - job_postings/: 채용 공고 크롤러 STEP 6 집계와 키워드 감사
+- area_postings_match/: 확정 Area × 채용 공고 매칭 (33곳. json/ 와 md/). Area 원본은 `tech_blog_engineering_focus_29`(실험 시작 당시 29개사)
 - tech_blog_source_coverage.md: 올리브영·네이버 D2·토스·당근 기술블로그 generic 수집 커버리지
 - tech_blog_company_role_census/: 111개 기술블로그 회사×직무 1차 게이트. 노출 후보 50곳 = 통과 34 + 미확인 후보 16 (이전 #40 #30)
 
