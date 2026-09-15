@@ -5,6 +5,7 @@ import type {
   CompanyIndex,
   Company,
   ExperienceCatalog,
+  RoleCatalog,
 } from "@/types/data";
 
 /**
@@ -55,6 +56,18 @@ export function getPublishedCompanies(): Company[] {
 
 export function getExperienceCatalog(): ExperienceCatalog {
   return readJson<ExperienceCatalog>(join(DATA_ROOT, "experience.json"));
+}
+
+/**
+ * data/role-catalog.json — 상위 직무와 세부 트랙.
+ *
+ * 트랙은 정보용입니다. 사용자가 여기서 고르지 않습니다 — 설계 문서(§8)는
+ * "세부 트랙은 확인한 경험을 통해 복수로 연결될 수 있다"고 정해 뒀고, 그
+ * 연결은 경험 확인 화면(Claude 판정)이 생긴 뒤의 일입니다. 지금은 이 직무
+ * 안에 어떤 세부 분야가 있는지 미리 보여주는 것까지만 합니다.
+ */
+export function getRoleCatalog(): RoleCatalog {
+  return readJson<RoleCatalog>(join(DATA_ROOT, "role-catalog.json"));
 }
 
 /** 게시된 회사×직무 조합 전부. generateStaticParams 가 씁니다. */
