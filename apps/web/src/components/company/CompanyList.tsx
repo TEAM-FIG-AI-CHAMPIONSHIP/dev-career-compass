@@ -195,17 +195,23 @@ export function CompanyList({ companies }: { companies: Company[] }) {
               )}{" "}
               / {filteredCompanies.length}
             </p>
+            {/* 이전·다음 화살표를 조건부로 없애지 않고 늘 자리를 차지하게
+                둡니다. 첫 페이지에서 이전 화살표가 없다가 두 번째 페이지로
+                가는 순간 나타나면, 그 한 칸만큼 숫자 버튼 전체가 오른쪽으로
+                밀립니다 — 페이지를 넘기는 동작인데 화면이 그보다 크게
+                움직여서 지금 어디로 이동했는지 혼란스럽습니다. 경계에서는
+                비활성화만 합니다(Button 컴포넌트의 disabled: 규칙과 같은
+                방식). */}
             <div className="flex items-center gap-1">
-              {currentPage > 0 && (
-                <button
-                  type="button"
-                  aria-label="이전 페이지"
-                  onClick={() => goToPage(currentPage - 1)}
-                  className="inline-flex size-11 items-center justify-center rounded-btn border border-line-strong bg-surface text-ink transition-colors duration-150 hover:border-accent hover:text-accent"
-                >
-                  <ArrowRightIcon size={16} className="rotate-180" />
-                </button>
-              )}
+              <button
+                type="button"
+                aria-label="이전 페이지"
+                disabled={currentPage === 0}
+                onClick={() => goToPage(currentPage - 1)}
+                className="inline-flex size-11 items-center justify-center rounded-btn border border-line-strong bg-surface text-ink transition-colors duration-150 hover:border-accent hover:text-accent disabled:cursor-default disabled:border-line disabled:bg-sunken disabled:text-ink-muted disabled:hover:border-line disabled:hover:text-ink-muted"
+              >
+                <ArrowRightIcon size={16} className="rotate-180" />
+              </button>
 
               {Array.from({ length: totalPages }, (_, page) => (
                 <button
@@ -225,16 +231,15 @@ export function CompanyList({ companies }: { companies: Company[] }) {
                 </button>
               ))}
 
-              {currentPage < totalPages - 1 && (
-                <button
-                  type="button"
-                  aria-label="다음 페이지"
-                  onClick={() => goToPage(currentPage + 1)}
-                  className="inline-flex size-11 items-center justify-center rounded-btn border border-line-strong bg-surface text-ink transition-colors duration-150 hover:border-accent hover:text-accent"
-                >
-                  <ArrowRightIcon size={16} />
-                </button>
-              )}
+              <button
+                type="button"
+                aria-label="다음 페이지"
+                disabled={currentPage === totalPages - 1}
+                onClick={() => goToPage(currentPage + 1)}
+                className="inline-flex size-11 items-center justify-center rounded-btn border border-line-strong bg-surface text-ink transition-colors duration-150 hover:border-accent hover:text-accent disabled:cursor-default disabled:border-line disabled:bg-sunken disabled:text-ink-muted disabled:hover:border-line disabled:hover:text-ink-muted"
+              >
+                <ArrowRightIcon size={16} />
+              </button>
             </div>
           </nav>
         )}
