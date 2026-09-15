@@ -12,6 +12,12 @@ import { cn } from "@/lib/cn";
  * 이 자리에서 `img` 를 쓰는 편이 좁습니다.
  *
  * 아이콘이 없는 회사는 계속 생깁니다. 첫 글자 대체를 지우지 않습니다.
+ *
+ * 아이콘이 있을 때는 배경을 테마와 상관없이 흰색으로 고정합니다. 회사
+ * 로고는 대부분 투명 배경에 검정 단색이거나 어두운 톤의 타일을 그대로
+ * 품고 있어서, 다크 모드의 어두운 카드(`bg-surface`) 위에 얹으면 경계가
+ * 거의 안 보입니다. 로고 배지는 브랜드 자산이라 앱 테마를 따르지 않는
+ * 편이 낫습니다(Slack, LinkedIn 등도 회사 로고는 흰 배경에 고정합니다).
  */
 export function CompanyMark({
   name,
@@ -36,7 +42,8 @@ export function CompanyMark({
     <span
       aria-hidden="true"
       className={cn(
-        "flex shrink-0 items-center justify-center overflow-hidden rounded-card border border-line bg-surface text-h3 font-semibold text-ink-soft",
+        "flex shrink-0 items-center justify-center overflow-hidden rounded-card border border-line text-h3 font-semibold text-ink-soft",
+        logoSrc ? "bg-white" : "bg-surface",
         box,
         className,
       )}
