@@ -1,0 +1,73 @@
+{
+  "company": "채널코퍼레이션 / 채널톡",
+  "company_id": "channeltalk",
+  "match_rule": "area_name_tokens",
+  "area_source": "data/research/tech_blog_engineering_focus_29/group3_areas.json",
+  "posting_source": "data/work/job_postings/processed/channeltalk.json",
+  "posting_meta": {
+    "source": "custom",
+    "fetched_at": "2026-09-11T07:17:37.609104+00:00",
+    "raw_active": 43,
+    "active_after_step6": 43,
+    "kakao_excluded": 0,
+    "bleed_dropped": 0
+  },
+  "areas": [
+    {
+      "area_id": "channel-01",
+      "area_name": "AI 에이전트를 전제로 한 디자인 시스템과 비개발 직군 실행 환경",
+      "blog_count": 19,
+      "posting_count": 4,
+      "matched_name_tokens": [
+        "AI"
+      ],
+      "matched_opening_ids": [
+        "6d95cc84-7664-438d-a841-4dc10ca79d26",
+        "8acdddc1-1475-4a2e-be4c-56c538d5d511",
+        "9ae3038a-70e9-40da-85dd-c7c854bb4527",
+        "ec0dbb3c-0b5d-4f7e-944d-3327f2433694"
+      ]
+    },
+    {
+      "area_id": "channel-02",
+      "area_name": "Kubernetes 서비스 메시와 모니터링 인프라 운영",
+      "blog_count": 7,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "channel-03",
+      "area_name": "대규모 트래픽 처리와 데이터 저장소·성능 엔지니어링",
+      "blog_count": 10,
+      "posting_count": 1,
+      "matched_name_tokens": [
+        "데이터"
+      ],
+      "matched_opening_ids": [
+        "644da908-d5c9-47a3-bdaf-0f3f82b7920a"
+      ]
+    },
+    {
+      "area_id": "channel-04",
+      "area_name": "상담 AI 에이전트와 음성·대화 데이터 처리",
+      "blog_count": 10,
+      "posting_count": 5,
+      "matched_name_tokens": [
+        "AI",
+        "데이터",
+        "음성"
+      ],
+      "matched_opening_ids": [
+        "644da908-d5c9-47a3-bdaf-0f3f82b7920a",
+        "6d95cc84-7664-438d-a841-4dc10ca79d26",
+        "8acdddc1-1475-4a2e-be4c-56c538d5d511",
+        "9ae3038a-70e9-40da-85dd-c7c854bb4527",
+        "ec0dbb3c-0b5d-4f7e-944d-3327f2433694"
+      ]
+    }
+  ],
+  "active_postings": 43,
+  "matched_postings": 5,
+  "unmatched_postings": 38
+}

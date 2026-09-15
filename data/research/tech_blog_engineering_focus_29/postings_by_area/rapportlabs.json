@@ -1,0 +1,44 @@
+{
+  "company": "라포랩스 / 퀸",
+  "company_id": "rapportlabs",
+  "match_rule": "area_name_tokens",
+  "area_source": "data/research/tech_blog_engineering_focus_29/group2_areas.json",
+  "posting_source": "data/work/job_postings/processed/rapportlabs.json",
+  "posting_meta": {
+    "source": "ninehire",
+    "fetched_at": "2026-09-15T06:37:38.418979+00:00",
+    "raw_active": 38,
+    "active_after_step6": 38,
+    "kakao_excluded": 0,
+    "bleed_dropped": 0
+  },
+  "areas": [
+    {
+      "area_id": "rapportlabs-01",
+      "area_name": "AI 기반 업무 자동화 및 개발 생산성 도구",
+      "blog_count": 11,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "rapportlabs-02",
+      "area_name": "실험 기반 문제 재정의와 추천시스템 최적화",
+      "blog_count": 4,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "rapportlabs-03",
+      "area_name": "백엔드 인프라 성능 및 검색 최적화",
+      "blog_count": 6,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    }
+  ],
+  "active_postings": 38,
+  "matched_postings": 0,
+  "unmatched_postings": 38
+}

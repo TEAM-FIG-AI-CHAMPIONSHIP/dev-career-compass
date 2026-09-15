@@ -1,0 +1,40 @@
+{
+  "company": "어피닛",
+  "company_id": "afinit",
+  "match_rule": "area_name_tokens",
+  "area_source": "data/research/tech_blog_engineering_focus_29/group3_areas.json",
+  "posting_source": null,
+  "posting_meta": {
+    "source": null,
+    "fetched_at": null
+  },
+  "areas": [
+    {
+      "area_id": "afinit-01",
+      "area_name": "사내 AI 에이전트 업무 위임 구조와 데이터 거버넌스",
+      "blog_count": 15,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "afinit-02",
+      "area_name": "신용 심사 모델링과 금융 플랫폼 아키텍처",
+      "blog_count": 6,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "afinit-03",
+      "area_name": "Apache Iceberg 기반 대용량 저장소 비용·성능 운영",
+      "blog_count": 5,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    }
+  ],
+  "active_postings": 0,
+  "matched_postings": 0,
+  "unmatched_postings": 0
+}

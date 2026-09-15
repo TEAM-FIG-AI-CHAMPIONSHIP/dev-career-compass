@@ -1,0 +1,89 @@
+{
+  "company": "NHN Cloud",
+  "company_id": "nhncloud",
+  "match_rule": "area_name_tokens",
+  "area_source": "data/research/tech_blog_engineering_focus_29/track_b_pilot_areas.json",
+  "posting_source": "data/work/job_postings/processed/nhncloud.json",
+  "posting_meta": {
+    "source": "custom",
+    "fetched_at": "2026-09-15T06:37:20.977496+00:00",
+    "raw_active": 19,
+    "active_after_step6": 19,
+    "kakao_excluded": 0,
+    "bleed_dropped": 0
+  },
+  "areas": [
+    {
+      "area_id": "nhn-cloud-01",
+      "area_name": "모바일/프론트엔드 앱 아키텍처 및 개발환경",
+      "blog_count": 30,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "nhn-cloud-02",
+      "area_name": "데이터 분석 및 AI 활용",
+      "blog_count": 13,
+      "posting_count": 3,
+      "matched_name_tokens": [
+        "데이터"
+      ],
+      "matched_opening_ids": [
+        "4361972844060503572",
+        "4412429663707058264",
+        "4412703212378063000"
+      ]
+    },
+    {
+      "area_id": "nhn-cloud-03",
+      "area_name": "클라우드 인프라 및 쿠버네티스 운영",
+      "blog_count": 9,
+      "posting_count": 4,
+      "matched_name_tokens": [
+        "인프라",
+        "클라우드"
+      ],
+      "matched_opening_ids": [
+        "4352281135641284384",
+        "4413185974344171318",
+        "4413318011717657332",
+        "4413318345634587442"
+      ]
+    },
+    {
+      "area_id": "nhn-cloud-04",
+      "area_name": "백엔드 웹 프레임워크 및 데이터 처리",
+      "blog_count": 7,
+      "posting_count": 5,
+      "matched_name_tokens": [
+        "데이터",
+        "백엔드",
+        "프레임워크"
+      ],
+      "matched_opening_ids": [
+        "4345782544040635308",
+        "4361972844060503572",
+        "4372715143150233773",
+        "4412429663707058264",
+        "4412703212378063000"
+      ]
+    },
+    {
+      "area_id": "nhn-cloud-05",
+      "area_name": "시스템 성능 및 네트워크 튜닝",
+      "blog_count": 13,
+      "posting_count": 2,
+      "matched_name_tokens": [
+        "네트워크"
+      ],
+      "matched_opening_ids": [
+        "4412703212378063000",
+        "4413185974344171318"
+      ]
+    }
+  ],
+  "active_postings": 19,
+  "matched_postings": 9,
+  "unmatched_postings": 10
+}

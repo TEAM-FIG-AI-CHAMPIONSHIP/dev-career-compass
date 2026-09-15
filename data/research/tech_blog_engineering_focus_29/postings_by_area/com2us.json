@@ -1,0 +1,96 @@
+{
+  "company": "컴투스",
+  "company_id": "com2us",
+  "match_rule": "area_name_tokens",
+  "area_source": "data/research/tech_blog_engineering_focus_29/group2_areas.json",
+  "posting_source": "data/work/job_postings/processed/com2us.json",
+  "posting_meta": {
+    "source": "recruiter",
+    "fetched_at": "2026-09-13T08:57:05.754223+00:00",
+    "raw_active": 53,
+    "active_after_step6": 53,
+    "kakao_excluded": 0,
+    "bleed_dropped": 0
+  },
+  "areas": [
+    {
+      "area_id": "com2us-01",
+      "area_name": "게임 데이터 애널리틱스 플랫폼(Hive 애널리틱스)",
+      "blog_count": 13,
+      "posting_count": 37,
+      "matched_name_tokens": [
+        "Hive",
+        "게임",
+        "데이터",
+        "플랫폼"
+      ],
+      "matched_opening_ids": [
+        104104,
+        104237,
+        104770,
+        107062,
+        113164,
+        119228,
+        120149,
+        121181,
+        123367,
+        123389,
+        124617,
+        124964,
+        126425,
+        126537,
+        126930,
+        126951,
+        127337,
+        127341,
+        127343,
+        127735,
+        127740,
+        127742,
+        127837,
+        128031,
+        30303,
+        40679,
+        64679,
+        74212,
+        74216,
+        74217,
+        74219,
+        90601,
+        91765,
+        91766,
+        94927,
+        95194,
+        98681
+      ]
+    },
+    {
+      "area_id": "com2us-02",
+      "area_name": "백엔드 인프라·시스템 엔지니어링",
+      "blog_count": 10,
+      "posting_count": 1,
+      "matched_name_tokens": [
+        "인프라"
+      ],
+      "matched_opening_ids": [
+        120149
+      ]
+    },
+    {
+      "area_id": "com2us-03",
+      "area_name": "행사·커뮤니티 소개성 콘텐츠",
+      "blog_count": 4,
+      "posting_count": 2,
+      "matched_name_tokens": [
+        "콘텐츠"
+      ],
+      "matched_opening_ids": [
+        121181,
+        64679
+      ]
+    }
+  ],
+  "active_postings": 53,
+  "matched_postings": 37,
+  "unmatched_postings": 16
+}

@@ -1,0 +1,59 @@
+{
+  "company": "CJ올리브영",
+  "company_id": "oliveyoung",
+  "match_rule": "area_name_tokens",
+  "area_source": "data/research/tech_blog_engineering_focus_29/track_b_pilot_areas.json",
+  "posting_source": "data/work/job_postings/processed/oliveyoung.json",
+  "posting_meta": {
+    "source": "greeting",
+    "fetched_at": "2026-09-11T05:12:00.602159+00:00",
+    "raw_active": 212,
+    "active_after_step6": 212,
+    "kakao_excluded": 0,
+    "bleed_dropped": 0
+  },
+  "areas": [
+    {
+      "area_id": "oliveyoung-01",
+      "area_name": "조직문화·협업 프로세스",
+      "blog_count": 5,
+      "posting_count": 3,
+      "matched_name_tokens": [
+        "조직문화",
+        "프로세스"
+      ],
+      "matched_opening_ids": [
+        212765,
+        227722,
+        228953
+      ]
+    },
+    {
+      "area_id": "oliveyoung-02",
+      "area_name": "백엔드 아키텍처·대규모 트랜잭션 처리",
+      "blog_count": 25,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "oliveyoung-03",
+      "area_name": "사내 행사·워크숍(비-엔지니어링)",
+      "blog_count": 1,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "oliveyoung-04",
+      "area_name": "타입스크립트 타입 시스템",
+      "blog_count": 1,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    }
+  ],
+  "active_postings": 212,
+  "matched_postings": 3,
+  "unmatched_postings": 209
+}

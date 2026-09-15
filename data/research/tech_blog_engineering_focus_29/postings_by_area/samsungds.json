@@ -1,0 +1,44 @@
+{
+  "company": "삼성반도체",
+  "company_id": "samsungds",
+  "match_rule": "area_name_tokens",
+  "area_source": "data/research/tech_blog_engineering_focus_29/group1_areas.json",
+  "posting_source": "data/work/job_postings/processed/samsungds.json",
+  "posting_meta": {
+    "source": "custom",
+    "fetched_at": "2026-09-15T06:37:34.413785+00:00",
+    "raw_active": 3,
+    "active_after_step6": 3,
+    "kakao_excluded": 0,
+    "bleed_dropped": 0
+  },
+  "areas": [
+    {
+      "area_id": "samsung-semiconductor-01",
+      "area_name": "AI 인프라용 메모리·스토리지 아키텍처와 첨단 패키징",
+      "blog_count": 21,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "samsung-semiconductor-02",
+      "area_name": "반도체 분야 개방형 협업과 AI 연구 동향 공유",
+      "blog_count": 3,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "samsung-semiconductor-03",
+      "area_name": "모바일 SoC의 이미지센서·온디바이스 AI 연산",
+      "blog_count": 12,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    }
+  ],
+  "active_postings": 3,
+  "matched_postings": 0,
+  "unmatched_postings": 3
+}

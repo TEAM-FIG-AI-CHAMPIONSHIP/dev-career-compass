@@ -1,0 +1,83 @@
+{
+  "company": "라인플러스",
+  "company_id": "line",
+  "match_rule": "area_name_tokens",
+  "area_source": "data/research/tech_blog_engineering_focus_29/track_b_pilot_areas.json",
+  "posting_source": "data/work/job_postings/processed/line.json",
+  "posting_meta": {
+    "source": "custom",
+    "fetched_at": "2026-09-11T06:31:34.143483+00:00",
+    "raw_active": 72,
+    "active_after_step6": 72,
+    "kakao_excluded": 0,
+    "bleed_dropped": 0
+  },
+  "areas": [
+    {
+      "area_id": "line-plus-01",
+      "area_name": "데이터 플랫폼 및 대규모 데이터 처리",
+      "blog_count": 8,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "line-plus-02",
+      "area_name": "코드 품질·서비스 신뢰성(SLO)·AI 활용 도구화 잡다 사례",
+      "blog_count": 26,
+      "posting_count": 4,
+      "matched_name_tokens": [
+        "AI"
+      ],
+      "matched_opening_ids": [
+        3032,
+        3044,
+        3103,
+        3105
+      ]
+    },
+    {
+      "area_id": "line-plus-03",
+      "area_name": "AI 에이전트 개발 및 조직 도입",
+      "blog_count": 22,
+      "posting_count": 4,
+      "matched_name_tokens": [
+        "AI"
+      ],
+      "matched_opening_ids": [
+        3032,
+        3044,
+        3103,
+        3105
+      ]
+    },
+    {
+      "area_id": "line-plus-04",
+      "area_name": "백엔드 인프라 및 분산 시스템 아키텍처",
+      "blog_count": 6,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "line-plus-05",
+      "area_name": "AI 보안 및 가드레일",
+      "blog_count": 8,
+      "posting_count": 5,
+      "matched_name_tokens": [
+        "AI",
+        "보안"
+      ],
+      "matched_opening_ids": [
+        2991,
+        3032,
+        3044,
+        3103,
+        3105
+      ]
+    }
+  ],
+  "active_postings": 72,
+  "matched_postings": 5,
+  "unmatched_postings": 67
+}

@@ -1,0 +1,44 @@
+{
+  "company": "쏘카",
+  "company_id": "socar",
+  "match_rule": "area_name_tokens",
+  "area_source": "data/research/tech_blog_engineering_focus_29/group1_areas.json",
+  "posting_source": "data/work/job_postings/processed/socar.json",
+  "posting_meta": {
+    "source": "custom",
+    "fetched_at": "2026-09-11T08:32:06.111780+00:00",
+    "raw_active": 29,
+    "active_after_step6": 21,
+    "kakao_excluded": 0,
+    "bleed_dropped": 8
+  },
+  "areas": [
+    {
+      "area_id": "socar-01",
+      "area_name": "디자인 시스템과 크로스플랫폼 앱 프레임워크 설계",
+      "blog_count": 4,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "socar-02",
+      "area_name": "배포·종료 동작과 레거시 코드베이스 정리",
+      "blog_count": 3,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "socar-03",
+      "area_name": "LLM 에이전트의 판단 신뢰성 확보",
+      "blog_count": 2,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    }
+  ],
+  "active_postings": 21,
+  "matched_postings": 0,
+  "unmatched_postings": 21
+}

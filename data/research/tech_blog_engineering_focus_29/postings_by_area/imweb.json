@@ -1,0 +1,44 @@
+{
+  "company": "아임웹",
+  "company_id": "imweb",
+  "match_rule": "area_name_tokens",
+  "area_source": "data/research/tech_blog_engineering_focus_29/group4_areas.json",
+  "posting_source": "data/work/job_postings/processed/imweb.json",
+  "posting_meta": {
+    "source": "custom",
+    "fetched_at": "2026-09-15T06:37:35.679049+00:00",
+    "raw_active": 17,
+    "active_after_step6": 17,
+    "kakao_excluded": 0,
+    "bleed_dropped": 0
+  },
+  "areas": [
+    {
+      "area_id": "imweb-01",
+      "area_name": "데이터베이스/캐시 성능 및 동시성 최적화",
+      "blog_count": 4,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "imweb-02",
+      "area_name": "AI 에이전트 기반 운영 자동화",
+      "blog_count": 12,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "imweb-03",
+      "area_name": "인프라 안정성 및 배포 신뢰성 개선",
+      "blog_count": 6,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    }
+  ],
+  "active_postings": 17,
+  "matched_postings": 0,
+  "unmatched_postings": 17
+}

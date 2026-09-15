@@ -1,0 +1,48 @@
+{
+  "company": "안랩클라우드메이트",
+  "company_id": "ahnlabcloudmate",
+  "match_rule": "area_name_tokens",
+  "area_source": "data/research/tech_blog_engineering_focus_29/group4_areas.json",
+  "posting_source": "data/work/job_postings/processed/ahnlabcloudmate.json",
+  "posting_meta": {
+    "source": "greeting",
+    "fetched_at": "2026-09-13T08:43:36.658562+00:00",
+    "raw_active": 8,
+    "active_after_step6": 8,
+    "kakao_excluded": 0,
+    "bleed_dropped": 0
+  },
+  "areas": [
+    {
+      "area_id": "ahnlab-cloudmate-01",
+      "area_name": "AI 에이전트 기반 데이터 인프라 관리 및 검색 시스템",
+      "blog_count": 4,
+      "posting_count": 1,
+      "matched_name_tokens": [
+        "AI"
+      ],
+      "matched_opening_ids": [
+        218578
+      ]
+    },
+    {
+      "area_id": "ahnlab-cloudmate-02",
+      "area_name": "인프라 장애 진단 및 보안 취약점 분석",
+      "blog_count": 2,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "ahnlab-cloudmate-03",
+      "area_name": "서비스 성능 최적화 및 배포 안정화",
+      "blog_count": 3,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    }
+  ],
+  "active_postings": 8,
+  "matched_postings": 1,
+  "unmatched_postings": 7
+}

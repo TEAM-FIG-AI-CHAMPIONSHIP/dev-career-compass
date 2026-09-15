@@ -1,0 +1,145 @@
+{
+  "company": "비바리퍼블리카 / 토스",
+  "company_id": "toss",
+  "match_rule": "area_name_tokens",
+  "area_source": "data/research/tech_blog_engineering_focus_29/group2_areas.json",
+  "posting_source": "data/work/job_postings/processed/toss.json",
+  "posting_meta": {
+    "source": "custom",
+    "fetched_at": "2026-09-11T08:52:31.521605+00:00",
+    "raw_active": 473,
+    "active_after_step6": 473,
+    "kakao_excluded": 0,
+    "bleed_dropped": 0
+  },
+  "areas": [
+    {
+      "area_id": "toss-01",
+      "area_name": "레거시 시스템 재설계와 AI/LLM 엔지니어링 적용",
+      "blog_count": 13,
+      "posting_count": 19,
+      "matched_name_tokens": [
+        "AI",
+        "LLM"
+      ],
+      "matched_opening_ids": [
+        "5498959003",
+        "6532656003",
+        "6545457003",
+        "6675539003",
+        "7503655003",
+        "7575603003",
+        "7611090003",
+        "7646941003",
+        "7733044003",
+        "7758217003",
+        "7775866003",
+        "7786567003",
+        "7795829003",
+        "7804051003",
+        "7820096003",
+        "7825510003",
+        "7827198003",
+        "7986152003",
+        "7990802003"
+      ]
+    },
+    {
+      "area_id": "toss-02",
+      "area_name": "SDK·API 연동 생태계와 QA 플랫폼 구축",
+      "blog_count": 12,
+      "posting_count": 13,
+      "matched_name_tokens": [
+        "QA",
+        "플랫폼"
+      ],
+      "matched_opening_ids": [
+        "4071136003",
+        "4104924003",
+        "4113699003",
+        "4759208003",
+        "5211920003",
+        "5358408003",
+        "6078684003",
+        "6303138003",
+        "7411162003",
+        "7577632003",
+        "7621552003",
+        "7789761003",
+        "7797504003"
+      ]
+    },
+    {
+      "area_id": "toss-03",
+      "area_name": "보안·테스트 자동화와 데이터 기반 실험",
+      "blog_count": 6,
+      "posting_count": 17,
+      "matched_name_tokens": [
+        "데이터",
+        "보안"
+      ],
+      "matched_opening_ids": [
+        "4891193003",
+        "6554016003",
+        "6607772003",
+        "6959638003",
+        "6960856003",
+        "7411162003",
+        "7569881003",
+        "7687346003",
+        "7711619003",
+        "7757642003",
+        "7780944003",
+        "7820096003",
+        "7827711003",
+        "7834735003",
+        "7977764003",
+        "7984098003",
+        "7985037003"
+      ]
+    },
+    {
+      "area_id": "toss-04",
+      "area_name": "인프라 운영과 대규모 설정 관리",
+      "blog_count": 6,
+      "posting_count": 9,
+      "matched_name_tokens": [
+        "관리",
+        "대규모",
+        "인프라"
+      ],
+      "matched_opening_ids": [
+        "4555752003",
+        "6554000003",
+        "6554016003",
+        "7777423003",
+        "7853371003",
+        "7867197003",
+        "7867603003",
+        "7970626003",
+        "7984171003"
+      ]
+    },
+    {
+      "area_id": "toss-05",
+      "area_name": "비즈니스 지표 설계와 데이터 리터러시",
+      "blog_count": 3,
+      "posting_count": 7,
+      "matched_name_tokens": [
+        "데이터"
+      ],
+      "matched_opening_ids": [
+        "6554016003",
+        "7757642003",
+        "7820096003",
+        "7827711003",
+        "7834735003",
+        "7977764003",
+        "7984098003"
+      ]
+    }
+  ],
+  "active_postings": 473,
+  "matched_postings": 55,
+  "unmatched_postings": 418
+}

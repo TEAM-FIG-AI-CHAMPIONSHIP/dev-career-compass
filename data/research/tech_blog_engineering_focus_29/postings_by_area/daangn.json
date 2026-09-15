@@ -1,0 +1,50 @@
+{
+  "company": "당근마켓 / 당근",
+  "company_id": "daangn",
+  "match_rule": "area_name_tokens",
+  "area_source": "data/research/tech_blog_engineering_focus_29/group3_areas.json",
+  "posting_source": "data/work/job_postings/processed/daangn.json",
+  "posting_meta": {
+    "source": "custom",
+    "fetched_at": "2026-09-11T06:51:08.781412+00:00",
+    "raw_active": 48,
+    "active_after_step6": 48,
+    "kakao_excluded": 0,
+    "bleed_dropped": 0
+  },
+  "areas": [
+    {
+      "area_id": "daangn-01",
+      "area_name": "Kubernetes 클러스터 운영과 데이터 표준 레이어",
+      "blog_count": 4,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "daangn-02",
+      "area_name": "서비스 확장에 따른 내부 플랫폼화와 경계 설계",
+      "blog_count": 4,
+      "posting_count": 3,
+      "matched_name_tokens": [
+        "서비스"
+      ],
+      "matched_opening_ids": [
+        "5046759003",
+        "6589282003",
+        "7644271003"
+      ]
+    },
+    {
+      "area_id": "daangn-03",
+      "area_name": "결제·인증 도메인 아키텍처와 클라이언트 렌더링 구조",
+      "blog_count": 6,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    }
+  ],
+  "active_postings": 48,
+  "matched_postings": 3,
+  "unmatched_postings": 45
+}

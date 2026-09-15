@@ -1,0 +1,44 @@
+{
+  "company": "SK플래닛",
+  "company_id": "skplanet",
+  "match_rule": "area_name_tokens",
+  "area_source": "data/research/tech_blog_engineering_focus_29/group3_areas.json",
+  "posting_source": "data/work/job_postings/processed/skplanet.json",
+  "posting_meta": {
+    "source": "custom",
+    "fetched_at": "2026-09-13T08:47:53.015159+00:00",
+    "raw_active": 0,
+    "active_after_step6": 0,
+    "kakao_excluded": 0,
+    "bleed_dropped": 0
+  },
+  "areas": [
+    {
+      "area_id": "sk-planet-01",
+      "area_name": "멀티모달 센싱과 웹 기반 실시간 렌더링",
+      "blog_count": 2,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "sk-planet-02",
+      "area_name": "LLM 기반 데이터 조회·마케팅 서비스 구축",
+      "blog_count": 4,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "sk-planet-03",
+      "area_name": "외부 LLM 활용 사례와 기술 조직 운영",
+      "blog_count": 7,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    }
+  ],
+  "active_postings": 0,
+  "matched_postings": 0,
+  "unmatched_postings": 0
+}

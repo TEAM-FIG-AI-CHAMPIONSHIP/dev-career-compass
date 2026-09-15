@@ -1,0 +1,44 @@
+{
+  "company": "인프랩 / 인프런",
+  "company_id": "inflab",
+  "match_rule": "area_name_tokens",
+  "area_source": "data/research/tech_blog_engineering_focus_29/group3_areas.json",
+  "posting_source": "data/work/job_postings/processed/inflab.json",
+  "posting_meta": {
+    "source": "custom",
+    "fetched_at": "2026-09-15T06:14:31.454142+00:00",
+    "raw_active": 0,
+    "active_after_step6": 0,
+    "kakao_excluded": 0,
+    "bleed_dropped": 0
+  },
+  "areas": [
+    {
+      "area_id": "inflab-01",
+      "area_name": "프런트엔드 UI 구조 설계와 렌더링 제약 대응",
+      "blog_count": 2,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "inflab-02",
+      "area_name": "LLM 서비스 구축과 미디어 처리 파이프라인",
+      "blog_count": 5,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "inflab-03",
+      "area_name": "배포 환경·의존성 공급망과 시스템 레벨 디버깅",
+      "blog_count": 4,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    }
+  ],
+  "active_postings": 0,
+  "matched_postings": 0,
+  "unmatched_postings": 0
+}
