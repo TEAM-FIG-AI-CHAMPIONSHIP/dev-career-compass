@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getExperienceCatalog, listJobs } from "@/lib/data";
+import { getExperienceCatalog, listRoles } from "@/lib/data";
 import { RepositoryForm } from "@/components/experience/RepositoryForm";
 import { StepHeader } from "@/components/ui/StepHeader";
 import { CommandLine } from "@/components/ui/CommandLine";
@@ -12,7 +12,7 @@ export const metadata: Metadata = { title: "GitHub 저장소 선택" };
 
 export default async function MatchRepositoryPage({ params }: Props) {
   const { role } = await params;
-  const job = listJobs().find((candidate) => candidate.slug === role);
+  const job = listRoles().find((candidate) => candidate.slug === role);
   if (!job) notFound();
 
   const catalog = getExperienceCatalog();

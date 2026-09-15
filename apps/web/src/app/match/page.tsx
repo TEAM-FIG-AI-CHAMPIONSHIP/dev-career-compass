@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { listJobs } from "@/lib/data";
+import { listJobs, listRoles } from "@/lib/data";
 import { routes } from "@/lib/routes";
 import { CardLink } from "@/components/ui/Card";
 import { ButtonLink } from "@/components/ui/Button";
@@ -12,9 +12,22 @@ import { Empty } from "@/components/ui/state/Empty";
 
 export const metadata: Metadata = { title: "직무 선택" };
 
-/** 경험 기반 탐색의 1단계. 고른 직무는 이후 모든 단계의 경로에 남습니다. */
+/**
+ * 경험 기반 탐색의 1단계. 고른 직무는 이후 모든 단계의 경로에 남습니다.
+ *
+ * 매칭 가능한 회사가 아직 없는 직무도 목록에서 뺴지 않습니다. 뺴면 그
+ * 직무의 저장소·경험 입력 화면을 팀이 미리 열어 보거나 개발할 방법이
+ * 클릭만으로는 없어집니다 — URL을 알아야만 들어갈 수 있는 화면이 됩니다.
+ * 대신 회사 수를 있는 그대로(0도 포함해) 적어서, 고른 뒤에 무엇을 보게
+ * 될지 미리 알 수 있게 합니다.
+ */
 export default function MatchPage() {
-  const jobs = listJobs();
+  const counts = new Map(listJobs().map((job) => [job.slug, job.companyCount]));
+  const jobs = listRoles()
+    .map((role) => ({ ...role, companyCount: counts.get(role.slug) ?? 0 }))
+    .sort(
+      (a, b) => b.companyCount - a.companyCount || a.slug.localeCompare(b.slug),
+    );
 
   return (
     <>

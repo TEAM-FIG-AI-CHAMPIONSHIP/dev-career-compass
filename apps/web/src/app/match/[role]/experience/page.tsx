@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getExperienceCatalog, listJobs } from "@/lib/data";
+import { getExperienceCatalog, listRoles } from "@/lib/data";
 import { ExperienceForm } from "@/components/experience/ExperienceForm";
 import { StepHeader } from "@/components/ui/StepHeader";
 import { CommandLine } from "@/components/ui/CommandLine";
@@ -12,7 +12,7 @@ export const metadata: Metadata = { title: "경험 입력" };
 
 export default async function MatchExperiencePage({ params }: Props) {
   const { role } = await params;
-  const job = listJobs().find((candidate) => candidate.slug === role);
+  const job = listRoles().find((candidate) => candidate.slug === role);
   if (!job) notFound();
 
   const catalog = getExperienceCatalog();

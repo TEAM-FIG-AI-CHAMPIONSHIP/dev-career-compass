@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getExperienceCatalog, listJobs, dataSource } from "@/lib/data";
+import { getExperienceCatalog, listRoles, listJobs, dataSource } from "@/lib/data";
 import { DataSourceNote } from "@/components/ui/DataSourceNote";
 import { StepHeader } from "@/components/ui/StepHeader";
 import { CommandLine } from "@/components/ui/CommandLine";
@@ -13,8 +13,14 @@ export const metadata: Metadata = { title: "경험 기반 회사 찾기" };
 
 export default async function MatchResultPage({ params }: Props) {
   const { role } = await params;
-  const job = listJobs().find((candidate) => candidate.slug === role);
+  const job = listRoles().find((candidate) => candidate.slug === role);
   if (!job) notFound();
+
+  /* 직무 존재 여부는 listRoles(구조), 화면에 보여줄 회사 수는 listJobs(내용)
+     에서 옵니다. 이 직무에 아직 매칭 가능한 회사가 없으면 0입니다 — 그 경우
+     에도 화면 자체는 열려야 합니다. */
+  const companyCount =
+    listJobs().find((candidate) => candidate.slug === role)?.companyCount ?? 0;
 
   const catalog = getExperienceCatalog();
 
@@ -39,7 +45,7 @@ export default async function MatchResultPage({ params }: Props) {
             catalog={catalog}
             role={job.slug}
             roleName={job.name}
-            companyCount={job.companyCount}
+            companyCount={companyCount}
           />
         </PageWidth>
       </main>
