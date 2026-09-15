@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import type { CompanyIndex } from "@/types/data";
 
@@ -129,5 +129,17 @@ describe("companies fixture index", () => {
         index.companies.map((company) => [company.name, company.slug]),
       ),
     ).toEqual(canonicalSlugs);
+  });
+
+  it("assigns every listed company a checked-in logo asset", () => {
+    for (const company of index.companies) {
+      expect(company.logoSrc).toMatch(/^\/companies\/[a-z0-9-]+\.(png|svg)$/);
+
+      const assetPath = new URL(
+        `../../public${company.logoSrc}`,
+        import.meta.url,
+      );
+      expect(existsSync(assetPath)).toBe(true);
+    }
   });
 });
