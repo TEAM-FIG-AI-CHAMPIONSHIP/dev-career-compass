@@ -2,13 +2,15 @@
 
 검증 축:
  - 실제 oliveyoung fixture·experience 카탈로그로 통과 확인
- - 필수 필드·타입 (company/job/window/domains/suggestions/evidence)
+ - 필수 필드·타입 (generatedAt/company/job/window/domains/suggestions/evidence,
+   Evidence.publishedAt(빈 문자열 허용), 신규 title, 심화 from/to)
  - suggestions.*.domainId ∈ domains[].id
  - suggestions.*.evidenceIds ⊆ evidence[].id, 길이 ≥ 1
  - domains[].evidenceIds ⊆ evidence[].id
  - coversItemIds(신규) / fromItemIds(심화) ⊆ 경험 카탈로그
  - 제안 개수 하한 (신규 ≥ 2, 심화 ≥ 3)
- - 중복 id, 잘못된 source/counts 타입
+ - 중복 id(domain/evidence/제안 — 제안은 new·deepen 합친 범위), 잘못된
+   source/counts 타입(bool이 int로 오인되지 않는지 포함)
  - 여러 오류가 한 번에 모여 보고됨
  - #107이 제안을 지운 뒤에도(개수가 줄어도) 그대로 동작함
 """
@@ -184,6 +186,54 @@ def test_evidence_not_a_list_rejected() -> None:
         validate_analysis(analysis, _experience_catalog())
 
 
+def test_missing_generated_at_rejected() -> None:
+    analysis = _valid_analysis()
+    del analysis["generatedAt"]
+    with pytest.raises(AnalysisValidationError, match="generatedAt must be a non-empty string"):
+        validate_analysis(analysis, _experience_catalog())
+
+
+def test_evidence_missing_published_at_rejected() -> None:
+    analysis = _valid_analysis()
+    del analysis["evidence"][0]["publishedAt"]
+    with pytest.raises(AnalysisValidationError, match="evidence ev-1.publishedAt must be a string"):
+        validate_analysis(analysis, _experience_catalog())
+
+
+def test_evidence_published_at_empty_string_allowed() -> None:
+    """알 수 없는 발행일은 빈 문자열이 정상 상태다 (evidence.py의 문서화된 계약)."""
+    analysis = _valid_analysis()
+    analysis["evidence"][0]["publishedAt"] = ""
+    validate_analysis(analysis, _experience_catalog())
+
+
+def test_new_suggestion_missing_title_rejected() -> None:
+    analysis = _valid_analysis()
+    del analysis["suggestions"]["new"][0]["title"]
+    with pytest.raises(
+        AnalysisValidationError, match=r"suggestions\.new\[0\].*title must be a non-empty string"
+    ):
+        validate_analysis(analysis, _experience_catalog())
+
+
+def test_deepen_suggestion_missing_from_rejected() -> None:
+    analysis = _valid_analysis()
+    del analysis["suggestions"]["deepen"][0]["from"]
+    with pytest.raises(
+        AnalysisValidationError, match=r"suggestions\.deepen\[0\].*from must be a non-empty string"
+    ):
+        validate_analysis(analysis, _experience_catalog())
+
+
+def test_deepen_suggestion_missing_to_rejected() -> None:
+    analysis = _valid_analysis()
+    del analysis["suggestions"]["deepen"][0]["to"]
+    with pytest.raises(
+        AnalysisValidationError, match=r"suggestions\.deepen\[0\].*to must be a non-empty string"
+    ):
+        validate_analysis(analysis, _experience_catalog())
+
+
 # ── domainId 없음/미존재 ───────────────────────────────────────────────────────
 
 
@@ -316,6 +366,27 @@ def test_duplicate_evidence_id_rejected() -> None:
         validate_analysis(analysis, _experience_catalog())
 
 
+def test_duplicate_suggestion_id_across_new_and_deepen_rejected() -> None:
+    """제안 id는 React key이자 선택 상태 키라, 신규·심화 사이에도 겹치면 안 된다."""
+    analysis = _valid_analysis()
+    analysis["suggestions"]["deepen"][0]["id"] = "sg-1"  # 신규 sg-1과 충돌
+    with pytest.raises(
+        AnalysisValidationError,
+        match="duplicate suggestion id across suggestions.new/deepen: sg-1",
+    ):
+        validate_analysis(analysis, _experience_catalog())
+
+
+def test_duplicate_suggestion_id_within_new_rejected() -> None:
+    analysis = _valid_analysis()
+    analysis["suggestions"]["new"][1]["id"] = "sg-1"
+    with pytest.raises(
+        AnalysisValidationError,
+        match="duplicate suggestion id across suggestions.new/deepen: sg-1",
+    ):
+        validate_analysis(analysis, _experience_catalog())
+
+
 # ── source / counts 타입 ───────────────────────────────────────────────────────
 
 
@@ -331,6 +402,21 @@ def test_domain_counts_missing_blog_key_rejected() -> None:
     analysis = _valid_analysis()
     del analysis["domains"][0]["counts"]["blog"]
     with pytest.raises(AnalysisValidationError, match="counts.blog must be an integer"):
+        validate_analysis(analysis, _experience_catalog())
+
+
+def test_domain_counts_blog_boolean_rejected() -> None:
+    """bool은 int의 서브클래스라 isinstance만으로는 counts.blog: true를 걸러내지 못한다."""
+    analysis = _valid_analysis()
+    analysis["domains"][0]["counts"]["blog"] = True
+    with pytest.raises(AnalysisValidationError, match="counts.blog must be an integer"):
+        validate_analysis(analysis, _experience_catalog())
+
+
+def test_domain_counts_job_boolean_rejected() -> None:
+    analysis = _valid_analysis()
+    analysis["domains"][0]["counts"]["job"] = False
+    with pytest.raises(AnalysisValidationError, match="counts.job must be an integer"):
         validate_analysis(analysis, _experience_catalog())
 
 

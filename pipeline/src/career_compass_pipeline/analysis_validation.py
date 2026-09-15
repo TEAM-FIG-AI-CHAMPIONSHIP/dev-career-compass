@@ -57,6 +57,28 @@ def _string(value: Any, label: str, errors: list[str]) -> str:
     return value
 
 
+def _string_allow_empty(value: Any, label: str, errors: list[str]) -> str:
+    """``_string`` 과 같지만 빈 문자열을 허용합니다.
+
+    ``Evidence.publishedAt`` 처럼 "값이 없으면 빈 문자열" 이 문서화된 계약인
+    필드에 씁니다 (``evidence.py`` 의 ``build_evidence_catalog`` 참고) — 필드
+    자체가 없거나 문자열이 아니면 여전히 오류입니다.
+    """
+    if not isinstance(value, str):
+        errors.append(f"{label} must be a string")
+        return ""
+    return value
+
+
+def _is_int(value: Any) -> bool:
+    """``bool`` 은 ``int`` 의 서브클래스라 ``isinstance(True, int)`` 가 참입니다.
+
+    ``counts.blog: true`` 같은 값이 정수 검증을 조용히 통과하지 않도록
+    ``isinstance`` 대신 이 헬퍼를 씁니다.
+    """
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
 def _records(value: Any, label: str, errors: list[str]) -> list[JsonObject]:
     if not isinstance(value, Sequence) or isinstance(value, (str, bytes)):
         errors.append(f"{label} must be an array")
@@ -135,6 +157,8 @@ def _validate_evidence(
     for evidence_id, evidence in evidence_by_id.items():
         _string(evidence.get("title"), f"evidence {evidence_id}.title", errors)
         _string(evidence.get("url"), f"evidence {evidence_id}.url", errors)
+        # publishedAt은 "알 수 없으면 빈 문자열"이 정상 상태라 존재·타입만 본다.
+        _string_allow_empty(evidence.get("publishedAt"), f"evidence {evidence_id}.publishedAt", errors)
         source = evidence.get("source")
         if source not in ("blog", "job"):
             errors.append(
@@ -154,9 +178,9 @@ def _validate_domains(
         _string(domain.get("label"), f"domain {domain_id}.label", errors)
 
         counts = _mapping(domain.get("counts"), f"domain {domain_id}.counts", errors)
-        if not isinstance(counts.get("blog"), int):
+        if not _is_int(counts.get("blog")):
             errors.append(f"domain {domain_id}.counts.blog must be an integer")
-        if "job" in counts and not isinstance(counts["job"], int):
+        if "job" in counts and not _is_int(counts["job"]):
             errors.append(f"domain {domain_id}.counts.job must be an integer")
 
         evidence_ids = _string_list(
@@ -169,7 +193,7 @@ def _validate_domains(
     return domains_by_id
 
 
-def _validate_suggestion(
+def _validate_suggestion_common(
     *,
     label: str,
     suggestion: JsonObject,
@@ -178,12 +202,17 @@ def _validate_suggestion(
     experience_item_ids: set[str],
     experience_field: str,
     errors: list[str],
-) -> None:
-    """``suggestions.new[]`` / ``suggestions.deepen[]`` 항목 하나를 검증합니다.
+) -> str:
+    """``suggestions.new[]`` / ``suggestions.deepen[]`` 이 공유하는 필드를 검증합니다.
 
     두 타입은 경험 참조 필드 이름만 다릅니다
     (``NewSuggestion.coversItemIds`` / ``DeepenSuggestion.fromItemIds``) —
-    ``experience_field`` 로 그 차이를 흡수합니다.
+    ``experience_field`` 로 그 차이를 흡수합니다. 타입별 전용 필드
+    (``title`` / ``from``·``to``)는 호출부(``_validate_new_suggestion`` /
+    ``_validate_deepen_suggestion``)에서 따로 검증합니다.
+
+    Returns:
+        오류 메시지에 쓸 suggestion id (없으면 ``label`` 로 대체).
     """
     suggestion_id = _string(suggestion.get("id"), f"{label}.id", errors) or f"[{label}]"
     _string(suggestion.get("body"), f"{label} ({suggestion_id}).body", errors)
@@ -211,6 +240,76 @@ def _validate_suggestion(
                 f"{label} ({suggestion_id}) references unknown experience item: {item_id}"
             )
 
+    return suggestion_id
+
+
+def _validate_new_suggestion(
+    *,
+    label: str,
+    suggestion: JsonObject,
+    domains_by_id: dict[str, JsonObject],
+    evidence_by_id: dict[str, JsonObject],
+    experience_item_ids: set[str],
+    errors: list[str],
+) -> None:
+    suggestion_id = _validate_suggestion_common(
+        label=label,
+        suggestion=suggestion,
+        domains_by_id=domains_by_id,
+        evidence_by_id=evidence_by_id,
+        experience_item_ids=experience_item_ids,
+        experience_field="coversItemIds",
+        errors=errors,
+    )
+    _string(suggestion.get("title"), f"{label} ({suggestion_id}).title", errors)
+
+
+def _validate_deepen_suggestion(
+    *,
+    label: str,
+    suggestion: JsonObject,
+    domains_by_id: dict[str, JsonObject],
+    evidence_by_id: dict[str, JsonObject],
+    experience_item_ids: set[str],
+    errors: list[str],
+) -> None:
+    suggestion_id = _validate_suggestion_common(
+        label=label,
+        suggestion=suggestion,
+        domains_by_id=domains_by_id,
+        evidence_by_id=evidence_by_id,
+        experience_item_ids=experience_item_ids,
+        experience_field="fromItemIds",
+        errors=errors,
+    )
+    _string(suggestion.get("from"), f"{label} ({suggestion_id}).from", errors)
+    _string(suggestion.get("to"), f"{label} ({suggestion_id}).to", errors)
+
+
+def _reject_duplicate_suggestion_ids(
+    new_suggestions: list[JsonObject],
+    deepen_suggestions: list[JsonObject],
+    errors: list[str],
+) -> None:
+    """``suggestions.new`` 와 ``suggestions.deepen`` 을 합친 범위에서 id 중복을 거부합니다.
+
+    화면은 제안 id를 React key이자 선택 상태 키로 함께 쓰므로, 신규·심화
+    사이에 id가 겹치면 서로 다른 카드가 같은 카드로 취급됩니다. id가
+    없거나 빈 문자열인 경우는 이미 ``_validate_suggestion_common`` 이 따로
+    보고하므로 여기서는 건너뜁니다.
+    """
+    seen: set[str] = set()
+    for suggestion in (*new_suggestions, *deepen_suggestions):
+        suggestion_id = suggestion.get("id")
+        if not isinstance(suggestion_id, str) or not suggestion_id:
+            continue
+        if suggestion_id in seen:
+            errors.append(
+                "duplicate suggestion id across suggestions.new/deepen: " + suggestion_id
+            )
+            continue
+        seen.add(suggestion_id)
+
 
 # ── 공개 진입점 ───────────────────────────────────────────────────────────────
 
@@ -232,12 +331,15 @@ def validate_analysis(
         min_deepen_suggestions: 심화 제안 개수 하한. 미달이면 거부합니다.
 
     검증 항목:
-        - 필수 필드·타입: ``company``, ``job``, ``window``, ``domains``,
-          ``suggestions``, ``evidence``
+        - 필수 필드·타입: ``generatedAt``, ``company``, ``job``, ``window``,
+          ``domains``, ``suggestions``, ``evidence`` — 화면이 직접 렌더링하는
+          ``Evidence.publishedAt``(빈 문자열은 허용), 신규 제안의 ``title``,
+          심화 제안의 ``from``/``to`` 도 포함
         - ``suggestions.*.domainId`` ∈ ``domains[].id``
         - ``suggestions.*.evidenceIds`` ⊆ ``evidence[].id`` 이고 길이 ≥ 1
         - ``domains[].evidenceIds`` ⊆ ``evidence[].id``
         - ``coversItemIds``(신규) / ``fromItemIds``(심화) ⊆ 경험 카탈로그 item id
+        - 제안 id는 ``suggestions.new``/``suggestions.deepen``을 합친 범위에서 유일
         - 개수 하한: 신규 ≥ ``min_new_suggestions``, 심화 ≥ ``min_deepen_suggestions``
 
     Raises:
@@ -245,6 +347,8 @@ def validate_analysis(
             메시지는 어떤 항목의 어떤 필드가 왜 깨졌는지를 담습니다.
     """
     errors: list[str] = []
+
+    _string(analysis.get("generatedAt"), "generatedAt", errors)
 
     company = _mapping(analysis.get("company"), "company", errors)
     _string(company.get("slug"), "company.slug", errors)
@@ -267,26 +371,26 @@ def validate_analysis(
     deepen_suggestions = _records(suggestions.get("deepen"), "suggestions.deepen", errors)
 
     for index, suggestion in enumerate(new_suggestions):
-        _validate_suggestion(
+        _validate_new_suggestion(
             label=f"suggestions.new[{index}]",
             suggestion=suggestion,
             domains_by_id=domains_by_id,
             evidence_by_id=evidence_by_id,
             experience_item_ids=experience_item_ids,
-            experience_field="coversItemIds",
             errors=errors,
         )
 
     for index, suggestion in enumerate(deepen_suggestions):
-        _validate_suggestion(
+        _validate_deepen_suggestion(
             label=f"suggestions.deepen[{index}]",
             suggestion=suggestion,
             domains_by_id=domains_by_id,
             evidence_by_id=evidence_by_id,
             experience_item_ids=experience_item_ids,
-            experience_field="fromItemIds",
             errors=errors,
         )
+
+    _reject_duplicate_suggestion_ids(new_suggestions, deepen_suggestions, errors)
 
     if len(new_suggestions) < min_new_suggestions:
         errors.append(
