@@ -26,7 +26,7 @@ function filterCompanies(companies: Company[], query: string) {
 
 /**
  * S1 회사 목록. 한 페이지에 12곳을 보여주고, 선택한 회사의 직무를 옆에 펼칩니다.
- * 회사 이름은 코드에 없습니다 — 전부 data/index.json 에서 옵니다.
+ * 회사 이름과 직무 조합은 코드에 없습니다 — 전부 data/index.json 에서 옵니다.
  */
 export function CompanyList({ companies }: { companies: Company[] }) {
   const [currentPage, setCurrentPage] = useState(0);
@@ -150,6 +150,8 @@ export function CompanyList({ companies }: { companies: Company[] }) {
                       </span>
                       <span className="mt-0.5 block font-mono text-meta text-ink-muted tabular-nums">
                         {jobCount}개 직무
+                        {typeof company.evidenceCount === "number" &&
+                          ` · 근거 ${company.evidenceCount}건`}
                       </span>
                     </span>
                   </button>
@@ -270,6 +272,8 @@ export function CompanyList({ companies }: { companies: Company[] }) {
                 </h2>
                 <p className="mt-0.5 font-mono text-meta text-ink-muted tabular-nums">
                   {selectedCompany.jobs?.length ?? 0}개 직무
+                  {typeof selectedCompany.evidenceCount === "number" &&
+                    ` · 근거 ${selectedCompany.evidenceCount}건`}
                 </p>
               </div>
             </div>
@@ -281,7 +285,7 @@ export function CompanyList({ companies }: { companies: Company[] }) {
               <p className="mt-1 text-body-sm text-pretty text-ink-soft">
                 {selectedCompany.status === "published"
                   ? "확인할 직무를 선택하세요."
-                  : "현재 분석을 준비하고 있는 회사입니다."}
+                  : "직무별 근거는 확인됐고 상세 분석을 준비하고 있습니다."}
               </p>
             </div>
 
@@ -294,7 +298,14 @@ export function CompanyList({ companies }: { companies: Company[] }) {
                     className="justify-between"
                   >
                     <span>{job.name}</span>
-                    <ArrowRightIcon size={17} className="shrink-0" />
+                    <span className="flex shrink-0 items-center gap-2">
+                      {typeof job.evidenceCount === "number" && (
+                        <span className="font-mono text-meta tabular-nums">
+                          근거 {job.evidenceCount}건
+                        </span>
+                      )}
+                      <ArrowRightIcon size={17} />
+                    </span>
                   </ButtonLink>
                 ) : (
                   <span
@@ -303,8 +314,10 @@ export function CompanyList({ companies }: { companies: Company[] }) {
                     className="inline-flex min-h-11 cursor-not-allowed items-center justify-between gap-2 rounded-btn border border-dashed border-line-strong bg-sunken px-5 py-3 text-body-sm leading-none font-medium text-ink-muted"
                   >
                     <span>{job.name}</span>
-                    <span className="shrink-0 font-mono text-meta text-ink-muted">
-                      준비 중
+                    <span className="shrink-0 font-mono text-meta text-ink-muted tabular-nums">
+                      {typeof job.evidenceCount === "number"
+                        ? `근거 ${job.evidenceCount}건`
+                        : "준비 중"}
                     </span>
                   </span>
                 ),
