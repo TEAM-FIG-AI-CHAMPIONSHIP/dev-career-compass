@@ -66,6 +66,12 @@ NINEHIRE_COMPANIES = {
         "base_url": "https://career.megazone.com",
         "mode": "api",
     },
+    "rapportlabs": {
+        "name": "라포랩스 / 퀸",
+        "base_url": "https://www.rapportlabs.kr",
+        "mode": "api",
+        "company_uuid": "4e1cfd70-6de0-11f0-9567-477c783608ca",
+    },
 }
 
 NINEHIRE_API = "https://api.ninehire.com/identity-access/homepage/recruitments"
@@ -176,9 +182,23 @@ def crawl_company_sitemap(company_id, company_name, base_url):
     )
 
 
-def crawl_company_api(company_id, company_name, base_url):
-    html = fetch(base_url)
-    company_uuid = extract_company_id(html)
+def crawl_company_api(company_id, company_name, base_url, company_uuid=None):
+    html = None
+    tried = []
+    for candidate in (base_url, base_url.replace("://www.", "://")):
+        if candidate in tried:
+            continue
+        tried.append(candidate)
+        try:
+            html = fetch(candidate)
+            base_url = candidate
+            break
+        except Exception:
+            continue
+    if html is None:
+        raise RuntimeError(f"{company_id}: 홈페이지 요청 실패 ({tried})")
+    extracted = extract_company_id(html)
+    company_uuid = extracted or company_uuid
     if not company_uuid:
         raise RuntimeError(f"{company_id}: __NEXT_DATA__에서 companyId를 못 찾음")
 
@@ -270,9 +290,9 @@ def save_ninehire(
     }
 
 
-def crawl_company(company_id, company_name, base_url, mode="sitemap"):
+def crawl_company(company_id, company_name, base_url, mode="sitemap", company_uuid=None):
     if mode == "api":
-        return crawl_company_api(company_id, company_name, base_url)
+        return crawl_company_api(company_id, company_name, base_url, company_uuid=company_uuid)
     return crawl_company_sitemap(company_id, company_name, base_url)
 
 
@@ -282,7 +302,15 @@ def crawl_all():
         name, base_url, mode = meta["name"], meta["base_url"], meta.get("mode", "sitemap")
         print(f"  수집 중: {company_id} ({name}) ...", flush=True)
         try:
-            results.append(crawl_company(company_id, name, base_url, mode=mode))
+            results.append(
+                crawl_company(
+                    company_id,
+                    name,
+                    base_url,
+                    mode=mode,
+                    company_uuid=meta.get("company_uuid"),
+                )
+            )
         except Exception as exc:
             results.append({"company_id": company_id, "company_name": name, "error": str(exc), "url": base_url})
     return results

@@ -25,13 +25,13 @@ print(crawl_company(cid, name, url))
 
 목록 HTML의 `__NEXT_DATA__` `["openings"]`만 읽습니다. 지원 URL(`/o/*/apply`)은 요청하지 않습니다.
 
-## 나인하이어 (3곳)
+## 나인하이어 (4곳)
 
 ```bash
 python3 sources/ninehire/run.py
 ```
 
-`yogiyo`, `remember`는 sitemap → 상세 SSR. `megazone`은 자체 도메인에서 `companyId`를 읽고 `api.ninehire.com`을 직접 호출합니다. `*.ninehire.site`의 `/api`는 치지 않습니다.
+`yogiyo`, `remember`는 sitemap → 상세 SSR. `megazone`, `rapportlabs`는 자체 도메인에서 `companyId`를 읽고 `api.ninehire.com`을 직접 호출합니다. `*.ninehire.site`와 `rapportlabs.kr`의 `/api`는 치지 않습니다.
 
 ## 리크루터 (2곳)
 
@@ -56,7 +56,20 @@ python3 sources/custom/socar.py
 python3 sources/custom/kakao.py          # Playwright + Chromium
 python3 sources/custom/toss.py
 python3 sources/custom/skcareers.py      # SK플래닛. corpCode만 바꿔 계열사 추가
+python3 sources/custom/lgresearch.py     # LG AI연구원 공개 목록 API
+python3 sources/custom/ktcloud.py        # 정적 HTML .jd__item
+python3 sources/custom/nds.py            # NDS JSP 목록
+python3 sources/custom/nhncloud.py       # /v1/job-postings, NHN Cloud만
+python3 sources/custom/gabia.py          # 하이웍스 announces API
+python3 sources/custom/goorm.py          # Playwright DOM
+python3 sources/custom/samsung.py        # POST /hr/list.data
+python3 sources/custom/samsungds.py      # 같은 목록 중 DS부문만
+python3 sources/custom/imweb.py          # greetinghr jobs API
+python3 sources/custom/inflab.py         # Playwright. inflearn /api 차단
+python3 sources/custom/run_new.py        # 위 신규 10곳 + 라포랩스
 ```
+
+배민(우아한형제들)·어피닛·넥스트리는 채용 목록이 없거나 `/w1/` 전체가 막혀 수집하지 않습니다.
 
 카카오 raw에는 관계사(`[공동체]`)가 같이 들어갑니다. STEP 6은 본사(`group == 카카오`)만 카카오 몫으로 셉니다. 필터를 바꾸려면 집계 스크립트만 고칩니다.
 
