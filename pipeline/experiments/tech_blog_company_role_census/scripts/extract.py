@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 import sys
@@ -35,7 +36,18 @@ def save_json(path: Path, data) -> None:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--companies",
+        default="",
+        help="쉼표로 구분한 회사명. 비우면 전체",
+    )
+    args = parser.parse_args()
+    names = {name.strip() for name in args.companies.split(",") if name.strip()}
+
     articles = load_json(ARTICLES_FILE) if ARTICLES_FILE.exists() else []
+    if names:
+        articles = [item for item in articles if item["company"] in names]
     extracted = load_json(EXTRACTED_FILE) if EXTRACTED_FILE.exists() else []
     done = {item["article_id"] for item in extracted}
     failures = []

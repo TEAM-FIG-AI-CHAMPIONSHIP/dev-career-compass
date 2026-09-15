@@ -1,0 +1,21 @@
+{
+  "company": {
+    "slug": "rapportlabs",
+    "name": "라포랩스"
+  },
+  "job": {
+    "slug": "mobile",
+    "name": "모바일"
+  },
+  "generatedAt": "2026-09-14T00:00:00Z",
+  "window": {
+    "from": "2025-09-14",
+    "to": "2026-09-14"
+  },
+  "domains": [],
+  "suggestions": {
+    "new": [],
+    "deepen": []
+  },
+  "evidence": []
+}

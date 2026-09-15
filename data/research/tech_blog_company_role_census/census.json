@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-13T07:07:41.015420+00:00",
+  "generated_at": "2026-09-14T12:25:44.895316+00:00",
   "issue": 40,
   "gate": {
     "min_tech_posts_per_role": 8,
@@ -699,35 +699,38 @@
     {
       "name": "가비아",
       "blog_url": "https://library.gabia.com/tech/",
-      "collected_count": 10,
+      "collected_count": 70,
       "collectable": true,
-      "twelve_month_closed": false,
-      "tech_count": 10,
-      "non_tech_count": 0,
-      "unassigned_count": 0,
+      "twelve_month_closed": true,
+      "tech_count": 61,
+      "non_tech_count": 9,
+      "unassigned_count": 9,
       "roles": {
         "backend": {
-          "tech_count": 7,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 29,
+          "pass": true,
+          "quality_band": true
         },
         "frontend": {
-          "tech_count": 1,
-          "pass": false,
+          "tech_count": 9,
+          "pass": true,
           "quality_band": false
         },
         "mobile": {
-          "tech_count": 1,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 12,
+          "pass": true,
+          "quality_band": true
         },
         "data-ai": {
-          "tech_count": 8,
+          "tech_count": 56,
           "pass": true,
-          "quality_band": false
+          "quality_band": true
         }
       },
       "passing_roles": [
+        "backend",
+        "frontend",
+        "mobile",
         "data-ai"
       ],
       "pass_company": true,
@@ -773,20 +776,20 @@
     {
       "name": "구름",
       "blog_url": "https://tech.goorm.io/category/tech-ko/",
-      "collected_count": 12,
+      "collected_count": 21,
       "collectable": true,
-      "twelve_month_closed": false,
-      "tech_count": 12,
+      "twelve_month_closed": true,
+      "tech_count": 21,
       "non_tech_count": 0,
       "unassigned_count": 0,
       "roles": {
         "backend": {
-          "tech_count": 3,
+          "tech_count": 4,
           "pass": false,
           "quality_band": false
         },
         "frontend": {
-          "tech_count": 0,
+          "tech_count": 1,
           "pass": false,
           "quality_band": false
         },
@@ -796,7 +799,7 @@
           "quality_band": false
         },
         "data-ai": {
-          "tech_count": 12,
+          "tech_count": 20,
           "pass": true,
           "quality_band": true
         }
@@ -1029,30 +1032,30 @@
     {
       "name": "넥스트리",
       "blog_url": "https://www.nextree.io/tag/blog/",
-      "collected_count": 15,
+      "collected_count": 16,
       "collectable": true,
-      "twelve_month_closed": false,
-      "tech_count": 14,
-      "non_tech_count": 1,
-      "unassigned_count": 1,
+      "twelve_month_closed": true,
+      "tech_count": 210,
+      "non_tech_count": 7,
+      "unassigned_count": 7,
       "roles": {
         "backend": {
-          "tech_count": 11,
+          "tech_count": 155,
           "pass": true,
           "quality_band": true
         },
         "frontend": {
-          "tech_count": 9,
+          "tech_count": 105,
           "pass": true,
-          "quality_band": false
+          "quality_band": true
         },
         "mobile": {
-          "tech_count": 5,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 22,
+          "pass": true,
+          "quality_band": true
         },
         "data-ai": {
-          "tech_count": 12,
+          "tech_count": 160,
           "pass": true,
           "quality_band": true
         }
@@ -1060,6 +1063,7 @@
       "passing_roles": [
         "backend",
         "frontend",
+        "mobile",
         "data-ai"
       ],
       "pass_company": true,
@@ -1216,17 +1220,17 @@
       "collected_count": 10,
       "collectable": true,
       "twelve_month_closed": false,
-      "tech_count": 10,
+      "tech_count": 32,
       "non_tech_count": 0,
       "unassigned_count": 0,
       "roles": {
         "backend": {
-          "tech_count": 8,
+          "tech_count": 22,
           "pass": true,
-          "quality_band": false
+          "quality_band": true
         },
         "frontend": {
-          "tech_count": 2,
+          "tech_count": 4,
           "pass": false,
           "quality_band": false
         },
@@ -1236,7 +1240,7 @@
           "quality_band": false
         },
         "data-ai": {
-          "tech_count": 10,
+          "tech_count": 24,
           "pass": true,
           "quality_band": true
         }
@@ -1735,33 +1739,34 @@
       "collected_count": 105,
       "collectable": true,
       "twelve_month_closed": false,
-      "tech_count": 71,
-      "non_tech_count": 34,
-      "unassigned_count": 34,
+      "tech_count": 102,
+      "non_tech_count": 3,
+      "unassigned_count": 3,
       "roles": {
         "backend": {
-          "tech_count": 12,
+          "tech_count": 49,
           "pass": true,
           "quality_band": true
         },
         "frontend": {
-          "tech_count": 7,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 36,
+          "pass": true,
+          "quality_band": true
         },
         "mobile": {
-          "tech_count": 9,
+          "tech_count": 27,
           "pass": true,
-          "quality_band": false
+          "quality_band": true
         },
         "data-ai": {
-          "tech_count": 17,
+          "tech_count": 79,
           "pass": true,
           "quality_band": true
         }
       },
       "passing_roles": [
         "backend",
+        "frontend",
         "mobile",
         "data-ai"
       ],
@@ -2211,30 +2216,30 @@
     {
       "name": "비바리퍼블리카 / 토스",
       "blog_url": "https://toss.tech/",
-      "collected_count": 20,
+      "collected_count": 93,
       "collectable": true,
-      "twelve_month_closed": false,
-      "tech_count": 20,
-      "non_tech_count": 0,
-      "unassigned_count": 0,
+      "twelve_month_closed": true,
+      "tech_count": 89,
+      "non_tech_count": 4,
+      "unassigned_count": 4,
       "roles": {
         "backend": {
-          "tech_count": 12,
+          "tech_count": 49,
           "pass": true,
           "quality_band": true
         },
         "frontend": {
-          "tech_count": 13,
+          "tech_count": 52,
           "pass": true,
           "quality_band": true
         },
         "mobile": {
-          "tech_count": 7,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 19,
+          "pass": true,
+          "quality_band": true
         },
         "data-ai": {
-          "tech_count": 12,
+          "tech_count": 58,
           "pass": true,
           "quality_band": true
         }
@@ -2242,6 +2247,7 @@
       "passing_roles": [
         "backend",
         "frontend",
+        "mobile",
         "data-ai"
       ],
       "pass_company": true,
@@ -2588,17 +2594,17 @@
       "collected_count": 28,
       "collectable": true,
       "twelve_month_closed": false,
-      "tech_count": 25,
-      "non_tech_count": 3,
-      "unassigned_count": 3,
+      "tech_count": 28,
+      "non_tech_count": 0,
+      "unassigned_count": 0,
       "roles": {
         "backend": {
-          "tech_count": 19,
+          "tech_count": 24,
           "pass": true,
           "quality_band": true
         },
         "frontend": {
-          "tech_count": 10,
+          "tech_count": 15,
           "pass": true,
           "quality_band": true
         },
@@ -2608,7 +2614,7 @@
           "quality_band": false
         },
         "data-ai": {
-          "tech_count": 18,
+          "tech_count": 23,
           "pass": true,
           "quality_band": true
         }
@@ -2708,32 +2714,35 @@
       "collected_count": 245,
       "collectable": true,
       "twelve_month_closed": false,
-      "tech_count": 144,
-      "non_tech_count": 101,
-      "unassigned_count": 101,
+      "tech_count": 245,
+      "non_tech_count": 0,
+      "unassigned_count": 0,
       "roles": {
         "backend": {
-          "tech_count": 0,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 35,
+          "pass": true,
+          "quality_band": true
         },
         "frontend": {
-          "tech_count": 2,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 59,
+          "pass": true,
+          "quality_band": true
         },
         "mobile": {
-          "tech_count": 0,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 32,
+          "pass": true,
+          "quality_band": true
         },
         "data-ai": {
-          "tech_count": 32,
+          "tech_count": 153,
           "pass": true,
           "quality_band": true
         }
       },
       "passing_roles": [
+        "backend",
+        "frontend",
+        "mobile",
         "data-ai"
       ],
       "pass_company": true,
@@ -3412,33 +3421,35 @@
       "collected_count": 158,
       "collectable": true,
       "twelve_month_closed": false,
-      "tech_count": 111,
-      "non_tech_count": 47,
-      "unassigned_count": 47,
+      "tech_count": 158,
+      "non_tech_count": 0,
+      "unassigned_count": 0,
       "roles": {
         "backend": {
-          "tech_count": 16,
+          "tech_count": 100,
           "pass": true,
           "quality_band": true
         },
         "frontend": {
-          "tech_count": 1,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 31,
+          "pass": true,
+          "quality_band": true
         },
         "mobile": {
-          "tech_count": 0,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 11,
+          "pass": true,
+          "quality_band": true
         },
         "data-ai": {
-          "tech_count": 32,
+          "tech_count": 143,
           "pass": true,
           "quality_band": true
         }
       },
       "passing_roles": [
         "backend",
+        "frontend",
+        "mobile",
         "data-ai"
       ],
       "pass_company": true,
@@ -3595,32 +3606,32 @@
     {
       "name": "컴투스",
       "blog_url": "https://on.com2us.com/tag/기술이야기/",
-      "collected_count": 10,
+      "collected_count": 25,
       "collectable": true,
-      "twelve_month_closed": false,
-      "tech_count": 9,
+      "twelve_month_closed": true,
+      "tech_count": 43,
       "non_tech_count": 1,
       "unassigned_count": 1,
       "roles": {
         "backend": {
-          "tech_count": 9,
+          "tech_count": 42,
           "pass": true,
-          "quality_band": false
+          "quality_band": true
         },
         "frontend": {
-          "tech_count": 0,
+          "tech_count": 6,
           "pass": false,
           "quality_band": false
         },
         "mobile": {
-          "tech_count": 8,
+          "tech_count": 31,
           "pass": true,
-          "quality_band": false
+          "quality_band": true
         },
         "data-ai": {
-          "tech_count": 9,
+          "tech_count": 39,
           "pass": true,
-          "quality_band": false
+          "quality_band": true
         }
       },
       "passing_roles": [
@@ -3995,35 +4006,37 @@
     {
       "name": "한컴",
       "blog_url": "https://tech.hancom.com/",
-      "collected_count": 10,
+      "collected_count": 24,
       "collectable": true,
-      "twelve_month_closed": false,
-      "tech_count": 10,
+      "twelve_month_closed": true,
+      "tech_count": 24,
       "non_tech_count": 0,
       "unassigned_count": 0,
       "roles": {
         "backend": {
-          "tech_count": 6,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 13,
+          "pass": true,
+          "quality_band": true
         },
         "frontend": {
-          "tech_count": 7,
-          "pass": false,
-          "quality_band": false
+          "tech_count": 16,
+          "pass": true,
+          "quality_band": true
         },
         "mobile": {
-          "tech_count": 3,
+          "tech_count": 4,
           "pass": false,
           "quality_band": false
         },
         "data-ai": {
-          "tech_count": 9,
+          "tech_count": 22,
           "pass": true,
-          "quality_band": false
+          "quality_band": true
         }
       },
       "passing_roles": [
+        "backend",
+        "frontend",
         "data-ai"
       ],
       "pass_company": true,

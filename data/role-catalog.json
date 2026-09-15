@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "version": 1,
+  "roles": [
+    {
+      "id": "backend",
+      "label": "서버·백엔드",
+      "description": "서버 애플리케이션과 플랫폼을 만드는 직무군",
+      "status": "published",
+      "tracks": [
+        {
+          "id": "application-backend",
+          "label": "애플리케이션 서버",
+          "status": "published"
+        },
+        {
+          "id": "platform-infra",
+          "label": "플랫폼·인프라",
+          "status": "draft"
+        }
+      ]
+    },
+    {
+      "id": "frontend",
+      "label": "웹 프론트엔드",
+      "description": "브라우저에서 동작하는 서비스 화면을 만드는 직무군",
+      "status": "published",
+      "tracks": [
+        {
+          "id": "service-ui",
+          "label": "서비스 UI",
+          "status": "draft"
+        },
+        {
+          "id": "design-system-perf",
+          "label": "디자인 시스템·성능",
+          "status": "draft"
+        }
+      ]
+    },
+    {
+      "id": "data-ai",
+      "label": "데이터·AI",
+      "description": "데이터를 다루고 모델을 만드는 직무군",
+      "status": "published",
+      "tracks": [
+        {
+          "id": "data-engineering",
+          "label": "데이터 엔지니어링",
+          "status": "draft"
+        },
+        {
+          "id": "data-analysis",
+          "label": "데이터 분석",
+          "status": "draft"
+        },
+        {
+          "id": "ml-ai",
+          "label": "ML·AI",
+          "status": "draft"
+        }
+      ]
+    },
+    {
+      "id": "mobile",
+      "label": "모바일",
+      "description": "iOS·Android 앱을 만드는 직무군",
+      "status": "published",
+      "tracks": [
+        {
+          "id": "ios",
+          "label": "iOS",
+          "status": "draft"
+        },
+        {
+          "id": "android",
+          "label": "Android",
+          "status": "draft"
+        },
+        {
+          "id": "cross-platform",
+          "label": "크로스플랫폼",
+          "status": "draft"
+        }
+      ]
+    }
+  ]
+}

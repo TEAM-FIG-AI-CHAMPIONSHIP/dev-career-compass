@@ -9,6 +9,16 @@ const index = JSON.parse(
   ),
 ) as CompanyIndex;
 
+const companySlugs = JSON.parse(
+  readFileSync(
+    new URL(
+      "../../../../pipeline/experiments/tech_blog_engineering_focus_29/config/company_slugs.json",
+      import.meta.url,
+    ),
+    "utf8",
+  ),
+) as Record<string, string>;
+
 const ALL_ROLES = ["backend", "frontend", "mobile", "data-ai"];
 const WITHOUT_MOBILE = ["backend", "frontend", "data-ai"];
 
@@ -108,5 +118,16 @@ describe("companies fixture index", () => {
     expect(new Set(index.companies.map((company) => company.slug)).size).toBe(
       index.companies.length,
     );
+
+    const canonicalSlugs = Object.fromEntries(
+      Object.entries(companySlugs).filter(
+        ([company]) => company !== "_comment" && company !== "구름",
+      ),
+    );
+    expect(
+      Object.fromEntries(
+        index.companies.map((company) => [company.name, company.slug]),
+      ),
+    ).toEqual(canonicalSlugs);
   });
 });

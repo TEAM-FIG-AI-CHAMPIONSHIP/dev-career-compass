@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import type { Company } from "@/types/data";
+import { CompanyMark } from "./CompanyMark";
 import {
   ArrowRightIcon,
   BuildingIcon,
@@ -138,22 +138,11 @@ export function CompanyList({ companies }: { companies: Company[] }) {
                         "flex min-h-24 w-full cursor-pointer items-center gap-3 p-4 text-left",
                     })}
                   >
-                    <span
-                      aria-hidden="true"
-                      className="flex size-11 shrink-0 items-center justify-center overflow-hidden rounded-card border border-line bg-surface text-h3 font-semibold text-ink-soft"
-                    >
-                      {company.logoSrc ? (
-                        <Image
-                          src={company.logoSrc}
-                          alt=""
-                          width={32}
-                          height={32}
-                          className="size-8 object-contain"
-                        />
-                      ) : (
-                        (company.mark ?? company.name.slice(0, 1))
-                      )}
-                    </span>
+                    <CompanyMark
+                      name={company.name}
+                      logoSrc={company.logoSrc}
+                      mark={company.mark}
+                    />
 
                     <span className="min-w-0">
                       <span className="block truncate text-h3 font-semibold">
@@ -208,17 +197,23 @@ export function CompanyList({ companies }: { companies: Company[] }) {
               )}{" "}
               / {filteredCompanies.length}
             </p>
+            {/* 이전·다음 화살표를 조건부로 없애지 않고 늘 자리를 차지하게
+                둡니다. 첫 페이지에서 이전 화살표가 없다가 두 번째 페이지로
+                가는 순간 나타나면, 그 한 칸만큼 숫자 버튼 전체가 오른쪽으로
+                밀립니다 — 페이지를 넘기는 동작인데 화면이 그보다 크게
+                움직여서 지금 어디로 이동했는지 혼란스럽습니다. 경계에서는
+                비활성화만 합니다(Button 컴포넌트의 disabled: 규칙과 같은
+                방식). */}
             <div className="flex items-center gap-1">
-              {currentPage > 0 && (
-                <button
-                  type="button"
-                  aria-label="이전 페이지"
-                  onClick={() => goToPage(currentPage - 1)}
-                  className="inline-flex size-11 items-center justify-center rounded-btn border border-line-strong bg-surface text-ink transition-colors duration-150 hover:border-accent hover:text-accent"
-                >
-                  <ArrowRightIcon size={16} className="rotate-180" />
-                </button>
-              )}
+              <button
+                type="button"
+                aria-label="이전 페이지"
+                disabled={currentPage === 0}
+                onClick={() => goToPage(currentPage - 1)}
+                className="inline-flex size-11 items-center justify-center rounded-btn border border-line-strong bg-surface text-ink transition-colors duration-150 hover:border-accent hover:text-accent disabled:cursor-default disabled:border-line disabled:bg-sunken disabled:text-ink-muted disabled:hover:border-line disabled:hover:text-ink-muted"
+              >
+                <ArrowRightIcon size={16} className="rotate-180" />
+              </button>
 
               {Array.from({ length: totalPages }, (_, page) => (
                 <button
@@ -238,16 +233,15 @@ export function CompanyList({ companies }: { companies: Company[] }) {
                 </button>
               ))}
 
-              {currentPage < totalPages - 1 && (
-                <button
-                  type="button"
-                  aria-label="다음 페이지"
-                  onClick={() => goToPage(currentPage + 1)}
-                  className="inline-flex size-11 items-center justify-center rounded-btn border border-line-strong bg-surface text-ink transition-colors duration-150 hover:border-accent hover:text-accent"
-                >
-                  <ArrowRightIcon size={16} />
-                </button>
-              )}
+              <button
+                type="button"
+                aria-label="다음 페이지"
+                disabled={currentPage === totalPages - 1}
+                onClick={() => goToPage(currentPage + 1)}
+                className="inline-flex size-11 items-center justify-center rounded-btn border border-line-strong bg-surface text-ink transition-colors duration-150 hover:border-accent hover:text-accent disabled:cursor-default disabled:border-line disabled:bg-sunken disabled:text-ink-muted disabled:hover:border-line disabled:hover:text-ink-muted"
+              >
+                <ArrowRightIcon size={16} />
+              </button>
             </div>
           </nav>
         )}
@@ -263,22 +257,12 @@ export function CompanyList({ companies }: { companies: Company[] }) {
           <>
             <p className="font-mono text-meta text-accent">$ selected</p>
             <div className="mt-3 flex items-center gap-3 border-b border-line pb-5">
-              <span
-                aria-hidden="true"
-                className="flex size-12 shrink-0 items-center justify-center overflow-hidden rounded-card border border-line bg-surface text-h3 font-semibold text-ink-soft"
-              >
-                {selectedCompany.logoSrc ? (
-                  <Image
-                    src={selectedCompany.logoSrc}
-                    alt=""
-                    width={36}
-                    height={36}
-                    className="size-9 object-contain"
-                  />
-                ) : (
-                  (selectedCompany.mark ?? selectedCompany.name.slice(0, 1))
-                )}
-              </span>
+              <CompanyMark
+                name={selectedCompany.name}
+                logoSrc={selectedCompany.logoSrc}
+                mark={selectedCompany.mark}
+                size="md"
+              />
               <div className="min-w-0">
                 <h2
                   id="selected-company-title"

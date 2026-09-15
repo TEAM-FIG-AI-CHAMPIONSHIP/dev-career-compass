@@ -28,6 +28,12 @@
     "trackIds": { "$ref": "#/definitions/uniqueSlugs" },
     "title": { "type": "string", "minLength": 1, "maxLength": 120 },
     "body": { "type": "string", "minLength": 1, "maxLength": 600 },
+    "steps": {
+      "type": "array",
+      "uniqueItems": true,
+      "maxItems": 8,
+      "items": { "type": "string", "minLength": 1, "maxLength": 160 }
+    },
     "entryExperienceIds": { "$ref": "#/definitions/uniqueSlugs" },
     "bridgeExperienceIds": { "$ref": "#/definitions/uniqueSlugs" },
     "evidenceIds": { "$ref": "#/definitions/uniqueSlugs" },
@@ -39,7 +45,11 @@
         "properties": { "status": { "const": "published" } }
       },
       "then": {
-        "properties": { "evidenceIds": { "minItems": 1 } },
+        "required": ["steps"],
+        "properties": {
+          "evidenceIds": { "minItems": 1 },
+          "steps": { "minItems": 1 }
+        },
         "anyOf": [
           { "properties": { "entryExperienceIds": { "minItems": 1 } } },
           { "properties": { "bridgeExperienceIds": { "minItems": 1 } } }

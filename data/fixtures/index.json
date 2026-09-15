@@ -182,7 +182,7 @@
       ]
     },
     {
-      "slug": "megazone-cloud",
+      "slug": "megazone",
       "name": "메가존클라우드",
       "mark": "메",
       "evidenceCount": 19,
@@ -340,7 +340,7 @@
       ]
     },
     {
-      "slug": "channel-talk",
+      "slug": "channel",
       "name": "채널코퍼레이션 / 채널톡",
       "mark": "채",
       "evidenceCount": 46,
@@ -366,7 +366,7 @@
       ]
     },
     {
-      "slug": "kakao-enterprise",
+      "slug": "kakao-cloud",
       "name": "카카오엔터프라이즈 / 카카오클라우드",
       "mark": "K",
       "evidenceCount": 14,

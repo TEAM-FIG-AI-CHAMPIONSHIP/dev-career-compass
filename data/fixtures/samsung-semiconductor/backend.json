@@ -1,0 +1,21 @@
+{
+  "company": {
+    "slug": "samsung-semiconductor",
+    "name": "삼성반도체"
+  },
+  "job": {
+    "slug": "backend",
+    "name": "서버·백엔드"
+  },
+  "generatedAt": "2026-09-15T00:00:00Z",
+  "window": {
+    "from": "2025-09-15",
+    "to": "2026-09-15"
+  },
+  "domains": [],
+  "suggestions": {
+    "new": [],
+    "deepen": []
+  },
+  "evidence": []
+}

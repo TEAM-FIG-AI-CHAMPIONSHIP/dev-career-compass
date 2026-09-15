@@ -1,0 +1,1366 @@
+[
+  {
+    "company": "쏘카",
+    "article_count": 9,
+    "areas": [
+      {
+        "area_name": "디자인 시스템과 크로스플랫폼 앱 프레임워크 설계",
+        "area_description": "파편화된 UI 개발과 플랫폼별 API 차이를 공통 추상화로 흡수하는 문제를, 컴포넌트를 정책 객체와 Hook 어댑터로 분리하고 Figma Code Connect·Slot으로 디자인-코드 정합성을 맞추며, 블루투스 기기의 정적 스펙과 동적 통신 로직을 분리해 여러 이동수단을 하나의 모듈로 다루는 방식으로 풉니다.",
+        "rationale": "cluster 1은 쏘카프레임이라는 하나의 사내 프레임워크 아래 웹 디자인 시스템 2건과 앱 프레임워크·블루투스 모듈 2건이 모두 '플랫폼 차이를 공통 추상화로 감싸 재사용 가능한 구조를 만든다'는 축을 공유해 단독 Area로 유지했습니다. cluster 2의 배포·런타임 트러블슈팅이나 cluster 3의 AI 에이전트와는 문제 성격이 달라 병합하지 않았습니다.",
+        "note": "",
+        "keywords": [
+          "Figma Code Connect",
+          "Slot 기반 합성 컴포넌트",
+          "정책 객체 + Hook 어댑터",
+          "트리쉐이킹 번들 구조",
+          "Figma Plugin 토큰 PR",
+          "BluetoothSpec / BluetoothHandle 분리",
+          "플랫폼 API 래핑 (Android/iOS)",
+          "웹·네이티브 화면 교체 구조"
+        ],
+        "article_count": 4,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "backend": 4,
+          "frontend": 2,
+          "data-ai": 2,
+          "mobile": 2
+        },
+        "evidence": [
+          {
+            "article_id": "40ca85f39b5dc7ec",
+            "title": "쏘카 디자인 시스템 2.0 개발기 2편: 기술로 굴리기(웹)",
+            "url": "https://tech.socar.kr/fe/2026/02/25/socar-frame2-web-part2",
+            "similarity": 0.9114,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "f8ca35d83c532384",
+            "title": "쏘카 디자인 시스템 2.0 개발기 1편: 시스템으로 굴리기(웹)",
+            "url": "https://tech.socar.kr/fe/2026/02/24/socar-frame2-web",
+            "similarity": 0.9125,
+            "roles": [
+              "backend",
+              "frontend"
+            ]
+          },
+          {
+            "article_id": "0a93ce2313cbe4b3",
+            "title": "쏘카프레임 - 블루투스 모듈",
+            "url": "https://tech.socar.kr/socarframe/2026/01/08/socarframe-bluetooth",
+            "similarity": 0.9176,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "c86984a9b70b3710",
+            "title": "쏘카프레임 - 앱 프레임워크와 개발자 경험",
+            "url": "https://tech.socar.kr/socarframe/2026/01/07/socarframe-introduce",
+            "similarity": 0.8951,
+            "roles": [
+              "backend",
+              "mobile"
+            ]
+          }
+        ],
+        "id": "socar-01"
+      },
+      {
+        "area_name": "배포·종료 동작과 레거시 코드베이스 정리",
+        "area_description": "CloudFront 캐시 무효화 범위를 잘못 잡아 생기는 배포 후 ChunkLoadError, Kubernetes에서 SIGTERM을 받고도 종료되지 않는 Node.js 컨테이너처럼 운영 환경의 생명주기 문제를 원인 계층별로 특정해 해결하고, 컬럼이 100개에 달하는 엔티티와 FK 없는 시스템의 스키마·문서를 무중단으로 정리하는 문제를 다룹니다.",
+        "rationale": "cluster 2는 SPA 배포 캐시, 컨테이너 graceful shutdown, 레거시 스키마 개선으로 주제가 다르지만 모두 '운영 중인 시스템에서 눈에 잘 안 보이는 동작을 파고들어 안전하게 고친다'는 성격을 공유합니다. 3건뿐이라 더 쪼개면 각 Area가 1건씩 남아 하나로 유지했습니다.",
+        "note": "세 글의 세부 주제(프론트엔드 배포 캐시, Node.js 런타임 종료, DB 스키마·문서 레거시)는 서로 이질적입니다. 게시글이 쌓이면 배포·런타임 트러블슈팅과 레거시 개선으로 분리하는 편이 적절합니다.",
+        "keywords": [
+          "CloudFront invalidation 범위",
+          "ChunkLoadError",
+          "해시 에셋 캐시 생명주기",
+          "Graceful shutdown (SIGTERM)",
+          "dumb-init (PID 1)",
+          "terminationGracePeriodSeconds",
+          "무중단 스키마 변경 절차",
+          "ERD 문서화 (Confluence)"
+        ],
+        "article_count": 3,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "backend": 3,
+          "frontend": 2,
+          "mobile": 1,
+          "data-ai": 2
+        },
+        "evidence": [
+          {
+            "article_id": "59fdc675630f9de9",
+            "title": "S3 + CloudFront 기반 SPA 배포에서 캐시와 fallback 전략 설계하기",
+            "url": "https://tech.socar.kr/fe/2026/06/24/spa-cache-fallback-strategy-with-s3-cloudfront",
+            "similarity": 0.9007,
+            "roles": [
+              "backend",
+              "frontend",
+              "mobile"
+            ]
+          },
+          {
+            "article_id": "4c01c42bcd3d4770",
+            "title": "팀 레거시 개선 (3) 쏘카존 관리 시스템 - 6년간 진행된 팀 레거시 코드 및 문서 개선기",
+            "url": "https://tech.socar.kr/dev/2026/02/14/legacy-code-and-docs-improvement",
+            "similarity": 0.8983,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "a635cd49407af9d2",
+            "title": "Node.js 컨테이너, 왜 깔끔하게 안 죽을까? (feat. Graceful shutdown)",
+            "url": "https://tech.socar.kr/dev/2026/01/20/nodejs-graceful-shutdown",
+            "similarity": 0.901,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "socar-02"
+      },
+      {
+        "area_name": "LLM 에이전트의 판단 신뢰성 확보",
+        "area_description": "흩어진 도메인 지식 때문에 에이전트가 기존 기능을 중복 구현하거나, 외부 웹 화면 변경으로 룰 베이스 자동화가 대량 실패하는 문제를, 사람이 정의한 시드와 신뢰도 임계값 기반 승인 절차를 둔 지식 그래프, 그리고 structured output 스키마와 위반 시 안전한 기본값 폴백으로 에이전트 판단을 검증 가능하게 만드는 방식으로 다룹니다.",
+        "rationale": "cluster 3의 두 글은 대상은 다르지만(코드 지식 그래프, 정산 웹 자동화) 모두 'LLM의 판단을 그대로 신뢰하지 않고 사람 승인이나 스키마 검증·폴백이라는 게이트를 두는 설계'라는 동일한 문제의식을 공유해 단독 Area로 두었습니다.",
+        "note": "2건 규모로 작습니다.",
+        "keywords": [
+          "지식 그래프 (Neo4j)",
+          "사람 정의 시드",
+          "LLM 신뢰도 점수 임계값",
+          "structured output 스키마",
+          "Few-shot 예시",
+          "안전한 기본값 폴백",
+          "DOM·접근성 트리 기반 화면 이해"
+        ],
+        "article_count": 2,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend"
+        ],
+        "role_counts": {
+          "backend": 2,
+          "data-ai": 2,
+          "frontend": 1
+        },
+        "evidence": [
+          {
+            "article_id": "a181dba1dfc8bb32",
+            "title": "이미 있는 기능을 AI가 또 만들지 않도록 하기 — 지식 그래프 도입기",
+            "url": "https://tech.socar.kr/dev/2026/07/27/parking-brain-1",
+            "similarity": 0.9049,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "64039ff2e167648a",
+            "title": "장애를 스스로 복구하는 AI 에이전트",
+            "url": "https://tech.socar.kr/dev/2026/07/22/agentic-engineering-in-production",
+            "similarity": 0.9085,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "socar-03"
+      }
+    ],
+    "unassigned_count": 0,
+    "unassigned_diagnostic": [],
+    "role_counts": {
+      "backend": 9,
+      "data-ai": 6,
+      "frontend": 5,
+      "mobile": 3
+    }
+  },
+  {
+    "company": "카카오",
+    "article_count": 71,
+    "areas": [
+      {
+        "area_name": "파운데이션 모델 학습·서빙과 AI 안전성",
+        "area_description": "Kanana 언어·멀티모달·음성 모델을 MoE·FP8 학습 인프라와 pruning·distillation, DPO/RLHF 정렬로 개발하고 실시간 음성 서빙을 GPU 메모리 분배·continuous batching으로 최적화하며, 유해 콘텐츠 탐지와 프롬프트 공격 방어를 위한 가드레일 모델과 리스크 관리 체계를 구축하는 문제를 다룹니다.",
+        "rationale": "cluster 1은 34건으로 가장 크지만, Kanana 시리즈(Pre/Post-training, 옴니·VLM·임베딩·SLM, 서빙 최적화)와 이를 안전하게 쓰기 위한 가드레일·모더레이션 모델이 '자체 모델을 만들고 운영한다'는 하나의 축을 이룹니다. cluster 2의 애플리케이션 개발 과제와는 다루는 계층이 달라 병합하지 않았습니다.",
+        "note": "cluster 1은 응집도가 낮습니다. (1) Kanana 모델 개발·서빙 계열 12건, (2) 유해 콘텐츠 모더레이션·가드레일·AI 윤리 3건, (3) AI 코딩 도구 활용·에이전틱 코딩 가이드·마일리지 프로그램·AI 에디터 분류 등 개발 생산성 계열 8건, (4) KRIS 배포 리스크 감지·카카오릴리즈·매트릭스 AI·보안 모니터링 같은 운영 자동화 계열이 섞여 있습니다. 특히 개발 생산성 계열은 cluster 2·3에도 흩어져 있어, 게시글이 더 쌓이면 모델 개발 / AI 안전성 / AI 기반 개발 생산성 최소 3개로 분할하는 것이 적절합니다.",
+        "keywords": [
+          "MoE (Mixture of Experts)",
+          "MLA (Multi-head Latent Attention)",
+          "Pruning & Distillation",
+          "DPO / RLHF 정렬",
+          "vLLM continuous batching",
+          "Tool Calling",
+          "Kanana Safeguard 가드레일",
+          "한국어 벤치마크·데이터셋 (KoPDFBench, KoEmbed)"
+        ],
+        "article_count": 16,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "data-ai": 15,
+          "backend": 6,
+          "frontend": 3,
+          "mobile": 3
+        },
+        "evidence": [
+          {
+            "article_id": "4c8c5baf61c7e945",
+            "title": "잘 말하는 AI를 넘어, 원하는 대로 말하는 AI로: Kanana-o 음성 생성 고도화 과정",
+            "url": "https://tech.kakao.com/posts/827",
+            "similarity": 0.8927,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "b98ebb974d73fafa",
+            "title": "더 작고 강해진 Kanana SLM 개발",
+            "url": "https://tech.kakao.com/posts/826",
+            "similarity": 0.89,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "c19b3c77f1507069",
+            "title": "음성 AI 모델을 프로덕션에 올리기까지: Kanana-O 서빙 최적화 여정",
+            "url": "https://tech.kakao.com/posts/821",
+            "similarity": 0.9053,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "aa192f8b9a4b7563",
+            "title": "카나나 스칼라 1회 세미나 현장 스케치",
+            "url": "https://tech.kakao.com/posts/819",
+            "similarity": 0.8751,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "63d5e43a022b576d",
+            "title": "한국 문화 이해부터 화면 조작까지: Kanana-V 기능 확장의 모든 것",
+            "url": "https://tech.kakao.com/posts/812",
+            "similarity": 0.8715,
+            "roles": [
+              "frontend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "57a1c50900666df8",
+            "title": "Kanana-o 신규 모델 및 API 베타 서비스를 공개합니다.",
+            "url": "https://tech.kakao.com/posts/811",
+            "similarity": 0.8806,
+            "roles": []
+          },
+          {
+            "article_id": "0167b0b61491b7f4",
+            "title": "Kanana-2 개발기 (2): 개선된 post-training recipe를 중심으로",
+            "url": "https://tech.kakao.com/posts/808",
+            "similarity": 0.8824,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "80c858fd844ac019",
+            "title": "Kanana-2 개발기 (1): Pre-training에서의 의사결정들을 중심으로",
+            "url": "https://tech.kakao.com/posts/807",
+            "similarity": 0.8921,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "541bae305a3f90e9",
+            "title": "“생각하고 답변하는” 카카오의 하이브리드 멀티모달 언어모델, Kanana-v-4b-hybrid 개발기",
+            "url": "https://tech.kakao.com/posts/806",
+            "similarity": 0.8952,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "5f148222e8a29941",
+            "title": "더 똑똑하고 효율적인 Kanana-2 오픈소스 공개",
+            "url": "https://tech.kakao.com/posts/804",
+            "similarity": 0.8918,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "7713e7a014117e21",
+            "title": "더욱 똑똑하게 답하며, 더욱 풍부한 감정표현을 향한 Kanana-o의 진화 과정",
+            "url": "https://tech.kakao.com/posts/802",
+            "similarity": 0.8743,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "29fe17bdaed75bc7",
+            "title": "​한국어와 이미지를 한 번에, 카카오의 멀티모달 임베딩 모델 개발기",
+            "url": "https://tech.kakao.com/posts/801",
+            "similarity": 0.883,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "c45a0acd3f77e596",
+            "title": "Agentic AI를 향한 카나나 모델의 진화",
+            "url": "https://tech.kakao.com/posts/779",
+            "similarity": 0.8978,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "63abf166800ded06",
+            "title": "AI의 자기 보호 시스템: AI 가드레일",
+            "url": "https://tech.kakao.com/posts/741",
+            "similarity": 0.9075,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "8cc59976dbf84e53",
+            "title": "AI 윤리 원칙과 AI 리스크 관리 프레임워크",
+            "url": "https://tech.kakao.com/posts/759",
+            "similarity": 0.8942,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "bd4eab33c640d25c",
+            "title": "유해 이미지 분류 시스템 구축기",
+            "url": "https://tech.kakao.com/posts/740",
+            "similarity": 0.871,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "kakao-01"
+      },
+      {
+        "area_name": "PO/PM 교육 과정 설계",
+        "area_description": "문제 정의-가설-지표-검증-회고 루틴을 실제 릴리스 회고와 백로그 우선순위 결정에 적용하고, 교육 과정 자체를 제품처럼 다뤄 만족도·중요도 매트릭스로 기회점수를 계산해 세션 구성을 반복 축소·개선한 과정을 담고 있습니다.",
+        "rationale": "cluster 4의 2건은 동일한 POPM 교육 과정을 다룬 연작으로 서로 밀접하지만, 소프트웨어 시스템이나 모델을 다루는 다른 Area와는 대상이 전혀 달라 흡수하면 해당 Area 설명이 흐려지므로 단독으로 두었습니다.",
+        "note": "2건 규모이며 엔지니어링 시스템이 아니라 교육 프로그램 운영·제품화 방법론을 다루는 내용입니다.",
+        "keywords": [
+          "문제 정의-가설-지표-검증 루틴",
+          "지표 기반 회고",
+          "백로그 우선순위 결정",
+          "만족도·중요도 매트릭스",
+          "기회점수 기반 우선순위",
+          "교육 과정의 제품화"
+        ],
+        "article_count": 2,
+        "roles": [
+          "data-ai"
+        ],
+        "role_counts": {
+          "data-ai": 2
+        },
+        "evidence": [
+          {
+            "article_id": "9ff35bdc34b5ac10",
+            "title": "우리가 진짜 문제를 풀고 있었을까? — POPM 과정이 남긴 질문",
+            "url": "https://tech.kakao.com/posts/796",
+            "similarity": 0.9296,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "02fac25b2824bd74",
+            "title": "POPM 과정은 어떻게 하나의 ‘제품’이 되었나",
+            "url": "https://tech.kakao.com/posts/795",
+            "similarity": 0.9178,
+            "roles": [
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "kakao-02"
+      },
+      {
+        "area_name": "개발자 대상 기술 공유와 문제 출제",
+        "area_description": "컨퍼런스 세션 프리뷰와 경진대회·앰배서더 공고, 공채 코딩테스트 문제 해설(비트마스크 DP, 단조 deque 슬라이딩 윈도우, Union-Find 등), AI 활용 역량을 측정하는 문제 설계 과정을 담고 있습니다.",
+        "rationale": "cluster 3은 대부분 행사 안내·모집 공고·세션 프리뷰 같은 메타 콘텐츠이고, 그 안에서 실제 엔지니어링 실체가 있는 것은 코딩테스트 문제 해설 2건, AI TOP 100 출제 설계, ASM 도구 YEYE 운영기 정도입니다. 다른 Area의 기술 축과 직접 겹치지 않아 별도로 두되 이름을 콘텐츠 성격이 드러나게 지었습니다.",
+        "note": "이 cluster는 엔지니어링 실체가 얕은 행사·모집 공고가 다수입니다. 'YEYE 공격 표면 관리'는 대역폭 병목과 병렬 스캔 구조를 다룬 실제 인프라 운영기로, 이 묶음에서 가장 이질적이며 보안·인프라 축으로 옮기는 편이 적절합니다.",
+        "keywords": [
+          "Vibe Coding",
+          "Cursor / Claude Code",
+          "Cursor Rule·Claude Memory 룰셋",
+          "MCP / playMCP",
+          "그래프 탐색 (DFS/BFS)",
+          "비트마스크 DP·단조 deque",
+          "Union-Find",
+          "사람 주도 개발 (HDD)"
+        ],
+        "article_count": 22,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "backend": 13,
+          "frontend": 9,
+          "data-ai": 15,
+          "mobile": 3
+        },
+        "evidence": [
+          {
+            "article_id": "4a9fe781b917f150",
+            "title": "if(kakao)2026 둘째 날, 기술 세션 소개",
+            "url": "https://tech.kakao.com/posts/835",
+            "similarity": 0.8863,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "251815f8d13a9033",
+            "title": "if(kakao)2026 첫째 날, 기술 세션 소개",
+            "url": "https://tech.kakao.com/posts/833",
+            "similarity": 0.8852,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "b87b3d46a51ad94f",
+            "title": "카카오, if(kakao)26 컨퍼런스 개최... 모든 연결에 지능을",
+            "url": "https://tech.kakao.com/posts/834",
+            "similarity": 0.8678,
+            "roles": [
+              "backend"
+            ]
+          },
+          {
+            "article_id": "26976fec799a757d",
+            "title": "개발을 넘어 AI로 사회문제를 해결하다",
+            "url": "https://tech.kakao.com/posts/825",
+            "similarity": 0.8716,
+            "roles": []
+          },
+          {
+            "article_id": "39e2b1f32c094f4d",
+            "title": "Vibe Coding하는 비개발자는 개발자인가(3)",
+            "url": "https://tech.kakao.com/posts/823",
+            "similarity": 0.867,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "cbde7c31ac0afec8",
+            "title": "학생에서 개발자로: 로또 구현부터 레거시 개선까지, 서버의 흐름을 배우다",
+            "url": "https://tech.kakao.com/posts/816",
+            "similarity": 0.8662,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "15d5cd7aeeeeeda7",
+            "title": "학생에서 개발자로: DB, 보안부터 AI까지, 정답보다 합리적인 선택을 배우다",
+            "url": "https://tech.kakao.com/posts/815",
+            "similarity": 0.8668,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "c92b1ade4d90fb8b",
+            "title": "2026 카카오그룹 신입크루 공채 코딩테스트 2차 문제해설",
+            "url": "https://tech.kakao.com/posts/814",
+            "similarity": 0.9017,
+            "roles": []
+          },
+          {
+            "article_id": "95c6052d18505cd0",
+            "title": "2026 카카오그룹 신입크루 공채 코딩테스트 1차 문제해설",
+            "url": "https://tech.kakao.com/posts/813",
+            "similarity": 0.8925,
+            "roles": []
+          },
+          {
+            "article_id": "504aeb58b95d8acb",
+            "title": "AI TOP 100이 우리에게 남긴 것들",
+            "url": "https://tech.kakao.com/posts/799",
+            "similarity": 0.8849,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "b4d12691e0e646f9",
+            "title": "[AI_TOP_100] 문제 출제 후기 – 기술이 아닌, 사람을 묻다.",
+            "url": "https://tech.kakao.com/posts/797",
+            "similarity": 0.8996,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "9c0342ae9b8adc3a",
+            "title": "if(kakao)25 정규돈 CTO 키노트 후기",
+            "url": "https://tech.kakao.com/posts/791",
+            "similarity": 0.8637,
+            "roles": []
+          },
+          {
+            "article_id": "43d1d23889b1b975",
+            "title": "카카오 그룹사 기술 공유의 장, Krew Day",
+            "url": "https://tech.kakao.com/posts/793",
+            "similarity": 0.8704,
+            "roles": [
+              "backend",
+              "frontend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "05c9b8debf75e5c5",
+            "title": "생산성 혁신의 실험: AI 마일리지 프로그램",
+            "url": "https://tech.kakao.com/posts/762",
+            "similarity": 0.8839,
+            "roles": [
+              "backend",
+              "frontend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "05b06daf027448ef",
+            "title": "에이전틱 코딩 가이드북, 그리고 AI 협업 치트 시트와 표준 룰셋 공유 시스템",
+            "url": "https://tech.kakao.com/posts/756",
+            "similarity": 0.8838,
+            "roles": []
+          },
+          {
+            "article_id": "d052aae08912fdef",
+            "title": "if(kakao)25 Krew Day AI 패널톡: AI 시대의 개발, 인프라, 전략 (외부 연사 초청 세션)",
+            "url": "https://tech.kakao.com/posts/788",
+            "similarity": 0.8876,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "9ed173a7ced34714",
+            "title": "AI와 함께 안전하게 리팩토링하기: 테스트부터 반복 개선까지",
+            "url": "https://tech.kakao.com/posts/729",
+            "similarity": 0.8757,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "496e5d004ac1acec",
+            "title": "카카오 x 한국정보과학회 AI 에이전트 경진대회를 개최합니다.",
+            "url": "https://tech.kakao.com/posts/781",
+            "similarity": 0.8845,
+            "roles": []
+          },
+          {
+            "article_id": "a0fc343f94266ebb",
+            "title": "(FAQ) 카카오 x 한국정보과학회 AI 에이전트 경진대회",
+            "url": "https://tech.kakao.com/posts/782",
+            "similarity": 0.8737,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "b286a66f4111ca8d",
+            "title": "실시간 코드 리뷰 및 품질 관리: AI 도입의 필요성과 기대 효과",
+            "url": "https://tech.kakao.com/posts/730",
+            "similarity": 0.8783,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "11ae5396ab547107",
+            "title": "[칼럼] 오픈소스기술의 AI 네이티브 전환 성공 사례",
+            "url": "https://tech.kakao.com/posts/766",
+            "similarity": 0.8774,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "89529b0429a4cac6",
+            "title": "AI 에디터 활용 사례 및 개발 생산성",
+            "url": "https://tech.kakao.com/posts/728",
+            "similarity": 0.882,
+            "roles": [
+              "frontend",
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "kakao-03"
+      },
+      {
+        "area_name": "MySQL 데이터 타입 저장 구조 분석",
+        "area_description": "JSON 타입이 직렬화·유효성 검증을 거쳐 메타 정보와 함께 저장되는 구조와 TEXT 타입의 무변환 저장을 hexdump로 비교하고, DATETIME의 정수부·소수부 분리 저장과 정렬 보장을 위한 오프셋, TIMESTAMP의 UTC 변환과 Y2K38 한계를 파고드는 문제를 다룹니다.",
+        "rationale": "cluster 5의 2건은 모두 ibd 파일 수준까지 내려가 저장 포맷을 분석해 타입 선택 기준을 세운다는 동일한 접근을 공유합니다. cluster 2의 DB 운영 글과 대상은 같은 MySQL이지만, 그쪽은 HA·복제 운영이고 이쪽은 엔진 내부 저장 구조 분석이라 성격이 달라 분리했습니다.",
+        "note": "2건 규모로 작습니다.",
+        "keywords": [
+          "hexdump ibd 분석",
+          "JSON 타입 직렬화",
+          "TEXT 타입 무변환 저장",
+          "DATETIME Fraction Seconds",
+          "바이너리 정렬 오프셋",
+          "TIMESTAMP UTC 변환",
+          "Y2K38"
+        ],
+        "article_count": 2,
+        "roles": [
+          "backend",
+          "data-ai"
+        ],
+        "role_counts": {
+          "backend": 2,
+          "data-ai": 2
+        },
+        "evidence": [
+          {
+            "article_id": "e0d304f4472a1444",
+            "title": "MySQL Json 데이터 타입의 저장 구조와 성능 비교",
+            "url": "https://tech.kakao.com/posts/774",
+            "similarity": 0.944,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "1d60a50e125e4117",
+            "title": "MySQL DATETIME, TIMESTAMP 데이터 타입에 대한 분석",
+            "url": "https://tech.kakao.com/posts/778",
+            "similarity": 0.9427,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "kakao-04"
+      },
+      {
+        "area_name": "서비스 백엔드·데이터 인프라 운영과 테스트 자동화",
+        "area_description": "메시징 서버의 경쟁 조건과 Dual Write를 Single Writer로 제거하고, PostgreSQL→ES CDC 파이프라인과 MySQL HA 표준을 Debezium·Orchestrator로 재구성하며, Airflow 격리 테스트 환경과 LLM 기반 단위·API·UI 테스트 자동화로 검증 부담을 줄이는 문제를 다룹니다.",
+        "rationale": "cluster 2는 메시징 서버 트러블슈팅, CDC·DB HA, Airflow 테스트 환경, QA/단위/API 테스트 자동화가 모두 '실제 서비스 시스템을 안정적으로 만들고 검증한다'는 축을 공유합니다. cluster 5의 MySQL 내부 구조 분석과 가깝지만 그쪽은 저장 포맷 자체를 파고드는 성격이라 따로 두었습니다.",
+        "note": "온보딩 회고 2건, 형태소 분석기 개발기, 캘린더 UI 배치 알고리즘, 빌드 도구 교체, 유해 이미지 분류는 서로 이질적입니다. 특히 유해 이미지 분류는 cluster 1의 모더레이션 계열에 더 가깝습니다.",
+        "keywords": [
+          "Debezium CDC",
+          "Kafka Connect",
+          "Orchestrator HA",
+          "Single Writer Principle",
+          "Kubernetes Job + Helm",
+          "Locust 부하 테스트",
+          "LLM 기반 테스트 생성 (JUnit·Assertion)",
+          "LLM Judge 회귀 검증"
+        ],
+        "article_count": 11,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "backend": 9,
+          "frontend": 2,
+          "data-ai": 11,
+          "mobile": 3
+        },
+        "evidence": [
+          {
+            "article_id": "e8e9576cbfe5e024",
+            "title": "개인화된 Airflow 테스트 환경 구축 및 운영 경험",
+            "url": "https://tech.kakao.com/posts/829",
+            "similarity": 0.9056,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "dc56451ceb1d4ee8",
+            "title": "AI 에이전트로 카카오톡 추천 지표 분석 자동화하기",
+            "url": "https://tech.kakao.com/posts/824",
+            "similarity": 0.872,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "db540de4aa6a1779",
+            "title": "메시징 서버의 스트레스 테스트 노하우와 AI가 덜어 준 부분",
+            "url": "https://tech.kakao.com/posts/822",
+            "similarity": 0.8771,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "85a445dae8813132",
+            "title": "잃어버린 리포트를 찾아서: 카카오 메시징 시스템의 경쟁 조건 문제와 안티 패턴 제거 과정",
+            "url": "https://tech.kakao.com/posts/810",
+            "similarity": 0.8909,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "ae1df0fb24c9e059",
+            "title": "DeviceFarm AI를 사용한 QA 테스트 자동화",
+            "url": "https://tech.kakao.com/posts/737",
+            "similarity": 0.8945,
+            "roles": [
+              "backend",
+              "frontend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "d25f29fbbb6699fc",
+            "title": "PostgreSQL to ES: (1) Kafka Connect CDC 파이프라인 구성",
+            "url": "https://tech.kakao.com/posts/776",
+            "similarity": 0.8932,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "b4a0736a84633543",
+            "title": "MySQL Orchestrator 기반의 새로운 HA 표준 개발기",
+            "url": "https://tech.kakao.com/posts/775",
+            "similarity": 0.8795,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "2d6f4a0c9f5d6cac",
+            "title": "PostgreSQL to ES: (2) Kafka Connect 트러블슈팅",
+            "url": "https://tech.kakao.com/posts/777",
+            "similarity": 0.8825,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "4ab16da1b155377c",
+            "title": "바이브코딩의 시작: 데이터 분석과 웹 시각화",
+            "url": "https://tech.kakao.com/posts/727",
+            "similarity": 0.872,
+            "roles": [
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "72ee1caf988ab3b7",
+            "title": "실시간 코드 리뷰 및 품질 관리: 단위 테스트 자동 생성을 통한 코드 품질 향상",
+            "url": "https://tech.kakao.com/posts/733",
+            "similarity": 0.8914,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "8918c21fb0889b0f",
+            "title": "AI 기반 API 테스트 자동화의 필요성과 TestLAB AI",
+            "url": "https://tech.kakao.com/posts/736",
+            "similarity": 0.8874,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "kakao-05"
+      }
+    ],
+    "unassigned_count": 18,
+    "unassigned_diagnostic": [
+      {
+        "size": 14,
+        "sample_titles": [
+          "같은 장애를 두 번 겪지 않기 위해, 배포 전에 리뷰합니다 — KRIS 개발기",
+          "카카오톡 예약하기에서 그려 본 캘린더",
+          "수억 건의 보안 신호 속 진짜 위협 찾기 — AI로 보안 모니터링의 패러다임을 바꾸다",
+          "초경량 클래식 형태소 분석기 개발기",
+          "MongoDB 8.0 업그레이드 해야하는 12가지 이유"
+        ]
+      },
+      {
+        "size": 2,
+        "sample_titles": [
+          "지역 AI 생태계의 새로운 가능성, 카카오 AI 돛 Summit 26을 개최합니다!",
+          "카카오 AI 앰배서더 ‘KANANA 429 앰배서더’를 신규 모집합니다."
+        ]
+      },
+      {
+        "size": 2,
+        "sample_titles": [
+          "에이전틱 AI 생태계의 주인공들, MCP Player 10 성료와 Next!",
+          "YEYE가 지켜보고 있다–카카오의 공격 표면 관리 이야기"
+        ]
+      }
+    ],
+    "role_counts": {
+      "backend": 43,
+      "frontend": 24,
+      "data-ai": 61,
+      "mobile": 14
+    }
+  },
+  {
+    "company": "삼성반도체",
+    "article_count": 41,
+    "areas": [
+      {
+        "area_name": "AI 인프라용 메모리·스토리지 아키텍처와 첨단 패키징",
+        "area_description": "메모리 대역폭과 전력이 AI 시스템의 병목이 되는 문제를 zHBM·zNAND-O·400단 V10 BV-NAND 같은 3D 적층 구조와 하이브리드 구리 본딩·CPO 등 첨단 패키징으로 풀고, CXL 메모리 풀링과 SSD 기반 KV 캐시 오프로딩으로 LLM 추론의 메모리 한계를 확장하며, GAA·3D Stacked FET와 DTCO 기반 설계 플로우로 미세화 한계에 대응하는 문제를 다룹니다.",
+        "rationale": "cluster 1은 33건으로 가장 크지만, zHBM·zNAND·HBM4E·SOCAMM2·GDDR7·LPDDR6 같은 메모리 제품군, 이를 물리적으로 구현하는 패키징·공정·트랜지스터 기술, 그리고 CXL·NVMe·KV 캐시 오프로딩처럼 이 메모리를 시스템에 붙이는 인터페이스 기술이 'AI 인프라의 데이터 이동과 전력 병목'이라는 하나의 축으로 이어져 단독 Area로 유지했습니다.",
+        "note": "cluster 1은 응집도가 낮습니다. (1) 3D 메모리·NAND·DRAM 제품 개발, (2) 패키징·공정·트랜지스터(3D Stacked FET, 4nm FinFET, 2.xD/3D Cube), (3) CXL·NVMe·SSD 가상화·KV 캐시 오프로딩 같은 시스템 인터페이스, (4) PQC 보안칩·시큐어 부트·CSMS 인증 같은 보안, (5) ENSS 모바일 그래픽스와 Exynos AI Studio 툴체인 등 소프트웨어 계열이 섞여 있습니다. 특히 보안 3건과 온디바이스 AI SDK·ENSS는 메모리 축과 무관하며, GTC·COMPUTEX 참가기 등 행사 소개성 글도 포함되어 있어 게시글이 더 쌓이면 최소 3개로 분할하는 것이 적절합니다.",
+        "keywords": [
+          "3D 적층 (zHBM, zNAND-O)",
+          "하이브리드 구리 본딩 (HCB)",
+          "CXL 메모리 풀링 (CMM-D)",
+          "KV 캐시 오프로딩",
+          "V10 BV-NAND (400단 적층)",
+          "HPB (Heat Path Block)",
+          "DTCO (설계-공정 공동 최적화)",
+          "SSD 하드웨어 가상화 (SR-IOV)"
+        ],
+        "article_count": 21,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "backend": 17,
+          "data-ai": 18,
+          "mobile": 4,
+          "frontend": 1
+        },
+        "evidence": [
+          {
+            "article_id": "99fc852aa7f999ad",
+            "title": "새로운 AI 인프라 사이클을 여는 메모리 혁신 2편",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/memory-innovation-powering-a-new-ai-infrastructure-cycle-ep2/",
+            "similarity": 0.9152,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "e54911fcccfe7ca5",
+            "title": "새로운 AI 인프라 사이클을 여는 메모리 혁신 1편",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/memory-innovation-powering-a-new-ai-infrastructure-cycle-ep1/",
+            "similarity": 0.8907,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "868673caf18d88cc",
+            "title": "[FMS 2026 3D & NAND Innovation Award] V10 BV-NAND: 400단을 넘어 AI 스토리지의 한계를 확장하다",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/fms-2026-3d-nand-innovation-award-v10-bv-nand-pushing-the-boundaries-of-ai-storage-beyond-400-layers/",
+            "similarity": 0.9012,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "06151cff82a998cf",
+            "title": "AI 시대를 위한 통합 패키징 솔루션과 생태계 혁신",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/integrated-packaging-solutions-and-ecosystem-innovation-for-the-ai-era/",
+            "similarity": 0.8968,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "6f282a0b0c10863d",
+            "title": "FMS 2026에서 제시한 3D Memory Architecture 기반 차세대 AI 인프라 비전",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/samsung-presents-its-vision-for-next-generation-ai-infrastructure-with-3d-memory-architecture-at-fms-2026/",
+            "similarity": 0.931,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "8225eb1c38e6cfab",
+            "title": "AI 시대 메모리의 진화, 더 빠르게·더 촘촘하게… 삼성전자, FMS 2026에서 차세대 3D 메모리 비전 공개",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/the-evolution-of-ai-era-memory-faster-denser-computing/",
+            "similarity": 0.9206,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "b69e6a57c5e8f5b7",
+            "title": "차세대 Edge AI를 구동하다: 시장 성장에서 확장 가능한 실리콘 혁신까지",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/powering-the-next-wave-of-edge-ai-from-market-momentum-to-scalable-silicon-innovation/",
+            "similarity": 0.8834,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "64e83341d726e313",
+            "title": "CXL 메모리 풀링을 통한 AI 메모리 확장 한계 해결",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/breaking-ai-memory-limits-with-cxl-memory-pooling/",
+            "similarity": 0.9088,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "c661c6bc519d40c1",
+            "title": "삼성전자, COMPUTEX 2026에서 AI 시대 반도체 경쟁력의 새로운 기준을 제시하다.",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/samsung-showcases-next-generation-ai-semiconductor-innovations-at-computex-2026/",
+            "similarity": 0.8783,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "b6327e7a3aaeeff5",
+            "title": "From GAA to 3D Stacked FET: 트랜지스터의 영역이 3차원으로 확장되다",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/from-gaa-to-3d-stacked-fet-expanding-the-transistor-into-the-third-dimension/",
+            "similarity": 0.8882,
+            "roles": []
+          },
+          {
+            "article_id": "35cf0c971952d68a",
+            "title": "AI 시대 반도체 혁신의 연결고리, ‘The Nexus for Silicon Intelligence’",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/the-nexus-for-silicon-intelligence-connecting-semiconductor-innovation-in-the-ai-era/",
+            "similarity": 0.9012,
+            "roles": [
+              "backend"
+            ]
+          },
+          {
+            "article_id": "0d12743b4829483b",
+            "title": "첨단 패키징과 시스템 레벨 반도체 혁신으로의 전환",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/advanced-packaging-and-the-shift-to-system-level-semiconductor-innovation/",
+            "similarity": 0.894,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "21b77cee9eacce44",
+            "title": "SSD 가상화 기술이 바꾸는 차세대 시스템 아키텍처",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/a-peek-into-ssd-virtualization/",
+            "similarity": 0.8687,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "d4b378e5829f0cff",
+            "title": "Samsung Foundry 4nm FinFET: 성숙도 위에 확장성을 더하다",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/samsung-foundry-4nm-finfet-scaling-built-on-maturity/",
+            "similarity": 0.8792,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "43b504f932315db3",
+            "title": "삼성 CMM-D를 통한 차세대 IMDB 인프라의 메모리 병목 해소",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/breaking-the-memory-wall-with-samsung-cmm-d-for-next-generation-imdb-infrastructure/",
+            "similarity": 0.8926,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "5e45e20dc43cf2cb",
+            "title": "AI 추론 확장을 위한 KV 캐시 오프로딩: 차세대 AI 시스템 아키텍처와 스토리지의 역할",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/scaling-ai-inference-with-kv-cache-offloading-why-storage-is-becoming-a-key-enabler-for-next-generation-ai-systems/",
+            "similarity": 0.9066,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "51a2186f4ca57aaf",
+            "title": "모바일 애플리케이션 프로세서의 열 효율 개선을 위한 신규 패키지 아키텍처 도입",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/introducing-a-new-package-architecture-for-improved-thermal-efficiency-in-mobile-application-processors/",
+            "similarity": 0.8823,
+            "roles": [
+              "mobile"
+            ]
+          },
+          {
+            "article_id": "904c4b7be8ee24e9",
+            "title": "고용량 메모리를 활용한 AI 기반 부정거래 탐지 인프라 비용 절감",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/significant-infrastructure-cost-savings-for-ai-fraud-detection-using-high-density-memory/",
+            "similarity": 0.8909,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "2187c31fa1ed5d48",
+            "title": "[CES 2026 혁신상 수상작] Detachable AutoSSD: 업계 최초의 탈부착 가능한 최고 성능의 차량용 SSD",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/ces-innovations-awards-2026-honoree-interview-detachable-autossd/",
+            "similarity": 0.8602,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "261f28c64c87bccc",
+            "title": "Samsung GDDR7: 개인 창작부터 기업 인텔리전스로, 가능성을 확장하다",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/samsung-gddr7-bridging-the-gap-between-consumer-creativity-and-enterprise-intelligence/",
+            "similarity": 0.8644,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "67897bcb5c2d5564",
+            "title": "[CES 2026 혁신상 수상작] S3SSE2A: 양자 보안의 미래를 여는 하드웨어 PQC",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/ces-innovations-awards-2026-honoree-interview-s3sse2a/",
+            "similarity": 0.8644,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "samsung-semiconductor-01"
+      },
+      {
+        "area_name": "반도체 분야 개방형 협업과 AI 연구 동향 공유",
+        "area_description": "OCP Summit에서 HBM4·SOCAMM2·CMM-D와 CXL 메모리 풀링 실증을 공유하고, AI 포럼에서 AI-EDA와 에이전틱 AI 기반 제조 이상탐지 같은 반도체 특화 AI 연구 과제를 논의한 내용을 전달합니다.",
+        "rationale": "cluster 3의 2건은 모두 외부 행사 참관기로, 자체 개발 과정이 아니라 포트폴리오 소개와 연구 동향 공유가 중심입니다. cluster 1에 흡수하면 해당 Area의 기술 축이 희석되어 별도로 두되 이름에 콘텐츠 성격을 반영했습니다.",
+        "note": "2건 모두 행사 참관기로 자체 엔지니어링 실체가 얕습니다. 다만 다루는 소재(HBM4, CMM-D, CXL 풀링, AI-EDA)는 cluster 1·3의 주제와 겹치므로 독립된 기술 영역으로 보기는 어렵습니다.",
+        "keywords": [
+          "HBM4 / HBM4E",
+          "SOCAMM2",
+          "CMM-D / CXL 메모리 풀링",
+          "CMX (Context Memory eXtension)",
+          "AI-EDA",
+          "에이전틱 AI 제조 이상탐지",
+          "Virtual SSD Migration·FDP"
+        ],
+        "article_count": 3,
+        "roles": [
+          "backend",
+          "data-ai"
+        ],
+        "role_counts": {
+          "backend": 2,
+          "data-ai": 2
+        },
+        "evidence": [
+          {
+            "article_id": "f688aa4c5e100f8b",
+            "title": "GTC 2026에서 만난 삼성전자 AI 반도체의 미래",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/architecting-the-ai-era-samsung-electronics-and-nvidia-define-the-future-at-gtc-2026/",
+            "similarity": 0.888,
+            "roles": [
+              "backend"
+            ]
+          },
+          {
+            "article_id": "1d2032e1131aa7be",
+            "title": "삼성전자, OCP Global Summit 2025: AI 시대를 위한 다양한 개방형 협업을 강조하다.",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/samsung-electronics-highlights-open-collaboration-for-the-ai-era-at-ocp-global-summit-2025/",
+            "similarity": 0.9223,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "42b83bc894ca5147",
+            "title": "AI가 가져올 반도체 산업의 미래는? ‘삼성 AI 포럼 2025’에서 살펴보다",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/future-of-semiconductor-industry-with-ai-samsung-ai-forum-2025/",
+            "similarity": 0.8972,
+            "roles": [
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "samsung-semiconductor-02"
+      },
+      {
+        "area_name": "모바일 SoC의 이미지센서·온디바이스 AI 연산",
+        "area_description": "0.5㎛ 초미세 픽셀에서 생기는 감도·노이즈 저하를 DTI 구조 변경과 픽셀 비닝·AI 리모자이크로 보완하고, 카메라 전용 AI 서브시스템(VPS)과 Arm SME2 기반 행렬 연산 유닛으로 모바일 환경의 전력 제약 속에서 비전 워크로드 성능을 끌어올리는 문제를 다룹니다.",
+        "rationale": "cluster 2는 아이소셀 HP5 관련 3건과 엑시노스 2600의 VPS·SME2 2건이 '모바일 기기에서 이미지를 받아들이고 저전력으로 처리한다'는 축을 공유해 그대로 유지했습니다. cluster 1의 데이터센터 메모리 인프라와는 대상 시스템과 제약 조건이 달라 병합하지 않았습니다.",
+        "note": "'5G CPE 모뎀 기술'은 통신 장비 관련 글로, 이미지센서·모바일 AP 연산과 기술적 접점이 거의 없습니다.",
+        "keywords": [
+          "DTI 구조 (DCC, FDTI)",
+          "픽셀 비닝·리모자이크",
+          "Arm SME2",
+          "VPS 카메라 AI 서브시스템",
+          "Exynos AI Studio (온디바이스 SDK)",
+          "AI 업스케일링·프레임 생성 (ENSS)",
+          "LPDDR6 저전력 DRAM",
+          "PCIe Gen5 NVMe SSD (PM9E1)"
+        ],
+        "article_count": 12,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "frontend": 2,
+          "mobile": 9,
+          "data-ai": 10,
+          "backend": 5
+        },
+        "evidence": [
+          {
+            "article_id": "f3d3131f80278321",
+            "title": "ENSS™: 모바일 AI 그래픽스의 새로운 기준",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/enss-the-next-frontier-in-mobile-ai-graphics/",
+            "similarity": 0.8857,
+            "roles": [
+              "frontend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "69aa96aa212f7e9c",
+            "title": "진정한 2억 화소 경험은 무엇으로 완성되는가",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/what-defines-a-true-200-megapixel-experience/",
+            "similarity": 0.8925,
+            "roles": [
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "dbdd4145025ed16b",
+            "title": "엑시노스 2600 VPS가 이끄는 AI 기반 모바일 카메라 혁신",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/inside-the-intelligent-mobile-camera-powered-by-exynos-2600-vps/",
+            "similarity": 0.9047,
+            "roles": [
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "568b71fdc07635f2",
+            "title": "온디바이스 AI 진화를 위한 Arm SME2 기반의 CPU 성능 향상",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/expanding-cpu-capabilities-for-on-device-ai-with-arm-sme2/",
+            "similarity": 0.9146,
+            "roles": [
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "5a017e379ee80b6e",
+            "title": "삼성 PM9E1: 개인용 AI 슈퍼컴퓨팅을 위한 고성능 PC 스토리지",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/samsung-pm9e1-inside-the-leading-ai-optimized-pcie-gen5-ssd/",
+            "similarity": 0.8783,
+            "roles": [
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "9ce1f8f0ef6d381e",
+            "title": "차세대 AI 인프라를 위한 삼성 SOCAMM2, 새로운 LPDDR 기반 서버 메모리 모듈",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/introducing-samsungs-socamm2-new-lpddr-memory-module-empowering-next-generation-ai-infrastructure/",
+            "similarity": 0.8835,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "5eaeb3f65b85c770",
+            "title": "삼성의 온디바이스 AI SDK 툴체인 전략 파헤치기",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/unpacking-samsungs-comprehensive-on-device-ai-sdk-toolchain-strategy/",
+            "similarity": 0.8802,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "364c066b6220617c",
+            "title": "[CES 2026 혁신상 수상작] PM9E1 M.2 22x42: 초소형·고성능의 AI 최적화 PCIe Gen5 NVMe SSD",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/ces-innovations-awards-2026-honoree-interview-pm9e1-2242/",
+            "similarity": 0.8733,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "520d6727ecfe8797",
+            "title": "[CES 2026 혁신상 수상작] 아이소셀 HP5: 더 많은 빛을 담은 0.5㎛픽셀 이미지 센서",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/ces-innovations-awards-2026-honoree-interview-isocell-hp5/",
+            "similarity": 0.893,
+            "roles": [
+              "mobile"
+            ]
+          },
+          {
+            "article_id": "42ab6c7cf288fb14",
+            "title": "[CES 2026 혁신상 수상작] LPDDR6: 고성능 온디바이스 AI에 최적화된 세계 최초의 차세대 저전력 DRAM",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/ces-innovations-awards-2026-honoree-interview-lpddr6/",
+            "similarity": 0.8683,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "51ab653f080fe70a",
+            "title": "삼성의 5G CPE 기술, 글로벌 커넥티비티 확산에 기여하다",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/how-samsungs-5g-cpe-technology-is-helping-expand-global-connectivity/",
+            "similarity": 0.8696,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "fab024e0acf0dad0",
+            "title": "ISOCELL HP5 딥다이브: 0.5㎛ 픽셀 심층 탐구",
+            "url": "https://semiconductor.samsung.com/kr/news-events/tech-blog/inside-isocell-hp5-exploring-05-pixel-technology/",
+            "similarity": 0.9006,
+            "roles": []
+          }
+        ],
+        "id": "samsung-semiconductor-03"
+      }
+    ],
+    "unassigned_count": 5,
+    "unassigned_diagnostic": [],
+    "role_counts": {
+      "backend": 26,
+      "data-ai": 35,
+      "mobile": 14,
+      "frontend": 4
+    }
+  }
+]

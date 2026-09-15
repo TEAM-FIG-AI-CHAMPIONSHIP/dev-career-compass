@@ -1,3 +1,4 @@
+import argparse
 import html
 import json
 from pathlib import Path
@@ -16,28 +17,21 @@ INPUT_FILE = (
     / "articles.json"
 )
 
-OUTPUT_DIR = (
-    PROJECT_ROOT
-    / "data"
-    / "work"
-    / "tech_blog_engineering_focus_29"
-    / "embeddings_v4"
-)
 
-EMBEDDINGS_FILE = (
-    OUTPUT_DIR
-    / "article_embeddings.npy"
-)
+def build_output_dir(suffix):
+    name = (
+        "embeddings_v4"
+        if not suffix
+        else f"embeddings_v4_{suffix}"
+    )
 
-METADATA_FILE = (
-    OUTPUT_DIR
-    / "articles.json"
-)
-
-REPORT_FILE = (
-    OUTPUT_DIR
-    / "embed_report.json"
-)
+    return (
+        PROJECT_ROOT
+        / "data"
+        / "work"
+        / "tech_blog_engineering_focus_29"
+        / name
+    )
 
 
 MODEL_NAME = "intfloat/multilingual-e5-small"
@@ -169,6 +163,61 @@ def create_article_embedding(
 
 
 def main():
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument(
+        "--companies",
+        type=str,
+        default="",
+        help=(
+            "쉼표로 구분된 회사명. 비우면 "
+            "articles.json에 있는 전체 회사를 대상으로 한다."
+        )
+    )
+
+    parser.add_argument(
+        "--output-suffix",
+        type=str,
+        default="",
+        help=(
+            "출력 폴더명 접미사(embeddings_v4_<suffix>). "
+            "비우면 기존 embeddings_v4를 그대로 쓴다 — "
+            "이미 확정된 6개 회사 결과를 덮어쓰지 않으려면 "
+            "다른 회사 묶음을 처리할 때 반드시 지정한다."
+        )
+    )
+
+    args = parser.parse_args()
+
+    company_allowlist = None
+
+    if args.companies.strip():
+        company_allowlist = {
+            name.strip()
+            for name in args.companies.split(",")
+            if name.strip()
+        }
+
+    output_dir = build_output_dir(
+        args.output_suffix.strip()
+        or None
+    )
+
+    embeddings_file = (
+        output_dir
+        / "article_embeddings.npy"
+    )
+
+    metadata_file = (
+        output_dir
+        / "articles.json"
+    )
+
+    report_file = (
+        output_dir
+        / "embed_report.json"
+    )
+
     articles = load_json(
         INPUT_FILE
     )
@@ -177,6 +226,14 @@ def main():
         raise ValueError(
             "engineering focus 게시글이 없습니다."
         )
+
+    if company_allowlist:
+        articles = [
+            article
+            for article in articles
+            if article["company"]
+            in company_allowlist
+        ]
 
     before_filter = len(
         articles
@@ -195,7 +252,7 @@ def main():
         - len(articles)
     )
 
-    OUTPUT_DIR.mkdir(
+    output_dir.mkdir(
         parents=True,
         exist_ok=True
     )
@@ -287,7 +344,11 @@ def main():
                 ],
                 "url": article[
                     "url"
-                ]
+                ],
+                "roles": article.get(
+                    "roles",
+                    []
+                )
             }
         )
 
@@ -296,12 +357,12 @@ def main():
     )
 
     np.save(
-        EMBEDDINGS_FILE,
+        embeddings_file,
         embedding_matrix
     )
 
     save_json(
-        METADATA_FILE,
+        metadata_file,
         metadata
     )
 
@@ -344,7 +405,7 @@ def main():
     }
 
     save_json(
-        REPORT_FILE,
+        report_file,
         report
     )
 
@@ -370,7 +431,7 @@ def main():
 
     print(
         "저장:",
-        EMBEDDINGS_FILE
+        embeddings_file
     )
 
 

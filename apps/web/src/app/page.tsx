@@ -2,7 +2,7 @@ import { ArrowRightIcon } from "@/components/ui/icons";
 import { routes } from "@/lib/routes";
 import { CardLink } from "@/components/ui/Card";
 import { PageWidth } from "@/components/ui/PageWidth";
-import { Wordmark } from "@/components/ui/PixelLogo";
+import { MainLogo } from "@/components/ui/Logo";
 import { TerminalWindow } from "@/components/ui/TerminalWindow";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
@@ -37,7 +37,7 @@ export default function Home() {
             bodyClassName="flex grow flex-col items-center justify-center gap-8 px-5 py-10 font-sans sm:gap-14 sm:px-8 sm:py-16"
           >
             <div className="flex flex-col items-center gap-5 text-center">
-              <Wordmark className="text-[2.75rem] leading-none font-extrabold sm:text-[4rem] lg:text-[4.75rem]" />
+              <MainLogo />
               {/* 태그라인은 셸 주석입니다. 설명이지 명령이 아니라는 뜻이 형식에
                 드러나고, 흔한 마케팅 문장과도 목소리가 달라집니다. */}
               <div className="flex flex-col gap-1 font-mono text-body-sm text-comment">
