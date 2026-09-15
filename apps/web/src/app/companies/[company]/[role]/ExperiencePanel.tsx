@@ -46,7 +46,7 @@ export function ExperiencePanel({
         className="justify-between gap-4 px-4 font-normal"
       >
         <span className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
-          <span className="font-mono text-meta text-accent">$ cat</span>
+          <span className="font-mono text-caption text-accent">$ cat</span>
           <span className="text-body-sm">
             만든 것을 알려주면 맞는 회사까지 찾아드립니다
           </span>
