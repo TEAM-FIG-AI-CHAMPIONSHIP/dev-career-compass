@@ -1,0 +1,44 @@
+{
+  "company": "농심데이터시스템(NDS)",
+  "company_id": "nds",
+  "match_rule": "area_name_tokens",
+  "area_source": "data/research/tech_blog_engineering_focus_29/group4_areas.json",
+  "posting_source": "data/work/job_postings/processed/nds.json",
+  "posting_meta": {
+    "source": "custom",
+    "fetched_at": "2026-09-15T06:37:25.652369+00:00",
+    "raw_active": 0,
+    "active_after_step6": 0,
+    "kakao_excluded": 0,
+    "bleed_dropped": 0
+  },
+  "areas": [
+    {
+      "area_id": "nds-01",
+      "area_name": "AWS 클라우드 인프라 아키텍처 설계 및 운영",
+      "blog_count": 7,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "nds-02",
+      "area_name": "AWS 네트워크 아키텍처 설계",
+      "blog_count": 1,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "nds-03",
+      "area_name": "S3 스토리지 운영 및 비용 최적화",
+      "blog_count": 6,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    }
+  ],
+  "active_postings": 0,
+  "matched_postings": 0,
+  "unmatched_postings": 0
+}

@@ -1,0 +1,73 @@
+{
+  "company": "컬리",
+  "company_id": "kurly",
+  "match_rule": "area_name_tokens",
+  "area_source": "data/research/tech_blog_engineering_focus_29/track_b_pilot_areas.json",
+  "posting_source": "data/work/job_postings/processed/kurly.json",
+  "posting_meta": {
+    "source": "greeting",
+    "fetched_at": "2026-09-11T05:12:04.625880+00:00",
+    "raw_active": 69,
+    "active_after_step6": 68,
+    "kakao_excluded": 0,
+    "bleed_dropped": 1
+  },
+  "areas": [
+    {
+      "area_id": "kurly-01",
+      "area_name": "프론트엔드 빌드 시스템 및 도메인 지식 검색 인프라 개선",
+      "blog_count": 4,
+      "posting_count": 8,
+      "matched_name_tokens": [
+        "개선",
+        "검색",
+        "인프라",
+        "프론트엔드"
+      ],
+      "matched_opening_ids": [
+        151729,
+        198635,
+        213543,
+        215234,
+        215236,
+        216524,
+        216526,
+        235146
+      ]
+    },
+    {
+      "area_id": "kurly-02",
+      "area_name": "물류·검수 자동화 및 이벤트 기반 백엔드 시스템",
+      "blog_count": 5,
+      "posting_count": 6,
+      "matched_name_tokens": [
+        "물류",
+        "백엔드",
+        "자동화"
+      ],
+      "matched_opening_ids": [
+        168026,
+        169289,
+        170984,
+        189997,
+        198009,
+        221169
+      ]
+    },
+    {
+      "area_id": "kurly-03",
+      "area_name": "AI 코딩 에이전트 활용 생산성 워크플로우",
+      "blog_count": 6,
+      "posting_count": 1,
+      "matched_name_tokens": [
+        "AI"
+      ],
+      "matched_opening_ids": [
+        235146
+      ]
+    }
+  ],
+  "active_postings": 68,
+  "matched_postings": 14,
+  "unmatched_postings": 54
+}

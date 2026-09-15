@@ -1,0 +1,44 @@
+{
+  "company": "여기어때",
+  "company_id": "yeogieotdae",
+  "match_rule": "area_name_tokens",
+  "area_source": "data/research/tech_blog_engineering_focus_29/group1_areas.json",
+  "posting_source": "data/work/job_postings/processed/yeogieotdae.json",
+  "posting_meta": {
+    "source": "greeting",
+    "fetched_at": "2026-09-11T05:12:01.959102+00:00",
+    "raw_active": 26,
+    "active_after_step6": 26,
+    "kakao_excluded": 0,
+    "bleed_dropped": 0
+  },
+  "areas": [
+    {
+      "area_id": "yeogi-01",
+      "area_name": "흩어진 기록·로그의 지식화와 비정상 동작 원인 규명",
+      "blog_count": 5,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "yeogi-02",
+      "area_name": "웹·웹뷰 단일 코드베이스 프론트엔드 아키텍처와 도메인 설계",
+      "blog_count": 18,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "yeogi-03",
+      "area_name": "AI 에이전트 기반 개발 자동화와 클라우드 플랫폼 운영",
+      "blog_count": 20,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    }
+  ],
+  "active_postings": 26,
+  "matched_postings": 0,
+  "unmatched_postings": 26
+}

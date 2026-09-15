@@ -1,0 +1,49 @@
+{
+  "company": "버즈빌",
+  "company_id": "buzzvil",
+  "match_rule": "area_name_tokens",
+  "area_source": "data/research/tech_blog_engineering_focus_29/group4_areas.json",
+  "posting_source": "data/work/job_postings/processed/buzzvil.json",
+  "posting_meta": {
+    "source": "greeting",
+    "fetched_at": "2026-09-13T08:43:41.922572+00:00",
+    "raw_active": 12,
+    "active_after_step6": 12,
+    "kakao_excluded": 0,
+    "bleed_dropped": 0
+  },
+  "areas": [
+    {
+      "area_id": "buzzvil-01",
+      "area_name": "AI 에이전트 기반 디자인 시스템",
+      "blog_count": 4,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "buzzvil-02",
+      "area_name": "개발 플랫폼 운영 및 백엔드 아키텍처",
+      "blog_count": 3,
+      "posting_count": 2,
+      "matched_name_tokens": [
+        "백엔드"
+      ],
+      "matched_opening_ids": [
+        215186,
+        233330
+      ]
+    },
+    {
+      "area_id": "buzzvil-03",
+      "area_name": "인프라 성능 최적화 및 비용 절감",
+      "blog_count": 4,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    }
+  ],
+  "active_postings": 12,
+  "matched_postings": 2,
+  "unmatched_postings": 10
+}

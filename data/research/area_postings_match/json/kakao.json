@@ -1,0 +1,90 @@
+{
+  "company": "카카오",
+  "company_id": "kakao",
+  "match_rule": "area_name_tokens",
+  "area_source": "data/research/tech_blog_engineering_focus_29/group1_areas.json",
+  "posting_source": "data/work/job_postings/processed/kakao.json",
+  "posting_meta": {
+    "source": "custom",
+    "fetched_at": "2026-09-11T08:47:49.099921+00:00",
+    "raw_active": 64,
+    "active_after_step6": 23,
+    "kakao_excluded": 41,
+    "bleed_dropped": 0
+  },
+  "areas": [
+    {
+      "area_id": "kakao-01",
+      "area_name": "파운데이션 모델 학습·서빙과 AI 안전성",
+      "blog_count": 16,
+      "posting_count": 3,
+      "matched_name_tokens": [
+        "AI"
+      ],
+      "matched_opening_ids": [
+        "P-14469",
+        "P-14519",
+        "P-14548"
+      ]
+    },
+    {
+      "area_id": "kakao-02",
+      "area_name": "PO/PM 교육 과정 설계",
+      "blog_count": 2,
+      "posting_count": 2,
+      "matched_name_tokens": [
+        "PM",
+        "교육"
+      ],
+      "matched_opening_ids": [
+        "P-14503",
+        "P-14547"
+      ]
+    },
+    {
+      "area_id": "kakao-03",
+      "area_name": "개발자 대상 기술 공유와 문제 출제",
+      "blog_count": 22,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "kakao-04",
+      "area_name": "MySQL 데이터 타입 저장 구조 분석",
+      "blog_count": 2,
+      "posting_count": 1,
+      "matched_name_tokens": [
+        "데이터"
+      ],
+      "matched_opening_ids": [
+        "P-14548"
+      ]
+    },
+    {
+      "area_id": "kakao-05",
+      "area_name": "서비스 백엔드·데이터 인프라 운영과 테스트 자동화",
+      "blog_count": 11,
+      "posting_count": 10,
+      "matched_name_tokens": [
+        "데이터",
+        "서비스"
+      ],
+      "matched_opening_ids": [
+        "P-13744",
+        "P-14503",
+        "P-14527",
+        "P-14536",
+        "P-14539",
+        "P-14540",
+        "P-14541",
+        "P-14542",
+        "P-14544",
+        "P-14548"
+      ]
+    }
+  ],
+  "active_postings": 23,
+  "matched_postings": 13,
+  "unmatched_postings": 10
+}

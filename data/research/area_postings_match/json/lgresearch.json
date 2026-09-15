@@ -1,0 +1,135 @@
+{
+  "company": "LG AI연구원",
+  "company_id": "lgresearch",
+  "match_rule": "area_name_tokens",
+  "area_source": "data/research/tech_blog_engineering_focus_29/group4_areas.json",
+  "posting_source": "data/work/job_postings/processed/lgresearch.json",
+  "posting_meta": {
+    "source": "custom",
+    "fetched_at": "2026-09-15T06:37:19.840860+00:00",
+    "raw_active": 35,
+    "active_after_step6": 35,
+    "kakao_excluded": 0,
+    "bleed_dropped": 0
+  },
+  "areas": [
+    {
+      "area_id": "lg-ai-research-01",
+      "area_name": "파운데이션 모델 및 멀티모달 AI 개발",
+      "blog_count": 7,
+      "posting_count": 34,
+      "matched_name_tokens": [
+        "AI",
+        "모델",
+        "파운데이션"
+      ],
+      "matched_opening_ids": [
+        "143",
+        "161",
+        "164",
+        "165",
+        "176",
+        "178",
+        "184",
+        "223",
+        "239",
+        "250",
+        "252",
+        "254",
+        "258",
+        "259",
+        "268",
+        "284",
+        "286",
+        "298",
+        "306",
+        "308",
+        "312",
+        "316",
+        "317",
+        "318",
+        "319",
+        "321",
+        "323",
+        "325",
+        "326",
+        "328",
+        "329",
+        "66",
+        "72",
+        "98"
+      ]
+    },
+    {
+      "area_id": "lg-ai-research-02",
+      "area_name": "도메인 특화 예측 모델링",
+      "blog_count": 1,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "lg-ai-research-03",
+      "area_name": "Agentic AI 기반 산업 자동화 시스템",
+      "blog_count": 4,
+      "posting_count": 34,
+      "matched_name_tokens": [
+        "AI",
+        "Agentic"
+      ],
+      "matched_opening_ids": [
+        "143",
+        "161",
+        "164",
+        "165",
+        "176",
+        "178",
+        "184",
+        "223",
+        "239",
+        "250",
+        "252",
+        "254",
+        "258",
+        "259",
+        "268",
+        "284",
+        "286",
+        "298",
+        "306",
+        "308",
+        "312",
+        "316",
+        "317",
+        "318",
+        "319",
+        "321",
+        "323",
+        "325",
+        "326",
+        "328",
+        "329",
+        "66",
+        "72",
+        "98"
+      ]
+    },
+    {
+      "area_id": "lg-ai-research-04",
+      "area_name": "LLM 알고리즘 및 서빙 인프라 연구",
+      "blog_count": 4,
+      "posting_count": 3,
+      "matched_name_tokens": [
+        "LLM"
+      ],
+      "matched_opening_ids": [
+        "252",
+        "259",
+        "328"
+      ]
+    }
+  ],
+  "active_postings": 35,
+  "matched_postings": 34,
+  "unmatched_postings": 1
+}

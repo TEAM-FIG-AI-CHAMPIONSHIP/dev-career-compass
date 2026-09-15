@@ -1,0 +1,56 @@
+{
+  "company": "넥스트리",
+  "company_id": "nextree",
+  "match_rule": "area_name_tokens",
+  "area_source": "data/research/tech_blog_engineering_focus_29/group2_areas.json",
+  "posting_source": null,
+  "posting_meta": {
+    "source": null,
+    "fetched_at": null
+  },
+  "areas": [
+    {
+      "area_id": "nextree-01",
+      "area_name": "백엔드 기능 구현 및 시스템 안정성 트러블슈팅",
+      "blog_count": 56,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "nextree-02",
+      "area_name": "프론트엔드 아키텍처, 디자인 시스템 및 모바일/폼 상태관리",
+      "blog_count": 47,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "nextree-03",
+      "area_name": "요구사항 정의 및 품질관리 프로세스",
+      "blog_count": 10,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "nextree-04",
+      "area_name": "AI 에이전트 기반 개발 워크플로우 및 도구 활용",
+      "blog_count": 21,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "nextree-05",
+      "area_name": "인프라 운영 안정성 및 데이터 파이프라인 관리",
+      "blog_count": 12,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    }
+  ],
+  "active_postings": 0,
+  "matched_postings": 0,
+  "unmatched_postings": 0
+}

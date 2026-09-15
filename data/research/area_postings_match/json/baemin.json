@@ -1,0 +1,56 @@
+{
+  "company": "우아한형제들 / 배달의민족",
+  "company_id": "baemin",
+  "match_rule": "area_name_tokens",
+  "area_source": "data/research/tech_blog_areas/final_areas_with_roles.json",
+  "posting_source": null,
+  "posting_meta": {
+    "source": null,
+    "fetched_at": null
+  },
+  "areas": [
+    {
+      "area_id": "baemin-01",
+      "area_name": "AI·LLM 서비스 개발 및 플랫폼화",
+      "blog_count": 11,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "baemin-02",
+      "area_name": "클라이언트·프론트엔드 아키텍처",
+      "blog_count": 6,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "baemin-03",
+      "area_name": "개발 프로세스·품질 자동화",
+      "blog_count": 5,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "baemin-04",
+      "area_name": "데이터·추천·실험 기반 프로덕트 개선",
+      "blog_count": 5,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "baemin-05",
+      "area_name": "백엔드 인프라·시스템 안정성",
+      "blog_count": 9,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    }
+  ],
+  "active_postings": 0,
+  "matched_postings": 0,
+  "unmatched_postings": 0
+}

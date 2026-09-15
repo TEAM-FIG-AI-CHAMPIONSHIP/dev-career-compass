@@ -1,0 +1,63 @@
+{
+  "company": "네이버",
+  "company_id": "naver",
+  "match_rule": "area_name_tokens",
+  "area_source": "data/research/tech_blog_engineering_focus_29/group3_areas.json",
+  "posting_source": "data/work/job_postings/processed/naver.json",
+  "posting_meta": {
+    "source": "custom",
+    "fetched_at": "2026-09-11T06:07:35.101206+00:00",
+    "raw_active": 42,
+    "active_after_step6": 42,
+    "kakao_excluded": 0,
+    "bleed_dropped": 0
+  },
+  "areas": [
+    {
+      "area_id": "naver-01",
+      "area_name": "서비스 클라이언트 성능·품질과 로그 처리 파이프라인",
+      "blog_count": 9,
+      "posting_count": 2,
+      "matched_name_tokens": [
+        "서비스"
+      ],
+      "matched_opening_ids": [
+        30005415,
+        30005420
+      ]
+    },
+    {
+      "area_id": "naver-02",
+      "area_name": "AI 에이전트 개발 환경과 GPU·LLM 서빙 인프라",
+      "blog_count": 17,
+      "posting_count": 3,
+      "matched_name_tokens": [
+        "AI"
+      ],
+      "matched_opening_ids": [
+        30005334,
+        30005402,
+        30005420
+      ]
+    },
+    {
+      "area_id": "naver-03",
+      "area_name": "언어 런타임 동작과 저수준 코드 정합성",
+      "blog_count": 7,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "naver-04",
+      "area_name": "대규모 데이터 파이프라인과 시계열 모니터링 저장소 운영",
+      "blog_count": 8,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    }
+  ],
+  "active_postings": 42,
+  "matched_postings": 4,
+  "unmatched_postings": 38
+}

@@ -1,0 +1,60 @@
+{
+  "company": "kt cloud",
+  "company_id": "ktcloud",
+  "match_rule": "area_name_tokens",
+  "area_source": "data/research/tech_blog_engineering_focus_29/track_b_pilot_areas.json",
+  "posting_source": "data/work/job_postings/processed/ktcloud.json",
+  "posting_meta": {
+    "source": "custom",
+    "fetched_at": "2026-09-15T06:37:22.060267+00:00",
+    "raw_active": 9,
+    "active_after_step6": 9,
+    "kakao_excluded": 0,
+    "bleed_dropped": 0
+  },
+  "areas": [
+    {
+      "area_id": "kt-cloud-01",
+      "area_name": "클라우드 플랫폼 아키텍처 및 운영 안정성",
+      "blog_count": 21,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "kt-cloud-02",
+      "area_name": "쿠버네티스·오픈스택 인프라 운영 및 플랫폼 엔지니어링",
+      "blog_count": 31,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "kt-cloud-03",
+      "area_name": "데이터센터 전력·냉각 인프라",
+      "blog_count": 32,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "kt-cloud-04",
+      "area_name": "AI 서비스화 및 LLM 인프라 최적화",
+      "blog_count": 26,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    },
+    {
+      "area_id": "kt-cloud-05",
+      "area_name": "AI 트렌드 및 조직 뉴스레터(비엔지니어링 성격)",
+      "blog_count": 3,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    }
+  ],
+  "active_postings": 9,
+  "matched_postings": 0,
+  "unmatched_postings": 9
+}

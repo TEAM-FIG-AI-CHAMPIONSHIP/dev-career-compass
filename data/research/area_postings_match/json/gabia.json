@@ -1,0 +1,55 @@
+{
+  "company": "가비아",
+  "company_id": "gabia",
+  "match_rule": "area_name_tokens",
+  "area_source": "data/research/tech_blog_engineering_focus_29/group2_areas.json",
+  "posting_source": "data/work/job_postings/processed/gabia.json",
+  "posting_meta": {
+    "source": "custom",
+    "fetched_at": "2026-09-15T06:37:23.263156+00:00",
+    "raw_active": 6,
+    "active_after_step6": 6,
+    "kakao_excluded": 0,
+    "bleed_dropped": 0
+  },
+  "areas": [
+    {
+      "area_id": "gabia-01",
+      "area_name": "AI/클라우드 인프라 자원 운영",
+      "blog_count": 11,
+      "posting_count": 4,
+      "matched_name_tokens": [
+        "클라우드"
+      ],
+      "matched_opening_ids": [
+        "056wsm",
+        "4bl3zu",
+        "5s4wbz",
+        "itdksa"
+      ]
+    },
+    {
+      "area_id": "gabia-02",
+      "area_name": "보안 위협 탐지 및 인증·정책 대응",
+      "blog_count": 4,
+      "posting_count": 1,
+      "matched_name_tokens": [
+        "보안"
+      ],
+      "matched_opening_ids": [
+        "3h9qgu"
+      ]
+    },
+    {
+      "area_id": "gabia-03",
+      "area_name": "하이웍스 API·AI채팅 연동 자동화",
+      "blog_count": 5,
+      "posting_count": 0,
+      "matched_name_tokens": [],
+      "matched_opening_ids": []
+    }
+  ],
+  "active_postings": 6,
+  "matched_postings": 5,
+  "unmatched_postings": 1
+}
