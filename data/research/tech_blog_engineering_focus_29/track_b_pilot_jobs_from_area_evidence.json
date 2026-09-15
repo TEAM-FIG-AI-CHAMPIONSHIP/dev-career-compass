@@ -1,0 +1,158 @@
+{
+  "source": "data/research/tech_blog_engineering_focus_29/track_b_pilot_areas.json",
+  "threshold": 4,
+  "company_count": 5,
+  "pair_count": 19,
+  "companies": [
+    {
+      "company": "CJ올리브영",
+      "source_file": null,
+      "area_count": 4,
+      "evidence_article_count": 32,
+      "unassigned_count": 12,
+      "jobs": [
+        {
+          "id": "backend",
+          "name": "서버·백엔드",
+          "evidence_count": 18
+        },
+        {
+          "id": "frontend",
+          "name": "웹 프론트엔드",
+          "evidence_count": 4
+        },
+        {
+          "id": "mobile",
+          "name": "모바일",
+          "evidence_count": 6
+        },
+        {
+          "id": "data-ai",
+          "name": "데이터·AI",
+          "evidence_count": 6
+        }
+      ],
+      "job_count": 4,
+      "below_threshold": []
+    },
+    {
+      "company": "NHN Cloud",
+      "source_file": null,
+      "area_count": 5,
+      "evidence_article_count": 72,
+      "unassigned_count": 30,
+      "jobs": [
+        {
+          "id": "backend",
+          "name": "서버·백엔드",
+          "evidence_count": 19
+        },
+        {
+          "id": "frontend",
+          "name": "웹 프론트엔드",
+          "evidence_count": 9
+        },
+        {
+          "id": "mobile",
+          "name": "모바일",
+          "evidence_count": 16
+        },
+        {
+          "id": "data-ai",
+          "name": "데이터·AI",
+          "evidence_count": 11
+        }
+      ],
+      "job_count": 4,
+      "below_threshold": []
+    },
+    {
+      "company": "kt cloud",
+      "source_file": null,
+      "area_count": 5,
+      "evidence_article_count": 113,
+      "unassigned_count": 21,
+      "jobs": [
+        {
+          "id": "backend",
+          "name": "서버·백엔드",
+          "evidence_count": 107
+        },
+        {
+          "id": "frontend",
+          "name": "웹 프론트엔드",
+          "evidence_count": 33
+        },
+        {
+          "id": "mobile",
+          "name": "모바일",
+          "evidence_count": 7
+        },
+        {
+          "id": "data-ai",
+          "name": "데이터·AI",
+          "evidence_count": 106
+        }
+      ],
+      "job_count": 4,
+      "below_threshold": []
+    },
+    {
+      "company": "라인플러스",
+      "source_file": null,
+      "area_count": 5,
+      "evidence_article_count": 70,
+      "unassigned_count": 10,
+      "jobs": [
+        {
+          "id": "backend",
+          "name": "서버·백엔드",
+          "evidence_count": 27
+        },
+        {
+          "id": "frontend",
+          "name": "웹 프론트엔드",
+          "evidence_count": 19
+        },
+        {
+          "id": "mobile",
+          "name": "모바일",
+          "evidence_count": 19
+        },
+        {
+          "id": "data-ai",
+          "name": "데이터·AI",
+          "evidence_count": 29
+        }
+      ],
+      "job_count": 4,
+      "below_threshold": []
+    },
+    {
+      "company": "컬리",
+      "source_file": null,
+      "area_count": 3,
+      "evidence_article_count": 15,
+      "unassigned_count": 3,
+      "jobs": [
+        {
+          "id": "backend",
+          "name": "서버·백엔드",
+          "evidence_count": 6
+        },
+        {
+          "id": "frontend",
+          "name": "웹 프론트엔드",
+          "evidence_count": 10
+        },
+        {
+          "id": "data-ai",
+          "name": "데이터·AI",
+          "evidence_count": 6
+        }
+      ],
+      "job_count": 3,
+      "below_threshold": []
+    }
+  ]
+}

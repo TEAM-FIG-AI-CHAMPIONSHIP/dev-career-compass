@@ -1,0 +1,103 @@
+{
+  "source": "data/research/tech_blog_engineering_focus_29/group1_areas.json",
+  "threshold": 4,
+  "company_count": 3,
+  "pair_count": 10,
+  "companies": [
+    {
+      "company": "쏘카",
+      "source_file": null,
+      "area_count": 3,
+      "evidence_article_count": 9,
+      "unassigned_count": 0,
+      "jobs": [
+        {
+          "id": "backend",
+          "name": "서버·백엔드",
+          "evidence_count": 9
+        },
+        {
+          "id": "frontend",
+          "name": "웹 프론트엔드",
+          "evidence_count": 5
+        },
+        {
+          "id": "data-ai",
+          "name": "데이터·AI",
+          "evidence_count": 6
+        }
+      ],
+      "job_count": 3,
+      "below_threshold": [
+        {
+          "id": "mobile",
+          "name": "모바일",
+          "evidence_count": 3
+        }
+      ]
+    },
+    {
+      "company": "카카오",
+      "source_file": null,
+      "area_count": 5,
+      "evidence_article_count": 53,
+      "unassigned_count": 18,
+      "jobs": [
+        {
+          "id": "backend",
+          "name": "서버·백엔드",
+          "evidence_count": 30
+        },
+        {
+          "id": "frontend",
+          "name": "웹 프론트엔드",
+          "evidence_count": 14
+        },
+        {
+          "id": "mobile",
+          "name": "모바일",
+          "evidence_count": 9
+        },
+        {
+          "id": "data-ai",
+          "name": "데이터·AI",
+          "evidence_count": 45
+        }
+      ],
+      "job_count": 4,
+      "below_threshold": []
+    },
+    {
+      "company": "삼성반도체",
+      "source_file": null,
+      "area_count": 3,
+      "evidence_article_count": 36,
+      "unassigned_count": 5,
+      "jobs": [
+        {
+          "id": "backend",
+          "name": "서버·백엔드",
+          "evidence_count": 24
+        },
+        {
+          "id": "mobile",
+          "name": "모바일",
+          "evidence_count": 13
+        },
+        {
+          "id": "data-ai",
+          "name": "데이터·AI",
+          "evidence_count": 30
+        }
+      ],
+      "job_count": 3,
+      "below_threshold": [
+        {
+          "id": "frontend",
+          "name": "웹 프론트엔드",
+          "evidence_count": 3
+        }
+      ]
+    }
+  ]
+}
