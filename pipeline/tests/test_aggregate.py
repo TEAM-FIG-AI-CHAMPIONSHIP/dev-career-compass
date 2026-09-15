@@ -22,7 +22,6 @@ from career_compass_pipeline.aggregate import (
     build_domains,
 )
 
-
 # ── 테스트용 헬퍼 ─────────────────────────────────────────────────────────────
 
 
