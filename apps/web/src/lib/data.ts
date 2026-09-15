@@ -5,6 +5,7 @@ import type {
   CompanyIndex,
   Company,
   ExperienceCatalog,
+  RoleCatalog,
 } from "@/types/data";
 
 /**
@@ -57,6 +58,18 @@ export function getExperienceCatalog(): ExperienceCatalog {
   return readJson<ExperienceCatalog>(join(DATA_ROOT, "experience.json"));
 }
 
+/**
+ * data/role-catalog.json — 상위 직무와 세부 트랙.
+ *
+ * 트랙은 정보용입니다. 사용자가 여기서 고르지 않습니다 — 설계 문서(§8)는
+ * "세부 트랙은 확인한 경험을 통해 복수로 연결될 수 있다"고 정해 뒀고, 그
+ * 연결은 경험 확인 화면(Claude 판정)이 생긴 뒤의 일입니다. 지금은 이 직무
+ * 안에 어떤 세부 분야가 있는지 미리 보여주는 것까지만 합니다.
+ */
+export function getRoleCatalog(): RoleCatalog {
+  return readJson<RoleCatalog>(join(DATA_ROOT, "role-catalog.json"));
+}
+
 /** 게시된 회사×직무 조합 전부. generateStaticParams 가 씁니다. */
 export function listCombinations(): { company: string; job: string }[] {
   const dir = sourceDir();
@@ -86,7 +99,50 @@ export function getAnalysesForJob(job: string): Analysis[] {
     .filter((a): a is Analysis => a !== null);
 }
 
-/** 게시된 조합이 3곳 이상인 직무만. 회사 수가 많은 순서입니다. */
+/**
+ * 실제로 내용이 있는 분석만 "매칭 가능"으로 셉니다.
+ *
+ * fixture 파일은 빈 껍데기로도 미리 만들어 둡니다 — 영역도 제안도 없이
+ * company/job 이름만 든 파일입니다. `getAnalysis`는 파일이 있으면 그대로
+ * 돌려주므로, 이 함수가 안을 보고 걸러내지 않으면 "8곳 매칭 가능" 같은 숫자가
+ * 실제로 만들 것이 하나도 없는 회사까지 셉니다.
+ */
+/**
+ * 존재하는 직무 전부. 매칭 가능한 회사가 있는지와 무관합니다.
+ *
+ * `index.json`이 회사마다 내건 직무를 구조적으로 정의한 목록입니다 — 분석
+ * 파일에 내용이 있는지 보지 않습니다. `/match/{role}/...` 세 화면과 정적 경로
+ * 생성이 "이 직무가 있는가"를 물을 때는 이 함수를 씁니다. `listJobs()`는 그
+ * 직무를 지금 골라도 되는지(매칭 가능한 회사가 있는지)를 답할 뿐이고, 둘을
+ * 하나로 합쳐 두면 회사 데이터가 아직 없는 직무의 URL 자체가 사라집니다 —
+ * 다른 직무를 개발·확인하는 사람까지 막게 됩니다.
+ */
+export function listRoles(): { slug: string; name: string }[] {
+  const names = new Map<string, string>();
+  for (const company of getCompanyIndex().companies) {
+    for (const job of company.jobs ?? []) {
+      if (!names.has(job.slug)) names.set(job.slug, job.name);
+    }
+  }
+  return [...names.entries()].map(([slug, name]) => ({ slug, name }));
+}
+
+function hasContent(analysis: Analysis): boolean {
+  return (
+    analysis.domains.length > 0 ||
+    analysis.suggestions.new.length > 0 ||
+    analysis.suggestions.deepen.length > 0
+  );
+}
+
+/**
+ * 매칭 가능한 회사가 있는 직무만. 회사 수가 많은 순서입니다.
+ *
+ * 내용 있는 회사가 하나도 없는 직무는 목록에서 뺍니다 — "0곳 매칭 가능"은
+ * 고를 이유가 없는 선택지라 안 보이는 편이 낫습니다. 화면은 이미 빈 결과를
+ * 다루는 방법(`Empty`)을 갖고 있어서, 4개 직무가 모두 빠져도 화면이 깨지지
+ * 않습니다.
+ */
 export function listJobs(): {
   slug: string;
   name: string;
@@ -95,7 +151,7 @@ export function listJobs(): {
   const counts = new Map<string, { name: string; count: number }>();
   for (const { company, job } of listCombinations()) {
     const analysis = getAnalysis(company, job);
-    if (!analysis) continue;
+    if (!analysis || !hasContent(analysis)) continue;
     const prev = counts.get(job);
     counts.set(job, { name: analysis.job.name, count: (prev?.count ?? 0) + 1 });
   }

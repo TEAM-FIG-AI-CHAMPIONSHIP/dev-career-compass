@@ -35,6 +35,34 @@ export type Job = {
 };
 
 /**
+ * data/role-catalog.json
+ *
+ * `packages/contracts/schemas/role-catalog.schema.json` 을 따릅니다 — 이
+ * 파일이 그 계약의 실제 데이터입니다. 상위 직무 네 개는 고정이고, 세부
+ * 트랙은 설계 문서(§8)가 예시로 둔 것을 옮겼습니다.
+ */
+export type RoleCatalog = {
+  schemaVersion: 1;
+  version: number;
+  roles: RoleDefinition[];
+};
+
+export type RoleDefinition = {
+  id: string;
+  label: string;
+  description?: string;
+  status: "draft" | "published" | "deprecated";
+  tracks: TrackDefinition[];
+};
+
+export type TrackDefinition = {
+  id: string;
+  label: string;
+  description?: string;
+  status: "draft" | "published" | "deprecated";
+};
+
+/**
  * 근거 문서 한 건.
  *
  * 본문을 담는 필드가 없습니다. 화면에는 제목·발행일·출처·원문 링크까지만

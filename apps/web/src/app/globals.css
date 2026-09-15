@@ -204,9 +204,6 @@
   --font-mono:
     var(--font-plex-mono), ui-monospace, SFMono-Regular, Menlo,
     "Apple SD Gothic Neo", monospace;
-  /* 워드마크 전용. 다른 곳에 쓰지 않습니다. */
-  --font-display:
-    var(--font-archivo), var(--font-plex-kr), "Apple SD Gothic Neo", sans-serif;
 
   /* 타이포 스케일 — 행간은 한글 기준으로 잡았습니다 */
   --text-display: 1.875rem; /* 30 */
@@ -264,6 +261,40 @@
 
 @utility skeleton {
   animation: bj-pulse 1.6s ease-in-out infinite;
+}
+
+/* 테마별 그림 — 색이 고정된 이미지(로고)는 토큰으로 따라오게 할 수 없어
+   두 장을 다 놓고 한 장을 숨깁니다.
+
+   토큰과 같은 세 상태를 씁니다. 기본은 라이트를 보이고, 시스템이 다크인데
+   라이트를 직접 고르지 않았을 때와 다크를 직접 골랐을 때 뒤집습니다. 한쪽만
+   고치면 시스템 다크와 직접 고른 다크가 달라집니다. */
+.theme-dark-only {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-light-only {
+    display: none;
+  }
+  :root:not([data-theme="light"]) .theme-dark-only {
+    display: block;
+  }
+}
+
+:root[data-theme="dark"] .theme-light-only {
+  display: none;
+}
+:root[data-theme="dark"] .theme-dark-only {
+  display: block;
+}
+
+/* 직접 라이트를 골랐으면 시스템이 다크여도 라이트 그림입니다. */
+:root[data-theme="light"] .theme-light-only {
+  display: block;
+}
+:root[data-theme="light"] .theme-dark-only {
+  display: none;
 }
 
 @keyframes bj-pulse {

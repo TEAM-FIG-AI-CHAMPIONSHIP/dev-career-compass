@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getExperienceCatalog, listJobs } from "@/lib/data";
+import { getExperienceCatalog, listRoles } from "@/lib/data";
 import { ExperienceForm } from "@/components/experience/ExperienceForm";
 import { StepHeader } from "@/components/ui/StepHeader";
 import { CommandLine } from "@/components/ui/CommandLine";
@@ -12,7 +12,7 @@ export const metadata: Metadata = { title: "경험 입력" };
 
 export default async function MatchExperiencePage({ params }: Props) {
   const { role } = await params;
-  const job = listJobs().find((candidate) => candidate.slug === role);
+  const job = listRoles().find((candidate) => candidate.slug === role);
   if (!job) notFound();
 
   const catalog = getExperienceCatalog();
@@ -31,9 +31,6 @@ export default async function MatchExperiencePage({ params }: Props) {
             <p className="text-body text-ink-soft">
               {job.name} 직무에서 맞는 회사를 찾기 위해 만들어 본 것을
               선택해주세요
-            </p>
-            <p className="text-body-sm text-ink-muted">
-              입력값은 브라우저에 저장되며 서버에 전송되지 않습니다.
             </p>
           </div>
 

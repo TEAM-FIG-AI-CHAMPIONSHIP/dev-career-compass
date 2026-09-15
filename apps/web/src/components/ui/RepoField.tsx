@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/cn";
-import { CloseIcon, GithubIcon } from "@/components/ui/icons";
+import { CloseIcon } from "@/components/ui/icons";
 
 /**
  * GitHub 저장소 링크 입력. 선택 항목이고 최대 3개까지 받습니다.
@@ -34,11 +34,26 @@ export function RepoField({
           error ? "border-warn" : "border-line-strong",
         )}
       >
-        <GithubIcon
-          size={16}
-          strokeWidth={1.6}
-          className="shrink-0 text-ink-soft"
+        {/* 손으로 그린 단순화 아이콘 대신 GitHub 공식 마크입니다. 색이
+            고정된 그림이라 라이트·다크 두 장을 두고 CSS 로 한 장을
+            숨깁니다 — `Logo.tsx` 와 같은 방식입니다. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/icons/github-mark-light.svg"
+          alt=""
           aria-hidden="true"
+          width={16}
+          height={16}
+          className="theme-light-only block size-4 shrink-0"
+        />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/icons/github-mark-dark.svg"
+          alt=""
+          aria-hidden="true"
+          width={16}
+          height={16}
+          className="theme-dark-only block size-4 shrink-0"
         />
         <input
           type="text"
