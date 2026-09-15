@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import type { Company } from "@/types/data";
+import { CompanyMark } from "./CompanyMark";
 import {
   ArrowRightIcon,
   BuildingIcon,
@@ -138,22 +138,11 @@ export function CompanyList({ companies }: { companies: Company[] }) {
                         "flex min-h-24 w-full cursor-pointer items-center gap-3 p-4 text-left",
                     })}
                   >
-                    <span
-                      aria-hidden="true"
-                      className="flex size-11 shrink-0 items-center justify-center overflow-hidden rounded-card border border-line bg-surface text-h3 font-semibold text-ink-soft"
-                    >
-                      {company.logoSrc ? (
-                        <Image
-                          src={company.logoSrc}
-                          alt=""
-                          width={32}
-                          height={32}
-                          className="size-8 object-contain"
-                        />
-                      ) : (
-                        (company.mark ?? company.name.slice(0, 1))
-                      )}
-                    </span>
+                    <CompanyMark
+                      name={company.name}
+                      logoSrc={company.logoSrc}
+                      mark={company.mark}
+                    />
 
                     <span className="min-w-0">
                       <span className="block truncate text-h3 font-semibold">
@@ -261,22 +250,12 @@ export function CompanyList({ companies }: { companies: Company[] }) {
           <>
             <p className="font-mono text-meta text-accent">$ selected</p>
             <div className="mt-3 flex items-center gap-3 border-b border-line pb-5">
-              <span
-                aria-hidden="true"
-                className="flex size-12 shrink-0 items-center justify-center overflow-hidden rounded-card border border-line bg-surface text-h3 font-semibold text-ink-soft"
-              >
-                {selectedCompany.logoSrc ? (
-                  <Image
-                    src={selectedCompany.logoSrc}
-                    alt=""
-                    width={36}
-                    height={36}
-                    className="size-9 object-contain"
-                  />
-                ) : (
-                  (selectedCompany.mark ?? selectedCompany.name.slice(0, 1))
-                )}
-              </span>
+              <CompanyMark
+                name={selectedCompany.name}
+                logoSrc={selectedCompany.logoSrc}
+                mark={selectedCompany.mark}
+                size="md"
+              />
               <div className="min-w-0">
                 <h2
                   id="selected-company-title"
