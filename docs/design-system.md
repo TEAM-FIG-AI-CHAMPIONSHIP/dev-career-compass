@@ -111,6 +111,25 @@
 - 진입 화면 로고는 좁은 화면에서 줄입니다(`h-12`). 첫 화면에 스크롤이 생기면
   안 됩니다.
 
+### 외부 브랜드 마크
+
+GitHub 공식 마크가 저장소 입력 칸에 들어갑니다(`public/icons/github-mark-{light,dark}.svg`).
+로고·회사 아이콘과 같은 이유로 **라이트·다크 두 장**입니다 — 전에는 손으로
+그린 단순화 아이콘(`icons.tsx`의 `GithubIcon`)을 썼는데, 실제 브랜드를
+가리키는 자리는 그 브랜드의 공식 마크를 씁니다.
+
+### 회사 아이콘
+
+파일은 `apps/web/public/companies/{slug}.svg`, 연결은 `index.json` 의
+`logoSrc` 입니다. 자세한 규칙은 그 폴더의 `README.md` 에 있습니다.
+
+- 목록 카드와 선택된 회사 패널이 **같은 `CompanyMark` 를 씁니다.** 전에는 같은
+  마크업이 두 곳에 복사돼 있어 한쪽만 고치면 두 자리가 달라졌습니다.
+- 아이콘이 없으면 **이름 첫 글자**로 갑니다. 아이콘 없는 회사는 계속 생기므로
+  이 대체를 지우지 않습니다.
+- 담는 상자는 흰 바탕에 실선 테두리, `rounded-card` 입니다. 아이콘 자체의
+  배경은 있어도 없어도 됩니다.
+
 ### 창 장식
 
 `mac-close` `mac-min` `mac-max` 는 맥 신호등의 실제 색입니다. **제목 표시줄
@@ -186,6 +205,7 @@
 | `ui/StepHeader.tsx`             | 단계 표시                         |
 | `ui/ThemeToggle.tsx`            | 테마 — 진입 화면에만              |
 | `ui/Logo.tsx`                   | 로고                              |
+| `company/CompanyMark.tsx`       | 회사 아이콘                       |
 | `ui/RepoField.tsx`              | 모서리 — 입력 칸 3px              |
 | `ui/state/AnalysisTerminal.tsx` | 움직임 — 커서 깜빡임은 여기 한 곳 |
 | `result/PickedExport.tsx`       | 선택과 내보내기                   |
