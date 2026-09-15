@@ -9,6 +9,7 @@ from pathlib import Path
 from typing import List
 
 from anthropic import Anthropic
+from dateutil import parser as dateutil_parser
 from dateutil.relativedelta import relativedelta
 from pydantic import BaseModel
 
@@ -207,7 +208,19 @@ def is_older_than_cutoff(article):
         )
 
     except (ValueError, TypeError):
-        return False
+        # ISO가 아닌 형식(예: RSS의 RFC822 "Thu, 20 Aug 2026 ...")으로
+        # 저장된 published_at이 조용히 cutoff를 통과하던 문제(#91).
+        # dateutil로 한 번 더 시도하고, 그래도 안 되면 그때만 포기한다.
+        try:
+            published_date = (
+                dateutil_parser.parse(
+                    published_at
+                )
+                .date()
+            )
+
+        except (ValueError, TypeError):
+            return False
 
     cutoff = (
         datetime.now(timezone.utc)
@@ -620,6 +633,13 @@ def load_target_articles(
                 ),
                 "content_hash": (
                     extracted["content_hash"]
+                ),
+                # census(classify_and_gate.py)가 이미 결정적으로
+                # 계산해 둔 직무 목록. 여기서 새로 판단하지 않고
+                # 그대로 가져와 이후 단계(Area 집계)까지 흘려보낸다.
+                "roles": item.get(
+                    "roles",
+                    []
                 )
             }
         )
@@ -725,6 +745,18 @@ def main():
         )
 
         if cached:
+            # roles는 census 쪽에서 계속 갱신될 수 있는 값이라,
+            # engineering_focus 자체는 캐시를 재사용하더라도 roles는
+            # 이번 실행에서 다시 계산된 값으로 덮어써 최신 상태를
+            # 유지한다 (LLM 재호출 없이 값만 갱신, 비용 없음).
+            cached = {
+                **cached,
+                "roles": article.get(
+                    "roles",
+                    []
+                )
+            }
+
             results_by_id[
                 article["article_id"]
             ] = cached
@@ -838,6 +870,10 @@ def main():
                 ),
                 "model": (
                     MODEL_NAME
+                ),
+                "roles": article.get(
+                    "roles",
+                    []
                 )
             }
 

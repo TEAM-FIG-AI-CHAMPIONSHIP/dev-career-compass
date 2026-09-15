@@ -26,6 +26,7 @@ import argparse
 import json
 import sys
 
+from collections import Counter
 from pathlib import Path
 
 import numpy as np
@@ -46,6 +47,7 @@ from build_areas_per_company import (  # noqa: E402
     RESEARCH_DIR,
     TAG_SYSTEM_PROMPT,
     WORK_DIR,
+    assign_area_ids,
     build_cluster_detail,
     diagnose_unassigned,
     load_json,
@@ -387,12 +389,25 @@ def cmd_import_merge(args):
         for m in company_metadata
     }
 
+    roles_by_id = {
+        m["article_id"]: m.get(
+            "roles",
+            []
+        )
+        for m in company_metadata
+    }
+
     for row in membership:
         row["engineering_focus"] = (
             focus_by_id.get(
                 row["article_id"],
                 ""
             )
+        )
+
+        row["roles"] = roles_by_id.get(
+            row["article_id"],
+            []
         )
 
     save_json(
@@ -606,6 +621,19 @@ def cmd_import_tags(args):
             == area.area_name
         ]
 
+        # Area의 roles는 LLM이 새로 판단하지 않는다. 이미 이 Area에
+        # 배정된(임베딩 유사도 기반 deterministic 매칭) evidence
+        # article들의 roles(census가 결정적으로 계산한 값)를
+        # 합집합·집계해서 만든다.
+        role_counter = Counter()
+
+        for m in members:
+            for role in m.get(
+                "roles",
+                []
+            ):
+                role_counter[role] += 1
+
         final_areas.append(
             {
                 "area_name": area.area_name,
@@ -619,6 +647,12 @@ def cmd_import_tags(args):
                     []
                 ),
                 "article_count": len(members),
+                "roles": sorted(
+                    role_counter.keys()
+                ),
+                "role_counts": dict(
+                    role_counter
+                ),
                 "evidence": [
                     {
                         "article_id": (
@@ -628,12 +662,21 @@ def cmd_import_tags(args):
                         "url": m["url"],
                         "similarity": (
                             m["similarity"]
+                        ),
+                        "roles": m.get(
+                            "roles",
+                            []
                         )
                     }
                     for m in members
                 ]
             }
         )
+
+    final_areas = assign_area_ids(
+        company,
+        final_areas
+    )
 
     unassigned_rows = [
         row
@@ -647,6 +690,19 @@ def cmd_import_tags(args):
         company_metadata
     )
 
+    # 회사 전체 roles 집계는 Area 소속과 무관하게 전체 기술글
+    # 기준으로 낸다 — census 1차 게이트와 같은 집계 단위를 유지해야
+    # "이 회사가 이 직무 페이지에 나올 만큼 근거가 있는지"를 Area
+    # 구성과 별개로 판단할 수 있다.
+    company_role_counter = Counter()
+
+    for row in membership:
+        for role in row.get(
+            "roles",
+            []
+        ):
+            company_role_counter[role] += 1
+
     company_result = {
         "company": company,
         "article_count": len(company_metadata),
@@ -654,6 +710,9 @@ def cmd_import_tags(args):
         "unassigned_count": len(unassigned_rows),
         "unassigned_diagnostic": (
             unassigned_diagnostic
+        ),
+        "role_counts": dict(
+            company_role_counter
         )
     }
 

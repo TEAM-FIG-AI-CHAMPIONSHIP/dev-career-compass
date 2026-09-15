@@ -10,12 +10,14 @@ census의 classify_and_gate.classify_article()을 읽기 전용으로 재사용�
 기술글 여부를 판정한다 (LLM 아님, 그쪽 파일은 건드리지 않음).
 """
 
+import calendar
 import hashlib
 import html
 import json
 import re
 import sys
 
+from datetime import datetime, timezone
 from pathlib import Path
 
 import feedparser
@@ -148,6 +150,26 @@ def html_to_text(raw_html):
     ).strip()
 
 
+def rss_entry_published_iso(entry):
+    """feedparser가 RFC822 문자열(예: "Thu, 20 Aug 2026 02:25:36 GMT")을
+    그대로 published_at에 저장하면 datetime.fromisoformat()으로 파싱이
+    안 돼서 extract_engineering_focus.py의 12개월 cutoff 체크가 조용히
+    무시된다(#91). feedparser가 같이 주는 published_parsed(UTC
+    struct_time)를 ISO 문자열로 변환해서 저장한다."""
+
+    parsed = entry.get("published_parsed")
+
+    if not parsed:
+        return entry.get("published", "")
+
+    timestamp = calendar.timegm(parsed)
+
+    return (
+        datetime.fromtimestamp(timestamp, tz=timezone.utc)
+        .isoformat()
+    )
+
+
 def load_naver_d2_articles():
     articles = load_json(
         NAVER_D2_FILE
@@ -243,10 +265,7 @@ def fetch_daangn_articles():
                 ),
                 "url": url,
                 "published_at": (
-                    entry.get(
-                        "published",
-                        ""
-                    )
+                    rss_entry_published_iso(entry)
                 ),
                 "content": content
             }
@@ -357,8 +376,19 @@ def process_company(
         if not classification["is_tech"]:
             continue
 
-        with_hash = {
+        # census 표준 경로를 안 타는 회사라 roles가 원래 없다.
+        # classify_article()이 이미 계산해 둔 값(map_roles() 기반,
+        # 회사명 분기 없는 동일 로직)을 그대로 가져와 붙인다.
+        article_with_roles = {
             **article,
+            "roles": classification.get(
+                "roles",
+                []
+            )
+        }
+
+        with_hash = {
+            **article_with_roles,
             "content_hash": (
                 hashlib.sha256(
                     article["content"]
@@ -373,7 +403,7 @@ def process_company(
             continue
 
         tech_articles.append(
-            article
+            article_with_roles
         )
 
     print(

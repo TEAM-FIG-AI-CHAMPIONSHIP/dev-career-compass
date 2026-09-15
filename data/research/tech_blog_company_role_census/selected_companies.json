@@ -41,24 +41,6 @@
       "final_area_gate": false
     },
     {
-      "name": "kt cloud",
-      "blog_url": "https://tech.ktcloud.com/",
-      "passing_roles": [
-        "서버·백엔드",
-        "데이터·AI"
-      ],
-      "role_counts": {
-        "서버·백엔드": 42,
-        "웹 프론트엔드": 4,
-        "모바일": 0,
-        "데이터·AI": 45
-      },
-      "tech_count": 107,
-      "job_count": 2,
-      "gate": "first_count_only",
-      "final_area_gate": false
-    },
-    {
       "name": "LG AI연구원",
       "blog_url": "https://www.lgresearch.ai/blog",
       "passing_roles": [
@@ -117,19 +99,40 @@
       "final_area_gate": false
     },
     {
-      "name": "가비아",
-      "blog_url": "https://library.gabia.com/tech/",
+      "name": "kt cloud",
+      "blog_url": "https://tech.ktcloud.com/",
       "passing_roles": [
+        "서버·백엔드",
         "데이터·AI"
       ],
       "role_counts": {
-        "서버·백엔드": 7,
-        "웹 프론트엔드": 1,
-        "모바일": 1,
-        "데이터·AI": 8
+        "서버·백엔드": 42,
+        "웹 프론트엔드": 4,
+        "모바일": 0,
+        "데이터·AI": 45
       },
-      "tech_count": 10,
-      "job_count": 1,
+      "tech_count": 107,
+      "job_count": 2,
+      "gate": "first_count_only",
+      "final_area_gate": false
+    },
+    {
+      "name": "가비아",
+      "blog_url": "https://library.gabia.com/tech/",
+      "passing_roles": [
+        "서버·백엔드",
+        "웹 프론트엔드",
+        "모바일",
+        "데이터·AI"
+      ],
+      "role_counts": {
+        "서버·백엔드": 29,
+        "웹 프론트엔드": 9,
+        "모바일": 12,
+        "데이터·AI": 56
+      },
+      "tech_count": 61,
+      "job_count": 4,
       "gate": "first_count_only",
       "final_area_gate": false
     },
@@ -140,12 +143,12 @@
         "데이터·AI"
       ],
       "role_counts": {
-        "서버·백엔드": 3,
-        "웹 프론트엔드": 0,
+        "서버·백엔드": 4,
+        "웹 프론트엔드": 1,
         "모바일": 0,
-        "데이터·AI": 12
+        "데이터·AI": 20
       },
-      "tech_count": 12,
+      "tech_count": 21,
       "job_count": 1,
       "gate": "first_count_only",
       "final_area_gate": false
@@ -173,16 +176,17 @@
       "passing_roles": [
         "서버·백엔드",
         "웹 프론트엔드",
+        "모바일",
         "데이터·AI"
       ],
       "role_counts": {
-        "서버·백엔드": 11,
-        "웹 프론트엔드": 9,
-        "모바일": 5,
-        "데이터·AI": 12
+        "서버·백엔드": 155,
+        "웹 프론트엔드": 105,
+        "모바일": 22,
+        "데이터·AI": 160
       },
-      "tech_count": 14,
-      "job_count": 3,
+      "tech_count": 210,
+      "job_count": 4,
       "gate": "first_count_only",
       "final_area_gate": false
     },
@@ -194,12 +198,12 @@
         "데이터·AI"
       ],
       "role_counts": {
-        "서버·백엔드": 8,
-        "웹 프론트엔드": 2,
+        "서버·백엔드": 22,
+        "웹 프론트엔드": 4,
         "모바일": 0,
-        "데이터·AI": 10
+        "데이터·AI": 24
       },
-      "tech_count": 10,
+      "tech_count": 32,
       "job_count": 2,
       "gate": "first_count_only",
       "final_area_gate": false
@@ -266,17 +270,18 @@
       "blog_url": "https://blog.myrealtrip.com/",
       "passing_roles": [
         "서버·백엔드",
+        "웹 프론트엔드",
         "모바일",
         "데이터·AI"
       ],
       "role_counts": {
-        "서버·백엔드": 12,
-        "웹 프론트엔드": 7,
-        "모바일": 9,
-        "데이터·AI": 17
+        "서버·백엔드": 49,
+        "웹 프론트엔드": 36,
+        "모바일": 27,
+        "데이터·AI": 79
       },
-      "tech_count": 71,
-      "job_count": 3,
+      "tech_count": 102,
+      "job_count": 4,
       "gate": "first_count_only",
       "final_area_gate": false
     },
@@ -323,16 +328,17 @@
       "passing_roles": [
         "서버·백엔드",
         "웹 프론트엔드",
+        "모바일",
         "데이터·AI"
       ],
       "role_counts": {
-        "서버·백엔드": 12,
-        "웹 프론트엔드": 13,
-        "모바일": 7,
-        "데이터·AI": 12
+        "서버·백엔드": 49,
+        "웹 프론트엔드": 52,
+        "모바일": 19,
+        "데이터·AI": 58
       },
-      "tech_count": 20,
-      "job_count": 3,
+      "tech_count": 89,
+      "job_count": 4,
       "gate": "first_count_only",
       "final_area_gate": false
     },
@@ -400,12 +406,12 @@
         "데이터·AI"
       ],
       "role_counts": {
-        "서버·백엔드": 19,
-        "웹 프론트엔드": 10,
+        "서버·백엔드": 24,
+        "웹 프론트엔드": 15,
         "모바일": 1,
-        "데이터·AI": 18
+        "데이터·AI": 23
       },
-      "tech_count": 25,
+      "tech_count": 28,
       "job_count": 3,
       "gate": "first_count_only",
       "final_area_gate": false
@@ -452,16 +458,19 @@
       "name": "업스테이지",
       "blog_url": "https://www.upstage.ai/blog",
       "passing_roles": [
+        "서버·백엔드",
+        "웹 프론트엔드",
+        "모바일",
         "데이터·AI"
       ],
       "role_counts": {
-        "서버·백엔드": 0,
-        "웹 프론트엔드": 2,
-        "모바일": 0,
-        "데이터·AI": 32
+        "서버·백엔드": 35,
+        "웹 프론트엔드": 59,
+        "모바일": 32,
+        "데이터·AI": 153
       },
-      "tech_count": 144,
-      "job_count": 1,
+      "tech_count": 245,
+      "job_count": 4,
       "gate": "first_count_only",
       "final_area_gate": false
     },
@@ -563,16 +572,18 @@
       "blog_url": "https://blog.kakaocloud.com/",
       "passing_roles": [
         "서버·백엔드",
+        "웹 프론트엔드",
+        "모바일",
         "데이터·AI"
       ],
       "role_counts": {
-        "서버·백엔드": 16,
-        "웹 프론트엔드": 1,
-        "모바일": 0,
-        "데이터·AI": 32
+        "서버·백엔드": 100,
+        "웹 프론트엔드": 31,
+        "모바일": 11,
+        "데이터·AI": 143
       },
-      "tech_count": 111,
-      "job_count": 2,
+      "tech_count": 158,
+      "job_count": 4,
       "gate": "first_count_only",
       "final_area_gate": false
     },
@@ -603,12 +614,12 @@
         "데이터·AI"
       ],
       "role_counts": {
-        "서버·백엔드": 9,
-        "웹 프론트엔드": 0,
-        "모바일": 8,
-        "데이터·AI": 9
+        "서버·백엔드": 42,
+        "웹 프론트엔드": 6,
+        "모바일": 31,
+        "데이터·AI": 39
       },
-      "tech_count": 9,
+      "tech_count": 43,
       "job_count": 3,
       "gate": "first_count_only",
       "final_area_gate": false
@@ -617,16 +628,18 @@
       "name": "한컴",
       "blog_url": "https://tech.hancom.com/",
       "passing_roles": [
+        "서버·백엔드",
+        "웹 프론트엔드",
         "데이터·AI"
       ],
       "role_counts": {
-        "서버·백엔드": 6,
-        "웹 프론트엔드": 7,
-        "모바일": 3,
-        "데이터·AI": 9
+        "서버·백엔드": 13,
+        "웹 프론트엔드": 16,
+        "모바일": 4,
+        "데이터·AI": 22
       },
-      "tech_count": 10,
-      "job_count": 1,
+      "tech_count": 24,
+      "job_count": 3,
       "gate": "first_count_only",
       "final_area_gate": false
     }
