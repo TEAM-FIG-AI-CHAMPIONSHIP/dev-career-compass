@@ -34,23 +34,35 @@ export function ReverseResult({
 
   if (!input) {
     return (
-      <div
-        className={cardStyle("cta", {
-          className: "flex flex-col items-start gap-5 p-[26px]",
-        })}
-      >
-        <div className="flex flex-col gap-1.5">
-          <p className="text-[1.03125rem] leading-[1.55] font-semibold">
-            해본 것을 먼저 알려주세요
-          </p>
-          <p className="max-w-2xl text-[0.875rem] leading-[1.75] text-ink-soft">
-            {roleName} 직무를 여는 회사 {companyCount}곳과 대조하려면 지금까지
-            만든 것이 필요합니다. 고른 값은 이 브라우저에만 남습니다.
-          </p>
+      <div className="flex flex-col gap-11">
+        <div
+          className={cardStyle("cta", {
+            className: "flex flex-col items-start gap-5 p-[26px]",
+          })}
+        >
+          <div className="flex flex-col gap-1.5">
+            <p className="text-[1.03125rem] leading-[1.55] font-semibold">
+              해본 것을 먼저 알려주세요
+            </p>
+            <p className="max-w-2xl text-[0.875rem] leading-[1.75] text-ink-soft">
+              {roleName} 직무를 여는 회사 {companyCount}곳과 대조하려면
+              지금까지 만든 것이 필요합니다. 고른 값은 이 브라우저에만
+              남습니다.
+            </p>
+          </div>
+          <ButtonLink variant="primary" href={experienceHref}>
+            내 경험 입력하기
+          </ButtonLink>
         </div>
-        <ButtonLink variant="primary" href={experienceHref}>
-          내 경험 입력하기
-        </ButtonLink>
+
+        <StepNav
+          back={
+            <ButtonLink variant="secondary" href={routes.matchExperience(role)}>
+              <ArrowLeftIcon size={14} strokeWidth={1.7} />
+              경험 입력
+            </ButtonLink>
+          }
+        />
       </div>
     );
   }
