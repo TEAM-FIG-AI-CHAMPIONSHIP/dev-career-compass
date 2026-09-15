@@ -12,6 +12,10 @@ export const metadata: Metadata = {
 /** S1 회사 선택 — 회사를 고르면 그 자리에서 직무가 펼쳐집니다. */
 export default function CompaniesPage() {
   const index = getCompanyIndex();
+  const combinationCount = index.companies.reduce(
+    (total, company) => total + (company.jobs?.length ?? 0),
+    0,
+  );
 
   return (
     <>
@@ -27,6 +31,10 @@ export default function CompaniesPage() {
             <p className="text-body text-pretty text-ink-soft sm:text-base sm:leading-[1.8] lg:whitespace-nowrap">
               회사와 직무를 고르면 그 조직이 반복해서 다루는 문제와, 지금 만들
               다음 프로젝트를 근거와 함께 확인할 수 있습니다.
+            </p>
+            <p className="font-mono text-meta text-accent tabular-nums">
+              근거 기준 통과 · 회사 {index.companies.length}곳 · 회사×직무{" "}
+              {combinationCount}개
             </p>
           </header>
 

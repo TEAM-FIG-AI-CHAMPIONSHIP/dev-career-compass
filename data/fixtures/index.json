@@ -1,889 +1,417 @@
 {
-  "generatedAt": "2026-09-12T00:00:00Z",
+  "generatedAt": "2026-09-15T04:04:31Z",
+  "sourcePullRequests": [96, 100],
+  "threshold": 4,
+  "pairCount": 112,
   "companies": [
     {
       "slug": "oliveyoung",
-      "name": "올리브영",
+      "name": "CJ올리브영",
       "mark": "올",
-      "evidenceCount": 9,
-      "status": "published",
+      "evidenceCount": 32,
+      "status": "collecting",
       "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드",
-          "evidenceCount": 9
-        }
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 18 },
+        { "slug": "frontend", "name": "웹 프론트엔드", "evidenceCount": 4 },
+        { "slug": "mobile", "name": "모바일", "evidenceCount": 6 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 6 }
       ]
     },
     {
-      "slug": "daangn",
-      "name": "당근",
-      "mark": "당",
+      "slug": "gs-retail",
+      "name": "GS리테일",
+      "mark": "GS",
+      "evidenceCount": 10,
       "status": "collecting",
       "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드",
-          "evidenceCount": 12
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI",
-          "evidenceCount": 12
-        },
-        {
-          "slug": "frontend",
-          "name": "웹 프론트엔드",
-          "evidenceCount": 10
-        },
-        {
-          "slug": "mobile",
-          "name": "모바일",
-          "evidenceCount": 6
-        }
-      ],
-      "evidenceCount": 14
-    },
-    {
-      "slug": "toss",
-      "name": "토스",
-      "mark": "토",
-      "status": "collecting",
-      "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드"
-        },
-        {
-          "slug": "frontend",
-          "name": "웹 프론트엔드"
-        },
-        {
-          "slug": "mobile",
-          "name": "모바일"
-        }
-      ]
-    },
-    {
-      "slug": "coupang",
-      "name": "쿠팡",
-      "mark": "쿠",
-      "status": "collecting",
-      "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드"
-        },
-        {
-          "slug": "mobile",
-          "name": "모바일"
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI"
-        }
-      ]
-    },
-    {
-      "slug": "kakao",
-      "name": "카카오",
-      "mark": "카",
-      "status": "collecting",
-      "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드",
-          "evidenceCount": 43
-        },
-        {
-          "slug": "frontend",
-          "name": "웹 프론트엔드",
-          "evidenceCount": 24
-        },
-        {
-          "slug": "mobile",
-          "name": "모바일",
-          "evidenceCount": 14
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI",
-          "evidenceCount": 61
-        }
-      ],
-      "evidenceCount": 71
-    },
-    {
-      "slug": "naver",
-      "name": "네이버",
-      "mark": "네",
-      "status": "collecting",
-      "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드",
-          "evidenceCount": 23
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI",
-          "evidenceCount": 25
-        },
-        {
-          "slug": "frontend",
-          "name": "웹 프론트엔드",
-          "evidenceCount": 14
-        },
-        {
-          "slug": "mobile",
-          "name": "모바일",
-          "evidenceCount": 6
-        }
-      ],
-      "evidenceCount": 49
-    },
-    {
-      "slug": "line-plus",
-      "name": "라인플러스",
-      "mark": "라",
-      "status": "collecting",
-      "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드",
-          "evidenceCount": 27
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI",
-          "evidenceCount": 29
-        },
-        {
-          "slug": "frontend",
-          "name": "웹 프론트엔드",
-          "evidenceCount": 19
-        },
-        {
-          "slug": "mobile",
-          "name": "모바일",
-          "evidenceCount": 19
-        }
-      ],
-      "evidenceCount": 80
-    },
-    {
-      "slug": "baemin",
-      "name": "배달의민족",
-      "mark": "배",
-      "status": "collecting",
-      "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드",
-          "evidenceCount": 28
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI",
-          "evidenceCount": 32
-        },
-        {
-          "slug": "frontend",
-          "name": "웹 프론트엔드",
-          "evidenceCount": 24
-        },
-        {
-          "slug": "mobile",
-          "name": "모바일",
-          "evidenceCount": 8
-        }
-      ],
-      "evidenceCount": 42
-    },
-    {
-      "slug": "toss-bank",
-      "name": "토스뱅크",
-      "mark": "뱅",
-      "status": "collecting",
-      "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드"
-        },
-        {
-          "slug": "mobile",
-          "name": "모바일"
-        }
-      ]
-    },
-    {
-      "slug": "musinsa",
-      "name": "무신사",
-      "mark": "무",
-      "status": "collecting",
-      "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드"
-        },
-        {
-          "slug": "frontend",
-          "name": "웹 프론트엔드"
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI"
-        }
-      ]
-    },
-    {
-      "slug": "kurly",
-      "name": "컬리",
-      "mark": "컬",
-      "status": "collecting",
-      "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드",
-          "evidenceCount": 6
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI",
-          "evidenceCount": 6
-        },
-        {
-          "slug": "frontend",
-          "name": "웹 프론트엔드",
-          "evidenceCount": 10
-        }
-      ],
-      "evidenceCount": 18
-    },
-    {
-      "slug": "ohouse",
-      "name": "오늘의집",
-      "mark": "집",
-      "status": "collecting",
-      "jobs": [
-        {
-          "slug": "frontend",
-          "name": "웹 프론트엔드"
-        },
-        {
-          "slug": "mobile",
-          "name": "모바일"
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI"
-        }
-      ]
-    },
-    {
-      "slug": "dunamu",
-      "name": "두나무",
-      "mark": "두",
-      "status": "collecting",
-      "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드"
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI"
-        }
-      ]
-    },
-    {
-      "slug": "socar",
-      "name": "쏘카",
-      "mark": "쏘",
-      "status": "collecting",
-      "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드",
-          "evidenceCount": 9
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI",
-          "evidenceCount": 6
-        },
-        {
-          "slug": "frontend",
-          "name": "웹 프론트엔드",
-          "evidenceCount": 5
-        },
-        {
-          "slug": "mobile",
-          "name": "모바일",
-          "evidenceCount": 3
-        }
-      ],
-      "evidenceCount": 9
-    },
-    {
-      "slug": "yanolja",
-      "name": "야놀자",
-      "mark": "야",
-      "status": "collecting",
-      "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드"
-        },
-        {
-          "slug": "frontend",
-          "name": "웹 프론트엔드"
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI"
-        }
-      ]
-    },
-    {
-      "slug": "ridi",
-      "name": "리디",
-      "mark": "리",
-      "status": "collecting",
-      "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드"
-        },
-        {
-          "slug": "frontend",
-          "name": "웹 프론트엔드"
-        },
-        {
-          "slug": "mobile",
-          "name": "모바일"
-        }
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 8 },
+        { "slug": "frontend", "name": "웹 프론트엔드", "evidenceCount": 4 },
+        { "slug": "mobile", "name": "모바일", "evidenceCount": 4 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 10 }
       ]
     },
     {
       "slug": "kt-cloud",
       "name": "kt cloud",
-      "mark": "K",
-      "evidenceCount": 134,
+      "mark": "kt",
+      "evidenceCount": 113,
       "status": "collecting",
       "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드",
-          "evidenceCount": 107
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI",
-          "evidenceCount": 106
-        },
-        {
-          "slug": "frontend",
-          "name": "웹 프론트엔드",
-          "evidenceCount": 33
-        },
-        {
-          "slug": "mobile",
-          "name": "모바일",
-          "evidenceCount": 7
-        }
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 107 },
+        { "slug": "frontend", "name": "웹 프론트엔드", "evidenceCount": 33 },
+        { "slug": "mobile", "name": "모바일", "evidenceCount": 7 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 106 }
+      ]
+    },
+    {
+      "slug": "lg-ai-research",
+      "name": "LG AI연구원",
+      "mark": "LG",
+      "evidenceCount": 16,
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 5 },
+        { "slug": "frontend", "name": "웹 프론트엔드", "evidenceCount": 6 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 16 }
       ]
     },
     {
       "slug": "nhn-cloud",
       "name": "NHN Cloud",
       "mark": "N",
-      "evidenceCount": 102,
+      "evidenceCount": 72,
       "status": "collecting",
       "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드",
-          "evidenceCount": 19
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI",
-          "evidenceCount": 11
-        },
-        {
-          "slug": "frontend",
-          "name": "웹 프론트엔드",
-          "evidenceCount": 9
-        },
-        {
-          "slug": "mobile",
-          "name": "모바일",
-          "evidenceCount": 16
-        }
-      ]
-    },
-    {
-      "slug": "channel",
-      "name": "채널톡",
-      "mark": "채",
-      "evidenceCount": 52,
-      "status": "collecting",
-      "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드",
-          "evidenceCount": 28
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI",
-          "evidenceCount": 40
-        },
-        {
-          "slug": "frontend",
-          "name": "웹 프론트엔드",
-          "evidenceCount": 29
-        },
-        {
-          "slug": "mobile",
-          "name": "모바일",
-          "evidenceCount": 7
-        }
-      ]
-    },
-    {
-      "slug": "afinit",
-      "name": "어피닛",
-      "mark": "어",
-      "evidenceCount": 30,
-      "status": "collecting",
-      "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드",
-          "evidenceCount": 16
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI",
-          "evidenceCount": 25
-        },
-        {
-          "slug": "frontend",
-          "name": "웹 프론트엔드",
-          "evidenceCount": 11
-        },
-        {
-          "slug": "mobile",
-          "name": "모바일",
-          "evidenceCount": 6
-        }
-      ]
-    },
-    {
-      "slug": "megazone",
-      "name": "메가존클라우드",
-      "mark": "메",
-      "evidenceCount": 23,
-      "status": "collecting",
-      "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드",
-          "evidenceCount": 15
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI",
-          "evidenceCount": 16
-        },
-        {
-          "slug": "frontend",
-          "name": "웹 프론트엔드",
-          "evidenceCount": 10
-        }
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 19 },
+        { "slug": "frontend", "name": "웹 프론트엔드", "evidenceCount": 9 },
+        { "slug": "mobile", "name": "모바일", "evidenceCount": 16 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 11 }
       ]
     },
     {
       "slug": "sk-planet",
       "name": "SK플래닛",
-      "mark": "S",
+      "mark": "SK",
       "evidenceCount": 13,
       "status": "collecting",
       "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드",
-          "evidenceCount": 6
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI",
-          "evidenceCount": 11
-        },
-        {
-          "slug": "frontend",
-          "name": "웹 프론트엔드",
-          "evidenceCount": 7
-        },
-        {
-          "slug": "mobile",
-          "name": "모바일",
-          "evidenceCount": 3
-        }
-      ]
-    },
-    {
-      "slug": "gs-retail",
-      "name": "GS리테일",
-      "mark": "G",
-      "evidenceCount": 11,
-      "status": "collecting",
-      "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드",
-          "evidenceCount": 8
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI",
-          "evidenceCount": 10
-        },
-        {
-          "slug": "frontend",
-          "name": "웹 프론트엔드",
-          "evidenceCount": 4
-        },
-        {
-          "slug": "mobile",
-          "name": "모바일",
-          "evidenceCount": 4
-        }
-      ]
-    },
-    {
-      "slug": "inflab",
-      "name": "인프랩",
-      "mark": "인",
-      "evidenceCount": 11,
-      "status": "collecting",
-      "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드",
-          "evidenceCount": 11
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI",
-          "evidenceCount": 8
-        },
-        {
-          "slug": "frontend",
-          "name": "웹 프론트엔드",
-          "evidenceCount": 8
-        },
-        {
-          "slug": "mobile",
-          "name": "모바일",
-          "evidenceCount": 3
-        }
-      ]
-    },
-    {
-      "slug": "upstage",
-      "name": "업스테이지",
-      "mark": "업",
-      "status": "collecting",
-      "jobs": [
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI"
-        }
-      ]
-    },
-    {
-      "slug": "rapportlabs",
-      "name": "라포랩스",
-      "mark": "라",
-      "status": "collecting",
-      "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드"
-        },
-        {
-          "slug": "frontend",
-          "name": "웹 프론트엔드"
-        },
-        {
-          "slug": "mobile",
-          "name": "모바일"
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI"
-        }
-      ]
-    },
-    {
-      "slug": "nextree",
-      "name": "넥스트리",
-      "mark": "넥",
-      "status": "collecting",
-      "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드"
-        },
-        {
-          "slug": "frontend",
-          "name": "웹 프론트엔드"
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI"
-        }
-      ]
-    },
-    {
-      "slug": "goorm",
-      "name": "구름",
-      "mark": "구",
-      "status": "collecting",
-      "jobs": [
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI"
-        }
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 6 },
+        { "slug": "frontend", "name": "웹 프론트엔드", "evidenceCount": 7 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 11 }
       ]
     },
     {
       "slug": "gabia",
       "name": "가비아",
       "mark": "가",
+      "evidenceCount": 15,
       "status": "collecting",
       "jobs": [
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI"
-        }
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 14 },
+        { "slug": "frontend", "name": "웹 프론트엔드", "evidenceCount": 4 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 13 }
       ]
     },
     {
-      "slug": "hancom",
-      "name": "한컴",
-      "mark": "한",
+      "slug": "naver",
+      "name": "네이버",
+      "mark": "네",
+      "evidenceCount": 41,
       "status": "collecting",
       "jobs": [
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI"
-        }
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 23 },
+        { "slug": "frontend", "name": "웹 프론트엔드", "evidenceCount": 14 },
+        { "slug": "mobile", "name": "모바일", "evidenceCount": 6 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 25 }
       ]
     },
     {
-      "slug": "com2us",
-      "name": "컴투스",
-      "mark": "컴",
+      "slug": "nextree",
+      "name": "넥스트리",
+      "mark": "넥",
+      "evidenceCount": 129,
       "status": "collecting",
       "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드"
-        },
-        {
-          "slug": "mobile",
-          "name": "모바일"
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI"
-        }
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 102 },
+        { "slug": "frontend", "name": "웹 프론트엔드", "evidenceCount": 70 },
+        { "slug": "mobile", "name": "모바일", "evidenceCount": 16 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 102 }
       ]
     },
     {
-      "slug": "lg-ai-research",
-      "name": "LG AI연구원",
-      "mark": "L",
+      "slug": "nds",
+      "name": "농심데이터시스템(NDS)",
+      "mark": "N",
+      "evidenceCount": 14,
       "status": "collecting",
       "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드"
-        },
-        {
-          "slug": "frontend",
-          "name": "웹 프론트엔드"
-        },
-        {
-          "slug": "mobile",
-          "name": "모바일"
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI"
-        }
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 11 },
+        { "slug": "frontend", "name": "웹 프론트엔드", "evidenceCount": 4 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 9 }
+      ]
+    },
+    {
+      "slug": "daangn",
+      "name": "당근마켓 / 당근",
+      "mark": "당",
+      "evidenceCount": 14,
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 12 },
+        { "slug": "frontend", "name": "웹 프론트엔드", "evidenceCount": 10 },
+        { "slug": "mobile", "name": "모바일", "evidenceCount": 6 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 12 }
+      ]
+    },
+    {
+      "slug": "line-plus",
+      "name": "라인플러스",
+      "mark": "라",
+      "evidenceCount": 70,
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 27 },
+        { "slug": "frontend", "name": "웹 프론트엔드", "evidenceCount": 19 },
+        { "slug": "mobile", "name": "모바일", "evidenceCount": 19 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 29 }
+      ]
+    },
+    {
+      "slug": "rapportlabs",
+      "name": "라포랩스 / 퀸",
+      "mark": "라",
+      "evidenceCount": 8,
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 5 },
+        { "slug": "frontend", "name": "웹 프론트엔드", "evidenceCount": 5 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 6 }
       ]
     },
     {
       "slug": "myrealtrip",
       "name": "마이리얼트립",
       "mark": "마",
+      "evidenceCount": 36,
       "status": "collecting",
       "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드"
-        },
-        {
-          "slug": "mobile",
-          "name": "모바일"
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI"
-        }
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 27 },
+        { "slug": "frontend", "name": "웹 프론트엔드", "evidenceCount": 11 },
+        { "slug": "mobile", "name": "모바일", "evidenceCount": 9 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 35 }
       ]
     },
     {
-      "slug": "kakao-cloud",
-      "name": "카카오클라우드",
-      "mark": "클",
+      "slug": "megazone",
+      "name": "메가존클라우드",
+      "mark": "메",
+      "evidenceCount": 19,
       "status": "collecting",
       "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드"
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI"
-        }
-      ]
-    },
-    {
-      "slug": "imweb",
-      "name": "아임웹",
-      "mark": "아",
-      "status": "collecting",
-      "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드"
-        },
-        {
-          "slug": "frontend",
-          "name": "웹 프론트엔드"
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI"
-        }
-      ]
-    },
-    {
-      "slug": "samsung",
-      "name": "삼성",
-      "mark": "삼",
-      "status": "collecting",
-      "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드"
-        },
-        {
-          "slug": "frontend",
-          "name": "웹 프론트엔드"
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI"
-        }
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 15 },
+        { "slug": "frontend", "name": "웹 프론트엔드", "evidenceCount": 10 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 16 }
       ]
     },
     {
       "slug": "buzzvil",
       "name": "버즈빌",
       "mark": "버",
+      "evidenceCount": 11,
       "status": "collecting",
       "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드"
-        },
-        {
-          "slug": "frontend",
-          "name": "웹 프론트엔드"
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI"
-        }
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 9 },
+        { "slug": "frontend", "name": "웹 프론트엔드", "evidenceCount": 8 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 11 }
+      ]
+    },
+    {
+      "slug": "toss",
+      "name": "비바리퍼블리카 / 토스",
+      "mark": "토",
+      "evidenceCount": 49,
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 40 },
+        { "slug": "frontend", "name": "웹 프론트엔드", "evidenceCount": 29 },
+        { "slug": "mobile", "name": "모바일", "evidenceCount": 10 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 41 }
+      ]
+    },
+    {
+      "slug": "samsung",
+      "name": "삼성",
+      "mark": "삼",
+      "evidenceCount": 19,
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 13 },
+        { "slug": "frontend", "name": "웹 프론트엔드", "evidenceCount": 6 },
+        { "slug": "mobile", "name": "모바일", "evidenceCount": 4 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 18 }
+      ]
+    },
+    {
+      "slug": "samsung-semiconductor",
+      "name": "삼성반도체",
+      "mark": "반",
+      "evidenceCount": 36,
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 24 },
+        { "slug": "mobile", "name": "모바일", "evidenceCount": 13 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 30 }
+      ]
+    },
+    {
+      "slug": "socar",
+      "name": "쏘카",
+      "mark": "쏘",
+      "evidenceCount": 9,
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 9 },
+        { "slug": "frontend", "name": "웹 프론트엔드", "evidenceCount": 5 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 6 }
+      ]
+    },
+    {
+      "slug": "imweb",
+      "name": "아임웹",
+      "mark": "아",
+      "evidenceCount": 20,
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 20 },
+        { "slug": "frontend", "name": "웹 프론트엔드", "evidenceCount": 10 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 19 }
       ]
     },
     {
       "slug": "ahnlab-cloudmate",
       "name": "안랩클라우드메이트",
       "mark": "안",
+      "evidenceCount": 9,
       "status": "collecting",
       "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드"
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI"
-        }
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 9 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 8 }
       ]
     },
     {
-      "slug": "nds",
-      "name": "농심데이터시스템",
-      "mark": "농",
+      "slug": "afinit",
+      "name": "어피닛",
+      "mark": "어",
+      "evidenceCount": 26,
       "status": "collecting",
       "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드"
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI"
-        }
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 16 },
+        { "slug": "frontend", "name": "웹 프론트엔드", "evidenceCount": 11 },
+        { "slug": "mobile", "name": "모바일", "evidenceCount": 6 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 25 }
       ]
     },
     {
-      "slug": "samsung-semiconductor",
-      "name": "삼성반도체",
-      "mark": "삼",
+      "slug": "upstage",
+      "name": "업스테이지",
+      "mark": "업",
+      "evidenceCount": 12,
       "status": "collecting",
       "jobs": [
-        {
-          "slug": "backend",
-          "name": "서버·백엔드",
-          "evidenceCount": 26
-        },
-        {
-          "slug": "data-ai",
-          "name": "데이터·AI",
-          "evidenceCount": 35
-        },
-        {
-          "slug": "frontend",
-          "name": "웹 프론트엔드",
-          "evidenceCount": 4
-        },
-        {
-          "slug": "mobile",
-          "name": "모바일",
-          "evidenceCount": 14
-        }
-      ],
-      "evidenceCount": 41
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 12 }
+      ]
+    },
+    {
+      "slug": "yeogieotdae",
+      "name": "여기어때",
+      "mark": "여",
+      "evidenceCount": 43,
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 14 },
+        { "slug": "frontend", "name": "웹 프론트엔드", "evidenceCount": 17 },
+        { "slug": "mobile", "name": "모바일", "evidenceCount": 4 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 13 }
+      ]
+    },
+    {
+      "slug": "baemin",
+      "name": "우아한형제들 / 배달의민족",
+      "mark": "배",
+      "evidenceCount": 36,
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 28 },
+        { "slug": "frontend", "name": "웹 프론트엔드", "evidenceCount": 24 },
+        { "slug": "mobile", "name": "모바일", "evidenceCount": 8 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 32 }
+      ]
+    },
+    {
+      "slug": "inflab",
+      "name": "인프랩 / 인프런",
+      "mark": "인",
+      "evidenceCount": 11,
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 11 },
+        { "slug": "frontend", "name": "웹 프론트엔드", "evidenceCount": 8 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 8 }
+      ]
+    },
+    {
+      "slug": "channel",
+      "name": "채널코퍼레이션 / 채널톡",
+      "mark": "채",
+      "evidenceCount": 46,
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 28 },
+        { "slug": "frontend", "name": "웹 프론트엔드", "evidenceCount": 29 },
+        { "slug": "mobile", "name": "모바일", "evidenceCount": 7 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 40 }
+      ]
+    },
+    {
+      "slug": "kakao",
+      "name": "카카오",
+      "mark": "카",
+      "evidenceCount": 53,
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 30 },
+        { "slug": "frontend", "name": "웹 프론트엔드", "evidenceCount": 14 },
+        { "slug": "mobile", "name": "모바일", "evidenceCount": 9 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 45 }
+      ]
+    },
+    {
+      "slug": "kakao-cloud",
+      "name": "카카오엔터프라이즈 / 카카오클라우드",
+      "mark": "K",
+      "evidenceCount": 14,
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 14 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 14 }
+      ]
+    },
+    {
+      "slug": "kurly",
+      "name": "컬리",
+      "mark": "컬",
+      "evidenceCount": 15,
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 6 },
+        { "slug": "frontend", "name": "웹 프론트엔드", "evidenceCount": 10 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 6 }
+      ]
+    },
+    {
+      "slug": "com2us",
+      "name": "컴투스",
+      "mark": "컴",
+      "evidenceCount": 24,
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 23 },
+        { "slug": "frontend", "name": "웹 프론트엔드", "evidenceCount": 6 },
+        { "slug": "mobile", "name": "모바일", "evidenceCount": 15 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 21 }
+      ]
+    },
+    {
+      "slug": "hancom",
+      "name": "한컴",
+      "mark": "한",
+      "evidenceCount": 17,
+      "status": "collecting",
+      "jobs": [
+        { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 9 },
+        { "slug": "frontend", "name": "웹 프론트엔드", "evidenceCount": 13 },
+        { "slug": "data-ai", "name": "데이터·AI", "evidenceCount": 15 }
+      ]
     }
   ]
 }

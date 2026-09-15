@@ -9,6 +9,12 @@
 /** data/index.json */
 export type CompanyIndex = {
   generatedAt: string;
+  /** 이 회사×직무 범위를 확정한 PR 번호. fixture 인덱스의 추적용 메타데이터입니다. */
+  sourcePullRequests?: number[];
+  /** 직무를 노출하기 위한 회사별 최소 evidence 글 수. */
+  threshold?: number;
+  /** 회사×직무 조합 총수. 화면에서는 companies 로 다시 계산해 검증합니다. */
+  pairCount?: number;
   companies: Company[];
 };
 
