@@ -7,12 +7,11 @@
  - source_by_id / published_at_by_id 오버라이드
  - 빈 입력 처리
  - 입력 순서 유지
- - build_domains evidenceIds와 id 일관성
+ - evidence id 형식 일관성 (ev-{article_id} 규칙)
 """
 
 from __future__ import annotations
 
-from career_compass_pipeline.aggregate import build_domains
 from career_compass_pipeline.evidence import Evidence, build_evidence_catalog
 
 # ── 테스트용 헬퍼 ─────────────────────────────────────────────────────────────
@@ -273,39 +272,43 @@ def test_published_at_field_present_but_not_sorted() -> None:
     assert catalog[1]["publishedAt"] == "2026-09-01"
 
 
-# ── build_domains evidenceIds와 id 일관성 ─────────────────────────────────────
+# ── evidence id 형식 일관성 ────────────────────────────────────────────────────
 
 
-def test_evidence_ids_consistent_with_build_domains() -> None:
-    """build_domains의 evidenceIds와 build_evidence_catalog의 id가 1:1 매핑됩니다."""
+def test_evidence_ids_follow_ev_prefix_convention() -> None:
+    """evidence id는 'ev-{article_id}' 형식을 따릅니다.
+
+    build_domains(feat/domains-aggregate)의 evidenceIds도 같은 규칙을 사용합니다.
+    두 브랜치가 머지된 뒤 통합 테스트에서 교차 검증을 추가할 수 있습니다.
+    """
     areas = [
         _area(
             id="co-01",
             evidence=[
                 _ev("a1", ["backend"]),
                 _ev("a2", ["backend"]),
-                _ev("a3", ["frontend"]),  # backend 아님
+                _ev("a3", ["frontend"]),  # backend 아님 → 제외
             ],
         ),
         _area(
             id="co-02",
             evidence=[
                 _ev("b1", ["backend"]),
-                _ev("a1", ["backend"]),   # 중복 (co-01에도 있음)
+                _ev("a1", ["backend"]),   # 중복 (co-01에도 있음) → 한 번만
             ],
         ),
     ]
-    domains = build_domains(areas, "backend")
     catalog = build_evidence_catalog(areas, "backend")
-
-    # domains의 모든 evidenceId가 catalog에 존재해야 함
     catalog_ids = {e["id"] for e in catalog}
-    for domain in domains:
-        for eid in domain["evidenceIds"]:
-            assert eid in catalog_ids, f"{eid} not in catalog"
 
-    # catalog에 frontend-only 글은 없어야 함
+    # 예상 id: a1, a2, b1 (a1 중복 제거, a3 role 불일치 제외)
+    assert catalog_ids == {"ev-a1", "ev-a2", "ev-b1"}
+
+    # frontend-only 글은 포함되지 않음
     assert "ev-a3" not in catalog_ids
+
+    # 모든 id가 ev- 접두사를 가짐
+    assert all(e["id"].startswith("ev-") for e in catalog)
 
 
 # ── 실제 데이터 모양 시뮬레이션 ──────────────────────────────────────────────
