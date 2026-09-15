@@ -33,11 +33,6 @@ export default async function MatchRepositoryPage({ params }: Props) {
               키워드는 참고용이며, 다음 단계인 경험 입력에서 직접 고른 항목이
               우선합니다.
             </p>
-            <p className="text-body-sm text-ink-muted">
-              저장소 원문은 서버에 저장하지 않고, 공개 저장소만 조회합니다.
-              비공개 저장소이거나 신호를 찾지 못하면 안내 후 그 저장소만
-              건너뛰고 계속 진행합니다.
-            </p>
           </div>
 
           <RepositoryForm role={role} catalogVersion={catalog.version} />

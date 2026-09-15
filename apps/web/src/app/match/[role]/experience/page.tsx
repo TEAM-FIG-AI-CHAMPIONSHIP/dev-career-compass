@@ -32,9 +32,6 @@ export default async function MatchExperiencePage({ params }: Props) {
               {job.name} 직무에서 맞는 회사를 찾기 위해 만들어 본 것을
               선택해주세요
             </p>
-            <p className="text-body-sm text-ink-muted">
-              입력값은 브라우저에 저장되며 서버에 전송되지 않습니다.
-            </p>
           </div>
 
           <ExperienceForm catalog={catalog} role={role} />
