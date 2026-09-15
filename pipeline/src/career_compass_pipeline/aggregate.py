@@ -141,8 +141,8 @@ def build_domains(
         # 3) 같은 article_id 중복 제거 (순서 유지)
         deduped = _deduplicate_evidence(role_evidence)
 
-        # 4) 출처별 건수 집계
-        counts: dict[str, int] = {}
+        # 4) 출처별 건수 집계 — blog는 항상 포함 (EvidenceCounts.blog는 required)
+        counts: dict[str, int] = {"blog": 0}
         for ev in deduped:
             aid: str = ev.get("article_id", "")
             source = source_by_id.get(aid, _DEFAULT_SOURCE)

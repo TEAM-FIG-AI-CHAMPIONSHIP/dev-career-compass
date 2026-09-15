@@ -226,8 +226,8 @@ def test_duplicate_keeps_first_occurrence() -> None:
     # article_id → source_by_id 매핑은 article_id 기준이라
     # 중복 제거 후 남은 하나에만 적용된다.
     domains = build_domains(areas, "backend", source_by_id=source_by_id)
-    # "dup"이 1건, source="job"
-    assert domains[0]["counts"] == {"job": 1}
+    # "dup"이 1건, source="job". blog는 항상 0으로 포함됨.
+    assert domains[0]["counts"] == {"blog": 0, "job": 1}
 
 
 # ── build_domains: source_by_id (출처 지정) ───────────────────────────────────
@@ -268,6 +268,29 @@ def test_source_by_id_none_behaves_same_as_empty_dict() -> None:
     assert result_none == result_empty
 
 
+def test_blog_key_always_present_even_if_all_evidence_is_job() -> None:
+    """EvidenceCounts.blog는 required — job 데이터만 있어도 blog 키가 존재해야 합니다.
+
+    DomainChips.tsx가 domain.counts.blog를 직접 참조하므로,
+    blog 키가 없으면 화면에 'undefined'가 찍힙니다.
+    """
+    areas = [_area(evidence=[_ev("j1", ["backend"]), _ev("j2", ["backend"])])]
+    domains = build_domains(
+        areas, "backend", source_by_id={"j1": "job", "j2": "job"}
+    )
+    assert len(domains) == 1
+    assert "blog" in domains[0]["counts"], "blog 키가 항상 포함되어야 합니다"
+    assert domains[0]["counts"]["blog"] == 0
+    assert domains[0]["counts"]["job"] == 2
+
+
+def test_blog_key_zero_when_no_blog_evidence() -> None:
+    """blog 근거가 0건이면 counts["blog"] == 0."""
+    areas = [_area(evidence=[_ev("j1", ["backend"])])]
+    domains = build_domains(areas, "backend", source_by_id={"j1": "job"})
+    assert domains[0]["counts"] == {"blog": 0, "job": 1}
+
+
 # ── build_domains: min_evidence 임계값 ───────────────────────────────────────
 
 
@@ -301,7 +324,7 @@ def test_min_evidence_0_includes_area_with_no_role_evidence() -> None:
     domains = build_domains(areas, "backend", min_evidence=0)
     assert len(domains) == 1
     assert domains[0]["evidenceIds"] == []
-    assert domains[0]["counts"] == {}
+    assert domains[0]["counts"] == {"blog": 0}  # 근거가 없어도 blog 키는 항상 포함
 
 
 # ── build_domains: 여러 Area ──────────────────────────────────────────────────
