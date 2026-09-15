@@ -1,8 +1,8 @@
 {
   "source": "data/research/tech_blog_engineering_focus_29/group1_areas.json",
   "threshold": 4,
-  "company_count": 3,
-  "pair_count": 10,
+  "company_count": 4,
+  "pair_count": 14,
   "companies": [
     {
       "company": "쏘카",
@@ -98,6 +98,37 @@
           "evidence_count": 3
         }
       ]
+    },
+    {
+      "company": "여기어때",
+      "source_file": "data/work/tech_blog_engineering_focus_29/areas_per_company_group24/여기어때.json",
+      "area_count": 3,
+      "evidence_article_count": 43,
+      "unassigned_count": 0,
+      "jobs": [
+        {
+          "id": "backend",
+          "name": "서버·백엔드",
+          "evidence_count": 14
+        },
+        {
+          "id": "frontend",
+          "name": "웹 프론트엔드",
+          "evidence_count": 17
+        },
+        {
+          "id": "mobile",
+          "name": "모바일",
+          "evidence_count": 4
+        },
+        {
+          "id": "data-ai",
+          "name": "데이터·AI",
+          "evidence_count": 13
+        }
+      ],
+      "job_count": 4,
+      "below_threshold": []
     }
   ]
 }

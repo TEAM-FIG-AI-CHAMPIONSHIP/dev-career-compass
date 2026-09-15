@@ -3,9 +3,10 @@
 Area 파이프라인(`build_areas_per_company.py`, `manual_area_pipeline.py`)이
 Area `id`를 만들 때 쓰는 회사명 → 영문 slug 매핑이다.
 
-그룹2·4 16곳 결과(수기 필터 573건, `--output-suffix group24`)는
-`data/research/tech_blog_engineering_focus_29/group24_areas.md` 다.
-기존 6곳·그룹3 임베딩을 덮지 않으려면 suffix를 반드시 지정한다.
+그룹2 8곳 결과는 `data/research/tech_blog_engineering_focus_29/group2_areas.md`,
+그룹4 8곳은 `group4_areas.md` 다. 파이프라인 중간 산출은 예전에
+`--output-suffix group24`로 묶여 있다. 기존 6곳·그룹3 임베딩을 덮지
+않으려면 suffix를 반드시 지정한다.
 
 ## Area id 스키마
 

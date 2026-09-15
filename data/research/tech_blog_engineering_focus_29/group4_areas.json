@@ -1,0 +1,2334 @@
+[
+  {
+    "company": "LG AI연구원",
+    "article_count": 17,
+    "areas": [
+      {
+        "area_name": "파운데이션 모델 및 멀티모달 AI 개발",
+        "area_description": "표 데이터, 비전-언어, 대규모 언어모델 등 다양한 모달리티의 자체 파운데이션 모델(EXAONE 계열)을 사전학습·사후학습 구조부터 설계하고, 이를 의료·금융 등 특정 도메인에 적용하는 문제를 다룬다.",
+        "rationale": "클러스터 1의 6개 게시글 중 4개(EXAONE Tabular, VinQA, EXAONE 4.5, K-EXAONE)는 LG AI연구원의 자체 파운데이션 모델 아키텍처·학습 방법론이라는 공통 주제를 다룬다. 나머지 2개(MOIRA, EXAONE BI)는 도메인 적용 사례로 성격이 다르지만, 다른 클러스터(2,3,4)의 산업 자동화·LLM 인프라·리튬 가격 예측 주제와도 엔지니어링 초점이 겹치지 않아 클러스터를 쪼개거나 옮기지 않고 원형을 유지했다.",
+        "note": "MOIRA(알츠하이머 예측)와 EXAONE BI(기업분석 에이전트)는 파운데이션 모델 자체 개발이 아닌 도메인 적용 사례로, 클러스터 내에서 이질적인 게시글이다.",
+        "keywords": [
+          "EXAONE",
+          "멀티모달",
+          "MoE(Mixture-of-Experts)",
+          "AGAPO 강화학습",
+          "Vision Language Model",
+          "멀티 에이전트 파이프라인",
+          "구조적 인과모형(SCM)",
+          "spatial biology"
+        ],
+        "article_count": 7,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend"
+        ],
+        "role_counts": {
+          "frontend": 2,
+          "data-ai": 7,
+          "backend": 2
+        },
+        "evidence": [
+          {
+            "article_id": "fd2d00a4481851e1",
+            "title": "현장 데이터의 가치를 재발견하다, ‘EXAONE Tabular’ 공개",
+            "url": "https://www.lgresearch.ai/blog/view?seq=696",
+            "similarity": 0.9148,
+            "roles": [
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "122c92d856a123eb",
+            "title": "[CVPR 2026] 텍스트를 넘어, 다이어그램·차트·표 등 문서 속 시각 요소를 활용해 답하는 멀티모달 문서 QA, VinQA",
+            "url": "https://www.lgresearch.ai/blog/view?seq=660",
+            "similarity": 0.8834,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "269d1766747d991c",
+            "title": "[AACR 2026] LG AI연구원-VUMC의 spatial biology와 AI 연구",
+            "url": "https://www.lgresearch.ai/blog/view?seq=644",
+            "similarity": 0.8761,
+            "roles": [
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "1cf4e103826407b0",
+            "title": "LG의 첫 공개 Vision Language Model, EXAONE 4.5",
+            "url": "https://www.lgresearch.ai/blog/view?seq=640",
+            "similarity": 0.9007,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "11abd1ab5b0c3359",
+            "title": "독자 기술로 완성한 대한민국 대표 AI: K-EXAONE",
+            "url": "https://www.lgresearch.ai/blog/view?seq=618",
+            "similarity": 0.9041,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "0291d102b8166554",
+            "title": "[CTAD 2025] 불완전한 데이터로 알츠하이머를 더 효과적으로 예측하는 멀티모달 프레임워크 MOIRA",
+            "url": "https://www.lgresearch.ai/blog/view?seq=600",
+            "similarity": 0.8967,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "29796be1ccf980c8",
+            "title": "AI가 기업을 간파하는 방법",
+            "url": "https://www.lgresearch.ai/blog/view?seq=585",
+            "similarity": 0.8945,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "lg-ai-research-01"
+      },
+      {
+        "area_name": "도메인 특화 예측 모델링",
+        "area_description": "높은 변동성을 가진 시계열(예: 원자재 가격)을 메커니즘 모델과 딥러닝을 결합해 설명 가능하게 예측하는 하이브리드 모델링 문제를 다룬다.",
+        "rationale": "리튬 가격 예측 게시글 1건뿐이며, 파운데이션 모델 개발(클러스터 1), Agentic AI 기반 산업 자동화(클러스터 2), LLM 알고리즘·인프라 연구(클러스터 3)와는 엔지니어링 초점이 달라 억지로 병합하지 않고 단독 Area로 유지했다.",
+        "note": "",
+        "keywords": [
+          "하이브리드 예측 시스템",
+          "인과맵",
+          "도메인 시뮬레이터",
+          "설명 가능한 예측",
+          "중장기 가격 예측"
+        ],
+        "article_count": 1,
+        "roles": [
+          "data-ai"
+        ],
+        "role_counts": {
+          "data-ai": 1
+        },
+        "evidence": [
+          {
+            "article_id": "0bcbe65d58e4edfb",
+            "title": "신뢰할 수 있는 AI 예측 시스템을 향한 여정: 중장기 리튬 가격 예측",
+            "url": "https://www.lgresearch.ai/blog/view?seq=646",
+            "similarity": 0.9065,
+            "roles": [
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "lg-ai-research-02"
+      },
+      {
+        "area_name": "Agentic AI 기반 산업 자동화 시스템",
+        "area_description": "비전 검사, 로봇 제어, 산업 이상 탐지 등 현장 문제에 Agentic AI와 로봇 파운데이션 모델을 적용해 자율적인 판단·실행·재학습 루프를 구축하는 문제를 다룬다.",
+        "rationale": "클러스터 2의 6개 게시글 중 5개(자율 비전 검사, RFM, Agentic AI 설계 가이드, AEGIS, 다중 로봇 시뮬레이션)는 모두 Agentic AI 또는 로봇을 활용한 산업 자동화라는 공통 엔지니어링 문제를 공유한다. spatial biology 게시글은 성격이 다르지만 이 하나만을 위해 별도 Area를 만들거나 다른 클러스터로 옮길 만큼의 유사성을 다른 클러스터에서 찾기 어려워 note로 남기고 원 클러스터를 유지했다.",
+        "note": "spatial biology(VUMC 공동연구) 게시글은 산업 자동화가 아닌 의생명과학 연구협력 사례로 클러스터 내에서 이질적이다.",
+        "keywords": [
+          "Agentic AI",
+          "Tool Orchestration",
+          "On-Premise 경량화",
+          "MAPPO/QMIX",
+          "MC Dropout",
+          "지식그래프(Ontology)",
+          "Red Team 시뮬레이션"
+        ],
+        "article_count": 4,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "frontend": 2,
+          "data-ai": 4,
+          "backend": 1,
+          "mobile": 1
+        },
+        "evidence": [
+          {
+            "article_id": "d9e90089a591356e",
+            "title": "라벨링부터 배포까지: VLM과 Agentic AI 기반 자율 비전 검사",
+            "url": "https://www.lgresearch.ai/blog/view?seq=688",
+            "similarity": 0.912,
+            "roles": [
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "aa1cedacf540772a",
+            "title": "[AAAI 2026] Agentic AI를 도입하는 조직을 위한 설계 가이드",
+            "url": "https://www.lgresearch.ai/blog/view?seq=636",
+            "similarity": 0.9068,
+            "roles": [
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "0beaff7410ed7e06",
+            "title": "[AAAI 2026] AEGIS: 현장 전문가와 함께 발전하는 산업 이상 탐지 시스템",
+            "url": "https://www.lgresearch.ai/blog/view?seq=632",
+            "similarity": 0.9177,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "5b03d6e5cf04f745",
+            "title": "[AAAI 2026] 산업 자동화를 위한 다중 로봇 시뮬레이션 및 제어 기술 연구",
+            "url": "https://www.lgresearch.ai/blog/view?seq=624",
+            "similarity": 0.9001,
+            "roles": [
+              "mobile",
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "lg-ai-research-03"
+      },
+      {
+        "area_name": "LLM 알고리즘 및 서빙 인프라 연구",
+        "area_description": "Text-to-SQL 자가교정, 세그먼트 단위 토픽 모델링, MoE 업사이클링, 유휴 GPU 재활용 스케줄링 등 LLM의 정확도 향상과 학습·추론 효율화를 위한 알고리즘 및 인프라 연구를 다룬다.",
+        "rationale": "클러스터 3의 4개 게시글은 응용 분야(SQL 생성, 토픽 모델링)와 계층(모델 아키텍처, 인프라 운영)이 서로 다르지만, 모두 LLM을 더 정확하고 효율적으로 만들기 위한 기술 연구라는 공통점을 가져 하나의 Area로 유지했다. 다른 클러스터들과는 파운데이션 모델 개발(1), 산업 자동화(2), 도메인 예측(4)이라는 뚜렷이 다른 문제를 다루어 병합하지 않았다.",
+        "note": "Text-to-SQL과 토픽 모델링은 모델 정확도 향상을 위한 알고리즘 연구인 반면, MoE 업사이클링은 모델 아키텍처 연구, GPU 스케줄링은 인프라 운영 문제로 세부 초점이 상이하다.",
+        "keywords": [
+          "Text-to-SQL",
+          "RAG(검색증강생성)",
+          "토픽 모델링",
+          "Mixture-Of-Experts(MoE) Upcycling",
+          "Spherical K-means",
+          "GPU Job 스케줄링",
+          "Argo Workflows"
+        ],
+        "article_count": 4,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend"
+        ],
+        "role_counts": {
+          "backend": 2,
+          "frontend": 2,
+          "data-ai": 4
+        },
+        "evidence": [
+          {
+            "article_id": "2780c8e7b47d60f7",
+            "title": "[ACL 2026] ReSQL: RAG 기반 오류 추론을 통한 자가 개선형 Text-to-SQL 시스템",
+            "url": "https://www.lgresearch.ai/blog/view?seq=675",
+            "similarity": 0.8917,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "eab1d44e332af55f",
+            "title": "[ACL 2026] 문서가 아닌 'Segment'에 주제를 할당하다: 토픽 모델링의 재정의",
+            "url": "https://www.lgresearch.ai/blog/view?seq=673",
+            "similarity": 0.8942,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "74edea99cbcc4d77",
+            "title": "[CVPR 2026] Mixture-Of-Experts 구조 내에서 진정한 의미의 Expert를 만드는 Upcycling 방법",
+            "url": "https://www.lgresearch.ai/blog/view?seq=658",
+            "similarity": 0.8723,
+            "roles": [
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "e3b14a608bf8ed0a",
+            "title": "유휴 Inference GPU Pool을 이용한 GPU Job 스케줄링",
+            "url": "https://www.lgresearch.ai/blog/view?seq=650",
+            "similarity": 0.9031,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "lg-ai-research-04"
+      }
+    ],
+    "unassigned_count": 1,
+    "unassigned_diagnostic": [],
+    "role_counts": {
+      "frontend": 7,
+      "data-ai": 17,
+      "backend": 6,
+      "mobile": 1
+    }
+  },
+  {
+    "company": "농심데이터시스템(NDS)",
+    "article_count": 14,
+    "areas": [
+      {
+        "area_name": "AWS 클라우드 인프라 아키텍처 설계 및 운영",
+        "area_description": "격리된 보안 연구환경 구축, Bedrock API 오남용에 대한 IAM·로깅 기반 보안 거버넌스, EKS 클러스터의 AZ 종속성·OS 지원종료 대응, 리소스 백업·복구 체계 설계 등 AWS 인프라를 안전하고 안정적으로 설계·운영하는 문제를 다룬다.",
+        "rationale": "cluster 2는 TRE 연구환경, Kiro 협업 도구, Bedrock 보안, EKS 장애 대응(2건), AWS Backup까지 서로 다른 주제를 다루지만 하나의 raw cluster이므로 쪼개지 않고 그대로 유지했다. S3 스토리지(cluster 1), 네트워크 게이트웨이(cluster 3)와는 다루는 엔지니어링 문제가 명확히 달라 병합하지 않았다.",
+        "note": "이 cluster는 보안 연구환경(TRE), AI 코딩 협업 체계(Kiro), Bedrock 비용·보안 거버넌스, EKS 운영 이슈 2건, 백업 전략까지 서로 다른 엔지니어링 주제가 섞여 있어 내부적으로 이질적이다. area_name과 description은 이들을 아우르는 가장 상위 수준의 공통점(AWS 인프라 설계·운영)으로 표현했다.",
+        "keywords": [
+          "Amazon Bedrock",
+          "EKS",
+          "IAM",
+          "CloudWatch",
+          "EBS",
+          "AWS Backup",
+          "Terraform",
+          "IRSA"
+        ],
+        "article_count": 7,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend"
+        ],
+        "role_counts": {
+          "backend": 7,
+          "frontend": 2,
+          "data-ai": 4
+        },
+        "evidence": [
+          {
+            "article_id": "6187f401ea1e6254",
+            "title": "AWS로 구현한 Internet Gateway가 없는 연구환경, 신뢰연구환경(TRE) 솔루션 NDS AI·RE",
+            "url": "https://tech.cloud.nongshim.co.kr/blog/aws/4359/",
+            "similarity": 0.9022,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "40394b654ba1e573",
+            "title": "AWS Kiro를 활용한 바이브코딩 협업 및 관리 환경 구축",
+            "url": "https://tech.cloud.nongshim.co.kr/blog/aws/4320/",
+            "similarity": 0.8811,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "24df3993c73a1c0c",
+            "title": "Bedrock API Key 하나가 수 천만원 청구서로 돌아온 이유",
+            "url": "https://tech.cloud.nongshim.co.kr/blog/aws/ai/4225/",
+            "similarity": 0.9109,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "a3292085a8820e0b",
+            "title": "EKS에서 EBS 볼륨의 AZ 종속성으로 인해 발생하는 파드 장애 사례",
+            "url": "https://tech.cloud.nongshim.co.kr/blog/aws/3395/",
+            "similarity": 0.8731,
+            "roles": [
+              "backend"
+            ]
+          },
+          {
+            "article_id": "b7a3da6ae8f71e85",
+            "title": "Amazon EKS에서 Amazon Linux 지원 종료 대응하기",
+            "url": "https://tech.cloud.nongshim.co.kr/blog/aws/container/3388/",
+            "similarity": 0.8956,
+            "roles": [
+              "backend"
+            ]
+          },
+          {
+            "article_id": "d3b1fb88b6e0bf73",
+            "title": "AWS CloudWatch Agent .json 이슈",
+            "url": "https://tech.cloud.nongshim.co.kr/blog/aws/management-governance/3369/",
+            "similarity": 0.8648,
+            "roles": [
+              "backend"
+            ]
+          },
+          {
+            "article_id": "47f918e3c8d9d73f",
+            "title": "AWS Backup 기술 소개 – 클라우드 시대의 생존 전략과 데이터 복원 체계",
+            "url": "https://tech.cloud.nongshim.co.kr/blog/aws/3285/",
+            "similarity": 0.8934,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "nds-01"
+      },
+      {
+        "area_name": "AWS 네트워크 아키텍처 설계",
+        "area_description": "Direct Connect Gateway와 Transit Gateway 간 연결 제약을 실측으로 검증하고, 멀티계정 온프레미스 연동을 위한 라우팅 아키텍처를 재설계하는 등 하이브리드 네트워크 구성 문제를 다룬다.",
+        "rationale": "cluster 3은 1건뿐이지만 Direct Connect/Transit Gateway 라우팅이라는 다른 cluster에 없는 고유한 네트워크 아키텍처 주제를 다뤄 단독 Area로 유지했다.",
+        "note": "",
+        "keywords": [
+          "Direct Connect Gateway",
+          "Transit Gateway",
+          "VPC Attachment",
+          "라우팅",
+          "멀티계정 온프레미스 통신"
+        ],
+        "article_count": 1,
+        "roles": [],
+        "role_counts": {},
+        "evidence": [
+          {
+            "article_id": "324a24399832c58f",
+            "title": "Direct Connect Gateway와 Transit Gateway 연결 – 동일 리전 TGW는 1개의 제약",
+            "url": "https://tech.cloud.nongshim.co.kr/blog/aws/3398/",
+            "similarity": 0.9045,
+            "roles": []
+          }
+        ],
+        "id": "nds-02"
+      },
+      {
+        "area_name": "S3 스토리지 운영 및 비용 최적화",
+        "area_description": "S3 버킷의 정적 웹사이트 호스팅, Lifecycle 정책을 통한 비용 절감과 버킷 정리, 교차계정·리전 간 객체 복제 등 S3 스토리지의 구성·운영·비용 관리 문제를 다룬다.",
+        "rationale": "cluster 1의 7건 중 6건이 S3 호스팅, Lifecycle, 복제, 삭제 등 S3 스토리지 운영이라는 동일한 엔지니어링 문제를 공유해 하나의 Area로 유지했다. cluster 2(EKS·보안·백업 등)와 cluster 3(네트워크 게이트웨이)는 S3와 무관한 별개 주제라 병합하지 않았다.",
+        "note": "이 cluster에는 'AWS CloudWatch Agent .json 이슈' 1건이 섞여 있는데, 이는 S3가 아니라 모니터링 에이전트 설정 파일 구조에 관한 별개 주제다. cluster를 쪼개지 않는 원칙에 따라 그대로 포함했다.",
+        "keywords": [
+          "S3 Lifecycle",
+          "S3 Batch Operations",
+          "AWS Amplify",
+          "Route 53",
+          "IAM Role",
+          "버킷 정책",
+          "교차계정 리전 간 복제"
+        ],
+        "article_count": 6,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend"
+        ],
+        "role_counts": {
+          "backend": 1,
+          "data-ai": 3,
+          "frontend": 1
+        },
+        "evidence": [
+          {
+            "article_id": "ed1b9769df7ea359",
+            "title": "Amazon S3 를 활용한 정적 웹 사이트 구성하기 – 2",
+            "url": "https://tech.cloud.nongshim.co.kr/blog/aws/3510/",
+            "similarity": 0.8929,
+            "roles": [
+              "backend"
+            ]
+          },
+          {
+            "article_id": "3aed0a2c4e7da274",
+            "title": "Amazon S3 를 활용한 정적 웹 사이트 구성하기 – 1",
+            "url": "https://tech.cloud.nongshim.co.kr/blog/aws/3469/",
+            "similarity": 0.9041,
+            "roles": []
+          },
+          {
+            "article_id": "c6927a76e8cdfcda",
+            "title": "AWS S3 Lifecycle 규칙이 여러 개일 때, 실제로 적용되는 기준은 무엇일까?",
+            "url": "https://tech.cloud.nongshim.co.kr/blog/aws/3463/",
+            "similarity": 0.8802,
+            "roles": []
+          },
+          {
+            "article_id": "cfa8fb21402fe4a6",
+            "title": "AWS S3 복제 (선택 기준 & 비용)",
+            "url": "https://tech.cloud.nongshim.co.kr/blog/aws/storage/3330/",
+            "similarity": 0.913,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "9a683a35dfb0ac1f",
+            "title": "AWS S3 교차계정/리전 간 복제 및 배치",
+            "url": "https://tech.cloud.nongshim.co.kr/blog/aws/3352/",
+            "similarity": 0.9135,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "390d6955f83e6cda",
+            "title": "AWS S3 버킷 삭제 작업 (수명 주기 정책)",
+            "url": "https://tech.cloud.nongshim.co.kr/blog/aws/storage/3322/",
+            "similarity": 0.9028,
+            "roles": [
+              "frontend",
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "nds-03"
+      }
+    ],
+    "unassigned_count": 0,
+    "unassigned_diagnostic": [],
+    "role_counts": {
+      "backend": 8,
+      "frontend": 3,
+      "data-ai": 7
+    }
+  },
+  {
+    "company": "마이리얼트립",
+    "article_count": 47,
+    "areas": [
+      {
+        "area_name": "AI 에이전트 기반 사내 업무 자동화",
+        "area_description": "개발 조직이 아닌 현업 부서(CS, 재무, HR, 세일즈, 마케팅, 디자인, 광고, 정책운영)가 Claude Code·Cursor·Lovable 같은 AI 코딩 도구와 LLM 에이전트를 활용해 정산, OCR 추출, CRM 발송, 채용 일정, 상품 등록, 광고 리포트, 여행 가격 스캐너 등 반복 수작업 프로세스를 자동화 파이프라인이나 에이전트 시스템으로 재설계하는 문제를 다룬다.",
+        "rationale": "cluster_rank 1과 4는 모두 개발 조직이 아닌 현업/마케팅 구성원이 AI 코딩 도구를 직접 활용해 자동화 시스템이나 제품을 만들어낸 사례라는 공통 패턴을 가진다. cluster 1은 대상 부서(CX, 재무, HR, 정산, CRM, 광고, 디자인)가 다양하지만 반복되는 엔지니어링 문제는 'AI 에이전트/자동화 파이프라인 구축'으로 동일하다. cluster 4(럭키글라이드, 마이트립시그널, 영상 자동화)는 마케팅 조직이 개발 조직 없이 직접 서비스를 완성한 사례로, cluster 1의 하위 패턴인 '비개발자의 AI 네이티브 제품화'와 본질적으로 같아 병합했다.",
+        "note": "cluster 1은 21건으로 매우 크고 이질적이다. 정산 Config-driven ETL, CX 챗봇의 Interrupt Handling/핸드오버 구조처럼 실제 백엔드 설계가 담긴 사례부터, 개인이 노코드 툴로 사내 대시보드나 소개 웹페이지를 만든 사례까지 기술적 깊이 편차가 크다.",
+        "keywords": [
+          "Claude Code",
+          "Cursor",
+          "OCR",
+          "n8n",
+          "Lovable",
+          "서브에이전트",
+          "Figma 플러그인"
+        ],
+        "article_count": 15,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "data-ai": 13,
+          "backend": 7,
+          "frontend": 5,
+          "mobile": 3
+        },
+        "evidence": [
+          {
+            "article_id": "f8e3c8cd4878d182",
+            "title": "\"무엇을 자동화할까보다, 무엇을 먼저 정리할까\": 두 사람이 정책 운영을 다시 짠 이야기",
+            "url": "https://blog.myrealtrip.com/mueoseul-jadonghwahalggaboda-mueoseul-meonjeo-jeongrihalgga-du-sarami-jeongcaeg-unyeongeul-dasi-jjan-iyagi/",
+            "similarity": 0.8759,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "0336571559bcec2b",
+            "title": "“에이전트 6명을 고용했습니다”: 영업담당자의 B2B CRM 구축기",
+            "url": "https://blog.myrealtrip.com/pepe-b2b-crm-six-ai-agents/",
+            "similarity": 0.8819,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "2cb2e153d3cec00d",
+            "title": "“채용팀 인턴은 클로드”, AI로 채용 업무 자동화부터 면접자 경험 개선까지",
+            "url": "https://blog.myrealtrip.com/pepe-recruit-claude-intern/",
+            "similarity": 0.8702,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "f07f5203bdc48040",
+            "title": "Product Engineer(PE)로 일하기: 무이자 할부 정보 업로드 자동화",
+            "url": "https://blog.myrealtrip.com/pepe-installment-upload-automation/",
+            "similarity": 0.8831,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "baa68d2e3174b85f",
+            "title": "AI Native 전환, 그리고 마이리얼트립 인사·홍보 조직이 내린 결정",
+            "url": "https://blog.myrealtrip.com/ai-native-hr-pr-decision/",
+            "similarity": 0.8837,
+            "roles": [
+              "frontend"
+            ]
+          },
+          {
+            "article_id": "cf1e6844c5b75753",
+            "title": "마이리얼트립 재무실장의 AI 에이전트 구축 일지",
+            "url": "https://blog.myrealtrip.com/pepe-finance-lead-ai-agent/",
+            "similarity": 0.8965,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "ef475c35017165f3",
+            "title": "마이리얼트립에서 가장 큰 조직, T&A실의 리더는 어떻게 AI를 활용하는가",
+            "url": "https://blog.myrealtrip.com/pepe-ta-leader-ai-usage/",
+            "similarity": 0.8677,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "d752a8fa8941f7ad",
+            "title": "월 7만 5천 건 CS, 마이리얼트립 자회사 ‘AICX’가 풀어낸 자동화",
+            "url": "https://blog.myrealtrip.com/aicx-cs-automation-75k-monthly/",
+            "similarity": 0.8685,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "976b8fe833b13559",
+            "title": "PR인의 글빨(?)로 회사 소개 사이트 개발·배포 도전기",
+            "url": "https://blog.myrealtrip.com/pepe-pr-builds-corp-site/",
+            "similarity": 0.8636,
+            "roles": [
+              "mobile"
+            ]
+          },
+          {
+            "article_id": "31b698ef4efe719f",
+            "title": "반복은 줄이고, 가능성을 넓히다: AI 플러그인이 만든 디자인의 새로운 전환",
+            "url": "https://blog.myrealtrip.com/pepe-ai-plugin-design/",
+            "similarity": 0.8668,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "2219ccf6bb4a7c8a",
+            "title": "‘이번 달의 코딩왕’이 전하는 Claude Code 실전 활용기",
+            "url": "https://blog.myrealtrip.com/pepe-claude-code-coding-king/",
+            "similarity": 0.861,
+            "roles": [
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "9309c73f7feb7c1c",
+            "title": "고객에게 ‘찐 정보’를 전하기 위한 CRM의 혁신을 그리다",
+            "url": "https://blog.myrealtrip.com/pepe-crm-real-info-innovation/",
+            "similarity": 0.863,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "42b0b042dd701985",
+            "title": "누구나 만드는 시대, 마케터가 한 달 만에 만든 영상 자동화 시스템",
+            "url": "https://blog.myrealtrip.com/pepe-marketer-video-automation/",
+            "similarity": 0.8608,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "f4b7a12cf08c9a50",
+            "title": "리더가 먼저 AI를 만졌을 때, 조직이 실제로 움직이기 시작한다",
+            "url": "https://blog.myrealtrip.com/ai-leader-first-touch/",
+            "similarity": 0.8691,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "4b095a3dbc5165c2",
+            "title": "Product Engineer: 안드로이드 개발자가 AI로 프론트엔드까지 넘겨본 이유",
+            "url": "https://blog.myrealtrip.com/pepe-android-to-frontend-with-ai/",
+            "similarity": 0.8713,
+            "roles": [
+              "backend",
+              "frontend",
+              "mobile",
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "myrealtrip-01"
+      },
+      {
+        "area_name": "여행 데이터·서비스 실시간 연동 및 신뢰성 엔지니어링",
+        "area_description": "항공·숙소·연동사 등 외부 상용 데이터를 실시간으로 통합·정규화하고, 레거시 시스템을 안전하게 이관하며, UI 변경에 강건한 테스트 자동화와 API 문서 기반 코드 생성 파이프라인을 구축하는 문제를 다룬다. 또한 LLM을 실제 서비스에 적용할 때 발생하는 정확도-속도 트레이드오프(환불 수수료 동기 계산, 온디맨드 리뷰 요약 등)를 아키텍처 분리로 해결하는 사례를 포함한다.",
+        "rationale": "cluster_rank 2에 속한 사례들은 모두 외부 시스템이나 레거시 코드, UI 변경 등 통제할 수 없는 불확실성을 전제로 신뢰할 수 있는 연동·검증 구조를 설계한다는 공통 엔지니어링 문제를 가지고 있어 다른 cluster와 병합하지 않고 단독 Area로 유지했다.",
+        "note": "첫 번째 게시글(조코딩 AX 해커톤 문제 정의)은 실제 구현 사례가 아니라 해커톤 문제 제시에 가까워 다른 멤버들에 비해 엔지니어링 실체가 상대적으로 약하다.",
+        "keywords": [
+          "MCP",
+          "Cirium",
+          "mirrord",
+          "셀프힐링 로케이터",
+          "Fact-First 워크플로우",
+          "Redis/Celery",
+          "On-Demand 요약",
+          "Live Activities"
+        ],
+        "article_count": 18,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "mobile": 5,
+          "data-ai": 13,
+          "backend": 11,
+          "frontend": 4
+        },
+        "evidence": [
+          {
+            "article_id": "edeadf211c465b87",
+            "title": "한 곳에서, 어디서나, 더 잘 보이게: 마이리얼트립이 파트너에게 새로 연 세 가지",
+            "url": "https://blog.myrealtrip.com/han-goseseo-eodiseona-deo-jal-boige-mairieolteuribi-pateuneoege-saero-yeon-se-gaji/",
+            "similarity": 0.8605,
+            "roles": [
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "7732c9657c32551e",
+            "title": "AI 추천과 예약 사이의 거리를 좁히는 법: 마이리얼트립이 조코딩 AX 해커톤에 낸 문제",
+            "url": "https://blog.myrealtrip.com/ai-cuceongwa-yeyag-saiyi-georireul-jobhineun-beob-mairieolteuribi-jokoding-ax-haekeotone-naen-munje/",
+            "similarity": 0.8817,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "336dcb9ad6b81f7b",
+            "title": "돌려쓰던 테스트 환경을, 각자의 환경으로: 배포 병목을 없앤 이야기",
+            "url": "https://blog.myrealtrip.com/dolryeosseudeon-teseuteu-hwangyeongeul-gagjayi-hwangyeongeuro-baepo-byeongmogeul-eobsaen-iyagi/",
+            "similarity": 0.879,
+            "roles": [
+              "backend",
+              "frontend"
+            ]
+          },
+          {
+            "article_id": "3910161f0583f44e",
+            "title": "예약에서 끝나지 않는 여행: 한 명이 10여 개 레포를 가로질러 만든 항공 여정 케어",
+            "url": "https://blog.myrealtrip.com/yeyageseo-ggeutnaji-anhneun-yeohaeng-han-myeongi-10yeo-gae-reporeul-garojilreo-mandeun-hanggong-yeojeong-keeo/",
+            "similarity": 0.8741,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "3767ce909e520cd6",
+            "title": "취소를 끝이 아니라 시작점으로: 취소 화면에서 다음 여행을 제안한 이야기",
+            "url": "https://blog.myrealtrip.com/cwisoreul-ggeuti-anira-sijagjeomeuro-cwiso-hwamyeoneseo-daeum-yeohaengeul-jeanhan-iyagi/",
+            "similarity": 0.8704,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "08988c9a2375c923",
+            "title": "열어 둔 API가 결과물로 돌아오기까지: 마이리얼트립의 OBA 위켄드톤 회고",
+            "url": "https://blog.myrealtrip.com/yeoleo-dun-apiga-gyeolgwamulro-dolaogiggaji-mairieolteuribyi-oba-wikendeuton-hoego/",
+            "similarity": 0.8866,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "28e671593f55f163",
+            "title": "AI 기반 계약 검토 자동화와 마이리얼트립 서비스정책실의 선택",
+            "url": "https://blog.myrealtrip.com/pepe-contract-review-automation/",
+            "similarity": 0.8655,
+            "roles": []
+          },
+          {
+            "article_id": "7362ae4a10b9ddcb",
+            "title": "럭키글라이드, 항공 특가 라이브… 마이리얼트립 항공의 소수정예 실행력",
+            "url": "https://blog.myrealtrip.com/lucky-glide-air-deal-live/",
+            "similarity": 0.87,
+            "roles": []
+          },
+          {
+            "article_id": "c1f3b1f4aeebbda9",
+            "title": "여행 계획을 ‘검색’ 대신 ‘대화’로 : AI와 함께 여행을 설계하는 첫걸음",
+            "url": "https://blog.myrealtrip.com/ai-travel-conversation-search/",
+            "similarity": 0.8737,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "70884784d040550d",
+            "title": "마케터의 개발 도전: AI로 업무 한계를 넘다",
+            "url": "https://blog.myrealtrip.com/pepe-marketer-codes-with-ai/",
+            "similarity": 0.8712,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "431fadc9fe102cd7",
+            "title": "9개월 걸릴 시스템 이관을 하룻밤 만에: 레거시 코드를 AI의 학습 자료로 바꾸다",
+            "url": "https://blog.myrealtrip.com/pepe-legacy-migration-overnight/",
+            "similarity": 0.8895,
+            "roles": []
+          },
+          {
+            "article_id": "7c2e131a247f2518",
+            "title": "Product Engineer: 클릭 몇 번으로 여행 상품 5,000개를 만들다",
+            "url": "https://blog.myrealtrip.com/pepe-travel-product-bulk-5000/",
+            "similarity": 0.869,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "983d3f5fc335773b",
+            "title": "끊기던 자동화 위에 다리를 놓다: 셀프힐링 로케이터로 유지보수의 벽을 넘다",
+            "url": "https://blog.myrealtrip.com/pepe-self-healing-locator/",
+            "similarity": 0.8685,
+            "roles": []
+          },
+          {
+            "article_id": "966287395c8c46c7",
+            "title": "사용자가 찾아오는 제품: AI로 만든 항공가 스캐너 ‘럭키글라이드’의 한 달",
+            "url": "https://blog.myrealtrip.com/lucky-glide-1-month-results/",
+            "similarity": 0.8663,
+            "roles": [
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "c5e719033a92aeea",
+            "title": "AICX: AI로 5초 만에 항공권 환불 수수료 계산하기",
+            "url": "https://blog.myrealtrip.com/aicx-air-refund-fee-5sec/",
+            "similarity": 0.9001,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "702ab303802d5b39",
+            "title": "AICX: 수작업의 한계를 넘다. AI 기반 여행 상품 운영 자동화 구축기",
+            "url": "https://blog.myrealtrip.com/aicx-product-ops-automation/",
+            "similarity": 0.8887,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "c2df188edaff4093",
+            "title": "숙소 후기를 읽지 않아도 되는 세계, AI로 만든 새로운 탐색 방식",
+            "url": "https://blog.myrealtrip.com/ai-stay-discovery-no-reviews/",
+            "similarity": 0.8739,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "58a58e75acd3352c",
+            "title": "서버 코드 자동 생성 툴: Sherpa는 왜 완전 자동화를 선택하지 않았을까",
+            "url": "https://blog.myrealtrip.com/sherpa-server-codegen/",
+            "similarity": 0.886,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "myrealtrip-02"
+      },
+      {
+        "area_name": "AI 코딩 워크플로우 및 개발 방법론 고도화",
+        "area_description": "사내 개발 조직이 AI 코딩 도구를 활용하는 방식이 Vibe Coding에서 Spec Driven Development, Harness Engineering으로 진화한 흐름을 정리하고, 컨텍스트를 프로젝트/도메인/태스크 단위로 구조화하거나 Metric Registry 같은 명시적 지식 기반으로 신뢰 가능한 데이터 에이전트를 설계하는 등 AI 활용 개발 프로세스 자체를 다루는 문제이다.",
+        "rationale": "cluster_rank 3의 다수 게시글은 개발자가 AI 코딩 도구를 업무 프로세스에 통합하는 방법론(하네스 엔지니어링, 3-Layer Context, Metric Registry 기반 데이터 에이전트, 멀티 에이전트 코딩 패턴)을 다루고 있어 하나의 Area로 유지했다.",
+        "note": "이 cluster에는 '만드는 엔지니어에서 파는 엔지니어로'(커리어 전환)나 '리더가 먼저 AI를 만졌을 때'(리더십·조직문화 사례)처럼 엔지니어링 실체보다 조직문화·개인 서사에 가까운 게시글이 섞여 있다.",
+        "keywords": [
+          "Vibe Coding",
+          "Spec Driven Development",
+          "Harness Engineering",
+          "3-Layer Context",
+          "멀티 에이전트",
+          "TDD",
+          "agent.md"
+        ],
+        "article_count": 5,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "data-ai": 4,
+          "backend": 2,
+          "frontend": 2,
+          "mobile": 2
+        },
+        "evidence": [
+          {
+            "article_id": "398f1c6178cbb995",
+            "title": "눈팅만 하던 여행자들을 위한 설계: '동행매칭' 개편기",
+            "url": "https://blog.myrealtrip.com/gwansimeun-cungbunhaessseubnida-donghaengmaecingeseo-geulsseugireul-yoguhaji-anhgiro-han-iyu/",
+            "similarity": 0.8665,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "0e438bbd9efddaff",
+            "title": "1년간의 AI 코딩 여정: 손으로 치던 코드에서 에이전트가 쓰는 코드까지",
+            "url": "https://blog.myrealtrip.com/pepe-ai-coding-1-year-journey/",
+            "similarity": 0.9132,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "a0bfa9b4d685f126",
+            "title": "Product Engineer: “코드는 AI가, 나는 제품 관점에서 고민을” AI 네이티브 개발 한걸음",
+            "url": "https://blog.myrealtrip.com/pepe-ai-codes-pe-thinks/",
+            "similarity": 0.894,
+            "roles": [
+              "backend",
+              "frontend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "5ee83aad676539ec",
+            "title": "멀티 에이전트를 향해: AI가 바꾼 개발의 문법",
+            "url": "https://blog.myrealtrip.com/pepe-multi-agent-dev-grammar/",
+            "similarity": 0.9037,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "660c517c26af287a",
+            "title": "입사 3개월, 3차원을 넘어 AI차원으로",
+            "url": "https://blog.myrealtrip.com/pepe-3-months-ai-dimension/",
+            "similarity": 0.8826,
+            "roles": [
+              "frontend"
+            ]
+          }
+        ],
+        "id": "myrealtrip-03"
+      }
+    ],
+    "unassigned_count": 9,
+    "unassigned_diagnostic": [
+      {
+        "size": 6,
+        "sample_titles": [
+          "AI가 평균을 높일수록, '나다운 여행'은 귀해진다",
+          "AI 네이티브 조직의 CX: 마이리얼트립이 2년 동안 발전 시킨 고객 응대의 구조",
+          "파트너의 성장이 곧 성과가 되는 곳, 그리고 그 전환에 AI를 쓴 이유",
+          "AICX: 마이리얼트립 고객상담 챗봇 도입기",
+          "두려움 너머에서 만난 성장: 숙박 상품 등록 자동화 이야기"
+        ]
+      },
+      {
+        "size": 2,
+        "sample_titles": [
+          "“정산파일 자동화”를 하려다, 규칙과 검증을 다시 설계하다",
+          "Product Engineer: 하루 500건 분석 요청을 받아내는 데이터 에이전트, 일을 돕는 AI에서 일을 수행하는 AI로"
+        ]
+      }
+    ],
+    "role_counts": {
+      "data-ai": 37,
+      "mobile": 10,
+      "backend": 24,
+      "frontend": 12
+    }
+  },
+  {
+    "company": "버즈빌",
+    "article_count": 14,
+    "areas": [
+      {
+        "area_name": "AI 에이전트 기반 디자인 시스템",
+        "area_description": "컴포넌트와 디자인 토큰을 에이전트가 소비 가능한 구조화된 매니페스트·계층 체계로 정의하고, Figma Dev Mode·MCP 연동을 통해 디자이너와 AI가 함께 프로덕션 코드에 기여할 수 있도록 디자인 툴스택과 검증 프로세스를 재편하는 문제를 다룬다.",
+        "rationale": "cluster_rank 1의 게시글 6건 중 5건이 '에이전트가 소비하는 디자인 시스템'이라는 공통 축(컴포넌트 매니페스트, 디자인 토큰 3계층, 스킬 기반 컨텍스트, MCP 파일 컨텍스트)을 공유해 하나의 cluster로 유지했다. 다른 raw cluster(인프라 성능 최적화, 백엔드/플랫폼 운영)는 다루는 엔지니어링 문제가 명확히 달라 병합하지 않았다.",
+        "note": "6건 중 'AI와 함께 업무 시스템을 다시 설계하다: Salesforce 대체 CRM 개발기' 1건은 디자인 시스템이 아니라 CRM 데이터 모델 재설계 사례로, AI 페어링이라는 표면적 공통점만 있을 뿐 엔지니어링 문제 성격이 다른 이질적 게시글이다.",
+        "keywords": [
+          "ComponentManifest",
+          "디자인 토큰",
+          "Figma Dev Mode",
+          "MCP",
+          "Claude",
+          "PR 검증 파이프라인",
+          "커밋 전 검증 훅"
+        ],
+        "article_count": 4,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend"
+        ],
+        "role_counts": {
+          "backend": 2,
+          "frontend": 4,
+          "data-ai": 4
+        },
+        "evidence": [
+          {
+            "article_id": "aebb24fd7db559df",
+            "title": "이제 디자이너가 PR을 올립니다",
+            "url": "https://tech.buzzvil.com/blog/designers-open-the-prs-now",
+            "similarity": 0.8811,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "1fa7bc081ce7fbd7",
+            "title": "에이전트를 위한 디자인 시스템",
+            "url": "https://tech.buzzvil.com/blog/a-design-system-for-an-agent",
+            "similarity": 0.9209,
+            "roles": [
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "5b5f698f88ac0d4f",
+            "title": "AI 네이티브 디자인 플레이북",
+            "url": "https://tech.buzzvil.com/blog/ai-native-design-workflow",
+            "similarity": 0.9054,
+            "roles": [
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "0170a1f812bcecc7",
+            "title": "2026년 버즈빌 디자인 스택, AI 전환을 준비하며",
+            "url": "https://tech.buzzvil.com/blog/2026-buzzvil-design-stack",
+            "similarity": 0.9305,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "buzzvil-01"
+      },
+      {
+        "area_name": "개발 플랫폼 운영 및 백엔드 아키텍처",
+        "area_description": "AI 코딩 에이전트의 자율 작업을 통제하는 거버넌스 구조, Feature Flag 시스템의 지연시간 개선, 다수 웹 프로퍼티의 모노레포 통합, Kafka·Argo Workflow 기반 백엔드 데이터 파이프라인 등 사내 개발 플랫폼과 백엔드 아키텍처 전반의 다양한 운영 과제를 다룬다.",
+        "rationale": "4건이 AI 에이전트 거버넌스, Feature Flag 성능, 모노레포 통합, 백엔드 아키텍처 개요로 서로 다른 주제를 다루지만 하나의 raw cluster로 묶여 있어 임의로 쪼개지 않고 그대로 유지했다. 성능 수치 개선이 있는 Feature Flag 항목이 있지만 이는 cluster 2의 데이터스토어 최적화와는 대상 시스템이 달라 병합하지 않았고, 디자인 시스템 cluster와도 엔지니어링 실체가 달라 병합하지 않았다.",
+        "note": "AI 에이전트 운영 거버넌스(harness), Feature Flag 성능 최적화, 모노레포 기반 웹 인프라 통합, Kafka/Argo 기반 백엔드 아키텍처 개요라는 서로 다른 4가지 주제가 섞인 이질적인 cluster이다.",
+        "keywords": [
+          "Feature Flag",
+          "go-feature-flag",
+          "AsyncExporter",
+          "Turborepo",
+          "Kafka",
+          "Argo Workflow",
+          "JDBC Source/Sink Connector",
+          "Test in Production"
+        ],
+        "article_count": 3,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "backend": 3,
+          "data-ai": 3,
+          "frontend": 2,
+          "mobile": 1
+        },
+        "evidence": [
+          {
+            "article_id": "1902e54789bee9a1",
+            "title": "Feature Flag API의 p99 레이턴시 개선기 (+오픈소스 기여)",
+            "url": "https://tech.buzzvil.com/blog/feature-flag-api-p99-latency-improvement",
+            "similarity": 0.8704,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "286b3c0031e1d113",
+            "title": "Nobody Owned the Website. Now Everybody Does.",
+            "url": "https://tech.buzzvil.com/blog/nobody-owned-the-website-now-everybody-does",
+            "similarity": 0.8692,
+            "roles": [
+              "backend",
+              "frontend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "10ddf547ed7881af",
+            "title": "5대 금융사를 품은 버즈베네핏의 백엔드 팀은 무슨 일을 할까요?",
+            "url": "https://tech.buzzvil.com/blog/buzzvil-supply-product-backend-team",
+            "similarity": 0.8921,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "buzzvil-02"
+      },
+      {
+        "area_name": "인프라 성능 최적화 및 비용 절감",
+        "area_description": "Redis·DynamoDB 등 데이터스토어에서 발생하는 메모리 누수·처리량 문제를 소스 코드 분석과 프로파일링으로 근본 원인을 규명해 비용을 절감하고, CI 파이프라인의 캐싱 전략을 개선해 실행 시간을 단축하는 문제를 다룬다.",
+        "rationale": "4건 모두 특정 인프라 컴포넌트(Redis MemoryDB tracking, DynamoDB SDK CPU, DynamoDB RCU, CI 캐싱)의 성능·비용 이슈를 프로파일링 또는 코드 레벨 분석으로 진단하고 정량적 개선을 이뤄낸 사례로 응집도가 높아 그대로 유지했다. 디자인 시스템이나 플랫폼 운영 cluster와는 다루는 시스템·문제 유형이 달라 병합하지 않았다.",
+        "note": "",
+        "keywords": [
+          "DynamoDB",
+          "Redis",
+          "guregu/dynamo",
+          "AWS SDK v2",
+          "Pyroscope",
+          "Radix Tree",
+          "Eventually Consistent Read",
+          "pip 캐싱"
+        ],
+        "article_count": 4,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend"
+        ],
+        "role_counts": {
+          "backend": 4,
+          "data-ai": 4,
+          "frontend": 2
+        },
+        "evidence": [
+          {
+            "article_id": "2fd0d64cfa6f6ee1",
+            "title": "Memory DB는 무엇으로 가득 차 있었을까 - 1부 : 클라이언트 캐싱과 tracking item",
+            "url": "https://tech.buzzvil.com/blog/memorydb-tracking-items-1",
+            "similarity": 0.8782,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "e2a43d483c7533ca",
+            "title": "피크 타임 Pod 245개를 100여개로 — DynamoDB SDK v2 전환으로 Go 서버 CPU 절반 줄이기",
+            "url": "https://tech.buzzvil.com/blog/cpu-dynamo",
+            "similarity": 0.8772,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "32a868eadf656705",
+            "title": "DynamoDB Limit 설정으로 RCU 97% 절감한 이야기",
+            "url": "https://tech.buzzvil.com/blog/dynamo-query-limit-rcu-optimization",
+            "similarity": 0.8822,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "a3d036d236268e4a",
+            "title": "Python 2.7 서버의 CI Test 개선 - 13분에서 3분으로",
+            "url": "https://tech.buzzvil.com/blog/python2-ci-test",
+            "similarity": 0.8906,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "buzzvil-03"
+      }
+    ],
+    "unassigned_count": 3,
+    "unassigned_diagnostic": [],
+    "role_counts": {
+      "backend": 11,
+      "frontend": 11,
+      "data-ai": 14,
+      "mobile": 1
+    }
+  },
+  {
+    "company": "삼성",
+    "article_count": 22,
+    "areas": [
+      {
+        "area_name": "신뢰 가능한 에이전틱 AI 시스템 설계",
+        "area_description": "LLM의 환각·오류를 통제하기 위해 결정적 전처리·계산 로직과 LLM의 판단 역할을 분리하고, 멀티 에이전트·RAG·오케스트레이션 구조로 사내 검색, 데이터 분석, 이슈 진단, 문서 요약 등 다양한 업무를 자동화하는 문제를 다룬다.",
+        "rationale": "cluster_rank 1의 10건 모두 LLM 기반 에이전트를 실제 업무(이슈 분석, 인프라 포털, 데이터 분석, 사내 검색, 문서 요약, NL2SQL)에 적용하면서, 환각·신뢰성 문제를 코드-LLM 역할 분리와 멀티 에이전트 구조, 검증 체계로 해결한다는 공통된 엔지니어링 패턴을 공유하므로 하나의 Area로 유지함.",
+        "note": "",
+        "keywords": [
+          "RAG",
+          "LangGraph",
+          "멀티 에이전트 아키텍처",
+          "환각 차단",
+          "NL2SQL",
+          "QLoRA",
+          "포트-어댑터 아키텍처",
+          "AUTOPILOT 루프"
+        ],
+        "article_count": 11,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "backend": 8,
+          "data-ai": 11,
+          "frontend": 5,
+          "mobile": 2
+        },
+        "evidence": [
+          {
+            "article_id": "e5e2f9ed77417740",
+            "title": "AI에게 분석을 맡기기 전에, '분석할 수 없음' 부터 가르치세요 — Wear OS 이슈 초도 분석을 자동화한 WOA Agent 개발기",
+            "url": "https://techblog.samsung.com/blog/article/95",
+            "similarity": 0.871,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "85d8ee391ccef1f4",
+            "title": "한 명의 개발자가 여러 전문가와 일하는 방법: 역할형 AI 에이전트로 AWS 인프라 포털 만들기",
+            "url": "https://techblog.samsung.com/blog/article/94",
+            "similarity": 0.8873,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "5a0ffd626115acdc",
+            "title": "LLM에게 수백 MB 로그를 통째로 주지 마세요 — 근거를 \"검증\"할 수 있는 AI 이슈 분석 에이전트 개발기",
+            "url": "https://techblog.samsung.com/blog/article/93",
+            "similarity": 0.8937,
+            "roles": [
+              "backend",
+              "frontend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "88078bf1c32cf65d",
+            "title": "LLM에게 계산을 시키지 마세요 — 숫자를 '신뢰'할 수 있는 AI 데이터 애널리스트 개발기",
+            "url": "https://techblog.samsung.com/blog/article/92",
+            "similarity": 0.889,
+            "roles": [
+              "backend",
+              "frontend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "8e20ca34c1f3f5ad",
+            "title": "가전제품 MCU 펌웨어, AI가 100% 개발하는 시나리오 가능한가",
+            "url": "https://techblog.samsung.com/blog/article/90",
+            "similarity": 0.8737,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "23100c170cb7f18f",
+            "title": "Agentic Search 시스템 구축기: 사내 검색 환경을 재정의하기 위해 우리가 선택한 것들",
+            "url": "https://techblog.samsung.com/blog/article/82",
+            "similarity": 0.8996,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "646c5b0645783f5f",
+            "title": "생성형 AI와 빅데이터의 만남: 에이전틱 AI로 진화하는 Big Data Assistant",
+            "url": "https://techblog.samsung.com/blog/article/78",
+            "similarity": 0.9136,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "757949a60495c88a",
+            "title": "AI Cyber Challenge 우승 시스템을 삼성에 적용하기까지",
+            "url": "https://techblog.samsung.com/blog/article/77",
+            "similarity": 0.8807,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "ad46bb5fa01860f9",
+            "title": "업무 생산성 향상을 위한 Agentic RAG 기반 서비스",
+            "url": "https://techblog.samsung.com/blog/article/76",
+            "similarity": 0.9041,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "c239bf2a8232b571",
+            "title": "파인튜닝으로 LLM 편향 개선하기",
+            "url": "https://techblog.samsung.com/blog/article/75",
+            "similarity": 0.8716,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "5869213276df5caf",
+            "title": "Agentic AI는 어떻게 ‘생각하는 동료’가 되었나?",
+            "url": "https://techblog.samsung.com/blog/article/73",
+            "similarity": 0.8947,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "samsung-01"
+      },
+      {
+        "area_name": "통신·미디어 신호처리 AI 최적화",
+        "area_description": "5G/6G 기지국 및 실시간 미디어 처리 환경에서 마이크로초~밀리초 단위의 엄격한 지연·자원 제약을 만족시키기 위해, 코드 생성·신호 전송·영상 코덱·온사이트 학습 등에 특화된 AI/ML 모델을 적용하는 문제를 다룬다.",
+        "rationale": "vRAN 추론 코드 자동 생성, JSCM 기반 오디오 전송, AI-Native RAN, On-Site Training은 통신 인프라의 실시간 제약 하 AI 최적화라는 공통 문제를 다루고, APV 코덱과 4K 화질 복원은 미디어 신호처리에서 유사하게 실시간·자원 제약 하 전용 AI 기술을 적용한다는 점에서 함께 병합함.",
+        "note": "'파인튜닝으로 LLM 편향 개선하기' 게시글은 통신·미디어 신호처리와 무관한 LLM 학습 편향 주제로, cluster 내에서 이질적입니다.",
+        "keywords": [
+          "5G vRAN",
+          "SIMD",
+          "JSCM",
+          "APV 코덱",
+          "GNN",
+          "Digital Twin",
+          "Diffusion 모델",
+          "On-Site Training"
+        ],
+        "article_count": 6,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "backend": 4,
+          "data-ai": 6,
+          "mobile": 2,
+          "frontend": 1
+        },
+        "evidence": [
+          {
+            "article_id": "a75e395640b6c563",
+            "title": "전문가를 넘어선 AI – 5G vRAN 추론 코드 자동 생성을 위한 Multi-Agent 컴파일러",
+            "url": "https://techblog.samsung.com/blog/article/91",
+            "similarity": 0.8987,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "e55c103c78b77a66",
+            "title": "6G를 위한 AI/ML 물리계층 – JSCM 기반 오디오 전송",
+            "url": "https://techblog.samsung.com/blog/article/88",
+            "similarity": 0.8838,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "b9ff9234abb61d9f",
+            "title": "당신의 모바일폰 영상이 ‘영화’가 되는 순간… APV 코덱으로 현실이 되다",
+            "url": "https://techblog.samsung.com/blog/article/87",
+            "similarity": 0.8722,
+            "roles": [
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "91702e7ddf326324",
+            "title": "AI-Native RAN: 기지국 최적화의 패러다임을 바꾸는 Network Foundation Model",
+            "url": "https://techblog.samsung.com/blog/article/85",
+            "similarity": 0.8967,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "6b4f64cdbf544dc5",
+            "title": "생성형 AI 기술로 고전 드라마 화질을 4K급으로 개선",
+            "url": "https://techblog.samsung.com/blog/article/83",
+            "similarity": 0.8751,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "73ab7bd118331db2",
+            "title": "기지국에 딱 맞는 AI모델: On-Site Training과 추론 가속화",
+            "url": "https://techblog.samsung.com/blog/article/79",
+            "similarity": 0.9001,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "samsung-02"
+      },
+      {
+        "area_name": "자율 진단 및 복구 시스템 엔지니어링",
+        "area_description": "펌웨어 개발, 보안 취약점 패치, 네트워크 장애 진단, IoT 연결 복구 등 다양한 도메인에서 사람의 개입 없이 스스로 원인을 분석하고 문제를 해결하는 자율 에이전트·진단 파이프라인을 구축하는 문제를 다룬다.",
+        "rationale": "MCU 펌웨어 AUTOPILOT 루프, AI Cyber Challenge 기반 자동 패치, VPC Flow Logs 자동 진단, IoT Self-Healing 아키텍처는 각기 다른 도메인이지만 모두 자율적으로 문제를 진단·복구·해결하는 엔지니어링 패턴을 공유하여 병합함.",
+        "note": "'Stereoscopy의 이해: 무안경 3D 게임 개발 방법론' 게시글은 자율 진단·복구와 무관한 3D 렌더링·하드웨어 SDK 주제로, cluster 내에서 이질적입니다.",
+        "keywords": [
+          "Expert-In-The-Loop",
+          "Self-Healing",
+          "BLE",
+          "mDNS",
+          "OCF Layer 3",
+          "Calm Connection Care"
+        ],
+        "article_count": 2,
+        "roles": [
+          "data-ai"
+        ],
+        "role_counts": {
+          "data-ai": 1
+        },
+        "evidence": [
+          {
+            "article_id": "f27b37a1c3ea4c67",
+            "title": "인간과 AI, 함께 데이터를 탐험하다 - BDA 2.0 서비스의 탄생, 현재 그리고 미래",
+            "url": "https://techblog.samsung.com/blog/article/81",
+            "similarity": 0.8933,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "ae7099009d3ebcd8",
+            "title": "A Calm Technology Architecture for Self-Healing IoT Connectivity: Enabling Autonomous Recovery via Stationary Devices",
+            "url": "https://techblog.samsung.com/blog/article/72",
+            "similarity": 0.8823,
+            "roles": []
+          }
+        ],
+        "id": "samsung-03"
+      }
+    ],
+    "unassigned_count": 3,
+    "unassigned_diagnostic": [],
+    "role_counts": {
+      "backend": 14,
+      "data-ai": 21,
+      "frontend": 8,
+      "mobile": 4
+    }
+  },
+  {
+    "company": "아임웹",
+    "article_count": 26,
+    "areas": [
+      {
+        "area_name": "데이터베이스/캐시 성능 및 동시성 최적화",
+        "area_description": "MySQL/Aurora의 트랜잭션 격리·잠금 메커니즘, 캐시 엔진 전환, 고동시성 트래픽 상황에서의 재고·주문 처리 경합 문제를 원인 분석과 실측 기반 검증으로 해결하는 문제 영역.",
+        "rationale": "cluster 3의 4개 게시글(HLL/MVCC 분석, Redis→Valkey 전환, MySQL Online DDL의 메타데이터 잠금 비교, 재고 처리 lock 경합 해결)은 모두 DB 및 캐시 계층에서의 잠금·격리·동시성 성능 문제를 다루는 동질적인 묶음이라 별도 병합 없이 그대로 하나의 Area로 유지했다.",
+        "note": "",
+        "keywords": [
+          "History List Length",
+          "InnoDB MVCC",
+          "Repeatable Read",
+          "Online DDL",
+          "메타데이터 잠금",
+          "Aurora",
+          "Kafka",
+          "K6 부하 테스트"
+        ],
+        "article_count": 4,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend"
+        ],
+        "role_counts": {
+          "backend": 4,
+          "data-ai": 3,
+          "frontend": 2
+        },
+        "evidence": [
+          {
+            "article_id": "69a7682d0dceac17",
+            "title": "963초짜리 쿼리 하나가 HLL 205만까지 끌어올렸습니다",
+            "url": "https://tech.imweb.me/posts/aurora-hll-snapshot-lifetime/",
+            "similarity": 0.8851,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "49aadf6534f0cde4",
+            "title": "전사 장애를 데이터로 잠재운 인프라팀의 8개월",
+            "url": "https://tech.imweb.me/posts/db-writer-bottleneck-stabilization/",
+            "similarity": 0.886,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "01f80750fed7ce9c",
+            "title": "MySQL Online DDL의 메타데이터 잠금: pt-osc와 무엇이 다른가",
+            "url": "https://tech.imweb.me/posts/mysql-online-ddl-mdl-vs-pt-osc/",
+            "similarity": 0.8672,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "9cd1973d7efb83ee",
+            "title": "주문 트래픽 20배를 견디는 재고 처리 구조 만들기",
+            "url": "https://tech.imweb.me/posts/order-stock-lock-contention/",
+            "similarity": 0.8959,
+            "roles": [
+              "backend"
+            ]
+          }
+        ],
+        "id": "imweb-01"
+      },
+      {
+        "area_name": "AI 에이전트 기반 운영 자동화",
+        "area_description": "인프라 운영, 데이터 접근, 신규 인력 온보딩, 장애 대응 등 반복적인 운영 업무에 AI 에이전트(LLM)를 결합해 자동화하면서도 안전성과 신뢰성을 확보하는 문제 영역. 자연어-SQL 변환의 3단계 검증, 멀티에이전트 오케스트레이션, 조직 지식을 누적하는 Knowledge DB, 사고 재발 방지를 위한 guardrail 체계 구축 등을 포함한다.",
+        "rationale": "cluster 1의 14개 게시글 중 GA AI 활용, AI SQL 검증, AI 트리아지, 슬랙봇 쿼리곰, AI 온보딩 재설계, Knowledge DB 구축, 멀티에이전트 아키텍처, AI 알림사고 방지, 4개 파트 AI 시스템 공유 등 8건이 'AI 에이전트를 조직 운영에 통합'이라는 동일한 엔지니어링 문제를 공유해 하나의 Area로 묶었다. 다른 두 cluster는 각각 인프라 안정성, DB/캐시 성능이라는 별개의 문제를 다루므로 병합하지 않았다.",
+        "note": "이 cluster에는 사내 해커톤 운영 도구 개발, 보안 계정 체계 재설계, enum 기반 상태 리팩토링, 기술블로그 자체 도메인 이전, DB Writer 부하 분산 등 AI 에이전트 자동화와 직접 관련 없는 이질적인 게시글이 다수(6건) 섞여 있음. 이 게시글들은 각각 독립적인 주제(사내 도구 개발, 보안 인프라, 도메인 모델링, 콘텐츠 파이프라인, DB 부하 분산)이며 별도 Area로 분리할 만큼의 규모는 아니라 cluster를 쪼개지 않고 그대로 두었다.",
+        "keywords": [
+          "Multi-Agent",
+          "Hybrid RAG",
+          "CLAUDE.md",
+          "AST 파서",
+          "Slack Socket Mode",
+          "Testcontainers",
+          "OAuth 최소 스코프",
+          "Knowledge DB"
+        ],
+        "article_count": 12,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend"
+        ],
+        "role_counts": {
+          "backend": 11,
+          "data-ai": 11,
+          "frontend": 5
+        },
+        "evidence": [
+          {
+            "article_id": "6ff7754aa458f816",
+            "title": "아임웹은 어쩌다 사내 해커톤을 하게 되었을까",
+            "url": "https://tech.imweb.me/posts/ai-hackathon-bushcraft/",
+            "similarity": 0.8605,
+            "roles": []
+          },
+          {
+            "article_id": "e06ca377ce0633ca",
+            "title": "AI와 함께 OMS의 Writer connection을 15.9% 줄인 방법",
+            "url": "https://tech.imweb.me/posts/oms-refactoring-with-ai/",
+            "similarity": 0.8758,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "3cf302bcb9e84e41",
+            "title": "1. 통과하는 테스트 뒤에 숨어 있던 것들",
+            "url": "https://tech.imweb.me/posts/remove-mocks-integration-first1/",
+            "similarity": 0.8832,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "b408c43dd9f91626",
+            "title": "GA에게 AI를 쥐어주면 생기는 일",
+            "url": "https://tech.imweb.me/posts/ga-built-office-seatmap/",
+            "similarity": 0.8672,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "e230219a37c5ce13",
+            "title": "AI가 쓴 SQL을 안전하게 쓰는 법",
+            "url": "https://tech.imweb.me/posts/safe-llm-generated-sql/",
+            "similarity": 0.8911,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "3895fc3e80caa483",
+            "title": "AI 트리아지로 인입을 자동 분류하기",
+            "url": "https://tech.imweb.me/posts/ai-triage-incident-routing/",
+            "similarity": 0.8713,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "4c32a0d061cb8d16",
+            "title": "Slack 봇 쿼리곰: 없으면 안 되는 봇이 되기까지",
+            "url": "https://tech.imweb.me/posts/slackbot-data-queryai/",
+            "similarity": 0.8801,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "0e3094410d7d9333",
+            "title": "입사 10일, AI로 인프라팀 온보딩을 다시 설계한 이야기",
+            "url": "https://tech.imweb.me/posts/infra-onboarding-with-ai/",
+            "similarity": 0.8979,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "f4b2eb415f22dbcc",
+            "title": "13년치 회사 기억을 먹은 AI: Knowledge DB 구축기",
+            "url": "https://tech.imweb.me/posts/ai-knowledge-db-context/",
+            "similarity": 0.9002,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "61c9d548c205437c",
+            "title": "하나의 프롬프트, 세 개의 두뇌",
+            "url": "https://tech.imweb.me/posts/multi-agent-cli-orchestration/",
+            "similarity": 0.8735,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "2fd0d3d20337c2ec",
+            "title": "AI가 전사 알림을 두 번 죽이다",
+            "url": "https://tech.imweb.me/posts/ai-mistake-guardrail/",
+            "similarity": 0.8808,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "52298ae6a824a917",
+            "title": "4개 파트가 하나의 AI 시스템을 공유하기",
+            "url": "https://tech.imweb.me/posts/infra-claude-onboarding/",
+            "similarity": 0.8802,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "imweb-02"
+      },
+      {
+        "area_name": "인프라 안정성 및 배포 신뢰성 개선",
+        "area_description": "대규모 트래픽 환경에서 서비스 네트워크 구조, DB 커넥션, 테스트 신뢰성, 다중 플랫폼 배포 파이프라인과 관측성을 개선해 안정적인 운영 인프라를 구축하는 문제 영역. 로드밸런서 한계 극복을 위한 네트워크 재설계, EKS 클러스터 대규모 버전 통일, 배포 관측 통합, 모니터링 비용 최적화 등을 포함한다.",
+        "rationale": "cluster 2의 8개 게시글은 VPC Lattice 네트워크 재설계, OMS 커넥션 최적화, Testcontainers 기반 통합테스트, Port-Adapter 구조 전환, EKS 11개 클러스터 버전 통일, stage 환경 재구축, 배포관측 통합, Datadog RUM 비용 절감으로, 표면적 주제는 다르지만 모두 '안정적으로 운영·배포되는 인프라 체계 구축'이라는 공통 엔지니어링 문제를 다루고 있어 하나의 Area로 유지했다. 다른 cluster와는 다루는 시스템 계층(네트워크/배포/테스트 인프라 vs AI 자동화 vs DB 성능)이 명확히 달라 병합하지 않았다.",
+        "note": "",
+        "keywords": [
+          "VPC Lattice",
+          "EKS",
+          "Karpenter",
+          "Golden Image",
+          "CodeDeploy",
+          "Transit Gateway",
+          "Valkey",
+          "APM 트레이스"
+        ],
+        "article_count": 6,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend"
+        ],
+        "role_counts": {
+          "backend": 6,
+          "frontend": 3,
+          "data-ai": 6
+        },
+        "evidence": [
+          {
+            "article_id": "fdd543352342f5ac",
+            "title": "VPC Lattice 기반 서비스 네트워크 재설계와 비용 최적화 사례",
+            "url": "https://tech.imweb.me/posts/vpc-lattice-kong-service-network/",
+            "similarity": 0.9,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "e14aed5c0a80a210",
+            "title": "EKS 클러스터 11개를 서비스 중단 없이 버전 통일하기",
+            "url": "https://tech.imweb.me/posts/eks-11clusters-upgrade/",
+            "similarity": 0.8859,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "15abc33fbaa4c1eb",
+            "title": "누구도 손대지 못하던 13년의 운영 환경을 stage로 재구축하기까지",
+            "url": "https://tech.imweb.me/posts/build-stage-ai-native/",
+            "similarity": 0.8741,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "2d108cabeabdd00e",
+            "title": "보안 계정을 처음부터 다시 설계했습니다.",
+            "url": "https://tech.imweb.me/posts/dedicated-security-account-baseline/",
+            "similarity": 0.8777,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "9c08461c9348068e",
+            "title": "Redis 6.x에서 Valkey 9.0으로: 운영 캐시 성능과 비용을 함께 개선한 전환기",
+            "url": "https://tech.imweb.me/posts/redis-oss-valkey-upgrade/",
+            "similarity": 0.8694,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "cb1963b8d372f164",
+            "title": "세 개의 플랫폼, 하나의 배포 관측",
+            "url": "https://tech.imweb.me/posts/unified-deploy-visibility-apm/",
+            "similarity": 0.8877,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "imweb-03"
+      }
+    ],
+    "unassigned_count": 4,
+    "unassigned_diagnostic": [],
+    "role_counts": {
+      "backend": 24,
+      "frontend": 14,
+      "data-ai": 23,
+      "mobile": 1
+    }
+  },
+  {
+    "company": "안랩클라우드메이트",
+    "article_count": 9,
+    "areas": [
+      {
+        "area_name": "AI 에이전트 기반 데이터 인프라 관리 및 검색 시스템",
+        "area_description": "자연어 인터페이스나 LLM 임베딩을 활용해 클라우드 데이터 인프라(S3 Tables, Kafka)를 조회·관리하거나, 개인 지식베이스용 RAG 검색 시스템을 구축하는 문제를 다룬다. MCP 프로토콜 기반 권한 통제 설계와 임베딩 기반 유사도 검색 파이프라인 구현이 포함된다.",
+        "rationale": "S3 Tables MCP, Kafka MSK MCP는 모두 'MCP 서버를 통해 AI 에이전트가 자연어로 클라우드 리소스를 제어'하는 동일한 패턴을 다루어 병합했다. Notion RAG 시스템 역시 LLM 임베딩과 AI 기반 검색이라는 점에서 기술적 맥락이 겹쳐 같은 Area로 묶었다.",
+        "note": "",
+        "keywords": [
+          "MCP 서버",
+          "S3 Tables",
+          "Amazon MSK",
+          "RAG",
+          "Cosine Similarity",
+          "Amazon Q Developer CLI",
+          "approval_required"
+        ],
+        "article_count": 4,
+        "roles": [
+          "backend",
+          "data-ai"
+        ],
+        "role_counts": {
+          "backend": 4,
+          "data-ai": 4
+        },
+        "evidence": [
+          {
+            "article_id": "440bff61e673610d",
+            "title": "Amazon S3 Tables와 MCP, 자연어로 확장하는 데이터 경험",
+            "url": "https://techblog.ahnlabcloudmate.com/amazon-s3-tableswa-mcp-jayeoneoro-hwagjanghaneun-deiteo-gyeongheom/",
+            "similarity": 0.9058,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "15bebabd170db00a",
+            "title": "Knowledge MCP vs Documentation MCP",
+            "url": "https://techblog.ahnlabcloudmate.com/knowledge-mcp-vs-documentation-mcp/",
+            "similarity": 0.8669,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "0b39632a213eff20",
+            "title": "AI와 함께하는 Kafka 클러스터 관리: Amazon MSK용 MCP 서버 출시",
+            "url": "https://techblog.ahnlabcloudmate.com/aiwa-hamggehaneun-kafka-keulreoseuteo-gwanri-amazon-mskyong-mcp-seobeo-culsi/",
+            "similarity": 0.8939,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "e11faff2a3bc8b8c",
+            "title": "Notion RAG 검색 시스템 구축: Go로 구현하는 개인 지식 베이스 구축기",
+            "url": "https://techblog.ahnlabcloudmate.com/notion-rag-geomsaeg-siseutem-gucug-goro-guhyeonhaneun-gaein-jisig-beiseu-gucuggi/",
+            "similarity": 0.8719,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "ahnlab-cloudmate-01"
+      },
+      {
+        "area_name": "인프라 장애 진단 및 보안 취약점 분석",
+        "area_description": "운영 중인 시스템에서 발생하는 보안 취약점과 장애 원인을 코드 및 로그 수준에서 진단하는 문제를 다룬다. 라이브러리의 CVE 취약점을 코드 레벨에서 분석하거나, 로드밸런서 헬스체크 로그를 통해 부분 장애 인스턴스를 식별하는 작업이 포함된다.",
+        "rationale": "React CVE 분석과 ALB Health Check Logs는 모두 '운영 중 발생한 문제의 근본 원인을 로그·코드 수준에서 진단'한다는 공통점이 있어 하나의 Area로 묶었다. 다만 cluster 3의 세 번째 멤버(Knowledge MCP vs Documentation MCP)는 AI 도구 비교이며 앞의 두 게시물과 엔지니어링 성격이 다르지만, cluster를 쪼갤 수 없어 동일 Area에 포함했다.",
+        "note": "cluster 내 'Knowledge MCP vs Documentation MCP' 게시물은 진단/보안이 아닌 AI 도구 비교 성격으로, 나머지 두 게시물과 이질적임.",
+        "keywords": [
+          "CVE",
+          "React Flight Protocol",
+          "ALB",
+          "Health Check Logs",
+          "DoS 취약점",
+          "S3 gzip 로그"
+        ],
+        "article_count": 2,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend"
+        ],
+        "role_counts": {
+          "backend": 2,
+          "frontend": 1,
+          "data-ai": 2
+        },
+        "evidence": [
+          {
+            "article_id": "452d9949e896f826",
+            "title": "React와 DoS",
+            "url": "https://techblog.ahnlabcloudmate.com/reactwa-dos/",
+            "similarity": 0.8728,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "22bfb2e20158c5dc",
+            "title": "ALB Health Check Logs 지원",
+            "url": "https://techblog.ahnlabcloudmate.com/alb-health-check-logs-jiweon/",
+            "similarity": 0.886,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "ahnlab-cloudmate-02"
+      },
+      {
+        "area_name": "서비스 성능 최적화 및 배포 안정화",
+        "area_description": "대량 트래픽 처리 시 발생하는 DB·커넥션 병목을 해결하고, 무중단 배포 전략과 네트워크 프로토콜 개선을 통해 서비스의 처리량과 배포 안정성을 높이는 문제를 다룬다. 인덱스·커넥션 풀 튜닝, 블루/그린 배포 검증, HTTP/3 적용 성능 비교가 해당된다.",
+        "rationale": "빌링 성능 개선(DB/커넥션 튜닝), ECS 블루/그린 배포, Spring Boot HTTP/3 적용은 계층은 다르지만 모두 '서비스의 처리 성능과 배포 안정성을 높이기 위한 실측·검증 작업'이라는 공통 목적을 가져 하나의 Area로 병합했다.",
+        "note": "블루/그린 배포는 성능 튜닝보다는 배포 전략에 가까워 다른 두 항목과 초점이 다소 다름.",
+        "keywords": [
+          "커넥션 풀",
+          "블루/그린 배포",
+          "HTTP/3",
+          "QUIC",
+          "복합 인덱스",
+          "ECR",
+          "Netty"
+        ],
+        "article_count": 3,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend"
+        ],
+        "role_counts": {
+          "backend": 2,
+          "frontend": 2,
+          "data-ai": 2
+        },
+        "evidence": [
+          {
+            "article_id": "a46b3b69c984549e",
+            "title": "빌링 3.0 성능 이슈 개선 기록 - Part 1",
+            "url": "https://techblog.ahnlabcloudmate.com/bilring-3-0-seongneung-isyu-gaeseon-girog-part-1/",
+            "similarity": 0.8988,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "b2233ac7c921cf05",
+            "title": "Amazon ECS, 기본 제공 블루/그린 배포 지원",
+            "url": "https://techblog.ahnlabcloudmate.com/amazon-ecs-gibon-jegong-beulru-geurin-baepo-jiweon/",
+            "similarity": 0.8831,
+            "roles": []
+          },
+          {
+            "article_id": "a403e67c67f75f6d",
+            "title": "Sprint Boot 에서 HTTP/3(QUIC) 적용 및 성능 비교",
+            "url": "https://techblog.ahnlabcloudmate.com/sprint-boot-eseo-http-3-quic-jeogyong-mic-seongneung-bigyo/",
+            "similarity": 0.8895,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "ahnlab-cloudmate-03"
+      }
+    ],
+    "unassigned_count": 0,
+    "unassigned_diagnostic": [],
+    "role_counts": {
+      "backend": 8,
+      "frontend": 3,
+      "data-ai": 8
+    }
+  },
+  {
+    "company": "카카오엔터프라이즈 / 카카오클라우드",
+    "article_count": 22,
+    "areas": [
+      {
+        "area_name": "클라우드 보안 및 인프라 자동화(IaC)",
+        "area_description": "제로트러스트·SECaaS 기반의 신규 보안 위협 대응, Terraform 등 IaC를 통한 클라우드 자원 프로비저닝 자동화, Multi-AZ 기반 재해복구(DR) 아키텍처 설계를 다룬다.",
+        "rationale": "보안(SECaaS, 제로트러스트), IaC(Terraform Provider, K-PaaS), DR(Multi-AZ) 게시물이 클라우드 운영 안정성·자동화라는 공통 축을 이루어 하나의 cluster를 그대로 Area로 유지했다. 다른 cluster(비용·성능 최적화, GPU 분산학습)와는 다루는 엔지니어링 문제가 명확히 달라 병합하지 않았다.",
+        "note": "크루 인터뷰(가천SW아카데미 수료생, K-디지털트레이닝 인턴 성장기) 2건은 채용·조직문화 성격의 콘텐츠로 실질적 엔지니어링 주제가 약해 이질적으로 섞여 있다.",
+        "keywords": [
+          "SECaaS",
+          "Terraform Provider",
+          "제로트러스트",
+          "Multi-AZ",
+          "OpenStack",
+          "RBAC",
+          "CSAP"
+        ],
+        "article_count": 6,
+        "roles": [
+          "backend",
+          "data-ai"
+        ],
+        "role_counts": {
+          "backend": 6,
+          "data-ai": 6
+        },
+        "evidence": [
+          {
+            "article_id": "8b425043bca7ac71",
+            "title": "[ESG와 클라우드 ②] 나도 모르는 사이 쌓이는 보안 부채, SECaaS로 스마트하게 대응하세요!",
+            "url": "https://blog.kakaocloud.com/280",
+            "similarity": 0.8742,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "036e4157e7a42121",
+            "title": "<현장 스케치> 🔐카카오 주요 계열사를 위한 클라우드 보안 세미나",
+            "url": "https://blog.kakaocloud.com/264",
+            "similarity": 0.923,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "15aabeca747fd4fe",
+            "title": "<크루 인터뷰> 가천SW아카데미 4인 4색의 실전 정복기",
+            "url": "https://blog.kakaocloud.com/259",
+            "similarity": 0.8979,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "f9a7d43badf338ad",
+            "title": "<고객 사례> 🦾 공정 지연 40% 감소의 비결, 피지컬 AI를 위한 디밀리언의 멀티클라우드 전략",
+            "url": "https://blog.kakaocloud.com/257",
+            "similarity": 0.8724,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "29e7c589b99017a3",
+            "title": "<인터뷰> K-PaaS 리더가 말하는 ‘클라우드 네이티브’의 정석: 왜 카카오클라우드인가?",
+            "url": "https://blog.kakaocloud.com/256",
+            "similarity": 0.8915,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "22ff94326813fcaa",
+            "title": "<현장 스케치> 2025 정보화·사이버 보안 협의회 워크숍 \"카카오클라우드가 말하는 중단없는 공공시스템\"",
+            "url": "https://blog.kakaocloud.com/247",
+            "similarity": 0.8959,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "kakao-cloud-01"
+      },
+      {
+        "area_name": "클라우드 인프라 비용·성능 최적화",
+        "area_description": "온프레미스·레거시 인프라를 하이브리드 GPUaaS, 컨테이너/MSA, VM·Object Storage 조합의 클라우드 구조로 전환하여 TCO와 운영비용을 절감하고, 산업별 워크로드(3D/기상 데이터 처리, GPU 학습, 게임 서버 등)의 응답속도·처리량·GPU 활용률을 개선하는 문제를 다룬다.",
+        "rationale": "12개 게시물 대부분이 특정 고객의 클라우드 전환·비용절감·성능개선 사례로 하나의 반복적 엔지니어링 문제(비용 대비 성능 최적화)를 공유해 단일 cluster를 그대로 하나의 Area로 유지했다. ESG/거버넌스 및 콘솔 재설계 게시물은 소수이고 다른 cluster의 주제와도 부합하지 않아 별도 병합 대상을 찾지 못했다.",
+        "note": "KMS 키관리·감사로그 기반 ESG 거버넌스 게시물 2건과 콘솔 UI 재설계(CDC/SSE, Module Federation) 게시물 1건은 비용·성능 최적화라는 주제와 결이 달라 이질적으로 섞여 있다.",
+        "keywords": [
+          "GPUaaS",
+          "Kubeflow",
+          "HPA",
+          "Transit Gateway(TGW)",
+          "KMS",
+          "Object Storage",
+          "A100 GPU",
+          "MSA"
+        ],
+        "article_count": 12,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "backend": 12,
+          "data-ai": 12,
+          "mobile": 2,
+          "frontend": 1
+        },
+        "evidence": [
+          {
+            "article_id": "24bc67191715dc03",
+            "title": "현장 스케치 I 증권사 AI 도입 가속화를 위한 AI 인프라 전략 세미나",
+            "url": "https://blog.kakaocloud.com/290",
+            "similarity": 0.8799,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "f79ac40e1375abde",
+            "title": "<고객 사례> 응답속도 50% 단축, 데이터 처리량 3배 증가시킨 ‘이지스’",
+            "url": "https://blog.kakaocloud.com/289",
+            "similarity": 0.8838,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "1cf49d835023e8a7",
+            "title": "[D･R･R] 피지컬 AI를 위한 컴퓨팅 인프라 구축: 클라우드 관리형 엣지 컴퓨팅",
+            "url": "https://blog.kakaocloud.com/287",
+            "similarity": 0.8814,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "0af2478c1903dc2c",
+            "title": "<고객 사례> 운영 준비 시간 60% 단축, 도로가 카카오클라우드로 자체 서비스를 구축한 이유",
+            "url": "https://blog.kakaocloud.com/285",
+            "similarity": 0.8809,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "e3d9f356db60ac1c",
+            "title": "[ESG와 클라우드 ③] ESG의 마지막 퍼즐 G(Governance), 시스템으로 증명하는 투명경영",
+            "url": "https://blog.kakaocloud.com/282",
+            "similarity": 0.8779,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "8158b3f056746f15",
+            "title": "<고객 사례> 비용절감에서 ESG🌿까지, 소규모 공공기관의 ‘100% 클라우드 네이티브’ 전환 사례 : 한국형사법무정책연구원",
+            "url": "https://blog.kakaocloud.com/263",
+            "similarity": 0.8939,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "3842b6014e615728",
+            "title": "[ESG와 클라우드 ①] TCO는 낮추고 ESG는 높이고: 온프레미스 vs 클라우드, 당신의 선택은?",
+            "url": "https://blog.kakaocloud.com/262",
+            "similarity": 0.9229,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "80a8c545fddc26a1",
+            "title": "<고객 사례> GS리테일 AI 혁신 스토리: GPU 비용 35% 절감 비결은?",
+            "url": "https://blog.kakaocloud.com/253",
+            "similarity": 0.8843,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "379c2471469c4aeb",
+            "title": "<세미나 후기>🚀 비개발자도 알아야 할 클라우드 핵심: 카카오클라우드와 K-PaaS의 완벽한 시너지!!",
+            "url": "https://blog.kakaocloud.com/246",
+            "similarity": 0.8872,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "6923aef8d19f72be",
+            "title": "<고객 사례> \"고성능을 유지하며, 비용은 40% 절감\" 카카오게임즈가 밝힌 클라우드 혁신 비결",
+            "url": "https://blog.kakaocloud.com/236",
+            "similarity": 0.8987,
+            "roles": [
+              "backend",
+              "mobile",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "e90f9e6c644b893a",
+            "title": "[델 테크놀로지스 포럼 2025] 카카오클라우드, AI 인프라 TCO 절감전략 공개!",
+            "url": "https://blog.kakaocloud.com/233",
+            "similarity": 0.9313,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "2d6f727afb186f6c",
+            "title": "<고객 사례> ‘닥터케이헬스케어’, 카카오클라우드로 AI 진단 서비스의 정확도와 운영 안정성 강화",
+            "url": "https://blog.kakaocloud.com/220",
+            "similarity": 0.881,
+            "roles": [
+              "backend",
+              "frontend",
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "kakao-cloud-02"
+      },
+      {
+        "area_name": "대규모 GPU 분산학습 인프라",
+        "area_description": "수천 개 GPU 규모(B200 255노드)의 클러스터에서 InfiniBand·Fat-Tree 네트워크 토폴로지와 Kubernetes/Kubeflow 오케스트레이션을 결합해 GPU 간 통신 성능과 멀티테넌시 자원 활용을 극대화하는 분산 학습 인프라 구축 문제를 다룬다.",
+        "rationale": "2건 모두 동일한 B200 GPU 슈퍼컴퓨터 구축이라는 단일 주제를 다루며 내용이 매우 응집적이라 그대로 독립 Area로 유지했다. 다른 cluster의 개별 고객 사례성 비용최적화나 보안/IaC 주제와는 성격이 달라 병합하지 않았다.",
+        "note": "",
+        "keywords": [
+          "Blackwell B200",
+          "InfiniBand",
+          "NCCL",
+          "Fat-Tree",
+          "SHARP",
+          "Kubeflow"
+        ],
+        "article_count": 2,
+        "roles": [
+          "backend",
+          "data-ai"
+        ],
+        "role_counts": {
+          "backend": 2,
+          "data-ai": 2
+        },
+        "evidence": [
+          {
+            "article_id": "b8f414b5da3e01ed",
+            "title": "[Tech] Blackwell B200 GPU 기반 Cloud-Native 분산 학습 플랫폼 구현",
+            "url": "https://blog.kakaocloud.com/284",
+            "similarity": 0.9315,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "c855f7d227813ce6",
+            "title": "️TOP500 세계 39위! 카카오클라우드 AI 슈퍼컴퓨터 구축기",
+            "url": "https://blog.kakaocloud.com/283",
+            "similarity": 0.9132,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "kakao-cloud-03"
+      }
+    ],
+    "unassigned_count": 2,
+    "unassigned_diagnostic": [],
+    "role_counts": {
+      "backend": 22,
+      "data-ai": 21,
+      "mobile": 2,
+      "frontend": 1
+    }
+  }
+]
