@@ -65,7 +65,7 @@ export function ExperiencePanel({
        개든 조작의 자리는 늘 같습니다. */
     <div className="flex flex-col gap-2.5 rounded-card border border-line-strong bg-sunken px-4 py-3">
       <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
-        <span className="flex items-center gap-1.5 font-mono text-meta text-ink-muted">
+        <span className="flex items-center gap-1.5 font-mono text-caption text-ink-muted">
           <span className="text-accent">$</span>내 경험 {done.length}개
         </span>
 
