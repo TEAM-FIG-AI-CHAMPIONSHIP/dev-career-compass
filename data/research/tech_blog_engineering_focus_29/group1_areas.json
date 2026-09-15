@@ -1362,5 +1362,500 @@
       "mobile": 14,
       "frontend": 4
     }
+  },
+  {
+    "company": "여기어때",
+    "article_count": 43,
+    "areas": [
+      {
+        "area_name": "흩어진 기록·로그의 지식화와 비정상 동작 원인 규명",
+        "area_description": "세션마다 휘발되는 작업 맥락과 동의어로 파편화된 검색 로그처럼 원시 기록을 위키·임베딩 파이프라인으로 재사용 가능한 자산으로 만드는 문제, 그리고 표준 모델로는 설명되지 않는 커넥션 종료 같은 증상을 벤더 구현 차이까지 파고들어 규명하는 문제를 다룬다.",
+        "rationale": "cluster 3은 규모가 작지만 개인 LLM 위키 2부작과 검색 로그 기반 연관 키워드 파이프라인이 '축적된 기록을 어떻게 구조화해 다시 쓰게 만들 것인가'라는 문제를 공유한다. cluster 1의 AI Area로 흡수하면 이 축이 대규모 인프라·에이전트 운영 글에 묻히고, cluster 2와는 접점이 없어 단독 Area로 두었다.",
+        "note": "Aurora MySQL dual timeout / HikariCP 추적 글은 DB 커넥션 풀 트러블슈팅으로, 같은 cluster의 나머지 세 편과 주제가 다르다. 임베딩상 함께 묶였을 뿐이므로 이 Area의 대표 주제로 보지 않는 것이 좋다.",
+        "keywords": [
+          "HikariCP",
+          "Aurora MySQL",
+          "Word2Vec",
+          "LLM 위키",
+          "연관 키워드"
+        ],
+        "article_count": 5,
+        "roles": [
+          "backend",
+          "data-ai"
+        ],
+        "role_counts": {
+          "backend": 1,
+          "data-ai": 4
+        },
+        "evidence": [
+          {
+            "article_id": "90d1a9f36c984ee1",
+            "title": "AI가 내 하루를 기억하게 하는 법 (1/2): 먼저, 기억할 곳을 만들었다 — 개인 LLM 위키",
+            "url": "https://techblog.gccompany.co.kr/ai%EA%B0%80-%EB%82%B4-%ED%95%98%EB%A3%A8%EB%A5%BC-%EA%B8%B0%EC%96%B5%ED%95%98%EA%B2%8C-%ED%95%98%EB%8A%94-%EB%B2%95-1-2-%EB%A8%BC%EC%A0%80-%EA%B8%B0%EC%96%B5%ED%95%A0-%EA%B3%B3%EC%9D%84-%EB%A7%8C%EB%93%A4%EC%97%88%EB%8B%A4-%EA%B0%9C%EC%9D%B8-llm-%EC%9C%84%ED%82%A4-dd6a3158d9a0?source=rss----18356045d353---4",
+            "similarity": 0.8792,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "a29d742da2f8f738",
+            "title": "aurora mysql의 숨겨진 idle close 동작 hikaricp failed to validate connection 추적기",
+            "url": "https://techblog.gccompany.co.kr/aurora-mysql의-숨겨진-idle-close-동작-hikaricp-failed-to-validate-connection-추적기-fed647664332",
+            "similarity": 0.8717,
+            "roles": [
+              "backend"
+            ]
+          },
+          {
+            "article_id": "18963507d9c62414",
+            "title": "연관 키워드 추천",
+            "url": "https://techblog.gccompany.co.kr/연관-키워드-추천-f5ac530432c5",
+            "similarity": 0.8787,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "e9e41dffce0f9adc",
+            "title": "늙어버린 당신의 ai",
+            "url": "https://techblog.gccompany.co.kr/늙어버린-당신의-ai-7dc9cc8a7ca7",
+            "similarity": 0.8873,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "8c9c58ea08549ab4",
+            "title": "ai가 내 하루를 기억하게 하는 법 2 2 오늘이 위키로 들어오기까지 데일리 루프",
+            "url": "https://techblog.gccompany.co.kr/ai가-내-하루를-기억하게-하는-법-2-2-오늘이-위키로-들어오기까지-데일리-루프-595f8a2a7c3a",
+            "similarity": 0.8773,
+            "roles": [
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "yeogi-01"
+      },
+      {
+        "area_name": "웹·웹뷰 단일 코드베이스 프론트엔드 아키텍처와 도메인 설계",
+        "area_description": "웹·모바일웹·앱 웹뷰를 코드 한 벌로 운영하기 위해 환경 판단, 인증 토큰 유입 경로, 브릿지 호출, 뒤로가기 히스토리, 레이아웃 컨테이너, 상태 소유권을 어디까지 추상화할지 경계를 긋는 문제와, 예약·전시·달력처럼 도메인별 정책이 갈리는 화면·서버 로직을 공통화하는 설계 문제를 다룬다.",
+        "rationale": "cluster 2는 '항공 프론트엔드 구축기' 시리즈 7편이 중심축을 이루고, SwiftUI 달력/인원 선택 구조 재설계, Kotlin DSL 전시 도메인, Spring Modulith 모듈 경계, Redis 접근 방식 비교가 모두 '도메인 정책 차이를 어느 레이어에서 흡수할 것인가'라는 같은 설계 질문을 공유해 별도 Area로 유지했다. cluster 1의 플랫폼/AI 운영 주제와는 해결하려는 문제 층위가 달라 병합하지 않았다.",
+        "note": "",
+        "keywords": [
+          "웹뷰 브릿지",
+          "React Query",
+          "TanStack Query",
+          "nuqs",
+          "SSR/Hydration",
+          "Playwright",
+          "Kotlin DSL",
+          "SwiftUI Calendar Core"
+        ],
+        "article_count": 18,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "backend": 2,
+          "data-ai": 1,
+          "frontend": 14,
+          "mobile": 3
+        },
+        "evidence": [
+          {
+            "article_id": "a46829b60ed30762",
+            "title": "항공 프론트엔드 구축기 1 10 웹 모바일웹 웹뷰를 코드 한 벌로",
+            "url": "https://techblog.gccompany.co.kr/항공-프론트엔드-구축기-1-10-웹-모바일웹-웹뷰를-코드-한-벌로-ca9bec34dddf",
+            "similarity": 0.9164,
+            "roles": [
+              "frontend",
+              "mobile"
+            ]
+          },
+          {
+            "article_id": "dde8182f2744e398",
+            "title": "항공 프론트엔드 구축기 2 10 vue2 디자인 시스템을 react로 옮기기",
+            "url": "https://techblog.gccompany.co.kr/항공-프론트엔드-구축기-2-10-vue2-디자인-시스템을-react로-옮기기-b16284a907e9",
+            "similarity": 0.8709,
+            "roles": [
+              "frontend"
+            ]
+          },
+          {
+            "article_id": "aed1c00bbaa9251f",
+            "title": "항공 프론트엔드 구축기 3 10 prefix를 붙이자 tailwind merge가 조용히 깨졌다",
+            "url": "https://techblog.gccompany.co.kr/항공-프론트엔드-구축기-3-10-prefix를-붙이자-tailwind-merge가-조용히-깨졌다-f5b250afc2a9",
+            "similarity": 0.8596,
+            "roles": [
+              "frontend"
+            ]
+          },
+          {
+            "article_id": "93781aaa0596834b",
+            "title": "항공 프론트엔드 구축기 4 10 앱이냐 와 좁냐 는 다른 질문이다",
+            "url": "https://techblog.gccompany.co.kr/항공-프론트엔드-구축기-4-10-앱이냐-와-좁냐-는-다른-질문이다-ee5cfa1a94ff",
+            "similarity": 0.8964,
+            "roles": [
+              "frontend"
+            ]
+          },
+          {
+            "article_id": "589747c561c08e4b",
+            "title": "항공 프론트엔드 구축기 5 10 뒤로가기가 가장 어려웠다",
+            "url": "https://techblog.gccompany.co.kr/항공-프론트엔드-구축기-5-10-뒤로가기가-가장-어려웠다-a8d8a5d75715",
+            "similarity": 0.8757,
+            "roles": [
+              "frontend"
+            ]
+          },
+          {
+            "article_id": "d63ddc5778bb5f4a",
+            "title": "항공 프론트엔드 구축기 6 10 컨테이너를 둘로 쪼개지 않았다",
+            "url": "https://techblog.gccompany.co.kr/항공-프론트엔드-구축기-6-10-컨테이너를-둘로-쪼개지-않았다-8e313630cdf6",
+            "similarity": 0.8872,
+            "roles": [
+              "frontend"
+            ]
+          },
+          {
+            "article_id": "aad6a2edf12f05cf",
+            "title": "항공 프론트엔드 구축기 7 10 창구를 하나만 두었습니다",
+            "url": "https://techblog.gccompany.co.kr/항공-프론트엔드-구축기-7-10-창구를-하나만-두었습니다-7b924758ad42",
+            "similarity": 0.8787,
+            "roles": [
+              "frontend"
+            ]
+          },
+          {
+            "article_id": "45d98d0321dda514",
+            "title": "항공 프론트엔드 구축기 (8/10): 토큰이 세 군데서 온다",
+            "url": "https://techblog.gccompany.co.kr/%ED%95%AD%EA%B3%B5-%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C-%EA%B5%AC%EC%B6%95%EA%B8%B0-8-10-%ED%86%A0%ED%81%B0%EC%9D%B4-%EC%84%B8-%EA%B5%B0%EB%8D%B0%EC%84%9C-%EC%98%A8%EB%8B%A4-b74f5373be70?source=rss----18356045d353---4",
+            "similarity": 0.8958,
+            "roles": [
+              "frontend"
+            ]
+          },
+          {
+            "article_id": "e0e47edffee87ff3",
+            "title": "항공 프론트엔드 구축기 (9/10): 쓰자고 해 놓고 안 썼습니다",
+            "url": "https://techblog.gccompany.co.kr/%ED%95%AD%EA%B3%B5-%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C-%EA%B5%AC%EC%B6%95%EA%B8%B0-9-10-%EC%93%B0%EC%9E%90%EA%B3%A0-%ED%95%B4-%EB%86%93%EA%B3%A0-%EC%95%88-%EC%8D%BC%EC%8A%B5%EB%8B%88%EB%8B%A4-9cbddcc2d1b2?source=rss----18356045d353---4",
+            "similarity": 0.8767,
+            "roles": [
+              "frontend"
+            ]
+          },
+          {
+            "article_id": "553eb6fe059a3b2a",
+            "title": "항공 프론트엔드 구축기 (10/10): 폴더 이름 앞의 기호 하나",
+            "url": "https://techblog.gccompany.co.kr/%ED%95%AD%EA%B3%B5-%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C-%EA%B5%AC%EC%B6%95%EA%B8%B0-10-10-%ED%8F%B4%EB%8D%94-%EC%9D%B4%EB%A6%84-%EC%95%9E%EC%9D%98-%EA%B8%B0%ED%98%B8-%ED%95%98%EB%82%98-c74c85a0e3e0?source=rss----18356045d353---4",
+            "similarity": 0.8626,
+            "roles": [
+              "frontend"
+            ]
+          },
+          {
+            "article_id": "9964d4ee82f2c620",
+            "title": "해외 숙소 리스트 성능 개선기 반쪽짜리 ssr에서 완벽한 인피니트 스크롤까지",
+            "url": "https://techblog.gccompany.co.kr/해외-숙소-리스트-성능-개선기-반쪽짜리-ssr에서-완벽한-인피니트-스크롤까지-1ef7c7962dae",
+            "similarity": 0.8731,
+            "roles": [
+              "frontend"
+            ]
+          },
+          {
+            "article_id": "de62b204860515b9",
+            "title": "멀티 프레임워크 디자인 시스템 결국 운영 가능한 구조를 선택한 이유",
+            "url": "https://techblog.gccompany.co.kr/멀티-프레임워크-디자인-시스템-결국-운영-가능한-구조를-선택한-이유-de6cf9f8cbbc",
+            "similarity": 0.8809,
+            "roles": [
+              "frontend"
+            ]
+          },
+          {
+            "article_id": "2a460c8a1f106e47",
+            "title": "불안정한 테스트를 신뢰로 바꾸는 과정 playwright flaky test 개선기",
+            "url": "https://techblog.gccompany.co.kr/불안정한-테스트를-신뢰로-바꾸는-과정-playwright-flaky-test-개선기-c2ed8be64f3d",
+            "similarity": 0.869,
+            "roles": [
+              "frontend"
+            ]
+          },
+          {
+            "article_id": "ec7447d8661e1061",
+            "title": "️여기어때 date 인원 선택 ui 만들기 swiftui calendar core datetravelerselector 구조 재설계",
+            "url": "https://techblog.gccompany.co.kr/️여기어때-date-인원-선택-ui-만들기-swiftui-calendar-core-datetravelerselector-구조-재설계-d96c7d5b5ec0",
+            "similarity": 0.8706,
+            "roles": [
+              "mobile"
+            ]
+          },
+          {
+            "article_id": "ecbc6a46fbf8a161",
+            "title": "전시 도메인에 kotlin dsl적용하기",
+            "url": "https://techblog.gccompany.co.kr/전시-도메인에-kotlin-dsl적용하기-11b3b615e66c",
+            "similarity": 0.8767,
+            "roles": [
+              "mobile"
+            ]
+          },
+          {
+            "article_id": "28441282d4888a13",
+            "title": "msa도 모놀리스도 아닌 제3의 선택 spring modulith",
+            "url": "https://techblog.gccompany.co.kr/msa도-모놀리스도-아닌-제3의-선택-spring-modulith-5f6d1de6399a",
+            "similarity": 0.8527,
+            "roles": [
+              "backend"
+            ]
+          },
+          {
+            "article_id": "84e54d5bc3bf9eee",
+            "title": "coroutine async 로 지도보기 api 성능 개선하기",
+            "url": "https://techblog.gccompany.co.kr/coroutine-async-로-지도보기-api-성능-개선하기-fd9e9a5ee144",
+            "similarity": 0.8663,
+            "roles": [
+              "backend"
+            ]
+          },
+          {
+            "article_id": "5522897539bd173e",
+            "title": "테스트를 더 쓰기 전에 어디에 쓸지부터 동적 필터 atdd 실험기",
+            "url": "https://techblog.gccompany.co.kr/테스트를-더-쓰기-전에-어디에-쓸지부터-동적-필터-atdd-실험기-6ea3d1246464",
+            "similarity": 0.854,
+            "roles": [
+              "frontend",
+              "data-ai"
+            ]
+          }
+        ],
+        "id": "yeogi-02"
+      },
+      {
+        "area_name": "AI 에이전트 기반 개발 자동화와 클라우드 플랫폼 운영",
+        "area_description": "AI 에이전트·LLM을 코드 생성, 리뷰, 장애 원인 분석, 비용 산정, 디자인 산출물 제작 같은 실제 작업 흐름에 규칙과 검증 장치를 붙여 위임하는 문제와, 그 서비스를 떠받치는 Kafka·OpenTelemetry·Iceberg·EKS 배포 같은 데이터/인프라 플랫폼을 표준화하고 무중단으로 전환·운영하는 문제를 다룬다.",
+        "rationale": "cluster 1은 AI를 개별 도구로 쓰는 데서 그치지 않고 에이전트에게 맡길 작업 경계·규칙·회귀 테스트를 설계하는 글(코딩 에이전트 사고 과정 설계, 조직도 패턴, RAG 코드 컨벤션, SRE Alert Adviser/RI 계산기)과, 그 서비스를 떠받치는 공통 Kafka 전환·OTel Collector·Iceberg 데이터레이크·Argo Rollouts 카나리 같은 플랫폼 운영 글이 같은 조직의 동일한 관심사 위에 놓여 있어 하나의 Area로 유지했다. cluster 4의 AWS re:Invent 키노트 요약은 단독으로는 행사 소개 성격이라 Area가 될 수 없으나, 다루는 실체가 장기 기억 기반 자율 에이전트와 컴퓨팅/스토리지 인프라 신기능이어서 동일한 엔지니어링 주제를 공유하는 이 Area로 흡수했다.",
+        "note": "디자인·마케팅 산출물 제작 글과 조직 운영/AI 학습 문화 글은 기술 스택과 독자층이 달라 제외했다.",
+        "keywords": [
+          "OpenTelemetry",
+          "Kafka",
+          "KEDA",
+          "Grafana OnCall",
+          "Argo Rollouts",
+          "Apache Iceberg",
+          "Chain of Thought",
+          "Vector DB"
+        ],
+        "article_count": 20,
+        "roles": [
+          "backend",
+          "data-ai",
+          "frontend",
+          "mobile"
+        ],
+        "role_counts": {
+          "backend": 11,
+          "data-ai": 8,
+          "frontend": 3,
+          "mobile": 1
+        },
+        "evidence": [
+          {
+            "article_id": "b11cec448c3132b6",
+            "title": "ai 코딩 에이전트에게 사고 과정을 설계하다",
+            "url": "https://techblog.gccompany.co.kr/ai-코딩-에이전트에게-사고-과정을-설계하다-9c7325e4655d",
+            "similarity": 0.8965,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "c85414f3307c7f69",
+            "title": "ai에게 일을 시키려다 조직도를 그리게 된 이야기",
+            "url": "https://techblog.gccompany.co.kr/ai에게-일을-시키려다-조직도를-그리게-된-이야기-e2cc7e22dc5a",
+            "similarity": 0.8752,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "ea19ae16f3d3b70e",
+            "title": "우리 팀 코드 스타일을 아는 ai 만들기 테스트코드 작성 gitlab mr 리뷰 만들기",
+            "url": "https://techblog.gccompany.co.kr/우리-팀-코드-스타일을-아는-ai-만들기-테스트코드-작성-gitlab-mr-리뷰-만들기-07e573e7648e",
+            "similarity": 0.876,
+            "roles": [
+              "frontend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "68840bda5f8465d1",
+            "title": "우리 팀 코드 스타일을 아는 ai 만들기 rag와 vector db 활용기",
+            "url": "https://techblog.gccompany.co.kr/우리-팀-코드-스타일을-아는-ai-만들기-rag와-vector-db-활용기-94532d92b0a3",
+            "similarity": 0.8689,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "df4c154c2026f79c",
+            "title": "코드를 거의 타이핑하지 않고 3주 만에 ml 모델을 만들기",
+            "url": "https://techblog.gccompany.co.kr/코드를-거의-타이핑하지-않고-3주-만에-ml-모델을-만들기-7caffa031772",
+            "similarity": 0.8743,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "75ef8c9e1991dc55",
+            "title": "에이전트가 디자인 시스템 컴포넌트를 제대로 쓰게 만드는 방법",
+            "url": "https://techblog.gccompany.co.kr/에이전트가-디자인-시스템-컴포넌트를-제대로-쓰게-만드는-방법-377bc743b86a",
+            "similarity": 0.8732,
+            "roles": [
+              "frontend"
+            ]
+          },
+          {
+            "article_id": "a97546794239a78a",
+            "title": "sre 업무에 ai 녹여내기 1편 smart ri calc로 인프라 비용 산정 자동화",
+            "url": "https://techblog.gccompany.co.kr/sre-업무에-ai-녹여내기-1편-smart-ri-calc로-인프라-비용-산정-자동화-e6a2bf863087",
+            "similarity": 0.896,
+            "roles": [
+              "backend"
+            ]
+          },
+          {
+            "article_id": "a508dbceca8adfbb",
+            "title": "sre 업무에 ai 녹여내기 2편 alert adviser로 장애 원인 분석 자동화",
+            "url": "https://techblog.gccompany.co.kr/sre-업무에-ai-녹여내기-2편-alert-adviser로-장애-원인-분석-자동화-a8c8e83c2c92",
+            "similarity": 0.878,
+            "roles": [
+              "backend",
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "5629e46a2a5a5e1d",
+            "title": "서버가 죽었어요 에서 시작된 이야기 grafana oncall과 amazon connect로 완성한 실전형 온콜 시스템",
+            "url": "https://techblog.gccompany.co.kr/서버가-죽었어요-에서-시작된-이야기-grafana-oncall과-amazon-connect로-완성한-실전형-온콜-시스템-6795f3c044fd",
+            "similarity": 0.8757,
+            "roles": [
+              "backend"
+            ]
+          },
+          {
+            "article_id": "8dc24c34a94f2106",
+            "title": "opentelemetry와 kafka를 활용한 안정적인 observability 구축기",
+            "url": "https://techblog.gccompany.co.kr/opentelemetry와-kafka를-활용한-안정적인-observability-구축기-2c6bd68fbafd",
+            "similarity": 0.8732,
+            "roles": [
+              "backend"
+            ]
+          },
+          {
+            "article_id": "627831b47e662c5f",
+            "title": "공통 kafka 전환기 part 2 공통 kafka 전환 여정",
+            "url": "https://techblog.gccompany.co.kr/공통-kafka-전환기-part-2-공통-kafka-전환-여정-82519943d6f8",
+            "similarity": 0.8602,
+            "roles": [
+              "backend"
+            ]
+          },
+          {
+            "article_id": "5395a1af0d20beb4",
+            "title": "실패한 메시지는 어디로 가야 할까 kafka retry dlt 설계와 운영에서 밟은 3가지 함정",
+            "url": "https://techblog.gccompany.co.kr/실패한-메시지는-어디로-가야-할까-kafka-retry-dlt-설계와-운영에서-밟은-3가지-함정-dd7a71a07954",
+            "similarity": 0.8853,
+            "roles": [
+              "backend"
+            ]
+          },
+          {
+            "article_id": "6e600027fe442cc9",
+            "title": "spring data redis repository vs redistemplate 실전 성능 비교",
+            "url": "https://techblog.gccompany.co.kr/spring-data-redis-repository-vs-redistemplate-실전-성능-비교-3e1a6ab8bda3",
+            "similarity": 0.8761,
+            "roles": [
+              "backend"
+            ]
+          },
+          {
+            "article_id": "185ff82ab601e39c",
+            "title": "webflux 전환 부하 테스트를 다시 쓴 이야기",
+            "url": "https://techblog.gccompany.co.kr/webflux-전환-부하-테스트를-다시-쓴-이야기-31b8001c9cda",
+            "similarity": 0.874,
+            "roles": [
+              "backend"
+            ]
+          },
+          {
+            "article_id": "a8f3aae8cc48b476",
+            "title": "eks alb 환경에서 argo rollouts 503 에러 없는 카나리 배포 적용기",
+            "url": "https://techblog.gccompany.co.kr/eks-alb-환경에서-argo-rollouts-503-에러-없는-카나리-배포-적용기-689eedaf8d1a",
+            "similarity": 0.8577,
+            "roles": [
+              "backend"
+            ]
+          },
+          {
+            "article_id": "9fbce1d9807802ff",
+            "title": "하나의 데이터 멀티 엔진 apache iceberg로 구축하는 데이터레이크",
+            "url": "https://techblog.gccompany.co.kr/하나의-데이터-멀티-엔진-apache-iceberg로-구축하는-데이터레이크-8b8e54042233",
+            "similarity": 0.8635,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "4abe9ac53dd238ab",
+            "title": "데이터 통합 mongodb 원칙으로 document를 통합하고 동기화를 재설계하다 3 3",
+            "url": "https://techblog.gccompany.co.kr/데이터-통합-mongodb-원칙으로-document를-통합하고-동기화를-재설계하다-3-3-cbc65005d51b",
+            "similarity": 0.8676,
+            "roles": [
+              "data-ai"
+            ]
+          },
+          {
+            "article_id": "2d7f9f2d4a97b32b",
+            "title": "여기쏙 figma plugin 제작기 1 프록시 서버",
+            "url": "https://techblog.gccompany.co.kr/여기쏙-figma-plugin-제작기-1-프록시-서버-ce91b6756e96",
+            "similarity": 0.8655,
+            "roles": [
+              "backend"
+            ]
+          },
+          {
+            "article_id": "9cf2d7b3e8691009",
+            "title": "여기쏙 figma plugin 제작기 3 성능",
+            "url": "https://techblog.gccompany.co.kr/여기쏙-figma-plugin-제작기-3-성능-5ecec226b80b",
+            "similarity": 0.8663,
+            "roles": [
+              "frontend"
+            ]
+          },
+          {
+            "article_id": "7fe89cc9c5e8b4c6",
+            "title": "android on device ai gemini nano와 ml kit로 만든 2025 해커톤 프로젝트",
+            "url": "https://techblog.gccompany.co.kr/android-on-device-ai-gemini-nano와-ml-kit로-만든-2025-해커톤-프로젝트-d3e1eabd48c5",
+            "similarity": 0.8729,
+            "roles": [
+              "mobile"
+            ]
+          }
+        ],
+        "id": "yeogi-03"
+      }
+    ],
+    "unassigned_count": 0,
+    "unassigned_diagnostic": [],
+    "role_counts": {
+      "backend": 14,
+      "data-ai": 13,
+      "frontend": 17,
+      "mobile": 4
+    }
   }
 ]

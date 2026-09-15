@@ -1,11 +1,9 @@
-# group1_areas: 그룹1 회사 Area 생성 결과 (수동 프롬프팅, 진행 중)
+# group1_areas: 그룹1 회사 Area 생성 결과 (수동 프롬프팅)
 
 engineering_focus -> v4 embedding -> clustering(complete linkage) -> LLM 병합 -> deterministic membership -> 키워드 태깅 전체 파이프라인을 그룹1(#58) 회사에 독립적으로 적용한 결과다 (LLM 두 단계는 claude.ai 수동 프롬프팅으로 수행).
 
 그룹1은 삼성반도체·여기어때·쏘카·카카오 4곳이다. 이 파일은 완료된 회사만
-담는다 — 현재 쏘카·카카오·삼성반도체 3곳 완료, 여기어때는 engineering_focus
-단계(#58)가 아직 안 끝나서 Area 대상이 아니다(사이트가 Cloudflare로
-막혀 있어 수기로 확보 중).
+담는다 — 쏘카·카카오·삼성반도체·여기어때 4곳 완료.
 
 각 Area는 안정적인 `id`(예: `socar-01`)를 갖는다. 스키마와 한계는
 `../../../pipeline/experiments/tech_blog_engineering_focus_29/config/README.md` 참고.
@@ -38,6 +36,9 @@ engineering_focus -> v4 embedding -> clustering(complete linkage) -> LLM 병합 
   패키징")도 raw cluster 33건으로 응집도가 낮다고 명시돼 있다 — 메모리
   제품 / 패키징·공정 / 시스템 인터페이스(CXL·NVMe) / 보안 / 소프트웨어
   툴체인 최소 4개로 나중에 분할하는 게 적절하다.
+- 여기어때 기술블로그는 Cloudflare로 본문 추출이 막혀 #58 당시 Area
+  대상이 아니었다. Medium `posts` API로 본문을 확보한 뒤 Area를 돌렸다.
+  입력 43건이 모두 evidence로 배정됐고 unassigned는 0이다.
 
 ## 쏘카 (9개 글)
 
@@ -70,3 +71,13 @@ unassigned: 18
 | 반도체 분야 개방형 협업과 AI 연구 동향 공유 | 3 | HBM4 / HBM4E, SOCAMM2, CMM-D / CXL 메모리 풀링, CMX (Context Memory eXtension), AI-EDA, 에이전틱 AI 제조 이상탐지, Virtual SSD Migration·FDP |
 
 unassigned: 5
+
+## 여기어때 (43개 글)
+
+| Area | 근거 수 | 키워드 |
+|---|---:|---|
+| 흩어진 기록·로그의 지식화와 비정상 동작 원인 규명 | 5 | HikariCP, Aurora MySQL, Word2Vec, LLM 위키, 연관 키워드 |
+| 웹·웹뷰 단일 코드베이스 프론트엔드 아키텍처와 도메인 설계 | 18 | 웹뷰 브릿지, React Query, TanStack Query, nuqs, SSR/Hydration, Playwright, Kotlin DSL, SwiftUI Calendar Core |
+| AI 에이전트 기반 개발 자동화와 클라우드 플랫폼 운영 | 20 | OpenTelemetry, Kafka, KEDA, Grafana OnCall, Argo Rollouts, Apache Iceberg, Chain of Thought, Vector DB |
+
+unassigned: 0

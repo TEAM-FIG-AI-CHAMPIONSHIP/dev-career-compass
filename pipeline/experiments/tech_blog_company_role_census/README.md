@@ -42,7 +42,8 @@ wp-json, 넥스트리는 `sitemap-posts.xml`(한국어만)을 탄다.
 
 보강 후 `classify_and_gate.py`를 다시 돌리고, HR·홍보·한영 중복은 수기로
 걸렀다. Area 입력은 그룹2 402 + 그룹4 171 = 573건.
-결과: `data/research/tech_blog_engineering_focus_29/group24_areas.md`.
+결과: `data/research/tech_blog_engineering_focus_29/group2_areas.md`,
+`group4_areas.md`.
 
 ## 출력
 
