@@ -17,19 +17,11 @@ from __future__ import annotations
 
 from typing import TypedDict
 
+from career_compass_pipeline.aggregate import article_id_to_evidence_id
+
 # ── 상수 ──────────────────────────────────────────────────────────────────────
 
 _DEFAULT_SOURCE = "blog"
-_EVIDENCE_ID_PREFIX = "ev-"
-
-
-def _evidence_id(article_id: str) -> str:
-    """article_id → ``ev-{article_id}`` 형식 id를 반환합니다.
-
-    ``aggregate.article_id_to_evidence_id``와 동일한 규칙입니다.
-    두 모듈이 머지되면 공통 헬퍼로 통합할 수 있습니다.
-    """
-    return f"{_EVIDENCE_ID_PREFIX}{article_id}"
 
 
 # ── 출력 타입 ──────────────────────────────────────────────────────────────────
@@ -43,8 +35,7 @@ class Evidence(TypedDict):
     """
 
     id: str
-    """``ev-{article_id}`` 형식. ``aggregate.article_id_to_evidence_id``와 동일한 규칙.
-    두 모듈이 머지되면 공통 헬퍼로 통합할 수 있습니다."""
+    """``ev-{article_id}`` 형식. ``aggregate.article_id_to_evidence_id``와 동일한 규칙."""
 
     title: str
     """수집 문서 제목. 비어 있으면 빈 문자열."""
@@ -93,9 +84,8 @@ def build_evidence_catalog(
         - 본문·임베딩 등 무거운 필드는 포함하지 않습니다.
 
     Notes:
-        evidence id 생성 규칙(``ev-{article_id}``)은 ``aggregate.article_id_to_evidence_id``와
-        동일합니다. 두 모듈이 머지된 뒤 ``build_domains``의 ``evidenceIds``와
-        1:1 매핑이 통합 테스트로 검증될 수 있습니다.
+        evidence id 생성 규칙은 ``aggregate.article_id_to_evidence_id``와 동일합니다.
+        ``build_domains``가 만든 ``evidenceIds``와 1:1 매핑이 보장됩니다.
     """
     if source_by_id is None:
         source_by_id = {}
@@ -117,7 +107,7 @@ def build_evidence_catalog(
 
             items.append(
                 Evidence(
-                    id=_evidence_id(aid),
+                    id=article_id_to_evidence_id(aid),
                     title=ev.get("title") or "",
                     publishedAt=published_at_by_id.get(aid, ""),
                     source=source_by_id.get(aid, _DEFAULT_SOURCE),
