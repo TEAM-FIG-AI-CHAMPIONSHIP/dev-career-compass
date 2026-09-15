@@ -10,7 +10,7 @@
       "mark": "올",
       "logoSrc": "/companies/oliveyoung.png",
       "evidenceCount": 32,
-      "status": "collecting",
+      "status": "published",
       "jobs": [
         { "slug": "backend", "name": "서버·백엔드", "evidenceCount": 18 },
         { "slug": "frontend", "name": "웹 프론트엔드", "evidenceCount": 4 },
